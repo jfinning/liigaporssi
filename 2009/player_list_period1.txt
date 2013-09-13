@@ -1,0 +1,498 @@
+Assat
+Hyokkaajat 0
+Savinainen Veli-Matti 	14 	48 	260 000
+Laaksonen Jesse 	0 	0 	215 000
+Salminen Sakari 	17 	80 	320 000
+Palonen Niko 	2 	-1 	150 000
+Makinen Marko 	16 	31 	200 000
+Makila Antti 	13 	55 	255 000
+Uusitalo Antti 	0 	0 	205 000
+Pellinen Ossi 	0 	0 	185 000
+Forsbacka Patrik 	7 	17 	210 000
+Luomala Marko 	17 	123 	330 000
+Kivenmaki Marko 	17 	134 	400 000
+Niemi Mika 	17 	59 	275 000
+Huhtala Tommi 	15 	93 	360 000
+Sillanpaa Severi 	16 	33 	270 000
+Kuparinen Matti 	17 	120 	350 000
+Zaborsky Tomas 	5 	43 	280 000
+Piros Kamil 	17 	74 	230 000
+Huhtanen Tuomas 	13 	94 	275 000
+Maalivahdit 0
+Jarvenpaa Juha 	0 	0 	150 000
+Rynnas Jussi 	17 	37 	300 000
+Kilpelainen Eero 	17 	128 	360 000
+Puolustajat 0
+Rahkola Miro 	7 	13 	150 000
+Uusitalo Ville 	17 	129 	320 000
+Sammalkangas Tapio 	0 	0 	260 000
+Iliakis Dan 	17 	102 	280 000
+Palomaki Mikko 	14 	24 	240 000
+Stenroos Niklas 	0 	0 	150 000
+Jyrkkio Jesse 	12 	114 	305 000
+Kuusisto Matti 	17 	68 	290 000
+Maatta Tero 	17 	57 	270 000
+Heikkinen Jussi 	2 	-2 	195 000
+Blues
+Hyokkaajat 0
+Happola Toni 	9 	29 	260 000
+Uhlback Jaakko 	10 	36 	250 000
+Miettinen Camilo 	14 	67 	260 000
+Puustinen Juuso 	17 	86 	385 000
+Ohman Stefan 	17 	120 	355 000
+Stahlhammar Tomi 	14 	29 	175 000
+Lostedt Patrik 	15 	37 	150 000
+Immonen Jarkko 	17 	107 	380 000
+Blomqvist Sami 	6 	17 	215 000
+Sallinen Tomi 	17 	66 	250 000
+Nattinen Joonas 	12 	26 	250 000
+Ranta Roope 	0 	0 	150 000
+Lammassaari Petri 	0 	0 	300 000
+Lajunen Jani 	15 	70 	215 000
+Sallinen Jere 	11 	51 	280 000
+Rajamaki Erkki 	14 	90 	225 000
+Kahkonen Toni 	16 	114 	400 000
+Maalivahdit 0
+Tarkki Iiro 	17 	126 	400 000
+Tolvanen Mikko 	17 	-1 	270 000
+Suomalainen Erno 	0 	0 	225 000
+Puolustajat 0
+Kokko Petri 	11 	56 	305 000
+Grondahl Ari 	0 	0 	150 000
+Kurki Mikael 	17 	79 	265 000
+Mezei Branislav 	0 	0 	260 000
+Huczkowski Miika 	9 	34 	275 000
+Laakso Aleksi 	16 	111 	300 000
+Nakyva Kristian 	7 	10 	185 000
+Alanko Rami 	2 	3 	250 000
+Lajunen Ville 	17 	118 	370 000
+Heiskanen Santeri 	16 	108 	300 000
+Ronnberg Joonas 	7 	17 	200 000
+HIFK
+Hyokkaajat 0
+Tallberg Teemu 	0 	0 	150 000
+Petrell Lennart 	17 	76 	315 000
+Jarvinen Turo 	4 	21 	255 000
+Ramstedt Teemu 	17 	131 	380 000
+Dahlman Toni 	7 	28 	300 000
+Vilkman Samu 	5 	11 	200 000
+Granlund Mikael 	17 	153 	450 000
+Haataja Juha-Pekka 	5 	37 	405 000
+Toykkala Joni 	17 	49 	260 000
+Hirschovits Kim 	17 	133 	460 000
+Ahtola Jerry 	17 	192 	440 000
+Kivioja Henri 	0 	0 	150 000
+Wirtanen Petteri 	17 	85 	385 000
+Warn Max 	17 	55 	280 000
+Luttinen Arttu 	17 	95 	400 000
+Poysti Eetu 	0 	0 	175 000
+Nyholm Robert 	13 	54 	180 000
+Liivik Siim 	17 	22 	185 000
+Maalivahdit 0
+Nieminen Jani 	17 	120 	410 000
+Ahlqvist Aleksis 	0 	0 	290 000
+Lundell Jan 	17 	41 	300 000
+Puolustajat 0
+Kankaanpera Markus 	17 	136 	365 000
+Melart Ilari 	2 	6 	150 000
+Haverinen Joni 	10 	47 	240 000
+Purolinna Juha-Petteri 	0 	0 	160 000
+Jarventie Martti 	17 	152 	400 000
+Lupaschuk Ross 	0 	0 	380 000
+Ahonen Rony 	8 	24 	190 000
+Soderholm Toni 	17 	134 	425 000
+Kurvinen Mikko 	14 	42 	270 000
+Clarke Dale 	17 	167 	440 000
+HPK
+Hyokkaajat 0
+Mannikko Miikka 	18 	108 	375 000
+Nieminen Niko 	18 	100 	280 000
+Kolehmainen Janne 	17 	52 	290 000
+Turtiainen Jaakko 	0 	0 	150 000
+Jarvinen Jan-Mikael 	1 	2 	150 000
+Seitsonen Aki 	7 	4 	220 000
+Kemppainen Joonas 	15 	90 	335 000
+Vihko Joonas 	18 	158 	400 000
+Muhonen Tuomas 	18 	16 	175 000
+Honka Juuso 	0 	0 	150 000
+Sailio Jari 	18 	57 	285 000
+Viinamaki Miika 	0 	0 	150 000
+Lahteenmaki Sami 	12 	17 	150 000
+Hamalainen Ville 	18 	55 	300 000
+Louhi Jyrki 	18 	56 	250 000
+Karevaara Joona 	2 	1 	175 000
+Viitaluoma Ville 	18 	191 	405 000
+Siren Niklas 	0 	0 	150 000
+Virta Tony 	14 	94 	350 000
+Laakkonen Janne 	4 	26 	385 000
+Maalivahdit 0
+Lassila Teemu 	18 	210 	450 000
+Metsola Juha 	0 	0 	300 000
+Rinne Rasmus 	0 	0 	200 000
+Puolustajat 0
+Makela Tuukka 	18 	38 	165 000
+Laamanen Jukka 	18 	181 	415 000
+Tuulola Marko 	18 	103 	360 000
+Jarvinen Pasi 	6 	20 	180 000
+Hietikko Ville 	0 	0 	150 000
+Holmberg Aleksi 	17 	28 	215 000
+Syvasalmi Kai 	13 	62 	295 000
+Maenpaa Mikko 	9 	111 	400 000
+Alatalo Santeri 	0 	0 	150 000
+Karmeniemi Lauri 	2 	1 	150 000
+Korhonen Risto 	3 	20 	150 000
+Honkanen Jani 	3 	7 	200 000
+Ilves
+Hyokkaajat 0
+Johner Dustin 	2 	8 	200 000
+Genoway Colby 	0 	0 	450 000
+Rask Joonas 	17 	69 	290 000
+Salonen Pasi 	17 	98 	325 000
+Pesonen Jussi 	17 	155 	400 000
+Alanen Johannes 	2 	3 	180 000
+Niinimaki Jesse 	17 	99 	315 000
+Antonen Juuso 	0 	0 	170 000
+Maattanen Pasi 	6 	63 	335 000
+Kauvosaari Jarkko 	17 	97 	300 000
+Marjamaki Masi 	16 	50 	240 000
+Korhonen Ville 	16 	88 	285 000
+Myttynen Matias 	17 	34 	200 000
+Sandvik Henri 	10 	9 	150 000
+Snellman Ville 	17 	97 	300 000
+Pellinen Jaakko 	9 	6 	175 000
+Sointu Matias 	0 	0 	150 000
+Anttila Marko 	17 	109 	360 000
+Snellman Niko 	0 	0 	175 000
+Lessard Junior 	4 	12 	200 000
+Rajala Toni 	0 	0 	150 000
+Maalivahdit 0
+Korhonen Markus 	17 	74 	290 000
+Aittokallio Sami 	0 	0 	150 000
+Pitkamaki Juha 	17 	102 	390 000
+Toivonen Hannu 	0 	0 	150 000
+Puolustajat 0
+Tukio Arto 	17 	82 	300 000
+Hulkkonen Antti 	17 	138 	335 000
+Akkanen Juuso 	15 	64 	245 000
+Laine Ville 	0 	0 	150 000
+Nappila Jarkko 	0 	0 	160 000
+Bruun Antti 	17 	54 	285 000
+Kuukka Mikko 	17 	86 	270 000
+Aalto Jouni 	0 	0 	150 000
+Petrilainen Pasi 	4 	6 	255 000
+Seikola Markus 	17 	224 	490 000
+JYP
+Hyokkaajat 0
+Heikkinen Timo-Pekka 	2 	6 	165 000
+Hytonen Juha-Pekka 	17 	126 	415 000
+Pihlman Tuomas 	17 	122 	455 000
+Piiroinen Samuli 	0 	0 	175 000
+Jaaskelainen Jari 	17 	51 	300 000
+Louhivaara Ossi 	14 	95 	285 000
+Vanttinen Tuomas 	17 	94 	350 000
+Pesonen Harri 	16 	77 	300 000
+Hakkarainen Mikko 	17 	44 	205 000
+Ikonen Jasse 	3 	15 	150 000
+Virtanen Jonne 	4 	4 	150 000
+Sipilainen Olli 	5 	6 	200 000
+Virtanen Antti 	17 	94 	435 000
+Poukkula Markus 	5 	21 	205 000
+Virpio Jouni 	0 	0 	175 000
+Asplund Turo 	5 	8 	175 000
+Kariya Steve 	6 	62 	465 000
+Riska Filip 	15 	56 	240 000
+Lahti Miika 	8 	7 	200 000
+Tuppurainen Jani 	17 	151 	375 000
+Jormakka Pekka 	2 	-1 	175 000
+Maalivahdit 0
+Noronen Mika 	17 	40 	385 000
+Wallinheimo Sinuhe 	17 	74 	450 000
+Kaulio Niko 	0 	0 	150 000
+Laitinen Jarno 	0 	0 	150 000
+Tuokkola Pekka 	17 	6 	450 000
+Puolustajat 0
+Kantee Kevin 	3 	13 	220 000
+Koskinen Kalle 	17 	73 	375 000
+Viitanen Mikko 	17 	35 	270 000
+Vatanen Sami 	17 	162 	425 000
+Malmivaara Olli 	17 	52 	400 000
+Jaatinen Antti 	4 	5 	175 000
+Kaijomaa Kalle 	17 	100 	300 000
+Valivaara Jyrki 	10 	78 	400 000
+Jokerit
+Hyokkaajat 0
+Pulkkinen Teemu 	12 	40 	200 000
+Pallassalo Tomi 	0 	0 	150 000
+Saarinen Ossi 	17 	73 	300 000
+Rita Jani 	17 	50 	325 000
+Hentunen Jukka 	17 	140 	470 000
+Tahtinen Markku 	0 	0 	290 000
+Maki Tomi 	17 	48 	300 000
+Lind Juha 	17 	42 	225 000
+Lahti Janne 	5 	23 	315 000
+Pitkanen Ilmari 	5 	2 	150 000
+Pulkkinen Toni 	7 	-2 	150 000
+Helenius Jani-Petteri 	0 	0 	175 000
+Hauhtonen Janne 	17 	61 	250 000
+Pirnes Esa 	17 	120 	440 000
+Juutilainen Jan-Mikael 	17 	12 	185 000
+Vauhkonen Olavi 	17 	27 	180 000
+Ben-Amor Semir 	10 	33 	200 000
+Bremberg Fredrik 	4 	42 	430 000
+Maalivahdit 0
+Kautto Jani 	0 	0 	150 000
+Stromberg Mikko 	17 	11 	275 000
+Riksman Juuso 	17 	110 	455 000
+Puolustajat 0
+Kivisto Tommi 	5 	3 	165 000
+Helenius Sami 	14 	18 	155 000
+Manelius Nico 	4 	0 	170 000
+Malkia Simo 	17 	71 	300 000
+Koivisto Tom 	17 	127 	345 000
+Niemi Antti-Jussi 	17 	55 	285 000
+Eronen Teemu 	11 	49 	190 000
+Olander Jere 	2 	12 	150 000
+Kalteva Mikko 	4 	19 	170 000
+Kauppinen Marko 	17 	98 	400 000
+KalPa
+Hyokkaajat 0
+Riekkinen Joonas 	13 	30 	225 000
+Salo Timo 	10 	31 	250 000
+Makiaho Toni 	2 	2 	280 000
+Nuutinen Mikko 	0 	0 	150 000
+Kapanen Sami 	13 	95 	450 000
+Jokinen Tommi 	18 	38 	280 000
+Rissanen Jaakko 	1 	1 	150 000
+Laakso Tapio 	18 	70 	315 000
+Pakarinen Iiro 	9 	25 	175 000
+Hamalainen Aatu 	17 	42 	300 000
+Hartikainen Teemu 	18 	86 	360 000
+Rasi Petteri 	5 	11 	175 000
+Sahlstedt Kalle 	18 	130 	415 000
+Miettinen Tommi 	18 	120 	410 000
+Kerman Kalle 	17 	115 	420 000
+Malinen Jarkko 	8 	12 	150 000
+Kiiskinen Tuomas 	15 	156 	400 000
+Hyvarinen Toni 	14 	25 	240 000
+Maalivahdit 0
+Jarvinen Mika 	18 	57 	425 000
+Ahonen Ari 	18 	119 	440 000
+Puolustajat 0
+Stromberg Mika 	11 	58 	400 000
+Lappalainen Lasse 	0 	0 	150 000
+Seppanen Timo 	17 	65 	300 000
+Kukkonen Mikko 	10 	16 	190 000
+Jalasvaara Janne 	17 	64 	300 000
+Hirvonen Pasi 	0 	0 	160 000
+Andersson Adam 	18 	250 	480 000
+Varakas Ville 	18 	67 	260 000
+Hyvarinen Ville 	0 	0 	150 000
+Timonen Jussi 	18 	65 	285 000
+Karpat
+Hyokkaajat 0
+Donskoi Joonas 	9 	29 	260 000
+Keranen Juho 	15 	44 	270 000
+Alikoski Mikko 	12 	30 	235 000
+Kaspar Lukas 	0 	0 	415 000
+Viinanen Mika 	11 	79 	290 000
+Aarnio Antti 	13 	37 	220 000
+Kiilholma Juha 	10 	32 	250 000
+Rosa Pavel 	13 	148 	500 000
+Karppinen Veikko 	10 	19 	240 000
+Saarenheimo Pekka 	17 	79 	300 000
+Koskenkorva Kimmo 	17 	101 	380 000
+Shvidki Denis 	4 	21 	275 000
+Kuusela Kristian 	17 	84 	410 000
+Viitakoski Vesa 	17 	57 	310 000
+Komulainen Joonas 	1 	1 	150 000
+Viuhkola Jari 	7 	62 	490 000
+Pekkala Tomi 	13 	70 	220 000
+Normio Teemu 	14 	38 	285 000
+Maalivahdit 0
+Koivisto Petri 	17 	68 	415 000
+Rautiola Antti 	0 	0 	150 000
+Tarkki Tuomas 	17 	72 	410 000
+Puolustajat 0
+Ylonen Antti 	7 	9 	225 000
+Aalto Teemu 	14 	141 	460 000
+Niemela Mikko 	0 	0 	150 000
+Mikkola Ilkka 	11 	45 	420 000
+Ohtamaa Atte 	16 	68 	260 000
+Forrest Justin 	17 	111 	420 000
+Jokinen Juho 	16 	94 	295 000
+Korpikari Oskari 	11 	28 	270 000
+Jushkevitsh Dmitri 	0 	0 	400 000
+Gronholm Ossi-Petteri 	14 	46 	280 000
+Liljeblad Joni 	0 	0 	150 000
+Lukko
+Hyokkaajat 0
+Virtala Marko 	6 	35 	175 000
+Tuomainen Miikka 	17 	100 	245 000
+Elo Eero 	0 	0 	190 000
+Morrison Justin 	16 	200 	450 000
+Mustonen Tomi 	0 	0 	150 000
+Jasu Juhani 	17 	55 	185 000
+Palola Olli 	9 	17 	180 000
+Laaksonen Jere 	0 	0 	150 000
+Kivimaki Samuli 	12 	38 	165 000
+Laaksonen Antti 	6 	50 	340 000
+Tukonen Lauri 	13 	106 	355 000
+Rajala Juuso 	17 	31 	165 000
+Petruzalek Jakub 	17 	124 	450 000
+Kangasmaki Aki 	0 	0 	150 000
+Nurmi Teemu 	17 	121 	350 000
+McLean Kurtis 	17 	161 	420 000
+Aaltonen Nico 	9 	24 	230 000
+Keranen Janne 	17 	161 	425 000
+Nabb Kim 	14 	40 	170 000
+Maalivahdit 0
+Raanta Antti 	17 	20 	250 000
+Vehanen Petri 	17 	184 	460 000
+Puolustajat 0
+Cook Charlie 	16 	170 	430 000
+Lehikoinen Esa 	0 	0 	175 000
+Kovanen Tommi 	17 	181 	410 000
+Makkonen Jussi 	0 	0 	150 000
+Tikkanen Harri 	17 	134 	400 000
+Rantanen Anssi 	17 	28 	200 000
+Vidgren Tony 	1 	2 	160 000
+Pettinen Tomi 	14 	114 	395 000
+Honkaheimo Otto 	17 	50 	270 000
+Nevalainen Patrik 	3 	11 	175 000
+Pelicans
+Hyokkaajat 0
+Tavi Janne 	1 	3 	150 000
+Koivunen Toni 	16 	67 	275 000
+Sihvonen Kari 	11 	35 	250 000
+Rinkinen Teemu 	15 	77 	230 000
+Kauppila Jari 	16 	94 	350 000
+Jantunen Marko 	16 	90 	420 000
+Santavuori Tuomas 	16 	57 	305 000
+Tyrvainen Antti 	2 	2 	150 000
+Saarinen Jesse 	14 	62 	320 000
+Sopanen Vili 	13 	49 	280 000
+Piispanen Arsi 	13 	57 	265 000
+Heino Henri 	14 	36 	280 000
+Paakkolanvaara Tommi 	16 	64 	290 000
+Aaltonen Juhamatti 	16 	119 	360 000
+Poyhonen Marko 	15 	62 	270 000
+Maalivahdit 0
+Kuusela Joonas 	16 	-2 	285 000
+Nikkila Tommi 	16 	100 	375 000
+Hovinen Niko 	16 	24 	300 000
+Huumonen Tuukka 	0 	0 	185 000
+Puolustajat 0
+Forsstrom Jani 	15 	84 	300 000
+Jalvanti Joonas 	16 	70 	265 000
+Tuhkanen Niko 	1 	3 	150 000
+Suhonen Samuli 	15 	125 	380 000
+Kousa Mikko 	13 	64 	295 000
+Latvala Jan 	16 	86 	335 000
+Uotila Juha 	9 	19 	200 000
+Hurri Joonas 	0 	0 	150 000
+Kakko Erik 	4 	15 	200 000
+Laurila Henri 	5 	15 	270 000
+SaiPa
+Hyokkaajat 0
+Jasko Tomas 	14 	55 	280 000
+Koskinen Petri 	18 	58 	285 000
+Jokila Jarmo 	10 	40 	200 000
+Yli-Torkko Joni 	13 	39 	225 000
+Redenbach Tyler 	18 	106 	385 000
+Barney Scott 	3 	21 	275 000
+Tiainen Jussi 	0 	0 	150 000
+Koskiranta Tero 	0 	0 	295 000
+Jokinen Olli 	0 	0 	150 000
+Lofman Anssi 	18 	77 	300 000
+Noyranen Pentti 	18 	39 	225 000
+Pohl Petr 	18 	66 	300 000
+Toporowski Shayne 	18 	154 	385 000
+Mankinen Jesse 	3 	0 	150 000
+Leivo Tomi 	0 	0 	150 000
+Kaksonen Elmeri 	11 	18 	175 000
+Koskiranta Jarno 	18 	39 	275 000
+Jouhkimainen Miikka 	12 	27 	250 000
+Kaijomaa Juuso 	2 	4 	150 000
+Hamalainen Roope 	1 	-1 	150 000
+Koho Ville 	18 	67 	285 000
+Maalivahdit 0
+Hostikka Ville 	18 	146 	385 000
+Myllyniemi Jere 	18 	9 	290 000
+Puolustajat 0
+Lippojoki Jarno 	9 	14 	250 000
+Koponen Marlo 	5 	0 	160 000
+Pulkki Simo 	0 	0 	150 000
+Tuominen Joni 	17 	110 	320 000
+Taimi Tommi 	0 	0 	160 000
+Pukka Mikko 	15 	51 	240 000
+Mielonen Juho 	13 	54 	235 000
+Nyrhinen Antti 	15 	100 	330 000
+Backman Simon 	18 	99 	280 000
+Levokari Pauli 	18 	127 	350 000
+TPS
+Hyokkaajat 0
+Jalo Toni 	4 	0 	150 000
+Vahalahti Ville 	17 	104 	410 000
+Reivonen Antti 	11 	20 	160 000
+Kolu Max 	10 	18 	225 000
+Suominen Tuomas 	17 	136 	385 000
+Filppula Ilari 	17 	75 	320 000
+Radja Mike 	17 	94 	400 000
+Birner Michal 	17 	159 	450 000
+Venalainen Sami 	9 	28 	290 000
+Kokkala Lassi 	14 	12 	150 000
+Hattunen Jarkko 	16 	63 	260 000
+Plihal Tomas 	17 	100 	400 000
+Uusikartano Aki 	17 	159 	435 000
+Laine Mikko 	4 	11 	215 000
+Urpo Antti 	0 	0 	150 000
+Erkinjuntti Antti 	17 	88 	400 000
+Maalivahdit 0
+Engren Atte 	17 	55 	270 000
+Ortio Joni 	17 	1 	235 000
+Leggio David 	17 	83 	435 000
+Puolustajat 0
+Berg Aki-Petteri 	15 	55 	285 000
+Kluuskeri Niko-Petteri 	0 	0 	150 000
+Aaltonen Mikael 	0 	0 	150 000
+Halonen Antti 	17 	131 	325 000
+Nordlund Markus 	17 	117 	295 000
+Palmroth Markus 	0 	0 	150 000
+Jarvinen Joonas 	15 	50 	270 000
+Skalberg Jens 	17 	117 	325 000
+Vittasmaki Veli-Matti 	4 	7 	150 000
+Campbell Darcy 	17 	104 	365 000
+Tappara
+Hyokkaajat 0
+Stromberg Kim 	11 	54 	250 000
+Ojanen Janne 	0 	0 	275 000
+Lahde Nestori 	9 	10 	175 000
+Karjalainen Joni 	0 	0 	150 000
+Enlund Jonas 	17 	145 	430 000
+Peltola Jukka 	12 	23 	205 000
+Nieminen Ville 	16 	89 	410 000
+Lehtera Jori 	17 	170 	475 000
+Hughes John 	6 	14 	150 000
+Peltonen Tomi 	15 	26 	210 000
+Tuominen Martin 	0 	0 	150 000
+Ryhanen Sami 	4 	12 	300 000
+Kangasniemi Antti 	0 	0 	150 000
+Lucenius Niclas 	17 	124 	300 000
+Koskela Timo 	17 	67 	290 000
+Junnila Jyri 	17 	55 	285 000
+Pyymaki Jarkko 	17 	27 	205 000
+Koskinen Joonas 	17 	46 	210 000
+Maalivahdit 0
+Sateri Harri 	17 	121 	400 000
+Seppanen Teemu 	0 	0 	200 000
+Lehto Mika 	17 	36 	375 000
+Maenalanen Veli-Heikki 	0 	0 	150 000
+Puolustajat 0
+Turkulainen Jesse 	1 	3 	170 000
+Pentikainen Atte 	16 	71 	240 000
+Korhonen Lasse 	16 	88 	285 000
+Mantyla Tuukka 	12 	42 	395 000
+Ilvonen Harri 	17 	112 	300 000
+Saravo Pekka 	17 	103 	400 000
+Halme Jussi 	17 	77 	270 000
+Malkamaki Miko 	6 	18 	150 000

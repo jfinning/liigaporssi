@@ -1,0 +1,268 @@
+Los Angeles
+	Maalivahdit 	O 	M 	S 	V 	H 	JAH 	TO 	PM 	NP 	JM 	T3 	T2 	T1 	HGMP 	Arvo
+Bernier Jonathan	0	0	0	0	0	0	0	0	0	0	0	0	0	0 	249 000
+Quick Jonathan	5	0	0	4	1	0	164	8	1	0	1	1	1	79 	439 000
+Nashville
+Lindback Anders	0	0	0	0	0	0	0	0	0	0	0	0	0	0 	211 000
+Pickard Chet	0	0	0	0	0	0	0	0	0	0	0	0	0	0 	150 000
+Rinne Pekka	5	0	0	4	1	0	151	9	0	0	2	1	1	63 	428 500
+New Jersey
+Brodeur Martin	7	0	2	4	2	0	166	14	1	0	0	1	1	83 	411 000
+Frazee Jeff	0	0	0	0	0	0	0	0	0	0	0	0	0	0 	150 000
+Hedberg Johan	1	0	0	0	1	0	13	1	0	0	0	0	0	0 	298 000
+Kinkaid Keith	0	0	0	0	0	0	0	0	0	0	0	0	0	0 	150 000
+NY Rangers
+Biron Martin	0	0	0	0	0	0	0	0	0	0	0	0	0	0 	299 000
+Lundqvist Henrik	7	0	0	4	3	0	205	12	1	0	0	2	3	87 	476 000
+Philadelphia
+Bobrovsky Sergei	1	0	0	0	0	0	13	5	0	0	0	0	0	-5 	241 000
+Bryzgalov Ilya	6	0	0	4	2	0	142	21	0	0	1	0	0	26 	372 000
+Phoenix
+LaBarbera Jason	0	0	0	0	0	0	0	0	0	0	0	0	0	0 	208 000
+Pogge Justin	0	0	0	0	0	0	0	0	0	0	0	0	0	0 	150 000
+Smith Mike	6	0	1	4	2	0	229	12	1	0	0	1	2	112 	482 500
+St. Louis
+Elliott Brian	4	0	0	3	0	0	93	5	0	0	0	2	1	40 	386 000
+Halak Jaroslav	2	0	0	1	1	0	43	3	0	0	1	0	0	12 	364 500
+Washington
+Holtby Braden	7	0	0	4	3	0	233	15	0	2	0	1	1	71 	373 500
+Neuvirth Michal	0	0	0	0	0	0	0	0	0	0	0	0	0	0 	274 000
+Vokoun Tomas	0	0	0	0	0	0	0	0	0	0	0	0	0	0 	351 000
+	Puolustajat 	O 	M 	S 	AV 	VM 	JA 	L 	T 	B 	+/0 	JM 	T3 	T2 	T1 	HGMP 	Arvo
+Los Angeles
+Doughty Drew	5	0	2	0	0	0	12	6	10	1	4	0	0	0	38 	413 000
+Drewiske Davis	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0 	164 000
+Greene Matt	5	0	0	0	0	0	4	21	5	1	0	0	0	0	24 	318 500
+Martinez Alec	5	0	1	0	0	0	8	5	3	0	4	0	0	0	21 	210 000
+Mitchell Willie	5	1	1	0	0	0	11	9	25	3	6	0	0	0	56 	358 500
+Scuderi Rob	5	0	0	0	0	0	6	2	12	1	4	0	0	0	22 	201 000
+Voynov Slava	5	0	0	0	0	0	5	9	5	2	2	0	0	0	21 	372 000
+Nashville
+Bouillon Francis	5	0	1	0	0	0	3	10	4	6	2	0	0	0	38 	254 000
+Ellis Ryan	3	0	0	0	0	0	2	3	2	2	0	0	0	0	12 	308 000
+Gill Hal	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0 	209 500
+Hillen Jack	2	0	0	0	0	0	1	0	0	1	2	0	0	0	6 	183 500
+Josi Roman	5	0	0	0	0	0	3	3	11	0	8	0	0	0	22 	288 000
+Klein Kevin	5	2	1	0	1	0	6	8	11	2	0	0	1	0	52 	321 000
+Suter Ryan	5	0	0	0	0	0	12	7	10	0	2	0	0	0	19 	392 500
+Weber Shea	5	2	0	0	0	0	18	12	11	1	7	0	0	1	52 	474 500
+New Jersey
+Corrente Matthew	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0 	150 000
+Fayne Mark	7	0	0	0	0	0	10	4	5	1	0	0	0	0	18 	265 500
+Greene Andy	7	0	1	0	0	0	9	14	6	0	2	0	0	0	29 	264 500
+Harrold Peter	7	0	3	0	0	0	4	4	1	2	4	0	0	0	38 	192 500
+Larsson Adam	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0 	255 000
+Leach Jay	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0 	150 000
+Salvador Bryce	7	0	3	0	0	0	5	19	10	4	6	0	0	0	60 	304 000
+Tallinder Henrik	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0 	150 000
+Taormina Matt	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0 	211 000
+Urbom Alexander	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0 	150 000
+Volchenkov Anton	7	0	1	0	0	0	2	15	10	3	4	0	0	0	38 	308 500
+Zidlicky Marek	7	0	2	0	0	0	18	16	9	2	8	0	0	0	54 	351 500
+NY Rangers
+Bickel Stu	7	0	0	0	0	0	2	5	5	1	4	0	0	0	17 	231 500
+Del Zotto Michael	7	0	2	0	0	0	11	27	12	0	2	0	0	0	45 	447 500
+Eminger Steve	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0 	168 000
+Girardi Dan	7	1	3	0	1	0	13	20	30	-1	2	0	1	0	71 	434 000
+McDonagh Ryan	7	0	0	0	0	0	13	14	24	-3	6	0	0	0	32 	415 000
+Sauer Mike	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0 	165 000
+Scott John	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0 	150 000
+Staal Marc	7	1	1	0	0	0	9	12	15	0	2	1	0	0	44 	271 000
+Stralman Anton	7	2	2	0	0	0	13	5	13	3	0	0	0	0	60 	366 000
+Woywitka Jeff	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0 	150 000
+Philadelphia
+Blidstrand Ricard	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0 	150 000
+Bourdon Marc-Andre	1	0	0	0	0	0	0	2	3	0	0	0	0	0	3 	251 500
+Carle Matt	6	1	3	0	0	0	11	6	15	0	4	1	0	0	54 	414 500
+Coburn Braydon	6	0	4	0	0	0	7	17	13	3	6	0	0	0	65 	408 000
+Grossmann Nicklas	4	0	1	0	0	0	1	9	12	0	8	0	0	0	30 	288 500
+Gustafsson Erik	2	1	0	0	0	0	2	2	9	3	2	0	1	0	30 	238 000
+Kubina Pavel	5	0	1	0	0	0	5	7	6	-3	12	0	0	0	12 	312 500
+Lehtivuori Joonas	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0 	150 000
+Lilja Andreas	6	0	0	0	0	0	7	9	19	-3	2	0	0	0	18 	247 500
+Meszaros Andrej	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0 	340 000
+Pronger Chris	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0 	302 000
+Suellentrop Colin	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0 	150 000
+Timonen Kimmo	6	1	1	0	0	0	4	7	9	3	19	0	0	0	37 	412 500
+Phoenix
+Aucoin Adrian	5	0	1	0	0	0	5	7	8	0	6	0	0	0	28 	308 000
+Ekman-Larsson Oliver	6	1	2	0	1	0	12	6	9	-3	2	0	1	0	39 	392 000
+Goncharov Maxim	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0 	150 000
+Klesla Rostislav	6	1	3	0	0	0	14	19	13	-1	2	0	0	0	56 	368 500
+Morris Derek	6	0	1	0	0	0	6	19	24	3	4	0	0	0	48 	285 000
+Rozsival Michal	6	0	0	0	0	0	5	16	9	-1	0	0	0	0	17 	289 000
+Rundblad David	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0 	154 000
+Sauer Kurt	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0 	150 000
+Schlemko David	1	0	0	0	0	0	0	2	4	1	0	0	0	0	6 	259 000
+Stone Michael	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0 	240 500
+Summers Chris	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0 	189 000
+Yandle Keith	6	0	5	0	0	0	7	2	6	5	2	0	0	0	58 	434 500
+St. Louis
+Colaiacovo Carlo	4	0	3	0	0	0	9	5	10	3	4	1	0	0	47 	328 000
+Cole Ian	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0 	233 000
+Huskins Kent	1	0	0	0	0	0	1	0	1	0	2	0	0	0	4 	248 500
+Jackman Barret	5	0	0	0	0	0	7	6	9	-2	17	0	0	0	7 	295 500
+Pietrangelo Alex	5	0	3	0	0	0	16	7	18	3	0	0	0	0	51 	465 500
+Polak Roman	5	0	0	0	0	0	3	15	13	-1	19	0	0	0	17 	269 000
+Russell Kris	5	0	1	0	0	0	5	4	10	2	5	0	0	0	28 	296 500
+Shattenkirk Kevin	5	0	1	0	0	0	15	4	7	-1	2	0	0	0	22 	438 500
+Syvret Danny	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0 	150 000
+Washington
+Alzner Karl	7	0	1	0	0	0	9	12	17	1	0	0	1	0	38 	298 000
+Carlson John	7	0	2	0	0	0	12	15	17	-2	4	0	0	0	39 	358 500
+Erskine John	3	0	1	0	0	0	2	7	1	-1	0	0	0	0	12 	180 500
+Green Mike	7	1	1	0	0	0	11	10	12	5	2	0	0	0	53 	357 000
+Hamrlik Roman	7	0	3	0	0	0	12	10	16	5	6	0	0	0	63 	328 500
+Orlov Dmitry	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0 	276 500
+Poti Tom	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0 	150 000
+Schultz Jeff	4	0	0	0	0	0	0	0	5	-4	2	0	0	0	-3 	176 500
+Wideman Dennis	7	0	1	0	0	0	12	11	11	-4	2	0	0	0	22 	411 000
+	Hyokkaajat 	O 	M 	S 	AV 	VM 	JA 	L 	T 	B 	+/0 	JM 	T3 	T2 	T1 	HGMP 	Arvo
+Los Angeles
+Brown Dustin	5	4	1	2	1	0	25	21	3	4	4	1	1	1	83 	554 000
+Carter Jeff	5	0	2	0	0	0	14	8	3	-1	0	0	0	0	24 	380 000
+Clifford Kyle	1	0	0	0	0	0	0	1	0	-1	0	0	0	0	0 	241 000
+Fraser Colin	5	0	0	0	0	0	4	12	3	0	2	0	0	0	17 	241 000
+Gagne Simon	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0 	316 000
+King Dwight	5	0	0	0	0	0	8	13	0	-2	2	0	0	0	13 	356 000
+Kopitar Anze	5	1	3	0	0	0	15	8	7	3	5	0	0	0	45 	484 500
+Lewis Trevor	5	1	1	0	0	0	10	9	3	2	0	0	0	0	29 	214 000
+Loktionov Andrei	2	0	0	0	0	0	0	0	2	0	0	0	0	0	2 	163 000
+Nolan Jordan	5	0	0	0	0	0	3	6	0	2	4	0	0	0	16 	205 000
+Parse Scott	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0 	201 000
+Penner Dustin	5	1	1	0	1	0	6	11	3	2	6	0	0	0	35 	284 500
+Richards Mike	5	1	2	0	0	0	7	18	7	-1	0	0	0	1	37 	424 500
+Richardson Brad	2	1	0	0	0	0	4	4	0	1	2	1	0	0	17 	224 500
+Stoll Jarret	5	2	0	0	1	1	8	15	2	1	4	0	0	1	42 	365 000
+Westgarth Kevin	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0 	153 000
+Williams Justin	5	0	4	0	0	0	16	2	2	0	4	0	0	0	33 	432 000
+Nashville
+Bourque Gabriel	5	3	1	0	1	0	8	7	0	5	2	0	0	1	50 	322 000
+Erat Martin	5	0	2	0	0	0	4	8	5	1	4	0	0	0	28 	432 500
+Fisher Mike	5	0	2	0	0	0	8	14	3	-1	4	0	0	0	30 	450 500
+Gaustad Paul	5	1	1	0	0	0	2	4	5	0	0	1	0	0	20 	297 000
+Halischuk Matt	3	0	1	0	0	0	0	1	0	1	4	0	0	0	12 	281 000
+Hornqvist Patric	5	0	1	0	0	0	12	2	1	2	2	0	0	0	19 	392 500
+Kostitsyn Andrei	5	1	1	0	0	0	8	13	0	2	2	0	0	0	29 	363 500
+Kostitsyn Sergei	5	1	0	0	1	0	4	3	2	-2	2	0	0	0	14 	375 000
+Legwand David	5	2	2	0	1	0	11	6	2	5	6	0	0	1	53 	416 500
+Maclellan Jack	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0 	150 000
+McGrattan Brian	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0 	150 000
+Radulov Alexander	5	1	4	0	0	0	10	3	4	5	4	0	1	0	50 	491 500
+Smith Craig	1	0	0	0	0	0	1	3	0	-1	0	0	0	0	2 	308 500
+Spaling Nick	5	0	2	0	0	0	2	3	1	3	0	0	0	0	19 	270 000
+Tootoo Jordin	1	0	0	0	0	0	0	3	1	0	2	0	0	0	5 	330 000
+Wilson Colin	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0 	316 000
+Yip Brandon	5	0	1	0	0	0	1	4	0	-1	4	0	0	0	12 	222 500
+New Jersey
+Bernier Steve	7	2	1	0	0	0	13	26	2	3	6	1	0	0	55 	270 000
+Boulton Eric	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0 	151 000
+Carter Ryan	7	1	2	0	1	0	5	10	1	4	6	0	0	0	40 	214 500
+Clarkson David	7	0	5	0	0	0	17	27	0	3	18	0	0	0	55 	483 500
+Elias Patrik	7	2	0	0	0	0	19	16	2	-2	6	0	1	0	41 	489 500
+Gionta Stephen	7	2	1	0	0	0	8	9	1	5	2	1	0	0	42 	242 000
+Henrique Adam	7	2	1	0	0	1	10	10	3	1	2	0	0	1	43 	421 000
+Janssen Cam	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0 	150 000
+Josefson Jacob	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0 	180 000
+Kovalchuk Ilya	7	3	2	0	0	0	25	8	1	-3	0	1	0	0	45 	530 500
+Mills Brad	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0 	150 000
+Parise Zach	7	2	2	0	1	0	32	24	6	0	2	0	1	0	65 	542 000
+Ponikarovsky Alexei	7	0	2	0	0	0	8	20	3	2	4	0	0	0	37 	363 500
+Sestito Tim	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0 	150 000
+Sykora Petr	7	0	1	0	0	0	10	3	0	-1	2	0	0	0	15 	374 500
+Tedenby Mattias	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0 	164 000
+Zajac Travis	7	3	3	0	0	1	15	19	1	0	0	0	0	1	60 	338 500
+Zalewski Steve	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0 	150 000
+Zharkov Vladimir	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0 	150 000
+Zubrus Dainius	7	1	1	0	0	0	13	30	5	-1	6	0	0	1	49 	415 000
+NY Rangers
+Anisimov Artem	7	0	3	0	0	0	3	6	0	0	2	1	0	0	24 	382 000
+Boyle Brian	5	3	0	0	2	0	18	19	5	0	9	1	1	0	57 	423 000
+Callahan Ryan	7	2	2	0	0	0	17	30	8	2	6	0	1	0	66 	552 500
+Dubinsky Brandon	7	0	1	0	0	0	11	10	4	2	14	0	0	0	20 	408 000
+Fedotenko Ruslan	7	0	1	0	0	0	7	6	8	0	2	0	0	0	23 	262 000
+Gaborik Marian	7	1	2	0	0	0	13	5	2	-1	2	0	0	0	28 	506 500
+Hagelin Carl	4	0	1	0	0	0	8	5	3	0	5	0	0	0	15 	420 000
+Kreider Chris	5	1	0	0	1	0	8	2	1	1	2	0	0	0	20 	204 500
+Mitchell John	7	0	0	0	0	0	0	8	1	-2	0	0	0	0	5 	239 000
+Prust Brandon	7	0	1	0	0	0	9	25	5	-1	19	0	0	0	45 	310 000
+Richards Brad	7	2	3	0	0	0	31	8	10	-2	2	1	0	0	56 	496 000
+Rupp Michael	7	0	0	0	0	0	3	10	3	0	14	0	0	0	10 	215 000
+Stepan Derek	7	1	3	0	0	0	19	11	6	0	0	0	0	1	46 	459 000
+Zuccarello Mats	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0 	190 500
+Philadelphia
+Betts Blair	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0 	150 000
+Briere Danny	6	5	3	0	0	0	14	12	3	-5	2	0	1	1	65 	487 500
+Cousins Nick	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0 	150 000
+Couturier Sean	6	3	1	0	0	0	11	16	4	3	0	0	0	1	53 	371 500
+Giroux Claude	6	6	8	1	0	0	28	6	6	6	11	0	2	1	125 	621 000
+Hartnell Scott	6	2	3	0	1	0	12	25	1	-1	9	0	0	0	55 	514 500
+Jagr Jaromir	6	1	6	0	1	0	19	1	0	-3	2	1	0	0	46 	432 500
+Laperriere Ian	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0 	150 000
+Mathers Derek	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0 	150 000
+Noebels Marcel	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0 	150 000
+Ranford Brendan	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0 	150 000
+Read Matt	6	2	2	0	1	0	4	3	3	1	4	0	0	0	36 	425 000
+Rinaldo Zac	4	0	0	0	0	0	2	9	0	-2	46	0	0	0	4 	235 000
+Schenn Brayden	6	2	4	0	0	0	6	19	2	-3	4	0	0	1	55 	387 500
+Sestito Tom	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0 	150 000
+Shelley Jody	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0 	150 000
+Simmonds Wayne	6	1	3	0	0	0	8	16	5	-3	26	0	0	0	33 	433 000
+Talbot Max	6	3	1	2	0	0	7	18	2	5	0	0	0	0	59 	410 500
+van Riemsdyk James	2	0	0	0	0	0	0	3	0	0	0	0	0	0	2 	356 000
+Voracek Jakub	6	2	5	0	0	1	13	11	1	1	6	0	0	0	61 	417 500
+Wellwood Eric	6	0	0	0	0	0	4	8	3	1	0	0	0	0	17 	301 000
+Phoenix
+Bissonnette Paul	2	0	0	0	0	0	0	3	1	0	15	0	0	0	-3 	154 000
+Boedker Mikkel	6	2	2	0	0	2	13	11	1	2	0	0	0	2	52 	294 000
+Bolduc Alexandre	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0 	150 000
+Brule Gilbert	5	2	1	0	0	0	3	9	0	2	0	2	0	0	31 	361 000
+Chipchura Kyle	5	1	1	0	0	0	5	10	2	3	2	0	0	0	30 	253 000
+Doan Shane	6	1	1	0	0	0	17	31	7	1	4	0	1	0	50 	474 500
+Gordon Boyd	6	0	2	0	0	0	2	7	6	0	0	0	0	0	22 	309 000
+Hanzal Martin	3	1	0	0	0	1	6	9	3	0	2	0	1	0	23 	445 000
+Korpikoski Lauri	4	0	0	0	0	0	4	10	4	0	0	0	0	0	13 	364 000
+Langkow Daymond	6	0	3	0	0	0	4	16	7	4	2	0	0	0	40 	349 000
+MacLean Brett	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0 	179 000
+Miele Andy	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0 	150 000
+Pouliot Marc-Antoine	2	0	1	0	0	0	1	1	0	1	0	0	0	0	8 	186 000
+Pyatt Taylor	6	2	1	0	0	0	8	19	10	-3	2	0	0	0	37 	276 000
+Torres Raffi	3	1	1	0	0	0	7	12	4	2	2	1	0	0	30 	332 000
+Vermette Antoine	6	4	1	0	0	0	10	24	6	-3	8	1	1	0	62 	401 000
+Vrbata Radim	6	0	1	0	0	0	13	6	3	-4	0	0	0	0	13 	460 000
+Whitney Ray	6	1	2	0	0	0	17	7	1	0	4	1	0	0	37 	487 500
+St. Louis
+Arnott Jason	5	1	0	0	0	0	8	4	0	0	0	0	0	0	15 	334 000
+Backes David	5	1	0	0	0	0	5	8	2	-3	6	0	0	0	22 	486 000
+Berglund Patrik	5	3	4	0	0	0	12	6	5	4	2	1	0	1	62 	426 500
+Cracknell Adam	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0 	202 000
+Crombeen B.J.	4	1	0	0	0	0	4	4	1	2	6	0	0	0	23 	202 500
+D'Agostini Matt	1	0	0	0	0	0	1	1	1	0	0	0	0	0	3 	280 000
+Grachev Evgeny	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0 	150 000
+Langenbrunner Jamie	5	1	0	0	0	0	5	2	1	1	4	1	0	0	20 	326 500
+McDonald Andy	5	4	4	0	1	0	18	4	3	2	4	0	0	2	72 	442 000
+Nichol Scott	5	0	1	0	0	0	5	17	5	1	6	0	0	0	29 	202 000
+Oshie T.J.	5	0	3	0	0	0	8	9	7	-1	0	0	0	1	33 	482 000
+Perron David	5	1	2	0	1	0	10	7	3	0	4	0	1	0	38 	452 500
+Porter Chris	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0 	227 000
+Reaves Ryan	1	0	0	0	0	0	1	4	0	0	0	0	0	0	3 	204 000
+Schwartz Jaden	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0 	185 000
+Sobotka Vladimir	5	1	1	0	1	0	4	12	5	0	15	0	0	0	25 	341 000
+Steen Alex	5	1	2	0	1	0	8	1	3	2	2	0	0	0	32 	442 000
+Stewart Chris	4	0	0	0	0	0	7	4	1	-1	5	0	0	0	11 	343 500
+Washington
+Aucoin Keith	7	0	1	0	0	0	5	5	1	-2	2	0	0	0	13 	203 500
+Backstrom Nicklas	6	1	3	0	0	1	12	7	8	2	16	0	1	0	47 	489 500
+Beagle Jay	7	1	0	0	0	0	13	14	9	1	4	0	0	0	37 	238 000
+Brouwer Troy	7	2	0	0	1	0	11	23	8	-1	8	0	0	1	51 	411 000
+Chimera Jason	7	1	1	0	0	0	11	14	2	2	6	0	0	0	39 	437 000
+Halpern Jeff	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0 	224 000
+Hendricks Matt	7	1	0	0	0	0	10	30	4	1	4	0	0	0	39 	328 000
+Johansson Marcus	7	1	2	0	0	0	15	16	5	-3	0	0	0	1	38 	369 500
+Knuble Mike	4	1	1	0	0	0	2	3	0	2	2	0	0	0	20 	250 000
+Laich Brooks	7	1	3	0	0	0	14	5	11	2	2	0	0	1	47 	417 000
+Ovechkin Alex	7	2	3	0	0	0	28	31	4	0	4	1	0	0	67 	561 000
+Perreault Mathieu	4	0	0	0	0	0	1	7	2	-1	0	0	0	0	6 	334 000
+Semin Alexander	7	3	0	0	1	0	16	2	4	-3	4	0	1	0	40 	465 000
+Sjogren Mattias	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0 	150 000
+Ward Joel	7	1	2	0	0	1	11	12	2	1	0	0	0	1	40 	291 500

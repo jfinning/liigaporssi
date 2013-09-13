@@ -1,0 +1,139 @@
+<style type="text/css">
+
+body {
+    font-size: 15px;
+}
+
+#container {
+    width: 53em;
+    background: #F4ECD9;
+    text-align: left;
+    border: 1px solid #D8D8D8;
+    margin: 0 auto;
+}
+
+#nav, #nav ul {
+    float: left;
+    width: 53em;
+    list-style: none;
+    line-height: 1;
+    background: white;
+    font-weight: bold;
+    padding: 0;
+    border: solid #304B90;
+    border-width: 1px 0;
+    margin: 0 0 0 0;
+    cursor: default;
+}
+
+#nav a {
+    display: block;
+    color: #0000D0;
+    text-decoration: none;
+    padding: 0.15em 2em;
+}
+
+#nav a.daddy {
+    background: center right no-repeat;
+}
+
+#nav li {
+    float: left;
+    padding: 0;
+}
+
+/* This is to change boxes */
+#nav li ul {
+    position: absolute;
+    left: -999em;
+    height: auto;
+    width: 14.4em;
+    font-weight: normal;
+    border-width: 0.25em;
+    margin: 0;
+}
+
+#nav li li {
+    width: 14.4em
+}
+
+#nav li ul ul {
+    margin: -1.75em 0 0 14em;
+}
+
+#nav li:hover ul ul, #nav li.sfhover ul ul, #nav li.sfhover ul ul ul {
+    left: -999em;
+}
+
+#nav li:hover ul, #nav li li:hover ul, #nav li.sfhover ul, #nav li li.sfhover ul, #nav li li li.sfhover ul {
+    left: auto;
+}
+
+#nav li:hover, #nav li.sfhover {
+    background: #D8D8D8 ;
+}
+
+a {
+    color : white;
+}
+a:hover {
+    text-decoration: none;
+}
+
+table {
+	border-width: 1px;
+	border-spacing: 0px;
+	border-style: dotted;
+	border-color: gray;
+	border-collapse: separate;
+	background-color: #D3D3D3;
+	font-size: 15px;
+}
+table th {
+	border-width: 1px;
+	padding: 1px;
+	border-style: none;
+	border-color: gray;
+	background-color: black;
+	color : white;
+	-moz-border-radius: 0px 0px 0px 0px;
+}
+table th.asc {
+	background-color: red;
+}
+table th.des {
+	background-color: green;
+}
+table td {
+	border-width: 1px;
+	padding: 1px;
+	border-style: none;
+	border-color: gray;
+	background-color: white;
+	-moz-border-radius: 0px 0px 0px 0px;
+}
+table td.td1 {
+	background-color: white;
+}
+table td.td2 {
+	background-color: #D3D3D3;
+}
+</style>
+
+<script type="text/javascript"><!--//--><![CDATA[//><!--
+
+sfHover = function() {
+	var sfEls = document.getElementById("nav").getElementsByTagName("LI");
+	for (var i=0; i<sfEls.length; i++) {
+		sfEls[i].onmouseover=function() {
+			this.className+=" sfhover";
+		}
+		sfEls[i].onmouseout=function() {
+			this.className=this.className.replace(new RegExp(" sfhover\\b"), "");
+		}
+	}
+}
+if (window.attachEvent) window.attachEvent("onload", sfHover);
+
+//--><!]]></script>
+

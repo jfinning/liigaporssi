@@ -1,0 +1,89 @@
+1.	To 12.09.	18:30	Blues - TPS				
+2.		18:30	SaiPa - KalPa				
+3.	Pe 13.09.	18:30	HIFK - Blues				
+4.		18:30	HPK - Pelicans				
+5.		18:30	JYP - Karpat				
+6.		18:30	Tappara - Ilves				
+7.		18:30	Assat - Lukko				
+8.	La 14.09.	17:00	Ilves - HPK				
+9.		16:00	KalPa - JYP				
+10.		18:30	Karpat - SaiPa				
+11.		17:00	Lukko - Jokerit				
+12.		17:00	Pelicans - Tappara				
+13.		17:00	TPS - Assat				
+14.	Su 15.09.	16:00	Jokerit - HIFK				
+15.	Ti 17.09.	18:30	HPK - Lukko				
+16.		18:30	JYP - Ilves				
+17.		18:30	Pelicans - Jokerit				
+18.		18:30	SaiPa - Blues				
+19.		18:30	Tappara - KalPa				
+20.	To 19.09.	18:30	HIFK - Assat				
+21.		18:30	Ilves - Lukko				
+22.		18:30	Jokerit - Karpat				
+23.		18:30	TPS - Pelicans				
+24.	Pe 20.09.	18:30	Blues - JYP				
+25.		18:30	KalPa - Ilves				
+26.		18:30	SaiPa - HPK				
+27.	La 21.09.	17:00	HPK - Tappara				
+28.		17:00	JYP - Jokerit				
+29.		17:00	Karpat - TPS				
+30.		17:00	Lukko - HIFK				
+31.		18:30	Pelicans - SaiPa				
+32.		17:00	Assat - Blues				
+33.	Ma 23.09.	18:30	Blues - Pelicans				
+34.	Ti 24.09.	18:30	Jokerit - HPK				
+35.		18:30	KalPa - Assat				
+36.		18:30	Tappara - TPS				
+37.	Ke 25.09.	18:30	Blues - Ilves				
+38.		18:30	Karpat - Pelicans				
+39.	To 26.09.	18:30	Jokerit - Lukko				
+40.		18:30	SaiPa - Assat				
+41.		18:30	TPS - HIFK				
+42.	Pe 27.09.	18:30	HPK - Karpat				
+43.		18:30	Lukko - Blues				
+44.		18:30	Pelicans - JYP				
+45.		18:30	Tappara - Jokerit				
+46.	La 28.09.	17:00	HIFK - SaiPa				
+47.		16:00	Ilves - Karpat				
+48.		18:30	JYP - HPK				
+49.		17:00	KalPa - TPS				
+50.		17:00	Assat - Tappara				
+51.	Ma 30.09.	18:30	Blues - KalPa				
+Lokakuu
+#	Pvm	Kello	Ottelu	Tulos	JA/VL	Lisätiedot	Yleisöä
+52.	Ti 01.10.	18:30	HIFK - Blues				
+53.		18:30	HPK - KalPa				
+54.		18:30	Jokerit - Ilves				
+55.		18:30	Karpat - Assat				
+56.		18:30	Lukko - Pelicans				
+57.		18:30	Tappara - JYP				
+58.		18:30	TPS - SaiPa				
+59.	To 03.10.	18:30	Karpat - Tappara				
+60.	Pe 04.10.	18:30	Ilves - HIFK				
+61.		18:30	JYP - Lukko				
+62.		18:30	Pelicans - HPK				
+63.		18:30	SaiPa - Jokerit				
+64.		18:30	Assat - TPS				
+65.	La 05.10.	17:00	HIFK - Lukko				
+66.		17:00	HPK - SaiPa				
+67.		17:00	Jokerit - Assat				
+68.		17:00	KalPa - Karpat				
+69.		17:00	Tappara - Blues				
+70.		17:00	TPS - Ilves				
+71.	Ti 08.10.	18:30	Ilves - Pelicans				
+72.		18:30	Jokerit - JYP				
+73.		18:30	KalPa - HIFK				
+74.		18:30	Lukko - Karpat				
+75.		18:30	Assat - HPK				
+76.	To 10.10.	18:30	Blues - Jokerit				
+77.		18:30	HIFK - TPS				
+78.		18:30	Tappara - Pelicans				
+79.	Pe 11.10.	18:30	HPK - Ilves				
+80.		18:30	JYP - KalPa				
+81.		18:30	Pelicans - Assat				
+82.		18:30	SaiPa - Tappara				
+83.	La 12.10.	17:00	KalPa - SaiPa				
+84.		17:00	Karpat - Jokerit				
+85.		17:00	Lukko - HIFK				
+86.		17:00	TPS - Blues				
+87.		17:00	Assat - JYP

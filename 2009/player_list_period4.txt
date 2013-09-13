@@ -1,0 +1,563 @@
+Blues                                 
+Maalivahdit 		O     LPP     Arvo    AM
+Iilahti Jonathan 	0     0       150 000
+Suomalainen Erno 	0     0       150 000
+Tarkki Iiro 		7     101     385 000
+Tolvanen Mikko 		1     -1      250 000
+Puolustajat 		O     LPP     Arvo    AM
+Alanko Rami 		0     0       150 000
+Grondahl Ari 		0     0       150 000
+Heiskanen Santeri 	2     9       285 000
+Huczkowski Miika 	8     48      275 000
+Iliakis Dan 		8     35      255 000
+Kokko Petri 		0     0       150 000
+Kurki Mikael 		7     22      250 000
+Laakso Aleksi 		1     10      300 000
+Lajunen Ville 		8     79      350 000
+Mezei Branislav 	8     24      250 000
+Nakyva Kristian 	0     0       160 000
+Ronnberg Joonas 	6     11      245 000
+Hyokkaajat 		O     LPP     Arvo    AM
+Blomqvist Sami 		0     0       250 000
+Immonen Jarkko 		0     0       300 000
+Kahkonen Toni 		8     67      365 000
+Lajunen Jani 		8     40      265 000
+Lammassaari Petri 	8     56      375 000
+Lostedt Patrik 		0     0       150 000
+Miettinen Camilo 	7     55      300 000
+Murphy Ryan 		0     0       150 000
+Mutanen Sami 		0     0       150 000
+Makiaho Toni 		8     47      340 000
+Nattinen Joonas 	4     4       235 000
+Puustinen Juuso 	5     -2      340 000
+Rajamaki Erkki 		8     50      300 000
+Ranta Roope 		8     53      200 000
+Sallinen Jere 		5     7       295 000
+Sallinen Tomi 		7     40      305 000
+Spilar Gabriel 		2     8       300 000
+Stahlhammar Tomi 	3     13      170 000
+Uhlback Jaakko 		8     32      255 000
+Uusivirta Matti 	0     0       155 000
+Virkkunen Valtteri 	0     0       160 000
+Ohman Stefan 		7     27      370 000
+HIFK
+HIFK
+Maalivahdit 		O     LPP     Arvo    AM
+Ahlqvist Aleksis 	0     0       200 000
+Lundell Jan 		1     15      300 000
+Nieminen Jani 		0     0       150 000
+Noronen Mika 		7     60      425 000
+Tuohimaa Frans 		0     0       200 000
+Puolustajat 		O     LPP     Arvo    AM
+Ahonen Rony 		1     0       150 000
+Clarke Dale 		8     85      360 000
+Haverinen Joni 		6     9       200 000
+Jarventie Martti 	8     45      405 000
+Kankaanpera Markus 	7     34      355 000
+Kurvinen Mikko 		6     14      200 000
+Lupaschuk Ross 		5     32      350 000
+Melart Ilari 		0     0       185 000
+Purolinna Juha-Petteri 	0     0       150 000
+Soderholm Toni 		7     28      370 000
+Tuohilampi Kristian 	0     0       150 000
+Hyokkaajat 		O     LPP     Arvo    AM
+Ahtola Jerry 		8     34      405 000
+Granlund Mikael 	8     61      415 000
+Haataja Juha-Pekka 	8     56      410 000
+Hirschovits Kim 	8     76      415 000
+Jarvinen Turo 		8     17      280 000
+Kivioja Henri 		0     0       150 000
+Kuhta Kimmo 		8     77      440 000
+Liivik Siim 		1     1       200 000
+Loppi Matias 		0     0       150 000
+Luttinen Arttu 		8     55      400 000
+Nyholm Robert 		0     0       170 000
+Petrell Lennart 	7     16      400 000
+Piiparinen Niko 	0     0       150 000
+Poysti Eetu 		0     0       155 000
+Ramstedt Teemu 		8     57      430 000
+Talaja Roope 		0     0       150 000
+Tallberg Teemu 		0     0       185 000
+Toykkala Joni 		8     15      300 000
+Vilkman Samu 		2     0       200 000
+Wirtanen Petteri 	6     32      395 000
+Warn Max 		8     51      280 000
+HPK
+HPK
+Maalivahdit 		O     LPP     Arvo    AM
+Lassila Teemu 		8     67      415 000
+Metsola Juha 		2     5       250 000
+Rinne Rasmus 		0     0       150 000
+Puolustajat 		O     LPP     Arvo    AM
+Alatalo Santeri 	2     24      150 000
+Hietikko Ville 		0     0       150 000
+Holmberg Aleksi 	0     0       150 000
+Honkanen Jani 		9     9       235 000
+Jarvinen Pasi 		0     0       150 000
+Korhonen Risto 		0     0       150 000
+Karmeniemi Lauri 	2     4       150 000
+Laamanen Jukka 		9     86      385 000
+Maenpaa Mikko 		7     39      430 000
+Makela Tuukka 		8     18      200 000
+Syvasalmi Kai 		9     86      320 000
+Tuulola Marko 		8     59      400 000
+Hyokkaajat 		O     LPP     Arvo    AM
+Honka Juuso 		0     0       150 000
+Hamalainen Ville 	9     50      315 000
+Happola Toni 		9     30      285 000
+Jarvinen Jan-Mikael 	0     0       150 000
+Karevaara Joona 	2     3       150 000
+Kemppainen Joonas 	9     25      290 000
+Kolehmainen Janne 	9     21      250 000
+Laakkonen Janne 	9     82      405 000
+Louhi Jyrki 		9     34      300 000
+Lahteenmaki Sami 	1     0       150 000
+Muhonen Tuomas 		8     21      230 000
+Mannikko Miikka 	9     42      360 000
+Nieminen Niko 		8     22      285 000
+Sailio Jari 		8     9       285 000
+Siren Niklas 		0     0       150 000
+Turtiainen Jaakko 	0     0       150 000
+Vihko Joonas 		9     105     400 000
+Viinamaki Miika 	0     0       150 000
+Viitaluoma Ville 	9     82      410 000
+Virta Tony 		0     0       150 000
+Ilves
+Ilves
+Maalivahdit 		O     LPP     Arvo    AM
+Aittokallio Sami 	0     0       150 000
+Hurme Jani 		4     11      150 000
+Korhonen Markus 	0     0       150 000
+Pitkamaki Juha 		4     27      150 000
+Simola Jaakko 		0     0       150 000
+Toivonen Hannu 		0     0       150 000
+Puolustajat 		O     LPP     Arvo    AM
+Aalto Jouni 		0     0       150 000
+Akkanen Juuso 		6     15      150 000
+Bruun Antti 		6     43      150 000
+Glenn Ryan 		8     26      150 000
+Hulkkonen Antti 	0     0       150 000
+Kuukka Mikko 		8     46      150 000
+Laine Ville 		0     0       150 000
+Nappila Jarkko 		3     10      150 000
+Petre Henrik 		8     53      150 000
+Petrilainen Pasi 	0     0       150 000
+Seikola Markus 		6     82      150 000
+Tukio Arto 		0     0       150 000
+Hyokkaajat 		O     LPP     Arvo    AM
+Alanen Johannes 	7     18      150 000
+Antonen Juuso 		0     0       150 000
+Anttila Marko 		8     44      150 000
+Genoway Colby 		8     61      150 000
+Johner Dustin 		0     0       150 000
+Kauvosaari Jarkko 	8     42      150 000
+Keranen Michael 	0     0       150 000
+Korhonen Ville 		8     66      150 000
+Lessard Junior 		0     0       150 000
+Marjamaki Masi 		0     0       150 000
+Myttynen Matias 	4     2       150 000
+Maattanen Pasi 		8     49      150 000
+Niinimaki Jesse 	8     47      150 000
+Pellinen Jaakko 	8     54      150 000
+Pesonen Jussi 		0     0       150 000
+Rajala Toni 		0     0       150 000
+Rask Joonas 		6     28      150 000
+Salonen Pasi 		7     30      150 000
+Sandell Sami 		0     0       150 000
+Sandvik Henri 		5     9       150 000
+Snellman Niko 		5     12      150 000
+Snellman Ville 		7     26      150 000
+Sointu Matias 		0     0       150 000
+Soloduhin Vjatsheslav 	0     0       150 000
+Jokerit
+Jokerit
+Maalivahdit 		O     LPP     Arvo    AM
+Kautto Jani 		0     0       150 000
+Riksman Juuso 		7     26      405 000
+Stromberg Mikko 	5     22      250 000
+Puolustajat 		O     LPP     Arvo    AM
+Brooks Alex 		8     26      265 000
+Eronen Teemu 		7     39      255 000
+Kalteva Mikko 		9     17      200 000
+Kauppinen Marko 	9     65      300 000
+Kivisto Tommi 		7     10      245 000
+Koivisto Tom 		5     20      310 000
+Manelius Nico 		0     0       150 000
+Malkia Simo 		0     0       275 000
+Niemi Antti-Jussi 	9     18      285 000
+Rullier Joe 		0     0       200 000
+Olander Jere 		0     0       150 000
+Hyokkaajat 		O     LPP     Arvo    AM
+Battaglia Bates 	9     27      250 000
+Ben-Amor Semir 		6     6       185 000
+Bremberg Fredrik 	9     40      380 000
+Hauhtonen Janne 	8     22      225 000
+Helenius Jani-Petteri 	0     0       150 000
+Hentunen Jukka 		9     68      415 000
+Juutilainen Jan-Mikael 	2     0       150 000
+Lahti Janne 		9     46      340 000
+Lind Juha 		9     23      230 000
+Maki Tomi 		9     32      205 000
+Nylander Michael 	9     47      350 000
+Pallassalo Tomi 	0     0       150 000
+Pirnes Esa 		9     26      360 000
+Pitkanen Ilmari 	0     0       150 000
+Pulkkinen Teemu 	0     0       150 000
+Pulkkinen Toni 		0     0       150 000
+Rita Jani 		9     51      300 000
+Saarinen Ossi 		8     19      210 000
+Valtonen Tomek 		0     0       150 000
+Vauhkonen Olavi 	3     15      150 000
+JYP
+JYP
+Maalivahdit 		O     LPP     Arvo    AM
+Kaulio Niko 		0     0       150 000
+Laitinen Jarno 		0     0       150 000
+Tuokkola Pekka 		6     60      440 000
+Wallinheimo Sinuhe 	3     44      385 000
+Puolustajat 		O     LPP     Arvo    AM
+Jaatinen Antti 		7     21      215 000
+Kaijomaa Kalle 		9     59      325 000
+Kantee Kevin 		7     25      205 000
+Koistinen Matti 	0     0       150 000
+Koskinen Kalle 		9     45      385 000
+Malmivaara Olli 	3     4       320 000
+Vatanen Sami 		9     64      400 000
+Viitanen Mikko 		5     23      250 000
+Valivaara Jyrki 	4     45      300 000
+Hyokkaajat 		O     LPP     Arvo    AM
+Asplund Turo 		0     0       150 000
+Hakkarainen Mikko 	7     16      285 000
+Heikkinen Timo-Pekka 	0     0       150 000
+Hytonen Juha-Pekka 	9     105     465 000
+Ikonen Jasse 		1     0       150 000
+Jormakka Pekka 		0     0       150 000
+Jaaskelainen Jari 	6     24      300 000
+Kariya Steve 		9     45      445 000
+Lahti Miika 		9     53      260 000
+Louhivaara Ossi 	9     65      390 000
+Makkonen Jussi 		9     59      410 000
+Pesonen Harri 		0     0       150 000
+Pihlman Tuomas 		0     0       250 000
+Pihlstrom Antti 	9     108     450 000
+Piiroinen Samuli 	0     0       150 000
+Poukkula Markus 	0     0       150 000
+Riska Filip 		6     46      290 000
+Sipilainen Olli 	9     52      275 000
+Tuppurainen Jani 	9     65      400 000
+Virpio Jouni 		0     0       150 000
+Virtanen Antti 		7     24      310 000
+Virtanen Jonne 		0     0       150 000
+Vanttinen Tuomas 	8     23      320 000
+KalPa
+KalPa
+Maalivahdit 		O     LPP     Arvo    AM
+Ahonen Ari 		6     25      420 000
+Jarvinen Mika 		4     39      360 000
+Simila Petteri 		0     0       200 000
+Puolustajat 		O     LPP     Arvo    AM
+Andersson Adam 		0     0       440 000
+Hirvonen Pasi 		6     11      160 000
+Hyvarinen Ville 	0     0       200 000
+Jalasvaara Janne 	9     60      345 000
+Kukkonen Mikko 		4     16      200 000
+Lappalainen Lasse 	0     0       150 000
+Seppanen Timo 		9     36      300 000
+Stromberg Mika 		9     47      375 000
+Timonen Jussi 		8     25      300 000
+Varakas Ville 		9     50      325 000
+Hyokkaajat 		O     LPP     Arvo    AM
+Charleston Daniel 	0     0       150 000
+Dahlman Toni 		7     28      375 000
+Hartikainen Teemu 	9     81      350 000
+Hyvarinen Toni 		5     3       255 000
+Jokinen Tommi 		8     32      260 000
+Kapanen Sami 		9     64      460 000
+Kerman Kalle 		9     58      420 000
+Kiiskinen Tuomas 	9     53      435 000
+Laakso Tapio 		9     55      365 000
+Malinen Jarkko 		0     0       150 000
+Miettinen Tommi 	9     39      410 000
+Nuutinen Mikko 		0     0       150 000
+Pakarinen Iiro 		6     28      250 000
+Rasi Petteri 		0     0       150 000
+Riekkinen Joonas 	6     17      215 000
+Rissanen Jaakko 	5     24      260 000
+Sahlstedt Kalle 	9     57      420 000
+Salo Timo 		8     20      260 000
+Karpat
+Karpat
+Maalivahdit 		O     LPP     Arvo    AM
+Karhunen Tomi 		0     0       150 000
+Koivisto Petri 		0     0       320 000
+Rautiola Antti 		0     0       150 000
+Tarkki Tuomas 		8     47      360 000
+Puolustajat 		O     LPP     Arvo    AM
+Aalto Teemu 		8     18      355 000
+Forrest Justin 		0     0       150 000
+Gronholm Ossi-Petteri 	0     0       150 000
+Jokinen Juho 		3     8       250 000
+Jushkevitsh Dmitri 	8     29      300 000
+Korpikari Oskari 	6     29      265 000
+Lehtonen Mikko 		8     56      360 000
+Liljeblad Joni 		0     0       150 000
+Mikkola Ilkka 		8     32      365 000
+Niemela Mikko 		0     0       150 000
+Ohtamaa Atte 		7     17      210 000
+Ylonen Antti 		0     0       200 000
+Hyokkaajat 		O     LPP     Arvo    AM
+Aarnio Antti 		7     10      200 000
+Alikoski Mikko 		6     12      175 000
+Donskoi Joonas 		0     0       190 000
+Junttila Julius 	4     31      190 000
+Karppinen Veikko 	5     15      185 000
+Kaspar Lukas 		8     48      350 000
+Keranen Juho 		5     10      175 000
+Kiilholma Juha 		8     1       220 000
+Komulainen Joonas 	1     0       150 000
+Koskenkorva Kimmo 	8     25      300 000
+Kuusela Kristian 	7     17      375 000
+Normio Teemu 		6     10      250 000
+Rosa Pavel 		4     27      415 000
+Saarenheimo Pekka 	6     19      230 000
+Shvidki Denis 		0     0       150 000
+Viinanen Mika 		8     21      300 000
+Viitakoski Vesa 	5     13      295 000
+Viuhkola Jari 		8     51      400 000
+Lukko
+Lukko
+Maalivahdit 		O     LPP     Arvo    AM
+Heikkila Patrik 	0     0       150 000
+Raanta Antti 		4     33      150 000
+Tellqvist Mikael 	5     35      425 000
+Vehanen Petri 		0     0       150 000
+Puolustajat 		O     LPP     Arvo    AM
+Cook Charlie 		8     49      400 000
+Honkaheimo Otto 	9     55      300 000
+Kovanen Tommi 		2     14      300 000
+Lehikoinen Esa 		0     0       150 000
+Nevalainen Patrik 	9     26      215 000
+Pettinen Tomi 		0     0       350 000
+Rantanen Anssi 		9     34      200 000
+Tikkanen Harri 		5     36      385 000
+Vidgren Tony 		9     14      160 000
+Virtanen Jesse 		1     1       150 000
+Hyokkaajat 		O     LPP     Arvo    AM
+Aaltonen Nico 		6     3       210 000
+Elo Eero 		5     20      300 000
+Jasu Juhani 		9     56      270 000
+Kangasmaki Aki 		0     0       150 000
+Keranen Janne 		9     38      375 000
+Kivimaki Samuli 	5     7       165 000
+Laaksonen Antti 	9     38      380 000
+Laaksonen Jere 		0     0       150 000
+McLean Kurtis 		4     41      455 000
+Morrison Justin 	9     56      435 000
+Mustonen Tomi 		0     0       150 000
+Nabb Kim 		9     22      200 000
+Nurmi Teemu 		8     31      315 000
+Palola Olli 		9     10      215 000
+Petruzalek Jakub 	8     79      415 000
+Rajala Juuso 		0     0       150 000
+Seitsonen Aki 		6     3       160 000
+Tukonen Lauri 		9     60      375 000
+Tuomainen Miikka 	5     34      300 000
+Pelicans
+Pelicans
+Maalivahdit 		O     LPP     Arvo    AM
+Hovinen Niko 		4     45      150 000
+Huumonen Tuukka 	0     0       150 000
+Kuusela Joonas 		0     0       150 000
+Lamothe Marc 		4     34      150 000
+Nikkila Tommi 		2     22      150 000
+Puolustajat 		O     LPP     Arvo    AM
+Forsstrom Jani 		7     41      150 000
+Helenius Sami 		6     17      150 000
+Hurri Joonas 		0     0       150 000
+Jalvanti Joonas 	9     33      150 000
+Kakko Erik 		7     14      150 000
+Kousa Mikko 		3     20      150 000
+Latvala Jan 		9     40      150 000
+Laurila Henri 		0     0       150 000
+Suhonen Samuli 		0     0       150 000
+Tuhkanen Niko 		4     14      150 000
+Uotila Juha 		9     47      150 000
+Hyokkaajat 		O     LPP     Arvo    AM
+Aaltonen Juhamatti 	9     121     150 000
+Corazzini Carl 		0     0       150 000
+Heino Henri 		9     33      150 000
+Jantunen Marko 		8     37      150 000
+Kauppila Jari 		9     45      150 000
+Koivunen Toni 		0     0       150 000
+Paakkolanvaara Tommi 	3     0       150 000
+Piispanen Arsi 		9     25      150 000
+Poyhonen Marko 		7     16      150 000
+Rinkinen Teemu 		5     17      150 000
+Saarinen Jesse 		9     22      150 000
+Santavuori Tuomas 	4     14      150 000
+Sihvonen Kari 		9     18      150 000
+Sopanen Iiro 		0     0       150 000
+Sopanen Vili 		8     67      150 000
+Tavi Janne 		1     3       150 000
+Tyrvainen Antti 	9     39      150 000
+Tahtinen Markku 	9     70      150 000
+SaiPa
+SaiPa
+Maalivahdit 		O     LPP     Arvo    AM
+Hostikka Ville 		2     7       150 000
+Myllyniemi Jere 	9     66      150 000
+Vaisanen Timo 		0     0       150 000
+Puolustajat 		O     LPP     Arvo    AM
+Backman Simon 		9     13      150 000
+Koponen Marlo 		7     -3      150 000
+Levokari Pauli 		9     36      150 000
+Lippojoki Jarno 	1     3       150 000
+Mielonen Juho 		9     83      150 000
+Nyrhinen Antti 		0     0       150 000
+Pukka Mikko 		9     15      150 000
+Pulkki Simo 		0     0       150 000
+Sondell Daniel 		9     86      150 000
+Tuominen Joni 		1     3       150 000
+Hyokkaajat 		O     LPP     Arvo    AM
+Barney Scott 		9     61      150 000
+Grunn Carlo 		8     40      150 000
+Hamalainen Roope 	0     0       150 000
+Jasko Tomas 		7     24      150 000
+Jokila Jarmo 		0     0       150 000
+Jokinen Olli 		0     0       150 000
+Jouhkimainen Miikka 	0     0       150 000
+Kaijomaa Juuso 		0     0       150 000
+Kaksonen Elmeri 	9     26      150 000
+Koho Ville 		9     22      150 000
+Koskinen Petri 		9     22      150 000
+Koskiranta Jarno 	9     69      150 000
+Koskiranta Tero 	7     24      150 000
+Leivo Tomi 		0     0       150 000
+Lofman Anssi 		9     24      150 000
+Mankinen Jesse 		0     0       150 000
+Noyranen Pentti 	5     9       150 000
+Paalanen Ville 		0     0       150 000
+Pohl Petr 		6     15      150 000
+Redenbach Tyler 	9     65      150 000
+Tiainen Jussi 		0     0       150 000
+Toporowski Shayne 	8     49      150 000
+Yli-Torkko Joni 	4     8       150 000
+Tappara
+Tappara
+Maalivahdit 		O     LPP     Arvo    AM
+Edelmann Mikael 	0     0       150 000
+Lehto Mika 		0     0       250 000
+Maenalanen Veli-Heikki 	0     0       150 000
+Seppanen Teemu 		0     0       150 000
+Sateri Harri 		9     107     395 000
+Puolustajat 		O     LPP     Arvo    AM
+Halme Jussi 		8     63      250 000
+Ilvonen Harri 		9     54      300 000
+Korhonen Lasse 		0     0       150 000
+Leimu Juha 		9     105     335 000
+Malkamaki Miko 		0     0       150 000
+Mantyla Tuukka 		8     73      385 000
+Pentikainen Atte 	8     42      215 000
+Saravo Pekka 		8     53      300 000
+Turkulainen Jesse 	4     18      200 000
+Hyokkaajat 		O     LPP     Arvo    AM
+Enlund Jonas 		9     75      410 000
+Goren Lee 		0     0       150 000
+Guolla Stephen 		3     18      300 000
+Hughes John 		0     0       150 000
+Junnila Jyri 		9     26      245 000
+Kangasniemi Antti 	9     30      190 000
+Karjalainen Joni 	0     0       150 000
+Koskela Timo 		9     47      300 000
+Koskinen Joonas 	9     49      280 000
+Lehtera Jori 		9     86      440 000
+Lucenius Niclas 	9     89      350 000
+Lahde Nestori 		9     35      195 000
+Matzka Scott 		0     0       150 000
+Nieminen Ville 		8     62      355 000
+Ojanen Janne 		0     0       200 000
+Pekkala Tomi 		9     74      245 000
+Peltola Jukka 		9     32      200 000
+Peltonen Tomi 		0     0       165 000
+Pyymaki Jarkko 		6     12      185 000
+Ryhanen Sami 		0     0       150 000
+Stromberg Kim 		1     1       250 000
+Tuominen Martin 	0     0       150 000
+TPS
+TPS
+Maalivahdit 		O     LPP     Arvo    AM
+Engren Atte 		5     80      340 000
+Leggio David 		5     40      350 000
+Ortio Joni 		0     0       150 000
+Puolustajat 		O     LPP     Arvo    AM
+Aaltonen Mikael 	0     0       150 000
+Berg Aki-Petteri 	0     0       250 000
+Campbell Darcy 		0     0       150 000
+Eronen Kimmo 		0     0       150 000
+Halonen Antti 		9     64      300 000
+Johnsson Per 		0     0       150 000
+Jarvinen Joonas 	9     19      215 000
+Kluuskeri Niko-Petteri 	0     0       150 000
+Nordlund Markus 	9     52      275 000
+Palmroth Markus 	0     0       150 000
+Skalberg Jens 		9     31      280 000
+Sweatt Lee 		9     103     410 000
+Vittasmaki Veli-Matti 	9     29      220 000
+Hyokkaajat 		O     LPP     Arvo    AM
+Birner Michal 		9     34      385 000
+Erkinjuntti Antti 	9     21      345 000
+Filppula Ilari 		9     65      365 000
+Hattunen Jarkko 	6     17      190 000
+Hamalainen Aatu 	5     4       270 000
+Jalo Toni 		0     0       150 000
+Kokkala Lassi 		4     2       160 000
+Kolu Max 		9     12      180 000
+Laine Mikko 		0     0       150 000
+Makinen Marko 		4     5       175 000
+Plihal Tomas 		8     33      390 000
+Radja Mike 		0     0       150 000
+Reivonen Antti 		0     0       165 000
+Suominen Tuomas 	9     30      335 000
+Urpo Antti 		0     0       150 000
+Uusikartano Aki 	9     42      345 000
+Vahalahti Ville 	9     59      405 000
+Venalainen Sami 	9     35      225 000
+Virtala Marko 		9     21      250 000
+Assat
+Assat
+Maalivahdit 		O     LPP     Arvo    AM
+Jarvenpaa Juha 		0     0       150 000
+Kilpelainen Eero 	7     72      150 000
+Rynnas Jussi 		3     8       150 000
+Puolustajat 		O     LPP     Arvo    AM
+Heikkinen Jussi 	0     0       150 000
+Jyrkkio Jesse 		8     37      150 000
+Kudroc Kristian 	7     39      150 000
+Kuusisto Matti 		0     0       150 000
+Milam Troy 		9     76      150 000
+Maatta Tero 		9     23      150 000
+Palomaki Mikko 		9     0       150 000
+Rahkola Miro 		0     0       150 000
+Sammalkangas Tapio 	9     22      150 000
+Stenroos Niklas 	0     0       150 000
+Taimi Tommi 		0     0       150 000
+Uusitalo Ville 		0     0       150 000
+Hyokkaajat 		O     LPP     Arvo    AM
+Forsbacka Patrik 	9     23      150 000
+Huhtala Tommi 		8     45      150 000
+Huhtanen Tuomas 	1     2       150 000
+Kivenmaki Marko 	9     30      150 000
+Kuparinen Matti 	0     0       150 000
+Laaksonen Jesse 	6     10      150 000
+Laukkanen Tuomo 	0     0       150 000
+Luomala Marko 		9     46      150 000
+Makila Antti 		6     3       150 000
+Niemi Mika 		9     30      150 000
+Palonen Niko 		0     0       150 000
+Pellinen Ossi 		9     -1      150 000
+Piros Kamil 		0     0       150 000
+Salminen Sakari 	9     45      150 000
+Savinainen Veli-Matti 	8     52      150 000
+Sillanpaa Severi 	9     33      150 000
+Uusitalo Antti 		0     0       150 000
+Zaborsky Tomas 		9     92      150 000
