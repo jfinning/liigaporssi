@@ -314,10 +314,13 @@ sub update_menus {
 
 sub print_optimi_joukkue {
     my $addition = "";
+    if ($param_liiga =~ /nhl/) {
+	$addition = "_nhl";
+    }
     
     # Tama siksi, etta saadaan oikeat hinnat
-    if ($param_vuosi =~ /2009|2010|2011/) {
-        read_player_list("2012/player_list_period1.txt");
+    if ($param_vuosi =~ /2009|2010|2011|2012/) {
+        read_player_list("2013/player_list_period1.txt");
     }
     
     if ($param_read_players_from =~ /1|1-/) {
@@ -428,7 +431,7 @@ sub print_optimi_joukkue {
     print "<center>\n";
     print "T&#228;ll&#228; sivulla voit koota laskennallisia optimikokoonpanoja antamillasi ehdoilla.<br>\n";
     if ($param_liiga =~ /sm_liiga/) {
-        print "Jos valitset vuoden 2011, lasketaan optimijoukkue tuon vuoden pisteiden mukaisesti. Pelaajat, jotka ovat jo poistuneet liigasta, j&#228;tet&#228;&#228;n huomiotta.<p>\n";
+        print "Jos valitset vuoden 2012, lasketaan optimijoukkue tuon vuoden pisteiden mukaisesti. Pelaajat, jotka ovat jo poistuneet liigasta, j&#228;tet&#228;&#228;n huomiotta.<p>\n";
     } else {
         print "<p>\n";
     }
@@ -1503,9 +1506,9 @@ sub read_player_list ($) {
 	#          1       2       3       4       5       6       7       8       9                10          11        12
 	#if (/^\s*(.*?)\s*(\d+)\s*(\d+)\s*(\d+)\s*(\d+)\s*(\d+)\s*(\d+)\s*(\d+)\s*(\d+)\s*.*?\s*(-\d+|\d+)\s+(\d\d\d) (\d)\d\d$/) {
 	if (/$parse/) {
-            # Luetaan vain pelaajat, jotka pelaavat myos 2012
-	    if ($param_vuosi == 2011 && $param_sub eq "optimi_joukkue") {
-	       if (!defined $pelaaja{$1} && $players_file =~ /2011/) { next; }
+            # Luetaan vain pelaajat, jotka pelaavat myos 2013
+	    if ($param_vuosi == 2012 && $param_sub eq "optimi_joukkue") {
+	       if (!defined $pelaaja{$1} && $players_file =~ /2012/) { next; }
 	    }
 	    $pelaaja{$1}{'ottelut'} += $2;
 	    $pelaaja{$1}{'maalit'} += $3;
@@ -1518,13 +1521,13 @@ sub read_player_list ($) {
 	    }
 	    if ($max_pelatut_pelit < $pelaaja{$1}{'ottelut'}) { $max_pelatut_pelit = $pelaaja{$1}{'ottelut'}; }
             $pelaaja{$1}{'pelipaikka'} = $pelipaikka;
-	    if ($param_vuosi == 2011 && $param_sub eq "optimi_joukkue" && defined $pelaaja{$1}{'arvo'}) {
+	    if ($param_vuosi == 2012 && $param_sub eq "optimi_joukkue" && defined $pelaaja{$1}{'arvo'}) {
 	    } else {
                 $pelaaja{$1}{'arvo'} = "$11.$12";
 	    }
             $pelaaja{$1}{'lpp'} += $10;
 	    
-	    # Tama siksi, jos pelaaja on vaihtanut seuraa 2011-2012
+	    # Tama siksi, jos pelaaja on vaihtanut seuraa 2012-2013
 	    if (! defined $pelaaja{$1}{'joukkue'}) {
 	        $pelaaja{$1}{'joukkue'} = $joukkue;
 	    }
