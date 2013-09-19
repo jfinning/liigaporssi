@@ -66,7 +66,7 @@ if (!defined $param_graafi)            { $param_graafi = "LPP ennuste"; }
 if (!defined $param_liiga)             { $param_liiga = "sm_liiga"; }
 if (!defined $param_read_players_from) {
     if ($param_liiga =~ /nhl/) {
-        $param_read_players_from = "Jakso 3";
+        $param_read_players_from = "Jakso 1";
     } else {
         $param_read_players_from = "Jakso 1";
     }
@@ -121,7 +121,7 @@ if (! defined $end) {
     if ($param_liiga =~ /sm_liiga/) {
         $end = "12.10.";
     } else {
-        $end = "27.04.";
+        $end = "03.11.";
     }
 }
 
@@ -216,91 +216,6 @@ if (! defined $team_from) {
     }
 }
 
-sub update_counter($) {
-    my $page = shift;
-    my %page_loads;
-    my ($sec,$min,$hour,$mday,$month,$year,$wday,$yday,$isdst) = localtime( time );
-    $year += 1900;
-        
-    my $file = "counters/counter.txt";
-    
-    if (-e $file) {
-        my $content = `cat $file`;
-	eval $content;
-    }
-    if (!defined $page_loads{$year}{$month}{$mday}{$page}) {
-        $page_loads{$year}{$month}{$mday}{$page} = 1;
-    } else {
-        $page_loads{$year}{$month}{$mday}{$page} = $page_loads{$year}{$month}{$mday}{$page} + 1;
-    }
-    
-    open FILE, ">$file" or die "Cant open $file\n";
-    flock (FILE, 2);
-    foreach $year (sort keys %page_loads) {
-	foreach $month (sort keys %{$page_loads{$year}}) {
-	    foreach $mday (sort keys %{$page_loads{$year}{$month}}) {
-                foreach $page (sort keys %{$page_loads{$year}{$month}{$mday}}) {
-		    print FILE "\$page_loads{$year}{$month}{$mday}{$page} = $page_loads{$year}{$month}{$mday}{$page};\n"
-		}
-	    }
-	}
-    }
-    close FILE;
-}
-
-sub update_user_counter($) {
-    my $update_set = shift;
-    my %user_data;
-    
-    my $file = "counters/user_data.txt";
-    
-    if (-e $file) {
-        my $content = `cat $file`;
-	eval $content;
-    }
-    
-    if ($update_set =~ /ip/) {
-        my $ip = $ENV{REMOTE_ADDR};
-	$ip =~ s/\s*$//;
-	if (!defined $user_data{ip}{$ip}) {
-            $user_data{ip}{$ip} = 1;
-        } else {
-            $user_data{ip}{$ip} = $user_data{ip}{$ip} + 1;
-        }
-    }
-    if ($update_set =~ /from/) {
-        my $address;
-	if (!defined $ENV{HTTP_REFERER} || $ENV{HTTP_REFERER} =~ /^\s*$/) {
-	    $address = "Suora_osoite";
-	} else { $address = $ENV{HTTP_REFERER}; }
-	$address =~ s/\s*$//;
-	if (!defined $user_data{from}{$address}) {
-            $user_data{from}{$address} = 1;
-        } else {
-            $user_data{from}{$address} = $user_data{from}{$address} + 1;
-        }
-    }
-
-    open FILE, ">$file" or die "Cant open $file\n";
-    flock (FILE, 2);
-    foreach $update_set (sort keys %user_data) {
-        foreach (sort keys %{$user_data{$update_set}}) {
-            print FILE "\$user_data{$update_set}{\"$_\"} = $user_data{$update_set}{$_};\n"
-	}
-    }
-    close FILE;
-}
-
-if (!$cgi->param()) {
-    update_user_counter("from");
-}
-if ($param_sub !~ /counter/) {
-    if ($param_liiga =~ /sm_liiga/) {
-        update_counter("frameset");
-    } else {
-        update_counter("frameset_nhl");
-    }
-}
 update_menus();
 
 sub muuttujien_alustusta ($) {
@@ -333,7 +248,7 @@ sub muuttujien_alustusta ($) {
 	if ($param_liiga =~ /sm_liiga/) {
 	    @vuodet = ("2009", "2010", "2011", "2012", "2013");
 	} else {
-	    @vuodet = ("2010", "2011", "2012");
+	    @vuodet = ("2010", "2011", "2012", "2013");
 	}
 	return @vuodet;
     }
@@ -371,14 +286,6 @@ sub update_menus {
     print "<div id=\"container\">\n";
     print "<ul id=\"nav\">\n";
 
-    if ($param_sub !~ /counter/) {
-        if ($param_liiga =~ /sm_liiga/) {
-	    update_counter("navi");
-	} else {
-	    update_counter("navi_nhl");
-	}
-    }
-    
     if ($param_liiga =~/sm_liiga/) {
         print "<li><A HREF=\"$script_name?sub=print_start_page&liiga=nhl\">NHL</A></li>\n";
     } else {
@@ -399,9 +306,6 @@ sub update_menus {
     if ($param_sub =~ /player_list/)      {print_player_list()};
     if ($param_sub =~ /current_table/)    {print_current_table()};
     if ($param_sub =~ /optimi_joukkue/)   {print_optimi_joukkue()};
-    if ($param_sub =~ /counter/)          {print_counter()};
-
-    print "<A HREF=\"$script_name?sub=counter&liiga=$param_liiga\"><font color=white>Countterit<\/font></A><br>\n";
 
     print "</center>\n";
     
@@ -410,13 +314,6 @@ sub update_menus {
 
 sub print_optimi_joukkue {
     my $addition = "";
-    if ($param_liiga =~ /sm_liiga/) {
-        update_counter("optimi");
-    } else {
-        update_counter("optimi_nhl");
-	$addition = "_nhl";
-    }
-    update_user_counter("ip");
     
     # Tama siksi, etta saadaan oikeat hinnat
     if ($param_vuosi =~ /2009|2010|2011/) {
@@ -883,14 +780,9 @@ sub create_loops {
 
 sub print_player_list {
     my $addition = "";
-    if ($param_liiga =~ /sm_liiga/) {
-        update_counter("player_list");
-    } else {
-        update_counter("player_list_nhl");
+    if ($param_liiga =~ /nhl/) {
 	$addition = "_nhl";
     }
-    update_user_counter("ip");
-    
     my $nimi;
 
     if ($param_read_players_from =~ /1|1-/) {
@@ -1267,13 +1159,6 @@ sub sort_list_ascending {
 }
 
 sub print_start_page {
-    if ($param_liiga =~ /sm_liiga/) {
-        update_counter("game_list");
-    } else {
-        update_counter("game_list_nhl");
-    }
-    update_user_counter("ip");
-    
     print "<center>\n";
     
     print_game_days();
@@ -1378,8 +1263,6 @@ sub print_team_compare_table {
 }
 
 sub print_current_table {
-    update_user_counter("ip");
-
     print "<center>\n";
     print "<table border=\"1\">\n";
     print "<tr>\n";
@@ -1582,95 +1465,6 @@ sub calculate_optimal_change_day {
 
 sub hashValueAscendingNum {
    $kaikkipelit{$b} <=> $kaikkipelit{$a} || $kotipelit{$b} <=> $kotipelit{$a} || $vastus{$b}{'low'} <=> $vastus{$a}{'low'} || $vastus{$b}{'mid'} <=> $vastus{$a}{'mid'} || $a cmp $b;
-}
-
-sub print_counter {
-    my %page_loads;
-    my $file = "counters/counter.txt";
-
-    print "<center>\n";
-    
-    if (-e $file) {
-        my $content = `cat $file`;
-	eval $content;
-    }
-
-    print "<br><table border=\"1\">\n";
-    print "<tr>\n";
-    my @otsikko = ("Vuosi", "Kuukausi", "Paiva", "frameset", "game_list", "navi", "optimi", "player_list", "fmameset_nhl", "game_list_nhl", "navi_nhl", "optimi_nhl", "player_list_nhl");
-    foreach (@otsikko) {
-        print "<th><center>$_</center></th>\n";
-    }
-    print "<\/tr>\n";
-    
-    my $td = change_table_td();
-    foreach my $year (sort keys %page_loads) {
-	foreach my $month (sort {$a <=> $b} keys %{$page_loads{$year}}) {
-	    foreach my $mday (sort {$a <=> $b} keys %{$page_loads{$year}{$month}}) {
-	        $td = change_table_td($td);
-                print "<tr>\n"; 
-		print "<td class=\"$td\">$year<\/td>\n";
-		print "<td class=\"$td\">$month<\/td>\n";
-		print "<td class=\"$td\">$mday<\/td>\n";
-                foreach my $page (sort keys %{$page_loads{$year}{$month}{$mday}}) {
-		    print "<td class=\"$td\">$page_loads{$year}{$month}{$mday}{$page}<\/td>\n";
-		}
-	        print "<\/tr>\n";
-	    }
-	}
-    }
-    print "<\/table>\n";
-
-    $file = "counters/user_data.txt";
-    my %user_data;
-    if (-e $file) {
-        my $content = `cat $file`;
-	eval $content;
-    }
-
-    my $count = 1;
-    print "<br><table border=\"1\">\n";
-    print "<tr>\n";
-    @otsikko = ("Count", "IP", "Lataukset");
-    foreach (@otsikko) {
-        print "<th><center>$_</center></th>\n";
-    }
-    print "<\/tr>\n";
-    
-    $td = change_table_td();
-    foreach my $data (sort {$user_data{ip}{$b} <=> $user_data{ip}{$a}} keys %{$user_data{ip}}) {
-        $td = change_table_td($td);
-        print "<tr>\n"; 
-	print "<td class=\"$td\">$count<\/td>\n";
-	print "<td class=\"$td\">$data<\/td>\n";
-	print "<td class=\"$td\">$user_data{ip}{$data}<\/td>\n";
-	print "<\/tr>\n";
-	$count++;
-    }
-    print "<\/table>\n";
-
-    $count = 1;
-    print "<br><table border=\"1\">\n";
-    print "<tr>\n";
-    @otsikko = ("Count", "From", "Lataukset");
-    foreach (@otsikko) {
-        print "<th><center>$_</center></th>\n";
-    }
-    print "<\/tr>\n";
-    
-    $td = change_table_td();
-    foreach my $data (sort {$user_data{from}{$b} <=> $user_data{from}{$a}} keys %{$user_data{from}}) {
-        $td = change_table_td($td);
-        print "<tr>\n"; 
-	print "<td class=\"$td\">$count<\/td>\n";
-	print "<td class=\"$td\">$data<\/td>\n";
-	print "<td class=\"$td\">$user_data{from}{$data}<\/td>\n";
-	print "<\/tr>\n";
-	$count++;
-    }
-    print "<\/table>\n";
-    
-    print "<\/center>\n";
 }
 
 sub read_player_list ($) {

@@ -62,7 +62,7 @@ my $param_game_nro          = $cgi->param('game_nro');
 if (!defined $param_joukkueen_hinta)   { $param_joukkueen_hinta = "2000.0"; }
 if (!defined $param_ottelut)           { $param_ottelut = 0; }
 if (!defined $param_remove_players)    { $param_remove_players = ""; }
-if (!defined $param_vuosi)             { $param_vuosi = 2012; }
+if (!defined $param_vuosi)             { $param_vuosi = 2013; }
 if (!defined $param_pelipaikka)        { $param_pelipaikka = "Pelaaja"; }
 if (!defined $param_sub)               { $param_sub = ""; }
 if (!defined $param_graafi)            { $param_graafi = "LPP ennuste"; }
@@ -71,7 +71,7 @@ if (!defined $param_read_players_from) {
     if ($param_liiga =~ /nhl/) {
         $param_read_players_from = "Jakso 1";
     } else {
-        $param_read_players_from = "Jakso 5";
+        $param_read_players_from = "Jakso 1";
     }
 }
 
@@ -122,9 +122,9 @@ if ($o_hyokkaaja3 =~ /Kaikki/) {
 
 if (! defined $end) {
     if ($param_liiga =~ /sm_liiga/) {
-        $end = "12.03.";
+        $end = "12.10.";
     } else {
-        $end = "24.03.";
+        $end = "03.11.";
     }
 }
 
@@ -243,9 +243,9 @@ sub muuttujien_alustusta ($) {
     if ($temp =~ /vuodet/) {
         my @vuodet;
 	if ($param_liiga =~ /sm_liiga/) {
-	    @vuodet = ("2009", "2010", "2011", "2012");
+	    @vuodet = ("2009", "2010", "2011", "2012", "2013");
 	} else {
-	    @vuodet = ("2010", "2011", "2012");
+	    @vuodet = ("2010", "2011", "2012", "2013");
 	}
 	return @vuodet;
     }

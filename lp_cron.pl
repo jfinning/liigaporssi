@@ -266,7 +266,7 @@ sub nhl_kokoonpanot {
         }
     }
     
-    open FILE, ">2013/player_list_period3_nhl.txt" or die "Cant open 2013/player_list_period3_nhl.txt\n"; 
+    open FILE, ">2013/player_list_period1_nhl.txt" or die "Cant open 2013/player_list_period1_nhl.txt\n"; 
     
     my @player_list = split(/\n/, $final_player_list);
     foreach (@player_list) {
