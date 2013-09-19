@@ -232,17 +232,7 @@ sub muuttujien_alustusta ($) {
         );
 	return @paikka;
     }
-    
-    if ($temp =~ /jakso/) {
-        my @jakso;
-        if ($param_liiga =~ /sm_liiga/) {
-            @jakso = ("PO", "Jakso 5", "Jakso 4", "Jakso 3", "Jakso 2", "Jakso 1", "Jaksot 1-2", "Jaksot 1-3", "Jaksot 1-4", "Jaksot 1-5", "Jaksot 1-PO");
-	} else {
-            @jakso = ("PO", "Jakso 5", "Jakso 4", "Jakso 3", "Jakso 2", "Jakso 1", "Jaksot 1-5");
-	}
-	return @jakso;
-    }
-    
+
     if ($temp =~ /vuodet/) {
         my @vuodet;
 	if ($param_liiga =~ /sm_liiga/) {
@@ -251,6 +241,20 @@ sub muuttujien_alustusta ($) {
 	    @vuodet = ("2010", "2011", "2012", "2013");
 	}
 	return @vuodet;
+    }
+    
+    if ($temp =~ /jakso/) {
+        my @jakso;
+        if ($param_liiga =~ /sm_liiga/) {
+            if ($param_vuosi == 2012) {
+	        @jakso = ("Jakso 5", "Jakso 4", "Jakso 3", "Jakso 2", "Jakso 1", "Jaksot 1-2", "Jaksot 1-3", "Jaksot 1-4", "Jaksot 1-5");
+	    } else {
+                @jakso = ("PO", "Jakso 5", "Jakso 4", "Jakso 3", "Jakso 2", "Jakso 1", "Jaksot 1-2", "Jaksot 1-3", "Jaksot 1-4", "Jaksot 1-5", "Jaksot 1-PO");
+	    }
+	} else {
+            @jakso = ("PO", "Jakso 5", "Jakso 4", "Jakso 3", "Jakso 2", "Jakso 1", "Jaksot 1-5");
+	}
+	return @jakso;
     }
 }
 
@@ -313,35 +317,13 @@ sub update_menus {
 }
 
 sub print_optimi_joukkue {
-    my $addition = "";
-    if ($param_liiga =~ /nhl/) {
-	$addition = "_nhl";
-    }
-    
     # Tama siksi, etta saadaan oikeat hinnat
     if ($param_vuosi =~ /2009|2010|2011|2012/) {
         read_player_list("2013/player_list_period1.txt");
     }
-    
-    if ($param_read_players_from =~ /1|1-/) {
-	read_player_list("$param_vuosi/player_list_period1${addition}.txt");
-    }
-    if ($param_read_players_from =~ /2|1-/) {
-	read_player_list("$param_vuosi/player_list_period2${addition}.txt");
-    }
-    if ($param_read_players_from =~ /3|1-PO|1-5|1-4|1-3/) {
-	read_player_list("$param_vuosi/player_list_period3${addition}.txt");
-    }
-    if ($param_read_players_from =~ /4|1-PO|1-5|1-4/) {
-	read_player_list("$param_vuosi/player_list_period4${addition}.txt");
-    }
-    if ($param_read_players_from =~ /5|1-PO|1-5/) {
-	read_player_list("$param_vuosi/player_list_period5${addition}.txt");
-    }
-    if ( $param_read_players_from =~ /PO/) {
-        read_player_list("$param_vuosi/player_list_playoff${addition}.txt");
-    }
 
+    read_player_lists();
+    
     my $optimi_pisteet = -100;
     my $optimi_hinta;
     my %current_joukkue;
@@ -601,28 +583,6 @@ sub print_optimi_joukkue {
 	if ($team_count == $param_max_teams) { last; }
     }
     print "<\/table>\n";
-    
-if (0) {
-    print "size of hash:  " . keys( %top_teams ) . ".<br>\n";
-
-my $countteri = 0;
-foreach (@maalivahdit_karsitut) {
-    $countteri++;
-    print "$countteri) $_, $pelaaja{$_}{'arvo'}, $pelaaja{$_}{'ennuste_pisteet'}<br>\n";
-}
-print "<p>\n";
-$countteri = 0;
-foreach (@puolustajat_karsitut) {
-    $countteri++;
-    print "$countteri) $_, $pelaaja{$_}{'arvo'}, $pelaaja{$_}{'ennuste_pisteet'}<br>\n";
-}
-print "<p>\n";
-$countteri = 0;
-foreach (@hyokkaajat_karsitut) {
-    $countteri++;
-    print "$countteri) $_, $pelaaja{$_}{'arvo'}, $pelaaja{$_}{'ennuste_pisteet'}<br>\n";
-}
-} #if 0
 
     print "<\/center>\n";
 }
@@ -782,31 +742,10 @@ sub create_loops {
 }
 
 sub print_player_list {
-    my $addition = "";
-    if ($param_liiga =~ /nhl/) {
-	$addition = "_nhl";
-    }
+    read_player_lists();
+
     my $nimi;
 
-    if ($param_read_players_from =~ /1|1-/) {
-	read_player_list("$param_vuosi/player_list_period1${addition}.txt");
-    }
-    if ($param_read_players_from =~ /2|1-/) {
-	read_player_list("$param_vuosi/player_list_period2${addition}.txt");
-    }
-    if ($param_read_players_from =~ /3|1-PO|1-5|1-4|1-3/) {
-	read_player_list("$param_vuosi/player_list_period3${addition}.txt");
-    }
-    if ($param_read_players_from =~ /4|1-PO|1-5|1-4/) {
-	read_player_list("$param_vuosi/player_list_period4${addition}.txt");
-    }
-    if ($param_read_players_from =~ /5|1-PO|1-5/) {
-	read_player_list("$param_vuosi/player_list_period5${addition}.txt");
-    }
-    if ( $param_read_players_from =~ /PO/) {
-        read_player_list("$param_vuosi/player_list_playoff${addition}.txt");
-    }
-    
     print "<center>\n";
     
     # Valikot taulukon karsimiseen
@@ -1100,6 +1039,32 @@ sub print_player_list {
     print "<\/table>\n";
 
     print "<\/center>\n";
+}
+
+sub read_player_lists {
+    my $addition = "";
+    if ($param_liiga =~ /nhl/) {
+	$addition = "_nhl";
+    }
+
+    if ($param_read_players_from =~ /1|1-/) {
+	read_player_list("$param_vuosi/player_list_period1${addition}.txt");
+    }
+    if ($param_read_players_from =~ /2|1-/) {
+	read_player_list("$param_vuosi/player_list_period2${addition}.txt");
+    }
+    if ($param_read_players_from =~ /3|1-PO|1-5|1-4|1-3/) {
+	read_player_list("$param_vuosi/player_list_period3${addition}.txt");
+    }
+    if ($param_read_players_from =~ /4|1-PO|1-5|1-4/) {
+	read_player_list("$param_vuosi/player_list_period4${addition}.txt");
+    }
+    if ($param_read_players_from =~ /5|1-PO|1-5/) {
+	read_player_list("$param_vuosi/player_list_period5${addition}.txt");
+    }
+    if ( $param_read_players_from =~ /PO/) {
+        read_player_list("$param_vuosi/player_list_playoff${addition}.txt");
+    }
 }
 
 sub sort_list {
