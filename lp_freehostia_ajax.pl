@@ -64,6 +64,9 @@ if (!defined $param_pelipaikka)        { $param_pelipaikka = "Pelaaja"; }
 if (!defined $param_sub)               { $param_sub = ""; }
 if (!defined $param_graafi)            { $param_graafi = "LPP ennuste"; }
 if (!defined $param_liiga)             { $param_liiga = "sm_liiga"; }
+if (!defined $param_sort)              { $param_sort = "lpp_per_peli"; }
+if (!defined $param_joukkue)           { $param_joukkue = "Joukkue"; }
+if (!defined $param_order)             { $param_order = "descending"; }
 if (!defined $param_read_players_from) {
     if ($param_liiga =~ /nhl/) {
         $param_read_players_from = "Jakso 1";
@@ -222,6 +225,8 @@ alustus();
 my $pjx = new CGI::Ajax( 'print_game_days_div'              => \&print_game_days,
                            'print_team_compare_table_div'     => \&print_team_compare_table,
 			   'calculate_optimal_change_day_div' => \&calculate_optimal_change_day,
+			   'current_table'                    => \&print_current_table,
+			   'print_player_list_div'            => \&print_player_list,
                            'alustus'                          => \&alustus);
 print $pjx->build_html( $cgi, \&update_menus);
 
@@ -309,9 +314,9 @@ sub update_menus {
     $html .= "<br><br>\n";
     
     if ($param_sub =~ /start_page|^\s*$/) { $html .= print_start_page()};
-#    if ($param_sub =~ /player_list/)      {print_player_list()};
-#    if ($param_sub =~ /current_table/)    {print_current_table()};
-#    if ($param_sub =~ /optimi_joukkue/)   {print_optimi_joukkue()};
+    if ($param_sub =~ /player_list/)      {$html .= print_player_list_form()};
+    if ($param_sub =~ /current_table/)    {$html .= print_current_table()};
+#    if ($param_sub =~ /optimi_joukkue/)   {$html .= print_optimi_joukkue()};
 
     $html .= "</center>\n";
     
@@ -741,53 +746,51 @@ sub create_loops {
     return $loops;
 }
 
-sub print_player_list {
+sub print_player_list_form {
+    my $html;
+    alustus();
     read_player_lists();
 
-    my $nimi;
+    my $a_script = "print_player_list_div( ['vuosi','read_players_from','joukkue','pelipaikka','ottelut','arvo','graafi','liiga','sort','order'],['player_list_div'] );";
 
-    print "<center>\n";
-    
     # Valikot taulukon karsimiseen
     my $condition = "";
     my $param_list = "";
-    print start_form(-action => "$script_name");
 
     # Vuosi
-    print "<select name=\"vuosi\">\n";
+    $html .= "<select name=\"vuosi\" id=\"vuosi\" onchange=\"$a_script\">\n";
     my @vuodet = muuttujien_alustusta("vuodet");
     foreach (@vuodet) {
         if ($_ == $param_vuosi) {
-            print "<option selected>$_<\/option>\n";
+            $html .= "<option selected>$_<\/option>\n";
 	    $param_vuosi = $_;
         } else {
-            print "<option>$_<\/option>\n";
+            $html .= "<option>$_<\/option>\n";
         }
     }
-    print "<\/select>\n";
+    $html .= "<\/select>\n";
 
     #Jakso
-    print "<select name=\"read_players_from\">\n";
+    $html .= "<select name=\"read_players_from\" id=\"read_players_from\" onchange=\"$a_script\">\n";
     my @jakso = muuttujien_alustusta("jakso");
     foreach my $current_arvo (@jakso) {
         if ($current_arvo eq $param_read_players_from) {
-	    print "<option selected>$current_arvo<\/option>\n";
+	    $html .= "<option selected>$current_arvo<\/option>\n";
 	    $param_list = "${param_list}&read_players_from=$current_arvo";
 	} else {
-            print "<option>$current_arvo<\/option>\n";
+            $html .= "<option>$current_arvo<\/option>\n";
 	}
     }
-    print "<\/select>\n";
+    $html .= "<\/select>\n";
 
     # Joukkue
     my @tmp_joukkueet = sort keys %taulukko;
-    if (!defined $param_joukkue || $param_joukkue =~ /^\s*$/) { $param_joukkue = "Joukkue"; }
     my @joukkueet = ("Joukkue");
     push (@joukkueet, @tmp_joukkueet);
-    print "<select name=\"joukkue\">\n";
+    $html .= "<select name=\"joukkue\" id=\"joukkue\" onchange=\"$a_script\">\n";
     foreach my $joukkue (@joukkueet) {
         if ($joukkue eq $param_joukkue) {
-	    print "<option selected>$joukkue<\/option>\n";
+	    $html .= "<option selected>$joukkue<\/option>\n";
 	    if ($joukkue =~ /Jaljella olevat/) {
 	        $condition = "if (\$jaljella_olevat_joukkueet !~ /\$pelaaja{\$nimi}{\"joukkue\"}/) { next; }";
 	    } elsif ($joukkue !~ /Joukkue/) {
@@ -795,65 +798,65 @@ sub print_player_list {
 	    }
 	    $param_list = "${param_list}&joukkue=$joukkue";
 	} else {
-            print "<option>$joukkue<\/option>\n";
+            $html .= "<option>$joukkue<\/option>\n";
 	}
     }
-    print "<\/select>\n";
+    $html .= "<\/select>\n";
 
     # Pelipaikka
-    print "<select name=\"pelipaikka\">\n";
+    $html .= "<select name=\"pelipaikka\" id=\"pelipaikka\" onchange=\"$a_script\">\n";
     if ($param_pelipaikka =~ /Pelaaja/) {
-        print "<option selected>Pelaaja<\/option>\n";
+        $html .= "<option selected>Pelaaja<\/option>\n";
     } else {
-        print "<option>Pelaaja<\/option>\n";
+        $html .= "<option>Pelaaja<\/option>\n";
     }
     if ($param_pelipaikka =~ /Hyokkaaja/) {
-        print "<option selected>Hyokkaaja<\/option>\n";
+        $html .= "<option selected>Hyokkaaja<\/option>\n";
 	$condition = "$condition\n if (\$pelaaja{\$nimi}{\"pelipaikka\"} !~ /Hyokkaaja/) { next; }";
 	$param_list = "${param_list}&pelipaikka=Hyokkaaja";
     } else {
-        print "<option>Hyokkaaja<\/option>\n";
+        $html .= "<option>Hyokkaaja<\/option>\n";
     }
     if ($param_pelipaikka =~ /Puolustaja/) {
-        print "<option selected>Puolustaja<\/option>\n";
+        $html .= "<option selected>Puolustaja<\/option>\n";
 	$condition = "$condition\n if (\$pelaaja{\$nimi}{\"pelipaikka\"} !~ /Puolustaja/) { next; }";
 	$param_list = "${param_list}&pelipaikka=Puolustaja";
     } else {
-        print "<option>Puolustaja<\/option>\n";
+        $html .= "<option>Puolustaja<\/option>\n";
     }
     if ($param_pelipaikka =~ /Maalivahti/) {
-        print "<option selected>Maalivahti<\/option>\n";
+        $html .= "<option selected>Maalivahti<\/option>\n";
 	$condition = "$condition\n if (\$pelaaja{\$nimi}{\"pelipaikka\"} !~ /Maalivahti/) { next; }";
 	$param_list = "${param_list}&pelipaikka=Maalivahti";
     } else {
-        print "<option>Maalivahti<\/option>\n";
+        $html .= "<option>Maalivahti<\/option>\n";
     }
-    print "<\/select>\n";
+    $html .= "<\/select>\n";
 
     # Ottelut vahintaan
-    print "Ottelut v&#228;h.: <select name=\"ottelut\">\n";
+    $html .= "Ottelut v&#228;h.: <select name=\"ottelut\" id=\"ottelut\" onchange=\"$a_script\">\n";
     my @ottelut_taulukko = (0 .. $max_pelatut_pelit);
     foreach (@ottelut_taulukko) {
         if (defined $param_ottelut && $_ == $param_ottelut) {
-            print "<option selected>$_<\/option>\n";
+            $html .= "<option selected>$_<\/option>\n";
 	    $condition = "$condition\n if (\$pelaaja{\$nimi}{\"ottelut\"} < $_) { next; }";
 	    $param_list = "${param_list}&ottelut=$_";
         } elsif (!defined $param_ottelut && $_ == 0) {
-            print "<option selected>$_<\/option>\n";
+            $html .= "<option selected>$_<\/option>\n";
 	    $condition = "$condition\n if (\$pelaaja{\$nimi}{\"ottelut\"} < $_) { next; }";
 	    $param_list = "${param_list}&ottelut=$_";
         } else {
-            print "<option>$_<\/option>\n";
+            $html .= "<option>$_<\/option>\n";
         }
     }
-    print "<\/select>\n";
+    $html .= "<\/select>\n";
 
     # Arvo
     my @arvotaulukko = ("0-X", "200-249", "250-299", "300-349", "350-399", "400-449", "450-499", "500-X", "Alle 200", "Alle 250", "Alle 300", "Alle 350", "Alle 400", "Alle 450", "Alle 500");
-    print "<select name=\"arvo\">\n";
+    $html .= "<select name=\"arvo\" id=\"arvo\" onchange=\"$a_script\">\n";
     foreach my $current_arvo (@arvotaulukko) {
         if (defined $param_arvo && $current_arvo eq $param_arvo) {
-	    print "<option selected>$current_arvo<\/option>\n";
+	    $html .= "<option selected>$current_arvo<\/option>\n";
 	    if ($current_arvo =~ /(\d+)-(\d+)/) {
 	        $condition = "$condition\n if (\$pelaaja{\$nimi}{\"arvo\"} < $1 || \$pelaaja{\$nimi}{\"arvo\"} > $2) { next; }";
 	    } elsif ($current_arvo =~ /(\d+)-X/) {
@@ -863,162 +866,148 @@ sub print_player_list {
 	    }
 	    $param_list = "${param_list}&arvo=$current_arvo";
 	} else {
-            print "<option>$current_arvo<\/option>\n";
+            $html .= "<option>$current_arvo<\/option>\n";
 	}
     }
-    print "<\/select>\n";
+    $html .= "<\/select>\n";
 
     # Graafi
-    print "Graafi: <select name=\"graafi\">\n";
+    $html .= "Graafi: <select name=\"graafi\" id=\"graafi\" onchange=\"$a_script\">\n";
     my @graafit = ("LPP ennuste", "Arvo");
     foreach (@graafit) {
         if (/$param_graafi/) {
-            print "<option selected>$_<\/option>\n";
+            $html .= "<option selected>$_<\/option>\n";
 	    $param_graafi = $_;
 	    $param_list = "${param_list}&graafi=$_";
         } else {
-            print "<option>$_<\/option>\n";
+            $html .= "<option>$_<\/option>\n";
         }
     }
-    print "<\/select>\n";
+    $html .= "<\/select>\n";
+    $html .= "<div id='player_list_div'>" . print_player_list() . "</div>\n";
     
-    print hidden(-name => 'liiga', -default => "$param_liiga");
-    print hidden(-name => 'sub', -default => "player_list");
-    print hidden(-name => 'sort', -default => "$param_sort");
-    if (defined $param_order) {
-        print hidden(-name => 'order', -default => "ascending");
+    return $html;
+}
+
+sub create_player_list_parser {
+    my $condition = "";
+    my $param_list = "";
+
+    $param_list = "${param_list}&read_players_from=$param_read_players_from";
+
+    my @tmp_joukkueet = sort keys %taulukko;
+    my @joukkueet = ("Joukkue");
+    push (@joukkueet, @tmp_joukkueet);
+    foreach my $joukkue (@joukkueet) {
+        if ($joukkue eq $param_joukkue) {
+	    if ($joukkue =~ /Jaljella olevat/) {
+	        $condition = "if (\$jaljella_olevat_joukkueet !~ /\$pelaaja{\$nimi}{\"joukkue\"}/) { next; }";
+	    } elsif ($joukkue !~ /Joukkue/) {
+	        $condition = "if (\$pelaaja{\$nimi}{\"joukkue\"} !~ /$param_joukkue/) { next; }";
+	    }
+	    $param_list = "${param_list}&joukkue=$joukkue";
+	}
     }
-    print submit('Update');
-    print endform;
+
+    $condition = "$condition\n if (\$pelaaja{\$nimi}{\"pelipaikka\"} !~ /$param_pelipaikka/) { next; }" if ($param_pelipaikka !~ /Pelaaja/);
+    $param_list = "${param_list}&pelipaikka=$param_pelipaikka" if ($param_pelipaikka !~ /Pelaaja/) ;
+
+    my @ottelut_taulukko = (0 .. $max_pelatut_pelit);
+    foreach (@ottelut_taulukko) {
+        if (defined $param_ottelut && $_ == $param_ottelut) {
+	    $condition = "$condition\n if (\$pelaaja{\$nimi}{\"ottelut\"} < $_) { next; }";
+	    $param_list = "${param_list}&ottelut=$_";
+        } elsif (!defined $param_ottelut && $_ == 0) {
+	    $condition = "$condition\n if (\$pelaaja{\$nimi}{\"ottelut\"} < $_) { next; }";
+	    $param_list = "${param_list}&ottelut=$_";
+        }
+    }
+
+    my @arvotaulukko = ("0-X", "200-249", "250-299", "300-349", "350-399", "400-449", "450-499", "500-X", "Alle 200", "Alle 250", "Alle 300", "Alle 350", "Alle 400", "Alle 450", "Alle 500");
+    foreach my $current_arvo (@arvotaulukko) {
+        if (defined $param_arvo && $current_arvo eq $param_arvo) {
+	    if ($current_arvo =~ /(\d+)-(\d+)/) {
+	        $condition = "$condition\n if (\$pelaaja{\$nimi}{\"arvo\"} < $1 || \$pelaaja{\$nimi}{\"arvo\"} > $2) { next; }";
+	    } elsif ($current_arvo =~ /(\d+)-X/) {
+	        $condition = "$condition\n if (\$pelaaja{\$nimi}{\"arvo\"} < $1) { next; }";
+	    } elsif ($current_arvo =~ /Alle\s*(\d+)/) {
+	        $condition = "$condition\n if (\$pelaaja{\$nimi}{\"arvo\"} > $1) { next; }";
+	    }
+	    $param_list = "${param_list}&arvo=$current_arvo";
+	}
+    }
+
+    $param_list = "${param_list}&graafi=$param_graafi";
     
-    print "<table border=\"1\">\n";
-    print "<tr>\n";
+    return ($param_list, $condition);
+}
+
+sub print_player_list {
+    alustus();
+    read_player_lists();
+    my $nimi;
+    my ($param_list, $condition) = create_player_list_parser();
+    my $html;
+    
+    $html .= "<input type='hidden' name='sort' id='sort' value=\"$param_sort\">\n";
+    $html .= "<input type='hidden' name='liiga' id='liiga' value=\"$param_liiga\">\n";
+    $html .= "<input type='hidden' name='order' id='order' value=\"$param_order\">\n";
+    $html .= "<table border=\"1\">\n";
+    $html .= "<tr>\n";
 
     $param_list = "${param_list}&vuosi=$param_vuosi&liiga=$param_liiga";
     
-    print "<th><center>Sija</center></th>\n";
-    if ($param_sort =~ /nimi/ && !defined $param_order) {
-        print "<th class=\"asc\"><center><A HREF=\"$script_name?sub=player_list&sort=nimi&order=ascending$param_list\">Nimi</A></center></th>\n";
-    } elsif ($param_sort =~ /nimi/) {
-        print "<th class=\"des\"><center><A HREF=\"$script_name?sub=player_list&sort=nimi$param_list\">Nimi</A></center></th>\n";
-    } else {
-        print "<th><center><A HREF=\"$script_name?sub=player_list&sort=nimi$param_list\">Nimi</A></center></th>\n";
-    }
-    print "<th><center>Pelipaikka</center></th>\n";
-    print "<th><center>Joukkue</center></th>\n";
-    if ($param_sort =~ /ottelut/ && !defined $param_order) {
-        print "<th class=\"des\" title=\"Pelit\"><center><A HREF=\"$script_name?sub=player_list&sort=ottelut&order=ascending$param_list\">Pe</A></center></th>\n";
-    } elsif ($param_sort =~ /ottelut/) {
-        print "<th class=\"asc\" title=\"Pelit\"><center><A HREF=\"$script_name?sub=player_list&sort=ottelut$param_list\">Pe</A></center></th>\n";
-    } else {
-        print "<th title=\"Pelit\"><center><A HREF=\"$script_name?sub=player_list&sort=ottelut$param_list\">Pe</A></center></th>\n";
-    }
-
-
-    if ($param_sort =~ /maalit/ && !defined $param_order) {
-        print "<th class=\"des\" title=\"Maalit\"><center><A HREF=\"$script_name?sub=player_list&sort=maalit&order=ascending$param_list\">Ma</A></center></th>\n";
-    } elsif ($param_sort =~ /maalit/) {
-        print "<th class=\"asc\" title=\"Maalit\"><center><A HREF=\"$script_name?sub=player_list&sort=maalit$param_list\">Ma</A></center></th>\n";
-    } else {
-        print "<th title=\"Maalit\"><center><A HREF=\"$script_name?sub=player_list&sort=maalit$param_list\">Ma</A></center></th>\n";
-    }
-    if ($param_sort =~ /syotot/ && !defined $param_order) {
-        print "<th class=\"des\" title=\"Syotot\"><center><A HREF=\"$script_name?sub=player_list&sort=syotot&order=ascending$param_list\">Sy</A></center></th>\n";
-    } elsif ($param_sort =~ /syotot/) {
-        print "<th class=\"asc\" title=\"Syotot\"><center><A HREF=\"$script_name?sub=player_list&sort=syotot$param_list\">Sy</A></center></th>\n";
-    } else {
-        print "<th title=\"Syotot\"><center><A HREF=\"$script_name?sub=player_list&sort=syotot$param_list\">Sy</A></center></th>\n";
-    }
-    if ($param_sort =~ /pisteet/ && !defined $param_order) {
-        print "<th class=\"des\" title=\"Pisteet\"><center><A HREF=\"$script_name?sub=player_list&sort=pisteet&order=ascending$param_list\">Pi</A></center></th>\n";
-    } elsif ($param_sort =~ /pisteet/) {
-        print "<th class=\"asc\" title=\"Pisteet\"><center><A HREF=\"$script_name?sub=player_list&sort=pisteet$param_list\">Pi</A></center></th>\n";
-    } else {
-        print "<th title=\"Pisteet\"><center><A HREF=\"$script_name?sub=player_list&sort=pisteet$param_list\">Pi</A></center></th>\n";
-    }
-    if ($param_sort =~ /laukaukset/ && !defined $param_order) {
-        print "<th class=\"des\" title=\"Laukaukset\"><center><A HREF=\"$script_name?sub=player_list&sort=laukaukset&order=ascending$param_list\">La</A></center></th>\n";
-    } elsif ($param_sort =~ /laukaukset/) {
-        print "<th class=\"asc\" title=\"Laukaukset\"><center><A HREF=\"$script_name?sub=player_list&sort=laukaukset$param_list\">La</A></center></th>\n";
-    } else {
-        print "<th title=\"Laukaukset\"><center><A HREF=\"$script_name?sub=player_list&sort=laukaukset$param_list\">La</A></center></th>\n";
-    }
-
-
-    if ($param_sort =~ /arvo/ && !defined $param_order) {
-        print "<th class=\"des\"><center><A HREF=\"$script_name?sub=player_list&sort=arvo&order=ascending$param_list\">Arvo</A></center></th>\n";
-    } elsif ($param_sort =~ /arvo/) {
-        print "<th class=\"asc\"><center><A HREF=\"$script_name?sub=player_list&sort=arvo$param_list\">Arvo</A></center></th>\n";
-    } else {
-        print "<th><center><A HREF=\"$script_name?sub=player_list&sort=arvo$param_list\">Arvo</A></center></th>\n";
-    }
-    if ($param_sort eq "lpp" && !defined $param_order) {
-        print "<th class=\"des\"><center><b><A HREF=\"$script_name?sub=player_list&sort=lpp&order=ascending$param_list\">LPP</A></center></th>\n";
-    } elsif ($param_sort eq "lpp") {
-        print "<th class=\"asc\"><center><b><A HREF=\"$script_name?sub=player_list&sort=lpp$param_list\">LPP</A></center></th>\n";
-    } else {
-        print "<th><center><b><A HREF=\"$script_name?sub=player_list&sort=lpp$param_list\">LPP</A></center></th>\n";
-    }
-    if ($param_sort eq "lpp_per_peli" && !defined $param_order) {
-        print "<th class=\"des\"><center><A HREF=\"$script_name?sub=player_list&sort=lpp_per_peli&order=ascending$param_list\">LPP / Peli</A></center></th>\n";
-    } elsif ($param_sort eq "lpp_per_peli") {
-        print "<th class=\"asc\"><center><A HREF=\"$script_name?sub=player_list&sort=lpp_per_peli$param_list\">LPP / Peli</A></center></th>\n";
-    } else {
-        print "<th><center><A HREF=\"$script_name?sub=player_list&sort=lpp_per_peli$param_list\">LPP / Peli</A></center></th>\n";
-    }
-    if ($param_sort =~ /euroa_per_lpp_per_peli/ && !defined $param_order) {
-        print "<th class=\"des\" title=\"(LPP \/ Peli) \/ Hinta (100tE)\"><center><A HREF=\"$script_name?sub=player_list&sort=euroa_per_lpp_per_peli&order=ascending$param_list\">Hinta/Laatu</A></center></th>\n";
-    } elsif ($param_sort =~ /euroa_per_lpp_per_peli/) {
-        print "<th class=\"asc\" title=\"(LPP \/ Peli) \/ Hinta (100tE)\"><center><A HREF=\"$script_name?sub=player_list&sort=euroa_per_lpp_per_peli$param_list\">Hinta/Laatu</A></center></th>\n";
-    } else {
-        print "<th title=\"(LPP \/ Peli) \/ Hinta (100tE)\"><center><A HREF=\"$script_name?sub=player_list&sort=euroa_per_lpp_per_peli$param_list\">Hinta/Laatu</A></center></th>\n";
-    }
-    if ($param_sort =~ /ennuste/ && !defined $param_order) {
-        print "<th class=\"des\" title=\"LPP ennuste, joukkueen ottelumaara huomioitu\"><center><A HREF=\"$script_name?sub=player_list&sort=ennuste&order=ascending$param_list\">Ennuste</A></center></th>\n";
-    } elsif ($param_sort =~ /ennuste/) {
-        print "<th class=\"asc\" title=\"LPP ennuste, joukkueen ottelumaara huomioitu\"><center><A HREF=\"$script_name?sub=player_list&sort=ennuste$param_list\">Ennuste</A></center></th>\n";
-    } else {
-        print "<th title=\"LPP ennuste, joukkueen ottelumaara huomioitu\"><center><A HREF=\"$script_name?sub=player_list&sort=ennuste$param_list\">Ennuste</A></center></th>\n";
-    }
-    print "<th><center>$param_graafi</center></th>\n";
-    print "</center></th>\n";
+    $html .= "<th><center>Sija</center></th>\n";
+    $html .= print_player_list_header("Nimi", "nimi", $param_list);
+    $html .= "<th><center>Pelipaikka</center></th>\n";
+    $html .= "<th><center>Joukkue</center></th>\n";
+    $html .= print_player_list_header("Pe", "ottelut", $param_list);
+    $html .= print_player_list_header("Ma", "maalit", $param_list);
+    $html .= print_player_list_header("Sy", "syotot", $param_list);
+    $html .= print_player_list_header("Pi", "pisteet", $param_list);
+    $html .= print_player_list_header("La", "laukaukset", $param_list);
+    $html .= print_player_list_header("Arvo", "arvo", $param_list);
+    $html .= print_player_list_header("LPP", "lpp", $param_list);
+    $html .= print_player_list_header("LPP / Peli", "lpp_per_peli", $param_list);
+    $html .= print_player_list_header("Hinta/Laatu", "euroa_per_lpp_per_peli", $param_list);
+    $html .= print_player_list_header("Ennuste", "ennuste", $param_list);
+    $html .= "<th><center>$param_graafi</center></th>\n";
+    $html .= "</center></th>\n";
     
-    print "<\/tr>\n";
+    $html .= "<\/tr>\n";
 
-    print endform;
-    
     my $td = change_table_td();
     my $count = 0;
     my $sort_order = "sort_list";
-    if (defined $param_order) { $sort_order = "sort_list_ascending"; }
+    if ($param_order =~ /ascending/) { $sort_order = "sort_list_ascending"; }
 
 
     foreach $nimi (sort $sort_order keys %pelaaja) {
 	eval($condition);
         $td = change_table_td($td);
 	$count++;
-	print "<tr>\n";
-	print "<td class=\"$td\">$count<\/td>\n";
-	print "<td class=\"$td\">$nimi<\/td>\n";
-	print "<td class=\"$td\">$pelaaja{$nimi}{'pelipaikka'}<\/td>\n";
-	print "<td class=\"$td\">$pelaaja{$nimi}{'joukkue'}<\/td>\n";
-	print "<td class=\"$td\">$pelaaja{$nimi}{'ottelut'}<\/td>\n";
-	print "<td class=\"$td\">$pelaaja{$nimi}{'maalit'}<\/td>\n";
-	print "<td class=\"$td\">$pelaaja{$nimi}{'syotot'}<\/td>\n";
-	print "<td class=\"$td\">$pelaaja{$nimi}{'pisteet'}<\/td>\n";
-	print "<td class=\"$td\">$pelaaja{$nimi}{'laukaukset'}<\/td>\n";
-	print "<td class=\"$td\">$pelaaja{$nimi}{'arvo'}<\/td>\n";
-	print "<td class=\"$td\"><center>$pelaaja{$nimi}{'lpp'}</center><\/td>\n";
-	print "<td class=\"$td\"><center>";
-	printf("%.3f", $pelaaja{$nimi}{'pisteet_per_peli'});
-	print "</center><\/td>\n";
-	print "<td class=\"$td\"><center>";
-	printf("%.3f", $pelaaja{$nimi}{'pisteet_per_euro'});
-	print "</center><\/td>\n";
-	print "<td class=\"$td\">";
-	print "$pelaaja{$nimi}{'ennuste_pisteet'}";
-        print "<\/td>\n";
-	print "<td class=\"$td\">\n";
+	$html .= "<tr>\n";
+	$html .= "<td class=\"$td\">$count<\/td>\n";
+	$html .= "<td class=\"$td\">$nimi<\/td>\n";
+	$html .= "<td class=\"$td\">$pelaaja{$nimi}{'pelipaikka'}<\/td>\n";
+	$html .= "<td class=\"$td\">$pelaaja{$nimi}{'joukkue'}<\/td>\n";
+	$html .= "<td class=\"$td\">$pelaaja{$nimi}{'ottelut'}<\/td>\n";
+	$html .= "<td class=\"$td\">$pelaaja{$nimi}{'maalit'}<\/td>\n";
+	$html .= "<td class=\"$td\">$pelaaja{$nimi}{'syotot'}<\/td>\n";
+	$html .= "<td class=\"$td\">$pelaaja{$nimi}{'pisteet'}<\/td>\n";
+	$html .= "<td class=\"$td\">$pelaaja{$nimi}{'laukaukset'}<\/td>\n";
+	$html .= "<td class=\"$td\">$pelaaja{$nimi}{'arvo'}<\/td>\n";
+	$html .= "<td class=\"$td\"><center>$pelaaja{$nimi}{'lpp'}</center><\/td>\n";
+	$html .= "<td class=\"$td\"><center>";
+	$html .= sprintf("%.2f", $pelaaja{$nimi}{'pisteet_per_peli'});
+	$html .= "</center><\/td>\n";
+	$html .= "<td class=\"$td\"><center>";
+	$html .= sprintf("%.2f", $pelaaja{$nimi}{'pisteet_per_euro'});
+	$html .= "</center><\/td>\n";
+	$html .= "<td class=\"$td\">";
+	$html .= "$pelaaja{$nimi}{'ennuste_pisteet'}";
+        $html .= "<\/td>\n";
+	$html .= "<td class=\"$td\">\n";
 	my $width;
 	if ($param_graafi =~ /LPP ennuste/) {
 	    $width = $pelaaja{$nimi}{'ennuste_pisteet'} / 2;
@@ -1027,18 +1016,33 @@ sub print_player_list {
 	}
 	if ($width < 0) {
 	    $width = abs($width);
-	    print "<p style=\"background: red; width: ${width}px; height: 8px;\">\n";
+	    $html .= "<p style=\"background: red; width: ${width}px; height: 8px;\">\n";
 	} else {
-	    print "<p style=\"background: green; width: ${width}px; height: 8px;\">\n";
+	    $html .= "<p style=\"background: green; width: ${width}px; height: 8px;\">\n";
 	}
-	print "<\/td>\n";
+	$html .= "<\/td>\n";
 
-	print "<\/tr>\n";
+	$html .= "<\/tr>\n";
+    }
+    $html .= "<\/table>\n";
+    
+    return $html;
+}
+
+sub print_player_list_header {
+    my ($header, $sort_name, $param_list) = @_;
+    my $a_script = "print_player_list_div( ['vuosi','read_players_from','joukkue','pelipaikka','ottelut','arvo','graafi','liiga','sort__$sort_name','order__descending'],['player_list_div'] );";
+    my $html;
+    if ($param_sort eq $sort_name && $param_order =~ /descending/) {
+        $a_script =~ s/(order__descending)/order__ascending/;
+	$html .= "<th class=\"des\"><center><A HREF=\"#\" onclick=\"$a_script\">$header</A></center></th>\n";
+    } elsif ($param_sort eq $sort_name) {
+        $html .= "<th class=\"asc\"><center><A HREF=\"#\" onclick=\"$a_script\">$header</A></center></th>\n";
+    } else {
+        $html .= "<th><center><A HREF=\"#\" onclick=\"$a_script\">$header</A></center></th>\n";
     }
     
-    print "<\/table>\n";
-
-    print "<\/center>\n";
+    return $html;
 }
 
 sub read_player_lists {
@@ -1235,26 +1239,30 @@ sub print_team_compare_table {
 }
 
 sub print_current_table {
-    print "<center>\n";
-    print "<table border=\"1\">\n";
-    print "<tr>\n";
+    alustus();
+    
+    my $html;
+    
+    $html .= "<table border=\"1\">\n";
+    $html .= "<tr>\n";
     my @otsikot = ("Sija", "Joukkue", "Pelit", "Pisteet");
     foreach (@otsikot) {
-        print "<th><center>$_</center></th>\n";
+        $html .= "<th><center>$_</center></th>\n";
     }
-    print "<\/tr>\n";
+    $html .= "<\/tr>\n";
     my $td = change_table_td();
     foreach (sort {$taulukko{$a}{'sija'} <=> $taulukko{$b}{'sija'}} keys %taulukko) {
         $td = change_table_td($td);
-	print "<tr>\n";
-	print "<td class=\"$td\">$taulukko{$_}{'sija'}<\/td>\n";
-	print "<td class=\"$td\">$_<\/td>\n";
-	print "<td class=\"$td\">$taulukko{$_}{'pelit'}<\/td>\n";
-	print "<td class=\"$td\">$taulukko{$_}{'pisteet'}<\/td>\n";
-	print "<\/tr>\n";
+	$html .= "<tr>\n";
+	$html .= "<td class=\"$td\">$taulukko{$_}{'sija'}<\/td>\n";
+	$html .= "<td class=\"$td\">$_<\/td>\n";
+	$html .= "<td class=\"$td\">$taulukko{$_}{'pelit'}<\/td>\n";
+	$html .= "<td class=\"$td\">$taulukko{$_}{'pisteet'}<\/td>\n";
+	$html .= "<\/tr>\n";
     }
-    print "<\/table><br>\n";
-    print "<\/center>\n";
+    $html .= "<\/table><br>\n";
+    
+    return $html;
 }
 
 sub print_game_days {
@@ -1440,6 +1448,7 @@ sub hashValueAscendingNum {
 sub read_player_list ($) {
     my $players_file = shift;
     my ($joukkue, $pelipaikka);
+    %pelaaja = ();
     
     open FILE, "$players_file" or die "Cant open $players_file\n"; 
     while (<FILE>) {
