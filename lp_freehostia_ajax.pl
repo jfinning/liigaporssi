@@ -57,6 +57,8 @@ my $param_vuosi             = $cgi->param('vuosi');
 my $param_graafi            = $cgi->param('graafi');
 my $param_liiga             = $cgi->param('liiga');
 my $param_a_script          = $cgi->param('a_script');
+my $param_a_script_end      = $cgi->param('a_script_end');
+my $param_a_script_start    = $cgi->param('a_script_start');
 if (!defined $param_joukkueen_hinta)   { $param_joukkueen_hinta = "2000.0"; }
 if (!defined $param_ottelut)           { $param_ottelut = 0; }
 if (!defined $param_remove_players)    { $param_remove_players = ""; }
@@ -229,6 +231,8 @@ my $pjx = new CGI::Ajax( 'print_game_days_div'              => \&print_game_days
 			   'current_table'                    => \&print_current_table,
 			   'print_player_list_div'            => \&print_player_list,
 			   'print_optimi_joukkue_div'         => \&print_optimi_joukkue,
+			   'print_start_day_div'              => \&select_days_start_form,
+			   'print_end_day_div'                => \&select_days_end_form,
                            'alustus'                          => \&alustus);
 print $pjx->build_html( $cgi, \&update_menus);
 
@@ -326,31 +330,22 @@ sub update_menus {
 }
 
 sub print_optimi_joukkue_form {
-    # Tama siksi, etta saadaan oikeat hinnat
-    if ($param_vuosi =~ /2009|2010|2011|2012/) {
-        read_player_list("2013/player_list_period1.txt");
-    }
-
     alustus();
     read_player_lists();
 
-    my $a_script = "print_optimi_joukkue_div( ['vuosi','read_players_from','ottelut','arvo','liiga','joukkueen_hinta','remove_players','start_day','end_day','a_script'";
+    my $a_script = "print_optimi_joukkue_div( ['read_players_from','ottelut','arvo','liiga','joukkueen_hinta','remove_players','start_day','end_day','a_script'";
     my @paikka = muuttujien_alustusta("paikka");
     foreach my $paikka (@paikka) {
 	$a_script .= ",'$paikka->[4]'";
     }
     $a_script .= "],['optimi_joukkue_div'] );";
-#    $a_script =~ s/(\],\[)/,'a_script__$a_script'$1/;
+    my $a_script_start = $a_script . "print_end_day_div( ['start_day','end_day','a_script_end','liiga'],['end_day_div'] );";
+    my $a_script_end = $a_script . "print_start_day_div( ['start_day','end_day','a_script_start','liiga'],['start_day_div'] );";
 
     my $html;
     $html .= "<input type='hidden' name='a_script' id='a_script' value=\"$a_script\">\n";
     $html .= "<center>\n";
     $html .= "T&#228;ll&#228; sivulla voit koota laskennallisia optimikokoonpanoja antamillasi ehdoilla.<br>\n";
-    if ($param_liiga =~ /sm_liiga/) {
-        $html .= "Jos valitset vuoden 2012, lasketaan optimijoukkue tuon vuoden pisteiden mukaisesti. Pelaajat, jotka ovat jo poistuneet liigasta, j&#228;tet&#228;&#228;n huomiotta.<p>\n";
-    } else {
-        $html .= "<p>\n";
-    }
 
     $html .= "Joukkueen arvo tE\n";
     $html .= "<input type='text' name='joukkueen_hinta' id='joukkueen_hinta' SIZE='6' MAXLENGTH='6' VALUE=\"$param_joukkueen_hinta\">\n";
@@ -391,23 +386,15 @@ sub print_optimi_joukkue_form {
             $html .= "<option>$current_arvo<\/option>\n";
 	}
     }
-    $html .= "<\/select>\n";
-
-    # Vuosi
-    $html .= "<select name=\"vuosi\" id=\"vuosi\" onchange=\"$a_script\">\n";
-    my @vuodet = muuttujien_alustusta("vuodet");
-    foreach (@vuodet) {
-        if ($_ == $param_vuosi) {
-            $html .= "<option selected>$_<\/option>\n";
-	    $param_vuosi = $_;
-        } else {
-            $html .= "<option>$_<\/option>\n";
-        }
-    }
     $html .= "<\/select><br>\n";
+
+    $html .= "<input type='hidden' name='a_script_start' id='a_script_start' value=\"$a_script_start\">\n";
+    $html .= "<input type='hidden' name='a_script_end' id='a_script_end' value=\"$a_script_end\">\n";
+
     $html .= "Valitse aikav&#228;li, jolle haluat optimikokoonpanon laskettavan: \n";
-    $html .= select_days_form($a_script) . "<p>\n";
-    $html .= "<br>\n";
+
+    $html .= "<span id='start_day_div'>" . select_days_start_form($a_script_start) . "</span>\n";
+    $html .= "<span id='end_day_div'>" . select_days_end_form($a_script_end) . "</span><br>\n";
 
     $html .= "<br>Kopioi t&#228;h&#228;n pelaajien nimi&#228;, jotka haluat skipata. Esim. loukkaantuneita pelaajia.<br>\n";
     $html .= "<TEXTAREA NAME='remove_players' id='remove_players' COLS=40 ROWS=5>\n";
@@ -1155,10 +1142,16 @@ sub sort_list_ascending {
 }
 
 sub print_start_page {
+    my $a_script_start = "print_game_days_div( ['start_day','end_day','team_from','liiga'],['game_days_div'] ); print_team_compare_table_div( ['start_day','end_day','team_from','liiga'],['team_compare_table_div'] ); calculate_optimal_change_day_div( ['start_day','end_day','team_from','liiga'],['optimal_change_day_div','peli_count_div'] ); print_end_day_div( ['start_day','end_day','a_script_end','liiga'],['end_day_div'] );";
+    my $a_script_end = "print_game_days_div( ['start_day','end_day','team_from','liiga'],['game_days_div'] ); print_team_compare_table_div( ['start_day','end_day','team_from','liiga'],['team_compare_table_div'] ); calculate_optimal_change_day_div( ['start_day','end_day','team_from','liiga'],['optimal_change_day_div','peli_count_div'] ); print_start_day_div( ['start_day','end_day','a_script_start','liiga'],['start_day_div'] );";
+       
     my $html;
+    $html .= "<input type='hidden' name='a_script_start' id='a_script_start' value=\"$a_script_start\">\n";
+    $html .= "<input type='hidden' name='a_script_end' id='a_script_end' value=\"$a_script_end\">\n";
     $html .= "<center>\n";
     $html .= "<div id='game_days_div'>" . print_game_days() . "</div>\n";
-    $html .= select_days_form("print_game_days_div( ['start_day','end_day','team_from','liiga'],['game_days_div'] ); print_team_compare_table_div( ['start_day','end_day','team_from','liiga'],['team_compare_table_div'] ); calculate_optimal_change_day_div( ['start_day','end_day','team_from','liiga'],['optimal_change_day_div','peli_count_div'] );") . "<p>\n";
+    $html .= "<span id='start_day_div'>" . select_days_start_form($a_script_start) . "</span>\n";
+    $html .= "<span id='end_day_div'>" . select_days_end_form($a_script_end) . "</span><p>\n";
     $html .= "<input type='hidden' name='liiga' id='liiga' value=\"$param_liiga\">\n";
     $html .= "<div id='team_compare_table_div'>" . print_team_compare_table() . "</div>\n";
     my ($html_temp, $from_count) = calculate_optimal_change_day();
@@ -1169,8 +1162,12 @@ sub print_start_page {
     return $html;
 }
 
-sub select_days_form {
-    my $a_script = shift;
+sub select_days_start_form {
+    my $a_script;
+    if (defined $param_a_script_start) {
+        $a_script = $param_a_script_start;
+    } else { $a_script = shift; }
+
     my $html;
 
     $html .= "Start <select name=\"start_day\" id=\"start_day\" onchange=\"$a_script\">\n";
@@ -1180,11 +1177,26 @@ sub select_days_form {
 	} else {
 	    $html .= "<option>$_</option>\n";
 	}
+	if (/$end/) { last; }
     }
     $html .= "</select>\n";
+    
+    return $html;
+}
+
+sub select_days_end_form {
+    my $a_script;
+    if (defined $param_a_script_end) {
+        $a_script = $param_a_script_end;
+    } else { $a_script = shift; }
+
+    my $start_found = 0;
+    my $html;
 
     $html .= "End <select name=\"end_day\" id=\"end_day\" onchange=\"$a_script\">\n";
     foreach (@all_day_list) {
+	if ($_ =~ /$start/) { $start_found = 1; }
+	if (!$start_found) { next; }
 	if (/$end/) {
 	    $html .= "<option selected>$_</option>\n";
 	} else {
@@ -1507,10 +1519,6 @@ sub read_player_list ($) {
 	#          1       2       3       4       5       6       7       8       9                10          11        12
 	#if (/^\s*(.*?)\s*(\d+)\s*(\d+)\s*(\d+)\s*(\d+)\s*(\d+)\s*(\d+)\s*(\d+)\s*(\d+)\s*.*?\s*(-\d+|\d+)\s+(\d\d\d) (\d)\d\d$/) {
 	if (/$parse/) {
-            # Luetaan vain pelaajat, jotka pelaavat myos 2013
-	    if ($param_vuosi == 2012 && $param_sub eq "optimi_joukkue") {
-	       if (!defined $pelaaja{$1} && $players_file =~ /2012/) { next; }
-	    }
 	    $pelaaja{$1}{'ottelut'} += $2;
 	    $pelaaja{$1}{'maalit'} += $3;
 	    $pelaaja{$1}{'syotot'} += $4;
@@ -1522,16 +1530,9 @@ sub read_player_list ($) {
 	    }
 	    if ($max_pelatut_pelit < $pelaaja{$1}{'ottelut'}) { $max_pelatut_pelit = $pelaaja{$1}{'ottelut'}; }
             $pelaaja{$1}{'pelipaikka'} = $pelipaikka;
-	    if ($param_vuosi == 2012 && $param_sub eq "optimi_joukkue" && defined $pelaaja{$1}{'arvo'}) {
-	    } else {
-                $pelaaja{$1}{'arvo'} = "$11.$12";
-	    }
+            $pelaaja{$1}{'arvo'} = "$11.$12";
             $pelaaja{$1}{'lpp'} += $10;
-	    
-	    # Tama siksi, jos pelaaja on vaihtanut seuraa 2012-2013
-	    if (! defined $pelaaja{$1}{'joukkue'}) {
-	        $pelaaja{$1}{'joukkue'} = $joukkue;
-	    }
+            $pelaaja{$1}{'joukkue'} = $joukkue;
 	    
 	    if ($pelaaja{$1}{'ottelut'} ne "0") {
 	        $pelaaja{$1}{'pisteet_per_peli'} = $pelaaja{$1}{'lpp'} / $pelaaja{$1}{'ottelut'}
