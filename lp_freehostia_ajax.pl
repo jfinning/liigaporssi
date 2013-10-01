@@ -228,7 +228,6 @@ alustus();
 my $pjx = new CGI::Ajax( 'print_game_days_div'              => \&print_game_days,
                            'print_team_compare_table_div'     => \&print_team_compare_table,
 			   'calculate_optimal_change_day_div' => \&calculate_optimal_change_day,
-			   'current_table'                    => \&print_current_table,
 			   'print_player_list_div'            => \&print_player_list,
 			   'print_optimi_joukkue_div'         => \&print_optimi_joukkue,
 			   'print_start_day_div'              => \&select_days_start_form,
@@ -311,7 +310,7 @@ sub update_menus {
     $html .= "<li><A HREF=\"$script_name?sub=print_start_page&liiga=$param_liiga\">Ottelulista</A></li>\n";
     $html .= "<li><A HREF=\"$script_name?sub=player_list&sort=lpp_per_peli&liiga=$param_liiga\">Pelaajalista</A></li>\n";
     $html .= "<li><A HREF=\"$script_name?sub=optimi_joukkue&liiga=$param_liiga\">Optimijoukkue</A></li>\n";
-    $html .= "<li><A HREF=\"$script_name?sub=print_current_table&liiga=$param_liiga\">Sarjataulukko</A></li>\n";
+    $html .= "<li><A HREF=\"http://liigaporssi.freehostia.com/mjguest\" target=\"_blank\">Vieraskirja</A></li>\n";
     $html .= "<li><a href=\"mailto:jepponen\@gmail.com\">Mailia</a></li>";
  
     $html .= "</ul>\n";
@@ -321,7 +320,6 @@ sub update_menus {
     
     if ($param_sub =~ /start_page|^\s*$/) { $html .= print_start_page()};
     if ($param_sub =~ /player_list/)      {$html .= print_player_list_form()};
-    if ($param_sub =~ /current_table/)    {$html .= print_current_table()};
     if ($param_sub =~ /optimi_joukkue/)   {$html .= print_optimi_joukkue_form()};
 
     $html .= "</center>\n";
@@ -398,7 +396,6 @@ sub print_optimi_joukkue_form {
 
     $html .= "<br>Kopioi t&#228;h&#228;n pelaajien nimi&#228;, jotka haluat skipata. Esim. loukkaantuneita pelaajia.<br>\n";
     $html .= "<TEXTAREA NAME='remove_players' id='remove_players' COLS=40 ROWS=5>\n";
-    $html .= "$param_remove_players";
     $html .= "<\/TEXTAREA><br>\n";
     $html .= "<br>\n";
     
@@ -535,7 +532,6 @@ sub print_optimi_joukkue {
         $html .= "<td class=\"$td\">$paikka->[3]: <\/td>\n";
 	$html .= "<td class=\"$td\">";
 	$html .= "<select name=\"$paikka->[4]\" id=\"$paikka->[4]\" onchange=\"$a_script\">\n";
-#	$html .= "<select name=\"$paikka->[4]\" id=\"$paikka->[4]\">\n";
         $html .= "<option>$paikka->[1]<\/option>\n";
 	foreach (@{$paikka->[2]}) {
             if (/$paikka->[5]/) {
@@ -970,8 +966,10 @@ sub print_player_list {
     
     $html .= "<th><center>Sija</center></th>\n";
     $html .= print_player_list_header("Nimi", "nimi", $param_list);
-    $html .= "<th><center>Pelipaikka</center></th>\n";
-    $html .= "<th><center>Joukkue</center></th>\n";
+    $html .= print_player_list_header("Pelipaikka", "pelipaikka", $param_list);
+    $html .= print_player_list_header("Joukkue", "joukkue", $param_list);
+#    $html .= "<th><center>Pelipaikka</center></th>\n";
+#    $html .= "<th><center>Joukkue</center></th>\n";
     $html .= print_player_list_header("Pe", "ottelut", $param_list);
     $html .= print_player_list_header("Ma", "maalit", $param_list);
     $html .= print_player_list_header("Sy", "syotot", $param_list);
@@ -1089,11 +1087,13 @@ sub sort_list {
     } elsif ($param_sort =~ /euroa_per_lpp_per_peli/) {
 	{$pelaaja{$b}{"pisteet_per_euro"} <=> $pelaaja{$a}{"pisteet_per_euro"} || $pelaaja{$b}{"ennuste_pisteet"} <=> $pelaaja{$a}{"ennuste_pisteet"}};
     } elsif ($param_sort =~ /nimi/) {
-	{$b cmp $a};
+	{$a cmp $b};
     } elsif ($param_sort =~ /joukkue/) {
+	{$pelaaja{$a}{"joukkue"} cmp $pelaaja{$b}{"joukkue"} || $pelaaja{$b}{"ennuste_pisteet"} <=> $pelaaja{$a}{"ennuste_pisteet"}};
+    } elsif ($param_sort =~ /pelipaikka/) {
+	{$pelaaja{$a}{"pelipaikka"} cmp $pelaaja{$b}{"pelipaikka"} || $pelaaja{$b}{"ennuste_pisteet"} <=> $pelaaja{$a}{"ennuste_pisteet"}};
     } elsif ($param_sort =~ /ottelut/) {
 	{$pelaaja{$b}{"ottelut"} <=> $pelaaja{$a}{"ottelut"} || $pelaaja{$b}{"ennuste_pisteet"} <=> $pelaaja{$a}{"ennuste_pisteet"}};
-
     } elsif ($param_sort =~ /maalit/) {
 	{$pelaaja{$b}{"maalit"} <=> $pelaaja{$a}{"maalit"} || $pelaaja{$b}{"pisteet"} <=> $pelaaja{$a}{"pisteet"} || $pelaaja{$b}{"ennuste_pisteet"} <=> $pelaaja{$a}{"ennuste_pisteet"}};
     } elsif ($param_sort =~ /syotot/) {
@@ -1102,7 +1102,6 @@ sub sort_list {
 	{$pelaaja{$b}{"pisteet"} <=> $pelaaja{$a}{"pisteet"} || $pelaaja{$b}{"ennuste_pisteet"} <=> $pelaaja{$a}{"ennuste_pisteet"} || $pelaaja{$b}{"ennuste_pisteet"} <=> $pelaaja{$a}{"ennuste_pisteet"}};
     } elsif ($param_sort =~ /laukaukset/) {
 	{$pelaaja{$b}{"laukaukset"} <=> $pelaaja{$a}{"laukaukset"} || $pelaaja{$b}{"ennuste_pisteet"} <=> $pelaaja{$a}{"ennuste_pisteet"}};
-
     } elsif ($param_sort =~ /lpp_per_peli/) {
 	{$pelaaja{$b}{"pisteet_per_peli"} <=> $pelaaja{$a}{"pisteet_per_peli"} || $pelaaja{$b}{"ennuste_pisteet"} <=> $pelaaja{$a}{"ennuste_pisteet"}};
     } elsif ($param_sort =~ /lpp/) {
@@ -1118,11 +1117,13 @@ sub sort_list_ascending {
     } elsif ($param_sort =~ /euroa_per_lpp_per_peli/) {
 	{$pelaaja{$a}{"pisteet_per_euro"} <=> $pelaaja{$b}{"pisteet_per_euro"} || $pelaaja{$b}{"ennuste_pisteet"} <=> $pelaaja{$a}{"ennuste_pisteet"}};
     } elsif ($param_sort =~ /nimi/) {
-	{$a cmp $b};
+	{$b cmp $a};
     } elsif ($param_sort =~ /joukkue/) {
+	{$pelaaja{$b}{"joukkue"} cmp $pelaaja{$a}{"joukkue"} || $pelaaja{$b}{"ennuste_pisteet"} <=> $pelaaja{$a}{"ennuste_pisteet"}};
+    } elsif ($param_sort =~ /pelipaikka/) {
+	{$pelaaja{$b}{"pelipaikka"} cmp $pelaaja{$a}{"pelipaikka"} || $pelaaja{$b}{"ennuste_pisteet"} <=> $pelaaja{$a}{"ennuste_pisteet"}};
     } elsif ($param_sort =~ /ottelut/) {
 	{$pelaaja{$a}{"ottelut"} <=> $pelaaja{$b}{"ottelut"} || $pelaaja{$b}{"ennuste_pisteet"} <=> $pelaaja{$a}{"ennuste_pisteet"}};
-
     } elsif ($param_sort =~ /maalit/) {
 	{$pelaaja{$a}{"maalit"} <=> $pelaaja{$b}{"maalit"} || $pelaaja{$a}{"pisteet"} <=> $pelaaja{$b}{"pisteet"} || $pelaaja{$b}{"ennuste_pisteet"} <=> $pelaaja{$a}{"ennuste_pisteet"}};
     } elsif ($param_sort =~ /syotot/) {
@@ -1131,7 +1132,6 @@ sub sort_list_ascending {
 	{$pelaaja{$a}{"pisteet"} <=> $pelaaja{$b}{"pisteet"} || $pelaaja{$a}{"ennuste_pisteet"} <=> $pelaaja{$b}{"ennuste_pisteet"}};
     } elsif ($param_sort =~ /laukaukset/) {
 	{$pelaaja{$a}{"laukaukset"} <=> $pelaaja{$b}{"laukaukset"} || $pelaaja{$a}{"ennuste_pisteet"} <=> $pelaaja{$b}{"ennuste_pisteet"}};
-
     } elsif ($param_sort =~ /lpp_per_peli/) {
 	{$pelaaja{$a}{"pisteet_per_peli"} <=> $pelaaja{$b}{"pisteet_per_peli"} || $pelaaja{$b}{"ennuste_pisteet"} <=> $pelaaja{$a}{"ennuste_pisteet"}};
     } elsif ($param_sort =~ /lpp/) {
@@ -1268,33 +1268,6 @@ sub print_team_compare_table {
 	    $html .= "<p title=\"$vastus{$_}{'top'} vastustaja(a) sijoilta 1-5\" style=\"background: white; width: 2px; height: 8px; float:left; margin:0;\">\n";
 	}
 	$html .= "<\/td>\n";
-	$html .= "<\/tr>\n";
-    }
-    $html .= "<\/table><br>\n";
-    
-    return $html;
-}
-
-sub print_current_table {
-    alustus();
-    
-    my $html;
-    
-    $html .= "<table border=\"1\">\n";
-    $html .= "<tr>\n";
-    my @otsikot = ("Sija", "Joukkue", "Pelit", "Pisteet");
-    foreach (@otsikot) {
-        $html .= "<th><center>$_</center></th>\n";
-    }
-    $html .= "<\/tr>\n";
-    my $td = change_table_td();
-    foreach (sort {$taulukko{$a}{'sija'} <=> $taulukko{$b}{'sija'}} keys %taulukko) {
-        $td = change_table_td($td);
-	$html .= "<tr>\n";
-	$html .= "<td class=\"$td\">$taulukko{$_}{'sija'}<\/td>\n";
-	$html .= "<td class=\"$td\">$_<\/td>\n";
-	$html .= "<td class=\"$td\">$taulukko{$_}{'pelit'}<\/td>\n";
-	$html .= "<td class=\"$td\">$taulukko{$_}{'pisteet'}<\/td>\n";
 	$html .= "<\/tr>\n";
     }
     $html .= "<\/table><br>\n";
@@ -1515,9 +1488,6 @@ sub read_player_list ($) {
         my $parse = '^\s*(.*?)\s*(\d+)\s*(\d+)\s*(\d+)\s*(\d+)\s*(\d+)\s*(\d+)\s*(\d+)\s*(\d+)\s*.*?\s*(-\d+|\d+)\s+(\d\d\d) (\d)\d\d$';
 	#                                           1       2       3       4       5       6       7     8    9                10          11        12
 	if ($param_liiga =~ /nhl/) { $parse = '^\s*(.*?)\s*(\d+)\s*(\d+)\s*(\d+)\s*(\d+)\s*(\d+)\s*(\d+)(\s*)(\d+)\s*.*?\s*(-\d+|\d+)\s+(\d\d\d) (\d)\d\d$'; }
-	
-	#          1       2       3       4       5       6       7       8       9                10          11        12
-	#if (/^\s*(.*?)\s*(\d+)\s*(\d+)\s*(\d+)\s*(\d+)\s*(\d+)\s*(\d+)\s*(\d+)\s*(\d+)\s*.*?\s*(-\d+|\d+)\s+(\d\d\d) (\d)\d\d$/) {
 	if (/$parse/) {
 	    $pelaaja{$1}{'ottelut'} += $2;
 	    $pelaaja{$1}{'maalit'} += $3;
