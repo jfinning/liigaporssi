@@ -41,7 +41,6 @@ my @hyokkaajat_kaikki = ();
 my $start                   = $cgi->param('start_day');
 my $end                     = $cgi->param('end_day');
 my $team_from               = $cgi->param('team_from');
-my $team_to                 = $cgi->param('team_to');
 my $param_sub               = $cgi->param('sub');
 my $param_sort              = $cgi->param('sort');
 my $param_order             = $cgi->param('order');
@@ -119,14 +118,10 @@ if ($o_hyokkaaja3 =~ /Kaikki/) {
 
 if (! defined $end) {
     if ($param_liiga =~ /sm_liiga/) {
-        $end = "12.10.";
+        $end = "02.11.";
     } else {
         $end = "03.11.";
     }
-}
-
-if (! defined $team_to) {
-    $team_to = "Valitse";
 }
 
 open TAULUKKO, "$sarjataulukko" or die "Cant open $sarjataulukko\n"; 
@@ -1131,7 +1126,6 @@ sub print_start_page {
     select_days_form();
     print hidden(-name => 'liiga', -default => "$param_liiga");
     print hidden(-name => 'team_from', -default => "$team_from");
-    print hidden(-name => 'team_to', -default => "$team_to");
     print hidden(-name => 'sub', -default => "start_page");
     print submit('Update');
     print endform;
