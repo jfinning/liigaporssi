@@ -4,6 +4,7 @@ use strict;
 use CGI::Carp qw(fatalsToBrowser);
 use CGI qw(:standard);
 use CGI::Ajax;
+use Time::HiRes qw(usleep gettimeofday tv_interval);
 
 my $cgi = new CGI;
 my $script_name = $cgi->script_name;
@@ -18,8 +19,10 @@ my @selected_day_list;
 my @weekdays;
 my %pelipaivat;
 my $max_pelatut_pelit = 0;
+my $max_teams = 10;
+my $timing = 0; #Tama on koodin nopeuden mittaukseen
 
-my %pelaaja;
+my $pelaaja = {};
 
 my $o_maalivahti = "Kaikki M";
 my $o_puolustaja1 = "Kaikki P1";
@@ -130,7 +133,7 @@ sub alustus {
 
     if (! defined $end) {
         if ($param_liiga =~ /sm_liiga/) {
-            $end = "12.10.";
+            $end = "02.11.";
         } else {
             $end = "03.11.";
         }
@@ -141,9 +144,9 @@ sub alustus {
         s/\s*$//;
 
         if ((/(\d+)\.\s*(.*?)\s*(\d+)\s*(\d+)\s*/ && $param_liiga eq "sm_liiga") || (/(\d+)\.\s*(.*?)\s*(\d+)\s*.*?\s*(\d+)\s*(\d\.\d\d)\s*$/ && $param_liiga eq "nhl")) {
-	    $taulukko{$2}{'sija'} = $1;
-	    $taulukko{$2}{'pelit'} = $3;
-            $taulukko{$2}{'pisteet'} = $4;
+	    $taulukko{$2}{sija} = $1;
+	    $taulukko{$2}{pelit} = $3;
+            $taulukko{$2}{pisteet} = $4;
         }
     }
     close (TAULUKKO);
@@ -194,23 +197,23 @@ sub alustus {
             $kaikkipelit{$1}++;
             $kaikkipelit{$2}++;
 	
-	    $pelipaivat{$1}{$pelipaiva}{'kotipeli'} = $2;
-	    $pelipaivat{$2}{$pelipaiva}{'vieraspeli'} = $1;
+	    $pelipaivat{$1}{$pelipaiva}{kotipeli} = $2;
+	    $pelipaivat{$2}{$pelipaiva}{vieraspeli} = $1;
 
-	    if ($taulukko{$1}{'sija'} <= 5) {
-	        $vastus{$2}{'top'}++;
-	    } elsif ($taulukko{$1}{'sija'} <= 10) {
-	        $vastus{$2}{'mid'}++;
+	    if ($taulukko{$1}{sija} <= 5) {
+	        $vastus{$2}{top}++;
+	    } elsif ($taulukko{$1}{sija} <= 10) {
+	        $vastus{$2}{mid}++;
 	    } else { 
-	        $vastus{$2}{'low'}++;
+	        $vastus{$2}{low}++;
 	    }
 
-	    if ($taulukko{$2}{'sija'} <= 5) {
-	        $vastus{$1}{'top'}++;
-	    } elsif ($taulukko{$2}{'sija'} <= 10) {
-	        $vastus{$1}{'mid'}++;
+	    if ($taulukko{$2}{sija} <= 5) {
+	        $vastus{$1}{top}++;
+	    } elsif ($taulukko{$2}{sija} <= 10) {
+	        $vastus{$1}{mid}++;
 	    } else { 
-	        $vastus{$1}{'low'}++;
+	        $vastus{$1}{low}++;
 	    }
         }
     }
@@ -416,75 +419,72 @@ sub print_optimi_joukkue {
     my $html;
     $html .= "<input type='hidden' name='liiga' id='liiga' value=\"$param_liiga\">\n";
     
-    my $optimi_pisteet = -100;
-    my $optimi_hinta;
-    my %current_joukkue;
+    my $optimi_pisteet = 0;
+    my $optimi_hinta = 0;
     my $hinta;
     my $pisteet;
 
     my @maalivahdit_karsitut;
     my @puolustajat_karsitut;
-    my @hyokkaajat_karsitut;
+#    my @hyokkaajat_karsitut;
+    my $hyokkaajat_karsitut;
     
-    my $m_count = 0;
-    my $p_count = 0;
-    my $h_count = 0;
+    my @top1_maalivahdit = (-50, -50, -50, -50, -50, -50, -50, -50, -50, -50);
+    my @top2_puolustajat = (-50, -50, -50, -50, -50, -50, -50, -50, -50, -50);
+    my @top3_hyokkaajat = (-50, -50, -50, -50, -50, -50, -50, -50, -50, -50);
     
-    my $m_ennuste_pisteet = -50;
-    
-    my @top2_puolustajat = (-50, -50);
-    my @top3_hyokkaajat = (-50, -50, -50);
-    
-    foreach (sort {$pelaaja{$a}{"arvo"} <=> $pelaaja{$b}{"arvo"} || $pelaaja{$a}{"ennuste_pisteet"} <=> $pelaaja{$b}{"ennuste_pisteet"}} keys %pelaaja) {
-	if ($playoff_joukkueet !~ $pelaaja{$_}{'joukkue'}) { next; }
-	if ($pelaaja{$_}{'pelipaikka'} =~ /Maalivahti/) {
-	    push (@maalivahdit_kaikki, "$_, $pelaaja{$_}{'arvo'} tE, Ennuste $pelaaja{$_}{'ennuste_pisteet'}");
-	    if ($jaljella_olevat_joukkueet !~ $pelaaja{$_}{'joukkue'}) { next; }
-	    if ($pelaaja{$_}{'ottelut'} < $param_ottelut) { next; }
+    foreach (sort {$pelaaja->{$a}->{arvo} <=> $pelaaja->{$b}->{arvo} || $pelaaja->{$a}->{ennuste_pisteet} <=> $pelaaja->{$b}->{ennuste_pisteet}} keys %{$pelaaja}) {
+	if ($playoff_joukkueet !~ $pelaaja->{$_}->{joukkue}) { next; }
+	if ($pelaaja->{$_}->{pelipaikka} =~ /Maalivahti/) {
+	    push (@maalivahdit_kaikki, "$_, $pelaaja->{$_}->{arvo} tE, Ennuste $pelaaja->{$_}->{ennuste_pisteet}");
+	    if ($jaljella_olevat_joukkueet !~ $pelaaja->{$_}->{joukkue}) { next; }
+	    if ($pelaaja->{$_}->{ottelut} < $param_ottelut) { next; }
+            if ($pelaaja->{$_}->{ennuste_pisteet} <= 0) { next; }
 	    if ($param_remove_players =~ /$_/) { next; }
 	    if (/$o_maalivahti/) { next; }
-	    if (defined $param_arvo && $pelaaja{$_}{'arvo'} > $param_arvo) { next; }
-	    if ($m_count > 0 && $pelaaja{$_}{'ennuste_pisteet'} <= $m_ennuste_pisteet) { next; }
-	    $m_ennuste_pisteet = $pelaaja{$_}{'ennuste_pisteet'};
+	    if (defined $param_arvo && $pelaaja->{$_}->{arvo} > $param_arvo) { next; }
+	    if ($pelaaja->{$_}->{ennuste_pisteet} > $top1_maalivahdit[0]) {
+	        $top1_maalivahdit[0] = $pelaaja->{$_}->{ennuste_pisteet};
+		@top1_maalivahdit = sort {$a <=> $b} @top1_maalivahdit;
+	    } else { next; }
 	    push (@maalivahdit_karsitut, $_);
-	    $m_count++;
 	}
-        if ($pelaaja{$_}{'pelipaikka'} =~ /Puolustaja/) {
-	    push (@puolustajat_kaikki, "$_, $pelaaja{$_}{'arvo'} tE, Ennuste $pelaaja{$_}{'ennuste_pisteet'}");
-	    if ($jaljella_olevat_joukkueet !~ $pelaaja{$_}{'joukkue'}) { next; }
-	    if ($pelaaja{$_}{'ottelut'} < $param_ottelut) { next; }
+        if ($pelaaja->{$_}->{pelipaikka} =~ /Puolustaja/) {
+	    push (@puolustajat_kaikki, "$_, $pelaaja->{$_}->{arvo} tE, Ennuste $pelaaja->{$_}->{ennuste_pisteet}");
+	    if ($jaljella_olevat_joukkueet !~ $pelaaja->{$_}->{joukkue}) { next; }
+	    if ($pelaaja->{$_}->{ottelut} < $param_ottelut) { next; }
+            if ($pelaaja->{$_}->{ennuste_pisteet} <= 0) { next; }
 	    if ($param_remove_players =~ /$_/) { next; }
 	    if (/$o_puolustaja1/ || /$o_puolustaja2/) { next; }
-	    if (defined $param_arvo && $pelaaja{$_}{'arvo'} > $param_arvo) { next; }
-	    if ($pelaaja{$_}{'ennuste_pisteet'} > $top2_puolustajat[0] || $p_count < 1) {
-	        $top2_puolustajat[0] = $pelaaja{$_}{'ennuste_pisteet'};
+	    if (defined $param_arvo && $pelaaja->{$_}->{arvo} > $param_arvo) { next; }
+	    if ($pelaaja->{$_}->{ennuste_pisteet} > $top2_puolustajat[0]) {
+	        $top2_puolustajat[0] = $pelaaja->{$_}->{ennuste_pisteet};
 		@top2_puolustajat = sort {$a <=> $b} @top2_puolustajat;
 	    } else { next; }
 	    push (@puolustajat_karsitut, $_);
-	    $p_count++;
 	}
-        if ($pelaaja{$_}{'pelipaikka'} =~ /Hyokkaaja/) {
-	    push (@hyokkaajat_kaikki, "$_, $pelaaja{$_}{'arvo'} tE, Ennuste $pelaaja{$_}{'ennuste_pisteet'}");
-	    if ($jaljella_olevat_joukkueet !~ $pelaaja{$_}{'joukkue'}) { next; }
-	    if ($pelaaja{$_}{'ottelut'} < $param_ottelut) { next; }
+        if ($pelaaja->{$_}->{pelipaikka} =~ /Hyokkaaja/) {
+	    push (@hyokkaajat_kaikki, "$_, $pelaaja->{$_}->{arvo} tE, Ennuste $pelaaja->{$_}->{ennuste_pisteet}");
+	    if ($jaljella_olevat_joukkueet !~ $pelaaja->{$_}->{joukkue}) { next; }
+	    if ($pelaaja->{$_}->{ottelut} < $param_ottelut) { next; }
+            if ($pelaaja->{$_}->{ennuste_pisteet} <= 0) { next; }
 	    if ($param_remove_players =~ /$_/) { next; }
 	    if (/$o_hyokkaaja1/ || /$o_hyokkaaja2/ || /$o_hyokkaaja3/) { next; }
-	    if (defined $param_arvo && $pelaaja{$_}{'arvo'} > $param_arvo) { next; }
-	    if ($pelaaja{$_}{'ennuste_pisteet'} > $top3_hyokkaajat[0] || $h_count < 2) {
-	        $top3_hyokkaajat[0] = $pelaaja{$_}{'ennuste_pisteet'};
+	    if (defined $param_arvo && $pelaaja->{$_}->{arvo} > $param_arvo) { next; }
+	    if ($pelaaja->{$_}->{ennuste_pisteet} > $top3_hyokkaajat[0]) {
+	        $top3_hyokkaajat[0] = $pelaaja->{$_}->{ennuste_pisteet};
 		@top3_hyokkaajat = sort {$a <=> $b} @top3_hyokkaajat;
 	    } else { next; }
-	    push (@hyokkaajat_karsitut, $_);
-	    $h_count++;
+	    push (@$hyokkaajat_karsitut, $_);
 	}
     }
     
     my @paikka = muuttujien_alustusta("paikka");
     foreach (@paikka) {
 	if ($_->[0] =~ /Kaikki/) {
-            $pelaaja{$_->[0]}{'ennuste_pisteet'} = -20;
+            $pelaaja->{$_->[0]}->{ennuste_pisteet} = -20;
         } else {
-            $pelaaja{$_->[0]}{'ennuste_pisteet'} = $pelaaja{$_->[0]}{'ennuste_pisteet'};
+            $pelaaja->{$_->[0]}->{ennuste_pisteet} = $pelaaja->{$_->[0]}->{ennuste_pisteet};
         }
     }    
 
@@ -496,12 +496,25 @@ sub print_optimi_joukkue {
     my $t_hyokkaaja3 = $hyokkaaja3 = $o_hyokkaaja3;
 
     my %top_teams;
+    my $top_teams_ref;
+    my $top_teams_puolustus_ref = {};
+    my $top_teams_hyokkays_ref = {};
+
+my ($elapsed, $current);
+    my $t_count = 0;
     
     my $loops;
     if (defined $param_joukkueen_hinta) {
 	$loops = create_loops();
     }
-    eval $loops ;
+    eval $loops;
+    $html .= "$@<br>\n" if $@;
+
+    foreach my $pelaajat (sort {$top_teams{3}{$b}{pisteet} <=> $top_teams{3}{$a}{pisteet}} keys %{$top_teams{3}}) {
+	my @players = split(/\s*,\s*/, $top_teams{3}{$pelaajat}{pelaajat});
+        ($o_maalivahti, $o_puolustaja1, $o_puolustaja2, $o_hyokkaaja1, $o_hyokkaaja2, $o_hyokkaaja3) = ($players[0], $players[1], $players[2], $players[3], $players[4], $players[5]);
+	last;
+    }
 
     $maalivahti = $t_maalivahti;
     $puolustaja1 = $t_puolustaja1;
@@ -543,14 +556,17 @@ sub print_optimi_joukkue {
         $html .= "<\/select>\n";
 	$html .= "<\/td>\n";
         $html .= "<td class=\"$td\">$paikka->[0]<\/td>\n";
-        $html .= "<td class=\"$td\">$pelaaja{$paikka->[0]}{'joukkue'}<\/td>\n";
-        $html .= "<td class=\"$td\"><center>$pelaaja{$paikka->[0]}{'ottelut'}</center><\/td>\n";
-        $html .= "<td class=\"$td\"><center>$kaikkipelit{$pelaaja{$paikka->[0]}{'joukkue'}}</center><\/td>\n";
-        $html .= "<td class=\"$td\">$pelaaja{$paikka->[0]}{'arvo'}<\/td>\n";
-        $html .= "<td class=\"$td\"><center>$pelaaja{$paikka->[0]}{'ennuste_pisteet'}</center><\/td>\n";
+        $html .= "<td class=\"$td\">$pelaaja->{$paikka->[0]}->{joukkue}<\/td>\n";
+        $html .= "<td class=\"$td\"><center>$pelaaja->{$paikka->[0]}->{ottelut}</center><\/td>\n";
+        $html .= "<td class=\"$td\"><center>$kaikkipelit{$pelaaja->{$paikka->[0]}->{joukkue}}</center><\/td>\n";
+        $html .= "<td class=\"$td\">$pelaaja->{$paikka->[0]}->{arvo}<\/td>\n";
+        $html .= "<td class=\"$td\"><center>$pelaaja->{$paikka->[0]}->{ennuste_pisteet}</center><\/td>\n";
+	
+	$optimi_hinta += $pelaaja->{$paikka->[0]}->{arvo};
+	$optimi_pisteet += $pelaaja->{$paikka->[0]}->{ennuste_pisteet};
 	
 	$html .= "<td class=\"$td\">\n";
-	my $width = $pelaaja{$paikka->[0]}{'ennuste_pisteet'} / 2;
+	my $width = $pelaaja->{$paikka->[0]}->{ennuste_pisteet} / 2;
 	if ($width < 0) {
 	    $width = abs($width);
 	    $html .= "<p style=\"background: red; width: ${width}px; height: 8px;\">\n";
@@ -576,13 +592,12 @@ sub print_optimi_joukkue {
     $html .= "<\/tr>\n";
 
     my $team_count = 0;
-    my $param_max_teams = 10;
     $td = change_table_td();
-    foreach my $pelaajat (sort {$top_teams{3}{$b}{'pisteet'} <=> $top_teams{3}{$a}{'pisteet'}} keys %{$top_teams{3}}) {
+    foreach my $pelaajat (sort {$top_teams{3}{$b}{pisteet} <=> $top_teams{3}{$a}{pisteet}} keys %{$top_teams{3}}) {
         $html .= "<tr>\n";
 	$team_count++;
 	$td = change_table_td($td);
-	my @players = split(/,/, $pelaajat);
+	my @players = split(/,/, $top_teams{3}{$pelaajat}{pelaajat});
 	$html .= "<td class=\"$td\">$team_count<\/td>\n";
 	$html .= "<td class=\"$td\">$players[0]<\/td>\n";
 	$html .= "<td class=\"$td\">$players[1]<\/td>\n";
@@ -590,10 +605,10 @@ sub print_optimi_joukkue {
 	$html .= "<td class=\"$td\">$players[3]<\/td>\n";
 	$html .= "<td class=\"$td\">$players[4]<\/td>\n";
 	$html .= "<td class=\"$td\">$players[5]<\/td>\n";
-	$html .= "<td class=\"$td\">$top_teams{3}{$pelaajat}{'pisteet'}<\/td>\n";
-	$html .= "<td class=\"$td\">$top_teams{3}{$pelaajat}{'hinta'}<\/td>\n";
+	$html .= "<td class=\"$td\">$top_teams{3}{$pelaajat}{pisteet}<\/td>\n";
+	$html .= "<td class=\"$td\">$top_teams{3}{$pelaajat}{hinta}<\/td>\n";
 	$html .= "<\/tr>\n";
-	if ($team_count == $param_max_teams) { last; }
+	if ($team_count == $max_teams) { last; }
     }
     $html .= "<\/table>\n";
     $html .= "<\/center>\n";
@@ -607,13 +622,15 @@ sub create_loops {
     my $loops2 = "";
     my @loop_count1;
     my @loop_count2;
+
     
     if ($o_maalivahti =~ /Kaikki/) {
         push (@loop_count1, "molke");
 	$loops1 = '
+    ($elapsed, $current) = calculate_interval(undef) if ($timing);
+    $html .= "alku: $elapsed<br>\n" if ($timing);
 
-	foreach $maalivahti (@maalivahdit_karsitut) {
-	    if ($pelaaja{$maalivahti}{"ennuste_pisteet"} <= $pelaaja{$o_maalivahti}{"ennuste_pisteet"}) { next; }';
+	foreach $maalivahti (@maalivahdit_karsitut) {';
     }
 
     if ($o_puolustaja1 =~ /Kaikki/) {
@@ -634,10 +651,12 @@ sub create_loops {
 
     $loops1 = "$loops1" . '
 
-    $hinta = $pelaaja{$maalivahti}{"arvo"} + $pelaaja{$puolustaja1}{"arvo"} + $pelaaja{$puolustaja2}{"arvo"};
-    $pisteet = $pelaaja{$maalivahti}{"ennuste_pisteet"} + $pelaaja{$puolustaja1}{"ennuste_pisteet"} + $pelaaja{$puolustaja2}{"ennuste_pisteet"};
-    $top_teams{temp1}{"$maalivahti, $puolustaja1, $puolustaja2"}{"pisteet"} = $pisteet;
-    $top_teams{temp1}{"$maalivahti, $puolustaja1, $puolustaja2"}{"hinta"} = $hinta;';
+    $t_count++;
+    $hinta = $pelaaja->{$maalivahti}->{arvo} + $pelaaja->{$puolustaja1}->{arvo} + $pelaaja->{$puolustaja2}->{arvo};
+    $pisteet = $pelaaja->{$maalivahti}->{ennuste_pisteet} + $pelaaja->{$puolustaja1}->{ennuste_pisteet} + $pelaaja->{$puolustaja2}->{ennuste_pisteet};
+    $top_teams{temp1}{$t_count}{pelaajat} = $maalivahti . ", " . $puolustaja1. ", " .  $puolustaja2;
+    $top_teams{temp1}{$t_count}{pisteet} = $pisteet;
+    $top_teams{temp1}{$t_count}{hinta} = $hinta;';
     
     foreach (@loop_count1) {
         $loops1 = "$loops1\n
@@ -645,48 +664,49 @@ sub create_loops {
     }
     
     $loops1 = "$loops1" . '
+    ($elapsed, $current) = calculate_interval($current) if ($timing);
+    $html .= "loop11 $elapsed<br>\n" if ($timing);
 
-    my $edellinen_hinta = 0;
-    my $edellinen_pisteet = 0;
-    foreach (sort {$top_teams{temp1}{$a}{"hinta"} <=> $top_teams{temp1}{$b}{"hinta"} || $top_teams{temp1}{$b}{"pisteet"} <=> $top_teams{temp1}{$a}{"pisteet"}} keys %{$top_teams{temp1}}) {
-        #Jos nhl, niin tod.näk joutuu enabloimaan alla olevan (ehkä iffillä nhl)
-	#if ($edellinen_hinta == $top_teams{temp1}{$_}{"hinta"} && $edellinen_pisteet > $top_teams{temp1}{$_}{"pisteet"}) { next; }
-        $top_teams{1}{$_} = $top_teams{temp1}{$_};
-        $edellinen_hinta = $top_teams{temp1}{$_}{"hinta"};
-        $edellinen_pisteet = $top_teams{temp1}{$_}{"pisteet"};
+    my %pistekarsinta;
+    foreach (sort {$top_teams{temp1}{$b}{pisteet} <=> $top_teams{temp1}{$a}{pisteet}} keys %{$top_teams{temp1}}) {
+	if ($pistekarsinta{$top_teams{temp1}{$_}{pisteet}}++ >= $max_teams) { next; }
+	$top_teams_puolustus_ref->{$_} = $top_teams{temp1}{$_};
     }';
 
     if ($o_hyokkaaja1 =~ /Kaikki/) {
         push (@loop_count2, "hyokkaaja1");
 	$loops2 = '
+    ($elapsed, $current) = calculate_interval($current) if ($timing);
+    $html .= "loop12 $elapsed<br>\n" if ($timing);
 
-	for (my $h1_count = 0; $h1_count <= $#hyokkaajat_karsitut; $h1_count++) {
-	    $hyokkaaja1 = $hyokkaajat_karsitut[$h1_count];
-	    if ($pelaaja{$hyokkaaja1}{"ennuste_pisteet"} <= $pelaaja{$o_hyokkaaja1}{"ennuste_pisteet"}) { next; }';
+	for (my $h1_count = 0; $h1_count <= $#$hyokkaajat_karsitut; $h1_count++) {
+	    $hyokkaaja1 = $hyokkaajat_karsitut->[$h1_count];';
     }
 
     if ($o_hyokkaaja2 =~ /Kaikki/) {
         push (@loop_count2, "hyokkaaja2");
 	$loops2 = "$loops2" . '
 	
-	for (my $h2_count = $h1_count + 1; $h2_count <= $#hyokkaajat_karsitut; $h2_count++) {
-	    $hyokkaaja2 = $hyokkaajat_karsitut[$h2_count];';
+	for (my $h2_count = $h1_count + 1; $h2_count <= $#$hyokkaajat_karsitut; $h2_count++) {
+	    $hyokkaaja2 = $hyokkaajat_karsitut->[$h2_count];';
     }
 
     if ($o_hyokkaaja3 =~ /Kaikki/) {
         push (@loop_count2, "hyokkaaja3");
 	$loops2 = "$loops2" . '
 	
-	for (my $h3_count = $h2_count + 1; $h3_count <= $#hyokkaajat_karsitut; $h3_count++) {
-	    $hyokkaaja3 = $hyokkaajat_karsitut[$h3_count];';
+	for (my $h3_count = $h2_count + 1; $h3_count <= $#$hyokkaajat_karsitut; $h3_count++) {
+	    $hyokkaaja3 = $hyokkaajat_karsitut->[$h3_count];';
     }
     
     $loops2 = "$loops2" . '
 
-    $hinta = $pelaaja{$hyokkaaja1}{"arvo"} + $pelaaja{$hyokkaaja2}{"arvo"} + $pelaaja{$hyokkaaja3}{"arvo"};
-    $pisteet = $pelaaja{$hyokkaaja1}{"ennuste_pisteet"} + $pelaaja{$hyokkaaja2}{"ennuste_pisteet"} + $pelaaja{$hyokkaaja3}{"ennuste_pisteet"};
-    $top_teams{temp2}{"$hyokkaaja1, $hyokkaaja2, $hyokkaaja3"}{"pisteet"} = $pisteet;
-    $top_teams{temp2}{"$hyokkaaja1, $hyokkaaja2, $hyokkaaja3"}{"hinta"} = $hinta;';
+    $t_count++;
+    $hinta = $pelaaja->{$hyokkaaja1}->{arvo} + $pelaaja->{$hyokkaaja2}->{arvo} + $pelaaja->{$hyokkaaja3}->{arvo};
+    $pisteet = $pelaaja->{$hyokkaaja1}->{ennuste_pisteet} + $pelaaja->{$hyokkaaja2}->{ennuste_pisteet} + $pelaaja->{$hyokkaaja3}->{ennuste_pisteet};
+    $top_teams_ref->{$t_count}->{pelaajat} = $hyokkaaja1 .", " . $hyokkaaja2 .", " . $hyokkaaja3;
+    $top_teams_ref->{$t_count}->{pisteet} = $pisteet;
+    $top_teams_ref->{$t_count}->{hinta} = $hinta;';
     
     foreach (@loop_count2) {
         $loops2 = "$loops2\n
@@ -695,60 +715,53 @@ sub create_loops {
 
     $loops2 = "$loops2" . '
     
-    $edellinen_hinta = 0;
-    $edellinen_pisteet = 0;
-    foreach (sort {$top_teams{temp2}{$a}{"hinta"} <=> $top_teams{temp2}{$b}{"hinta"} || $top_teams{temp2}{$b}{"pisteet"} <=> $top_teams{temp2}{$a}{"pisteet"}} keys %{$top_teams{temp2}}) {
-        #Jos nhl, niin tod.näk joutuu enabloimaan alla olevan (ehkä iffillä nhl)
-        #if ($edellinen_hinta == $top_teams{temp2}{$_}{"hinta"} && $edellinen_pisteet > $top_teams{temp2}{$_}{"pisteet"}) { next; }
-        $top_teams{2}{$_} = $top_teams{temp2}{$_};
-        $edellinen_hinta = $top_teams{temp2}{$_}{"hinta"};
-        $edellinen_pisteet = $top_teams{temp2}{$_}{"pisteet"};
-    }';
+    ($elapsed, $current) = calculate_interval($current) if ($timing);
+    $html .= "loop21 $elapsed<br>\n" if ($timing);
+
+    my $top_score_team2;
+    my $team_count = 0;
+    %pistekarsinta = ();
+
+    foreach (sort {$top_teams_ref->{$b}->{pisteet} <=> $top_teams_ref->{$a}->{pisteet}} keys %{$top_teams_ref}) {
+	if ($pistekarsinta{$top_teams_ref->{$_}->{pisteet}}++ >= $max_teams) { next; }
+        $top_score_team2 = $top_teams_ref->{$_}->{pisteet} if ($team_count == 0);
+	$top_teams_hyokkays_ref->{$_} = $top_teams_ref->{$_};
+        $team_count++;
+    }
+    ($elapsed, $current) = calculate_interval($current)  if ($timing);
+    $html .= "loop22 $elapsed<br>\n"  if ($timing);
+    ';
 
     $loops = "
     $loops1
     $loops2" . '
-    
-    my $top_score_team2;
-    foreach my $team2 (sort {$top_teams{2}{$b}{"pisteet"} <=> $top_teams{2}{$a}{"pisteet"}} keys %{$top_teams{2}}) {
-        $top_score_team2 = $top_teams{2}{$team2}{"pisteet"};
-	last;
-    }
-    
-    my $max_teams = 10;
+
     my @top_points;
-    $edellinen_pisteet = 0;
-    $edellinen_hinta = 5000;
+    #Tama nopeutti koodia aivan alyttomasti
+    my @sorted_2 = sort {$top_teams_hyokkays_ref->{$b}->{pisteet} <=> $top_teams_hyokkays_ref->{$a}->{pisteet} || $top_teams_hyokkays_ref->{$a}->{hinta} <=> $top_teams_hyokkays_ref->{$b}->{hinta}} keys %{$top_teams_hyokkays_ref};
     foreach my $index (0 .. $max_teams - 1) { $top_points[$index] = -100; }
-    foreach my $team1 (sort {$top_teams{1}{$b}{"pisteet"} <=> $top_teams{1}{$a}{"pisteet"} || $top_teams{1}{$a}{"hinta"} <=> $top_teams{1}{$b}{"hinta"}} keys %{$top_teams{1}}) {
-        if ($top_score_team2 + $top_teams{1}{$team1}{"pisteet"} < $top_points[0]) { last; }
-	if ($edellinen_pisteet == $top_teams{1}{$team1}{"pisteet"}) { next; } # vaarana, että karsii liikaa
-	if ($edellinen_hinta < $top_teams{1}{$team1}{"hinta"}) { next; }      # vaarana, että karsii liikaa
-	$edellinen_pisteet = $top_teams{1}{$team1}{"pisteet"};
-	$edellinen_hinta = $top_teams{1}{$team1}{"hinta"};
+    foreach my $team1 (sort {$top_teams_puolustus_ref->{$b}->{pisteet} <=> $top_teams_puolustus_ref->{$a}->{pisteet} || $top_teams_puolustus_ref->{$a}->{hinta} <=> $top_teams_puolustus_ref->{$b}->{hinta}} keys %{$top_teams_puolustus_ref}) {
+	if ($top_score_team2 + $top_teams_puolustus_ref->{$team1}->{pisteet} < $top_points[0]) { last; }
 	my $count = 0;
-	foreach my $team2 (sort {$top_teams{2}{$b}{"pisteet"} <=> $top_teams{2}{$a}{"pisteet"} || $top_teams{2}{$a}{"hinta"} <=> $top_teams{2}{$b}{"hinta"}} keys %{$top_teams{2}}) {
-            my $hinta = $top_teams{1}{$team1}{"hinta"} + $top_teams{2}{$team2}{"hinta"};
+	foreach my $team2 (@sorted_2) {
+	    my $hinta = $top_teams_puolustus_ref->{$team1}->{hinta} + $top_teams_hyokkays_ref->{$team2}->{hinta};
 	    if ($hinta > $param_joukkueen_hinta) { next; }
-	    my $team = "$team1, $team2";
-	    $top_teams{3}{"$team"}{"pisteet"} = $top_teams{1}{$team1}{"pisteet"} + $top_teams{2}{$team2}{"pisteet"};
-	    $top_teams{3}{"$team"}{"hinta"} = $hinta;
-	    
-	    if ($top_teams{3}{"$team"}{"pisteet"} < $top_points[0] ) { last; }
-	    $top_points[0] = $top_teams{3}{"$team"}{"pisteet"};
+	    if ($top_teams_puolustus_ref->{$team1}->{pisteet} + $top_teams_hyokkays_ref->{$team2}->{pisteet} <= $top_points[0] ) { last; }
+
+	    my $team = $team1 . ", " . $team2;
+	    $top_teams{3}{$team}{pisteet} = $top_teams_puolustus_ref->{$team1}->{pisteet} + $top_teams_hyokkays_ref->{$team2}->{pisteet};
+	    $top_teams{3}{$team}{hinta} = $hinta;
+	    $top_teams{3}{$team}{pelaajat} = $top_teams_puolustus_ref->{$team1}->{pelaajat} . ", " . $top_teams_hyokkays_ref->{$team2}->{pelaajat};
+
+	    $top_points[0] = $top_teams{3}{$team}{pisteet};
 	    @top_points = sort {$a <=> $b} @top_points;
-	    
-	    if ($top_teams{3}{"$team"}{"pisteet"} > $optimi_pisteet) {
-	        $optimi_pisteet = $top_teams{3}{"$team"}{"pisteet"};
-	        $optimi_hinta = $top_teams{3}{"$team"}{"hinta"};
-	    
-	        my @players = split(/\s*,\s*/, $team);
-	        ($o_maalivahti, $o_puolustaja1, $o_puolustaja2, $o_hyokkaaja1, $o_hyokkaaja2, $o_hyokkaaja3) = ($players[0], $players[1], $players[2], $players[3], $players[4], $players[5]);
-	    }
 	    $count++;
 	    if ($count == $max_teams) { last; }
         }
-    }';
+    }
+    ($elapsed, $current) = calculate_interval($current) if ($timing);
+    $html .= "loppu $elapsed<br>\n" if ($timing);
+    ';
     
     return $loops;
 }
@@ -799,9 +812,9 @@ sub print_player_list_form {
         if ($joukkue eq $param_joukkue) {
 	    $html .= "<option selected>$joukkue<\/option>\n";
 	    if ($joukkue =~ /Jaljella olevat/) {
-	        $condition = "if (\$jaljella_olevat_joukkueet !~ /\$pelaaja{\$nimi}{\"joukkue\"}/) { next; }";
+	        $condition = "if (\$jaljella_olevat_joukkueet !~ /\$pelaaja->{\$nimi}->{joukkue}/) { next; }";
 	    } elsif ($joukkue !~ /Joukkue/) {
-	        $condition = "if (\$pelaaja{\$nimi}{\"joukkue\"} !~ /$param_joukkue/) { next; }";
+	        $condition = "if (\$pelaaja->{\$nimi}->{joukkue} !~ /$param_joukkue/) { next; }";
 	    }
 	    $param_list = "${param_list}&joukkue=$joukkue";
 	} else {
@@ -819,21 +832,21 @@ sub print_player_list_form {
     }
     if ($param_pelipaikka =~ /Hyokkaaja/) {
         $html .= "<option selected>Hyokkaaja<\/option>\n";
-	$condition = "$condition\n if (\$pelaaja{\$nimi}{\"pelipaikka\"} !~ /Hyokkaaja/) { next; }";
+	$condition = "$condition\n if (\$pelaaja->{\$nimi}->{pelipaikka} !~ /Hyokkaaja/) { next; }";
 	$param_list = "${param_list}&pelipaikka=Hyokkaaja";
     } else {
         $html .= "<option>Hyokkaaja<\/option>\n";
     }
     if ($param_pelipaikka =~ /Puolustaja/) {
         $html .= "<option selected>Puolustaja<\/option>\n";
-	$condition = "$condition\n if (\$pelaaja{\$nimi}{\"pelipaikka\"} !~ /Puolustaja/) { next; }";
+	$condition = "$condition\n if (\$pelaaja->{\$nimi}->{pelipaikka} !~ /Puolustaja/) { next; }";
 	$param_list = "${param_list}&pelipaikka=Puolustaja";
     } else {
         $html .= "<option>Puolustaja<\/option>\n";
     }
     if ($param_pelipaikka =~ /Maalivahti/) {
         $html .= "<option selected>Maalivahti<\/option>\n";
-	$condition = "$condition\n if (\$pelaaja{\$nimi}{\"pelipaikka\"} !~ /Maalivahti/) { next; }";
+	$condition = "$condition\n if (\$pelaaja->{\$nimi}->{pelipaikka} !~ /Maalivahti/) { next; }";
 	$param_list = "${param_list}&pelipaikka=Maalivahti";
     } else {
         $html .= "<option>Maalivahti<\/option>\n";
@@ -846,11 +859,11 @@ sub print_player_list_form {
     foreach (@ottelut_taulukko) {
         if (defined $param_ottelut && $_ == $param_ottelut) {
             $html .= "<option selected>$_<\/option>\n";
-	    $condition = "$condition\n if (\$pelaaja{\$nimi}{\"ottelut\"} < $_) { next; }";
+	    $condition = "$condition\n if (\$pelaaja->{\$nimi}->{ottelut} < $_) { next; }";
 	    $param_list = "${param_list}&ottelut=$_";
         } elsif (!defined $param_ottelut && $_ == 0) {
             $html .= "<option selected>$_<\/option>\n";
-	    $condition = "$condition\n if (\$pelaaja{\$nimi}{\"ottelut\"} < $_) { next; }";
+	    $condition = "$condition\n if (\$pelaaja->{\$nimi}->{ottelut} < $_) { next; }";
 	    $param_list = "${param_list}&ottelut=$_";
         } else {
             $html .= "<option>$_<\/option>\n";
@@ -865,11 +878,11 @@ sub print_player_list_form {
         if (defined $param_arvo && $current_arvo eq $param_arvo) {
 	    $html .= "<option selected>$current_arvo<\/option>\n";
 	    if ($current_arvo =~ /(\d+)-(\d+)/) {
-	        $condition = "$condition\n if (\$pelaaja{\$nimi}{\"arvo\"} < $1 || \$pelaaja{\$nimi}{\"arvo\"} > $2) { next; }";
+	        $condition = "$condition\n if (\$pelaaja->{\$nimi}->{arvo} < $1 || \$pelaaja->{\$nimi}->{arvo} > $2) { next; }";
 	    } elsif ($current_arvo =~ /(\d+)-X/) {
-	        $condition = "$condition\n if (\$pelaaja{\$nimi}{\"arvo\"} < $1) { next; }";
+	        $condition = "$condition\n if (\$pelaaja->{\$nimi}->{arvo} < $1) { next; }";
 	    } elsif ($current_arvo =~ /Alle\s*(\d+)/) {
-	        $condition = "$condition\n if (\$pelaaja{\$nimi}{\"arvo\"} > $1) { next; }";
+	        $condition = "$condition\n if (\$pelaaja->{\$nimi}->{arvo} > $1) { next; }";
 	    }
 	    $param_list = "${param_list}&arvo=$current_arvo";
 	} else {
@@ -908,24 +921,24 @@ sub create_player_list_parser {
     foreach my $joukkue (@joukkueet) {
         if ($joukkue eq $param_joukkue) {
 	    if ($joukkue =~ /Jaljella olevat/) {
-	        $condition = "if (\$jaljella_olevat_joukkueet !~ /\$pelaaja{\$nimi}{\"joukkue\"}/) { next; }";
+	        $condition = "if (\$jaljella_olevat_joukkueet !~ /\$pelaaja->{\$nimi}->{joukkue}/) { next; }";
 	    } elsif ($joukkue !~ /Joukkue/) {
-	        $condition = "if (\$pelaaja{\$nimi}{\"joukkue\"} !~ /$param_joukkue/) { next; }";
+	        $condition = "if (\$pelaaja->{\$nimi}->{joukkue} !~ /$param_joukkue/) { next; }";
 	    }
 	    $param_list = "${param_list}&joukkue=$joukkue";
 	}
     }
 
-    $condition = "$condition\n if (\$pelaaja{\$nimi}{\"pelipaikka\"} !~ /$param_pelipaikka/) { next; }" if ($param_pelipaikka !~ /Pelaaja/);
+    $condition = "$condition\n if (\$pelaaja->{\$nimi}->{pelipaikka} !~ /$param_pelipaikka/) { next; }" if ($param_pelipaikka !~ /Pelaaja/);
     $param_list = "${param_list}&pelipaikka=$param_pelipaikka" if ($param_pelipaikka !~ /Pelaaja/) ;
 
     my @ottelut_taulukko = (0 .. $max_pelatut_pelit);
     foreach (@ottelut_taulukko) {
         if (defined $param_ottelut && $_ == $param_ottelut) {
-	    $condition = "$condition\n if (\$pelaaja{\$nimi}{\"ottelut\"} < $_) { next; }";
+	    $condition = "$condition\n if (\$pelaaja->{\$nimi}->{ottelut} < $_) { next; }";
 	    $param_list = "${param_list}&ottelut=$_";
         } elsif (!defined $param_ottelut && $_ == 0) {
-	    $condition = "$condition\n if (\$pelaaja{\$nimi}{\"ottelut\"} < $_) { next; }";
+	    $condition = "$condition\n if (\$pelaaja->{\$nimi}->{ottelut} < $_) { next; }";
 	    $param_list = "${param_list}&ottelut=$_";
         }
     }
@@ -934,11 +947,11 @@ sub create_player_list_parser {
     foreach my $current_arvo (@arvotaulukko) {
         if (defined $param_arvo && $current_arvo eq $param_arvo) {
 	    if ($current_arvo =~ /(\d+)-(\d+)/) {
-	        $condition = "$condition\n if (\$pelaaja{\$nimi}{\"arvo\"} < $1 || \$pelaaja{\$nimi}{\"arvo\"} > $2) { next; }";
+	        $condition = "$condition\n if (\$pelaaja->{\$nimi}->{arvo} < $1 || \$pelaaja->{\$nimi}->{arvo} > $2) { next; }";
 	    } elsif ($current_arvo =~ /(\d+)-X/) {
-	        $condition = "$condition\n if (\$pelaaja{\$nimi}{\"arvo\"} < $1) { next; }";
+	        $condition = "$condition\n if (\$pelaaja->{\$nimi}->{arvo} < $1) { next; }";
 	    } elsif ($current_arvo =~ /Alle\s*(\d+)/) {
-	        $condition = "$condition\n if (\$pelaaja{\$nimi}{\"arvo\"} > $1) { next; }";
+	        $condition = "$condition\n if (\$pelaaja->{\$nimi}->{arvo} > $1) { next; }";
 	    }
 	    $param_list = "${param_list}&arvo=$current_arvo";
 	}
@@ -991,37 +1004,37 @@ sub print_player_list {
     if ($param_order =~ /ascending/) { $sort_order = "sort_list_ascending"; }
 
 
-    foreach $nimi (sort $sort_order keys %pelaaja) {
+    foreach $nimi (sort $sort_order keys %{$pelaaja}) {
 	eval($condition);
         $td = change_table_td($td);
 	$count++;
 	$html .= "<tr>\n";
 	$html .= "<td class=\"$td\">$count<\/td>\n";
 	$html .= "<td class=\"$td\">$nimi<\/td>\n";
-	$html .= "<td class=\"$td\">$pelaaja{$nimi}{'pelipaikka'}<\/td>\n";
-	$html .= "<td class=\"$td\">$pelaaja{$nimi}{'joukkue'}<\/td>\n";
-	$html .= "<td class=\"$td\">$pelaaja{$nimi}{'ottelut'}<\/td>\n";
-	$html .= "<td class=\"$td\">$pelaaja{$nimi}{'maalit'}<\/td>\n";
-	$html .= "<td class=\"$td\">$pelaaja{$nimi}{'syotot'}<\/td>\n";
-	$html .= "<td class=\"$td\">$pelaaja{$nimi}{'pisteet'}<\/td>\n";
-	$html .= "<td class=\"$td\">$pelaaja{$nimi}{'laukaukset'}<\/td>\n";
-	$html .= "<td class=\"$td\">$pelaaja{$nimi}{'arvo'}<\/td>\n";
-	$html .= "<td class=\"$td\"><center>$pelaaja{$nimi}{'lpp'}</center><\/td>\n";
+	$html .= "<td class=\"$td\">$pelaaja->{$nimi}->{pelipaikka}<\/td>\n";
+	$html .= "<td class=\"$td\">$pelaaja->{$nimi}->{joukkue}<\/td>\n";
+	$html .= "<td class=\"$td\">$pelaaja->{$nimi}->{ottelut}<\/td>\n";
+	$html .= "<td class=\"$td\">$pelaaja->{$nimi}->{maalit}<\/td>\n";
+	$html .= "<td class=\"$td\">$pelaaja->{$nimi}->{syotot}<\/td>\n";
+	$html .= "<td class=\"$td\">$pelaaja->{$nimi}->{pisteet}<\/td>\n";
+	$html .= "<td class=\"$td\">$pelaaja->{$nimi}->{laukaukset}<\/td>\n";
+	$html .= "<td class=\"$td\">$pelaaja->{$nimi}->{arvo}<\/td>\n";
+	$html .= "<td class=\"$td\"><center>$pelaaja->{$nimi}->{lpp}</center><\/td>\n";
 	$html .= "<td class=\"$td\"><center>";
-	$html .= sprintf("%.2f", $pelaaja{$nimi}{'pisteet_per_peli'});
+	$html .= sprintf("%.2f", $pelaaja->{$nimi}->{pisteet_per_peli});
 	$html .= "</center><\/td>\n";
 	$html .= "<td class=\"$td\"><center>";
-	$html .= sprintf("%.2f", $pelaaja{$nimi}{'pisteet_per_euro'});
+	$html .= sprintf("%.2f", $pelaaja->{$nimi}->{pisteet_per_euro});
 	$html .= "</center><\/td>\n";
 	$html .= "<td class=\"$td\">";
-	$html .= "$pelaaja{$nimi}{'ennuste_pisteet'}";
+	$html .= "$pelaaja->{$nimi}->{ennuste_pisteet}";
         $html .= "<\/td>\n";
 	$html .= "<td class=\"$td\">\n";
 	my $width;
 	if ($param_graafi =~ /LPP ennuste/) {
-	    $width = $pelaaja{$nimi}{'ennuste_pisteet'} / 2;
+	    $width = $pelaaja->{$nimi}->{ennuste_pisteet} / 2;
 	} elsif ($param_graafi =~ /Arvo/) {
-	    $width = $pelaaja{$nimi}{'arvo'} / 3;
+	    $width = $pelaaja->{$nimi}->{arvo} / 3;
 	}
 	if ($width < 0) {
 	    $width = abs($width);
@@ -1059,85 +1072,88 @@ sub read_player_lists {
     if ($param_liiga =~ /nhl/) {
 	$addition = "_nhl";
     }
+    my %pelaaja = ();
 
     if ($param_read_players_from =~ /1|1-/) {
-	read_player_list("$param_vuosi/player_list_period1${addition}.txt");
+	%pelaaja = read_player_list("$param_vuosi/player_list_period1${addition}.txt", %pelaaja);
     }
     if ($param_read_players_from =~ /2|1-/) {
-	read_player_list("$param_vuosi/player_list_period2${addition}.txt");
+	%pelaaja = read_player_list("$param_vuosi/player_list_period2${addition}.txt", %pelaaja);
     }
     if ($param_read_players_from =~ /3|1-PO|1-5|1-4|1-3/) {
-	read_player_list("$param_vuosi/player_list_period3${addition}.txt");
+	%pelaaja = read_player_list("$param_vuosi/player_list_period3${addition}.txt", %pelaaja);
     }
     if ($param_read_players_from =~ /4|1-PO|1-5|1-4/) {
-	read_player_list("$param_vuosi/player_list_period4${addition}.txt");
+	%pelaaja = read_player_list("$param_vuosi/player_list_period4${addition}.txt", %pelaaja);
     }
     if ($param_read_players_from =~ /5|1-PO|1-5/) {
-	read_player_list("$param_vuosi/player_list_period5${addition}.txt");
+	%pelaaja = read_player_list("$param_vuosi/player_list_period5${addition}.txt", %pelaaja);
     }
     if ( $param_read_players_from =~ /PO/) {
-        read_player_list("$param_vuosi/player_list_playoff${addition}.txt");
+        %pelaaja = read_player_list("$param_vuosi/player_list_playoff${addition}.txt", %pelaaja);
     }
+    
+    $pelaaja = \%pelaaja;
 }
 
 sub sort_list {
     if (! defined $param_sort) { return 0; }
     if ($param_sort =~ /arvo/) {
-	{$pelaaja{$b}{"arvo"} <=> $pelaaja{$a}{"arvo"} || $pelaaja{$b}{"ennuste_pisteet"} <=> $pelaaja{$a}{"ennuste_pisteet"}};
+	{$pelaaja->{$b}->{arvo} <=> $pelaaja->{$a}->{arvo} || $pelaaja->{$b}->{ennuste_pisteet} <=> $pelaaja->{$a}->{ennuste_pisteet}};
     } elsif ($param_sort =~ /euroa_per_lpp_per_peli/) {
-	{$pelaaja{$b}{"pisteet_per_euro"} <=> $pelaaja{$a}{"pisteet_per_euro"} || $pelaaja{$b}{"ennuste_pisteet"} <=> $pelaaja{$a}{"ennuste_pisteet"}};
+	{$pelaaja->{$b}->{pisteet_per_euro} <=> $pelaaja->{$a}->{pisteet_per_euro} || $pelaaja->{$b}->{ennuste_pisteet} <=> $pelaaja->{$a}->{ennuste_pisteet}};
     } elsif ($param_sort =~ /nimi/) {
 	{$a cmp $b};
     } elsif ($param_sort =~ /joukkue/) {
-	{$pelaaja{$a}{"joukkue"} cmp $pelaaja{$b}{"joukkue"} || $pelaaja{$b}{"ennuste_pisteet"} <=> $pelaaja{$a}{"ennuste_pisteet"}};
+	{$pelaaja->{$a}->{joukkue} cmp $pelaaja->{$b}->{joukkue} || $pelaaja->{$b}->{ennuste_pisteet} <=> $pelaaja->{$a}->{ennuste_pisteet}};
     } elsif ($param_sort =~ /pelipaikka/) {
-	{$pelaaja{$a}{"pelipaikka"} cmp $pelaaja{$b}{"pelipaikka"} || $pelaaja{$b}{"ennuste_pisteet"} <=> $pelaaja{$a}{"ennuste_pisteet"}};
+	{$pelaaja->{$a}->{pelipaikka} cmp $pelaaja->{$b}->{pelipaikka} || $pelaaja->{$b}->{ennuste_pisteet} <=> $pelaaja->{$a}->{ennuste_pisteet}};
     } elsif ($param_sort =~ /ottelut/) {
-	{$pelaaja{$b}{"ottelut"} <=> $pelaaja{$a}{"ottelut"} || $pelaaja{$b}{"ennuste_pisteet"} <=> $pelaaja{$a}{"ennuste_pisteet"}};
+	{$pelaaja->{$b}->{ottelut} <=> $pelaaja->{$a}->{ottelut} || $pelaaja->{$b}->{ennuste_pisteet} <=> $pelaaja->{$a}->{ennuste_pisteet}};
     } elsif ($param_sort =~ /maalit/) {
-	{$pelaaja{$b}{"maalit"} <=> $pelaaja{$a}{"maalit"} || $pelaaja{$b}{"pisteet"} <=> $pelaaja{$a}{"pisteet"} || $pelaaja{$b}{"ennuste_pisteet"} <=> $pelaaja{$a}{"ennuste_pisteet"}};
+	{$pelaaja->{$b}->{maalit} <=> $pelaaja->{$a}->{maalit} || $pelaaja->{$b}->{pisteet} <=> $pelaaja->{$a}->{pisteet} || $pelaaja->{$b}->{ennuste_pisteet} <=> $pelaaja->{$a}->{ennuste_pisteet}};
     } elsif ($param_sort =~ /syotot/) {
-	{$pelaaja{$b}{"syotot"} <=> $pelaaja{$a}{"syotot"} || $pelaaja{$b}{"pisteet"} <=> $pelaaja{$a}{"pisteet"} || $pelaaja{$b}{"ennuste_pisteet"} <=> $pelaaja{$a}{"ennuste_pisteet"}};
+	{$pelaaja->{$b}->{syotot} <=> $pelaaja->{$a}->{syotot} || $pelaaja->{$b}->{pisteet} <=> $pelaaja->{$a}->{pisteet} || $pelaaja->{$b}->{ennuste_pisteet} <=> $pelaaja->{$a}->{ennuste_pisteet}};
     } elsif ($param_sort =~ /pisteet/) {
-	{$pelaaja{$b}{"pisteet"} <=> $pelaaja{$a}{"pisteet"} || $pelaaja{$b}{"ennuste_pisteet"} <=> $pelaaja{$a}{"ennuste_pisteet"} || $pelaaja{$b}{"ennuste_pisteet"} <=> $pelaaja{$a}{"ennuste_pisteet"}};
+	{$pelaaja->{$b}->{pisteet} <=> $pelaaja->{$a}->{pisteet} || $pelaaja->{$b}->{ennuste_pisteet} <=> $pelaaja->{$a}->{ennuste_pisteet} || $pelaaja->{$b}->{ennuste_pisteet} <=> $pelaaja->{$a}->{ennuste_pisteet}};
     } elsif ($param_sort =~ /laukaukset/) {
-	{$pelaaja{$b}{"laukaukset"} <=> $pelaaja{$a}{"laukaukset"} || $pelaaja{$b}{"ennuste_pisteet"} <=> $pelaaja{$a}{"ennuste_pisteet"}};
+	{$pelaaja->{$b}->{laukaukset} <=> $pelaaja->{$a}->{laukaukset} || $pelaaja->{$b}->{ennuste_pisteet} <=> $pelaaja->{$a}->{ennuste_pisteet}};
     } elsif ($param_sort =~ /lpp_per_peli/) {
-	{$pelaaja{$b}{"pisteet_per_peli"} <=> $pelaaja{$a}{"pisteet_per_peli"} || $pelaaja{$b}{"ennuste_pisteet"} <=> $pelaaja{$a}{"ennuste_pisteet"}};
+	{$pelaaja->{$b}->{pisteet_per_peli} <=> $pelaaja->{$a}->{pisteet_per_peli} || $pelaaja->{$b}->{ennuste_pisteet} <=> $pelaaja->{$a}->{ennuste_pisteet}};
     } elsif ($param_sort =~ /lpp/) {
-	{$pelaaja{$b}{"lpp"} <=> $pelaaja{$a}{"lpp"} || $pelaaja{$b}{"ennuste_pisteet"} <=> $pelaaja{$a}{"ennuste_pisteet"}};
+	{$pelaaja->{$b}->{lpp} <=> $pelaaja->{$a}->{lpp} || $pelaaja->{$b}->{ennuste_pisteet} <=> $pelaaja->{$a}->{ennuste_pisteet}};
     } elsif ($param_sort =~ /ennuste/) {
-	{$pelaaja{$b}{"ennuste_pisteet"} <=> $pelaaja{$a}{"ennuste_pisteet"} || $pelaaja{$a}{"arvo"} <=> $pelaaja{$b}{"arvo"}};
+	{$pelaaja->{$b}->{ennuste_pisteet} <=> $pelaaja->{$a}->{ennuste_pisteet} || $pelaaja->{$a}->{arvo} <=> $pelaaja->{$b}->{arvo}};
     }
 }
 
 sub sort_list_ascending {
     if ($param_sort =~ /arvo/) {
-	{$pelaaja{$a}{"arvo"} <=> $pelaaja{$b}{"arvo"} || $pelaaja{$b}{"ennuste_pisteet"} <=> $pelaaja{$a}{"ennuste_pisteet"}};
+	{$pelaaja->{$a}->{arvo} <=> $pelaaja->{$b}->{arvo} || $pelaaja->{$b}->{ennuste_pisteet} <=> $pelaaja->{$a}->{ennuste_pisteet}};
     } elsif ($param_sort =~ /euroa_per_lpp_per_peli/) {
-	{$pelaaja{$a}{"pisteet_per_euro"} <=> $pelaaja{$b}{"pisteet_per_euro"} || $pelaaja{$b}{"ennuste_pisteet"} <=> $pelaaja{$a}{"ennuste_pisteet"}};
+	{$pelaaja->{$a}->{pisteet_per_euro} <=> $pelaaja->{$b}->{pisteet_per_euro} || $pelaaja->{$b}->{ennuste_pisteet} <=> $pelaaja->{$a}->{ennuste_pisteet}};
     } elsif ($param_sort =~ /nimi/) {
 	{$b cmp $a};
     } elsif ($param_sort =~ /joukkue/) {
-	{$pelaaja{$b}{"joukkue"} cmp $pelaaja{$a}{"joukkue"} || $pelaaja{$b}{"ennuste_pisteet"} <=> $pelaaja{$a}{"ennuste_pisteet"}};
+	{$pelaaja->{$b}->{joukkue} cmp $pelaaja->{$a}->{joukkue} || $pelaaja->{$b}->{ennuste_pisteet} <=> $pelaaja->{$a}->{ennuste_pisteet}};
     } elsif ($param_sort =~ /pelipaikka/) {
-	{$pelaaja{$b}{"pelipaikka"} cmp $pelaaja{$a}{"pelipaikka"} || $pelaaja{$b}{"ennuste_pisteet"} <=> $pelaaja{$a}{"ennuste_pisteet"}};
+	{$pelaaja->{$b}->{pelipaikka} cmp $pelaaja->{$a}->{pelipaikka} || $pelaaja->{$b}->{ennuste_pisteet} <=> $pelaaja->{$a}->{ennuste_pisteet}};
     } elsif ($param_sort =~ /ottelut/) {
-	{$pelaaja{$a}{"ottelut"} <=> $pelaaja{$b}{"ottelut"} || $pelaaja{$b}{"ennuste_pisteet"} <=> $pelaaja{$a}{"ennuste_pisteet"}};
+	{$pelaaja->{$a}->{ottelut} <=> $pelaaja->{$b}->{ottelut} || $pelaaja->{$b}->{ennuste_pisteet} <=> $pelaaja->{$a}->{ennuste_pisteet}};
     } elsif ($param_sort =~ /maalit/) {
-	{$pelaaja{$a}{"maalit"} <=> $pelaaja{$b}{"maalit"} || $pelaaja{$a}{"pisteet"} <=> $pelaaja{$b}{"pisteet"} || $pelaaja{$b}{"ennuste_pisteet"} <=> $pelaaja{$a}{"ennuste_pisteet"}};
+	{$pelaaja->{$a}->{maalit} <=> $pelaaja->{$b}->{maalit} || $pelaaja->{$a}->{pisteet} <=> $pelaaja->{$b}->{pisteet} || $pelaaja->{$b}->{ennuste_pisteet} <=> $pelaaja->{$a}->{ennuste_pisteet}};
     } elsif ($param_sort =~ /syotot/) {
-	{$pelaaja{$a}{"syotot"} <=> $pelaaja{$b}{"syotot"} || $pelaaja{$a}{"pisteet"} <=> $pelaaja{$b}{"pisteet"} || $pelaaja{$b}{"ennuste_pisteet"} <=> $pelaaja{$a}{"ennuste_pisteet"}};
+	{$pelaaja->{$a}->{syotot} <=> $pelaaja->{$b}->{syotot} || $pelaaja->{$a}->{pisteet} <=> $pelaaja->{$b}->{pisteet} || $pelaaja->{$b}->{ennuste_pisteet} <=> $pelaaja->{$a}->{ennuste_pisteet}};
     } elsif ($param_sort =~ /pisteet/) {
-	{$pelaaja{$a}{"pisteet"} <=> $pelaaja{$b}{"pisteet"} || $pelaaja{$a}{"ennuste_pisteet"} <=> $pelaaja{$b}{"ennuste_pisteet"}};
+	{$pelaaja->{$a}->{pisteet} <=> $pelaaja->{$b}->{pisteet} || $pelaaja->{$a}->{ennuste_pisteet} <=> $pelaaja->{$b}->{ennuste_pisteet}};
     } elsif ($param_sort =~ /laukaukset/) {
-	{$pelaaja{$a}{"laukaukset"} <=> $pelaaja{$b}{"laukaukset"} || $pelaaja{$a}{"ennuste_pisteet"} <=> $pelaaja{$b}{"ennuste_pisteet"}};
+	{$pelaaja->{$a}->{laukaukset} <=> $pelaaja->{$b}->{laukaukset} || $pelaaja->{$a}->{ennuste_pisteet} <=> $pelaaja->{$b}->{ennuste_pisteet}};
     } elsif ($param_sort =~ /lpp_per_peli/) {
-	{$pelaaja{$a}{"pisteet_per_peli"} <=> $pelaaja{$b}{"pisteet_per_peli"} || $pelaaja{$b}{"ennuste_pisteet"} <=> $pelaaja{$a}{"ennuste_pisteet"}};
+	{$pelaaja->{$a}->{pisteet_per_peli} <=> $pelaaja->{$b}->{pisteet_per_peli} || $pelaaja->{$b}->{ennuste_pisteet} <=> $pelaaja->{$a}->{ennuste_pisteet}};
     } elsif ($param_sort =~ /lpp/) {
-	{$pelaaja{$a}{"lpp"} <=> $pelaaja{$b}{"lpp"} || $pelaaja{$b}{"ennuste_pisteet"} <=> $pelaaja{$a}{"ennuste_pisteet"}};
+	{$pelaaja->{$a}->{lpp} <=> $pelaaja->{$b}->{lpp} || $pelaaja->{$b}->{ennuste_pisteet} <=> $pelaaja->{$a}->{ennuste_pisteet}};
     } elsif ($param_sort =~ /ennuste/) {
-	{$pelaaja{$a}{"ennuste_pisteet"} <=> $pelaaja{$b}{"ennuste_pisteet"} || $pelaaja{$a}{"arvo"} <=> $pelaaja{$b}{"arvo"}};
+	{$pelaaja->{$a}->{ennuste_pisteet} <=> $pelaaja->{$b}->{ennuste_pisteet} || $pelaaja->{$a}->{arvo} <=> $pelaaja->{$b}->{arvo}};
     }
 }
 
@@ -1247,25 +1263,25 @@ sub print_team_compare_table {
         $html .= "<td class=\"$td\" style=\"width : 8px;\"><\/td>\n";
 
         $html .= "<td class=\"$td\">\n";
-	if (!defined $vastus{$_}{'low'}) { $vastus{$_}{'low'} = 0; }
-	for (my $i = 0; $i < $vastus{$_}{'low'}; $i++) {
+	if (!defined $vastus{$_}{low}) { $vastus{$_}{low} = 0; }
+	for (my $i = 0; $i < $vastus{$_}{low}; $i++) {
 	    if ($param_liiga =~ /sm/) {
-	        $html .= "<p title=\"$vastus{$_}{'low'} vastustaja(a) sijoilta 11-14\" style=\"background: green; width: 9px; height: 8px; float:left; margin:0;\">\n";
-	        $html .= "<p title=\"$vastus{$_}{'low'} vastustaja(a) sijoilta 11-14\" style=\"background: white; width: 2px; height: 8px; float:left; margin:0;\">\n";
+	        $html .= "<p title=\"$vastus{$_}{low} vastustaja(a) sijoilta 11-14\" style=\"background: green; width: 9px; height: 8px; float:left; margin:0;\">\n";
+	        $html .= "<p title=\"$vastus{$_}{low} vastustaja(a) sijoilta 11-14\" style=\"background: white; width: 2px; height: 8px; float:left; margin:0;\">\n";
 	    } else {
-	        $html .= "<p title=\"$vastus{$_}{'low'} vastustaja(a) sijoilta 11-15\" style=\"background: green; width: 9px; height: 8px; float:left; margin:0;\">\n";
-	        $html .= "<p title=\"$vastus{$_}{'low'} vastustaja(a) sijoilta 11-15\" style=\"background: white; width: 2px; height: 8px; float:left; margin:0;\">\n";
+	        $html .= "<p title=\"$vastus{$_}{low} vastustaja(a) sijoilta 11-15\" style=\"background: green; width: 9px; height: 8px; float:left; margin:0;\">\n";
+	        $html .= "<p title=\"$vastus{$_}{low} vastustaja(a) sijoilta 11-15\" style=\"background: white; width: 2px; height: 8px; float:left; margin:0;\">\n";
 	    }
 	}
-        if (!defined $vastus{$_}{'mid'}) { $vastus{$_}{'mid'} = 0; }
-	for (my $i = 0; $i < $vastus{$_}{'mid'}; $i++) {
-	    $html .= "<p title=\"$vastus{$_}{'mid'} vastustaja(a) sijoilta 6-10\" style=\"background: yellow; width: 9px; height: 8px; float:left; margin:0;\">\n";
-	    $html .= "<p title=\"$vastus{$_}{'mid'} vastustaja(a) sijoilta 6-10\" style=\"background: white; width: 2px; height: 8px; float:left; margin:0;\">\n";
+        if (!defined $vastus{$_}{mid}) { $vastus{$_}{mid} = 0; }
+	for (my $i = 0; $i < $vastus{$_}{mid}; $i++) {
+	    $html .= "<p title=\"$vastus{$_}{mid} vastustaja(a) sijoilta 6-10\" style=\"background: yellow; width: 9px; height: 8px; float:left; margin:0;\">\n";
+	    $html .= "<p title=\"$vastus{$_}{mid} vastustaja(a) sijoilta 6-10\" style=\"background: white; width: 2px; height: 8px; float:left; margin:0;\">\n";
 	}
-        if (!defined $vastus{$_}{'top'}) { $vastus{$_}{'top'} = 0; }
-	for (my $i = 0; $i < $vastus{$_}{'top'}; $i++) {
-	    $html .= "<p title=\"$vastus{$_}{'top'} vastustaja(a) sijoilta 1-5\" style=\"background: red; width: 9px; height: 8px; float:left; margin:0;\">\n";
-	    $html .= "<p title=\"$vastus{$_}{'top'} vastustaja(a) sijoilta 1-5\" style=\"background: white; width: 2px; height: 8px; float:left; margin:0;\">\n";
+        if (!defined $vastus{$_}{top}) { $vastus{$_}{top} = 0; }
+	for (my $i = 0; $i < $vastus{$_}{top}; $i++) {
+	    $html .= "<p title=\"$vastus{$_}{top} vastustaja(a) sijoilta 1-5\" style=\"background: red; width: 9px; height: 8px; float:left; margin:0;\">\n";
+	    $html .= "<p title=\"$vastus{$_}{top} vastustaja(a) sijoilta 1-5\" style=\"background: white; width: 2px; height: 8px; float:left; margin:0;\">\n";
 	}
 	$html .= "<\/td>\n";
 	$html .= "<\/tr>\n";
@@ -1347,17 +1363,17 @@ sub print_game_days {
 		} else {
 	            $html .= "<td class=\"$td\"><center>-</center><\/td>\n";
 		}
-	    } elsif (defined $pelipaivat{$joukkue}{$_}{'kotipeli'}) {
+	    } elsif (defined $pelipaivat{$joukkue}{$_}{kotipeli}) {
 		if (defined $peliputki{$joukkue}{$_} && $peliputki{$joukkue}{$_} eq "peli") {
-		    $html .= "<td class=\"$td\" title=\"3 tai useampi peli&#228; putkeen\"><center><b><font color=\"green\">$pelipaivat{$joukkue}{$_}{'kotipeli'}<\/font><\/b></center><\/td>\n";
+		    $html .= "<td class=\"$td\" title=\"3 tai useampi peli&#228; putkeen\"><center><b><font color=\"green\">$pelipaivat{$joukkue}{$_}{kotipeli}<\/font><\/b></center><\/td>\n";
 		} else {
-		    $html .= "<td class=\"$td\"><center><b>$pelipaivat{$joukkue}{$_}{'kotipeli'}</b></center><\/td>\n";
+		    $html .= "<td class=\"$td\"><center><b>$pelipaivat{$joukkue}{$_}{kotipeli}</b></center><\/td>\n";
 		}
-	    } elsif (defined $pelipaivat{$joukkue}{$_}{'vieraspeli'}) {
+	    } elsif (defined $pelipaivat{$joukkue}{$_}{vieraspeli}) {
 		if (defined $peliputki{$joukkue}{$_} && $peliputki{$joukkue}{$_} eq "peli") {
-		    $html .= "<td class=\"$td\" title=\"3 tai useampi peli&#228; putkeen\"><center><font color=\"green\">$pelipaivat{$joukkue}{$_}{'vieraspeli'}<\/font></center><\/td>\n";
+		    $html .= "<td class=\"$td\" title=\"3 tai useampi peli&#228; putkeen\"><center><font color=\"green\">$pelipaivat{$joukkue}{$_}{vieraspeli}<\/font></center><\/td>\n";
 		} else {
-		    $html .= "<td class=\"$td\"><center>$pelipaivat{$joukkue}{$_}{'vieraspeli'}</center><\/td>\n";
+		    $html .= "<td class=\"$td\"><center>$pelipaivat{$joukkue}{$_}{vieraspeli}</center><\/td>\n";
 		}
 	    }
 	}
@@ -1452,13 +1468,13 @@ sub calculate_optimal_change_day {
 }
 
 sub hashValueAscendingNum {
-   $kaikkipelit{$b} <=> $kaikkipelit{$a} || $kotipelit{$b} <=> $kotipelit{$a} || $vastus{$b}{'low'} <=> $vastus{$a}{'low'} || $vastus{$b}{'mid'} <=> $vastus{$a}{'mid'} || $a cmp $b;
+   $kaikkipelit{$b} <=> $kaikkipelit{$a} || $kotipelit{$b} <=> $kotipelit{$a} || $vastus{$b}{low} <=> $vastus{$a}{low} || $vastus{$b}{mid} <=> $vastus{$a}{mid} || $a cmp $b;
 }
 
-sub read_player_list ($) {
+sub read_player_list ($$) {
     my $players_file = shift;
+    my %pelaaja = @_;
     my ($joukkue, $pelipaikka);
-    %pelaaja = ();
     
     open FILE, "$players_file" or die "Cant open $players_file\n"; 
     while (<FILE>) {
@@ -1489,34 +1505,35 @@ sub read_player_list ($) {
 	#                                           1       2       3       4       5       6       7     8    9                10          11        12
 	if ($param_liiga =~ /nhl/) { $parse = '^\s*(.*?)\s*(\d+)\s*(\d+)\s*(\d+)\s*(\d+)\s*(\d+)\s*(\d+)(\s*)(\d+)\s*.*?\s*(-\d+|\d+)\s+(\d\d\d) (\d)\d\d$'; }
 	if (/$parse/) {
-	    $pelaaja{$1}{'ottelut'} += $2;
-	    $pelaaja{$1}{'maalit'} += $3;
-	    $pelaaja{$1}{'syotot'} += $4;
-	    $pelaaja{$1}{'pisteet'} = $pelaaja{$1}{'maalit'} + $pelaaja{$1}{'syotot'};
+	    $pelaaja{$1}{ottelut} += $2;
+	    $pelaaja{$1}{maalit} += $3;
+	    $pelaaja{$1}{syotot} += $4;
+	    $pelaaja{$1}{pisteet} = $pelaaja{$1}{maalit} + $pelaaja{$1}{syotot};
 	    if ($pelipaikka ne "Maalivahti") {
-	        $pelaaja{$1}{'laukaukset'} += $9;
+	        $pelaaja{$1}{laukaukset} += $9;
 	    } else {
-	        $pelaaja{$1}{'laukaukset'} = 0;
+	        $pelaaja{$1}{laukaukset} = 0;
 	    }
-	    if ($max_pelatut_pelit < $pelaaja{$1}{'ottelut'}) { $max_pelatut_pelit = $pelaaja{$1}{'ottelut'}; }
-            $pelaaja{$1}{'pelipaikka'} = $pelipaikka;
-            $pelaaja{$1}{'arvo'} = "$11.$12";
-            $pelaaja{$1}{'lpp'} += $10;
-            $pelaaja{$1}{'joukkue'} = $joukkue;
+	    if ($max_pelatut_pelit < $pelaaja{$1}{ottelut}) { $max_pelatut_pelit = $pelaaja{$1}{ottelut}; }
+            $pelaaja{$1}{pelipaikka} = $pelipaikka;
+            $pelaaja{$1}{arvo} = "$11.$12";
+            $pelaaja{$1}{lpp} += $10;
+            $pelaaja{$1}{joukkue} = $joukkue;
 	    
-	    if ($pelaaja{$1}{'ottelut'} ne "0") {
-	        $pelaaja{$1}{'pisteet_per_peli'} = $pelaaja{$1}{'lpp'} / $pelaaja{$1}{'ottelut'}
+	    if ($pelaaja{$1}{ottelut} ne "0") {
+	        $pelaaja{$1}{pisteet_per_peli} = $pelaaja{$1}{lpp} / $pelaaja{$1}{ottelut}
 	    } else {
-	        $pelaaja{$1}{'pisteet_per_peli'} = 0;
+	        $pelaaja{$1}{pisteet_per_peli} = 0;
 	    }
 
-            $pelaaja{$1}{'pisteet_per_euro'} = $pelaaja{$1}{'pisteet_per_peli'} / ($pelaaja{$1}{'arvo'} / 100);
+            $pelaaja{$1}{pisteet_per_euro} = $pelaaja{$1}{pisteet_per_peli} / ($pelaaja{$1}{arvo} / 100);
 	    
-	    $pelaaja{$1}{'ennuste_pisteet'} = int($pelaaja{$1}{'pisteet_per_peli'} * $kaikkipelit{$joukkue});
+	    $pelaaja{$1}{ennuste_pisteet} = int($pelaaja{$1}{pisteet_per_peli} * $kaikkipelit{$joukkue});
         }
-    
     }
     close (FILE);
+    
+    return %pelaaja;
 }
 
 sub change_table_td {
@@ -1530,4 +1547,13 @@ sub change_table_td {
     }
     
     return $new_td;
+}
+
+sub calculate_interval ($) {
+    my $old = shift;
+    my $current_time = [gettimeofday];
+    if (!defined $old) { $old = $current_time; }
+    my $elapsed_time = tv_interval $old, $current_time;
+    
+    return $elapsed_time, $current_time;
 }
