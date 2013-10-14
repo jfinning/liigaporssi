@@ -496,8 +496,9 @@ sub print_optimi_joukkue {
     my $t_hyokkaaja3 = $hyokkaaja3 = $o_hyokkaaja3;
 
     my %top_teams;
-    my $top_teams_puolustus_ref = {};
-    my $top_teams_hyokkays_ref = {};
+    my %top_teams_puolustus_ref;
+    my %top_teams_hyokkays_ref;
+    my $top_score_team2 = 0;
 
 my ($elapsed, $current);
     my $t_count = 0;
@@ -510,7 +511,7 @@ my ($elapsed, $current);
     $html .= "$@<br>\n" if $@;
 
     foreach my $pelaajat (sort {$top_teams{3}{$b}{pisteet} <=> $top_teams{3}{$a}{pisteet}} keys %{$top_teams{3}}) {
-	my @players = split(/\s*,\s*/, $top_teams{3}{$pelaajat}{pelaajat});
+	my @players = split(/\s*,\s*/, $pelaajat);
         ($o_maalivahti, $o_puolustaja1, $o_puolustaja2, $o_hyokkaaja1, $o_hyokkaaja2, $o_hyokkaaja3) = ($players[0], $players[1], $players[2], $players[3], $players[4], $players[5]);
 	last;
     }
@@ -596,7 +597,7 @@ my ($elapsed, $current);
         $html .= "<tr>\n";
 	$team_count++;
 	$td = change_table_td($td);
-	my @players = split(/,/, $top_teams{3}{$pelaajat}{pelaajat});
+	my @players = split(/,/, $pelaajat);
 	$html .= "<td class=\"$td\">$team_count<\/td>\n";
 	$html .= "<td class=\"$td\">$players[0]<\/td>\n";
 	$html .= "<td class=\"$td\">$players[1]<\/td>\n";
@@ -621,7 +622,6 @@ sub create_loops {
     my $loops2 = "";
     my @loop_count1;
     my @loop_count2;
-
     
     if ($o_maalivahti =~ /Kaikki/) {
         push (@loop_count1, "molke");
@@ -651,12 +651,10 @@ sub create_loops {
     $loops1 = "$loops1" . '
 
     $t_count++;
-    $hinta = $pelaaja->{$maalivahti}->{arvo} + $pelaaja->{$puolustaja1}->{arvo} + $pelaaja->{$puolustaja2}->{arvo};
-    $pisteet = $pelaaja->{$maalivahti}->{ennuste_pisteet} + $pelaaja->{$puolustaja1}->{ennuste_pisteet} + $pelaaja->{$puolustaja2}->{ennuste_pisteet};
     $top_teams{temp1}{$t_count}{pelaajat} = $maalivahti . ", " . $puolustaja1. ", " .  $puolustaja2;
-    $top_teams{temp1}{$t_count}{pisteet} = $pisteet;
-    $top_teams{temp1}{$t_count}{hinta} = $hinta;';
-    
+    $top_teams{temp1}{$t_count}{pisteet} = $pelaaja->{$maalivahti}->{ennuste_pisteet} + $pelaaja->{$puolustaja1}->{ennuste_pisteet} + $pelaaja->{$puolustaja2}->{ennuste_pisteet};
+    $top_teams{temp1}{$t_count}{hinta} = $pelaaja->{$maalivahti}->{arvo} + $pelaaja->{$puolustaja1}->{arvo} + $pelaaja->{$puolustaja2}->{arvo};';
+
     foreach (@loop_count1) {
         $loops1 = "$loops1\n
 	}";
@@ -667,9 +665,9 @@ sub create_loops {
     $html .= "loop11 $elapsed<br>\n" if ($timing);
 
     my %pistekarsinta;
-    foreach (sort {$top_teams{temp1}{$b}{pisteet} <=> $top_teams{temp1}{$a}{pisteet}} keys %{$top_teams{temp1}}) {
+    foreach (keys %{$top_teams{temp1}}) {
 	if ($pistekarsinta{$top_teams{temp1}{$_}{pisteet}}++ >= $max_teams) { next; }
-	$top_teams_puolustus_ref->{$_} = $top_teams{temp1}{$_};
+        push(@{$top_teams_puolustus_ref{$top_teams{temp1}{$_}{pisteet}}}, [$top_teams{temp1}{$_}{pelaajat}, $top_teams{temp1}{$_}{hinta}]);
     }';
 
     if ($o_hyokkaaja1 =~ /Kaikki/) {
@@ -701,11 +699,11 @@ sub create_loops {
     $loops2 = "$loops2" . '
 
     $t_count++;
-    $hinta = $pelaaja->{$hyokkaaja1}->{arvo} + $pelaaja->{$hyokkaaja2}->{arvo} + $pelaaja->{$hyokkaaja3}->{arvo};
     $pisteet = $pelaaja->{$hyokkaaja1}->{ennuste_pisteet} + $pelaaja->{$hyokkaaja2}->{ennuste_pisteet} + $pelaaja->{$hyokkaaja3}->{ennuste_pisteet};
     $top_teams{temp2}{$t_count}{pelaajat} = $hyokkaaja1 .", " . $hyokkaaja2 .", " . $hyokkaaja3;
     $top_teams{temp2}{$t_count}{pisteet} = $pisteet;
-    $top_teams{temp2}{$t_count}{hinta} = $hinta;';
+    $top_teams{temp2}{$t_count}{hinta} = $pelaaja->{$hyokkaaja1}->{arvo} + $pelaaja->{$hyokkaaja2}->{arvo} + $pelaaja->{$hyokkaaja3}->{arvo};
+    $top_score_team2 = $pisteet if ($top_score_team2 < $pisteet)';
     
     foreach (@loop_count2) {
         $loops2 = "$loops2\n
@@ -717,15 +715,10 @@ sub create_loops {
     ($elapsed, $current) = calculate_interval($current) if ($timing);
     $html .= "loop21 $elapsed<br>\n" if ($timing);
 
-    my $top_score_team2;
-    my $team_count = 0;
     %pistekarsinta = ();
-
-    foreach (sort {$top_teams{temp2}{$b}{pisteet} <=> $top_teams{temp2}{$a}{pisteet}} keys %{$top_teams{temp2}}) {
+    foreach (keys %{$top_teams{temp2}}) {
 	if ($pistekarsinta{$top_teams{temp2}{$_}{pisteet}}++ >= $max_teams) { next; }
-        $top_score_team2 = $top_teams{temp2}{$_}{pisteet} if ($team_count == 0);
-	$top_teams_hyokkays_ref->{$_} = $top_teams{temp2}{$_};
-        $team_count++;
+        push(@{$top_teams_hyokkays_ref{$top_teams{temp2}{$_}{pisteet}}}, [$top_teams{temp2}{$_}{pelaajat}, $top_teams{temp2}{$_}{hinta}]);
     }
     ($elapsed, $current) = calculate_interval($current)  if ($timing);
     $html .= "loop22 $elapsed<br>\n"  if ($timing);
@@ -736,26 +729,27 @@ sub create_loops {
     $loops2" . '
 
     my @top_points;
-    #Tama nopeutti koodia aivan alyttomasti
-    my @sorted_2 = sort {$top_teams_hyokkays_ref->{$b}->{pisteet} <=> $top_teams_hyokkays_ref->{$a}->{pisteet} || $top_teams_hyokkays_ref->{$a}->{hinta} <=> $top_teams_hyokkays_ref->{$b}->{hinta}} keys %{$top_teams_hyokkays_ref};
     foreach my $index (0 .. $max_teams - 1) { $top_points[$index] = -100; }
-    foreach my $team1 (sort {$top_teams_puolustus_ref->{$b}->{pisteet} <=> $top_teams_puolustus_ref->{$a}->{pisteet} || $top_teams_puolustus_ref->{$a}->{hinta} <=> $top_teams_puolustus_ref->{$b}->{hinta}} keys %{$top_teams_puolustus_ref}) {
-	if ($top_score_team2 + $top_teams_puolustus_ref->{$team1}->{pisteet} < $top_points[0]) { last; }
-	my $count = 0;
-	foreach my $team2 (@sorted_2) {
-	    my $hinta = $top_teams_puolustus_ref->{$team1}->{hinta} + $top_teams_hyokkays_ref->{$team2}->{hinta};
-	    if ($hinta > $param_joukkueen_hinta) { next; }
-	    if ($top_teams_puolustus_ref->{$team1}->{pisteet} + $top_teams_hyokkays_ref->{$team2}->{pisteet} <= $top_points[0] ) { last; }
+    foreach my $pisteet_p (sort {$b <=> $a} keys %top_teams_puolustus_ref) {
+        if ($top_score_team2 + $pisteet_p < $top_points[0]) { last; }
+        foreach my $table_p (@{$top_teams_puolustus_ref{$pisteet_p}}) {
+	    my $count = 0;
+            foreach my $pisteet_h (sort {$b <=> $a} keys %top_teams_hyokkays_ref) {
+                if ($pisteet_p + $pisteet_h <= $top_points[0] ) { last; }
+                foreach my $table_h (@{$top_teams_hyokkays_ref{$pisteet_h}}) {
+	            my $hinta = $table_p->[1] + $table_h->[1];
+	            if ($hinta > $param_joukkueen_hinta) { next; }
 
-	    my $team = $team1 . ", " . $team2;
-	    $top_teams{3}{$team}{pisteet} = $top_teams_puolustus_ref->{$team1}->{pisteet} + $top_teams_hyokkays_ref->{$team2}->{pisteet};
-	    $top_teams{3}{$team}{hinta} = $hinta;
-	    $top_teams{3}{$team}{pelaajat} = $top_teams_puolustus_ref->{$team1}->{pelaajat} . ", " . $top_teams_hyokkays_ref->{$team2}->{pelaajat};
+	            my $team = $table_p->[0] . ", " . $table_h->[0];
+	            $top_teams{3}{$team}{pisteet} = $pisteet_p + $pisteet_h;
+	            $top_teams{3}{$team}{hinta} = $hinta;
 
-	    $top_points[0] = $top_teams{3}{$team}{pisteet};
-	    @top_points = sort {$a <=> $b} @top_points;
-	    $count++;
-	    if ($count == $max_teams) { last; }
+	            $top_points[0] = $top_teams{3}{$team}{pisteet};
+	            @top_points = sort {$a <=> $b} @top_points;
+	            $count++;
+	            if ($count == $max_teams) { last; }
+	        }
+            }
         }
     }
     ($elapsed, $current) = calculate_interval($current) if ($timing);
