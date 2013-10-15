@@ -703,7 +703,7 @@ sub create_loops {
     $top_teams{temp2}{$t_count}{pelaajat} = $hyokkaaja1 .", " . $hyokkaaja2 .", " . $hyokkaaja3;
     $top_teams{temp2}{$t_count}{pisteet} = $pisteet;
     $top_teams{temp2}{$t_count}{hinta} = $pelaaja->{$hyokkaaja1}->{arvo} + $pelaaja->{$hyokkaaja2}->{arvo} + $pelaaja->{$hyokkaaja3}->{arvo};
-    $top_score_team2 = $pisteet if ($top_score_team2 < $pisteet)';
+    $top_score_team2 = $pisteet if ($top_score_team2 < $pisteet);';
     
     foreach (@loop_count2) {
         $loops2 = "$loops2\n
