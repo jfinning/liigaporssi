@@ -140,7 +140,7 @@ sub alustus {
         if ($param_liiga =~ /sm_liiga/) {
             $end = "14.12.";
         } else {
-            $end = "03.11.";
+            $end = "08.12.";
         }
     }
 
@@ -1356,7 +1356,7 @@ sub print_game_days {
     foreach my $joukkue (sort hashValueAscendingNum keys %kaikkipelit) {
         $td = change_table_td($td);
         $html .= "<tr>\n";
-	$html .= "<td class=\"$td\">$joukkue<\/td>\n";
+	$html .= "<th>$joukkue<\/th>\n";
 	foreach (@selected_day_list) {
 	    if (! defined $pelipaivat{$joukkue}{$_}) {
 		if (defined $peliputki{$joukkue}{$_} && $peliputki{$joukkue}{$_} eq "lepo") {
