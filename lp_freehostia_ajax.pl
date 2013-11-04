@@ -42,6 +42,11 @@ my @maalivahdit_kaikki = ();
 my @puolustajat_kaikki = ();
 my @hyokkaajat_kaikki = ();
 
+# Nama on vain tulokset arvontaan ->
+use List::Util 'shuffle';
+my %jaahylla;
+# <- Nama on vain tulokset arvontaan
+
 my $start                   = $cgi->param('start_day');
 my $end                     = $cgi->param('end_day');
 my $team_from               = $cgi->param('team_from');
@@ -133,7 +138,7 @@ sub alustus {
 
     if (! defined $end) {
         if ($param_liiga =~ /sm_liiga/) {
-            $end = "02.11.";
+            $end = "14.12.";
         } else {
             $end = "03.11.";
         }
@@ -235,6 +240,7 @@ my $pjx = new CGI::Ajax( 'print_game_days_div'              => \&print_game_days
 			   'print_optimi_joukkue_div'         => \&print_optimi_joukkue,
 			   'print_start_day_div'              => \&select_days_start_form,
 			   'print_end_day_div'                => \&select_days_end_form,
+			   'calculate_game_result_div'        => \&calculate_game_result,
                            'alustus'                          => \&alustus);
 print $pjx->build_html( $cgi, \&update_menus);
 
@@ -266,9 +272,9 @@ sub muuttujien_alustusta ($) {
     if ($temp =~ /jakso/) {
         my @jakso;
         if ($param_liiga =~ /sm_liiga/) {
-            @jakso = ("PO", "Jakso 5", "Jakso 4", "Jakso 3", "Jakso 2", "Jakso 1", "Jaksot 1-2", "Jaksot 1-3", "Jaksot 1-4", "Jaksot 1-5", "Jaksot 1-PO");
+            @jakso = ("Jakso PO", "Jakso 5", "Jakso 4", "Jakso 3", "Jakso 2", "Jakso 1", "Jaksot 1-2", "Jaksot 1-3", "Jaksot 1-4", "Jaksot 1-5", "Jaksot 1-PO");
 	} else {
-            @jakso = ("PO", "Jakso 5", "Jakso 4", "Jakso 3", "Jakso 2", "Jakso 1", "Jaksot 1-2", "Jaksot 1-3", "Jaksot 1-4", "Jaksot 1-5", "Jaksot 1-PO");
+            @jakso = ("Jakso PO", "Jakso 5", "Jakso 4", "Jakso 3", "Jakso 2", "Jakso 1", "Jaksot 1-2", "Jaksot 1-3", "Jaksot 1-4", "Jaksot 1-5", "Jaksot 1-PO");
 	}
 	return @jakso;
     }
@@ -313,6 +319,7 @@ sub update_menus {
     $html .= "<li><A HREF=\"$script_name?sub=print_start_page&liiga=$param_liiga\">Ottelulista</A></li>\n";
     $html .= "<li><A HREF=\"$script_name?sub=player_list&sort=lpp_per_peli&liiga=$param_liiga\">Pelaajalista</A></li>\n";
     $html .= "<li><A HREF=\"$script_name?sub=optimi_joukkue&liiga=$param_liiga\">Optimijoukkue</A></li>\n";
+    $html .= "<li><A HREF=\"$script_name?sub=arvo_tulos&liiga=$param_liiga\">Arvo tulos</A></li>\n";
     $html .= "<li><A HREF=\"http://liigaporssi.freehostia.com/mjguest\" target=\"_blank\">Vieraskirja</A></li>\n";
     $html .= "<li><a href=\"mailto:jepponen\@gmail.com\">Mailia</a></li>";
  
@@ -324,6 +331,7 @@ sub update_menus {
     if ($param_sub =~ /start_page|^\s*$/) { $html .= print_start_page()};
     if ($param_sub =~ /player_list/)      {$html .= print_player_list_form()};
     if ($param_sub =~ /optimi_joukkue/)   {$html .= print_optimi_joukkue_form()};
+    if ($param_sub =~ /arvo_tulos/)       {$html .= calculate_game_result_form()};
 
     $html .= "</center>\n";
     
@@ -1070,7 +1078,7 @@ sub read_player_lists {
     if ($param_read_players_from =~ /1|1-/) {
 	%pelaaja = read_player_list("$param_vuosi/player_list_period1${addition}.txt", %pelaaja);
     }
-    if ($param_read_players_from =~ /2|1-/) {
+    if ($param_read_players_from =~ /2|1-PO|1-5|1-4|1-3|1-2/) {
 	%pelaaja = read_player_list("$param_vuosi/player_list_period2${addition}.txt", %pelaaja);
     }
     if ($param_read_players_from =~ /3|1-PO|1-5|1-4|1-3/) {
@@ -1288,7 +1296,7 @@ sub print_game_days {
     alustus();
     
     my $html;
-    # lasketaan onko 3 (tai enemman) peliä tai lepoa putkeen
+    # lasketaan onko 3 (tai enemman) pelia tai lepoa putkeen
     my %peliputki;
     my $paiva = "";
     my $amount;
@@ -1493,10 +1501,12 @@ sub read_player_list ($$) {
 	    next;
         }
 	
-	#                  1       2       3       4       5       6       7       8       9                10          11        12
-        my $parse = '^\s*(.*?)\s*(\d+)\s*(\d+)\s*(\d+)\s*(\d+)\s*(\d+)\s*(\d+)\s*(\d+)\s*(\d+)\s*.*?\s*(-\d+|\d+)\s+(\d\d\d) (\d)\d\d$';
-	#                                           1       2       3       4       5       6       7     8    9                10          11        12
-	if ($param_liiga =~ /nhl/) { $parse = '^\s*(.*?)\s*(\d+)\s*(\d+)\s*(\d+)\s*(\d+)\s*(\d+)\s*(\d+)(\s*)(\d+)\s*.*?\s*(-\d+|\d+)\s+(\d\d\d) (\d)\d\d$'; }
+	#                  1       2       3       4       5       6       7       8       9       10         11        12               13          14    15
+        my $parse = '^\s*(.*?)\s*(\d+)\s*(\d+)\s*(\d+)\s*(\d+)\s*(\d+)\s*(\d+)\s*(\d+)\s*(\d+)\s*(\d+)\s*(-\d+|\d+)\s*(\d+)\s*.*?\s*(-\d+|\d+)\s+(\d\d\d) (\d)\d\d$';
+	if ($param_liiga =~ /nhl/ && $pelipaikka !~ /Maalivahti/) {
+	    #               1       2       3       4       5       6       7    8    9           10           11       12              13          14     15
+	    $parse = '^\s*(.*?)\s*(\d+)\s*(\d+)\s*(\d+)\s*(\d+)\s*(\d+)\s*(\d+)(\s*)(\d+)\s*(\d+\s*\d+)\s*(-\d+|\d+)\s*(\d+)\s*.*?\s*(-\d+|\d+)\s+(\d\d\d) (\d)\d\d$';
+	}
 	if (/$parse/) {
 	    $pelaaja{$1}{ottelut} += $2;
 	    $pelaaja{$1}{maalit} += $3;
@@ -1506,11 +1516,13 @@ sub read_player_list ($$) {
 	        $pelaaja{$1}{laukaukset} += $9;
 	    } else {
 	        $pelaaja{$1}{laukaukset} = 0;
+	        $pelaaja{$1}{paastetyt} += $9;
 	    }
 	    if ($max_pelatut_pelit < $pelaaja{$1}{ottelut}) { $max_pelatut_pelit = $pelaaja{$1}{ottelut}; }
             $pelaaja{$1}{pelipaikka} = $pelipaikka;
-            $pelaaja{$1}{arvo} = "$11.$12";
-            $pelaaja{$1}{lpp} += $10;
+            $pelaaja{$1}{jaahyt} += $12;
+            $pelaaja{$1}{lpp} += $13;
+            $pelaaja{$1}{arvo} = "$14.$15";
             $pelaaja{$1}{joukkue} = $joukkue;
 	    
 	    if ($pelaaja{$1}{ottelut} ne "0") {
@@ -1549,4 +1561,424 @@ sub calculate_interval ($) {
     my $elapsed_time = tv_interval $old, $current_time;
     
     return $elapsed_time, $current_time;
+}
+
+#
+######################################################
+# Kaikki taman alla on vain tulosten arvontaa varten #
+######################################################
+#
+
+sub calculate_game_result_form {
+    alustus();
+    
+    my $html;
+
+    # Tulosta joukkueet ja pelaako
+    foreach my $joukkue (sort hashValueAscendingNum keys %kaikkipelit) {
+	$_ = $start;
+	if (defined $pelipaivat{$joukkue}{$_}{'kotipeli'}) {
+            my $a_script = "calculate_game_result_div( ['joukkue__$joukkue','liiga__$param_liiga','start_day__$start'],['game_result_div'] );";
+	    $html .= "<A HREF=\"#\" onclick=\"$a_script\"><font color=\"red\">$joukkue - $pelipaivat{$joukkue}{$_}{'kotipeli'}</font></A><br>\n";
+	}
+    }
+    $html .= "<p><div id='game_result_div'>\n";
+    $html .= "<div style=\"width:400px; padding:5px; border:5px solid gray; margin:0px;\">T&#228;&#228;ll&#228; voit arpoa tulevan kierroksen otteluita. Arvonnassa k&#228;ytet&#228;&#228;n painotuksia, mutta randomia on mukana
+             reippaasti. T&#228;m&#228; n&#228;kyy varsinkin pelien lopputuloksissa, jotka vaihtelevat arvontakerrasta toiseen. Sivun
+             ei olekaan tarkoitus pyrki&#228; realismiin, vaan on tehty pelk&#228;st&#228;&#228;n huvitteluun.</div>\n";
+    $html .= "</div>\n";
+
+    return $html;
+}
+
+sub calculate_game_result {
+    alustus();
+    
+    # Luetaan pelaajat kaikista jaksoista (Tama siksi, ettei jakson alussa vaikuta aina yksi peli liikaa)
+    $param_read_players_from =~ s/^(\w+)\s+(.*?)$/$1 1-$2/;
+    read_player_lists();
+    
+    my $koti = $param_joukkue;
+    my $vieras = $pelipaivat{$param_joukkue}{$start}{'kotipeli'};
+    my %joukkueet;
+    my %tilastot;
+    my $html;
+    
+    $joukkueet{$koti}{pelit} = $taulukko{$koti}{pelit};
+    $joukkueet{$vieras}{pelit} = $taulukko{$vieras}{pelit};
+    
+    foreach my $nimi (keys %{$pelaaja}) {
+	# Alustetaan pelaajakohtaiset tilastot
+	foreach (0..$pelaaja->{$nimi}->{maalit} * 2) { push (@{$joukkueet{$pelaaja->{$nimi}->{joukkue}}{maalintekija_pelaaja}}, $nimi); }
+	foreach (0..$pelaaja->{$nimi}->{syotot} * 2) { push (@{$joukkueet{$pelaaja->{$nimi}->{joukkue}}{syottaja_pelaaja}}, $nimi); }
+	foreach (0..$pelaaja->{$nimi}->{laukaukset}) { push (@{$joukkueet{$pelaaja->{$nimi}->{joukkue}}{laukaukset_pelaaja}}, $nimi); }
+	foreach (2..$pelaaja->{$nimi}->{jaahyt}) { push (@{$joukkueet{$pelaaja->{$nimi}->{joukkue}}{jaahyt_pelaaja}}, $nimi); }
+	# Alustetaan joukkueen tilastot
+	$joukkueet{$pelaaja->{$nimi}->{joukkue}}{maalit} += $pelaaja->{$nimi}->{maalit};
+	$joukkueet{$pelaaja->{$nimi}->{joukkue}}{paastetyt} += $pelaaja->{$nimi}->{paastetyt} if ($pelaaja->{$nimi}->{pelipaikka} =~ /Maalivahti/);
+	$joukkueet{$pelaaja->{$nimi}->{joukkue}}{laukaukset} += $pelaaja->{$nimi}->{laukaukset};
+	$joukkueet{$pelaaja->{$nimi}->{joukkue}}{jaahyt} += $pelaaja->{$nimi}->{jaahyt};
+	
+	$tilastot{$pelaaja->{$nimi}->{joukkue}}{$nimi}{maalit} = 0;
+	$tilastot{$pelaaja->{$nimi}->{joukkue}}{$nimi}{syotot} = 0;
+	$tilastot{$pelaaja->{$nimi}->{joukkue}}{$nimi}{laukaukset} = 0;
+	$tilastot{$pelaaja->{$nimi}->{joukkue}}{$nimi}{jaahyt} = 0;
+    }
+    
+    foreach ($koti, $vieras) {
+        if ($joukkueet{$_}{pelit} > 0) {
+	    $joukkueet{$_}{maalit_per_peli} = $joukkueet{$_}{maalit} / $joukkueet{$_}{pelit};
+	    $joukkueet{$_}{paastetyt_per_peli} = $joukkueet{$_}{paastetyt} / $joukkueet{$_}{pelit};
+	    $joukkueet{$_}{laukaukset_per_peli} = $joukkueet{$_}{laukaukset} / $joukkueet{$_}{pelit};
+	    $joukkueet{$_}{jaahyt_per_peli} = int(($joukkueet{$_}{jaahyt} / $joukkueet{$_}{pelit}) / 2);
+	} else {
+	    $joukkueet{$_}{maalit_per_peli} = 1;
+	    $joukkueet{$_}{paastetyt_per_peli} = 1;
+	    $joukkueet{$_}{laukaukset_per_peli} = 25;
+	    $joukkueet{$_}{jaahyt_per_peli} = 5;
+	}
+    }
+    
+    # Arvotaan joukkueiden maalit (vois tarvittaessa jattaa pois, ku arvotaan uudelleen myohemmin pelin sisalla)
+    $joukkueet{$koti}{arvotut_maalit} = int(rand($joukkueet{$koti}{maalit_per_peli} * 1.5 + 1) + rand($joukkueet{$vieras}{paastetyt_per_peli}));
+    $joukkueet{$vieras}{arvotut_maalit} = int(rand($joukkueet{$vieras}{maalit_per_peli} * 1.5 + 1) + rand($joukkueet{$koti}{paastetyt_per_peli}));
+    # Maalimaarat taulukoihin
+    my @maali = (1..3600);
+    foreach (1..$joukkueet{$koti}{arvotut_maalit}) { $maali[$_] = $koti; }
+    foreach (1..$joukkueet{$vieras}{arvotut_maalit}) { $maali[-$_] = $vieras; }
+    @maali = shuffle @maali;
+    my @maali_koti_yv = (1..3600);
+    foreach (1..int($joukkueet{$koti}{arvotut_maalit} * 1.5)) { $maali_koti_yv[$_] = $koti; }
+    foreach (1..int($joukkueet{$vieras}{arvotut_maalit} / 2)) { $maali_koti_yv[-$_] = $vieras; }
+    @maali_koti_yv = shuffle @maali_koti_yv;
+    my @maali_koti_yv2 = (1..3600);
+    foreach (1..int($joukkueet{$koti}{arvotut_maalit} * 4)) { $maali_koti_yv2[$_] = $koti; }
+    foreach (1..int($joukkueet{$vieras}{arvotut_maalit} / 3)) { $maali_koti_yv2[-$_] = $vieras; }
+    @maali_koti_yv2 = shuffle @maali_koti_yv2;
+    my @maali_vieras_yv = (1..3600);
+    foreach (1..int($joukkueet{$koti}{arvotut_maalit} / 2)) { $maali_vieras_yv[$_] = $koti; }
+    foreach (1..int($joukkueet{$vieras}{arvotut_maalit} * 1.5)) { $maali_vieras_yv[-$_] = $vieras; }
+    @maali_vieras_yv = shuffle @maali_vieras_yv;
+    my @maali_vieras_yv2 = (1..3600);
+    foreach (1..int($joukkueet{$koti}{arvotut_maalit} / 3)) { $maali_vieras_yv2[$_] = $koti; }
+    foreach (1..int($joukkueet{$vieras}{arvotut_maalit} * 4)) { $maali_vieras_yv2[-$_] = $vieras; }
+    @maali_vieras_yv2 = shuffle @maali_vieras_yv2;
+
+    # Arvotaan joukkueiden jaahyt
+    my @jaahy = (1..3600);
+    foreach (1..$joukkueet{$koti}{jaahyt_per_peli}) { $jaahy[$_] = $koti; }
+    foreach (1..$joukkueet{$vieras}{jaahyt_per_peli}) { $jaahy[-$_] = $vieras; }
+    @jaahy = shuffle @jaahy;
+    
+    # Arvotaan joukkueen laukaisumaara
+    $joukkueet{$koti}{arvotut_laukaukset} = int(rand($joukkueet{$koti}{laukaukset_per_peli})) + $joukkueet{$koti}{laukaukset_per_peli} / int(rand(3) + 1);
+    $joukkueet{$vieras}{arvotut_laukaukset} = int(rand($joukkueet{$vieras}{laukaukset_per_peli})) + $joukkueet{$vieras}{laukaukset_per_peli} / int(rand(3) + 1);
+
+#    $html .= "Ottelut $joukkueet{$koti}{pelit} - $joukkueet{$vieras}{pelit}<br>\n";
+#    $html .= "Maalit $joukkueet{$koti}{maalit} - $joukkueet{$vieras}{maalit}<br>\n";
+#    $html .= "M_per_peli $joukkueet{$koti}{maalit_per_peli} - $joukkueet{$vieras}{maalit_per_peli}<br>\n";
+#    $html .= "Paastetyt $joukkueet{$koti}{paastetyt} - $joukkueet{$vieras}{paastetyt}<br>\n";
+    
+    my (@maalintekija, @syottaja_1, @syottaja_2, @laukoja, @jaahyilija, $kotimaali, $vierasmaali, $kotijaahy, $vierasjaahy);
+    my $koti_count = 0;
+    my $vieras_count = 0;
+    my @pelikello = (0..3600);
+    my $edellinen_maali = 9;
+    my $sekunti = 0;
+    my $ja_maali = "";
+    my $table;
+    
+    my $td = change_table_td();
+    # Kaydaan lapi koko peli sekunti sekunnilta
+    foreach my $sekunti (@pelikello) {
+	if ($sekunti == 1) {
+	    $table .= "<tr><th></th><th><center>1. Er&auml;</center></th><th></th></tr>\n";
+	}
+	if ($sekunti == 1201) {
+	    $table .= "<tr><th></th><th><center>2. Er&auml;</center></th><th></th></tr>\n";
+	    $td = change_table_td();
+	    $edellinen_maali = 9;
+	}
+	if ($sekunti == 2401) {
+	    $table .= "<tr><th></th><th><center>3. Er&auml;</center></th><th></th></tr>\n";
+	    $td = change_table_td();
+	    $edellinen_maali = 9;
+	}
+	if ($sekunti == 3601) {
+	    $table .= "<tr><th></th><th><center>JA</center></th><th></th></tr>\n";
+	    $td = change_table_td();
+	    $edellinen_maali = 9;
+	}
+
+	# Jaahyt kuluu
+	my %jaahylla_oleva_joukkue;
+	my $yv_av_tv_maali = "";
+	$jaahylla_oleva_joukkue{$koti} = 0;
+	$jaahylla_oleva_joukkue{$vieras} = 0;
+	foreach my $pelaaja (keys %jaahylla) {
+	    if ($jaahylla{$pelaaja}{aika} == 0) {
+	        delete $jaahylla{$pelaaja};
+	    } else {
+	        $jaahylla{$pelaaja}{aika}--;
+		$jaahylla_oleva_joukkue{$jaahylla{$pelaaja}{joukkue}}++;
+	    }
+	}
+	
+	my $temp = int(rand(3600));
+	my $joukkue_maali;
+	if ($jaahylla_oleva_joukkue{$koti} == $jaahylla_oleva_joukkue{$vieras} || ($jaahylla_oleva_joukkue{$koti} > 1 && $jaahylla_oleva_joukkue{$vieras} > 1)) {
+	    $joukkue_maali = $maali[$temp];
+	} elsif ($jaahylla_oleva_joukkue{$koti} == $jaahylla_oleva_joukkue{$vieras} - 1) {
+	    $joukkue_maali = $maali_koti_yv[$temp];
+	} elsif ($jaahylla_oleva_joukkue{$koti} - 1 == $jaahylla_oleva_joukkue{$vieras}) {
+	    $joukkue_maali = $maali_vieras_yv[$temp];
+	} elsif ($jaahylla_oleva_joukkue{$koti} < $jaahylla_oleva_joukkue{$vieras}) {
+	    $joukkue_maali = $maali_koti_yv2[$temp];
+	} elsif ($jaahylla_oleva_joukkue{$koti} > $jaahylla_oleva_joukkue{$vieras}) {
+	    $joukkue_maali = $maali_vieras_yv2[$temp];
+	}
+	my $joukkue_jaahy = $jaahy[$temp];
+	$edellinen_maali-- if ($edellinen_maali > 0);
+
+        my $pisteet = int(rand(12));
+
+        # Peli ratkeaa VL-kisaan
+	if ($sekunti == 3900) {
+	    $ja_maali = "VL";
+	    $pisteet = 0;
+	    $yv_av_tv_maali = "";
+	    foreach (@maali) {
+	        if (/\D+/) {
+		    $joukkue_maali = $_;
+		    last;
+		}
+	    }
+	}
+	
+	# Jos tulee maali ja edellisesta maalista kulunut asetettu aika
+	if ($joukkue_maali !~ /\d+/ && $edellinen_maali == 0) {
+	    $edellinen_maali = 9;
+	    my $peliaika = calculate_peliaika($sekunti);
+	
+	    if ($joukkue_maali =~ /$koti/) {
+	        $koti_count++;
+		$vierasmaali = '&nbsp;';
+		if ($jaahylla_oleva_joukkue{$koti} < $jaahylla_oleva_joukkue{$vieras} && $ja_maali !~ /VL/) {
+		    $yv_av_tv_maali = "YV";
+		    if ($jaahylla_oleva_joukkue{$koti} == 0 && $jaahylla_oleva_joukkue{$vieras} > 1) {
+		        $yv_av_tv_maali = "YV2";
+		    }
+		    # Jaahy loppuu, kun tulee yv maali
+		    foreach (sort { $jaahylla{$a}{aika} cmp $jaahylla{$b}{aika} } keys %jaahylla) {
+		        if ($jaahylla{$_}{joukkue} =~ /$vieras/) { delete $jaahylla{$_}; }
+		    }
+		}
+		if ($jaahylla_oleva_joukkue{$koti} > $jaahylla_oleva_joukkue{$vieras} && $ja_maali !~ /VL/) { $yv_av_tv_maali = "AV"; }
+	    }
+	    if ($joukkue_maali =~ /$vieras/) {
+	        $vieras_count++;
+		$kotimaali = '&nbsp;';
+		if ($jaahylla_oleva_joukkue{$koti} > $jaahylla_oleva_joukkue{$vieras} && $ja_maali !~ /VL/) {
+		    # Jaahy loppuu, kun tulee yv maali
+		    $yv_av_tv_maali = "YV";
+		    if ($jaahylla_oleva_joukkue{$vieras} == 0 && $jaahylla_oleva_joukkue{$koti} > 1) {
+		        $yv_av_tv_maali = "YV2";
+		    }
+		    foreach (sort { $jaahylla{$a}{aika} cmp $jaahylla{$b}{aika} } keys %jaahylla) {
+		        if ($jaahylla{$_}{joukkue} =~ /$koti/) { delete $jaahylla{$_}; }
+		    }
+		}
+		if ($jaahylla_oleva_joukkue{$koti} < $jaahylla_oleva_joukkue{$vieras} && $ja_maali !~ /VL/) { $yv_av_tv_maali = "AV"; }
+	    }
+	    if ($jaahylla_oleva_joukkue{$koti} == $jaahylla_oleva_joukkue{$vieras} && $jaahylla_oleva_joukkue{$koti} > 0) { $yv_av_tv_maali = "TV"; }
+
+	    if ($sekunti > 3600 && $ja_maali eq "") {
+	        $ja_maali = "JA";
+	    }
+
+	    do { @maalintekija = shuffle @{$joukkueet{$joukkue_maali}{maalintekija_pelaaja}} } until $pelaaja->{$maalintekija[0]}->{pelipaikka} !~ /Maalivahti/ && !defined $jaahylla{$maalintekija[0]};
+	    $tilastot{$joukkue_maali}{$maalintekija[0]}{maalit}++ if ($ja_maali !~ /VL/);
+	    $tilastot{$joukkue_maali}{$maalintekija[0]}{laukaukset}++ if ($ja_maali !~ /VL/);
+	    my $maali = "<b>$maalintekija[0] $koti_count - $vieras_count $yv_av_tv_maali $ja_maali </b>\n";
+	    if ($pisteet > 1) {
+	        do { @syottaja_1 = shuffle @{$joukkueet{$joukkue_maali}{syottaja_pelaaja}} } until $syottaja_1[0] ne $maalintekija[0] && !defined $jaahylla{$maalintekija[0]};
+	        $tilastot{$joukkue_maali}{$syottaja_1[0]}{syotot}++;
+	        $maali .= "($syottaja_1[0]";
+	    }
+	    if ($pisteet > 4) {
+	        do { @syottaja_2 = shuffle @{$joukkueet{$joukkue_maali}{syottaja_pelaaja}} } until $syottaja_2[0] ne $maalintekija[0] && $syottaja_2[0] ne $syottaja_1[0] && !defined $jaahylla{$maalintekija[0]};
+	        $tilastot{$joukkue_maali}{$syottaja_2[0]}{syotot}++;
+	        $maali .= ", $syottaja_2[0]";
+	    }
+	    if ($pisteet > 1) { $maali .= ")"; }
+
+	    if ($joukkue_maali =~ /$koti/) { $kotimaali = $maali; }
+	    if ($joukkue_maali =~ /$vieras/) { $vierasmaali = $maali; }
+	    $td = change_table_td($td);
+            $table .= "<tr>\n";
+	    $table .= "<td class=\"$td\">$kotimaali</td>\n";
+	    $table .= "<td class=\"$td\">$peliaika</td>\n";
+	    $table .= "<td class=\"$td\">$vierasmaali</td>\n";
+	    $table .= "</tr>\n";
+	}
+
+	# Jos tulee jaahy
+	if ($joukkue_jaahy !~ /\d+/) {
+	    my $peliaika = calculate_peliaika($sekunti);
+	    $edellinen_maali = 4;
+
+	    my $minutes = 2;
+	    my $syy = jaahyn_syy($minutes);
+
+	    do { @jaahyilija = shuffle @{$joukkueet{$joukkue_jaahy}{jaahyt_pelaaja}} } until !defined $jaahylla{$jaahyilija[0]};
+	    $jaahylla{$jaahyilija[0]}{aika} = $minutes * 60;
+	    $jaahylla{$jaahyilija[0]}{joukkue} = $joukkue_jaahy;
+	    $tilastot{$joukkue_jaahy}{$jaahyilija[0]}{jaahyt} += $minutes;
+
+	    if ($joukkue_jaahy =~ /$koti/) {
+	        $kotijaahy = "$jaahyilija[0] - $syy $minutes min";
+		$vierasjaahy = '&nbsp;';
+	    }
+	    if ($joukkue_jaahy =~ /$vieras/) {
+	        $kotijaahy = '&nbsp;';
+	        $vierasjaahy = "$jaahyilija[0] - $syy $minutes min";
+	    }
+            
+	    $td = change_table_td($td);
+	    $table .= "<tr>\n";
+	    $table .= "<td class=\"$td\">$kotijaahy</td>\n";
+	    $table .= "<td class=\"$td\">$peliaika</td>\n";
+	    $table .= "<td class=\"$td\">$vierasjaahy</td>\n";
+	    $table .= "</tr>\n";
+	}
+
+        # Peli etenee jatkoajalle
+	if ($sekunti == 3600 && $koti_count == $vieras_count) {
+	    push (@pelikello, (3601..3900));
+        }
+	# Peli ratkesi jatkoajalla
+	if ($ja_maali ne "") { last; }
+    }
+    $html .= "<b>$koti - $vieras $koti_count - $vieras_count $ja_maali</b><p>\n";
+    $html .= "<table border=\"1\">$table</table><p>\n";
+
+    # Arvotaan laukaukset pelaajille
+    foreach my $joukkue ($koti, $vieras) {
+        foreach (1..$joukkueet{$joukkue}{arvotut_laukaukset}) {
+	    do { @laukoja = shuffle @{$joukkueet{$joukkue}{laukaukset_pelaaja}} } until $pelaaja->{$laukoja[0]}->{pelipaikka} !~ /Maalivahti/;
+	    $tilastot{$joukkue}{$laukoja[0]}{laukaukset}++;
+	}
+    }
+    
+    # Tulostetaan tilastot
+    $html .= "<div align=\"center\">\n";
+#$html .= "<table>\n";
+    foreach my $joukkue ($koti, $vieras) {
+#$html .= "<th valign=\"top\">\n";
+	$td = change_table_td();
+	$html .= "<table style=\"display: inline-block;\">\n";
+#$html .= "<table>\n";
+        
+	$html .= "<tr>\n";
+        my @otsikko = ("Nimi", "Ma", "Sy", "Pi", "La", "Ja");
+        foreach (@otsikko) {
+            $html .= "<th><center>$_</center></th>\n";
+        }
+        $html .= "<\/tr>\n";
+	
+	foreach my $nimi (sort {
+	    $tilastot{$joukkue}{$b}{maalit} cmp $tilastot{$joukkue}{$a}{maalit} || 
+	    $tilastot{$joukkue}{$b}{syotot} cmp $tilastot{$joukkue}{$a}{syotot} ||
+	    $tilastot{$joukkue}{$b}{laukaukset} cmp $tilastot{$joukkue}{$a}{laukaukset} ||
+	    $tilastot{$joukkue}{$b}{jaahyt} cmp $tilastot{$joukkue}{$a}{jaahyt}
+	    } keys %{$tilastot{$joukkue}}) {
+	    my $pisteet = $tilastot{$joukkue}{$nimi}{maalit} + $tilastot{$joukkue}{$nimi}{syotot};
+	    $td = change_table_td($td);
+	    $html .= "<tr>\n";
+	    $html .= "<td class=\"$td\">$nimi</td>\n";
+	    $html .= "<td class=\"$td\">$tilastot{$joukkue}{$nimi}{maalit}</td>\n";
+	    $html .= "<td class=\"$td\">$tilastot{$joukkue}{$nimi}{syotot}</td>\n";
+	    $html .= "<td class=\"$td\">$pisteet</td>\n";
+	    $html .= "<td class=\"$td\">$tilastot{$joukkue}{$nimi}{laukaukset}</td>\n";
+	    $html .= "<td class=\"$td\">$tilastot{$joukkue}{$nimi}{jaahyt}</td>\n";
+	    $html .= "</tr>\n";
+	}
+	$html .= "</table>\n";
+#$html .= "</th>\n";
+    }
+    $html .= "</div>\n";
+#$html .= "</table>\n";
+
+    return $html;
+}
+
+sub calculate_peliaika {
+    my $sekunti = shift;
+    
+    my $peliaika = int($sekunti / 60);
+    if ($peliaika < 10) { $peliaika = "0$peliaika"; }
+    my $sek = $sekunti % 60;
+    if ($sek < 10) { $sek = "0$sek"; }
+    $peliaika = "$peliaika:$sek";
+
+    return $peliaika;
+}
+
+sub jaahyn_syy {
+    my $min = shift;
+    
+    my @jaahyn_syy;
+    
+    if ($min == 2) {
+    @jaahyn_syy = shuffle (
+        "Automaattinen kaytosrangaistus",
+#        "Automaattinen pelirangaistus kaytoksesta",
+        "Estaminen",
+        "Huitominen",
+        "Joukkuerangaistus",
+        "Joukkuerangaistus toimihenkilolle",
+        "Kampitus",
+        "Keihastaminen",
+        "Kiekon peittaminen",
+        "Kiekon sulkeminen",
+        "Kiinnipitaminen",
+        "Kiinnipitaminen vastustajan mailasta",
+        "Kohtuuttoman kova peli",
+        "Korkea maila",
+        "Koukkaaminen",
+        "Kyynarpaataklaus",
+        "Kaytosrangaistus",
+        "Laitataklaus",
+        "Leikkaaminen",
+        "Liikaa pelaajia jaalla",
+        "Maalin tahallinen siirtaminen",
+        "Mailan paalla lyominen",
+        "Mailan tai muun esineen heitt. pelialueelta",
+        "Mailan tai muun esineen heitto",
+#        "Nyrkkitappelu",
+#        "Ottelurangaistus",
+        "Pelin viivyttaminen",
+        "Pelin viivyttaminen - kiekko katsomoon",
+        "Pelirangaistus kaytoksesta",
+        "Pieni kaytosrangaistus",
+        "Poikittainen maila",
+        "Polvitaklaus",
+        "Potkaiseminen",
+        "Paahan kohdistuva taklaus",
+        "Paalla iskeminen",
+        "Rikkoutunut maila",
+        "Ryntays",
+        "Selasta taklaaminen",
+        "Sukeltaminen",
+        "Saantojen vastainen varuste",
+        "Toimihenkilon lahteminen pelaajapenkilta",
+#        "Toimihenkilon ottelurangaistus",
+#        "Toimihenkilon pelirangaistus kaytoksesta",
+        "Vaarallinen varuste",
+        "Varusteiden korjaaminen",
+        "Vakivaltaisuus",
+    );
+    }
+    
+    return $jaahyn_syy[0];
 }
