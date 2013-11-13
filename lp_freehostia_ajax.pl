@@ -80,9 +80,9 @@ if (!defined $param_joukkue)           { $param_joukkue = "Joukkue"; }
 if (!defined $param_order)             { $param_order = "descending"; }
 if (!defined $param_read_players_from) {
     if ($param_liiga =~ /nhl/) {
-        $param_read_players_from = "Jakso 1";
-    } else {
         $param_read_players_from = "Jakso 2";
+    } else {
+        $param_read_players_from = "Jakso 3";
     }
 }
 
