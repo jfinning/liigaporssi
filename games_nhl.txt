@@ -1,214 +1,222 @@
-Ti 01.10. 	Montreal 	- 	Toronto 				
-	Chicago 	- 	Washington 				
-	Edmonton 	- 	Winnipeg 				
-Ke 02.10. 	Philadelphia 	- 	Toronto 				
-	Detroit 	- 	Buffalo 				
-	Colorado 	- 	Anaheim 				
-To 03.10. 	Boston 	- 	Tampa Bay 				
-	Pittsburgh 	- 	New Jersey 				
-	Washington 	- 	Calgary 				
-	Minnesota 	- 	Los Angeles 				
-	St. Louis 	- 	Nashville 				
-	Dallas 	- 	Florida 				
-	San Jose 	- 	Vancouver 				
-	Phoenix 	- 	NY Rangers 				
-Pe 04.10. 	Columbus 	- 	Calgary 				
-	New Jersey 	- 	NY Islanders 				
-	Carolina 	- 	Detroit 				
-	Buffalo 	- 	Ottawa 				
-	Winnipeg 	- 	Los Angeles 				
-	Colorado 	- 	Nashville 				
-La 05.10. 	Boston 	- 	Detroit 				
-	Pittsburgh 	- 	Buffalo 				
-	Toronto 	- 	Ottawa 				
-	Montreal 	- 	Philadelphia 				
-	NY Islanders 	- 	Columbus 				
-	Minnesota 	- 	Anaheim 				
-	St. Louis 	- 	Florida 				
-	Dallas 	- 	Washington 				
-	Chicago 	- 	Tampa Bay 				
-	Vancouver 	- 	Edmonton 				
-	San Jose 	- 	Phoenix 				
-Su 06.10. 	Carolina 	- 	Philadelphia 				
-	Calgary 	- 	Vancouver 				
-	Winnipeg 	- 	Anaheim 				
-Ma 07.10. 	Edmonton 	- 	New Jersey 				
-	Los Angeles 	- 	NY Rangers 				
-Ti 08.10. 	Toronto 	- 	Colorado 				
-	Pittsburgh 	- 	Carolina 				
-	Philadelphia 	- 	Florida 				
-	NY Islanders 	- 	Phoenix 				
-	Buffalo 	- 	Tampa Bay 				
-	Nashville 	- 	Minnesota 				
-	Vancouver 	- 	New Jersey 				
-	San Jose 	- 	NY Rangers 				
-Ke 09.10. 	Calgary 	- 	Montreal 				
-	St. Louis 	- 	Chicago 				
-	Los Angeles 	- 	Ottawa 				
-To 10.10. 	Washington 	- 	Carolina 				
-	Buffalo 	- 	Columbus 				
-	Boston 	- 	Colorado 				
-	Detroit 	- 	Phoenix 				
-	Tampa Bay 	- 	Florida 				
-	Minnesota 	- 	Winnipeg 				
-	Nashville 	- 	Toronto 				
-	Edmonton 	- 	Montreal 				
-	Anaheim 	- 	NY Rangers 				
-	Vancouver 	- 	San Jose 				
-Pe 11.10. 	Carolina 	- 	Los Angeles 				
-	Philadelphia 	- 	Phoenix 				
-	Florida 	- 	Pittsburgh 				
-	Winnipeg 	- 	Dallas 				
-	Chicago 	- 	NY Islanders 				
-	Calgary 	- 	New Jersey 				
-La 12.10. 	Columbus 	- 	Boston 				
-	Detroit 	- 	Philadelphia 				
-	Tampa Bay 	- 	Pittsburgh 				
-	Toronto 	- 	Edmonton 				
-	Washington 	- 	Colorado 				
-	Minnesota 	- 	Dallas 				
-	Nashville 	- 	NY Islanders 				
-	St. Louis 	- 	NY Rangers 				
-	Chicago 	- 	Buffalo 				
-	Vancouver 	- 	Montreal 				
-	San Jose 	- 	Ottawa 				
-Su 13.10. 	Carolina 	- 	Phoenix 				
-	Florida 	- 	Los Angeles 				
-	Anaheim 	- 	Ottawa 				
-	Winnipeg 	- 	New Jersey 				
-Ma 14.10. 	Boston 	- 	Detroit 				
-	Washington 	- 	Edmonton 				
-	Buffalo 	- 	Minnesota 				
-Ti 15.10. 	Toronto 	- 	Minnesota 				
-	Carolina 	- 	Chicago 				
-	NY Islanders 	- 	Buffalo 				
-	Philadelphia 	- 	Vancouver 				
-	Pittsburgh 	- 	Edmonton 				
-	Tampa Bay 	- 	Los Angeles 				
-	Detroit 	- 	Columbus 				
-	St. Louis 	- 	San Jose 				
-	Winnipeg 	- 	Montreal 				
-	Nashville 	- 	Florida 				
-	Colorado 	- 	Dallas 				
-	Phoenix 	- 	Ottawa 				
-Ke 16.10. 	Washington 	- 	NY Rangers 				
-	Anaheim 	- 	Calgary 				
-To 17.10. 	Philadelphia 	- 	Pittsburgh 				
-	NY Islanders 	- 	Edmonton 				
-	Toronto 	- 	Carolina 				
-	Buffalo 	- 	Vancouver 				
-	Montreal 	- 	Columbus 				
-	Ottawa 	- 	New Jersey 				
-	Florida 	- 	Boston 				
-	Tampa Bay 	- 	Minnesota 				
-	Nashville 	- 	Los Angeles 				
-	Chicago 	- 	St. Louis 				
-	Dallas 	- 	San Jose 				
-	Colorado 	- 	Detroit 				
-Pe 18.10. 	Winnipeg 	- 	St. Louis 				
-	Anaheim 	- 	Phoenix 				
-La 19.10. 	Pittsburgh 	- 	Vancouver 				
-	Ottawa 	- 	Edmonton 				
-	Florida 	- 	Minnesota 				
-	Washington 	- 	Columbus 				
-	Tampa Bay 	- 	Boston 				
-	NY Islanders 	- 	Carolina 				
-	New Jersey 	- 	NY Rangers 				
-	Montreal 	- 	Nashville 				
-	Chicago 	- 	Toronto 				
-	Buffalo 	- 	Colorado 				
-	Phoenix 	- 	Detroit 				
-	San Jose 	- 	Calgary 				
-	Los Angeles 	- 	Dallas 				
-Su 20.10. 	Columbus 	- 	Vancouver 				
-	Winnipeg 	- 	Nashville 				
-	Anaheim 	- 	Dallas 				
-Ma 21.10. 	Detroit 	- 	San Jose 				
-	Pittsburgh 	- 	Colorado 				
-	Los Angeles 	- 	Calgary 				
-Ti 22.10. 	Toronto 	- 	Anaheim 				
-	NY Islanders 	- 	Vancouver 				
-	Columbus 	- 	New Jersey 				
-	Florida 	- 	Chicago 				
-	Montreal 	- 	Edmonton 				
-	Minnesota 	- 	Nashville 				
-	Winnipeg 	- 	Washington 				
-	Phoenix 	- 	Calgary 				
-Ke 23.10. 	Detroit 	- 	Ottawa 				
-	Buffalo 	- 	Boston 				
-To 24.10. 	New Jersey 	- 	Vancouver 				
-	Philadelphia 	- 	NY Rangers 				
-	Boston 	- 	San Jose 				
-	Tampa Bay 	- 	Chicago 				
-	Montreal 	- 	Anaheim 				
-	Nashville 	- 	Winnipeg 				
-	Minnesota 	- 	Carolina 				
-	Dallas 	- 	Calgary 				
-	Edmonton 	- 	Washington 				
-	Los Angeles 	- 	Phoenix 				
-Pe 25.10. 	Columbus 	- 	Toronto 				
-	Pittsburgh 	- 	NY Islanders 				
-	Florida 	- 	Buffalo 				
-	Ottawa 	- 	Anaheim 				
-	St. Louis 	- 	Vancouver 				
-	Colorado 	- 	Carolina 				
-La 26.10. 	Phoenix 	- 	Edmonton 				
-	Toronto 	- 	Pittsburgh 				
-	Tampa Bay 	- 	Buffalo 				
-	NY Islanders 	- 	Philadelphia 				
-	Montreal 	- 	San Jose 				
-	Dallas 	- 	Winnipeg 				
-	Detroit 	- 	NY Rangers 				
-	Boston 	- 	New Jersey 				
-	Nashville 	- 	St. Louis 				
-	Chicago 	- 	Minnesota 				
-	Calgary 	- 	Washington 				
-Su 27.10. 	Ottawa 	- 	San Jose 				
-	Florida 	- 	Tampa Bay 				
-	Columbus 	- 	Anaheim 				
-	Colorado 	- 	Winnipeg 				
-	Los Angeles 	- 	Edmonton 				
-Ma 28.10. 	Buffalo 	- 	Dallas 				
-	Carolina 	- 	Pittsburgh 				
-	NY Rangers 	- 	Montreal 				
-	Minnesota 	- 	Chicago 				
-	Vancouver 	- 	Washington 				
-Ti 29.10. 	Philadelphia 	- 	Anaheim 				
-	NY Islanders 	- 	NY Rangers 				
-	Montreal 	- 	Dallas 				
-	New Jersey 	- 	Tampa Bay 				
-	Chicago 	- 	Ottawa 				
-	St. Louis 	- 	Winnipeg 				
-	Edmonton 	- 	Toronto 				
-	Phoenix 	- 	Los Angeles 				
-Ke 30.10. 	Calgary 	- 	Toronto 				
-	Pittsburgh 	- 	Boston 				
-	Vancouver 	- 	Detroit 				
-	Los Angeles 	- 	San Jose 				
-To 31.10. 	Boston 	- 	Anaheim 				
-	NY Rangers 	- 	Buffalo 				
-	Phoenix 	- 	Nashville 				
-Pe 01.11. 	Philadelphia 	- 	Washington 				
-	Carolina 	- 	Tampa Bay 				
-	Pittsburgh 	- 	Columbus 				
-	Florida 	- 	St. Louis 				
-	Ottawa 	- 	NY Islanders 				
-	Minnesota 	- 	Montreal 				
-	Dallas 	- 	Colorado 				
-	Calgary 	- 	Detroit 				
-La 02.11. 	Winnipeg 	- 	Chicago 				
-	Vancouver 	- 	Toronto 				
-	Tampa Bay 	- 	St. Louis 				
-	NY Rangers 	- 	Carolina 				
-	NY Islanders 	- 	Boston 				
-	New Jersey 	- 	Philadelphia 				
-	Columbus 	- 	Pittsburgh 				
-	Buffalo 	- 	Anaheim 				
-	Washington 	- 	Florida 				
-	Colorado 	- 	Montreal 				
-	Edmonton 	- 	Detroit 				
-	San Jose 	- 	Phoenix 				
-	Los Angeles 	- 	Nashville 				
-Su 03.11. 	Ottawa 	- 	Dallas 				
-	Chicago 	- 	Calgary 				
-	Minnesota 	- 	New Jersey 
+To 09.01.	Buffalo 	- 	Florida 				
+Carolina 	- 	Toronto 				
+New Jersey 	- 	Dallas 				
+Tampa Bay 	- 	Washington 				
+Nashville 	- 	Anaheim 				
+Calgary 	- 	St. Louis 				
+Phoenix 	- 	Minnesota 				
+San Jose 	- 	Detroit 				
+Los Angeles 	- 	Boston 				
+Pe 10.01.	Columbus 	- 	Carolina 				
+Washington 	- 	Toronto 				
+NY Rangers 	- 	Dallas 				
+Colorado 	- 	NY Islanders 				
+Vancouver 	- 	St. Louis 				
+Edmonton 	- 	Pittsburgh 				
+La 11.01.	Philadelphia 	- 	Tampa Bay 				
+Nashville 	- 	Ottawa 				
+Montreal 	- 	Chicago 				
+New Jersey 	- 	Florida 				
+Winnipeg 	- 	Columbus 				
+Minnesota 	- 	Colorado 				
+Phoenix 	- 	Anaheim 				
+Calgary 	- 	Pittsburgh 				
+Los Angeles 	- 	Detroit 				
+San Jose 	- 	Boston 				
+Su 12.01.	Washington 	- 	Buffalo 				
+Dallas 	- 	NY Islanders 				
+Nashville 	- 	Minnesota 				
+Toronto 	- 	New Jersey 				
+NY Rangers 	- 	Philadelphia 				
+Chicago 	- 	Edmonton 				
+Anaheim 	- 	Detroit 				
+Ma 13.01.	Carolina 	- 	Calgary 				
+Columbus 	- 	Tampa Bay 				
+Winnipeg 	- 	Phoenix 				
+Los Angeles 	- 	Vancouver 				
+Ti 14.01.	Washington 	- 	San Jose 				
+NY Rangers 	- 	Tampa Bay 				
+Boston 	- 	Toronto 				
+Montreal 	- 	New Jersey 				
+Buffalo 	- 	Philadelphia 				
+Florida 	- 	NY Islanders 				
+Chicago 	- 	Colorado 				
+Minnesota 	- 	Ottawa 				
+Nashville 	- 	Calgary 				
+St. Louis 	- 	Phoenix 				
+Dallas 	- 	Edmonton 				
+Ke 15.01.	Toronto 	- 	Buffalo 				
+Pittsburgh 	- 	Washington 				
+Anaheim 	- 	Vancouver 				
+To 16.01.	NY Rangers 	- 	Detroit 				
+Philadelphia 	- 	Nashville 				
+Florida 	- 	San Jose 				
+Tampa Bay 	- 	NY Islanders 				
+Ottawa 	- 	Montreal 				
+Minnesota 	- 	Edmonton 				
+St. Louis 	- 	Los Angeles 				
+Dallas 	- 	Boston 				
+Phoenix 	- 	Vancouver 				
+Calgary 	- 	Winnipeg 				
+Colorado 	- 	New Jersey 				
+Pe 17.01.	Columbus 	- 	Washington 				
+Chicago 	- 	Anaheim 				
+La 18.01.	Winnipeg 	- 	Edmonton 				
+Tampa Bay 	- 	San Jose 				
+Ottawa 	- 	NY Rangers 				
+Carolina 	- 	Florida 				
+Philadelphia 	- 	NY Islanders 				
+Detroit 	- 	Los Angeles 				
+Toronto 	- 	Montreal 				
+Buffalo 	- 	Columbus 				
+St. Louis 	- 	Anaheim 				
+Phoenix 	- 	New Jersey 				
+Nashville 	- 	Colorado 				
+Minnesota 	- 	Dallas 				
+Vancouver 	- 	Calgary 				
+Su 19.01.	Chicago 	- 	Boston 				
+Carolina 	- 	Tampa Bay 				
+NY Rangers 	- 	Washington 				
+Ma 20.01.	NY Islanders 	- 	Philadelphia 				
+Boston 	- 	Los Angeles 				
+Pittsburgh 	- 	Florida 				
+Detroit 	- 	St. Louis 				
+Nashville 	- 	Dallas 				
+Phoenix 	- 	Toronto 				
+San Jose 	- 	Calgary 				
+Ti 21.01.	Columbus 	- 	Los Angeles 				
+Washington 	- 	Ottawa 				
+Philadelphia 	- 	Carolina 				
+NY Rangers 	- 	NY Islanders 				
+New Jersey 	- 	St. Louis 				
+Buffalo 	- 	Florida 				
+Dallas 	- 	Minnesota 				
+Colorado 	- 	Toronto 				
+Edmonton 	- 	Vancouver 				
+Anaheim 	- 	Winnipeg 				
+Ke 22.01.	Pittsburgh 	- 	Montreal 				
+Detroit 	- 	Chicago 				
+Calgary 	- 	Phoenix 				
+To 23.01.	Columbus 	- 	Philadelphia 				
+NY Rangers 	- 	St. Louis 				
+Buffalo 	- 	Carolina 				
+NY Islanders 	- 	Pittsburgh 				
+Tampa Bay 	- 	Ottawa 				
+Dallas 	- 	Toronto 				
+Minnesota 	- 	Chicago 				
+Vancouver 	- 	Nashville 				
+Anaheim 	- 	Los Angeles 				
+San Jose 	- 	Winnipeg 				
+Pe 24.01.	Carolina 	- 	Ottawa 				
+New Jersey 	- 	Washington 				
+Detroit 	- 	Montreal 				
+Florida 	- 	Colorado 				
+Calgary 	- 	Nashville 				
+Edmonton 	- 	Phoenix 				
+La 25.01.	NY Islanders 	- 	St. Louis 				
+Philadelphia 	- 	Boston 				
+Columbus 	- 	Buffalo 				
+Winnipeg 	- 	Toronto 				
+Tampa Bay 	- 	Colorado 				
+Montreal 	- 	Washington 				
+Dallas 	- 	Pittsburgh 				
+Los Angeles 	- 	Anaheim 				
+San Jose 	- 	Minnesota 				
+Su 26.01.	New Jersey 	- 	NY Rangers 				
+Detroit 	- 	Florida 				
+Chicago 	- 	Winnipeg 				
+Vancouver 	- 	Phoenix 				
+Edmonton 	- 	Nashville 				
+Ma 27.01.	Carolina 	- 	Columbus 				
+NY Islanders 	- 	Boston 				
+Pittsburgh 	- 	Buffalo 				
+Dallas 	- 	Colorado 				
+San Jose 	- 	Los Angeles 				
+Vancouver 	- 	Edmonton 				
+Ti 28.01.	Philadelphia 	- 	Detroit 				
+Columbus 	- 	Ottawa 				
+Boston 	- 	Florida 				
+Toronto 	- 	Tampa Bay 				
+Buffalo 	- 	Washington 				
+Montreal 	- 	Carolina 				
+Winnipeg 	- 	Nashville 				
+St. Louis 	- 	New Jersey 				
+Phoenix 	- 	Los Angeles 				
+Calgary 	- 	Chicago 				
+Anaheim 	- 	Minnesota 				
+Ke 29.01.	NY Islanders 	- 	NY Rangers 				
+Edmonton 	- 	San Jose 				
+Vancouver 	- 	Chicago 				
+To 30.01.	Boston 	- 	Montreal 				
+Columbus 	- 	Washington 				
+Toronto 	- 	Florida 				
+Ottawa 	- 	Tampa Bay 				
+Dallas 	- 	New Jersey 				
+Phoenix 	- 	Buffalo 				
+Colorado 	- 	Minnesota 				
+Calgary 	- 	San Jose 				
+Anaheim 	- 	Philadelphia 				
+Los Angeles 	- 	Pittsburgh 				
+Pe 31.01.	NY Rangers 	- 	NY Islanders 				
+Carolina 	- 	St. Louis 				
+Detroit 	- 	Washington 				
+Nashville 	- 	New Jersey 				
+Winnipeg 	- 	Vancouver 				
+La 01.02.	Boston 	- 	Edmonton 				
+Montreal 	- 	Tampa Bay 				
+Colorado 	- 	Buffalo 				
+Los Angeles 	- 	Philadelphia 				
+Columbus 	- 	Florida 				
+Toronto 	- 	Ottawa 				
+Phoenix 	- 	Pittsburgh 				
+St. Louis 	- 	Nashville 				
+Anaheim 	- 	Dallas 				
+Calgary 	- 	Minnesota 				
+San Jose 	- 	Chicago 				
+Su 02.02.	Washington 	- 	Detroit 				
+Montreal 	- 	Winnipeg 				
+Ma 03.02.	Pittsburgh 	- 	Ottawa 				
+Buffalo 	- 	Edmonton 				
+Detroit 	- 	Vancouver 				
+New Jersey 	- 	Colorado 				
+Anaheim 	- 	Columbus 				
+San Jose 	- 	Philadelphia 				
+Los Angeles 	- 	Chicago 				
+Ti 04.02.	Boston 	- 	Vancouver 				
+Carolina 	- 	Winnipeg 				
+NY Rangers 	- 	Colorado 				
+Florida 	- 	Toronto 				
+Washington 	- 	NY Islanders 				
+Montreal 	- 	Calgary 				
+St. Louis 	- 	Ottawa 				
+Minnesota 	- 	Tampa Bay 				
+Phoenix 	- 	Dallas 				
+Ke 05.02.	Buffalo 	- 	Pittsburgh 				
+Anaheim 	- 	Chicago 				
+San Jose 	- 	Dallas 				
+To 06.02.	Washington 	- 	Winnipeg 				
+Philadelphia 	- 	Colorado 				
+NY Rangers 	- 	Edmonton 				
+NY Islanders 	- 	Calgary 				
+Ottawa 	- 	Buffalo 				
+Montreal 	- 	Vancouver 				
+Tampa Bay 	- 	Toronto 				
+Florida 	- 	Detroit 				
+St. Louis 	- 	Boston 				
+Minnesota 	- 	Nashville 				
+Los Angeles 	- 	Columbus 				
+Pe 07.02.	Pittsburgh 	- 	NY Rangers 				
+New Jersey 	- 	Edmonton 				
+Carolina 	- 	Florida 				
+Phoenix 	- 	Chicago 				
+San Jose 	- 	Columbus 				
+La 08.02.	Philadelphia 	- 	Calgary 				
+St. Louis 	- 	Winnipeg 				
+Boston 	- 	Ottawa 				
+Carolina 	- 	Montreal 				
+Toronto 	- 	Vancouver 				
+Tampa Bay 	- 	Detroit 				
+NY Islanders 	- 	Colorado 				
+Dallas 	- 	Phoenix 				
+Washington 	- 	New Jersey 				
+Nashville 	- 	Anaheim

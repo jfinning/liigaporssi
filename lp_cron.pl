@@ -96,7 +96,8 @@ sub sm_kokoonpanot_kaikki {
 
     # Listaa tahan nimet, jos aakkosjarjestys ei matsaa. Ts. seuraavan joukkueen ensimmainen pelaaja on aakkosissa toisen joukkueen viimeisen jalkeen
     my @pelaajat = ();
-    my @sm_molket = ("Setänen Oskari","Myllykoski Joni");
+    #my @sm_molket = ("Setänen Oskari");
+    my @sm_molket = ();
     push (@pelaajat, @sm_molket);
 
     my %katkaisu_pelaajat;
@@ -152,7 +153,7 @@ sub sm_kokoonpanot_kaikki {
     #Tsekataan, etta joka joukkueelta saadaan pelaajalista. Ollut joskus ongelmia
     if ($final_player_list =~ /Ei hakutuloksia/) { exit; }
 
-    open FILE, ">2013/player_list_period3.txt" or die "Cant open 2013/player_list_period3.txt\n"; 
+    open FILE, ">2013/player_list_period4.txt" or die "Cant open 2013/player_list_period4.txt\n"; 
     
     my @player_list = split(/\n/, $final_player_list);
     my $mikko_lehtonen = 0;
@@ -208,7 +209,7 @@ sub sm_kokoonpanot {
         }
     }
     
-    open FILE, ">2013/player_list_period3.txt" or die "Cant open 2013/player_list_period3.txt\n"; 
+    open FILE, ">2013/player_list_period4.txt" or die "Cant open 2013/player_list_period4.txt\n"; 
     
     my @player_list = split(/\n/, $final_player_list);
     my $mikko_lehtonen = 0;
@@ -266,7 +267,7 @@ sub nhl_kokoonpanot {
         }
     }
     
-    open FILE, ">2013/player_list_period2_nhl.txt" or die "Cant open 2013/player_list_period2_nhl.txt\n"; 
+    open FILE, ">2013/player_list_period3_nhl.txt" or die "Cant open 2013/player_list_period3_nhl.txt\n"; 
     
     my @player_list = split(/\n/, $final_player_list);
     foreach (@player_list) {

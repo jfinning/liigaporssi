@@ -80,9 +80,9 @@ if (!defined $param_joukkue)           { $param_joukkue = "Joukkue"; }
 if (!defined $param_order)             { $param_order = "descending"; }
 if (!defined $param_read_players_from) {
     if ($param_liiga =~ /nhl/) {
-        $param_read_players_from = "Jakso 2";
-    } else {
         $param_read_players_from = "Jakso 3";
+    } else {
+        $param_read_players_from = "Jakso 4";
     }
 }
 
@@ -138,9 +138,9 @@ sub alustus {
 
     if (! defined $end) {
         if ($param_liiga =~ /sm_liiga/) {
-            $end = "14.12.";
+            $end = "15.02.";
         } else {
-            $end = "08.12.";
+            $end = "08.02.";
         }
     }
 
@@ -196,7 +196,7 @@ sub alustus {
             $last_day_found = 1;
         }
 
-        if ((/0\t(.*?)\s*-\s*(.*?)\s*$/ && $param_liiga eq "sm_liiga") || (/\s+(\D.*?)\s*-\s*(.*?)\s*$/ && $param_liiga eq "nhl")) {
+        if ((/0\t(.*?)\s*-\s*(.*?)\s*$/ && $param_liiga eq "sm_liiga") || (/^\s*(\D*?)\s*-\s*(.*?)\s*$/ && $param_liiga eq "nhl")) {
             $kotipelit{$1}++;
             $vieraspelit{$2}++;
             $kaikkipelit{$1}++;
