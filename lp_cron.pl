@@ -96,8 +96,8 @@ sub sm_kokoonpanot_kaikki {
 
     # Listaa tahan nimet, jos aakkosjarjestys ei matsaa. Ts. seuraavan joukkueen ensimmainen pelaaja on aakkosissa toisen joukkueen viimeisen jalkeen
     my @pelaajat = ();
-    #my @sm_molket = ("Setänen Oskari");
-    my @sm_molket = ();
+    my @sm_molket = ("Niemi Timo");
+    #my @sm_molket = ();
     push (@pelaajat, @sm_molket);
 
     my %katkaisu_pelaajat;
@@ -267,7 +267,7 @@ sub nhl_kokoonpanot {
         }
     }
     
-    open FILE, ">2013/player_list_period3_nhl.txt" or die "Cant open 2013/player_list_period3_nhl.txt\n"; 
+    open FILE, ">2013/player_list_period4_nhl.txt" or die "Cant open 2013/player_list_period4_nhl.txt\n"; 
     
     my @player_list = split(/\n/, $final_player_list);
     foreach (@player_list) {

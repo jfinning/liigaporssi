@@ -80,7 +80,7 @@ if (!defined $param_joukkue)           { $param_joukkue = "Joukkue"; }
 if (!defined $param_order)             { $param_order = "descending"; }
 if (!defined $param_read_players_from) {
     if ($param_liiga =~ /nhl/) {
-        $param_read_players_from = "Jakso 3";
+        $param_read_players_from = "Jakso 4";
     } else {
         $param_read_players_from = "Jakso 4";
     }
@@ -138,9 +138,9 @@ sub alustus {
 
     if (! defined $end) {
         if ($param_liiga =~ /sm_liiga/) {
-            $end = "15.02.";
+            $end = "13.03.";
         } else {
-            $end = "08.02.";
+            $end = "13.04.";
         }
     }
 
