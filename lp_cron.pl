@@ -6,7 +6,8 @@ use HTML::Parser;
 require LWP::UserAgent;
 
 my $sub;
-my @sm_joukkue = ("Blues", "HIFK", "HPK", "Ilves", "Jokerit", "JYP", "KalPa", "Karpat", "Lukko", "Pelicans", "SaiPa", "Tappara", "TPS", "Assat");
+#my @sm_joukkue = ("Blues", "HIFK", "HPK", "Ilves", "Jokerit", "JYP", "KalPa", "Karpat", "Lukko", "Pelicans", "SaiPa", "Tappara", "TPS", "Assat");
+my @sm_joukkue = ("Blues", "HIFK", "HPK", "Jokerit", "JYP", "Karpat", "Lukko", "Pelicans", "SaiPa", "Tappara");
 my @nhl_joukkue = ("Anaheim", "Boston", "Buffalo", "Calgary", "Carolina", "Chicago", "Colorado", "Columbus", "Dallas", "Detroit", "Edmonton", "Florida", "Los Angeles", "Minnesota", "Montreal", "Nashville", "New Jersey", "NY Islanders", "NY Rangers", "Ottawa", "Philadelphia", "Phoenix", "Pittsburgh", "San Jose", "St. Louis", "Tampa Bay", "Toronto", "Vancouver", "Washington", "Winnipeg");
 
 GetOptions (
@@ -96,8 +97,8 @@ sub sm_kokoonpanot_kaikki {
 
     # Listaa tahan nimet, jos aakkosjarjestys ei matsaa. Ts. seuraavan joukkueen ensimmainen pelaaja on aakkosissa toisen joukkueen viimeisen jalkeen
     my @pelaajat = ();
-    my @sm_molket = ("Niemi Timo");
-    #my @sm_molket = ();
+    #my @sm_molket = ("Niemi Timo");
+    my @sm_molket = ();
     push (@pelaajat, @sm_molket);
 
     my %katkaisu_pelaajat;
@@ -153,7 +154,7 @@ sub sm_kokoonpanot_kaikki {
     #Tsekataan, etta joka joukkueelta saadaan pelaajalista. Ollut joskus ongelmia
     if ($final_player_list =~ /Ei hakutuloksia/) { exit; }
 
-    open FILE, ">2013/player_list_period4.txt" or die "Cant open 2013/player_list_period4.txt\n"; 
+    open FILE, ">2013/player_list_period5.txt" or die "Cant open 2013/player_list_period5.txt\n"; 
     
     my @player_list = split(/\n/, $final_player_list);
     my $mikko_lehtonen = 0;
@@ -209,7 +210,7 @@ sub sm_kokoonpanot {
         }
     }
     
-    open FILE, ">2013/player_list_period4.txt" or die "Cant open 2013/player_list_period4.txt\n"; 
+    open FILE, ">2013/player_list_period5.txt" or die "Cant open 2013/player_list_period5.txt\n"; 
     
     my @player_list = split(/\n/, $final_player_list);
     my $mikko_lehtonen = 0;
@@ -267,7 +268,7 @@ sub nhl_kokoonpanot {
         }
     }
     
-    open FILE, ">2013/player_list_period4_nhl.txt" or die "Cant open 2013/player_list_period4_nhl.txt\n"; 
+    open FILE, ">2013/player_list_period5_nhl.txt" or die "Cant open 2013/player_list_period5_nhl.txt\n"; 
     
     my @player_list = split(/\n/, $final_player_list);
     foreach (@player_list) {

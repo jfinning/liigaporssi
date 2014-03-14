@@ -59,6 +59,7 @@ my $param_lpp               = $cgi->param('lpp');
 my $param_joukkue           = $cgi->param('joukkue');
 my $param_pelipaikka        = $cgi->param('pelipaikka');
 my $param_remove_players    = $cgi->param('remove_players');
+my $param_selected_teams    = $cgi->param('selected_teams');
 my $param_read_players_from = $cgi->param('read_players_from');
 my $param_joukkueen_hinta   = $cgi->param('joukkueen_hinta');
 my $param_vuosi             = $cgi->param('vuosi');
@@ -80,9 +81,9 @@ if (!defined $param_joukkue)           { $param_joukkue = "Joukkue"; }
 if (!defined $param_order)             { $param_order = "descending"; }
 if (!defined $param_read_players_from) {
     if ($param_liiga =~ /nhl/) {
-        $param_read_players_from = "Jakso 4";
+        $param_read_players_from = "Jakso 5";
     } else {
-        $param_read_players_from = "Jakso 4";
+        $param_read_players_from = "Jakso 5";
     }
 }
 
@@ -138,7 +139,7 @@ sub alustus {
 
     if (! defined $end) {
         if ($param_liiga =~ /sm_liiga/) {
-            $end = "13.03.";
+            $end = "26.03.";
         } else {
             $end = "13.04.";
         }
@@ -231,7 +232,15 @@ sub alustus {
         }
     }
 }
+
 alustus();
+
+if (!defined $param_selected_teams && $param_selected_teams =~ /^\s*$/) {
+    foreach (sort keys %taulukko) {
+        $param_selected_teams .= "$_, ";
+    }
+    $param_selected_teams =~ s/,\s*$//;
+}
 
 my $pjx = new CGI::Ajax( 'print_game_days_div'              => \&print_game_days,
                            'print_team_compare_table_div'     => \&print_team_compare_table,
@@ -342,7 +351,7 @@ sub print_optimi_joukkue_form {
     alustus();
     read_player_lists();
 
-    my $a_script = "print_optimi_joukkue_div( ['read_players_from','ottelut','arvo','liiga','joukkueen_hinta','remove_players','start_day','end_day','a_script'";
+    my $a_script = "print_optimi_joukkue_div( ['read_players_from','ottelut','arvo','liiga','joukkueen_hinta','remove_players','selected_teams','start_day','end_day','a_script'";
     my @paikka = muuttujien_alustusta("paikka");
     foreach my $paikka (@paikka) {
 	$a_script .= ",'$paikka->[4]'";
@@ -406,7 +415,13 @@ sub print_optimi_joukkue_form {
     $html .= "<span id='end_day_div'>" . select_days_end_form($a_script_end) . "</span><br>\n";
 
     $html .= "<br>Kopioi t&#228;h&#228;n pelaajien nimi&#228;, jotka haluat skipata. Esim. loukkaantuneita pelaajia.<br>\n";
-    $html .= "<TEXTAREA NAME='remove_players' id='remove_players' COLS=40 ROWS=5>\n";
+    $html .= "<TEXTAREA NAME='remove_players' id='remove_players' COLS=40 ROWS=4>\n";
+    $html .= "<\/TEXTAREA><br>\n";
+    $html .= "<br>\n";
+
+    $html .= "Pelaajat valitaan n&#228;ist&#228; joukkueista. Poista joukkueen nimi, josta et halua pelaajia.<br>\n";
+    $html .= "<TEXTAREA NAME='selected_teams' id='selected_teams' COLS=40 ROWS=4>\n";
+    $html .= $param_selected_teams;    
     $html .= "<\/TEXTAREA><br>\n";
     $html .= "<br>\n";
     
@@ -449,6 +464,7 @@ sub print_optimi_joukkue {
 	    if ($pelaaja->{$_}->{ottelut} < $param_ottelut) { next; }
             if ($pelaaja->{$_}->{ennuste_pisteet} <= 0) { next; }
 	    if ($param_remove_players =~ /$_/) { next; }
+	    if ($param_selected_teams !~ $pelaaja->{$_}->{joukkue}) { next; }
 	    if (/$o_maalivahti/) { next; }
 	    if (defined $param_arvo && $pelaaja->{$_}->{arvo} > $param_arvo) { next; }
 	    if ($pelaaja->{$_}->{ennuste_pisteet} > $top1_maalivahdit[0]) {
@@ -463,6 +479,7 @@ sub print_optimi_joukkue {
 	    if ($pelaaja->{$_}->{ottelut} < $param_ottelut) { next; }
             if ($pelaaja->{$_}->{ennuste_pisteet} <= 0) { next; }
 	    if ($param_remove_players =~ /$_/) { next; }
+	    if ($param_selected_teams !~ $pelaaja->{$_}->{joukkue}) { next; }
 	    if (/$o_puolustaja1/ || /$o_puolustaja2/) { next; }
 	    if (defined $param_arvo && $pelaaja->{$_}->{arvo} > $param_arvo) { next; }
 	    if ($pelaaja->{$_}->{ennuste_pisteet} > $top2_puolustajat[0]) {
@@ -477,6 +494,7 @@ sub print_optimi_joukkue {
 	    if ($pelaaja->{$_}->{ottelut} < $param_ottelut) { next; }
             if ($pelaaja->{$_}->{ennuste_pisteet} <= 0) { next; }
 	    if ($param_remove_players =~ /$_/) { next; }
+	    if ($param_selected_teams !~ $pelaaja->{$_}->{joukkue}) { next; }
 	    if (/$o_hyokkaaja1/ || /$o_hyokkaaja2/ || /$o_hyokkaaja3/) { next; }
 	    if (defined $param_arvo && $pelaaja->{$_}->{arvo} > $param_arvo) { next; }
 	    if ($pelaaja->{$_}->{ennuste_pisteet} > $top3_hyokkaajat[0]) {
