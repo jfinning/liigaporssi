@@ -107,14 +107,13 @@ sub alustus {
     if ($o_hyokkaaja2 =~ /^(.*?)\s*,/) { $o_hyokkaaja2 = $1; }
     if ($o_hyokkaaja3 =~ /^(.*?)\s*,/) { $o_hyokkaaja3 = $1; }
 
+    $pelit = "games_$param_liiga.txt";
+    $sarjataulukko = "table_$param_liiga.txt";
+    
     if ($param_liiga =~ /sm_liiga/) {
-        $pelit = "games.txt";
-        $sarjataulukko = "table.txt";
         $playoff_joukkueet         = "Blues, HIFK, HPK, Ilves, Jokerit, JYP, KalPa, Karpat, Lukko, Pelicans, SaiPa, Tappara, TPS, Assat";
         $jaljella_olevat_joukkueet = "Blues, HIFK, HPK, Ilves, Jokerit, JYP, KalPa, Karpat, Lukko, Pelicans, SaiPa, Tappara, TPS, Assat";
     } else {
-        $pelit = "games_nhl.txt";
-        $sarjataulukko = "table_nhl.txt";
         $playoff_joukkueet         = "Anaheim, Boston, Buffalo, Calgary, Carolina, Chicago, Colorado, Columbus, Dallas, Detroit, Edmonton, Florida, Los Angeles, Minnesota, Montreal, Nashville, New Jersey, NY Islanders, NY Rangers, Ottawa, Philadelphia, Phoenix, Pittsburgh, San Jose, St. Louis, Tampa Bay, Toronto, Vancouver, Washington, Winnipeg";
         $jaljella_olevat_joukkueet = "Anaheim, Boston, Buffalo, Calgary, Carolina, Chicago, Colorado, Columbus, Dallas, Detroit, Edmonton, Florida, Los Angeles, Minnesota, Montreal, Nashville, New Jersey, NY Islanders, NY Rangers, Ottawa, Philadelphia, Phoenix, Pittsburgh, San Jose, St. Louis, Tampa Bay, Toronto, Vancouver, Washington, Winnipeg";
     }
@@ -135,14 +134,6 @@ sub alustus {
     if ($o_hyokkaaja3 =~ /Kaikki/) {
         $o_hyokkaaja3 = $o_hyokkaaja2;
         $o_hyokkaaja2 = "Kaikki H2";
-    }
-
-    if (! defined $end) {
-        if ($param_liiga =~ /sm_liiga/) {
-            $end = "27.04.";
-        } else {
-            $end = "13.04.";
-        }
     }
 
     open TAULUKKO, "$sarjataulukko" or die "Cant open $sarjataulukko\n"; 
@@ -171,8 +162,8 @@ sub alustus {
             if (! defined $start) { $start = $1; }
         }
 
-        if ((/^\d+\.\t(.*?)\s*\d/ && $param_liiga eq "sm_liiga") || (/^\s*(.*?)\s*\d/ && $param_liiga eq "nhl")) {
-            $weekday = $1;
+        if (/\s*(\w+)\s+\d\d\.\d\d\./) {
+	    $weekday = $1;
         }
     
         if (/$start/) { $start_found = 1; }
@@ -193,12 +184,12 @@ sub alustus {
 	    $pelipaiva = $1;
         }
 
-        if (/$end/) {
+        if (defined $end && /$end/) {
             $last_day_found = 1;
         }
 
-        if ((/0\t(.*?)\s*-\s*(.*?)\s*$/ && $param_liiga eq "sm_liiga") || (/^\s*(\D*?)\s*-\s*(.*?)\s*$/ && $param_liiga eq "nhl")) {
-            $kotipelit{$1}++;
+        if (/\s*(\D*?)\s*-\s*(.*?)\s*$/) {
+	    $kotipelit{$1}++;
             $vieraspelit{$2}++;
             $kaikkipelit{$1}++;
             $kaikkipelit{$2}++;
@@ -225,6 +216,10 @@ sub alustus {
     }
     close (PELIT);
 
+    if (! defined $end) {
+        $end = $all_day_list[-1];
+    }
+
     if (! defined $team_from) {
         foreach (sort keys %kaikkipelit) {
             $team_from = $_;
@@ -243,14 +238,14 @@ if (!defined $param_selected_teams && $param_selected_teams =~ /^\s*$/) {
 }
 
 my $pjx = new CGI::Ajax( 'print_game_days_div'              => \&print_game_days,
-                           'print_team_compare_table_div'     => \&print_team_compare_table,
-			   'calculate_optimal_change_day_div' => \&calculate_optimal_change_day,
-			   'print_player_list_div'            => \&print_player_list,
-			   'print_optimi_joukkue_div'         => \&print_optimi_joukkue,
-			   'print_start_day_div'              => \&select_days_start_form,
-			   'print_end_day_div'                => \&select_days_end_form,
-			   'calculate_game_result_div'        => \&calculate_game_result,
-                           'alustus'                          => \&alustus);
+                         'print_team_compare_table_div'     => \&print_team_compare_table,
+			 'calculate_optimal_change_day_div' => \&calculate_optimal_change_day,
+			 'print_player_list_div'            => \&print_player_list,
+			 'print_optimi_joukkue_div'         => \&print_optimi_joukkue,
+			 'print_start_day_div'              => \&select_days_start_form,
+			 'print_end_day_div'                => \&select_days_end_form,
+			 'calculate_game_result_div'        => \&calculate_game_result,
+                         'alustus'                          => \&alustus);
 print $pjx->build_html( $cgi, \&update_menus);
 
 sub muuttujien_alustusta ($) {
@@ -320,15 +315,26 @@ sub update_menus {
     $html .= "<div id=\"container\">\n";
     $html .= "<ul id=\"nav\">\n";
 
-    if ($param_liiga =~/sm_liiga/) {
-        $html .= "<li><A HREF=\"$script_name?sub=print_start_page&liiga=nhl\">NHL</A></li>\n";
-    } else {
-        $html .= "<li><A HREF=\"$script_name?sub=print_start_page&liiga=sm_liiga\">SM-Liiga</A></li>\n";
+    $html .= "<li><form method=\"POST\">";
+    $html .= "<select name=\"liiga\" id=\"liiga\" onchange=\"this.form.submit()\">\n";
+    foreach ("sm_liiga", "nhl", "valio") {
+	if (/$param_liiga/) {
+	    $html .= "<option selected>$_</option>\n";
+	} else {
+	    $html .= "<option>$_</option>\n";
+	}
+	if (/$end/) { last; }
     }
+    $html .= "</select>\n";
+    $html .= "</form></li>\n";
+
     $html .= "<li><A HREF=\"$script_name?sub=print_start_page&liiga=$param_liiga\">Ottelulista</A></li>\n";
-    $html .= "<li><A HREF=\"$script_name?sub=player_list&sort=lpp_per_peli&liiga=$param_liiga\">Pelaajalista</A></li>\n";
-    $html .= "<li><A HREF=\"$script_name?sub=optimi_joukkue&liiga=$param_liiga\">Optimijoukkue</A></li>\n";
-    $html .= "<li><A HREF=\"$script_name?sub=arvo_tulos&liiga=$param_liiga\">Arvo tulos</A></li>\n";
+
+    if ($param_liiga ne "valio") {
+        $html .= "<li><A HREF=\"$script_name?sub=player_list&sort=lpp_per_peli&liiga=$param_liiga\">Pelaajalista</A></li>\n";
+        $html .= "<li><A HREF=\"$script_name?sub=optimi_joukkue&liiga=$param_liiga\">Optimijoukkue</A></li>\n";
+        $html .= "<li><A HREF=\"$script_name?sub=arvo_tulos&liiga=$param_liiga\">Arvo tulos</A></li>\n";
+    }
     $html .= "<li><A HREF=\"http://liigaporssi.freehostia.com/mjguest\" target=\"_blank\">Vieraskirja</A></li>\n";
     $html .= "<li><a href=\"mailto:jepponen\@gmail.com\">Mailia</a></li>";
  
@@ -337,10 +343,12 @@ sub update_menus {
     
     $html .= "<br><br>\n";
     
-    if ($param_sub =~ /start_page|^\s*$/) { $html .= print_start_page()};
-    if ($param_sub =~ /player_list/)      {$html .= print_player_list_form()};
-    if ($param_sub =~ /optimi_joukkue/)   {$html .= print_optimi_joukkue_form()};
-    if ($param_sub =~ /arvo_tulos/)       {$html .= calculate_game_result_form()};
+    $html .= "<H2><font color=\"red\">Valioliigap&ouml;rssin ottelulista lis&auml;tty. Valitse liiga riippuvalikosta.</font></H2>\n";
+    
+    if ($param_sub =~ /start_page|^\s*$/) { $html .= print_start_page() };
+    if ($param_sub =~ /player_list/)      { $html .= print_player_list_form() };
+    if ($param_sub =~ /optimi_joukkue/)   { $html .= print_optimi_joukkue_form() };
+    if ($param_sub =~ /arvo_tulos/)       { $html .= calculate_game_result_form() };
 
     $html .= "</center>\n";
     
@@ -1279,7 +1287,13 @@ sub print_team_compare_table {
 	}
 	$html .= "<\/td>\n";
 
-        $html .= "<td class=\"$td\" style=\"width : 8px;\"><\/td>\n";
+        # skipataan valioliigalla, koska tablessa joukkueet eri nimilla kuin ottelulistassa
+	if ($param_liiga eq "valio") {
+	    $html .= "<\/tr>\n";
+	    next;
+	}
+	
+	$html .= "<td class=\"$td\" style=\"width : 8px;\"><\/td>\n";
 
         $html .= "<td class=\"$td\">\n";
 	if (!defined $vastus{$_}{low}) { $vastus{$_}{low} = 0; }
