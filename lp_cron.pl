@@ -7,8 +7,9 @@ require LWP::UserAgent;
 
 my $sub;
 #my @sm_joukkue = ("Blues", "HIFK", "HPK", "Ilves", "Jokerit", "JYP", "KalPa", "Karpat", "Lukko", "Pelicans", "SaiPa", "Tappara", "TPS", "Assat");
-my @sm_joukkue = ("Blues", "HIFK", "HPK", "Jokerit", "JYP", "Karpat", "Lukko", "Pelicans", "SaiPa", "Tappara");
-my @nhl_joukkue = ("Anaheim", "Boston", "Buffalo", "Calgary", "Carolina", "Chicago", "Colorado", "Columbus", "Dallas", "Detroit", "Edmonton", "Florida", "Los Angeles", "Minnesota", "Montreal", "Nashville", "New Jersey", "NY Islanders", "NY Rangers", "Ottawa", "Philadelphia", "Phoenix", "Pittsburgh", "San Jose", "St. Louis", "Tampa Bay", "Toronto", "Vancouver", "Washington", "Winnipeg");
+my @sm_joukkue = ("Blues", "HPK", "JYP", "Karpat", "Lukko", "Pelicans", "SaiPa", "Tappara");
+#my @nhl_joukkue = ("Anaheim", "Boston", "Buffalo", "Calgary", "Carolina", "Chicago", "Colorado", "Columbus", "Dallas", "Detroit", "Edmonton", "Florida", "Los Angeles", "Minnesota", "Montreal", "Nashville", "New Jersey", "NY Islanders", "NY Rangers", "Ottawa", "Philadelphia", "Phoenix", "Pittsburgh", "San Jose", "St. Louis", "Tampa Bay", "Toronto", "Vancouver", "Washington", "Winnipeg");
+my @nhl_joukkue = ("Anaheim", "Boston", "Chicago", "Colorado", "Columbus", "Dallas", "Detroit", "Los Angeles", "Minnesota", "Montreal", "NY Rangers", "Philadelphia", "Pittsburgh", "San Jose", "St. Louis", "Tampa Bay");
 
 GetOptions (
     "sub=s"  => \$sub,
@@ -154,7 +155,7 @@ sub sm_kokoonpanot_kaikki {
     #Tsekataan, etta joka joukkueelta saadaan pelaajalista. Ollut joskus ongelmia
     if ($final_player_list =~ /Ei hakutuloksia/) { exit; }
 
-    open FILE, ">2013/player_list_period5.txt" or die "Cant open 2013/player_list_period5.txt\n"; 
+    open FILE, ">2013/player_list_playoff.txt" or die "Cant open 2013/player_list_playoff.txt\n"; 
     
     my @player_list = split(/\n/, $final_player_list);
     my $mikko_lehtonen = 0;
@@ -210,7 +211,7 @@ sub sm_kokoonpanot {
         }
     }
     
-    open FILE, ">2013/player_list_period5.txt" or die "Cant open 2013/player_list_period5.txt\n"; 
+    open FILE, ">2013/player_list_playoff.txt" or die "Cant open 2013/player_list_playoff.txt\n"; 
     
     my @player_list = split(/\n/, $final_player_list);
     my $mikko_lehtonen = 0;

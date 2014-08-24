@@ -83,7 +83,7 @@ if (!defined $param_read_players_from) {
     if ($param_liiga =~ /nhl/) {
         $param_read_players_from = "Jakso 5";
     } else {
-        $param_read_players_from = "Jakso 5";
+        $param_read_players_from = "Jakso PO";
     }
 }
 
@@ -139,7 +139,7 @@ sub alustus {
 
     if (! defined $end) {
         if ($param_liiga =~ /sm_liiga/) {
-            $end = "26.03.";
+            $end = "27.04.";
         } else {
             $end = "13.04.";
         }

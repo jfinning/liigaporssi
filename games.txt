@@ -1,17 +1,10 @@
-83.	Pe 21.03.	17:00	Karpat - ROSKA1				
-84.		17:00	Tappara - ROSKA2				
+83.	Ma 24.03.	17:00	Karpat - HPK				
+84.		17:00	Tappara - Pelicans				
 85.		17:00	SaiPa - JYP				
 86.		17:00	Lukko - Blues				
-83.	La 22.03.	17:00	ROSKA1 - Karpat				
-84.		17:00	ROSKA2 - Tappara				
+83.	Ke 26.03.	17:00	HPK - Karpat				
+84.		17:00	Pelicans - Tappara				
 85.		17:00	JYP - SaiPa				
 86.		17:00	Blues - Lukko
-83.	Ma 24.03.	17:00	Karpat - ROSKA1				
-84.		17:00	Tappara - ROSKA2				
-85.		17:00	SaiPa - JYP				
+83.	Pe 28.03.	17:00	Tappara - Pelicans				
 86.		17:00	Lukko - Blues				
-83.	Ke 26.03.	17:00	ROSKA1 - Karpat				
-84.		17:00	ROSKA2 - Tappara				
-85.		17:00	JYP - SaiPa				
-86.		17:00	Blues - Lukko
-				
