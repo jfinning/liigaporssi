@@ -71,7 +71,13 @@ my $param_a_script_start    = $cgi->param('a_script_start');
 if (!defined $param_joukkueen_hinta)   { $param_joukkueen_hinta = "2000.0"; }
 if (!defined $param_ottelut)           { $param_ottelut = 0; }
 if (!defined $param_remove_players)    { $param_remove_players = ""; }
-if (!defined $param_vuosi)             { $param_vuosi = 2013; }
+if (!defined $param_vuosi) {
+    if ($param_liiga eq "sm_liiga") {
+        $param_vuosi = 2014;
+    } else {
+        $param_vuosi = 2013;
+    }
+}
 if (!defined $param_pelipaikka)        { $param_pelipaikka = "Pelaaja"; }
 if (!defined $param_sub)               { $param_sub = ""; }
 if (!defined $param_graafi)            { $param_graafi = "LPP ennuste"; }
@@ -83,7 +89,7 @@ if (!defined $param_read_players_from) {
     if ($param_liiga =~ /nhl/) {
         $param_read_players_from = "Jakso 5";
     } else {
-        $param_read_players_from = "Jakso PO";
+        $param_read_players_from = "Jakso 1";
     }
 }
 
@@ -111,8 +117,13 @@ sub alustus {
     $sarjataulukko = "table_$param_liiga.txt";
     
     if ($param_liiga =~ /sm_liiga/) {
-        $playoff_joukkueet         = "Blues, HIFK, HPK, Ilves, Jokerit, JYP, KalPa, Karpat, Lukko, Pelicans, SaiPa, Tappara, TPS, Assat";
-        $jaljella_olevat_joukkueet = "Blues, HIFK, HPK, Ilves, Jokerit, JYP, KalPa, Karpat, Lukko, Pelicans, SaiPa, Tappara, TPS, Assat";
+        if ($param_vuosi == 2014) {
+	    $playoff_joukkueet         = "Blues, HIFK, HPK, Ilves, JYP, KalPa, Karpat, Lukko, Pelicans, SaiPa, Sport, Tappara, TPS, Assat";
+            $jaljella_olevat_joukkueet = "Blues, HIFK, HPK, Ilves, JYP, KalPa, Karpat, Lukko, Pelicans, SaiPa, Sport, Tappara, TPS, Assat";
+	} else {
+	    $playoff_joukkueet         = "Blues, HIFK, HPK, Ilves, Jokerit, JYP, KalPa, Karpat, Lukko, Pelicans, SaiPa, Tappara, TPS, Assat";
+            $jaljella_olevat_joukkueet = "Blues, HIFK, HPK, Ilves, Jokerit, JYP, KalPa, Karpat, Lukko, Pelicans, SaiPa, Tappara, TPS, Assat";
+	}
     } else {
         $playoff_joukkueet         = "Anaheim, Boston, Buffalo, Calgary, Carolina, Chicago, Colorado, Columbus, Dallas, Detroit, Edmonton, Florida, Los Angeles, Minnesota, Montreal, Nashville, New Jersey, NY Islanders, NY Rangers, Ottawa, Philadelphia, Phoenix, Pittsburgh, San Jose, St. Louis, Tampa Bay, Toronto, Vancouver, Washington, Winnipeg";
         $jaljella_olevat_joukkueet = "Anaheim, Boston, Buffalo, Calgary, Carolina, Chicago, Colorado, Columbus, Dallas, Detroit, Edmonton, Florida, Los Angeles, Minnesota, Montreal, Nashville, New Jersey, NY Islanders, NY Rangers, Ottawa, Philadelphia, Phoenix, Pittsburgh, San Jose, St. Louis, Tampa Bay, Toronto, Vancouver, Washington, Winnipeg";
@@ -266,7 +277,7 @@ sub muuttujien_alustusta ($) {
     if ($temp =~ /vuodet/) {
         my @vuodet;
 	if ($param_liiga =~ /sm_liiga/) {
-	    @vuodet = ("2009", "2010", "2011", "2012", "2013");
+	    @vuodet = ("2009", "2010", "2011", "2012", "2013", "2014");
 	} else {
 	    @vuodet = ("2010", "2011", "2012", "2013");
 	}

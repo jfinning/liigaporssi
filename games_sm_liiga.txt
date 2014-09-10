@@ -1,10 +1,82 @@
-83.	Ma 24.03.	17:00	Karpat - HPK				
-84.		17:00	Tappara - Pelicans				
-85.		17:00	SaiPa - JYP				
-86.		17:00	Lukko - Blues				
-83.	Ke 26.03.	17:00	HPK - Karpat				
-84.		17:00	Pelicans - Tappara				
-85.		17:00	JYP - SaiPa				
-86.		17:00	Blues - Lukko
-83.	Pe 28.03.	17:00	Tappara - Pelicans				
-86.		17:00	Lukko - Blues				
+Ke 10.09.
+18:30 	Karpat 	- 	Tappara 				
+To 11.09.
+18:30 	HIFK 	- 	Blues 				
+18:30 	Lukko 	- 	Assat 				
+Pe 12.09.
+18:30 	TPS 	- 	Karpat 				
+18:30 	Pelicans 	- 	HPK 				
+18:30 	KalPa 	- 	SaiPa 				
+18:30 	JYP 	- 	Sport 				
+18:30 	Ilves 	- 	Tappara 				
+La 13.09.
+17:00 	Assat 	- 	JYP 				
+17:00 	Tappara 	- 	KalPa 				
+17:00 	Sport 	- 	TPS 				
+17:00 	SaiPa 	- 	Lukko 				
+17:00 	HPK 	- 	Ilves 				
+17:00 	Blues 	- 	Pelicans 				
+Su 14.09.
+16:00 	Karpat 	- 	HIFK 				
+Ti 16.09.
+18:30 	TPS 	- 	Blues 				
+18:30 	Pelicans 	- 	Assat 				
+18:30 	Lukko 	- 	KalPa 				
+18:30 	JYP 	- 	HPK 				
+18:30 	Ilves 	- 	Karpat 				
+18:30 	HIFK 	- 	Sport 				
+Ke 17.09.
+18:30 	HPK 	- 	Karpat 				
+18:30 	Tappara 	- 	SaiPa 				
+To 18.09.
+18:30 	TPS 	- 	KalPa 				
+18:30 	Sport 	- 	SaiPa 				
+18:30 	Blues 	- 	HIFK 				
+Pe 19.09.
+18:30 	Assat 	- 	Tappara 				
+La 20.09.
+17:00 	Tappara 	- 	Pelicans 				
+17:00 	SaiPa 	- 	JYP 				
+17:00 	Lukko 	- 	TPS 				
+17:00 	Karpat 	- 	Blues 				
+17:00 	KalPa 	- 	HPK 				
+18:30 	HIFK 	- 	Assat 				
+Ti 23.09.
+18:30 	HPK 	- 	Assat 				
+18:30 	Pelicans 	- 	Ilves 				
+18:30 	Sport 	- 	Blues 				
+Pe 26.09.
+18:30 	Assat 	- 	Sport 				
+18:30 	TPS 	- 	HIFK 				
+18:30 	Pelicans 	- 	SaiPa 				
+18:30 	Lukko 	- 	Tappara 				
+18:30 	JYP 	- 	Ilves 				
+La 27.09.
+17:00 	Sport 	- 	Karpat 				
+17:00 	KalPa 	- 	JYP 				
+17:00 	Ilves 	- 	Assat 				
+17:00 	HPK 	- 	Tappara 				
+17:00 	HIFK 	- 	Lukko 				
+18:30 	SaiPa 	- 	Blues 				
+Ti 30.09.
+18:30 	Sport 	- 	Lukko 				
+18:30 	Karpat 	- 	HIFK 				
+18:30 	KalPa 	- 	SaiPa 				
+18:30 	JYP 	- 	Pelicans 				
+18:30 	Blues 	- 	TPS 				
+To 02.10.
+18:30 	Ilves 	- 	Lukko 				
+18:30 	SaiPa 	- 	Pelicans 				
+18:30 	TPS 	- 	JYP 				
+Pe 03.10.
+18:30 	Tappara 	- 	Blues 				
+18:30 	Pelicans 	- 	Sport 				
+18:30 	Lukko 	- 	Karpat 				
+18:30 	HPK 	- 	KalPa 				
+La 04.10.
+17:00 	HIFK 	- 	KalPa 				
+17:00 	Ilves 	- 	HPK 				
+17:00 	JYP 	- 	Blues 				
+17:00 	SaiPa 	- 	Sport 				
+17:00 	TPS 	- 	Tappara 				
+17:00 	Assat 	- 	Karpat 
