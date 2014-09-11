@@ -34,27 +34,38 @@ sub fetch_page($) {
 }
 
 sub sm_sarjataulukko {
-    my $data = fetch_page("http://www.sm-liiga.fi/sm-liiga.html");
-    my @data = split(/\n/, $data);
-    my ($sijoitus, $joukkue, $ottelut, $pisteet);
+    my $data = fetch_page("http://liiga.fi/tilastot/2014-2015/runkosarja/joukkueet/");
+    my $sijoitus = undef;
+    my $column = 0;
+    my ($joukkue, $ottelut, $pisteet);
 
-    open FILE, ">table.txt" or die "Cand open table.txt";
-    foreach (@data) {
+    my $text;
+    my $p = HTML::Parser->new(text_h => [ sub {$text .= shift}, 
+				  'dtext']);
+    $p->parse($data);
+    my @text = split(/\n/, $text);
+
+    open FILE, ">table_sm_liiga.txt" or die "Cannot open table_sm_liiga.txt";
+    foreach (@text) {
+	if (/^\s*$/) { next; }
 	$_ = modify_char($_);
-	if (/Sijoitus\s*(\d+)\./) {
+	if (/^\s*(\d+)\.\s*$/) {
 	    $sijoitus = $1;
 	}
-	if (/html\">(\w+)</) {
+	if (defined $sijoitus) { $column++; }
+	if (/^\s*(\w+)\s*$/ && $column == 2) {
 	    $joukkue = $1;
 	}
-	if (/(\d+)\s+ottelua/) {
+	if (/(\d+)/ && $column == 3) {
 	    $ottelut = $1;
 	}
-	if (/(\d+)\s+pistett/) {
+	if (/(\d+)/ && $column == 10) {
 	    $pisteet = $1;
 	    
 	    print FILE "$sijoitus. $joukkue $ottelut $pisteet\n";
 	    if ($sijoitus == 14) { last; }
+	    $column = 0;
+	    $sijoitus = undef;
 	}
     }
     close FILE;
@@ -62,7 +73,6 @@ sub sm_sarjataulukko {
 
 sub nhl_sarjataulukko {
     my $data = fetch_page("http://www.hockeygm.fi/nhl/sarjataulukko");
-    my @data = split(/\n/, $data);
     my ($sijoitus, $joukkue, $ottelut, $pisteet);
 
     my $text;
@@ -82,7 +92,7 @@ sub nhl_sarjataulukko {
 	}
     }
     
-    open FILE, ">table_nhl.txt" or die "Cand open table_nhl.txt";
+    open FILE, ">table_nhl.txt" or die "Cannot open table_nhl.txt";
     @text = split(/\n/, $temp);
     foreach (@text) {
         if (!/^\d+\./) { next; }
