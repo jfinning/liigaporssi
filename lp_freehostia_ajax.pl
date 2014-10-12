@@ -59,6 +59,7 @@ my $param_lpp               = $cgi->param('lpp');
 my $param_joukkue           = $cgi->param('joukkue');
 my $param_pelipaikka        = $cgi->param('pelipaikka');
 my $param_remove_players    = $cgi->param('remove_players');
+my $param_kokoonpanot       = $cgi->param('kokoonpanot');
 my $param_selected_teams    = $cgi->param('selected_teams');
 my $param_read_players_from = $cgi->param('read_players_from');
 my $param_joukkueen_hinta   = $cgi->param('joukkueen_hinta');
@@ -71,6 +72,7 @@ my $param_a_script_start    = $cgi->param('a_script_start');
 if (!defined $param_joukkueen_hinta)   { $param_joukkueen_hinta = "2000.0"; }
 if (!defined $param_ottelut)           { $param_ottelut = 0; }
 if (!defined $param_remove_players)    { $param_remove_players = ""; }
+if (!defined $param_kokoonpanot)       { $param_kokoonpanot = ""; }
 if (!defined $param_vuosi) {
     if ($param_liiga eq "sm_liiga") {
         $param_vuosi = 2014;
@@ -246,7 +248,7 @@ sub alustus {
 
 alustus();
 
-if (!defined $param_selected_teams && $param_selected_teams =~ /^\s*$/) {
+if (!defined $param_selected_teams || $param_selected_teams =~ /^\s*$/) {
     foreach (sort keys %taulukko) {
         $param_selected_teams .= "$_, ";
     }
@@ -258,9 +260,11 @@ my $pjx = new CGI::Ajax( 'print_game_days_div'              => \&print_game_days
 			 'calculate_optimal_change_day_div' => \&calculate_optimal_change_day,
 			 'print_player_list_div'            => \&print_player_list,
 			 'print_optimi_joukkue_div'         => \&print_optimi_joukkue,
+			 'print_kokoonpanot_div'            => \&print_kokoonpanot,
 			 'print_start_day_div'              => \&select_days_start_form,
 			 'print_end_day_div'                => \&select_days_end_form,
 			 'calculate_game_result_div'        => \&calculate_game_result,
+			 'tallenna_kokoonpanot_div'         => \&tallenna_kokoonpanot,
                          'alustus'                          => \&alustus);
 print $pjx->build_html( $cgi, \&update_menus);
 
@@ -351,6 +355,9 @@ sub update_menus {
         $html .= "<li><A HREF=\"$script_name?sub=optimi_joukkue&liiga=$param_liiga\">Optimijoukkue</A></li>\n";
         $html .= "<li><A HREF=\"$script_name?sub=arvo_tulos&liiga=$param_liiga\">Arvo tulos</A></li>\n";
     }
+    if ($param_liiga eq "sm_liiga") {
+        $html .= "<li><A HREF=\"$script_name?sub=kokoonpanot&liiga=$param_liiga\">Kokoonpanot</A></li>\n";
+    }
     $html .= "<li><A HREF=\"http://liigaporssi.freehostia.com/mjguest\" target=\"_blank\">Vieraskirja</A></li>\n";
     $html .= "<li><a href=\"mailto:jepponen\@gmail.com\">Mailia</a></li>";
  
@@ -363,6 +370,7 @@ sub update_menus {
     if ($param_sub =~ /player_list/)      { $html .= print_player_list_form() };
     if ($param_sub =~ /optimi_joukkue/)   { $html .= print_optimi_joukkue_form() };
     if ($param_sub =~ /arvo_tulos/)       { $html .= calculate_game_result_form() };
+    if ($param_sub =~ /kokoonpanot/)      { $html .= print_kokoonpanot_form() };
 
     $html .= "</center>\n";
     
@@ -805,6 +813,262 @@ sub create_loops {
     ';
     
     return $loops;
+}
+
+sub print_kokoonpanot_form {
+    alustus();
+    
+    my $html;
+
+    # Tulosta joukkueet ja pelaako
+    foreach my $joukkue (sort hashValueAscendingNum keys %kaikkipelit) {
+	$_ = $start;
+	if (defined $pelipaivat{$joukkue}{$_}{'kotipeli'}) {
+            my $a_script = "print_kokoonpanot_div( ['joukkue__$joukkue','liiga__$param_liiga','start_day__$start'],['kokoonpanot_div'] );";
+	    $html .= "<A HREF=\"#\" onclick=\"$a_script\"><font color=\"red\">$joukkue - $pelipaivat{$joukkue}{$_}{'kotipeli'}</font></A><br>\n";
+	}
+    }
+
+    $html .= "<p><div id='kokoonpanot_div'>\n";
+    $html .= "<div style=\"width:400px; padding:5px; border:5px solid gray; margin:0px;\">
+                           T&auml;ll&auml; sivulla voit n&auml;hd&auml; joukkueiden kokoonpanoja p&auml;iv&auml;n otteluista.
+			   Miksi katsoisin kokoonpanon t&auml;&auml;lt&auml;, kun sen n&auml;kee liigan sivulta? T&auml;&auml;ll&auml; n&auml;et kokoonpanojen lis&auml;ksi pelaajien tilastoja, sek&auml; listan pelaajista, jotka eiv&auml;t pelaa.<br><br>
+			   Klikkaa ottelua yl&auml;puolelta. Jos n&auml;kyy vain joukkueen pelaajalista, mutta ei ottelun kokoonpanoa, toimi n&auml;in:<br><br>
+
+                           1. Etsi joukkueiden kokoonpanot liiga.fi:n sivuilta.<br>
+                           2. Kopioi koko sivun sis&auml;lt&ouml; (CTRL-A ja CTRL-C).<br>
+                           3. Liit&auml; data (CTRL-V) alla olevaan teksti-ikkunaan ja paina 'Tallenna'.<br>
+                           4. Kokoonpano tallentuu tiedostoon ja ladataan jatkossa sielt&auml;.<br><br>
+
+                           T&auml;m&auml;n pystyisi my&ouml;s automatisoimaan, mutta vaatisi maksullisen tilin
+                           freehostiaan. En ole kuitenkaan valmis maksamaan siit&auml;, ett&auml; tarjoan ilmaisen
+                           palvelun k&auml;ytt&auml;jille.
+			   </div>\n";
+    $html .= "</div>\n";
+
+    return $html;
+}
+
+sub print_kokoonpanot () {
+    alustus();
+    read_player_lists();
+
+    my $a_script = "print_kokoonpanot_div( ['read_players_from','liiga','kokoonpanot','joukkue','start_day'],['kokoonpanot_div'] );";
+
+    my $html;
+
+    my $tallenna_kokoonpanot = "";
+
+    my %kokoonpanot;
+    my $kentta = 0;
+    my $pelaaja_nro = 0;
+    my $koti_vieras = 0;
+    my $koti = $param_joukkue;
+    my $vieras = $pelipaivat{$param_joukkue}{$start}{kotipeli};
+    my $pelaavat_pelaajat = "";
+
+    my @data = split(/\n/, $param_kokoonpanot);
+    my $filename = "$param_vuosi/kokoonpanot/${start}_${koti}_${vieras}.txt";
+    
+    if (-e $filename && $param_kokoonpanot eq "") {
+        @data = split(/\n/, `cat $filename`);
+    }
+    
+    foreach (@data) {
+        if (/^\s*$/) { next; }
+	
+	$_ = modify_char($_);
+	$tallenna_kokoonpanot .= $_ . "\n";
+	if (/Tuomarit/) { last; }
+
+        if (/(\d+). kentta/) {
+	    $kentta = $1;
+	    $pelaaja_nro = 0;
+       }
+        if (/Maalivahdit/) {
+	    $kentta = 5;
+	    $pelaaja_nro = 0;
+        }
+ 	if (/$koti/) {
+	    $koti_vieras = 1;
+	}
+ 	if (/$vieras/) {
+	    $koti_vieras = 2;
+	}
+	if (/\d+\s+(.*?),\s+(.*?)\s*$/ && $koti_vieras) {
+            my $nimi = "$1 $2";
+	    $pelaaja_nro++;
+	    
+	    $kokoonpanot{$koti_vieras}{$kentta}{$pelaaja_nro} = $nimi;
+	    
+	    $pelaavat_pelaajat .= " $nimi ";
+        }
+    }
+
+    tallenna_kokoonpanot($tallenna_kokoonpanot, $koti, $vieras) if ($param_kokoonpanot ne "");
+
+    $html .= "<input type='hidden' name='joukkue' id='joukkue' value=\"$param_joukkue\">\n";
+    $html .= "<input type='hidden' name='start_day' id='start_day' value=\"$start\">\n";
+
+    # Jakso
+    $html .= "<select name=\"read_players_from\" id=\"read_players_from\" onchange=\"$a_script\">\n";
+    my @jakso = muuttujien_alustusta("jakso");
+    foreach my $current_arvo (@jakso) {
+        if ($current_arvo eq $param_read_players_from) {
+	    $html .= "<option selected>$current_arvo<\/option>\n";
+	} else {
+            $html .= "<option>$current_arvo<\/option>\n";
+	}
+    }
+    $html .= "<\/select><p>\n";
+
+    $html .= "<table border=\"1\">\n";
+    $html .= "<tr>\n";
+    for (my $i = 0; $i <= 1; $i++) {
+        $html .= "<th><center>Nimi</center></th>\n";
+        $html .= "<th><center>Pe</center></th>\n";
+        $html .= "<th><center>Ma</center></th>\n";
+        $html .= "<th><center>Sy</center></th>\n";
+        $html .= "<th><center>Pi</center></th>\n";
+        $html .= "<th><center>La</center></th>\n";
+        $html .= "<th><center>Arvo</center></th>\n";
+        $html .= "<th><center>LPP</center></th>\n";
+        $html .= "<th><center>Ennuste</center></th>\n";
+        $html .= "<th><center>LPP ennuste</center></th>\n";
+    }
+    $html .= "</tr>\n";
+
+    my $td = change_table_td();
+    for ($kentta = 1; $kentta <= 5; $kentta++) {
+        $td = change_table_td($td);
+	for ($pelaaja_nro = 1; $pelaaja_nro <= 5; $pelaaja_nro++) {
+	    $html .= "<tr>\n";
+            for ($koti_vieras = 1; $koti_vieras <= 2; $koti_vieras++) {
+	        if (defined $kokoonpanot{$koti_vieras}{$kentta}{$pelaaja_nro}) {
+	            my $nimi = $kokoonpanot{$koti_vieras}{$kentta}{$pelaaja_nro};
+	            $html .= "<td class=\"$td\">$nimi<\/td>\n";
+	            $html .= "<td class=\"$td\">$pelaaja->{$nimi}->{ottelut}<\/td>\n";
+	            $html .= "<td class=\"$td\">$pelaaja->{$nimi}->{maalit}<\/td>\n";
+	            $html .= "<td class=\"$td\">$pelaaja->{$nimi}->{syotot}<\/td>\n";
+	            $html .= "<td class=\"$td\">$pelaaja->{$nimi}->{pisteet}<\/td>\n";
+	            $html .= "<td class=\"$td\">$pelaaja->{$nimi}->{laukaukset}<\/td>\n";
+	            $html .= "<td class=\"$td\">$pelaaja->{$nimi}->{arvo}<\/td>\n";
+	            $html .= "<td class=\"$td\">$pelaaja->{$nimi}->{lpp}<\/td>\n";
+	            $html .= "<td class=\"$td\">$pelaaja->{$nimi}->{ennuste_pisteet}<\/td>\n";
+
+   		    $html .= "<td class=\"$td\">\n";
+   		    my $width;
+   		    if ($param_graafi =~ /LPP ennuste/) {
+   		        $width = $pelaaja->{$nimi}->{ennuste_pisteet} / 2;
+   		    } elsif ($param_graafi =~ /Arvo/) {
+   		        $width = $pelaaja->{$nimi}->{arvo} / 3;
+   		    }
+   		    if ($width < 0) {
+   		        $width = abs($width);
+   		        $html .= "<p style=\"background: red; width: ${width}px; height: 8px;\">\n";
+   		    } else {
+   		        $html .= "<p style=\"background: green; width: ${width}px; height: 8px;\">\n";
+   		    }
+   		    $html .= "<\/td>\n";
+#	        } else {
+#		    for (my $i = 1; $i <= 10; $i++) { $html .= "<td class=\"$td\">&#32;<\/td>\n"; }
+	        }
+	    }
+
+	    $html .= "</tr>\n";
+	}
+    }
+    
+    $html .= "<th colspan=\"20\"><center>Ei kokoonpanossa</center></th>\n";
+
+    my $sort_order = "sort_list";
+    $param_sort = "ennuste";
+    my %ei_pelaavat;
+    my ($k_h, $k_p, $k_m, $v_h, $v_p, $v_m);
+    foreach my $nimi (sort $sort_order keys %{$pelaaja}) {
+        if ($pelaavat_pelaajat !~ /$nimi/) {
+	    if ($pelaaja->{$nimi}->{joukkue} eq $koti) {
+	        if ($pelaaja->{$nimi}->{pelipaikka} =~ /Hyokkaaja/) { $k_h++; $ei_pelaavat{1}{1}{$k_h} = $nimi; }
+	        if ($pelaaja->{$nimi}->{pelipaikka} =~ /Puolustaja/) { $k_p++; $ei_pelaavat{1}{2}{$k_p} = $nimi; }
+	        if ($pelaaja->{$nimi}->{pelipaikka} =~ /Maalivahti/) { $k_m++; $ei_pelaavat{1}{3}{$k_m} = $nimi; }
+	    }
+	    if ($pelaaja->{$nimi}->{joukkue} eq $vieras) {
+	        if ($pelaaja->{$nimi}->{pelipaikka} =~ /Hyokkaaja/) { $v_h++; $ei_pelaavat{2}{1}{$v_h} = $nimi; }
+	        if ($pelaaja->{$nimi}->{pelipaikka} =~ /Puolustaja/) { $v_p++; $ei_pelaavat{2}{2}{$v_p} = $nimi; }
+	        if ($pelaaja->{$nimi}->{pelipaikka} =~ /Maalivahti/) { $v_m++; $ei_pelaavat{2}{3}{$v_m} = $nimi; }
+	    }
+	}
+    }
+    
+    if ($k_h < $v_h) { $k_h = $v_h; }
+    if ($k_p < $v_p) { $k_p = $v_p; }
+    if ($k_m < $v_m) { $k_m = $v_m; }
+
+    for (my $pelipaikka = 1; $pelipaikka <= 3; $pelipaikka++) {
+        $td = change_table_td($td);
+        my $max_nro;
+	if ($pelipaikka == 1) { $max_nro = $k_h; }
+        if ($pelipaikka == 2) { $max_nro = $k_p; }
+        if ($pelipaikka == 3) { $max_nro = $k_m; }
+	for (my $pelaaja_nro = 1; $pelaaja_nro <= $max_nro; $pelaaja_nro++) {
+	    $html .= "<tr>\n";
+	    for ($koti_vieras = 1; $koti_vieras <= 2; $koti_vieras++) {
+	        if (defined $ei_pelaavat{$koti_vieras}{$pelipaikka}{$pelaaja_nro}) {
+	            my $nimi = $ei_pelaavat{$koti_vieras}{$pelipaikka}{$pelaaja_nro};
+	            $html .= "<td class=\"$td\">$nimi<\/td>\n";
+	            $html .= "<td class=\"$td\">$pelaaja->{$nimi}->{ottelut}<\/td>\n";
+	            $html .= "<td class=\"$td\">$pelaaja->{$nimi}->{maalit}<\/td>\n";
+	            $html .= "<td class=\"$td\">$pelaaja->{$nimi}->{syotot}<\/td>\n";
+	            $html .= "<td class=\"$td\">$pelaaja->{$nimi}->{pisteet}<\/td>\n";
+	            $html .= "<td class=\"$td\">$pelaaja->{$nimi}->{laukaukset}<\/td>\n";
+	            $html .= "<td class=\"$td\">$pelaaja->{$nimi}->{arvo}<\/td>\n";
+	            $html .= "<td class=\"$td\">$pelaaja->{$nimi}->{lpp}<\/td>\n";
+	            $html .= "<td class=\"$td\">$pelaaja->{$nimi}->{ennuste_pisteet}<\/td>\n";
+
+   		    $html .= "<td class=\"$td\">\n";
+   		    my $width;
+   		    if ($param_graafi =~ /LPP ennuste/) {
+   		        $width = $pelaaja->{$nimi}->{ennuste_pisteet} / 2;
+   		    } elsif ($param_graafi =~ /Arvo/) {
+   		        $width = $pelaaja->{$nimi}->{arvo} / 3;
+   		    }
+   		    if ($width < 0) {
+   		        $width = abs($width);
+   		        $html .= "<p style=\"background: red; width: ${width}px; height: 8px;\">\n";
+   		    } else {
+   		        $html .= "<p style=\"background: green; width: ${width}px; height: 8px;\">\n";
+   		    }
+   		    $html .= "<\/td>\n";
+	        } else {
+		    for (my $i = 1; $i <= 10; $i++) { $html .= "<td class=\"$td\">&#032;<\/td>\n"; }
+		}
+	    }
+
+	    $html .= "</tr>\n";
+	}
+    }
+    
+    $html .= "</table>\n";
+
+#$html .= "$param_joukkue - $pelipaivat{$param_joukkue}{$start}{'kotipeli'}";
+
+    $html .= "<br>Kopioi t&#228;h&#228;n kokoonpanot liigan sivuilta.<br>\n";
+    $html .= "<TEXTAREA NAME='kokoonpanot' id='kokoonpanot' COLS=40 ROWS=4>\n";
+    $html .= "<\/TEXTAREA><br>\n";
+    $html .= "<br>\n";
+    $html .= "<input type='submit' value='Tallenna' onclick=\"$a_script\">\n";
+        
+    return $html;
+}
+
+sub tallenna_kokoonpanot {
+    my ($tallenna_kokoonpanot, $koti, $vieras) = @_;
+    
+    my $filename = "$param_vuosi/kokoonpanot/${start}_${koti}_${vieras}.txt";
+    
+    open FILE, ">$filename" or die "Cant open $filename\n"; 
+    print FILE $tallenna_kokoonpanot;
+    close (FILE);
 }
 
 sub print_player_list_form {
@@ -2027,4 +2291,27 @@ sub jaahyn_syy {
     }
     
     return $jaahyn_syy[0];
+}
+
+sub modify_char ($) {
+    my $text = shift;
+    my $return = "";
+    my @char = split(//, $text);
+    foreach (@char) {
+        my $c = ord($_);
+	if ($c == 228) { $_ = "a"; }
+	elsif ($c == 196) { $_ = "A"; }
+	elsif ($c == 246) { $_ = "o"; }
+	elsif ($c == 214) { $_ = "O"; }
+	elsif ($c == 229) { $_ = "a"; }
+	elsif ($c == 197) { $_ = "A"; }
+	elsif ($c == 252) { $_ = "u"; }
+	elsif ($c == 220) { $_ = "U"; }
+	elsif ($c == 225) { $_ = "a"; }
+	elsif ($c == 241) { $_ = "n"; }
+	elsif ($c == 253) { $_ = "y"; }
+
+	$return = "$return$_";
+    }
+    return $return;
 }
