@@ -353,10 +353,10 @@ sub update_menus {
     if ($param_liiga ne "valio") {
         $html .= "<li><A HREF=\"$script_name?sub=player_list&sort=lpp_per_peli&liiga=$param_liiga\">Pelaajalista</A></li>\n";
         $html .= "<li><A HREF=\"$script_name?sub=optimi_joukkue&liiga=$param_liiga\">Optimijoukkue</A></li>\n";
+        if ($param_liiga eq "sm_liiga") {
+            $html .= "<li><A HREF=\"$script_name?sub=kokoonpanot&liiga=$param_liiga\">Kokoonpanot</A></li>\n";
+        }
         $html .= "<li><A HREF=\"$script_name?sub=arvo_tulos&liiga=$param_liiga\">Arvo tulos</A></li>\n";
-    }
-    if ($param_liiga eq "sm_liiga") {
-        $html .= "<li><A HREF=\"$script_name?sub=kokoonpanot&liiga=$param_liiga\">Kokoonpanot</A></li>\n";
     }
     $html .= "<li><A HREF=\"http://liigaporssi.freehostia.com/mjguest\" target=\"_blank\">Vieraskirja</A></li>\n";
     $html .= "<li><a href=\"mailto:jepponen\@gmail.com\">Mailia</a></li>";
@@ -820,6 +820,8 @@ sub print_kokoonpanot_form {
     
     my $html;
 
+    $html .= "<b>$weekdays[0] $start</b><br>\n";
+
     # Tulosta joukkueet ja pelaako
     foreach my $joukkue (sort hashValueAscendingNum keys %kaikkipelit) {
 	$_ = $start;
@@ -831,14 +833,17 @@ sub print_kokoonpanot_form {
 
     $html .= "<p><div id='kokoonpanot_div'>\n";
     $html .= "<div style=\"width:400px; padding:5px; border:5px solid gray; margin:0px;\">
-                           T&auml;ll&auml; sivulla voit n&auml;hd&auml; joukkueiden kokoonpanoja p&auml;iv&auml;n otteluista.
-			   Miksi katsoisin kokoonpanon t&auml;&auml;lt&auml;, kun sen n&auml;kee liigan sivulta? T&auml;&auml;ll&auml; n&auml;et kokoonpanojen lis&auml;ksi pelaajien tilastoja, sek&auml; listan pelaajista, jotka eiv&auml;t pelaa.<br><br>
-			   Klikkaa ottelua yl&auml;puolelta. Jos n&auml;kyy vain joukkueen pelaajalista, mutta ei ottelun kokoonpanoa, toimi n&auml;in:<br><br>
+                           Miksi katsoisin kokoonpanot juuri t&auml;&auml;lt&auml;?
+			   T&auml;&auml;ll&auml; ketjukoostumukset on h&ouml;ystetty pelaajien tilastoilla,
+			   sek&auml; listalla pelaajista, jotka ovat j&auml;&auml;neet kokoonpanojen ulkopuolelle.<br><br>
+			   
+			   Klikkaa ottelua yl&auml;puolelta. Jos n&auml;kyy vain pelaajalistat, mutta ei joukkueiden kokoonpanoja,
+			   toimi n&auml;in:<br><br>
 
                            1. Etsi joukkueiden kokoonpanot liiga.fi:n sivuilta.<br>
                            2. Kopioi koko sivun sis&auml;lt&ouml; (CTRL-A ja CTRL-C).<br>
-                           3. Liit&auml; data (CTRL-V) alla olevaan teksti-ikkunaan ja paina 'Tallenna'.<br>
-                           4. Kokoonpano tallentuu tiedostoon ja ladataan jatkossa sielt&auml;.<br><br>
+                           3. Liit&auml; data (CTRL-V) sivulla olevaan teksti-ikkunaan ja 'Tallenna'.<br>
+                           4. Kokoonpanot tallentuvat ja n&auml;kyv&auml;t kaikille k&auml;ytt&auml;jille.<br><br>
 
                            T&auml;m&auml;n pystyisi my&ouml;s automatisoimaan, mutta vaatisi maksullisen tilin
                            freehostiaan. En ole kuitenkaan valmis maksamaan siit&auml;, ett&auml; tarjoan ilmaisen
@@ -911,6 +916,7 @@ sub print_kokoonpanot () {
     $html .= "<input type='hidden' name='start_day' id='start_day' value=\"$start\">\n";
 
     # Jakso
+    $html .= "Luet tilastot jaksosta: \n";
     $html .= "<select name=\"read_players_from\" id=\"read_players_from\" onchange=\"$a_script\">\n";
     my @jakso = muuttujien_alustusta("jakso");
     foreach my $current_arvo (@jakso) {
@@ -923,6 +929,7 @@ sub print_kokoonpanot () {
     $html .= "<\/select><p>\n";
 
     $html .= "<table border=\"1\">\n";
+    $html .= "<tr><th colspan=\"10\"><center>$koti</center></th><th colspan=\"10\"><center>$vieras</center></th></tr>\n";
     $html .= "<tr>\n";
     for (my $i = 0; $i <= 1; $i++) {
         $html .= "<th><center>Nimi</center></th>\n";
@@ -970,8 +977,8 @@ sub print_kokoonpanot () {
    		        $html .= "<p style=\"background: green; width: ${width}px; height: 8px;\">\n";
    		    }
    		    $html .= "<\/td>\n";
-#	        } else {
-#		    for (my $i = 1; $i <= 10; $i++) { $html .= "<td class=\"$td\">&#32;<\/td>\n"; }
+	        } else {
+		    for (my $i = 1; $i <= 10; $i++) { $html .= "<td class=\"$td\">&#32;<\/td>\n"; }
 	        }
 	    }
 
@@ -1052,7 +1059,7 @@ sub print_kokoonpanot () {
 
 #$html .= "$param_joukkue - $pelipaivat{$param_joukkue}{$start}{'kotipeli'}";
 
-    $html .= "<br>Kopioi t&#228;h&#228;n kokoonpanot liigan sivuilta.<br>\n";
+    $html .= "<br>Kopioi t&#228;h&#228;n $koti - $vieras pelin kokoonpanot liigan sivuilta.<br>\n";
     $html .= "<TEXTAREA NAME='kokoonpanot' id='kokoonpanot' COLS=40 ROWS=4>\n";
     $html .= "<\/TEXTAREA><br>\n";
     $html .= "<br>\n";
