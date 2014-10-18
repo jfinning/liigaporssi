@@ -1,0 +1,501 @@
+Blues
+Maalivahdit
+Kahkonen Kaapo 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               240 000
+Laurikainen Eetu 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               200 000
+Nieminen Jani 3  0  0  0  2  1  78  9  0  0  0  0  0  0  10               390 500
+Puolustajat
+Kaijomaa Kalle 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               300 000
+Kuukka Mikko 3  0  0  0  0  0  0  3  0  -1  6  0  0  0  0  6               257 500
+Malmivaara Olli 3  0  0  0  0  0  0  6  2  0  2  0  0  0  0  12               315 000
+O'connor Ryan 2  1  0  0  0  0  0  4  0  -1  0  0  0  0  0  10               311 500
+Rantakari Otso 2  0  0  0  0  0  0  11  0  0  2  0  0  0  0  8               315 000
+Seppala Jere 3  0  1  0  0  0  0  0  2  0  0  0  0  0  0  12               292 000
+Tikkinen Niklas 2  0  1  0  0  0  0  3  2  -1  0  0  0  0  0  12               252 000
+Westermarck Victor 3  0  0  0  0  0  0  2  0  -1  0  0  0  0  0  -1               190 500
+Zamorsky Petr 3  1  0  0  0  0  0  19  0  -3  0  0  0  0  0  13               397 500
+Hyokkaajat
+Aaltonen Miro 3  0  1  0  0  0  0  9  2  -1  2  0  0  0  0  15           391 500
+Aaltonen Nico 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           220 000
+Giliati Stefano 3  1  2  0  0  0  0  14  1  -2  2  0  0  0  0  24           405 000
+Hirschovits Kim 3  0  1  0  1  0  0  5  0  -2  4  0  0  0  0  11           434 000
+Honejsek Antonin 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           335 000
+Iossafov Artem 3  1  1  0  0  0  0  12  0  -1  0  0  0  0  0  16           259 000
+Kangasniemi Iikka 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           150 000
+Kantola Kai 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           442 500
+Korhonen Ville 2  1  0  0  0  0  0  3  2  0  0  0  0  0  0  12           253 500
+Lahtinen Timi 3  0  0  0  0  0  0  2  0  0  0  0  0  0  0  1           151 000
+Liivik Siim 3  1  0  0  0  0  0  16  1  -2  0  0  0  1  0  17           320 000
+Makkonen Jussi 3  0  1  0  0  0  0  5  0  0  2  0  0  0  0  9           309 000
+Rooba Robert 3  0  0  0  0  0  0  5  1  -2  0  0  0  0  0  3           228 000
+Rutanen Aleksi 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           150 000
+Sailio Jari 3  0  0  0  0  0  0  9  1  -3  0  0  0  0  0  4           229 000
+Talaja Roope 3  1  1  0  0  1  0  20  2  -1  8  0  0  0  0  33           362 000
+Tiivola Peter 3  0  0  0  0  0  0  2  0  0  0  0  0  0  0  1           241 000
+Virkkunen Valtteri 1  0  0  0  0  0  0  1  0  0  0  0  0  0  0  1           187 500
+HIFK
+Maalivahdit
+Husso Ville 3  0  0  1  2  0  55  12  0  0  0  1  0  0  -1               384 500
+Lankinen Kevin 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               280 000
+Ore Antti 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               250 000
+Puolustajat
+Auvitu Yohann 3  0  2  0  0  0  0  10  3  -3  0  0  0  0  0  21               375 500
+Grillfors Daniel 3  0  0  0  0  0  0  14  3  -2  2  0  0  0  0  14               334 000
+Heikkinen Eemeli 1  0  0  0  0  0  0  1  0  -1  0  0  0  0  0  -1               189 000
+Honkaheimo Otto 2  0  0  0  0  0  0  2  0  -3  0  0  0  0  0  -5               285 000
+Moberg Sebastian 1  0  0  0  0  0  0  2  0  -1  0  0  0  0  0  -1               200 500
+Nyqvist Julius 2  0  1  0  0  0  0  4  3  -1  2  0  0  0  0  17               187 000
+Salmi Juuso 3  0  0  0  0  0  0  1  1  -2  0  0  0  0  0  0               184 000
+Soderholm Toni 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               390 000
+Taipalus Lauri 3  0  3  0  0  0  0  6  2  -2  14  0  0  0  0  23               415 000
+Tarkkanen Juha 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               150 000
+Teppo Miihkali 3  0  0  0  0  0  0  5  0  -7  2  0  0  0  0  -9               217 500
+Hyokkaajat
+Blomqvist Sami 3  0  0  0  0  0  0  5  0  -3  0  0  0  0  0  1           282 500
+Elkins Corey 3  0  0  0  0  0  0  6  1  -2  0  0  0  0  0  3           459 000
+Goldobin Nikolai 3  2  2  0  0  0  0  11  2  -5  0  0  0  0  1  28           426 000
+Ikonen Jasse 3  1  0  0  0  0  0  11  2  -1  0  0  0  0  0  15           349 000
+Juutinen Janne 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           150 000
+Kuparinen Matti 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           395 000
+Lamberg Matti 3  2  0  0  0  0  0  9  3  -2  4  0  0  1  0  28           319 000
+Leino Robert 3  1  1  0  1  0  0  6  1  -4  0  0  0  0  0  13           316 000
+Leinonen Toni 1  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           285 000
+Luttinen Arttu 3  2  0  1  0  0  0  12  1  -2  4  0  1  0  0  28           357 000
+Mieho Panu 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           150 000
+Nykopp Thomas 2  1  1  1  0  0  0  4  2  -1  0  0  0  1  0  22           312 000
+Partanen Mika 1  0  0  0  0  0  0  1  0  -1  0  0  0  0  0  0           368 000
+Puustinen Juuso 3  0  0  0  0  0  0  13  0  -4  0  0  0  0  0  3           477 500
+Ramstedt Teemu 2  1  3  0  0  0  0  5  2  -4  0  0  0  1  0  23           401 000
+Rask Joonas 2  0  2  0  0  0  0  10  0  -1  0  0  0  0  0  12           320 500
+Tamminen Henri 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           150 000
+Zaborsky Tomas 3  1  2  0  0  0  0  13  1  -3  0  0  0  0  0  20           503 000
+Asten Micke-Max 1  0  0  0  0  0  0  1  1  -1  0  0  0  0  0  2           157 000
+Ofverstrom Janne 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           150 000
+HPK
+Maalivahdit
+Myllykoski Joni 1  0  0  1  0  0  21  4  0  0  0  0  0  0  4               292 000
+Saros Juuse 2  0  0  2  0  0  49  4  0  0  0  0  0  1  20               366 500
+Puolustajat
+Bruun Antti 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               291 000
+Eerola Ville-veikko 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               185 000
+Gronholm Ossi-petteri 3  1  0  0  0  0  0  7  2  -2  2  0  0  0  0  17               287 000
+Haapanen Markus 1  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               151 500
+Laakso Aleksi 3  0  0  0  0  0  0  8  0  -1  2  0  0  0  0  5               338 500
+Niemi Jyri 1  0  1  0  0  0  0  4  2  0  0  0  0  0  0  14               267 000
+Nikkila Petteri 3  1  0  0  1  0  0  7  2  0  0  0  1  0  0  22               310 000
+Schira Craig 3  1  4  0  0  0  0  3  5  0  0  0  0  0  0  50               400 500
+Tuulola Joni 3  2  0  0  0  0  0  4  3  -2  0  0  0  0  0  26               262 500
+Vainio Juuso 3  0  1  0  0  0  0  2  2  -3  0  0  0  0  0  8               230 500
+Hyokkaajat
+Arkiomaa Eetu-ville 3  0  1  0  0  0  0  5  1  -2  0  0  0  0  0  7           161 500
+Hamill Zach 3  0  1  0  0  0  0  6  1  -2  2  0  0  0  0  10           380 000
+Jalo Toni 3  0  0  0  0  0  0  3  1  -1  2  0  0  0  0  6           286 000
+Jasu Juhani 3  0  0  0  0  0  0  8  1  -2  4  0  0  0  0  9           295 000
+Jarvelainen Ville 3  1  0  0  0  0  0  8  2  -2  6  0  0  0  0  19           285 500
+Koivisto Juha 3  0  2  0  0  0  0  5  2  0  0  0  0  0  0  15           287 000
+Laine Jere 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           150 000
+Paajanen Otto 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           300 000
+Ritz Nicolas 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           185 000
+Saarinen Jesse 3  2  6  0  1  0  0  13  4  0  2  0  0  1  1  60           409 000
+Salminen Saku 3  0  1  0  0  0  0  4  1  -1  0  0  0  0  0  8           188 000
+Somervuori Eero 3  0  1  0  0  0  0  13  3  0  0  0  0  0  0  18           331 500
+Viedensky Marek 3  1  4  0  1  0  0  4  3  0  0  0  1  0  0  34           378 000
+Vihko Joonas 3  1  0  0  0  0  0  11  2  -1  0  0  0  0  0  15           387 500
+Virta Patrik 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           185 000
+Vuoti Santeri 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           150 000
+Vanttinen Tuomas 3  2  1  0  0  0  0  9  3  -1  2  0  0  0  1  31           331 500
+Ilves
+Maalivahdit
+Jarvenpaa Juha 3  0  0  2  0  1  90  5  1  2  0  1  0  0  44               354 000
+Korpisalo Joonas 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               295 500
+Yrjola Lassi 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               201 500
+Puolustajat
+Jarventie Martti 1  0  0  0  0  0  0  1  0  -1  0  0  0  0  0  -1               259 000
+Kivisto Tommi 3  1  0  0  0  0  0  15  3  -1  0  0  0  0  1  27               385 500
+Kukkonen Mikko 3  0  0  0  0  0  0  3  2  0  0  0  0  0  0  8               256 500
+Levo Mikke 3  0  0  0  0  0  0  2  1  -1  4  0  0  0  0  6               262 500
+Makela Aleksi 3  0  2  0  0  0  0  4  3  -1  12  0  0  0  0  19               279 500
+Makinen Konsta 1  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               235 000
+Nappila Jarkko 2  1  0  0  0  0  0  9  4  0  0  0  0  0  0  26               364 500
+Pentikainen Atte 3  0  1  0  0  0  0  6  2  0  4  0  0  0  0  20               219 000
+Salmela Saku 3  0  0  0  0  0  0  5  1  0  0  0  0  0  0  6               207 500
+Hyokkaajat
+Asplund Turo 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           323 500
+Hintz Roope 3  1  1  0  0  0  0  12  3  -1  2  0  0  0  1  26           282 500
+Hurtubise Mark 1  0  0  0  0  0  0  1  1  0  0  0  0  0  0  3           300 000
+Laakso Tapio 3  2  0  1  0  0  0  15  4  -1  0  0  0  1  0  33           313 000
+Meskanen Ville 1  0  0  0  0  0  0  1  1  0  0  0  0  0  0  3           154 500
+Moisio Patrik 2  0  0  0  0  0  0  1  0  0  0  0  0  0  0  1           151 000
+Mustonen Aleksi 3  1  2  0  1  0  0  9  4  -1  2  0  0  1  0  32           323 500
+Pesonen Jussi 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           285 000
+Polak Vojtek 3  1  2  0  1  0  0  13  1  -1  0  0  0  0  0  24           372 000
+Rautiainen Teemu 2  1  0  0  0  0  0  8  1  0  27  0  0  1  0  9           350 500
+Riekkinen Joonas 3  0  0  0  0  0  0  2  1  0  4  0  0  0  0  8           309 500
+Ruuttu Alexander 1  0  0  0  0  0  0  1  0  0  2  0  0  0  0  3           334 500
+Ramo Juuso 2  0  1  0  0  0  0  3  1  0  0  0  0  0  0  8           165 500
+Sandell Sami 3  1  2  0  0  0  0  10  1  -1  0  0  0  0  0  20           377 500
+Savilahti Eero 3  0  2  0  0  0  0  6  2  -1  0  0  0  0  0  15           256 500
+Tyrvainen Antti 3  2  0  0  0  0  0  8  2  0  2  0  0  0  0  22           322 000
+Veistola Jiri 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           240 000
+Valimaa Tommi 2  0  0  0  0  0  0  2  2  0  0  0  0  0  0  6           219 500
+JYP
+Maalivahdit
+Rajaniemi Sami 1  0  0  0  1  0  26  2  0  0  0  1  0  0  6               256 000
+Saikkonen Dennis 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               230 000
+Tarkki Tuomas 3  0  0  2  1  0  96  5  0  0  0  0  0  2  39               408 000
+Puolustajat
+Auvinen Henri 1  0  1  0  0  0  0  3  1  0  2  0  0  0  0  13               164 500
+Hietanen Valtteri 4  0  0  0  0  0  0  6  1  -2  2  0  0  0  0  5               244 000
+Kalteva Mikko 1  0  0  0  0  0  0  1  0  0  0  0  0  0  0  1               263 000
+Kemilainen Valtteri 4  0  0  0  0  0  0  12  0  -3  4  0  0  0  0  5               227 500
+Luoma Mikko 4  0  1  0  0  0  0  10  4  -2  4  0  0  0  0  24               395 000
+Maenpaa Mikko 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               410 000
+Niku Sami 2  0  0  0  0  0  0  2  0  0  2  0  0  0  0  4               155 500
+Pulli Juuso 4  1  0  0  0  0  0  3  2  -2  0  0  0  0  0  13               171 500
+Salonen Aleksi 4  0  0  0  0  0  0  10  3  -1  0  0  0  0  0  12               335 000
+Viitanen Mikko 4  1  0  0  0  0  0  10  3  -2  4  0  0  0  0  24               287 000
+Hyokkaajat
+Antonen Joose 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           150 000
+Boyce Darryl 4  0  0  0  0  0  0  7  2  -1  0  0  0  0  0  7           292 000
+Hotakainen Valtteri 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           150 000
+Hubacek Petr 4  3  1  0  1  0  0  11  3  -2  0  0  0  0  0  35           359 000
+Hannikainen Markus 4  1  1  0  0  0  0  18  3  -2  0  0  1  0  0  25           302 500
+Ikonen Juuso 4  0  0  0  0  0  0  10  1  -1  0  0  0  0  0  7           343 500
+Jaatinen Antti 2  1  0  0  0  0  0  4  0  0  0  0  0  0  0  8           258 000
+Kanninen Henri 3  0  0  0  0  0  0  1  1  -2  0  0  0  0  0  1           153 500
+Lahti Miika 3  0  0  0  0  0  0  7  0  -1  0  0  0  0  0  4           350 500
+Lofman Anssi 4  0  2  0  0  0  0  10  2  -1  0  0  0  0  0  18           346 000
+Markkula Samu 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           150 000
+Nenonen Markus 3  1  0  0  0  0  0  3  1  -2  0  0  0  0  0  8           338 000
+Nattinen Julius 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           150 000
+Nattinen Topi 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           150 000
+Perrin Eric 4  0  3  0  0  0  0  16  2  -2  0  0  0  0  1  26           467 500
+Pihlman Tuomas 4  1  0  0  1  0  0  16  1  -3  4  0  0  0  0  20           295 500
+Poukkula Markus 3  0  1  0  0  0  0  7  1  0  4  0  0  0  0  14           290 500
+Salmio Mikko 4  0  2  0  0  0  0  6  2  -2  0  0  0  0  0  14           289 000
+Sammalmaa Joonas 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           150 000
+Tuppurainen Jani 2  1  2  0  0  0  0  5  2  0  0  0  0  0  0  21           424 500
+Virtanen Mikko 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           150 000
+KalPa
+Maalivahdit
+Kilpelainen Eero 4  0  0  2  1  1  80  8  1  0  0  0  0  1  33               411 000
+Perhonen Samu 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               239 500
+Smura Tuukka 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               200 000
+Puolustajat
+Halonen Antti 4  0  0  0  0  0  0  7  2  -1  2  0  0  0  0  11               239 000
+Jokela Mikko 4  0  1  0  0  0  0  6  2  -1  0  0  0  0  0  14               292 000
+Koivisto Miika 4  0  1  0  0  0  0  8  2  -2  2  0  0  0  0  15               311 500
+Konttinen Tero 2  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               260 000
+Lyytinen Joonas 4  2  1  0  1  0  0  11  3  -2  0  0  0  0  1  41               390 500
+Mikkola Niko 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               150 000
+Puistola Pasi 2  0  0  0  0  0  0  5  1  -2  0  0  0  0  0  2               305 000
+Riikola Juuso 4  0  1  0  0  0  0  2  1  -1  0  0  0  0  0  8               266 500
+Seppala Mikael 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               175 000
+Timonen Jussi 4  0  0  0  0  0  0  7  3  -1  0  0  0  0  0  11               302 500
+Tolvanen Otto 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               150 000
+Hyokkaajat
+Birner Michal 4  2  0  0  0  0  0  18  1  -2  4  0  0  0  0  26           452 000
+Harjama Joona 4  0  0  0  0  0  0  4  0  -1  0  0  0  0  0  2           186 500
+Hyvarinen Toni 4  0  1  0  0  0  0  11  1  0  0  0  0  0  0  13           254 500
+Ilomaki Arttu 1  0  0  0  0  0  0  3  0  0  0  0  0  0  0  2           362 000
+Junnila Jyri 4  0  0  0  0  0  0  3  1  0  2  0  0  0  0  7           287 000
+Kapanen Kasperi 3  1  3  0  1  0  0  13  2  -1  0  0  1  0  0  31           455 500
+Katosalmi Janne 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           150 000
+Keranen Janne 4  2  2  0  0  1  0  15  3  -1  0  0  0  0  1  37           341 500
+Kinnunen Saku 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           245 000
+Kolehmainen Janne 4  0  1  0  0  0  0  6  3  -1  4  0  0  0  0  16           307 500
+Komulainen Mikko 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           150 000
+Kubalik Tomas 4  1  3  0  0  0  0  17  3  -1  0  0  1  0  0  34           378 500
+Liedes Heikki 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           150 000
+Mutanen Sami 4  0  0  0  0  0  0  10  0  -2  2  0  0  0  0  6           271 000
+Nuutinen Mikko 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           160 000
+Piipponen Topi 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           150 000
+Pitkanen Miikka 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           150 000
+Rissanen Jaakko 4  1  1  0  0  0  0  9  3  -1  4  0  1  0  0  25           383 000
+Ruohomaa Mikael 4  1  5  0  0  0  0  10  3  -3  4  0  0  1  0  41           332 000
+Tammela Jonne 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           150 000
+Voutilainen Jukka 4  1  0  0  1  0  0  12  1  -2  2  0  0  1  0  19           451 500
+Karpat
+Maalivahdit
+Jukuri Samuel 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               159 000
+Karhunen Tomi 4  0  0  1  2  1  100  10  0  0  0  0  0  0  21               406 000
+Tarkki Iiro 1  0  0  0  0  1  20  2  0  0  0  0  1  0  8               364 500
+Puolustajat
+Eminger Vladimir 5  0  1  0  0  0  0  3  5  -1  0  0  0  0  0  22               268 500
+Glenn Ryan 5  0  0  0  0  0  0  25  4  -5  2  0  0  0  0  19               409 000
+Kukkonen Lasse 5  0  1  0  0  0  0  12  4  -1  2  0  0  0  0  25               445 500
+Masuhr Adam 5  1  2  0  0  0  0  28  5  -5  0  0  0  0  0  41               420 500
+Niemela Mikko 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               163 500
+Nutivaara Markus 5  0  0  0  0  0  0  11  1  -1  2  0  0  0  0  9               230 000
+Spang Dan 5  0  2  0  0  0  0  25  3  -1  2  0  0  0  0  34               425 500
+Vallin Ari 4  0  0  0  0  0  0  2  0  0  0  0  0  0  0  1               294 000
+Hyokkaajat
+Aho Sebastian 3  0  1  0  0  0  0  3  2  0  0  0  0  0  0  10           251 500
+Alikoski Mikko 3  0  0  0  0  0  0  4  0  -1  2  0  0  0  0  3           229 500
+Davis Patrick 5  2  0  0  0  0  1  12  2  0  2  0  0  0  0  28           462 500
+Deschamps Nicolas 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           343 000
+Donskoi Joonas 5  1  2  0  1  0  0  13  3  -3  0  0  0  1  0  29           478 500
+Haataja Juha-Pekka 5  0  0  0  0  0  0  23  2  0  4  0  0  0  0  21           522 500
+Huml Ivan 5  1  2  0  0  0  0  17  3  0  4  0  0  0  0  34           492 500
+Junttila Julius 5  2  0  0  0  0  0  22  4  -4  0  0  0  0  1  31           453 500
+Kalapudas Antti 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           150 000
+Kemppainen Joonas 5  0  2  0  0  0  0  12  4  -4  0  0  1  0  0  21           426 500
+Keranen Juho 5  1  0  0  0  0  0  7  1  0  25  0  0  0  0  4           260 000
+Komulainen Joonas 4  0  1  0  0  0  0  3  1  -1  0  0  0  0  0  8           351 000
+Leskinen Ville 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           150 000
+Manninen Sakari 5  1  1  0  0  0  0  12  3  -2  0  0  2  0  0  23           331 000
+Pirnes Esa 2  0  1  0  0  0  0  4  2  -1  2  0  0  0  0  12           423 000
+Puljujarvi Jesse 1  1  0  0  0  0  0  2  2  -2  0  0  0  0  0  9           284 500
+Pyorala Mika 5  2  0  0  0  0  0  15  3  -3  2  0  0  0  0  26           466 000
+Suoranta Simon 3  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           215 000
+Lukko
+Maalivahdit
+Karjalainen Antti 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               200 000
+Setanen Oskari 1  0  0  0  0  1  15  3  0  0  0  0  0  0  2               241 500
+Zapolski Ryan 4  0  0  2  0  1  93  11  0  0  0  0  0  0  22               397 000
+Puolustajat
+Forsberg Henrik 4  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               251 500
+Jaatinen Antti 4  0  0  0  0  0  0  5  3  -3  0  0  0  0  0  6               249 000
+Kousa Mikko 4  0  2  0  0  0  0  28  3  -3  0  0  0  0  0  30               411 500
+Mattsson Matias 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               151 500
+Mikkola Ilkka 4  0  0  0  0  0  0  8  1  -3  2  0  0  0  0  4               399 000
+Niskala Janne 4  2  2  0  0  0  0  21  5  -3  6  0  0  0  1  60               496 000
+Tikkanen Harri 4  1  1  0  0  0  0  6  5  -3  0  0  0  0  0  28               377 000
+Tommila Juho 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               250 000
+Virtanen Jesse 4  1  1  0  1  0  0  14  5  -3  0  0  0  0  0  34               346 000
+Hyokkaajat
+Ahtola Jerry 4  0  2  0  0  0  0  7  2  -3  0  0  0  0  0  14           330 000
+Gagnon Aaron 4  3  0  0  1  0  0  18  3  -1  0  0  0  0  1  38           482 000
+Koivisto Henrik 4  1  0  0  0  0  0  2  2  -1  0  0  0  0  0  11           330 500
+Koivisto Toni 4  1  3  0  1  0  0  12  3  -5  0  0  0  0  0  28           367 000
+Koski Eetu 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           165 000
+Lahti Janne 2  1  0  0  0  0  0  4  1  0  2  0  0  0  0  12           387 000
+Nieminen Ville 4  1  1  0  0  0  0  9  0  -1  4  0  0  0  0  18           317 000
+Nikko Joni 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           250 000
+Nurmi Teemu 4  3  3  0  0  1  0  13  5  -2  4  0  0  2  0  54           378 500
+Piitulainen Jesper 2  0  2  0  0  0  0  3  1  -3  0  0  0  0  0  9           334 000
+Riska Filip 4  0  0  0  0  0  0  13  1  -2  2  0  0  0  0  9           292 500
+Sipilainen Olli 4  0  0  0  0  0  0  7  1  -3  0  0  0  0  0  3           289 500
+Suuronen Toni 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           150 000
+Vahalahti Ville 4  0  7  0  0  0  0  21  4  -1  2  0  0  0  1  51           522 500
+Vauhkonen Olavi 4  1  3  0  0  0  0  16  5  -2  4  0  1  0  1  43           344 000
+Virtanen Jonne 4  2  2  0  0  0  0  11  5  -3  2  0  1  0  0  37           324 500
+Pelicans
+Maalivahdit
+Eskelinen Toni 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               200 000
+Juvonen Janne 1  0  0  0  1  0  21  4  0  0  0  0  0  0  -1               269 000
+Myllyniemi Jere 4  0  0  0  3  1  109  13  0  0  0  0  0  0  13               322 000
+Puolustajat
+Hrabal Josef 5  0  0  0  0  0  0  7  1  -8  4  0  0  0  0  -4               306 500
+Hurri Joonas 4  0  0  0  0  0  0  5  0  -3  2  0  0  0  0  -1               270 500
+Kudelka Tomas 5  0  0  0  0  0  0  13  0  -5  2  0  0  0  0  0               263 500
+Latvala Jan 4  0  0  0  0  0  0  17  1  -3  2  0  0  0  0  8               351 000
+Laurila Henri 4  0  0  0  0  0  0  11  0  0  2  0  0  0  0  9               288 500
+Leimu Juha 3  0  0  0  0  0  0  8  2  -3  2  0  0  0  0  7               332 000
+Manelius Nico 1  0  0  0  0  0  0  1  0  0  2  0  0  0  0  3               249 500
+Pietila Juha-pekka 5  1  2  0  0  0  0  14  3  -8  0  0  0  0  0  23               300 000
+Sopanen Eetu 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               185 000
+Tuhkanen Niko 5  0  0  0  0  0  0  6  1  -2  8  0  0  0  0  12               219 500
+Vainola Ville 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               150 000
+Hyokkaajat
+Alanne Joonas 5  0  0  0  0  0  0  12  0  -2  0  0  0  0  0  5           245 000
+Bjorninen Hannes 4  0  0  0  0  0  0  7  0  -2  4  0  0  0  0  6           166 500
+Hakulinen Anrei 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           285 000
+Lahtela Mikko 4  0  0  0  0  0  0  4  0  -3  2  0  0  0  0  2           205 000
+Mustonen Joel 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           300 000
+Maenalanen Saku 4  0  0  0  0  0  0  9  0  -2  0  0  0  0  0  3           265 000
+Paakkolanvaara Tommi 5  2  0  0  0  0  0  11  3  -5  2  0  1  0  0  23           316 500
+Poyhonen Marko 3  0  0  0  0  0  0  6  0  0  0  0  0  0  0  4           224 000
+Redenbach Tyler 2  0  1  0  0  0  0  6  1  -2  0  0  0  0  0  7           391 000
+Repik Michal 5  0  3  0  0  0  0  32  3  -7  2  0  0  0  0  31           413 500
+Repo Sebastian 1  0  0  0  0  0  0  1  0  -2  0  0  0  0  0  -1           150 000
+Ritamaki Janne 5  1  0  0  0  0  0  15  1  -4  12  0  1  0  0  11           251 000
+Rohtla Jesse 4  0  1  0  0  0  0  11  1  -3  0  0  0  0  0  10           248 500
+Saarenheimo Pekka 1  0  0  0  0  0  0  2  0  -1  2  0  0  0  0  2           300 500
+Siikonen Miska 3  0  0  0  0  0  0  2  0  -1  0  0  0  0  0  1           152 500
+Smotherman Jordan 5  1  3  0  0  0  0  30  3  -6  2  0  0  1  0  38           339 500
+Sopanen Vili 4  0  0  0  0  0  0  18  0  -4  4  0  0  0  0  10           374 500
+Tyrvainen Juhani 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           320 000
+Vartiainen Taavi 4  0  0  0  0  0  0  2  0  -1  0  0  0  0  0  1           152 500
+SaiPa
+Maalivahdit
+Bernard Andreas 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               285 000
+Lipiainen Santeri 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               200 000
+Markkanen Jussi 3  0  0  0  0  3  68  7  0  0  0  0  1  0  17               383 000
+Puolustajat
+Ahonen Rony 3  1  0  0  0  0  0  6  3  -1  2  0  0  0  0  22               270 500
+Backman Simon 2  0  0  0  0  0  0  3  1  0  0  0  0  0  0  5               283 500
+Huhtanen Miika 1  0  0  0  0  0  0  1  0  0  0  0  0  0  0  1               172 500
+Lappalainen Lasse 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               230 000
+Larsson Johan 3  0  0  0  0  0  0  19  3  -2  0  0  0  0  0  15               353 000
+Lofquist Sam 3  0  1  0  0  0  0  19  2  -1  2  0  0  0  0  22               399 500
+Maalahti Kalle 3  0  0  0  0  0  0  3  0  -3  0  0  0  0  0  -4               251 000
+Riikola Simo-pekka 3  1  0  0  0  0  0  11  1  -3  4  0  0  0  0  17               394 000
+Salcido Brian 3  0  4  0  0  0  0  17  2  -2  4  0  0  0  0  39               442 000
+Hyokkaajat
+Flinck Markku 3  0  0  0  0  0  0  5  2  -2  0  0  0  0  0  5           290 000
+Hamalainen Ville 3  0  0  0  0  0  0  9  0  -1  2  0  0  0  0  7           292 000
+Jokinen Tommi 3  0  2  0  0  0  0  7  3  0  0  0  0  0  0  18           368 000
+Jarvinen Matti 3  0  2  0  0  0  0  6  1  -4  4  0  0  0  0  14           295 000
+Jaaskelainen Joona 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           150 000
+Koho Ville 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           385 000
+Kuronen Mikael 3  0  0  0  0  0  0  2  0  -2  0  0  0  0  0  -1           229 000
+Leivo Tomi 3  0  0  0  0  0  0  3  0  0  0  0  0  0  0  2           303 500
+Mankinen Jesse 3  1  0  0  0  1  0  15  2  -3  0  0  0  0  0  16           422 500
+Mcintyre David 3  1  1  0  1  0  0  12  3  0  2  0  0  0  0  27           450 000
+Pitkanen Ilmari 2  0  0  0  0  0  0  3  1  0  0  0  0  0  0  4           254 000
+Spina Dave 3  2  0  0  0  1  0  15  3  0  2  0  0  0  1  33           497 000
+Suutari Joni 1  0  0  0  0  0  0  1  0  0  0  0  0  0  0  1           211 000
+Tavi Janne 3  1  0  0  0  0  0  3  2  -3  0  0  0  0  0  10           415 000
+Toivanen Onni 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           150 000
+Venalainen Sami 3  0  1  0  1  0  0  1  1  -3  2  0  0  0  1  11           267 000
+Zboril Adam 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           150 000
+Sport
+Maalivahdit
+Auren Jean 1  0  0  0  0  0  0  0  0  0  0  0  0  0  0               160 500
+Hostikka Ville 1  0  0  0  1  0  36  4  0  0  0  0  0  0  6               316 000
+Toivonen Hannu 2  0  0  1  1  0  55  4  0  0  0  0  0  1  17               338 500
+Puolustajat
+Brennan Michael 3  0  0  0  0  0  0  8  1  -2  0  0  0  0  0  4               244 000
+Generous Matt 3  0  0  0  0  0  0  7  0  -1  4  0  0  0  0  6               242 500
+Grondahl Ari 2  0  0  0  0  0  0  5  0  -1  2  0  0  0  0  3               276 500
+Heikkinen Eetu 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               270 000
+Lindbohm Petteri 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               320 000
+Malkamaki Miko 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               300 000
+Manninen Oskari 3  0  1  0  0  0  0  12  1  -2  0  0  0  0  0  12               295 500
+Peltola Niko 3  0  1  0  0  0  0  12  1  -3  2  0  0  0  0  12               328 500
+Pukka Mikko 3  0  0  0  0  0  0  3  1  0  2  0  0  0  0  8               243 000
+Uitto Antti 2  0  1  0  0  0  0  3  1  0  0  0  0  0  0  11               217 500
+Valkonen Joonas 2  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               225 000
+Vakela Jesse 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               150 000
+Hyokkaajat
+Bertrand Charles 3  0  3  0  0  0  0  19  2  -3  2  0  0  0  0  26           347 500
+Fleury Damien 3  0  2  0  0  0  0  18  2  -3  4  0  0  1  0  25           340 000
+Hattunen Jarkko 2  0  1  0  0  0  0  7  1  0  2  0  0  0  0  12           287 000
+Hautamaki Jaakko 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           150 000
+Henritius Teemu 3  0  0  0  0  0  0  4  0  -2  0  0  0  0  0  1           202 500
+Immonen Jarkko 3  0  0  0  0  0  0  7  0  -2  0  0  0  0  0  2           295 500
+Kangasniemi Antti 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           225 000
+Kivimaki Samuli 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           295 000
+Kiviranta Joel 3  0  0  0  0  0  0  4  0  0  4  0  0  0  0  7           197 000
+Kokkala Lassi 3  2  3  0  0  0  0  18  2  -1  0  0  0  1  0  38           344 000
+Kristof Michal 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           150 000
+Kuhakoski Roope 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           150 000
+Kujanpaa Mika 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           185 000
+Korkko Tomi 3  0  0  0  0  0  0  4  1  0  4  0  0  0  0  8           298 000
+Luomala Marko 3  1  0  0  0  0  0  9  0  -2  2  0  1  0  0  13           283 000
+Rachunek Ivan 1  0  0  0  0  0  0  6  0  0  0  0  0  0  0  3           319 500
+Rekonen Aleksi 3  1  0  0  0  0  0  3  1  -1  0  0  0  0  0  9           207 500
+Riska Erik 3  3  1  0  1  0  0  7  1  -1  0  0  1  0  0  31           284 000
+Tallberg Teemu 2  0  1  0  0  0  0  3  0  -2  2  0  0  0  0  6           236 000
+Tessier Kelsey 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           300 000
+Westermarck Felix 1  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           151 500
+Tappara
+Maalivahdit
+Hrachovina Dominik 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               201 500
+Metsola Juha 4  0  0  3  0  1  134  1  3  0  0  0  1  3  101               503 500
+Peltonen Aaro 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               250 000
+Puolustajat
+Aalto Teemu 4  0  1  0  0  0  0  25  5  0  0  0  0  0  0  34               405 500
+Elorinne Aleksi 4  0  0  0  0  0  0  2  0  0  0  0  0  0  0  1               187 500
+Kankaanpera Markus 4  0  0  0  0  0  0  2  2  -1  2  0  0  0  0  8               273 000
+Kolomatis David 4  0  0  0  0  0  0  13  1  0  0  0  0  0  0  10               376 500
+Makinen Atte 4  1  0  0  0  0  0  6  1  -1  14  0  1  0  0  13               267 500
+Mantyla Tuukka 4  0  2  0  0  0  0  15  4  0  2  0  0  0  0  35               396 500
+Rouhiainen Jere 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               150 000
+Saravo Pekka 4  0  0  0  0  0  0  1  1  0  2  0  0  0  0  6               238 000
+Virmavirta Vilho 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               150 000
+Hyokkaajat
+Da costa Teddy 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           240 000
+Erkinjuntti Antti 4  1  1  0  1  0  0  13  1  0  2  0  0  1  0  25           383 000
+Green Josh 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           431 500
+Haapala Henrik 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           285 000
+Jormakka Pekka 4  1  0  0  1  0  0  13  2  0  0  0  0  1  0  21           469 500
+Jarvinen Jan-mikael 4  0  2  0  0  0  0  5  4  0  2  0  0  0  0  21           471 000
+Kaksonen Elmeri 4  0  0  0  0  0  0  7  0  0  12  0  0  0  0  1           251 000
+Kallela Toni 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           255 000
+Karjalainen Jere 4  1  0  0  0  0  0  7  1  0  4  0  1  0  0  18           277 500
+Kauppinen Antti 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           150 000
+Kuusela Kristian 4  3  1  0  0  0  0  13  4  0  2  0  1  0  0  41           474 500
+Laine Patrik 3  0  1  0  0  0  0  7  1  -1  2  0  0  0  0  11           228 000
+Malinen Jarkko 4  0  0  0  0  0  0  2  2  -1  0  0  0  0  0  5           338 500
+Marjamaki Masi 4  0  0  0  0  0  0  5  1  -1  0  0  0  0  0  4           302 500
+Makinen Otto 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           150 000
+Palola Olli 4  2  3  0  1  1  0  28  4  0  4  0  0  0  1  57           546 500
+Pelamo Jesse 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           150 000
+Peltola Jukka 4  0  1  0  1  0  0  7  1  0  2  0  1  0  0  16           327 500
+Rauhala Otto 4  0  0  0  0  0  0  6  0  0  0  0  0  0  0  4           184 000
+Tuominen Henri 1  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           151 500
+TPS
+Maalivahdit
+Hokkanen Kalle 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               159 000
+Jarvinen Kristian 1  0  1  0  1  0  14  4  0  0  0  0  0  0  5               255 000
+Lassila Teemu 3  0  0  1  0  1  75  5  0  0  0  0  1  0  23               399 500
+Puolustajat
+Eronen Elmeri 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               150 000
+Friman Niklas 3  0  0  0  0  0  0  1  1  -1  2  0  0  0  0  4               205 500
+Gysbers Simon 3  0  3  0  0  0  0  4  3  -4  0  0  0  0  0  22               359 000
+Karhu Niko 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               195 000
+Keskitalo Miro 3  0  0  0  0  0  0  3  1  0  0  0  0  0  0  5               173 000
+Laatikainen Arto 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               320 000
+Lehtonen Mikko 3  0  2  0  0  0  0  1  2  -3  0  0  0  0  0  13               267 500
+Nakladal Jakub 3  0  0  0  0  0  0  10  2  0  0  0  0  0  0  12               293 500
+Nemecek David 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               150 000
+Nummelin Petteri 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               390 000
+Pulli Matias 2  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               190 000
+Seigo Steven 3  0  0  0  0  0  0  6  3  -3  0  0  0  0  0  7               335 500
+Seikola Markus 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               250 000
+Siiki Oskari 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               150 000
+Vittasmaki Veli-matti 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               220 000
+Hyokkaajat
+Honkanen Manu 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           150 000
+Karvinen Otto 3  0  1  0  0  0  0  2  1  0  6  0  0  0  0  14           190 500
+Koskiranta Tero 3  2  1  0  1  0  0  11  1  -5  0  0  0  0  0  21           441 000
+Kulmala Rasmus 3  0  0  0  0  0  0  3  0  0  2  0  0  0  0  4           207 500
+Kumeliauskas Tadas 3  1  2  0  0  1  0  6  4  -1  2  0  0  1  0  30           323 000
+Lasch Ryan 3  1  2  0  0  0  0  8  1  -5  2  0  1  0  0  19           519 000
+Lindsten Jasper 1  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           150 000
+Lucenius Niclas 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           318 500
+Lamsa Teemu 2  0  0  0  0  0  0  1  0  0  0  0  0  0  0  1           157 500
+Pikkarainen Ilkka 3  0  2  0  0  0  0  10  2  0  4  0  0  0  0  22           307 000
+Rantanen Mikko 3  0  1  0  0  0  0  4  2  -1  0  0  0  0  0  10           283 000
+Salo Niklas 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           150 000
+Smolenak Radek 3  3  2  0  0  0  0  20  4  -4  2  0  0  0  1  46           465 000
+Sointu Matias 3  1  0  0  0  0  0  5  1  0  0  0  0  0  0  11           361 000
+Tukonen Lauri 2  1  1  0  0  0  0  4  2  -1  2  0  0  0  0  17           417 000
+Virtala Marko 3  0  0  0  0  0  0  4  1  -1  2  0  0  0  0  6           306 000
+Vahatalo Julius 2  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           180 000
+Assat
+Maalivahdit
+Kulmala Arttu 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               159 000
+Merilainen Kimmo 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               220 000
+Riksman Juuso 1  0  0  0  1  0  15  3  0  0  0  0  0  0  -1               294 500
+Rinne Rasmus 5  0  0  1  2  1  116  15  0  0  0  0  0  0  13               332 500
+Puolustajat
+Arousva Santeri 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               150 000
+Lindell Esa 5  2  1  0  0  0  0  23  4  -3  4  0  1  0  0  47               335 500
+Marttinen Jyri 5  0  0  0  0  0  0  19  3  -7  6  0  0  0  0  11               334 500
+Parikka Valtteri 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               270 000
+Parkkonen Patrik 3  0  0  0  0  0  0  0  1  0  0  0  0  0  0  3               252 500
+Sammalkangas Tapio 5  0  0  0  0  0  0  7  2  -4  2  0  0  0  0  4               217 500
+Stafford Garrett 2  0  1  0  0  0  0  2  2  -2  0  0  0  0  0  10               373 500
+Uusitalo Ville 5  0  1  0  0  0  0  7  1  -6  4  0  0  0  0  6               331 500
+Viljanen Valtteri 5  0  1  0  0  0  0  3  2  -3  0  0  0  0  0  8               267 000
+Vuorisalo Teemu 5  0  1  0  0  0  0  12  1  -4  2  0  0  0  0  11               176 000
+Hyokkaajat
+Ahlgren Ville 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           160 500
+Elo Eero 5  3  1  0  1  0  0  23  2  -5  0  0  0  1  1  40           350 000
+Hansen Jacob 3  0  0  0  0  0  0  6  0  -2  0  0  0  0  0  1           280 000
+Heino Henri 5  1  2  0  0  0  0  12  4  -4  0  0  0  1  0  27           318 000
+Huhtanen Tuomas 5  0  0  0  0  0  0  20  3  -3  0  0  0  0  0  14           227 500
+Huovinen Joonas 4  0  0  0  0  0  0  9  1  -2  0  0  0  0  0  5           171 000
+Kerala Antti 5  1  1  0  0  0  0  6  0  -3  2  0  0  0  0  13           285 000
+Keskilohko Henri 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           150 000
+Kiilholma Juha 5  0  1  0  0  0  0  14  0  -6  2  0  0  0  0  8           282 000
+Karki Jarno 5  2  0  0  0  0  0  7  3  -2  0  0  0  1  0  23           258 500
+Lahteenmaki Sami 5  2  1  0  0  0  0  22  2  -4  2  0  1  0  0  31           362 500
+Niemi Mika 5  0  4  0  0  0  0  7  1  -3  2  0  0  0  0  22           356 500
+Ojamaki Niko 4  1  2  0  0  0  0  21  3  -2  0  0  0  0  0  30           243 500
+Ryan Michael 5  0  2  0  0  0  0  13  2  -3  4  0  0  0  0  20           389 000
+Saarela Aleksi 3  1  1  0  0  0  0  9  3  -2  10  0  0  0  0  29           318 000
+Saha Mikael 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           150 000
+Smith Austin 1  0  0  0  0  0  0  4  0  0  0  0  0  0  0  2           294 500
