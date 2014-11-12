@@ -165,7 +165,7 @@ sub sm_kokoonpanot_kaikki {
     #Tsekataan, etta joka joukkueelta saadaan pelaajalista. Ollut joskus ongelmia
     if ($final_player_list =~ /Ei hakutuloksia/) { exit; }
 
-    open FILE, ">2014/player_list_period2.txt" or die "Cant open 2014/player_list_period2.txt\n"; 
+    open FILE, ">2014/player_list_period3.txt" or die "Cant open 2014/player_list_period3.txt\n"; 
     
     my @player_list = split(/\n/, $final_player_list);
     my $mikko_lehtonen = 0;
@@ -221,7 +221,7 @@ sub sm_kokoonpanot {
         }
     }
     
-    open FILE, ">2014/player_list_period2.txt" or die "Cant open 2014/player_list_period2.txt\n"; 
+    open FILE, ">2014/player_list_period3.txt" or die "Cant open 2014/player_list_period3.txt\n"; 
     
     my @player_list = split(/\n/, $final_player_list);
     my $mikko_lehtonen = 0;

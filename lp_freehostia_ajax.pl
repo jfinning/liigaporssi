@@ -91,7 +91,7 @@ if (!defined $param_read_players_from) {
     if ($param_liiga =~ /nhl/) {
         $param_read_players_from = "Jakso 1";
     } else {
-        $param_read_players_from = "Jakso 2";
+        $param_read_players_from = "Jakso 3";
     }
 }
 
@@ -360,6 +360,7 @@ sub update_menus {
     }
     $html .= "<li><A HREF=\"http://liigaporssi.freehostia.com/mjguest\" target=\"_blank\">Vieraskirja</A></li>\n";
     $html .= "<li><a href=\"mailto:jepponen\@gmail.com\">Mailia</a></li>";
+    $html .= "<li><A HREF=\"$script_name?sub=etsin_toita&liiga=$param_liiga\"><font color=\"red\">Etsin t&ouml;it&auml;</font></A></li>\n";
  
     $html .= "</ul>\n";
     $html .= "</div>\n";
@@ -371,8 +372,21 @@ sub update_menus {
     if ($param_sub =~ /optimi_joukkue/)   { $html .= print_optimi_joukkue_form() };
     if ($param_sub =~ /arvo_tulos/)       { $html .= calculate_game_result_form() };
     if ($param_sub =~ /kokoonpanot/)      { $html .= print_kokoonpanot_form() };
+    if ($param_sub =~ /etsin_toita/)      { $html .= print_etsin_toita() };
 
     $html .= "</center>\n";
+    
+    return $html;
+}
+
+sub print_etsin_toita {
+    my $html = `cat tyonhaku_lp.htm`;
+    
+    $html = "</center>
+             <div style=\"width:800px; padding:5px; border:5px solid gray; margin:0px; margin-left: auto; margin-right: auto;\">
+	     $html
+	     </div>
+	     <center>";
     
     return $html;
 }
