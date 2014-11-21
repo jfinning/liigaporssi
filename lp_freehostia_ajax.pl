@@ -306,7 +306,7 @@ sub update_menus {
     $html .= "<head>\n";
     $html .= "<title>Liigaporssi pilalle tilastojen avulla - Sepeti</title>\n";
     
-    my $css = `cat css/css_test.html`;
+    my $css = `cat css/css.html`;
     
     $html .= "$css\n";
     
@@ -323,11 +323,10 @@ sub update_menus {
     $html .= "})();\n";
 
     $html .= "</script>\n";
+    $html .= '<script type="text/javascript" charset="utf8" src="http://code.jquery.com/jquery-1.10.2.min.js"></script>';
 
     if ($param_sub =~ /player_list/) {
 	$html .= '
-	<script type="text/javascript" charset="utf8" src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
-
 	<!-- DataTables -->
 	<script type="text/javascript" charset="utf8" src="http://cdn.datatables.net/1.10.4/js/jquery.dataTables.js"></script>
 
@@ -412,6 +411,16 @@ sub update_menus {
 	</script>';
     }
 
+    $html .= '
+    <script> 
+    $(document).ready(function(){
+        $("#status").click(function(){
+            $("#status_down").slideToggle("slow");
+        });
+    });
+    </script>
+    ';
+
     $html .= "</head>\n";
     
     $html .= "<center>\n";
@@ -443,13 +452,17 @@ sub update_menus {
         $html .= "<li><A HREF=\"$script_name?sub=arvo_tulos&liiga=$param_liiga\">Arvo tulos</A></li>\n";
     }
     $html .= "<li><A HREF=\"http://liigaporssi.freehostia.com/mjguest\" target=\"_blank\">Vieraskirja</A></li>\n";
-    $html .= "<li><a href=\"mailto:jepponen\@gmail.com\">Mailia</a></li>";
+    $html .= "<li><a href=\"mailto:jepponen\@gmail.com\">eMail</a></li>\n";
+    $html .= "<li><A HREF=\"#\" id=\"status\">Status<\/a></li>\n";    
     $html .= "<li><A HREF=\"$script_name?sub=etsin_toita&liiga=$param_liiga\"><font color=\"red\">Etsin t&ouml;it&auml;</font></A></li>\n";
  
     $html .= "</ul>\n";
     $html .= "</div>\n";
     
     $html .= "<br><br>\n";
+
+    my $status = `cat status.htm`;
+    $html .= "<div id=\"status_down\" style=\"display:none; width:600px; height:250px; padding:5px; border:5px solid gray; margin:0px; overflow-y:scroll;\">$status</div>";
     
     if ($param_sub =~ /start_page|^\s*$/) { $html .= print_start_page() };
     if ($param_sub =~ /player_list/)      { $html .= print_player_list_form() };
@@ -1180,11 +1193,8 @@ sub print_player_list_form {
     alustus();
     read_player_lists();
 
-    my $a_script = "print_player_list_div( ['vuosi','read_players_from','graafi','liiga'],['player_list_div'] );";
-
     # Valikot taulukon karsimiseen
     my $condition = "";
-    my $param_list = "";
 
     $html .= "<form method=\"POST\">\n";
     $html .= "<input type='hidden' name='liiga' id='liiga' value=\"$param_liiga\">\n";
@@ -1209,7 +1219,6 @@ sub print_player_list_form {
     foreach my $current_arvo (@jakso) {
         if ($current_arvo eq $param_read_players_from) {
 	    $html .= "<option selected>$current_arvo<\/option>\n";
-	    $param_list = "${param_list}&read_players_from=$current_arvo";
 	} else {
             $html .= "<option>$current_arvo<\/option>\n";
 	}
@@ -1239,7 +1248,6 @@ sub print_player_list_form {
         if (/$param_graafi/) {
             $html .= "<option selected>$_<\/option>\n";
 	    $param_graafi = $_;
-	    $param_list = "${param_list}&graafi=$_";
         } else {
             $html .= "<option>$_<\/option>\n";
         }
@@ -1278,8 +1286,7 @@ sub print_player_list {
         $html .= "<th><A HREF=\"#\">Hinta/Laatu</A></th>\n";
         $html .= "<th><A HREF=\"#\">Ennuste</A></th>\n";
         $html .= "<th>$param_graafi</th>\n";
-        $html .= "</center></th>\n";
-        $html .= "<\/tr>\n";
+	$html .= "<\/tr>\n";
         $html .= "<\/$_>\n";
     }
 
@@ -1318,7 +1325,6 @@ sub print_player_list {
 	    $html .= "<p style=\"background: green; width: ${width}px; height: 8px;\">\n";
 	}
 	$html .= "<\/td>\n";
-
 	$html .= "<\/tr>\n";
     }
     $html .= "<\/table>\n";

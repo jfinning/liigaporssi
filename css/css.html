@@ -108,9 +108,11 @@ table.dataTable thead .sorting {
   *cursor: hand;
 }
 
-tr:nth-child(even) {
+tr:nth-child(odd) {
   background-color: #f9f9f9;
 }
+
+table.dataTable tbody tr:nth-child(10n) {background-color:#B2B2B2}
 
 .dataTables_wrapper .dataTables_filter {
   display: none;

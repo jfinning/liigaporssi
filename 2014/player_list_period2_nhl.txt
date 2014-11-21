@@ -1,0 +1,864 @@
+Anaheim
+Maalivahdit
+Andersen Frederik 1  0  0  1  0  0  25  3  0  0  0  0  0  8               333 000
+Gibson John 0  0  0  0  0  0  0  0  0  0  0  0  0  0               320 000
+LaBarbera Jason 0  0  0  0  0  0  0  0  0  0  0  0  0  0               290 000
+Puolustajat
+Beauchemin Francois 1  0  0  0  0  0  2  1  1  -1  0  0  0  0  1               301 000
+Clark Mat 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               200 000
+Fistric Mark 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               240 000
+Fowler Cam 1  0  0  0  0  0  0  0  0  0  0  0  0  0  0               330 000
+Lindholm Hampus 1  0  0  0  0  0  0  0  3  -2  0  0  0  0  -2               283 000
+Lovejoy Ben 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               280 000
+Manson Josh 1  0  0  0  0  0  0  0  1  2  0  0  0  0  7               237 000
+Souray Sheldon 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               310 000
+Stoner Clayton 1  0  0  0  0  0  0  0  5  2  0  0  0  0  9               244 000
+Vatanen Sami 1  0  1  0  0  0  2  0  3  -1  0  0  0  0  7               372 000
+Hyokkaajat
+Beleskey Matt 1  1  0  0  0  0  2  2  1  0  0  0  0  0  9           334 000
+Cogliano Andrew 1  1  0  0  0  0  2  2  0  0  0  0  0  0  8           313 000
+Etem Emerson 1  0  0  0  0  0  2  1  1  0  0  0  0  0  3           228 000
+Getzlaf Ryan 1  1  1  0  0  0  4  1  3  1  0  0  1  0  19           479 000
+Heatley Dany 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           285 000
+Jackman Tim 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           175 000
+Karlsson William 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           200 000
+Kesler Ryan 1  0  0  0  0  0  2  2  1  -1  2  0  0  0  4           399 000
+Maroon Patrick 1  0  1  0  0  0  1  0  0  0  0  0  0  0  5           245 000
+Palmieri Kyle 1  0  0  0  0  0  1  3  0  -1  0  0  0  0  2           327 000
+Perry Corey 1  0  1  0  1  0  1  1  1  1  0  0  0  0  11           486 000
+Rakell Rickard 1  0  0  0  0  0  0  1  1  0  0  0  0  0  2           177 000
+Silfverberg Jakob 1  0  1  0  0  0  7  1  2  0  0  0  0  0  10           330 000
+Smith-Pelly Devante 1  0  0  0  0  0  0  2  0  0  0  0  0  0  1           266 000
+Thompson Nate 1  0  1  0  0  0  0  3  1  0  0  0  0  0  7           242 000
+Arizona
+Maalivahdit
+Dubnyk Devan 0  0  0  0  0  0  0  0  0  0  0  0  0  0               290 000
+Smith Mike 1  0  0  0  1  0  24  3  0  0  0  0  0  1               316 000
+Puolustajat
+Ekman-Larsson Oliver 1  0  0  0  0  0  5  0  2  -1  0  0  0  0  2               362 000
+Gormley Brandon 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               215 000
+Michalek Zbynek 1  0  0  0  0  0  1  0  1  -1  0  0  0  0  0               280 000
+Murphy Connor 1  0  0  0  0  0  1  2  1  -2  0  0  0  0  -1               234 000
+Schlemko David 1  0  1  0  0  0  0  0  1  0  4  0  0  0  11               271 000
+Stone Michael 1  0  0  0  0  0  2  1  4  0  0  0  0  0  4               269 000
+Summers Chris 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               215 000
+Yandle Keith 1  0  0  0  0  0  1  0  0  -2  0  0  0  0  -3               382 000
+Hyokkaajat
+Boedker Mikkel 1  0  0  0  0  0  1  1  0  -1  0  0  0  0  1           331 000
+Chipchura Kyle 1  0  0  0  0  0  1  2  0  -1  0  0  0  0  1           246 000
+Crombeen B.J. 1  0  0  0  0  0  0  1  0  0  0  0  0  0  1           211 000
+Doan Shane 1  0  0  0  0  0  2  3  0  -1  0  0  0  0  2           352 000
+Erat Martin 1  0  0  0  0  0  1  1  0  -1  0  0  0  0  1           306 000
+Gagner Sam 1  0  1  0  0  0  5  0  0  -1  0  0  0  0  6           321 000
+Hanzal Martin 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           340 000
+Klinkhammer Rob 1  0  0  0  0  0  1  1  1  -1  0  0  0  0  2           267 000
+Korpikoski Lauri 1  1  0  0  0  0  1  1  0  -1  0  0  0  0  7           282 000
+Lessio Lucas 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           200 000
+McMillan Brandon 1  0  0  0  0  0  1  2  0  0  0  0  0  0  2           192 000
+Moss David 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           250 000
+Rieder Tobias 1  0  0  0  0  0  2  1  1  -1  0  0  0  0  2           227 000
+Vermette Antoine 1  0  0  0  0  0  2  2  0  -1  0  0  0  0  1           346 000
+Vitale Joe 1  0  0  0  0  0  0  0  0  0  0  0  0  0  0           240 000
+Boston
+Maalivahdit
+Rask Tuukka 0  0  0  0  0  0  0  0  0  0  0  0  0  0               340 000
+Svedberg Niklas 0  0  0  0  0  0  0  0  0  0  0  0  0  0               265 000
+Puolustajat
+Bartkowski Matt 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               260 000
+Chara Zdeno 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               380 000
+Hamilton Dougie 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               335 000
+Krug Torey 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               315 000
+McQuaid Adam 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               250 000
+Miller Kevan 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               260 000
+Morrow Joe 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               235 000
+Seidenberg Dennis 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               310 000
+Trotman Zach 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               230 000
+Warsofsky David 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               240 000
+Hyokkaajat
+Bergeron Patrice 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           405 000
+Campbell Gregory 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           220 000
+Eriksson Loui 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           310 000
+Fraser Matt 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           195 000
+Gagne Simon 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           245 000
+Griffith Seth 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           235 000
+Kelly Chris 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           270 000
+Krejci David 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           415 000
+Lucic Milan 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           375 000
+Marchand Brad 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           365 000
+Paille Daniel 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           205 000
+Savard Marc 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           280 000
+Smith Reilly 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           330 000
+Soderberg Carl 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           260 000
+Buffalo
+Maalivahdit
+Enroth Jhonas 0  0  0  0  0  0  0  0  0  0  0  0  0  0               270 000
+Hackett Matt 0  0  0  0  0  0  0  0  0  0  0  0  0  0               205 000
+Lieuwen Nathan 0  0  0  0  0  0  0  0  0  0  0  0  0  0               215 000
+Neuvirth Michal 0  0  0  0  0  0  0  0  0  0  0  0  0  0               280 000
+Puolustajat
+Benoit Andre 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               260 000
+Gorges Josh 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               250 000
+Meszaros Andrej 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               280 000
+Myers Tyler 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               300 000
+Ristolainen Rasmus 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               220 000
+Strachan Tyson 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               240 000
+Weber Mike 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               240 000
+Zadorov Nikita 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               195 000
+Hyokkaajat
+Deslauriers Nicolas 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           210 000
+Ennis Tyler 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           335 000
+Flynn Brian 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           240 000
+Foligno Marcus 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           280 000
+Gionta Brian 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           270 000
+Girgensons Zemgus 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           265 000
+Hodgson Cody 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           275 000
+Kaleta Patrick 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           245 000
+McCormick Cody 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           230 000
+Mitchell Torrey 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           255 000
+Moulson Matt 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           310 000
+Stafford Drew 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           340 000
+Stewart Chris 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           290 000
+Calgary
+Maalivahdit
+Hiller Jonas 1  0  0  0  1  0  18  4  0  0  0  0  0  -3               317 000
+Ramo Karri 0  0  0  0  0  0  0  0  0  0  0  0  0  0               285 000
+Puolustajat
+Brodie T.J. 1  0  0  0  0  0  3  1  3  1  2  0  0  0  10               350 000
+Diaz Raphael 1  0  0  0  0  0  2  1  0  -1  0  0  0  0  0               240 000
+Engelland Deryk 1  0  0  0  0  0  0  1  2  -1  0  0  0  0  0               235 000
+Giordano Mark 1  0  1  0  0  0  3  0  0  0  0  0  0  0  8               423 000
+Russell Kris 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               310 000
+Smid Ladislav 1  0  0  0  0  0  2  1  3  -3  0  0  0  0  -2               248 000
+Wideman Dennis 1  1  0  0  0  0  3  1  2  0  0  0  0  0  13               343 000
+Hyokkaajat
+Backlund Mikael 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           295 000
+Baertschi Sven 1  0  0  0  0  0  0  1  0  -1  0  0  0  0  0           225 000
+Bollig Brandon 1  0  0  0  0  0  0  1  0  -1  0  0  0  0  0           200 000
+Bouma Lance 1  0  0  0  0  0  0  3  1  -1  0  0  0  0  2           267 000
+Byron Paul 1  1  1  0  0  0  2  1  0  0  0  0  1  0  14           254 000
+Colborne Joe 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           230 000
+Ferland Michael 1  0  0  0  0  0  0  1  1  -1  0  0  0  0  1           181 000
+Gaudreau Johnny 1  0  1  0  0  0  2  0  0  0  0  0  0  0  5           280 000
+Glencross Curtis 1  0  1  0  0  0  0  2  0  0  0  0  0  0  5           320 000
+Granlund Markus 1  0  1  0  0  0  2  1  1  0  0  0  0  0  7           257 000
+Hudler Jiri 1  0  0  0  0  0  1  0  0  0  2  0  0  0  3           328 000
+Jones David 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           250 000
+Jooris Josh 1  0  1  0  0  0  2  0  0  -1  0  0  0  0  4           239 000
+McGrattan Brian 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           160 000
+Monahan Sean 1  1  0  0  0  0  4  0  0  0  0  1  0  0  9           329 000
+Raymond Mason 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           285 000
+Reinhart Max 1  0  0  0  0  0  1  0  1  -1  0  0  0  0  1           211 000
+Setoguchi Devin 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           245 000
+Stajan Matt 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           270 000
+Carolina
+Maalivahdit
+Khudobin Anton 0  0  0  0  0  0  0  0  0  0  0  0  0  0               285 000
+Ward Cam 1  0  0  0  1  0  36  3  0  0  0  0  0  8               308 000
+Puolustajat
+Bellemore Brett 1  0  1  0  0  0  0  4  1  1  0  0  0  0  12               252 000
+Faulk Justin 1  0  0  0  0  0  0  3  0  -1  0  0  0  0  0               340 000
+Gleason Tim 1  0  0  0  0  0  0  8  3  -1  0  0  0  0  4               269 000
+Hainsey Ron 1  0  0  0  0  0  1  3  3  1  0  0  0  0  8               263 000
+Harrison Jay 1  0  0  0  0  0  1  1  2  -1  0  0  0  0  1               281 000
+Liles John-Michael 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               235 000
+Sekera Andrej 1  0  1  0  0  0  2  0  2  -1  0  0  0  0  6               306 000
+Hyokkaajat
+Boychuk Zach 1  0  0  0  0  0  0  0  0  0  0  0  0  0  0           230 000
+Dwyer Patrick 1  0  0  0  0  0  1  4  0  0  0  0  0  0  3           233 000
+Gerbe Nathan 1  0  1  0  0  0  6  1  0  1  0  1  0  0  11           296 000
+Lindholm Elias 1  0  0  0  0  0  6  3  0  -2  0  0  0  0  3           268 000
+Malone Brad 1  0  0  0  0  0  0  2  0  0  17  0  0  0  0           180 000
+McClement Jay 1  0  0  0  0  0  0  0  1  0  2  0  0  0  3           228 000
+Nash Riley 1  0  0  0  0  0  1  2  0  1  0  0  0  0  4           264 000
+Nestrasil Andrej 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           195 000
+Rask Victor 1  0  0  0  0  0  1  1  0  0  0  0  0  0  2           222 000
+Semin Alexander 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           365 000
+Skinner Jeff 1  1  1  0  0  0  3  0  1  1  0  0  0  0  15           385 000
+Staal Eric 1  1  0  0  0  0  4  0  0  -2  0  0  0  0  6           391 000
+Staal Jordan 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           340 000
+Terry Chris 1  0  0  0  0  0  1  0  0  0  0  0  0  0  1           201 000
+Tlusty Jiri 1  0  0  0  0  0  0  1  0  -2  2  0  0  0  1           356 000
+Chicago
+Maalivahdit
+Crawford Corey 1  0  0  1  0  0  24  3  0  0  0  0  0  6               331 000
+Raanta Antti 0  0  0  0  0  0  0  0  0  0  0  0  0  0               275 000
+Puolustajat
+Clendening Adam 1  1  0  0  0  0  1  0  2  2  0  0  0  0  17               217 000
+Hjalmarsson Niklas 1  0  0  0  0  0  1  0  4  0  4  0  0  0  7               282 000
+Keith Duncan 1  0  0  0  0  0  0  0  1  0  0  0  0  0  1               386 000
+Oduya Johnny 1  0  0  0  0  0  1  1  4  0  2  0  0  0  6               266 000
+Rozsival Michal 1  0  0  0  0  0  1  1  1  2  2  0  0  0  11               256 000
+Rundblad David 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               185 000
+Seabrook Brent 1  1  0  0  0  0  1  1  2  0  0  0  0  0  12               387 000
+Van Riemsdyk Trevor 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               190 000
+Hyokkaajat
+Bickell Bryan 1  0  0  0  0  0  1  0  1  0  0  0  0  0  2           342 000
+Carcillo Dan 1  1  0  0  0  0  2  0  0  1  0  0  0  0  9           219 000
+Hossa Marian 1  0  1  0  0  0  1  0  1  0  0  0  0  0  6           406 000
+Kane Patrick 1  1  1  0  1  0  3  0  0  1  0  0  0  1  19           424 000
+Kruger Marcus 1  0  1  0  0  0  2  0  0  1  2  0  0  0  9           284 000
+Morin Jeremy 1  0  0  0  0  0  1  1  0  0  0  0  0  0  2           197 000
+Nordstrom Joakim 1  0  0  0  0  0  3  0  0  1  0  0  0  0  4           189 000
+Richards Brad 1  0  1  0  0  0  0  0  1  1  0  0  0  0  7           367 000
+Saad Brandon 1  0  0  0  0  0  1  0  0  0  0  0  0  0  1           371 000
+Sharp Patrick 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           420 000
+Shaw Andrew 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           360 000
+Smith Ben 1  0  0  0  0  0  0  0  3  0  0  0  0  0  2           257 000
+Toews Jonathan 1  0  0  0  0  0  1  0  0  0  2  0  0  0  3           413 000
+Versteeg Kris 1  0  1  0  0  0  2  0  0  1  0  0  0  0  7           327 000
+Colorado
+Maalivahdit
+Berra Reto 1  0  0  0  1  0  20  3  0  0  0  0  0  1               266 000
+Pickard Calvin 0  0  0  0  0  0  0  0  0  0  0  0  0  0               240 000
+Varlamov Semyon 0  0  0  0  0  0  0  0  0  0  0  0  0  0               340 000
+Puolustajat
+Barrie Tyson 1  1  0  0  0  0  3  0  2  -1  0  0  0  0  10               340 000
+Guenin Nate 1  0  0  0  0  0  0  3  2  0  0  0  0  0  3               233 000
+Hejda Jan 1  0  0  0  0  0  2  3  2  -1  0  0  0  0  2               267 000
+Holden Nick 1  0  0  0  0  0  0  5  0  0  2  0  0  0  5               275 000
+Johnson Erik 1  0  0  0  0  0  2  0  1  -1  2  0  0  0  2               347 000
+Redmond Zach 1  0  0  0  0  0  2  3  2  1  0  0  0  0  7               247 000
+Stuart Brad 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               235 000
+Wilson Ryan 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               210 000
+Hyokkaajat
+Bordeleau Patrick 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           170 000
+Briere Daniel 1  1  0  0  0  0  4  0  0  0  0  0  0  0  8           278 000
+Cliche Marc-Andre 1  0  0  0  0  0  2  0  0  0  0  0  0  0  1           181 000
+Duchene Matt 1  0  0  0  0  0  1  1  2  -2  0  0  0  0  1           391 000
+Everberg Dennis 1  0  1  0  0  0  0  2  1  1  0  0  0  0  8           208 000
+Iginla Jarome 1  0  0  0  0  0  1  2  0  0  0  0  0  0  2           362 000
+Landeskog Gabriel 1  0  1  0  0  0  6  2  2  1  0  0  0  0  11           381 000
+MacKinnon Nathan 1  0  2  0  0  0  4  0  0  1  0  0  1  0  14           389 000
+McGinn Jamie 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           295 000
+McLeod Cody 1  0  0  0  0  0  1  1  1  0  0  0  0  0  3           263 000
+Mitchell John 1  0  0  0  0  0  0  5  0  0  0  0  0  0  3           308 000
+O'Reilly Ryan 1  0  0  0  0  0  0  4  1  -1  0  0  0  0  2           337 000
+Talbot Max 1  0  0  0  0  0  1  1  0  -1  0  0  0  0  1           281 000
+Tanguay Alex 1  0  0  0  0  0  0  1  1  -1  0  0  0  0  1           346 000
+Winchester Jesse 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           230 000
+Columbus
+Maalivahdit
+Bobrovsky Sergei 0  0  0  0  0  0  0  0  0  0  0  0  0  0               325 000
+McElhinney Curtis 0  0  0  0  0  0  0  0  0  0  0  0  0  0               270 000
+Puolustajat
+Connauton Kevin 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               225 000
+Erixon Tim 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               225 000
+Goloubef Cody 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               190 000
+Johnson Jack 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               315 000
+Leopold Jordan 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               270 000
+Murray Ryan 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               255 000
+Prout Dalton 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               220 000
+Savard David 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               280 000
+Tyutin Fedor 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               285 000
+Wisniewski James 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               350 000
+Hyokkaajat
+Anisimov Artem 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           270 000
+Atkinson Cam 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           320 000
+Boll Jared 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           200 000
+Calvert Matt 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           255 000
+Cracknell Adam 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           170 000
+Dubinsky Brandon 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           370 000
+Foligno Nick 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           385 000
+Gibbons Brian 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           245 000
+Hartnell Scott 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           385 000
+Horton Nathan 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           365 000
+Jenner Boone 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           300 000
+Johansen Ryan 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           380 000
+Letestu Mark 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           260 000
+Skille Jack 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           225 000
+Tropp Corey 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           195 000
+Wennberg Alexander 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           210 000
+Dallas
+Maalivahdit
+Lehtonen Kari 1  0  0  1  0  0  26  1  0  0  0  1  0  13               343 000
+Lindback Anders 0  0  0  0  0  0  0  0  0  0  0  0  0  0               285 000
+Puolustajat
+Benn Jordie 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               265 000
+Daley Trevor 1  0  1  0  0  0  1  3  2  1  0  0  0  0  13               343 000
+Dillon Brenden 1  0  0  0  0  0  1  1  4  2  0  0  0  0  10               295 000
+Goligoski Alex 1  0  0  0  0  0  2  1  0  1  0  0  0  0  5               325 000
+Jokipakka Jyrki 1  0  0  0  0  0  1  1  0  1  2  0  0  0  7               197 000
+Klingberg John 1  1  0  0  0  0  2  3  1  1  2  0  0  1  21               261 000
+Nemeth Patrik 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               190 000
+Oleksiak Jamie 1  0  0  0  0  0  1  0  2  0  0  0  0  0  2               207 000
+Hyokkaajat
+Benn Jamie 1  0  1  0  0  0  2  2  1  1  0  0  0  0  9           439 000
+Cole Erik 1  0  0  0  0  0  1  3  0  0  0  0  0  0  3           283 000
+Eakin Cody 1  1  0  0  1  0  3  1  1  1  0  1  0  0  15           280 000
+Eaves Patrick 1  0  0  0  0  0  0  0  1  1  0  0  0  0  3           253 000
+Fiddler Vernon 1  0  0  0  0  0  1  0  1  0  0  0  0  0  2           237 000
+Garbutt Ryan 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           280 000
+Hemsky Ales 1  0  2  0  0  0  1  0  0  1  0  0  0  0  11           286 000
+Horcoff Shawn 1  0  0  0  0  0  0  2  0  0  0  0  0  0  1           256 000
+McKenzie Curtis 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           190 000
+Moen Travis 1  0  0  0  0  0  2  2  2  0  0  0  0  0  3           208 000
+Nichushkin Valeri 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           275 000
+Peverley Rich 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           280 000
+Roussel Antoine 1  0  1  0  0  0  1  1  0  2  0  0  0  0  10           280 000
+Sceviour Colton 1  0  0  0  0  0  2  0  1  0  0  0  0  0  2           227 000
+Seguin Tyler 1  0  0  0  0  0  4  0  0  1  0  0  0  0  4           449 000
+Spezza Jason 1  1  0  0  0  0  2  1  0  2  0  0  0  0  12           372 000
+Detroit
+Maalivahdit
+Gustavsson Jonas 0  0  0  0  0  0  0  0  0  0  0  0  0  0               280 000
+Howard Jimmy 0  0  0  0  0  0  0  0  0  0  0  0  0  0               325 000
+Mrazek Petr 1  0  0  1  0  0  28  3  0  0  0  0  0  8               263 000
+Puolustajat
+DeKeyser Danny 1  0  1  0  0  0  0  0  0  0  0  0  0  0  6               286 000
+Ericsson Jonathan 1  0  1  0  0  0  1  3  0  -1  0  0  0  0  7               277 000
+Kindl Jakub 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               260 000
+Kronwall Niklas 1  0  0  0  0  0  0  0  4  -1  0  0  0  0  0               375 000
+Lashoff Brian 1  0  1  0  0  0  0  0  2  1  0  0  0  0  10               220 000
+Ouellet Xavier 1  0  0  0  0  0  3  0  0  1  0  0  0  0  5               205 000
+Quincey Kyle 1  0  0  0  0  0  1  1  3  0  2  0  0  0  6               246 000
+Smith Brendan 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               255 000
+Hyokkaajat
+Abdelkader Justin 1  1  1  0  0  0  3  0  0  1  0  0  1  0  16           381 000
+Andersson Joakim 1  0  0  0  0  0  0  0  1  0  0  0  0  0  1           191 000
+Cleary Daniel 1  0  0  0  0  0  4  2  0  0  0  0  0  0  3           268 000
+Datsyuk Pavel 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           435 000
+Franzen Johan 1  1  0  0  0  0  2  1  0  0  0  0  0  0  8           408 000
+Glendening Luke 1  0  0  0  0  0  1  2  1  0  0  0  0  0  3           258 000
+Helm Darren 1  0  0  0  0  0  1  3  0  0  0  0  0  0  3           263 000
+Jurco Tomas 1  0  1  0  0  0  0  2  1  -1  2  0  0  0  7           257 000
+Miller Drew 1  0  0  0  0  0  0  1  2  0  0  0  0  0  2           262 000
+Nyquist Gustav 1  0  0  0  0  0  5  0  1  0  0  0  0  0  4           369 000
+Sheahan Riley 1  0  1  0  0  0  1  0  0  0  0  0  0  0  5           260 000
+Tatar Tomas 1  2  0  0  1  0  3  2  1  1  0  0  0  1  23           293 000
+Zetterberg Henrik 1  0  0  0  0  0  2  0  0  -1  0  0  0  0  0           435 000
+Edmonton
+Maalivahdit
+Fasth Viktor 0  0  0  0  0  0  0  0  0  0  0  0  0  0               285 000
+Scrivens Ben 0  0  0  0  0  0  0  0  0  0  0  0  0  0               290 000
+Puolustajat
+Aulie Keith 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               220 000
+Fayne Mark 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               245 000
+Ference Andrew 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               265 000
+Marincin Martin 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               205 000
+Nikitin Nikita 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               275 000
+Petry Jeff 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               270 000
+Schultz Justin 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               285 000
+Hyokkaajat
+Arcobello Mark 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           275 000
+Draisaitl Leon 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           230 000
+Eberle Jordan 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           365 000
+Gazdic Luke 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           190 000
+Gordon Boyd 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           255 000
+Hall Taylor 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           390 000
+Hendricks Matt 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           260 000
+Joensuu Jesse 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           225 000
+Nugent-Hopkins Ryan 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           360 000
+Perron David 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           320 000
+Pinizzotto Steven 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           210 000
+Pouliot Benoit 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           285 000
+Purcell Teddy 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           275 000
+Yakupov Nail 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           290 000
+Florida
+Maalivahdit
+Luongo Roberto 1  0  0  1  0  0  28  2  0  0  1  0  0  11               326 000
+Montoya Al 0  0  0  0  0  0  0  0  0  0  0  0  0  0               275 000
+Puolustajat
+Campbell Brian 1  0  0  0  0  0  1  0  3  0  0  0  0  0  3               273 000
+Ekblad Aaron 1  0  0  0  0  0  3  1  4  0  0  0  0  0  5               285 000
+Gudbranson Erik 1  0  1  0  0  0  1  2  0  0  0  0  0  0  8               273 000
+Kulikov Dmitry 1  0  1  0  0  0  3  0  5  0  2  0  0  0  13               288 000
+Mitchell Willie 1  0  0  0  0  0  1  2  3  0  2  0  0  0  6               266 000
+Olsen Dylan 1  0  0  0  0  0  0  0  0  0  0  0  0  0  0               245 000
+Robak Colby 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               210 000
+Hyokkaajat
+Barkov Aleksander 1  0  0  0  0  0  2  1  0  -1  0  0  0  0  1           246 000
+Bergenheim Sean 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           280 000
+Bjugstad Nick 1  2  0  0  1  0  5  2  4  1  0  0  0  1  25           285 000
+Bolland Dave 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           270 000
+Boyes Brad 1  0  0  0  0  0  0  0  2  1  0  0  0  0  3           308 000
+Fleischmann Tomas 1  0  0  0  0  0  0  1  0  -1  0  0  0  0  0           295 000
+Grimaldi Rocco 1  0  0  0  0  0  3  1  0  -1  0  0  0  0  2           202 000
+Hayes Jimmy 1  0  0  0  0  0  1  1  2  0  0  0  0  0  3           208 000
+Huberdeau Jonathan 1  0  2  0  0  0  4  0  2  1  0  0  0  0  13           313 000
+Jokinen Jussi 1  0  0  0  0  0  1  1  0  0  2  0  0  0  4           324 000
+Kopecky Tomas 1  0  0  0  0  0  1  1  0  0  0  0  0  0  2           252 000
+MacKenzie Derek 1  0  0  0  0  0  0  3  1  0  0  0  0  0  3           273 000
+Pirri Brandon 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           225 000
+Thornton Shawn 1  0  0  0  0  0  0  2  0  0  0  0  0  0  1           231 000
+Trocheck Vincent 1  0  0  0  0  0  2  2  0  0  0  0  0  0  2           212 000
+Upshall Scottie 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           285 000
+Los Angeles
+Maalivahdit
+Jones Martin 0  0  0  0  0  0  0  0  0  0  0  0  0  0               275 000
+Quick Jonathan 1  0  0  1  0  0  25  2  0  0  0  0  0  10               365 000
+Puolustajat
+Doughty Drew 1  0  1  0  0  0  3  1  1  1  0  0  0  0  13               398 000
+Greene Matt 1  0  0  0  0  0  2  1  2  0  0  0  0  0  3               263 000
+Martinez Alec 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               315 000
+McBain Jamie 1  0  0  0  0  0  1  0  0  0  0  0  0  0  1               216 000
+McNabb Brayden 1  0  0  0  0  0  1  3  1  0  5  0  1  0  8               213 000
+Muzzin Jake 1  0  1  0  0  0  1  3  4  1  0  0  0  0  14               324 000
+Regehr Robyn 1  0  0  0  0  0  1  2  1  0  0  0  0  0  3               238 000
+Voynov Slava 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               295 000
+Hyokkaajat
+Andreoff Andy 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           195 000
+Brown Dustin 1  0  1  0  0  0  4  2  0  0  0  0  0  0  7           302 000
+Carter Jeff 1  0  0  0  0  0  4  2  0  -1  0  0  0  0  2           392 000
+Clifford Kyle 1  0  0  0  0  0  1  2  1  1  0  0  0  0  5           270 000
+Gaborik Marian 1  0  1  0  0  0  3  1  0  1  4  0  0  0  13           373 000
+King Dwight 1  0  0  0  0  0  1  0  0  -1  0  0  0  0  0           255 000
+Kopitar Anze 1  0  0  0  0  0  1  2  0  1  2  0  0  0  6           391 000
+Lewis Trevor 1  1  0  0  0  0  6  1  0  1  0  0  0  1  15           290 000
+Nolan Jordan 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           225 000
+Pearson Tanner 1  1  0  0  1  0  2  0  0  1  0  0  0  0  11           291 000
+Richards Mike 1  0  1  0  0  0  0  0  0  1  0  0  0  0  6           306 000
+Stoll Jarret 1  1  0  0  0  0  1  2  0  0  0  0  0  0  8           278 000
+Toffoli Tyler 1  0  0  0  0  0  4  2  0  -1  2  0  0  0  4           379 000
+Williams Justin 1  0  1  0  0  0  3  0  2  0  0  0  0  0  7           317 000
+Minnesota
+Maalivahdit
+Backstrom Niklas 0  0  0  0  0  0  0  0  0  0  0  0  0  0               300 000
+Kuemper Darcy 1  0  0  1  0  0  37  2  0  0  0  0  1  18               338 000
+Puolustajat
+Ballard Keith 1  0  0  0  0  0  0  1  4  0  4  0  0  0  7               257 000
+Bickel Stu 1  0  0  0  0  0  0  0  0  0  0  0  0  0  0               215 000
+Brodin Jonas 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               275 000
+Dumba Matt 1  0  1  0  0  0  3  1  0  -1  0  0  0  0  7               222 000
+Prosser Nate 1  0  0  0  0  0  1  1  3  0  2  0  0  0  6               236 000
+Scandella Marco 1  1  1  0  0  0  1  4  1  0  0  0  1  0  21               321 000
+Spurgeon Jared 1  0  0  0  0  0  2  1  5  2  0  0  0  0  11               341 000
+Suter Ryan 1  0  1  0  0  0  2  0  1  1  0  0  0  0  11               381 000
+Hyokkaajat
+Brodziak Kyle 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           230 000
+Carter Ryan 1  0  0  0  0  0  1  2  1  0  2  0  0  0  5           265 000
+Cooke Matt 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           280 000
+Coyle Charlie 1  0  1  0  0  0  2  6  0  2  0  0  0  0  12           307 000
+Fontaine Justin 1  0  0  0  0  0  1  1  0  0  0  0  0  0  2           227 000
+Granlund Mikael 1  0  1  0  0  0  1  1  1  1  0  0  0  0  9           359 000
+Haula Erik 1  0  0  0  0  0  2  0  1  -1  0  0  0  0  1           236 000
+Koivu Mikko 1  0  0  0  0  0  0  1  1  0  2  0  0  0  4           344 000
+Niederreiter Nino 1  1  1  0  0  0  2  4  1  1  0  0  0  0  16           341 000
+Parise Zach 1  0  0  0  0  0  3  2  4  0  0  0  0  0  5           420 000
+Pominville Jason 1  0  0  0  0  0  5  0  0  0  0  0  0  0  3           358 000
+Vanek Thomas 1  0  0  0  0  0  2  1  0  0  0  0  0  0  2           347 000
+Zucker Jason 1  1  0  0  1  0  1  2  1  0  0  0  0  0  11           276 000
+Montreal
+Maalivahdit
+Price Carey 1  0  0  1  0  0  31  1  0  0  0  1  0  15               360 000
+Tokarski Dustin 0  0  0  0  0  0  0  0  0  0  0  0  0  0               265 000
+Puolustajat
+Allen Bryan 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               245 000
+Beaulieu Nathan 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               235 000
+Emelin Alexei 1  0  0  0  0  0  1  6  1  1  0  0  0  0  8               333 000
+Gilbert Tom 1  0  0  0  0  0  0  0  1  1  0  0  0  0  4               289 000
+Gonchar Sergei 1  0  0  0  0  0  1  2  0  1  0  1  0  0  6               281 000
+Markov Andrei 1  0  0  0  0  0  0  0  0  1  0  0  0  0  3               333 000
+Subban P.K. 1  0  1  0  0  0  0  2  1  1  0  0  0  0  11               416 000
+Weaver Mike 1  0  1  0  0  0  0  0  1  1  0  0  0  0  10               250 000
+Hyokkaajat
+Bournival Michael 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           245 000
+Bowman Drayson 1  0  0  0  0  0  0  0  0  1  0  0  0  0  2           237 000
+Desharnais David 1  0  1  0  0  0  0  0  1  2  0  0  0  0  9           339 000
+Eller Lars 1  1  0  0  0  0  4  0  0  1  0  0  0  0  10           310 000
+Galchenyuk Alex 1  0  0  0  0  0  2  2  0  -1  0  0  0  0  1           356 000
+Gallagher Brendan 1  0  0  0  0  0  6  0  2  -1  0  0  0  0  3           343 000
+Malhotra Manny 1  0  0  0  0  0  2  1  3  1  0  0  0  0  6           191 000
+Pacioretty Max 1  2  0  0  1  0  5  2  0  2  0  0  0  1  25           430 000
+Parenteau P.A. 1  0  1  0  0  0  1  2  1  2  0  0  0  0  11           331 000
+Plekanec Tomas 1  0  0  0  0  0  2  0  1  -1  0  0  0  0  1           366 000
+Prust Brandon 1  0  1  0  0  0  2  1  0  1  0  0  0  0  8           238 000
+Sekac Jiri 1  0  1  0  0  0  1  1  0  1  0  0  0  0  8           248 000
+Weise Dale 1  1  0  0  0  0  3  1  0  1  0  0  0  0  11           246 000
+Nashville
+Maalivahdit
+Hutton Carter 1  0  0  0  1  0  16  3  0  0  0  0  0  -1               274 000
+Rinne Pekka 0  0  0  0  0  0  0  0  0  0  0  0  0  0               340 000
+Puolustajat
+Bartley Victor 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               235 000
+Ekholm Mattias 1  0  0  0  0  0  2  0  1  0  2  0  0  0  4               239 000
+Ellis Ryan 1  0  0  0  0  0  1  1  0  0  0  0  0  0  2               282 000
+Jones Seth 1  0  0  0  0  0  1  0  2  1  0  0  0  0  5               295 000
+Josi Roman 1  0  1  0  0  0  2  1  2  -2  0  0  0  0  5               355 000
+Volchenkov Anton 1  0  0  0  0  0  0  11  1  1  0  0  0  0  10               285 000
+Weber Shea 1  1  0  0  0  0  2  4  5  -2  0  1  0  0  12               422 000
+Hyokkaajat
+Beck Taylor 1  0  0  0  0  0  2  2  0  0  0  0  0  0  2           192 000
+Bourque Gabriel 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           240 000
+Cullen Matt 1  0  0  0  0  0  2  0  1  0  0  0  0  0  2           292 000
+Fisher Mike 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           365 000
+Forsberg Filip 1  0  0  0  0  0  1  0  0  0  0  0  0  0  1           381 000
+Gaustad Paul 1  0  0  0  0  0  0  2  0  0  2  0  0  0  3           288 000
+Jarnkrok Calle 1  0  0  0  0  0  1  0  0  0  0  0  0  0  1           221 000
+Jokinen Olli 1  1  0  0  0  0  4  0  0  0  0  0  0  0  8           268 000
+Neal James 1  0  0  0  0  0  4  4  0  -1  0  0  0  0  3           413 000
+Nystrom Eric 1  0  0  0  0  0  1  1  0  -1  0  0  0  0  1           286 000
+Ribeiro Mike 1  0  1  0  0  0  2  0  1  -1  0  0  0  0  5           350 000
+Roy Derek 1  0  1  0  0  0  3  0  0  0  0  0  0  0  6           306 000
+Smith Craig 1  0  0  0  0  0  3  0  0  0  4  0  0  0  6           356 000
+Stalberg Viktor 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           290 000
+Wilson Colin 1  0  0  0  0  0  4  1  0  0  0  0  0  0  3           273 000
+New Jersey
+Maalivahdit
+Clemmensen Scott 0  0  0  0  0  0  0  0  0  0  0  0  0  0               255 000
+Schneider Cory 0  0  0  0  0  0  0  0  0  0  0  0  0  0               310 000
+Puolustajat
+Gelinas Eric 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               280 000
+Greene Andy 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               315 000
+Harrold Peter 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               235 000
+Helgeson Seth 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               200 000
+Larsson Adam 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               240 000
+Merrill Jon 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               225 000
+Salvador Bryce 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               245 000
+Severson Damon 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               275 000
+Zidlicky Marek 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               325 000
+Hyokkaajat
+Bernier Steve 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           260 000
+Brunner Damien 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           285 000
+Cammalleri Michael 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           360 000
+Clowe Ryane 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           300 000
+Elias Patrik 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           300 000
+Gionta Stephen 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           280 000
+Havlat Martin 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           290 000
+Henrique Adam 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           335 000
+Jagr Jaromir 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           355 000
+Josefson Jacob 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           190 000
+Ruutu Tuomo 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           275 000
+Ryder Michael 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           345 000
+Tootoo Jordin 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           200 000
+Zajac Travis 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           325 000
+Zubrus Dainius 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           340 000
+NY Islanders
+Maalivahdit
+Halak Jaroslav 0  0  0  0  0  0  0  0  0  0  0  0  0  0               320 000
+Johnson Chad 0  0  0  0  0  0  0  0  0  0  0  0  0  0               260 000
+Puolustajat
+Boychuk Johnny 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               365 000
+Carkner Matt 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               240 000
+de Haan Calvin 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               225 000
+Donovan Matt 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               200 000
+Hamonic Travis 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               260 000
+Hickey Thomas 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               230 000
+Leddy Nick 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               315 000
+Strait Brian 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               215 000
+Visnovsky Lubomir 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               290 000
+Hyokkaajat
+Bailey Josh 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           260 000
+Boulton Eric 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           185 000
+Cizikas Casey 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           215 000
+Clutterbuck Cal 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           275 000
+Conacher Cory 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           265 000
+Grabner Michael 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           325 000
+Grabovski Mikhail 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           325 000
+Kulemin Nikolai 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           290 000
+Lee Anders 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           225 000
+Martin Matt 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           280 000
+Nelson Brock 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           365 000
+Nielsen Frans 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           355 000
+Okposo Kyle 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           380 000
+Strome Ryan 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           295 000
+Tavares John 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           405 000
+NY Rangers
+Maalivahdit
+Lundqvist Henrik 0  0  0  0  0  0  0  0  0  0  0  0  0  0               345 000
+Talbot Cam 0  0  0  0  0  0  0  0  0  0  0  0  0  0               275 000
+Puolustajat
+Boyle Dan 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               360 000
+Girardi Dan 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               345 000
+Hunwick Matt 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               255 000
+Klein Kevin 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               285 000
+McDonagh Ryan 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               355 000
+Moore John 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               250 000
+Staal Marc 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               300 000
+Hyokkaajat
+Brassard Derick 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           355 000
+Duclair Anthony 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           220 000
+Fast Jesper 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           180 000
+Glass Tanner 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           235 000
+Hagelin Carl 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           325 000
+Hayes Kevin 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           215 000
+Kreider Chris 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           340 000
+Moore Dominic 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           230 000
+Nash Rick 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           425 000
+St. Louis Martin 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           380 000
+Stempniak Lee 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           300 000
+Stepan Derek 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           360 000
+Zuccarello Mats 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           315 000
+Ottawa
+Maalivahdit
+Anderson Craig 0  0  0  0  0  0  0  0  0  0  0  0  0  0               335 000
+Lehner Robin 1  0  0  1  0  0  33  2  0  0  0  0  1  15               340 000
+Puolustajat
+Borowiecki Mark 1  0  0  0  0  0  0  8  2  -1  0  0  0  0  3               248 000
+Ceci Cody 1  0  1  0  0  0  1  0  1  2  0  0  0  0  14               279 000
+Cowen Jared 1  1  0  0  1  0  1  0  0  2  0  0  1  0  20               275 000
+Gryba Eric 1  0  0  0  0  0  0  1  1  0  0  0  0  0  2               242 000
+Karlsson Erik 1  0  1  0  0  0  2  0  2  -1  0  0  0  0  6               416 000
+Methot Marc 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               305 000
+Phillips Chris 1  0  0  0  0  0  0  4  0  0  0  0  0  0  2               282 000
+Wiercioch Patrick 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               285 000
+Hyokkaajat
+Chiasson Alex 1  1  0  0  0  0  4  1  0  0  0  0  0  0  9           314 000
+Condra Erik 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           270 000
+Greening Colin 1  0  0  0  0  0  1  3  0  0  2  0  0  0  5           290 000
+Hoffman Mike 1  0  0  0  0  0  1  0  0  0  0  0  0  0  1           291 000
+Lazar Curtis 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           260 000
+Legwand David 1  0  0  0  0  0  0  1  0  0  0  0  0  0  1           281 000
+MacArthur Clarke 1  0  1  0  0  0  1  1  1  0  2  0  0  0  9           364 000
+Michalek Milan 1  0  1  0  0  0  3  0  0  1  0  0  0  0  8           313 000
+Neil Chris 1  0  0  0  0  0  0  2  1  0  0  0  0  0  2           302 000
+Ryan Bobby 1  1  0  0  0  0  3  0  1  0  0  0  0  0  9           374 000
+Smith Zack 1  0  0  0  0  0  1  2  0  0  0  0  0  0  2           257 000
+Stone Mark 1  0  0  0  0  0  0  0  0  1  0  0  0  0  2           242 000
+Turris Kyle 1  0  0  0  0  0  1  0  0  0  2  0  0  0  3           363 000
+Zibanejad Mika 1  0  1  0  0  0  0  2  0  1  0  0  0  0  7           297 000
+Philadelphia
+Maalivahdit
+Emery Ray 1  0  0  0  1  0  26  3  0  0  0  0  0  3               308 000
+Mason Steve 0  0  0  0  0  0  0  0  0  0  0  0  0  0               325 000
+Puolustajat
+Coburn Braydon 1  0  0  0  0  0  2  1  0  0  0  0  0  0  2               292 000
+Colaiacovo Carlo 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               275 000
+Del Zotto Michael 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               345 000
+Grossmann Nicklas 1  0  0  0  0  0  1  2  1  0  2  0  0  0  5               275 000
+MacDonald Andrew 1  0  0  0  0  0  1  0  0  -1  2  0  0  0  1               296 000
+Pronger Chris 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               295 000
+Schenn Luke 1  0  0  0  0  0  1  4  0  -2  0  0  0  0  -1               289 000
+Schultz Nick 1  0  0  0  0  0  1  2  1  0  2  0  0  0  5               265 000
+Streit Mark 1  1  0  0  0  0  6  1  0  1  0  1  0  0  17               372 000
+Timonen Kimmo 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               300 000
+Hyokkaajat
+Akeson Jason 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           220 000
+Bellemare Pierre-Edouard 1  0  0  0  0  0  0  0  0  0  2  0  0  0  2           207 000
+Couturier Sean 1  0  0  0  0  0  2  2  0  -1  0  0  0  0  1           326 000
+Giroux Claude 1  1  0  0  0  0  7  2  1  0  2  0  0  0  14           484 000
+Laughton Scott 1  0  0  0  0  0  3  0  0  0  0  0  0  0  2           197 000
+Lecavalier Vincent 1  0  1  0  0  0  2  0  0  0  0  0  0  0  5           335 000
+Raffl Michael 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           280 000
+Read Matt 1  0  0  0  0  0  2  0  0  -1  0  0  0  0  0           320 000
+Rinaldo Zac 1  0  0  0  0  0  2  3  0  0  0  0  0  0  3           248 000
+Schenn Brayden 1  0  1  0  0  0  1  3  0  0  0  0  0  0  7           372 000
+Simmonds Wayne 1  0  1  0  0  0  3  3  2  -1  0  0  0  0  8           398 000
+Umberger R.J. 1  0  0  0  0  0  0  2  1  0  2  0  0  0  4           279 000
+VandeVelde Chris 1  0  0  0  0  0  0  0  0  0  0  0  0  0  0           195 000
+Voracek Jakub 1  0  1  0  0  0  5  1  0  0  2  0  0  0  10           455 000
+White Ryan 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           250 000
+Pittsburgh
+Maalivahdit
+Fleury Marc-Andre 0  0  0  0  0  0  0  0  0  0  0  0  0  0               350 000
+Greiss Thomas 0  0  0  0  0  0  0  0  0  0  0  0  0  0               265 000
+Puolustajat
+Bortuzzo Robert 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               275 000
+Despres Simon 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               260 000
+Ehrhoff Christian 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               315 000
+Letang Kris 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               405 000
+Maatta Olli 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               320 000
+Martin Paul 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               325 000
+Scuderi Rob 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               245 000
+Hyokkaajat
+Adams Craig 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           245 000
+Bennett Beau 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           275 000
+Comeau Blake 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           285 000
+Crosby Sidney 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           500 000
+Downie Steve 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           285 000
+Dupuis Pascal 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           350 000
+Goc Marcel 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           260 000
+Hornqvist Patric 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           415 000
+Kunitz Chris 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           460 000
+Malkin Evgeni 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           465 000
+Sill Zach 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           190 000
+Spaling Nick 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           265 000
+Sutter Brandon 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           280 000
+San Jose
+Maalivahdit
+Grosenick Troy 0  0  0  0  0  0  0  0  0  0  0  0  0  0               255 000
+Niemi Antti 1  0  0  0  0  1  26  2  0  0  0  0  0  8               348 000
+Stalock Alex 0  0  0  0  0  0  0  0  0  0  0  0  0  0               295 000
+Puolustajat
+Braun Justin 1  0  0  0  0  0  0  2  5  -1  2  0  0  0  4               299 000
+Burns Brent 1  0  0  0  0  0  5  2  2  1  2  0  0  0  10               430 000
+Demers Jason 1  0  0  0  0  0  3  3  1  0  0  0  0  0  5               285 000
+Hannan Scott 1  0  0  0  0  0  1  1  0  0  0  0  0  0  2               232 000
+Irwin Matt 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               270 000
+Mueller Mirco 1  0  0  0  0  0  2  2  3  0  0  0  0  0  4               224 000
+Vlasic Marc-Edouard 1  0  0  0  0  0  4  1  0  -1  2  0  0  0  3               323 000
+Hyokkaajat
+Brown Mike 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           245 000
+Burish Adam 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           235 000
+Couture Logan 1  1  0  0  0  0  5  1  1  1  0  0  0  0  13           418 000
+Desjardins Andrew 1  0  0  0  0  0  0  0  1  0  2  0  0  0  3           243 000
+Goodrow Barclay 1  0  0  0  0  0  0  3  0  0  0  0  0  0  2           197 000
+Hertl Tomas 1  0  1  0  0  0  1  0  1  0  0  0  0  0  6           331 000
+Kennedy Tyler 1  0  0  0  0  0  0  1  0  0  0  0  0  0  1           276 000
+Marleau Patrick 1  1  1  0  0  0  3  2  1  0  0  0  1  0  16           406 000
+McGinn Tye 1  0  0  0  0  0  1  1  0  0  0  0  0  0  2           222 000
+Nieto Matthew 1  0  0  0  0  0  1  0  0  0  0  0  0  0  1           266 000
+Pavelski Joe 1  0  1  0  0  0  3  0  3  1  0  0  0  0  10           420 000
+Scott John 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           205 000
+Sheppard James 1  0  0  0  0  0  0  2  0  0  0  0  0  0  1           261 000
+Thornton Joe 1  0  1  0  0  0  0  0  1  0  0  0  0  0  5           380 000
+Torres Raffi 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           285 000
+Wingels Tommy 1  0  0  0  0  0  1  6  1  0  2  0  0  0  7           367 000
+St. Louis
+Maalivahdit
+Allen Jake 1  0  0  0  1  0  26  4  0  0  0  0  0  1               296 000
+Elliott Brian 0  0  0  0  0  0  0  0  0  0  0  0  0  0               325 000
+Puolustajat
+Bouwmeester Jay 1  0  0  0  0  0  4  0  1  -3  0  0  0  0  -3               307 000
+Butler Chris 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               240 000
+Cole Ian 1  0  0  0  0  0  1  1  1  0  0  0  0  0  3               248 000
+Gunnarsson Carl 1  0  0  0  0  0  2  2  2  0  0  0  0  0  3               278 000
+Jackman Barret 1  0  0  0  0  0  2  1  4  -1  0  0  0  0  2               282 000
+Pietrangelo Alex 1  0  0  0  0  0  2  2  5  -1  0  0  0  0  3               393 000
+Shattenkirk Kevin 1  0  0  0  0  0  1  0  1  -1  0  0  0  0  0               395 000
+Hyokkaajat
+Backes David 1  0  0  0  0  0  1  6  1  -1  0  0  0  0  4           384 000
+Berglund Patrik 1  0  0  0  0  0  1  1  0  0  0  0  0  0  2           302 000
+Lapierre Maxim 1  0  0  0  0  0  2  0  0  0  0  0  0  0  1           266 000
+Lehtera Jori 1  0  1  0  0  0  2  1  0  0  0  0  0  0  6           366 000
+Lindstrom Joakim 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           265 000
+Oshie T.J. 1  0  0  0  0  0  2  0  0  -3  0  0  0  0  -2           348 000
+Ott Steve 1  0  0  0  0  0  1  3  1  0  0  0  0  0  4           299 000
+Paajarvi Magnus 1  0  0  0  0  0  3  0  0  0  4  0  0  0  6           206 000
+Porter Chris 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           240 000
+Reaves Ryan 1  0  0  0  0  0  0  2  0  0  0  0  0  0  1           236 000
+Schwartz Jaden 1  0  1  0  0  0  2  2  0  -1  0  0  0  0  5           380 000
+Stastny Paul 1  0  0  0  0  0  1  1  0  -3  0  0  0  0  -1           344 000
+Steen Alexander 1  0  0  0  0  0  2  0  1  -1  0  0  0  0  1           371 000
+Tarasenko Vladimir 1  1  0  0  0  0  3  0  0  0  0  0  0  0  8           418 000
+Tampa Bay
+Maalivahdit
+Bishop Ben 1  0  0  0  1  0  16  4  0  0  0  0  0  -3               327 000
+Nabokov Evgeni 0  0  0  0  0  0  0  0  0  0  0  0  0  0               290 000
+Puolustajat
+Barberio Mark 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               200 000
+Brewer Eric 1  0  0  0  0  0  1  6  2  0  0  0  0  0  5               285 000
+Carle Matthew 1  0  0  0  0  0  1  1  0  -1  0  0  0  0  0               265 000
+Garrison Jason 1  0  0  0  0  0  0  1  1  0  0  0  0  0  2               362 000
+Gudas Radko 1  0  0  0  0  0  3  3  4  -1  2  0  0  0  6               336 000
+Hedman Victor 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               385 000
+Ohlund Mattias 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               230 000
+Stralman Anton 1  0  0  0  0  0  1  2  1  -3  0  0  0  0  -3               357 000
+Sustr Andrej 1  0  0  0  0  0  1  3  2  1  0  0  0  0  7               222 000
+Hyokkaajat
+Boyle Brian 1  0  0  0  0  0  1  3  0  -1  2  0  0  0  4           344 000
+Brown J.T. 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           245 000
+Callahan Ryan 1  0  0  0  0  0  2  2  1  -1  0  0  0  0  2           397 000
+Connolly Brett 1  0  0  0  0  0  3  3  1  -2  0  0  0  0  3           258 000
+Drouin Jonathan 1  0  0  0  0  0  0  2  0  -2  0  0  0  0  -1           264 000
+Filppula Valtteri 1  0  0  0  0  0  3  0  1  -1  0  0  0  0  2           362 000
+Johnson Tyler 1  0  0  0  0  0  0  0  0  -1  0  0  0  0  -1           379 000
+Killorn Alex 1  1  0  1  0  0  2  2  0  0  0  0  0  0  12           292 000
+Kucherov Nikita 1  0  1  0  0  0  1  2  1  1  0  0  0  0  9           294 000
+Morrow Brenden 1  0  0  0  0  0  1  2  0  -1  2  0  0  0  3           273 000
+Namestnikov Vladislav 1  0  0  0  0  0  1  0  2  1  0  0  0  0  4           204 000
+Palat Ondrej 1  0  0  0  0  0  2  0  2  0  0  0  0  0  2           352 000
+Paquette Cedric 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           270 000
+Stamkos Steven 1  1  0  0  0  0  5  1  0  0  0  0  0  0  10           500 000
+Toronto
+Maalivahdit
+Bernier Jonathan 1  0  0  1  0  0  26  2  0  0  0  1  0  12               332 000
+Reimer James 0  0  0  0  0  0  0  0  0  0  0  0  0  0               315 000
+Puolustajat
+Franson Cody 1  0  1  0  0  0  1  3  3  1  0  0  0  0  14               374 000
+Gardiner Jake 1  0  0  0  0  0  2  1  0  -1  0  0  0  0  0               260 000
+Phaneuf Dion 1  0  1  0  0  0  1  1  5  1  0  0  0  0  14               414 000
+Polak Roman 1  1  1  0  0  0  1  4  1  1  0  0  0  0  22               307 000
+Rielly Morgan 1  0  0  0  0  0  0  2  1  1  0  0  0  0  5               275 000
+Robidas Stephane 1  0  0  0  0  0  0  3  3  1  2  0  0  0  9               284 000
+Hyokkaajat
+Ashton Carter 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           185 000
+Booth David 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           300 000
+Bozak Tyler 1  0  2  0  0  0  1  0  0  2  0  0  0  0  13           378 000
+Clarkson David 1  1  0  0  0  0  1  2  0  -1  0  1  0  0  8           323 000
+Holland Peter 1  0  0  0  0  0  0  0  0  -1  0  0  0  0  -1           264 000
+Kadri Nazem 1  0  0  0  0  0  0  1  0  -1  0  0  0  0  0           340 000
+Kessel Phil 1  0  1  0  0  0  5  0  0  1  0  0  0  0  9           449 000
+Komarov Leo 1  0  0  0  0  0  0  4  0  1  2  0  0  0  6           326 000
+Kozun Brandon 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           240 000
+Leivo Josh 1  0  0  0  0  0  2  1  0  1  0  0  0  0  4           239 000
+Lupul Joffrey 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           370 000
+Panik Richard 1  1  0  0  0  0  1  1  1  1  0  0  0  0  11           226 000
+Santorelli Mike 1  0  0  0  0  0  1  1  1  0  0  0  0  0  3           288 000
+Smith Trevor 1  0  0  0  0  0  0  0  0  1  0  0  0  0  2           217 000
+van Riemsdyk James 1  2  0  0  1  0  5  3  0  1  2  0  0  1  26           411 000
+Winnik Daniel 1  0  1  0  0  0  0  1  2  1  0  0  0  0  8           298 000
+Vancouver
+Maalivahdit
+Lack Eddie 1  0  0  0  0  1  23  3  0  0  0  0  0  4               264 000
+Miller Ryan 0  0  0  0  0  0  0  0  0  0  0  0  0  0               330 000
+Puolustajat
+Bieksa Kevin 1  0  0  0  0  0  1  1  5  2  2  0  0  0  13               338 000
+Edler Alexander 1  0  1  0  0  0  3  2  4  1  0  1  0  0  15               360 000
+Hamhuis Dan 1  0  0  0  0  0  0  0  0  0  0  0  0  0  0               295 000
+Sbisa Luca 1  0  0  0  0  0  1  3  2  -1  0  0  0  0  2               277 000
+Stanton Ryan 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               260 000
+Tanev Christopher 1  0  1  0  0  0  0  1  4  0  2  0  0  0  11               251 000
+Weber Yannick 1  0  0  0  0  0  1  0  1  -2  0  0  0  0  -2               278 000
+Hyokkaajat
+Bonino Nick 1  0  0  0  0  0  3  1  1  0  0  0  0  0  4           374 000
+Burrows Alexandre 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           360 000
+Dorsett Derek 1  0  1  0  0  0  4  2  0  1  0  0  0  0  9           274 000
+Hansen Jannik 1  1  0  0  0  0  1  2  0  1  0  0  0  0  10           285 000
+Higgins Chris 1  0  0  0  0  0  2  1  0  0  0  0  0  0  2           367 000
+Horvat Bo 1  1  0  0  0  0  1  0  0  1  0  0  0  1  12           247 000
+Kassian Zack 1  0  1  0  0  0  1  1  0  -1  2  0  0  0  7           272 000
+Matthias Shawn 1  0  0  0  0  0  1  2  0  -2  0  0  0  0  0           240 000
+Richardson Brad 1  0  0  0  0  0  1  4  1  -2  0  0  0  0  2           262 000
+Sedin Daniel 1  0  1  0  0  0  2  1  0  1  0  0  0  0  8           403 000
+Sedin Henrik 1  0  1  0  0  0  2  0  0  1  0  0  0  0  7           392 000
+Sestito Tom 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           210 000
+Vey Linden 1  0  0  0  0  0  1  0  0  0  0  0  0  0  1           206 000
+Vrbata Radim 1  1  0  0  0  0  3  0  0  1  0  0  0  0  10           390 000
+Washington
+Maalivahdit
+Holtby Braden 1  0  0  1  0  0  27  2  0  0  0  0  0  10               330 000
+Peters Justin 0  0  0  0  0  0  0  0  0  0  0  0  0  0               275 000
+Puolustajat
+Alzner Karl 1  0  0  0  0  0  0  3  1  1  0  0  0  0  6               256 000
+Carlson John 1  0  0  0  0  0  2  2  0  2  0  0  0  0  8               363 000
+Erskine John 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               265 000
+Green Mike 1  0  0  0  0  0  2  2  0  -2  0  0  0  0  -2               378 000
+Hillen Jack 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               245 000
+Niskanen Matt 1  0  0  0  0  0  1  3  2  1  0  0  0  0  7               332 000
+Orlov Dmitry 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               260 000
+Orpik Brooks 1  0  1  0  0  0  0  6  6  2  0  1  0  0  19               299 000
+Schmidt Nate 1  0  0  0  0  0  0  1  0  -2  0  0  0  0  -3               197 000
+Hyokkaajat
+Backstrom Nicklas 1  1  1  0  0  0  1  0  1  2  0  0  0  0  16           421 000
+Beagle Jay 1  0  1  0  0  0  0  2  0  0  0  0  0  0  5           220 000
+Brouwer Troy 1  0  0  0  0  0  6  1  0  0  0  0  0  0  4           349 000
+Brown Chris 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           180 000
+Burakovsky Andre 1  0  0  0  0  0  1  0  1  0  0  0  0  0  2           267 000
+Chimera Jason 1  1  0  0  0  0  1  3  0  0  0  0  0  0  9           299 000
+Fehr Eric 1  0  0  0  0  0  2  1  0  -1  0  0  0  0  1           306 000
+Johansson Marcus 1  0  0  0  0  0  1  1  0  0  0  0  0  0  2           287 000
+Kuznetsov Evgeny 1  0  0  0  0  0  0  0  0  -1  0  0  0  0  -1           279 000
+Laich Brooks 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           325 000
+Latta Michael 1  0  0  0  0  0  0  1  0  -1  0  0  0  0  0           195 000
+O'Brien Liam 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           225 000
+Ovechkin Alex 1  1  1  0  1  0  4  3  1  2  0  0  0  1  24           519 000
+Volpatti Aaron 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           205 000
+Ward Joel 1  0  1  0  0  0  2  1  0  0  0  0  0  0  6           341 000
+Wilson Tom 1  0  0  0  0  0  0  5  0  1  2  0  0  0  7           252 000
+Winnipeg
+Maalivahdit
+Hutchinson Michael 0  0  0  0  0  0  0  0  0  0  0  0  0  0               265 000
+Pavelec Ondrej 1  0  0  0  1  0  23  4  0  0  0  0  0  -1               314 000
+Puolustajat
+Bogosian Zach 1  0  0  0  0  0  2  2  2  -2  0  0  0  0  -1               334 000
+Clitsome Grant 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               265 000
+Enstrom Tobias 1  0  0  0  0  0  2  1  4  -2  2  0  0  0  2               317 000
+Pardy Adam 1  0  0  0  0  0  0  2  1  2  2  0  0  0  10               240 000
+Postma Paul 1  0  0  0  0  0  0  0  1  2  0  0  0  0  7               222 000
+Stuart Mark 1  0  0  0  0  0  1  2  1  0  0  0  0  0  3               298 000
+Trouba Jacob 1  0  1  0  0  0  2  2  2  0  0  0  0  0  9               329 000
+Hyokkaajat
+Byfuglien Dustin 1  1  0  0  0  0  3  2  0  0  2  0  0  0  11           371 000
+Frolik Michael 1  0  1  0  0  0  0  0  0  1  0  0  0  0  6           286 000
+Galiardi T.J. 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           270 000
+Halischuk Matt 1  0  0  0  0  0  2  0  0  0  0  0  0  0  1           226 000
+Kane Evander 1  0  1  0  0  0  2  5  0  0  0  0  0  0  8           403 000
+Ladd Andrew 1  0  0  0  0  0  4  1  1  -1  0  0  0  0  3           378 000
+Little Bryan 1  0  0  0  0  0  2  0  0  -2  0  0  0  0  -1           369 000
+Lowry Adam 1  1  0  0  0  0  1  2  1  1  0  0  0  0  11           216 000
+Peluso Anthony 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           210 000
+Perreault Mathieu 1  1  1  0  0  0  4  1  1  1  0  1  0  0  17           317 000
+Scheifele Mark 1  0  1  0  0  0  1  0  0  1  0  0  0  0  7           327 000
+Slater Jim 1  0  0  0  0  0  0  0  0  0  0  0  0  0  0           210 000
+Thorburn Chris 1  0  0  0  0  0  1  0  0  0  0  0  0  0  1           236 000
+Wheeler Blake 1  0  0  0  0  0  4  0  0  -1  0  0  0  0  1           386 000
