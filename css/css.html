@@ -73,12 +73,7 @@ table th {
 	color : white;
 	-moz-border-radius: 0px 0px 0px 0px;
 }
-table th.asc {
-	background-color: red;
-}
-table th.des {
-	background-color: green;
-}
+
 table tr:hover td {
 	background-color: #B0C4DE;
 }
@@ -89,6 +84,38 @@ table td {
 	border-color: gray;
 	-moz-border-radius: 0px 0px 0px 0px;
 }
+
+form {
+   display:inline;
+   margin:0;
+   padding:0;
+}
+
+
+
+
+table.dataTable thead .sorting_asc {
+  background-color: red;
+}
+table.dataTable thead .sorting_desc {
+  background-color: green;
+}
+
+table.dataTable thead .sorting_asc,
+table.dataTable thead .sorting_desc,
+table.dataTable thead .sorting {
+  cursor: pointer;
+  *cursor: hand;
+}
+
+tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.dataTables_wrapper .dataTables_filter {
+  display: none;
+}
+
 table td.td1 {
 	background-color: white;
 }
@@ -96,9 +123,4 @@ table td.td2 {
 	background-color: #D3D3D3;
 }
 
-form {
-   display:inline;
-   margin:0;
-   padding:0;
-}
 </style>
