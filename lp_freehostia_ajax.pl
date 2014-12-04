@@ -55,7 +55,6 @@ my $param_ottelut           = $cgi->param('ottelut');
 my $param_arvo              = $cgi->param('arvo');
 my $param_lpp               = $cgi->param('lpp');
 my $param_joukkue           = $cgi->param('joukkue');
-my $param_pelipaikka        = $cgi->param('pelipaikka');
 my $param_remove_players    = $cgi->param('remove_players');
 my $param_kokoonpanot       = $cgi->param('kokoonpanot');
 my $param_selected_teams    = $cgi->param('selected_teams');
@@ -78,7 +77,6 @@ if (!defined $param_vuosi) {
         $param_vuosi = 2014;
     }
 }
-if (!defined $param_pelipaikka)        { $param_pelipaikka = "Pelaaja"; }
 if (!defined $param_sub)               { $param_sub = ""; }
 if (!defined $param_graafi)            { $param_graafi = "LPP ennuste"; }
 if (!defined $param_liiga)             { $param_liiga = "sm_liiga"; }
@@ -259,6 +257,7 @@ my $pjx = new CGI::Ajax( 'print_game_days_div'              => \&print_game_days
 			 'print_kokoonpanot_div'            => \&print_kokoonpanot,
 			 'print_start_day_div'              => \&select_days_start_form,
 			 'print_end_day_div'                => \&select_days_end_form,
+			 'print_optimi_ja_max_pelatut_pelit_div'      => \&run_optimi_joukkue_ja_select_max_pelatut_pelit,
 			 'calculate_game_result_div'        => \&calculate_game_result,
 			 'tallenna_kokoonpanot_div'         => \&tallenna_kokoonpanot,
                          'alustus'                          => \&alustus);
@@ -455,14 +454,12 @@ sub update_menus {
     $html .= "<li><a href=\"mailto:jepponen\@gmail.com\">eMail</a></li>\n";
     $html .= "<li><A HREF=\"#\" id=\"status\">Status<\/a></li>\n";    
     $html .= "<li><A HREF=\"$script_name?sub=etsin_toita&liiga=$param_liiga\"><font color=\"red\">Etsin t&ouml;it&auml;</font></A></li>\n";
- 
     $html .= "</ul>\n";
     $html .= "</div>\n";
-    
-    $html .= "<br><br>\n";
-
     my $status = `cat status.htm`;
     $html .= "<div id=\"status_down\" style=\"display:none; width:600px; height:250px; padding:5px; border:5px solid gray; margin:0px; overflow-y:scroll;\">$status</div>";
+    
+    $html .= "<br><br>\n";
     
     if ($param_sub =~ /start_page|^\s*$/) { $html .= print_start_page() };
     if ($param_sub =~ /player_list/)      { $html .= print_player_list_form() };
@@ -488,28 +485,13 @@ sub print_etsin_toita {
     return $html;
 }
 
-sub print_optimi_joukkue_form {
-    alustus();
-    read_player_lists();
-
-    my $a_script = "print_optimi_joukkue_div( ['read_players_from','ottelut','arvo','liiga','joukkueen_hinta','remove_players','selected_teams','start_day','end_day','a_script'";
-    my @paikka = muuttujien_alustusta("paikka");
-    foreach my $paikka (@paikka) {
-	$a_script .= ",'$paikka->[4]'";
-    }
-    $a_script .= "],['optimi_joukkue_div'] );";
-    my $a_script_start = $a_script . "print_end_day_div( ['start_day','end_day','a_script_end','liiga'],['end_day_div'] );";
-    my $a_script_end = $a_script . "print_start_day_div( ['start_day','end_day','a_script_start','liiga'],['start_day_div'] );";
-
-    my $html;
-    $html .= "<input type='hidden' name='a_script' id='a_script' value=\"$a_script\">\n";
-    $html .= "<center>\n";
-    $html .= "T&#228;ll&#228; sivulla voit koota laskennallisia optimikokoonpanoja antamillasi ehdoilla.<br>\n";
-
-    $html .= "Joukkueen arvo tE\n";
-    $html .= "<input type='text' name='joukkueen_hinta' id='joukkueen_hinta' SIZE='6' MAXLENGTH='6' VALUE=\"$param_joukkueen_hinta\">\n";
-
-    $html .= "Pelatut pelit v&#228;h.: <select name=\"ottelut\" id=\"ottelut\" onchange=\"$a_script\">\n";
+sub select_max_pelatut_pelit {
+    my $a_script;
+    if (defined $param_a_script) {
+        $a_script = $param_a_script;
+    } else { $a_script = shift; }
+    
+    my $html .= "Pelatut pelit v&#228;h.: <select name=\"ottelut\" id=\"ottelut\" onchange=\"$a_script\">\n";
     my @ottelut_taulukko = (0 .. $max_pelatut_pelit);
     foreach (@ottelut_taulukko) {
         if (defined $param_ottelut && $_ == $param_ottelut) {
@@ -521,6 +503,44 @@ sub print_optimi_joukkue_form {
         }
     }
     $html .= "<\/select>\n";
+
+    return $html;
+}
+
+sub run_optimi_joukkue_ja_select_max_pelatut_pelit {
+    my $html1 = print_optimi_joukkue();
+    my $html2 = select_max_pelatut_pelit();
+    
+    return ($html1, $html2);
+}
+
+sub print_optimi_joukkue_form {
+    alustus();
+    read_player_lists();
+
+    # $a_script_jakso siksi, etta pitaa paivittaa $max_pelatut_pelit, kun valitaan eri jakso
+    my $a_script_jakso = "print_optimi_ja_max_pelatut_pelit_div( ['read_players_from','ottelut','arvo','liiga','joukkueen_hinta','remove_players','selected_teams','start_day','end_day','a_script'";
+
+    my $a_script = "print_optimi_joukkue_div( ['read_players_from','ottelut','arvo','liiga','joukkueen_hinta','remove_players','selected_teams','start_day','end_day','a_script'";
+    my @paikka = muuttujien_alustusta("paikka");
+    foreach my $paikka (@paikka) {
+	$a_script .= ",'$paikka->[4]'";
+	$a_script_jakso .= ",'$paikka->[4]'";
+    }
+    $a_script .= "],['optimi_joukkue_div'] );";
+    $a_script_jakso .= "],['optimi_joukkue_div','max_pelatut_pelit_div'] );";
+    my $a_script_start = $a_script . "print_end_day_div( ['start_day','end_day','a_script_end','liiga'],['end_day_div'] );";
+    my $a_script_end = $a_script . "print_start_day_div( ['start_day','end_day','a_script_start','liiga'],['start_day_div'] );";
+
+    my $html;
+    $html .= "<input type='hidden' name='a_script' id='a_script' value=\"$a_script\">\n";
+    $html .= "<center>\n";
+    $html .= "T&#228;ll&#228; sivulla voit koota laskennallisia optimikokoonpanoja antamillasi ehdoilla.<br>\n";
+
+    $html .= "Joukkueen arvo tE\n";
+    $html .= "<input type='text' name='joukkueen_hinta' id='joukkueen_hinta' SIZE='6' MAXLENGTH='6' VALUE=\"$param_joukkueen_hinta\">\n";
+
+    $html .= "<span id='max_pelatut_pelit_div'>" . select_max_pelatut_pelit($a_script) . "</span>\n";
 
     # Arvo
     $html .= "Pelaajan arvo alle: \n";
@@ -536,7 +556,7 @@ sub print_optimi_joukkue_form {
     $html .= "<\/select>\n";
 
     # Jakso
-    $html .= "<select name=\"read_players_from\" id=\"read_players_from\" onchange=\"$a_script\">\n";
+    $html .= "<select name=\"read_players_from\" id=\"read_players_from\" onchange=\"$a_script_jakso\">\n";
     my @jakso = muuttujien_alustusta("jakso");
     foreach my $current_arvo (@jakso) {
         if ($current_arvo eq $param_read_players_from) {
