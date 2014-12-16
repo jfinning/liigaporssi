@@ -206,6 +206,7 @@ sub sm_kokoonpanot {
     	    if (/^\s*$/) { next; }
     	    if (length($_) <= 4) { next; }
             s/-(\s+)/0$1/g;
+            if (/LPP\/O/) { next; }
 
             if (/^\s*\D+\s+\D+\s*$/) {
 	        $final_player_list .= "$_ ";
@@ -264,6 +265,7 @@ sub nhl_kokoonpanot {
     	    if (/^\s*$/) { next; }
     	    if (length($_) <= 4) { next; }
             s/-(\s+)/0$1/g;
+            if (/HGMP\/O/) { next; }
 
             if (/^\s*\D+\s+\D+\s*$/) {
 	        $final_player_list .= "$_ ";
