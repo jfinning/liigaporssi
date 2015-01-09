@@ -137,6 +137,7 @@ sub sm_kokoonpanot_kaikki {
 	if (/^\s*$/) { next; }
 	if (length($_) <= 4) { next; }
 	s/-(\s+)/0$1/g;
+        if (/LPP\/O/) { next; }
 	
 	my $line = $_;
 
@@ -165,7 +166,7 @@ sub sm_kokoonpanot_kaikki {
     #Tsekataan, etta joka joukkueelta saadaan pelaajalista. Ollut joskus ongelmia
     if ($final_player_list =~ /Ei hakutuloksia/) { exit; }
 
-    open FILE, ">2014/player_list_period3.txt" or die "Cant open 2014/player_list_period3.txt\n"; 
+    open FILE, ">2014/player_list_period4.txt" or die "Cant open 2014/player_list_period4.txt\n"; 
     
     my @player_list = split(/\n/, $final_player_list);
     my $mikko_lehtonen = 0;
@@ -222,7 +223,7 @@ sub sm_kokoonpanot {
         }
     }
     
-    open FILE, ">2014/player_list_period3.txt" or die "Cant open 2014/player_list_period3.txt\n"; 
+    open FILE, ">2014/player_list_period4.txt" or die "Cant open 2014/player_list_period4.txt\n"; 
     
     my @player_list = split(/\n/, $final_player_list);
     my $mikko_lehtonen = 0;
@@ -281,7 +282,7 @@ sub nhl_kokoonpanot {
         }
     }
     
-    open FILE, ">2014/player_list_period2_nhl.txt" or die "Cant open 2014/player_list_period2_nhl.txt\n"; 
+    open FILE, ">2014/player_list_period3_nhl.txt" or die "Cant open 2014/player_list_period3_nhl.txt\n"; 
     
     my @player_list = split(/\n/, $final_player_list);
     foreach (@player_list) {

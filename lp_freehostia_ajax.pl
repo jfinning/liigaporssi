@@ -83,9 +83,9 @@ if (!defined $param_liiga)             { $param_liiga = "sm_liiga"; }
 if (!defined $param_joukkue)           { $param_joukkue = "Joukkue"; }
 if (!defined $param_read_players_from) {
     if ($param_liiga =~ /nhl/) {
-        $param_read_players_from = "Jakso 2";
-    } else {
         $param_read_players_from = "Jakso 3";
+    } else {
+        $param_read_players_from = "Jakso 4";
     }
 }
 
@@ -1456,7 +1456,7 @@ sub select_teams_form {
     foreach (sort keys %kaikkipelit) {
         $html .= "<option>$_</option>\n";
     }
-    $html .= "</select> pelej&#228; <span id='peli_count_div'>$count</span>\n";
+    $html .= "</select> jolla on pelej&#228; <span id='peli_count_div'>$count</span>\n";
     
     return $html;
 }
@@ -1730,12 +1730,22 @@ sub read_player_list ($$) {
 	    next;
         }
 	
-	#                  1       2       3       4       5       6       7       8       9       10         11        12               13          14    15
-        my $parse = '^\s*(.*?)\s*(\d+)\s*(\d+)\s*(\d+)\s*(\d+)\s*(\d+)\s*(\d+)\s*(\d+)\s*(\d+)\s*(\d+)\s*(-\d+|\d+)\s*(\d+)\s*.*?\s*(-\d+|\d+)\s+(\d\d\d) (\d)\d\d$';
+	#                  1       2       3       4       5       6          7          8       9       10        11         12               13        14      15  
+        my $parse = '^\s*(.*?)\s*(\d+)\s*(\d+)\s*(\d+)\s*(\d+)\s*(\d+)\s*(\d+\s*\d+)\s*(\d+)\s*(\d+)\s*(\d+)\s*(-\d+|\d+)\s*(\d+)\s*.*?\s*(-\d+|\d+)\s+(\d\d\d) (\d)\d\d$';
 	if ($param_liiga =~ /nhl/ && $pelipaikka !~ /Maalivahti/) {
-	    #               1       2       3       4       5       6       7    8    9           10           11       12              13          14     15
-	    $parse = '^\s*(.*?)\s*(\d+)\s*(\d+)\s*(\d+)\s*(\d+)\s*(\d+)\s*(\d+)(\s*)(\d+)\s*(\d+\s*\d+)\s*(-\d+|\d+)\s*(\d+)\s*.*?\s*(-\d+|\d+)\s+(\d\d\d) (\d)\d\d$';
+	    #               1       2       3       4       5       6           7      8    9          10            11        12               13        14      15
+	    $parse = '^\s*(.*?)\s*(\d+)\s*(\d+)\s*(\d+)\s*(\d+)\s*(\d+)\s*(\d+\s*\d+)(\s*)(\d+)\s*(\d+\s*\d+)\s*(-\d+|\d+)\s*(\d+)\s*.*?\s*(-\d+|\d+)\s+(\d\d\d) (\d)\d\d$';
 	}
+	# Tama siksi, etta oli tullut yksi solu taulukkoon lisaa jaksossa Liiga 2014/4 ja NHL 2014/3
+	if ( $param_vuosi < 2014 || ($param_vuosi == 2014 && $players_file =~ /period1|period2|period3/ && $param_liiga eq "sm_liiga") ||  ($param_vuosi == 2014 && $players_file =~ /period1|period2/ && $param_liiga eq "nhl")) {
+	    #                  1       2       3       4       5       6       7       8       9       10         11        12               13          14    15
+            $parse = '^\s*(.*?)\s*(\d+)\s*(\d+)\s*(\d+)\s*(\d+)\s*(\d+)\s*(\d+)\s*(\d+)\s*(\d+)\s*(\d+)\s*(-\d+|\d+)\s*(\d+)\s*.*?\s*(-\d+|\d+)\s+(\d\d\d) (\d)\d\d$';
+	    if ($param_liiga =~ /nhl/ && $pelipaikka !~ /Maalivahti/) {
+	        #               1       2       3       4       5       6       7    8    9           10           11       12              13          14     15
+	        $parse = '^\s*(.*?)\s*(\d+)\s*(\d+)\s*(\d+)\s*(\d+)\s*(\d+)\s*(\d+)(\s*)(\d+)\s*(\d+\s*\d+)\s*(-\d+|\d+)\s*(\d+)\s*.*?\s*(-\d+|\d+)\s+(\d\d\d) (\d)\d\d$';
+	    }
+	}
+	
 	if (/$parse/) {
 	    $pelaaja{$1}{ottelut} += $2;
 	    $pelaaja{$1}{maalit} += $3;
