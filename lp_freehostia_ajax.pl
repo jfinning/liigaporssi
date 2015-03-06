@@ -83,9 +83,9 @@ if (!defined $param_liiga)             { $param_liiga = "sm_liiga"; }
 if (!defined $param_joukkue)           { $param_joukkue = "Joukkue"; }
 if (!defined $param_read_players_from) {
     if ($param_liiga =~ /nhl/) {
-        $param_read_players_from = "Jakso 3";
+        $param_read_players_from = "Jakso 5";
     } else {
-        $param_read_players_from = "Jakso 4";
+        $param_read_players_from = "Jakso 5";
     }
 }
 
@@ -453,7 +453,6 @@ sub update_menus {
     $html .= "<li><A HREF=\"http://liigaporssi.freehostia.com/mjguest\" target=\"_blank\">Vieraskirja</A></li>\n";
     $html .= "<li><a href=\"mailto:jepponen\@gmail.com\">eMail</a></li>\n";
     $html .= "<li><A HREF=\"#\" id=\"status\">Status<\/a></li>\n";    
-    $html .= "<li><A HREF=\"$script_name?sub=etsin_toita&liiga=$param_liiga\"><font color=\"red\">Etsin t&ouml;it&auml;</font></A></li>\n";
     $html .= "</ul>\n";
     $html .= "</div>\n";
     my $status = `cat status.htm`;
