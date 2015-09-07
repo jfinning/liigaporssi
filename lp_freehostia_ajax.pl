@@ -83,7 +83,7 @@ if (!defined $param_liiga)             { $param_liiga = "sm_liiga"; }
 if (!defined $param_joukkue)           { $param_joukkue = "Joukkue"; }
 if (!defined $param_read_players_from) {
     if ($param_liiga =~ /nhl/) {
-        $param_read_players_from = "Jakso 5";
+        $param_read_players_from = "Jakso PO";
     } else {
         $param_read_players_from = "Jakso PO";
     }
