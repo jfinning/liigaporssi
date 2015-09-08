@@ -6,7 +6,7 @@ use HTML::Parser;
 require LWP::UserAgent;
 
 my $sub;
-my @sm_joukkue = ("Sport", "SaiPa", "HIFK", "Pelicans", "HPK", "Lukko", "KooKoo", "Assat", "Tappara", "TPS", "Karpat", "Ilves", "JYP", "KalPa", "Blues");
+my @sm_joukkue = ("Blues", "HIFK", "HPK", "Ilves", "JYP", "KalPa", "KooKoo", "Karpat", "Lukko", "Pelicans", "SaiPa", "Sport", "Tappara", "TPS", "Assat");
 #my @sm_joukkue = ("JYP", "Karpat", "Lukko", "Tappara");
 #my @nhl_joukkue = ("Anaheim", "Arizona", "Boston", "Buffalo", "Calgary", "Carolina", "Chicago", "Colorado", "Columbus", "Dallas", "Detroit", "Edmonton", "Florida", "Los Angeles", "Minnesota", "Montreal", "Nashville", "New Jersey", "NY Islanders", "NY Rangers", "Ottawa", "Philadelphia", "Pittsburgh", "San Jose", "St. Louis", "Tampa Bay", "Toronto", "Vancouver", "Washington", "Winnipeg");
 my @nhl_joukkue = ("Anaheim", "Calgary", "Chicago", "Detroit", "Minnesota", "Montreal", "Nashville", "NY Islanders", "NY Rangers", "Ottawa", "Pittsburgh", "St. Louis", "Tampa Bay", "Vancouver", "Washington", "Winnipeg");
@@ -25,6 +25,7 @@ sub fetch_page($) {
     $ua->env_proxy;
 
     my $data = $ua->get($link);
+    #my $data = `curl $link`;
 
     if ($data->is_success) {
         return $data->decoded_content
@@ -63,7 +64,7 @@ sub sm_sarjataulukko {
 	    $pisteet = $1;
 	    
 	    print FILE "$sijoitus. $joukkue $ottelut $pisteet\n";
-	    if ($sijoitus == 14) { last; }
+	    if ($sijoitus == 15) { last; }
 	    $column = 0;
 	    $sijoitus = undef;
 	}
@@ -120,7 +121,8 @@ sub sm_kokoonpanot_kaikki {
     my $final_player_list = "";
 
     my $data = fetch_page("http://www.liigaporssi.fi/team/search-players?player_position=all&player_team=all&player_value=all&type=player_search");
-
+    #my $data = fetch_page("https://www.liigaporssi.fi/team/search-players?player_position=all\&player_team=all\&player_value=all\&type=player_search");
+    
     $data =~ s/player_value\">(.*?)\&euro;</player_value\"> $1 </g;
     $data =~ s/\">(.*?)</\"> $1 </g;
 
@@ -189,6 +191,7 @@ sub sm_kokoonpanot {
         $final_player_list .= "$joukkue\n";
         #my $data = fetch_page("http://www.liigaporssi.fi/team/search-players?player_position=all&player_team=all&player_value=all&type=player_search");
         my $data = fetch_page("http://www.liigaporssi.fi/team/search-players?player_position=all&player_team=${joukkue}&player_value=all&type=player_search");
+        #my $data = fetch_page("http://www.liigaporssi.fi/team/search-players?player_position=all\&player_team=${joukkue}\&player_value=all\&type=player_search");
 
 	$data = modify_char($data);
 
