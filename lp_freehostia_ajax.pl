@@ -72,7 +72,7 @@ if (!defined $param_remove_players)    { $param_remove_players = ""; }
 if (!defined $param_kokoonpanot)       { $param_kokoonpanot = ""; }
 if (!defined $param_vuosi) {
     if ($param_liiga eq "sm_liiga") {
-        $param_vuosi = 2014;
+        $param_vuosi = 2015;
     } else {
         $param_vuosi = 2014;
     }
@@ -82,14 +82,14 @@ if (!defined $param_graafi)            { $param_graafi = "LPP ennuste"; }
 if (!defined $param_liiga)             { $param_liiga = "sm_liiga"; }
 if (!defined $param_joukkue)           { $param_joukkue = "Joukkue"; }
 if (!defined $param_read_players_from) {
-    if ($param_liiga =~ /nhl/) {
-        $param_read_players_from = "Jakso PO";
+    if ($param_liiga eq "sm_liiga") {
+        $param_read_players_from = "Jakso 1";
     } else {
         $param_read_players_from = "Jakso PO";
     }
 }
 
-my ($pelit, $sarjataulukko, $playoff_joukkueet, $jaljella_olevat_joukkueet);
+my ($pelit, $sarjataulukko);
 sub alustus {
     @all_day_list = ();
     @selected_day_list = ();
@@ -112,24 +112,6 @@ sub alustus {
     $pelit = "games_$param_liiga.txt";
     $sarjataulukko = "table_$param_liiga.txt";
     
-    if ($param_liiga =~ /sm_liiga/) {
-        if ($param_vuosi == 2014) {
-	    $playoff_joukkueet         = "Blues, HIFK, HPK, Ilves, JYP, KalPa, Karpat, Lukko, Pelicans, SaiPa, Sport, Tappara, TPS, Assat";
-            $jaljella_olevat_joukkueet = "Blues, HIFK, HPK, Ilves, JYP, KalPa, Karpat, Lukko, Pelicans, SaiPa, Sport, Tappara, TPS, Assat";
-	} else {
-	    $playoff_joukkueet         = "Blues, HIFK, HPK, Ilves, Jokerit, JYP, KalPa, Karpat, Lukko, Pelicans, SaiPa, Tappara, TPS, Assat";
-            $jaljella_olevat_joukkueet = "Blues, HIFK, HPK, Ilves, Jokerit, JYP, KalPa, Karpat, Lukko, Pelicans, SaiPa, Tappara, TPS, Assat";
-	}
-    } else {
-        if ($param_vuosi == 2014) {
-            $playoff_joukkueet         = "Anaheim, Arizona, Boston, Buffalo, Calgary, Carolina, Chicago, Colorado, Columbus, Dallas, Detroit, Edmonton, Florida, Los Angeles, Minnesota, Montreal, Nashville, New Jersey, NY Islanders, NY Rangers, Ottawa, Philadelphia, Pittsburgh, San Jose, St. Louis, Tampa Bay, Toronto, Vancouver, Washington, Winnipeg";
-            $jaljella_olevat_joukkueet = "Anaheim, Arizona, Boston, Buffalo, Calgary, Carolina, Chicago, Colorado, Columbus, Dallas, Detroit, Edmonton, Florida, Los Angeles, Minnesota, Montreal, Nashville, New Jersey, NY Islanders, NY Rangers, Ottawa, Philadelphia, Pittsburgh, San Jose, St. Louis, Tampa Bay, Toronto, Vancouver, Washington, Winnipeg";
-	} else {
-            $playoff_joukkueet         = "Anaheim, Boston, Buffalo, Calgary, Carolina, Chicago, Colorado, Columbus, Dallas, Detroit, Edmonton, Florida, Los Angeles, Minnesota, Montreal, Nashville, New Jersey, NY Islanders, NY Rangers, Ottawa, Philadelphia, Phoenix, Pittsburgh, San Jose, St. Louis, Tampa Bay, Toronto, Vancouver, Washington, Winnipeg";
-            $jaljella_olevat_joukkueet = "Anaheim, Boston, Buffalo, Calgary, Carolina, Chicago, Colorado, Columbus, Dallas, Detroit, Edmonton, Florida, Los Angeles, Minnesota, Montreal, Nashville, New Jersey, NY Islanders, NY Rangers, Ottawa, Philadelphia, Phoenix, Pittsburgh, San Jose, St. Louis, Tampa Bay, Toronto, Vancouver, Washington, Winnipeg";
-	}
-    }
-
     # Nama tehdaan loopissa olevien ehtojen takia
     if ($o_puolustaja2 =~ /Kaikki/ && $o_puolustaja1 !~ /Kaikki/) {
         $o_puolustaja2 = $o_puolustaja1;
@@ -281,7 +263,7 @@ sub muuttujien_alustusta ($) {
     if ($temp =~ /vuodet/) {
         my @vuodet;
 	if ($param_liiga =~ /sm_liiga/) {
-	    @vuodet = ("2009", "2010", "2011", "2012", "2013", "2014");
+	    @vuodet = ("2009", "2010", "2011", "2012", "2013", "2014", "2015");
 	} else {
 	    @vuodet = ("2010", "2011", "2012", "2013", "2014");
 	}
@@ -617,10 +599,8 @@ sub print_optimi_joukkue {
     my @top3_hyokkaajat = (-50, -50, -50, -50, -50, -50, -50, -50, -50, -50);
     
     foreach (sort {$pelaaja->{$a}->{arvo} <=> $pelaaja->{$b}->{arvo} || $pelaaja->{$a}->{ennuste_pisteet} <=> $pelaaja->{$b}->{ennuste_pisteet}} keys %{$pelaaja}) {
-	if ($playoff_joukkueet !~ $pelaaja->{$_}->{joukkue}) { next; }
 	if ($pelaaja->{$_}->{pelipaikka} =~ /Maalivahti/) {
 	    push (@maalivahdit_kaikki, "$_, $pelaaja->{$_}->{arvo} tE, Ennuste $pelaaja->{$_}->{ennuste_pisteet}");
-	    if ($jaljella_olevat_joukkueet !~ $pelaaja->{$_}->{joukkue}) { next; }
 	    if ($pelaaja->{$_}->{ottelut} < $param_ottelut) { next; }
             if ($pelaaja->{$_}->{ennuste_pisteet} <= 0) { next; }
 	    if ($param_remove_players =~ /$_/) { next; }
@@ -635,7 +615,6 @@ sub print_optimi_joukkue {
 	}
         if ($pelaaja->{$_}->{pelipaikka} =~ /Puolustaja/) {
 	    push (@puolustajat_kaikki, "$_, $pelaaja->{$_}->{arvo} tE, Ennuste $pelaaja->{$_}->{ennuste_pisteet}");
-	    if ($jaljella_olevat_joukkueet !~ $pelaaja->{$_}->{joukkue}) { next; }
 	    if ($pelaaja->{$_}->{ottelut} < $param_ottelut) { next; }
             if ($pelaaja->{$_}->{ennuste_pisteet} <= 0) { next; }
 	    if ($param_remove_players =~ /$_/) { next; }
@@ -650,7 +629,6 @@ sub print_optimi_joukkue {
 	}
         if ($pelaaja->{$_}->{pelipaikka} =~ /Hyokkaaja/) {
 	    push (@hyokkaajat_kaikki, "$_, $pelaaja->{$_}->{arvo} tE, Ennuste $pelaaja->{$_}->{ennuste_pisteet}");
-	    if ($jaljella_olevat_joukkueet !~ $pelaaja->{$_}->{joukkue}) { next; }
 	    if ($pelaaja->{$_}->{ottelut} < $param_ottelut) { next; }
             if ($pelaaja->{$_}->{ennuste_pisteet} <= 0) { next; }
 	    if ($param_remove_players =~ /$_/) { next; }
