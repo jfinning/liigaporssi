@@ -6,8 +6,8 @@ use HTML::Parser;
 require LWP::UserAgent;
 
 my $sub;
-#my @sm_joukkue = ("Blues", "HIFK", "HPK", "Ilves", "JYP", "KalPa", "Karpat", "Lukko", "Pelicans", "SaiPa", "Sport", "Tappara", "TPS", "Assat");
-my @sm_joukkue = ("JYP", "Karpat", "Lukko", "Tappara");
+my @sm_joukkue = ("Sport", "SaiPa", "HIFK", "Pelicans", "HPK", "Lukko", "KooKoo", "Assat", "Tappara", "TPS", "Karpat", "Ilves", "JYP", "KalPa", "Blues");
+#my @sm_joukkue = ("JYP", "Karpat", "Lukko", "Tappara");
 #my @nhl_joukkue = ("Anaheim", "Arizona", "Boston", "Buffalo", "Calgary", "Carolina", "Chicago", "Colorado", "Columbus", "Dallas", "Detroit", "Edmonton", "Florida", "Los Angeles", "Minnesota", "Montreal", "Nashville", "New Jersey", "NY Islanders", "NY Rangers", "Ottawa", "Philadelphia", "Pittsburgh", "San Jose", "St. Louis", "Tampa Bay", "Toronto", "Vancouver", "Washington", "Winnipeg");
 my @nhl_joukkue = ("Anaheim", "Calgary", "Chicago", "Detroit", "Minnesota", "Montreal", "Nashville", "NY Islanders", "NY Rangers", "Ottawa", "Pittsburgh", "St. Louis", "Tampa Bay", "Vancouver", "Washington", "Winnipeg");
 
@@ -34,7 +34,7 @@ sub fetch_page($) {
 }
 
 sub sm_sarjataulukko {
-    my $data = fetch_page("http://liiga.fi/tilastot/2014-2015/runkosarja/joukkueet/");
+    my $data = fetch_page("http://liiga.fi/tilastot/2015-2016/runkosarja/joukkueet/");
     my $sijoitus = undef;
     my $column = 0;
     my ($joukkue, $ottelut, $pisteet);
@@ -166,7 +166,7 @@ sub sm_kokoonpanot_kaikki {
     #Tsekataan, etta joka joukkueelta saadaan pelaajalista. Ollut joskus ongelmia
     if ($final_player_list =~ /Ei hakutuloksia/) { exit; }
 
-    open FILE, ">2014/player_list_playoff.txt" or die "Cant open 2014/player_list_playoff.txt\n"; 
+    open FILE, ">2015/player_list_period1.txt" or die "Cant open 2015/player_list_period1.txt\n"; 
     
     my @player_list = split(/\n/, $final_player_list);
     my $mikko_lehtonen = 0;
@@ -223,7 +223,7 @@ sub sm_kokoonpanot {
         }
     }
     
-    open FILE, ">2014/player_list_playoff.txt" or die "Cant open 2014/player_list_playoff.txt\n"; 
+    open FILE, ">2015/player_list_period1.txt" or die "Cant open 2015/player_list_period1.txt\n"; 
     
     my @player_list = split(/\n/, $final_player_list);
     my $mikko_lehtonen = 0;
@@ -282,7 +282,7 @@ sub nhl_kokoonpanot {
         }
     }
     
-    open FILE, ">2014/player_list_period5_nhl.txt" or die "Cant open 2014/player_list_period5_nhl.txt\n"; 
+    open FILE, ">2015/player_list_period1_nhl.txt" or die "Cant open 2015/player_list_period1_nhl.txt\n"; 
     
     my @player_list = split(/\n/, $final_player_list);
     foreach (@player_list) {
@@ -314,7 +314,7 @@ sub ottelulista ($) {
         if (/(\d\d)\.(\d\d)\./) {
 	    my $day_nro = $1;
 	    my $month_nro = $2;
-	    my $year_nro = 2014;
+	    my $year_nro = 2015;
 	    $game_date = "$year_nro-$month_nro-$day_nro";
 	    
 	    if ($current_date lt $game_date) { $day_found = 1; }
@@ -351,7 +351,7 @@ sub modify_char ($) {
 }
 
 sub sm_ottelu_id {
-    my $year_nro = 2014;
+    my $year_nro = 2015;
     my $new_game_list;
     my $day_count = 0;
     my %game_id;
