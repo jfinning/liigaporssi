@@ -1682,6 +1682,7 @@ sub read_player_list ($$) {
     my $players_file = shift;
     my %pelaaja = @_;
     my ($joukkue, $pelipaikka);
+    my %topics;
     
     open FILE, "$players_file" or die "Cant open $players_file\n"; 
     while (<FILE>) {
@@ -1691,6 +1692,7 @@ sub read_player_list ($$) {
 
 	if (/Maalivahdit/) {
 	    $pelipaikka = "Maalivahti";
+        
 	    next;
 	}
 	if (/Puolustajat/) {
@@ -1702,26 +1704,26 @@ sub read_player_list ($$) {
 	    next;
 	}
 
-        if (/^\s*(\D+)\s*$/) {
-            $joukkue = $1;
+    if (/^\s*(\D+)\s*$/) {
+        $joukkue = $1;
 	    next;
-        }
+    }
 	
 	#                  1       2       3       4       5       6          7          8       9       10        11         12               13        14      15  
-        my $parse = '^\s*(.*?)\s*(\d+)\s*(\d+)\s*(\d+)\s*(\d+)\s*(\d+)\s*(\d+\s*\d+)\s*(\d+)\s*(\d+)\s*(\d+)\s*(-\d+|\d+)\s*(\d+)\s*.*?\s*(-\d+|\d+)\s+(\d\d\d) (\d)\d\d$';
-	if ($param_liiga =~ /nhl/ && $pelipaikka !~ /Maalivahti/) {
-	    #               1       2       3       4       5       6           7      8    9          10            11        12               13        14      15
-	    $parse = '^\s*(.*?)\s*(\d+)\s*(\d+)\s*(\d+)\s*(\d+)\s*(\d+)\s*(\d+\s*\d+)(\s*)(\d+)\s*(\d+\s*\d+)\s*(-\d+|\d+)\s*(\d+)\s*.*?\s*(-\d+|\d+)\s+(\d\d\d) (\d)\d\d$';
-	}
-	# Tama siksi, etta oli tullut yksi solu taulukkoon lisaa jaksossa Liiga 2014/4 ja NHL 2014/3
-	if ( $param_vuosi < 2014 || ($param_vuosi == 2014 && $players_file =~ /period1|period2|period3/ && $param_liiga eq "sm_liiga") ||  ($param_vuosi == 2014 && $players_file =~ /period1|period2/ && $param_liiga eq "nhl")) {
-	    #                  1       2       3       4       5       6       7       8       9       10         11        12               13          14    15
-            $parse = '^\s*(.*?)\s*(\d+)\s*(\d+)\s*(\d+)\s*(\d+)\s*(\d+)\s*(\d+)\s*(\d+)\s*(\d+)\s*(\d+)\s*(-\d+|\d+)\s*(\d+)\s*.*?\s*(-\d+|\d+)\s+(\d\d\d) (\d)\d\d$';
-	    if ($param_liiga =~ /nhl/ && $pelipaikka !~ /Maalivahti/) {
-	        #               1       2       3       4       5       6       7    8    9           10           11       12              13          14     15
-	        $parse = '^\s*(.*?)\s*(\d+)\s*(\d+)\s*(\d+)\s*(\d+)\s*(\d+)\s*(\d+)(\s*)(\d+)\s*(\d+\s*\d+)\s*(-\d+|\d+)\s*(\d+)\s*.*?\s*(-\d+|\d+)\s+(\d\d\d) (\d)\d\d$';
-	    }
-	}
+    #my $parse = '^\s*(.*?)\s*(\d+)\s*(\d+)\s*(\d+)\s*(\d+)\s*(\d+)\s*(\d+\s*\d+)\s*(\d+)\s*(\d+)\s*(\d+)\s*(-\d+|\d+)\s*(\d+)\s*.*?\s*(-\d+|\d+)\s+(\d\d\d) (\d)\d\d$';
+	#if ($param_liiga =~ /nhl/ && $pelipaikka !~ /Maalivahti/) {
+	#    #               1       2       3       4       5       6           7      8    9          10            11        12               13        14      15
+	#    $parse = '^\s*(.*?)\s*(\d+)\s*(\d+)\s*(\d+)\s*(\d+)\s*(\d+)\s*(\d+\s*\d+)(\s*)(\d+)\s*(\d+\s*\d+)\s*(-\d+|\d+)\s*(\d+)\s*.*?\s*(-\d+|\d+)\s+(\d\d\d) (\d)\d\d$';
+	#}
+	## Tama siksi, etta oli tullut yksi solu taulukkoon lisaa jaksossa Liiga 2014/4 ja NHL 2014/3
+	#if ( $param_vuosi < 2014 || ($param_vuosi == 2014 && $players_file =~ /period1|period2|period3/ && $param_liiga eq "sm_liiga") || ($param_vuosi == 2014 && $players_file =~ /period1|period2/ && $param_liiga eq "nhl")) {
+	#    #                  1       2       3       4       5       6       7       8       9       10         11        12               13          14    15
+    #    $parse = '^\s*(.*?)\s*(\d+)\s*(\d+)\s*(\d+)\s*(\d+)\s*(\d+)\s*(\d+)\s*(\d+)\s*(\d+)\s*(\d+)\s*(-\d+|\d+)\s*(\d+)\s*.*?\s*(-\d+|\d+)\s+(\d\d\d) (\d)\d\d$';
+	#    if ($param_liiga =~ /nhl/ && $pelipaikka !~ /Maalivahti/) {
+	#        #               1       2       3       4       5       6       7    8    9           10           11       12              13          14     15
+	#        $parse = '^\s*(.*?)\s*(\d+)\s*(\d+)\s*(\d+)\s*(\d+)\s*(\d+)\s*(\d+)(\s*)(\d+)\s*(\d+\s*\d+)\s*(-\d+|\d+)\s*(\d+)\s*.*?\s*(-\d+|\d+)\s+(\d\d\d) (\d)\d\d$';
+	#    }
+	#}
 	
 	if (/$parse/) {
 	    $pelaaja{$1}{ottelut} += $2;

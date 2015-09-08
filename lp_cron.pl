@@ -86,19 +86,19 @@ sub nhl_sarjataulukko {
     foreach (@text) {
         s/\s*$//;
         s/^\s*//;
-	if (/\d\.$/) {
-	    $temp .= "\n$_ ";
-	} else {
-	    $temp .= "$_ ";
-	}
+	    if (/\d\.$/) {
+	        $temp .= "\n$_ ";
+	    } else {
+	        $temp .= "$_ ";
+	    }
     }
     
     open FILE, ">table_nhl.txt" or die "Cannot open table_nhl.txt";
     @text = split(/\n/, $temp);
     foreach (@text) {
         if (!/^\d+\./) { next; }
-	s/(\d\.\d\d).*?$/$1/;
-	print FILE "$_\n";
+	    s/(\d\.\d\d).*?$/$1/;
+	    print FILE "$_\n";
     }
     close FILE;
 }
@@ -134,17 +134,17 @@ sub sm_kokoonpanot_kaikki {
 
     my $name = "";
     foreach (@text) {
-	s/\s*$//;
-	s/^\s*//;
-	if (/^\s*$/) { next; }
-	if (length($_) <= 4) { next; }
-	s/-(\s+)/0$1/g;
-        if (/LPP\/O/) { next; }
+	    s/\s*$//;
+	    s/^\s*//;
+	    if (/^\s*$/) { next; }
+	    s/-(\s+)/0$1/g;
 	
-	my $line = $_;
+	    my $line = $_;
 
-	if ($line =~ /^\s*(\D+)\s*$/ && $line !~ /Maalivahdit|Puolustajat|Hy.*kk.*t/) {
-            $name = $1;
+	    if ($line =~ /^\s*(\D+)\s*$/ && $line !~ /Maalivahdit|Puolustajat|Hy.*kk.*t/) {
+            if (length($1) > 6) {
+                $name = $1;
+            }
         }
 
         # Ala katkase taman kohdalla, edella olevan pelaajan nimi pienella kirjaimella meinaa katkasta
@@ -152,17 +152,17 @@ sub sm_kokoonpanot_kaikki {
         } elsif (($name lt $previous_name || defined $katkaisu_pelaajat{$name}) && $name ne $previous_name) {
             $final_player_list = "${final_player_list}$sm_joukkue[$team_count]\n";
             $team_count++;
-	    if ($team_count > $#sm_joukkue) { $team_count = 0; }
+	        if ($team_count > $#sm_joukkue) { $team_count = 0; }
         }
 
-	$line = modify_char($line);
+	    $line = modify_char($line);
 
-	if ($line =~ /^\s*\D+\s+\D+\s*$/) {
+	    if ($line =~ /^\s*\D+\s+\D+\s*$/ || (length($line) < 7 && $line !~ /Arvo/) || $line =~ /Maalivahdit|Puolustajat|Hy.*kk.*t/) {
     	    $final_player_list .= "$line ";
     	} else {
     	    $final_player_list .= "$line\n";
     	}
-	$previous_name = $name;
+	    $previous_name = $name;
     }
     
     #Tsekataan, etta joka joukkueelta saadaan pelaajalista. Ollut joskus ongelmia
@@ -173,12 +173,12 @@ sub sm_kokoonpanot_kaikki {
     my @player_list = split(/\n/, $final_player_list);
     my $mikko_lehtonen = 0;
     foreach (@player_list) {
-	# Tulostetaan vain eka mikko lehtonen
-	if (/Lehtonen Mikko/) {
-	    $mikko_lehtonen++;
-	    if ($mikko_lehtonen > 1) { next; }
-	}
-	print FILE "$_\n";
+	    # Tulostetaan vain eka mikko lehtonen
+	    if (/Lehtonen Mikko/) {
+	        $mikko_lehtonen++;
+	        if ($mikko_lehtonen > 1) { next; }
+	    }
+	    print FILE "$_\n";
     }
 
     close (FILE);
@@ -193,7 +193,7 @@ sub sm_kokoonpanot {
         my $data = fetch_page("http://www.liigaporssi.fi/team/search-players?player_position=all&player_team=${joukkue}&player_value=all&type=player_search");
         #my $data = fetch_page("http://www.liigaporssi.fi/team/search-players?player_position=all\&player_team=${joukkue}\&player_value=all\&type=player_search");
 
-	$data = modify_char($data);
+	    $data = modify_char($data);
 
         $data =~ s/player_value\">(.*?)\&euro;</player_value\"> $1 </g;
         $data =~ s/\">(.*?)</\"> $1 </g;
@@ -208,15 +208,14 @@ sub sm_kokoonpanot {
             s/\s*$//;
             s/^\s*//;
     	    if (/^\s*$/) { next; }
-    	    if (length($_) <= 4) { next; }
             s/-(\s+)/0$1/g;
-            if (/LPP\/O/) { next; }
 
-            if (/^\s*\D+\s+\D+\s*$/) {
-	        $final_player_list .= "$_ ";
-	    } else {
-	        $final_player_list .= "$_\n";
-	    }
+	        if (/^\s*\D+\s+\D+\s*$/ || (length($_) < 7 && $_ !~ /Arvo/) || /Maalivahdit|Puolustajat|Hy.*kk.*t/) {
+            #if (/^\s*\D+\s+\D+\s*$/) {
+	            $final_player_list .= "$_ ";
+	        } else {
+	            $final_player_list .= "$_\n";
+	        }
 
             #Tsekataan, etta joka joukkueelta saadaan pelaajalista. Ollut joskus ongelmia
             if (/Ei hakutuloksia/) {
@@ -231,12 +230,12 @@ sub sm_kokoonpanot {
     my @player_list = split(/\n/, $final_player_list);
     my $mikko_lehtonen = 0;
     foreach (@player_list) {
-	# Tulostetaan vain eka mikko lehtonen
-	if (/Lehtonen Mikko/) {
-	    $mikko_lehtonen++;
-	    if ($mikko_lehtonen > 1) { next; }
-	}
-	print FILE "$_\n";
+	    # Tulostetaan vain eka mikko lehtonen
+	    if (/Lehtonen Mikko/) {
+	        $mikko_lehtonen++;
+	        if ($mikko_lehtonen > 1) { next; }
+	    }
+	    print FILE "$_\n";
     }
 
     close (FILE);
