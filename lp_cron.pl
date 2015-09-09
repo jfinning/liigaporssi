@@ -156,8 +156,9 @@ sub sm_kokoonpanot_kaikki {
         }
 
 	    $line = modify_char($line);
+        $line = replace_position($line);
 
-	    if ($line =~ /^\s*\D+\s+\D+\s*$/ || (length($line) < 7 && $line !~ /Arvo/) || $line =~ /Maalivahdit|Puolustajat|Hy.*kk.*t/) {
+	    if ($line =~ /^\s*\D+\s+\D+\s*$/ || (length($line) < 7 && $line !~ /Arvo/) || $line =~ /Maalivahti|Puolustaja|Hy.*kk.*/) {
     	    $final_player_list .= "$line ";
     	} else {
     	    $final_player_list .= "$line\n";
@@ -209,9 +210,9 @@ sub sm_kokoonpanot {
             s/^\s*//;
     	    if (/^\s*$/) { next; }
             s/-(\s+)/0$1/g;
+            $_ = replace_position($_);
 
-	        if (/^\s*\D+\s+\D+\s*$/ || (length($_) < 7 && $_ !~ /Arvo/) || /Maalivahdit|Puolustajat|Hy.*kk.*t/) {
-            #if (/^\s*\D+\s+\D+\s*$/) {
+	        if (/^\s*\D+\s+\D+\s*$/ || (length($_) < 7 && $_ !~ /Arvo/) || /Maalivahti|Puolustaja|Hy.*kk.*/) {
 	            $final_player_list .= "$_ ";
 	        } else {
 	            $final_player_list .= "$_\n";
@@ -251,7 +252,7 @@ sub nhl_kokoonpanot {
         #my $data = fetch_page("http://www.hockeygm.fi/team/search-players?player_position=all&player_team=all&player_value=all&type=player_search");
         my $data = fetch_page("http://www.hockeygm.fi/team/search-players?player_position=all&player_team=${joukkue}&player_value=all&type=player_search");
 
-	$data = modify_char($data);
+	    $data = modify_char($data);
 
         $data =~ s/player_value\">(.*?)\&euro;</player_value\"> $1 </g;
         $data =~ s/\">(.*?)</\"> $1 </g;
@@ -269,17 +270,18 @@ sub nhl_kokoonpanot {
     	    if (length($_) <= 4) { next; }
             s/-(\s+)/0$1/g;
             if (/HGMP\/O/) { next; }
+            $_ = replace_position($_);
 
-            if (/^\s*\D+\s+\D+\s*$/) {
-	        $final_player_list .= "$_ ";
-	    } else {
-	        $final_player_list .= "$_\n";
-	    }
+	        if (/^\s*\D+\s+\D+\s*$/ || (length($_) < 7 && $_ !~ /Arvo/) || /Maalivahti|Puolustaja|Hy.*kk.*/) {
+	            $final_player_list .= "$_ ";
+	        } else {
+	            $final_player_list .= "$_\n";
+	        }
 
             #Tsekataan, etta joka joukkueelta saadaan pelaajalista. Ollut joskus ongelmia
             if (/Ei hakutuloksia/) {
                 print "Ei hakutuloksia: $joukkue\n";
-	        return 0;
+	            return 0;
             }
         }
     }
@@ -392,6 +394,20 @@ sub sm_ottelu_id {
     open FILE, ">games.txt" or die "Cant open games.txt\n"; 
     print FILE "$new_game_list";
     close (FILE);
+}
+
+sub replace_position($) {
+    my $position = shift;
+    
+    if ($position =~ /Maalivahdit/) {
+        $position = "Maalivahti";
+    } elsif ($position =~ /Puolustajat/) {
+        $position = "Puolustaja";
+    } elsif ($position =~ /Hyokkaajat/) {
+        $position = "Hyokkaaja";
+    }
+
+    return $position
 }
 
 if ($sub =~ /sm_ottelulista/) { ottelulista("games_sm_liiga.txt"); }

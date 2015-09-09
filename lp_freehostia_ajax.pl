@@ -263,9 +263,9 @@ sub muuttujien_alustusta ($) {
     if ($temp =~ /vuodet/) {
         my @vuodet;
 	if ($param_liiga =~ /sm_liiga/) {
-	    @vuodet = ("2009", "2010", "2011", "2012", "2013", "2014", "2015");
+	    @vuodet = ("2014", "2015");
 	} else {
-	    @vuodet = ("2010", "2011", "2012", "2013", "2014");
+	    @vuodet = ("2014");
 	}
 	return @vuodet;
     }
@@ -1682,77 +1682,83 @@ sub read_player_list ($$) {
     my $players_file = shift;
     my %pelaaja = @_;
     my ($joukkue, $pelipaikka);
-    my %topics;
+    my @topics;
+    my %player;
     
     open FILE, "$players_file" or die "Cant open $players_file\n"; 
     while (<FILE>) {
-	if (/^#/) { next; }
+	    if (/^#/) { next; }
 
         s/\s*$//;
 
-	if (/Maalivahdit/) {
-	    $pelipaikka = "Maalivahti";
+	    if (/(Maalivahti)/ || /(Puolustaja)/ || /(Hyokkaaja)/) {
+            $pelipaikka = $1;
         
-	    next;
-	}
-	if (/Puolustajat/) {
-	    $pelipaikka = "Puolustaja";
-	    next;
-	}
-	if (/Hyokkaajat/) {
-	    $pelipaikka = "Hyokkaaja";
-	    next;
-	}
-
-    if (/^\s*(\D+)\s*$/) {
-        $joukkue = $1;
-	    next;
-    }
-	
-	#                  1       2       3       4       5       6          7          8       9       10        11         12               13        14      15  
-    #my $parse = '^\s*(.*?)\s*(\d+)\s*(\d+)\s*(\d+)\s*(\d+)\s*(\d+)\s*(\d+\s*\d+)\s*(\d+)\s*(\d+)\s*(\d+)\s*(-\d+|\d+)\s*(\d+)\s*.*?\s*(-\d+|\d+)\s+(\d\d\d) (\d)\d\d$';
-	#if ($param_liiga =~ /nhl/ && $pelipaikka !~ /Maalivahti/) {
-	#    #               1       2       3       4       5       6           7      8    9          10            11        12               13        14      15
-	#    $parse = '^\s*(.*?)\s*(\d+)\s*(\d+)\s*(\d+)\s*(\d+)\s*(\d+)\s*(\d+\s*\d+)(\s*)(\d+)\s*(\d+\s*\d+)\s*(-\d+|\d+)\s*(\d+)\s*.*?\s*(-\d+|\d+)\s+(\d\d\d) (\d)\d\d$';
-	#}
-	## Tama siksi, etta oli tullut yksi solu taulukkoon lisaa jaksossa Liiga 2014/4 ja NHL 2014/3
-	#if ( $param_vuosi < 2014 || ($param_vuosi == 2014 && $players_file =~ /period1|period2|period3/ && $param_liiga eq "sm_liiga") || ($param_vuosi == 2014 && $players_file =~ /period1|period2/ && $param_liiga eq "nhl")) {
-	#    #                  1       2       3       4       5       6       7       8       9       10         11        12               13          14    15
-    #    $parse = '^\s*(.*?)\s*(\d+)\s*(\d+)\s*(\d+)\s*(\d+)\s*(\d+)\s*(\d+)\s*(\d+)\s*(\d+)\s*(\d+)\s*(-\d+|\d+)\s*(\d+)\s*.*?\s*(-\d+|\d+)\s+(\d\d\d) (\d)\d\d$';
-	#    if ($param_liiga =~ /nhl/ && $pelipaikka !~ /Maalivahti/) {
-	#        #               1       2       3       4       5       6       7    8    9           10           11       12              13          14     15
-	#        $parse = '^\s*(.*?)\s*(\d+)\s*(\d+)\s*(\d+)\s*(\d+)\s*(\d+)\s*(\d+)(\s*)(\d+)\s*(\d+\s*\d+)\s*(-\d+|\d+)\s*(\d+)\s*.*?\s*(-\d+|\d+)\s+(\d\d\d) (\d)\d\d$';
-	#    }
-	#}
-	
-	if (/$parse/) {
-	    $pelaaja{$1}{ottelut} += $2;
-	    $pelaaja{$1}{maalit} += $3;
-	    $pelaaja{$1}{syotot} += $4;
-	    $pelaaja{$1}{pisteet} = $pelaaja{$1}{maalit} + $pelaaja{$1}{syotot};
-	    if ($pelipaikka ne "Maalivahti") {
-	        $pelaaja{$1}{laukaukset} += $9;
-	    } else {
-	        $pelaaja{$1}{laukaukset} = 0;
-	        $pelaaja{$1}{paastetyt} += $9;
-	    }
-	    if ($max_pelatut_pelit < $pelaaja{$1}{ottelut}) { $max_pelatut_pelit = $pelaaja{$1}{ottelut}; }
-            $pelaaja{$1}{pelipaikka} = $pelipaikka;
-            $pelaaja{$1}{jaahyt} += $12;
-            $pelaaja{$1}{lpp} += $13;
-            $pelaaja{$1}{arvo} = "$14.$15";
-            $pelaaja{$1}{joukkue} = $joukkue;
-	    
-	    if ($pelaaja{$1}{ottelut} ne "0") {
-	        $pelaaja{$1}{pisteet_per_peli} = $pelaaja{$1}{lpp} / $pelaaja{$1}{ottelut}
-	    } else {
-	        $pelaaja{$1}{pisteet_per_peli} = 0;
+            @topics = split(/\s+/, $_);
+            $topics[0] = "Nimi";
+	        next;
 	    }
 
-            $pelaaja{$1}{pisteet_per_euro} = $pelaaja{$1}{pisteet_per_peli} / ($pelaaja{$1}{arvo} / 100);
-	    
-	    $pelaaja{$1}{ennuste_pisteet} = int($pelaaja{$1}{pisteet_per_peli} * $kaikkipelit{$joukkue});
+        if (/^\s*(\D+)\s*$/) {
+            $joukkue = $1;
+	        next;
         }
+	
+#    Maalivahdit O M S P V H TP TO PM NP JM OR IS1 IS2 IS3 LPP/O LPP Arvo
+#    Puolustajat O M S P AVM AVS VM TM JA L B ALV + - JM OR IS1 IS2 IS3 LPP/O LPP Arvo
+
+        %player = {};
+
+        # Korvaa arvo oikeaan muotoon
+        s/(\d\d\d) (\d)\d\d/$1.$2/;
+    
+        my $nimi;
+        # Vältetään nimen splittaus osiin
+        if (/^\s*(.*?)\s*(\d+)\s*/) {
+            my $nimi_orig = $1;
+            $nimi = $1;
+            $nimi =~ s/\s+/_/g;
+            s/$nimi_orig/$nimi/;
+        }
+
+        my @player_data = split(/\s+/, $_);
+        $nimi = $player_data[0];
+        $nimi =~ s/_/ /g;
+        $player_data[0] = $nimi;
+
+        # Lisää data pelaajalle taulukkoon tyyliin: Nimi = Seppo, O = 14 jne
+        my $count = 0;
+        foreach (@player_data) {
+            $player{$topics[$count]} = $_;
+            $count++;
+        }
+	
+        $pelaaja{$nimi}{ottelut} += $player{O};
+        $pelaaja{$nimi}{maalit} += $player{M};
+        $pelaaja{$nimi}{syotot} += $player{S};
+        $pelaaja{$nimi}{pisteet} = $pelaaja{$nimi}{maalit} + $pelaaja{$nimi}{syotot};
+        if ($pelipaikka ne "Maalivahti") {
+            $pelaaja{$nimi}{laukaukset} += $player{L};
+        } else {
+            $pelaaja{$nimi}{laukaukset} = 0;
+            $pelaaja{$nimi}{paastetyt} += $player{TO};
+        }
+        if ($max_pelatut_pelit < $pelaaja{$nimi}{ottelut}) { $max_pelatut_pelit = $pelaaja{$nimi}{ottelut}; }
+            $pelaaja{$nimi}{pelipaikka} = $pelipaikka;
+            $pelaaja{$nimi}{jaahyt} += $player{JM};
+            $pelaaja{$nimi}{lpp} += $player{LPP};
+            $pelaaja{$nimi}{arvo} = $player{Arvo};
+            $pelaaja{$nimi}{joukkue} = $joukkue;
+    
+        if ($pelaaja{$nimi}{ottelut} ne "0") {
+            $pelaaja{$nimi}{pisteet_per_peli} = $pelaaja{$nimi}{lpp} / $pelaaja{$nimi}{ottelut}
+        } else {
+            $pelaaja{$nimi}{pisteet_per_peli} = 0;
+        }
+
+        $pelaaja{$nimi}{pisteet_per_euro} = $pelaaja{$nimi}{pisteet_per_peli} / ($pelaaja{$nimi}{arvo} / 100);
+    
+        $pelaaja{$nimi}{ennuste_pisteet} = int($pelaaja{$nimi}{pisteet_per_peli} * $kaikkipelit{$joukkue});
     }
     close (FILE);
     
@@ -1892,11 +1898,6 @@ sub calculate_game_result {
     $joukkueet{$koti}{arvotut_laukaukset} = int(rand($joukkueet{$koti}{laukaukset_per_peli})) + $joukkueet{$koti}{laukaukset_per_peli} / int(rand(3) + 1);
     $joukkueet{$vieras}{arvotut_laukaukset} = int(rand($joukkueet{$vieras}{laukaukset_per_peli})) + $joukkueet{$vieras}{laukaukset_per_peli} / int(rand(3) + 1);
 
-#    $html .= "Ottelut $joukkueet{$koti}{pelit} - $joukkueet{$vieras}{pelit}<br>\n";
-#    $html .= "Maalit $joukkueet{$koti}{maalit} - $joukkueet{$vieras}{maalit}<br>\n";
-#    $html .= "M_per_peli $joukkueet{$koti}{maalit_per_peli} - $joukkueet{$vieras}{maalit_per_peli}<br>\n";
-#    $html .= "Paastetyt $joukkueet{$koti}{paastetyt} - $joukkueet{$vieras}{paastetyt}<br>\n";
-    
     my (@maalintekija, @syottaja_1, @syottaja_2, @laukoja, @jaahyilija, $kotimaali, $vierasmaali, $kotijaahy, $vierasjaahy);
     my $koti_count = 0;
     my $vieras_count = 0;

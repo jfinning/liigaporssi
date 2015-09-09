@@ -1,5 +1,5 @@
 Blues
-Maalivahdit O M S P V H TP TO PM NP JM OR IS1 IS2 IS3 LPP/O LPP Arvo
+Maalivahti O M S P V H TP TO PM NP JM OR IS1 IS2 IS3 LPP/O LPP Arvo
 Engstrand Christian 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               365 000
 Kahkonen Kaapo 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               280 000
 Rasilainen Samuli 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               190 000
@@ -57,7 +57,7 @@ Assat
 Ahonen Ari 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               325 000
 Bernard Andreas 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               290 000
 Kulmala Arttu 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               230 000
-Puolustajat O M S P AVM AVS VM TM JA L B ALV + - JM OR IS1 IS2 IS3 LPP/O LPP Arvo
+Puolustaja O M S P AVM AVS VM TM JA L B ALV + - JM OR IS1 IS2 IS3 LPP/O LPP Arvo
 Blues
 Kaijomaa Kalle 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               335 000
 Kukkonen Mikko 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               285 000
@@ -216,7 +216,7 @@ Viljanen Valtteri 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0 
 Vuorisalo Teemu 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               200 000
 Walli Juuso 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               150 000
 Ylitalo Elmeri 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               150 000
-Hyokkaajat O M S P AVM AVS VM TM JA L B ALV + - JM OR IS1 IS2 IS3 LPP/O LPP Arvo
+Hyokkaaja O M S P AVM AVS VM TM JA L B ALV + - JM OR IS1 IS2 IS3 LPP/O LPP Arvo
 Blues
 Hirschovits Kim 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           500 000
 Kangasniemi Iikka 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           220 000
