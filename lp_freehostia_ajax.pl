@@ -1732,6 +1732,10 @@ sub read_player_list ($$) {
             $player{$topics[$count]} = $_;
             $count++;
         }
+        
+        my $LPP = 0;
+        $LPP = $player{LPP} if defined $player{LPP};
+        $LPP = $player{HGMP} if defined $player{HGMP};
 	
         $pelaaja{$nimi}{ottelut} += $player{O};
         $pelaaja{$nimi}{maalit} += $player{M};
@@ -1746,7 +1750,7 @@ sub read_player_list ($$) {
         if ($max_pelatut_pelit < $pelaaja{$nimi}{ottelut}) { $max_pelatut_pelit = $pelaaja{$nimi}{ottelut}; }
             $pelaaja{$nimi}{pelipaikka} = $pelipaikka;
             $pelaaja{$nimi}{jaahyt} += $player{JM};
-            $pelaaja{$nimi}{lpp} += $player{LPP};
+            $pelaaja{$nimi}{lpp} += $LPP;
             $pelaaja{$nimi}{arvo} = $player{Arvo};
             $pelaaja{$nimi}{joukkue} = $joukkue;
     
