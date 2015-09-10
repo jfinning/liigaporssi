@@ -438,7 +438,7 @@ sub update_menus {
     $html .= "</ul>\n";
     $html .= "</div>\n";
     my $status = `cat status.htm`;
-    $html .= "<div id=\"status_down\" style=\"display:none; width:600px; height:250px; padding:5px; border:5px solid gray; margin:0px; overflow-y:scroll;\">$status</div>";
+    $html .= "<br><div id=\"status_down\" style=\"display:none; width:600px; height:250px; padding:5px; border:5px solid gray; margin:0px; overflow-y:scroll;\">$status</div>";
     
     $html .= "<br><br>\n";
     
@@ -447,21 +447,8 @@ sub update_menus {
     if ($param_sub =~ /optimi_joukkue/)   { $html .= print_optimi_joukkue_form() };
     if ($param_sub =~ /arvo_tulos/)       { $html .= calculate_game_result_form() };
     if ($param_sub =~ /kokoonpanot/)      { $html .= print_kokoonpanot_form() };
-    if ($param_sub =~ /etsin_toita/)      { $html .= print_etsin_toita() };
 
     $html .= "</center>\n";
-    
-    return $html;
-}
-
-sub print_etsin_toita {
-    my $html = `cat tyonhaku_lp.htm`;
-    
-    $html = "</center>
-             <div style=\"width:800px; padding:5px; border:5px solid gray; margin:0px; margin-left: auto; margin-right: auto;\">
-	     $html
-	     </div>
-	     <center>";
     
     return $html;
 }
