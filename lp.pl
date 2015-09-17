@@ -437,7 +437,7 @@ sub update_menus {
     $html .= "</ul>\n";
     $html .= "</div>\n";
     my $status = `cat status.htm`;
-    $html .= "<br><div id=\"status_down\" style=\"display:none; width:600px; height:250px; padding:5px; border:5px solid gray; margin:0px; overflow-y:scroll; color:white;\">$status</div>";
+    $html .= "<br><div id=\"status_down\" style=\"display:none; width:600px; height:250px; padding:5px; border:5px solid gray; margin:0px; overflow-y:scroll;\">$status</div>";
     
     $html .= "<br><br>\n";
     
@@ -1225,7 +1225,7 @@ sub print_player_list_form {
     ';
 
     # Graafi
-    $html .= "Graafi: <select name=\"graafi\" id=\"graafi\" onchange=\"this.form.submit()\">\n";
+    $html .= "<font id='font_on_bg'>Graafi:</font> <select name=\"graafi\" id=\"graafi\" onchange=\"this.form.submit()\">\n";
     my @graafit = ("LPP ennuste", "Arvo");
     foreach (@graafit) {
         if (/$param_graafi/) {
@@ -1797,7 +1797,7 @@ sub calculate_game_result_form {
 	}
     }
     $html .= "<p><div id='game_result_div'>\n";
-    $html .= "<div style=\"width:400px; padding:5px; border:5px solid gray; margin:0px;\">T&#228;&#228;ll&#228; voit arpoa tulevan kierroksen otteluita. Arvonnassa k&#228;ytet&#228;&#228;n painotuksia, mutta randomia on mukana
+    $html .= "<div style=\"width:400px; padding:5px; border:5px solid gray; margin:0px; color: white;\">T&#228;&#228;ll&#228; voit arpoa tulevan kierroksen otteluita. Arvonnassa k&#228;ytet&#228;&#228;n painotuksia, mutta randomia on mukana
              reippaasti. T&#228;m&#228; n&#228;kyy varsinkin pelien lopputuloksissa, jotka vaihtelevat arvontakerrasta toiseen. Sivun
              ei olekaan tarkoitus pyrki&#228; realismiin, vaan on tehty pelk&#228;st&#228;&#228;n huvitteluun.</div>\n";
     $html .= "</div>\n";
