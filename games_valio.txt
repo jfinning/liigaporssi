@@ -1,30 +1,3 @@
-Ma 25.08.
-20:00 	Man C 	- 	Liverpool 				
-La 30.08.
-12:45 	Burnley 	- 	Man U 				
-15:00 	Man C 	- 	Stoke 				
-15:00 	Newcastle 	- 	Crystal Palace 				
-15:00 	West Ham 	- 	Southampton 				
-15:00 	QPR 	- 	Sunderland 				
-15:00 	Swansea 	- 	WBA 				
-17:30 	Everton 	- 	Chelsea 				
-Su 31.08.
-13:30 	A Villa 	- 	Hull City 				
-13:30 	Tottenham 	- 	Liverpool 				
-16:00 	Leicester City 	- 	Arsenal 				
-La 13.09.
-12:45 	Arsenal 	- 	Man C 				
-15:00 	Crystal Palace 	- 	Burnley 				
-15:00 	Chelsea 	- 	Swansea 				
-15:00 	Stoke 	- 	Leicester City 				
-15:00 	WBA 	- 	Everton 				
-15:00 	Sunderland 	- 	Tottenham 				
-15:00 	Southampton 	- 	Newcastle 				
-17:30 	Liverpool 	- 	A Villa 				
-Su 14.09.
-16:00 	Man U 	- 	QPR 				
-Ma 15.09.
-20:00 	Hull City 	- 	West Ham 				
 La 20.09.
 12:45 	QPR 	- 	Stoke 				
 15:00 	Newcastle 	- 	Hull City 				

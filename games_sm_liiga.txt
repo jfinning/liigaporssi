@@ -1,30 +1,3 @@
-Ke 10.09.
-18:30 	Karpat 	- 	Tappara 				
-To 11.09.
-18:30 	HIFK 	- 	Blues 				
-18:30 	Lukko 	- 	Assat 				
-Pe 12.09.
-18:30 	TPS 	- 	Karpat 				
-18:30 	Pelicans 	- 	HPK 				
-18:30 	KalPa 	- 	SaiPa 				
-18:30 	JYP 	- 	Sport 				
-18:30 	Ilves 	- 	Tappara 				
-La 13.09.
-17:00 	Assat 	- 	JYP 				
-17:00 	Tappara 	- 	KalPa 				
-17:00 	Sport 	- 	TPS 				
-17:00 	SaiPa 	- 	Lukko 				
-17:00 	HPK 	- 	Ilves 				
-17:00 	Blues 	- 	Pelicans 				
-Su 14.09.
-16:00 	Karpat 	- 	HIFK 				
-Ti 16.09.
-18:30 	TPS 	- 	Blues 				
-18:30 	Pelicans 	- 	Assat 				
-18:30 	Lukko 	- 	KalPa 				
-18:30 	JYP 	- 	HPK 				
-18:30 	Ilves 	- 	Karpat 				
-18:30 	HIFK 	- 	Sport 				
 Ke 17.09.
 18:30 	HPK 	- 	Karpat 				
 18:30 	Tappara 	- 	SaiPa 				

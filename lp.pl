@@ -432,13 +432,12 @@ sub update_menus {
         }
         $html .= "<li><A HREF=\"$script_name?sub=arvo_tulos&liiga=$param_liiga\">Arvo tulos</A></li>\n";
     }
-    $html .= "<li><A HREF=\"http://liigaporssi.freehostia.com/mjguest\" target=\"_blank\">Vieraskirja</A></li>\n";
     $html .= "<li><a href=\"mailto:jepponen\@gmail.com\">eMail</a></li>\n";
     $html .= "<li><A HREF=\"#\" id=\"status\">Status<\/a></li>\n";    
     $html .= "</ul>\n";
     $html .= "</div>\n";
     my $status = `cat status.htm`;
-    $html .= "<br><div id=\"status_down\" style=\"display:none; width:600px; height:250px; padding:5px; border:5px solid gray; margin:0px; overflow-y:scroll;\">$status</div>";
+    $html .= "<br><div id=\"status_down\" style=\"display:none; width:600px; height:250px; padding:5px; border:5px solid gray; margin:0px; overflow-y:scroll; color:white;\">$status</div>";
     
     $html .= "<br><br>\n";
     
@@ -459,7 +458,7 @@ sub select_max_pelatut_pelit {
         $a_script = $param_a_script;
     } else { $a_script = shift; }
     
-    my $html .= "Pelatut pelit v&#228;h.: <select name=\"ottelut\" id=\"ottelut\" onchange=\"$a_script\">\n";
+    my $html .= "<font id='font_on_bg'>Pelatut pelit v&#228;h.:</font> <select name=\"ottelut\" id=\"ottelut\" onchange=\"$a_script\">\n";
     my @ottelut_taulukko = (0 .. $max_pelatut_pelit);
     foreach (@ottelut_taulukko) {
         if (defined $param_ottelut && $_ == $param_ottelut) {
@@ -503,15 +502,15 @@ sub print_optimi_joukkue_form {
     my $html;
     $html .= "<input type='hidden' name='a_script' id='a_script' value=\"$a_script\">\n";
     $html .= "<center>\n";
-    $html .= "T&#228;ll&#228; sivulla voit koota laskennallisia optimikokoonpanoja antamillasi ehdoilla.<br>\n";
+    $html .= "<font id='font_on_bg'>T&#228;ll&#228; sivulla voit koota laskennallisia optimikokoonpanoja antamillasi ehdoilla.</font><br>\n";
 
-    $html .= "Joukkueen arvo tE\n";
+    $html .= "<font id='font_on_bg'>Joukkueen arvo tE</font>\n";
     $html .= "<input type='text' name='joukkueen_hinta' id='joukkueen_hinta' SIZE='6' MAXLENGTH='6' VALUE=\"$param_joukkueen_hinta\">\n";
 
     $html .= "<span id='max_pelatut_pelit_div'>" . select_max_pelatut_pelit($a_script) . "</span>\n";
 
     # Arvo
-    $html .= "Pelaajan arvo alle: \n";
+    $html .= "<font id='font_on_bg'>Pelaajan arvo alle:</font> \n";
     my @arvotaulukko = ("999", "500", "450", "400", "350", "300", "250");
     $html .= "<select name=\"arvo\" id=\"arvo\" onchange=\"$a_script\">\n";
     foreach my $current_arvo (@arvotaulukko) {
@@ -538,17 +537,17 @@ sub print_optimi_joukkue_form {
     $html .= "<input type='hidden' name='a_script_start' id='a_script_start' value=\"$a_script_start\">\n";
     $html .= "<input type='hidden' name='a_script_end' id='a_script_end' value=\"$a_script_end\">\n";
 
-    $html .= "Valitse aikav&#228;li, jolle haluat optimikokoonpanon laskettavan: \n";
+    $html .= "<font id='font_on_bg'>Valitse aikav&#228;li, jolle haluat optimikokoonpanon laskettavan:</font> \n";
 
     $html .= "<span id='start_day_div'>" . select_days_start_form($a_script_start) . "</span>\n";
     $html .= "<span id='end_day_div'>" . select_days_end_form($a_script_end) . "</span><br>\n";
 
-    $html .= "<br>Kopioi t&#228;h&#228;n pelaajien nimi&#228;, jotka haluat skipata. Esim. loukkaantuneita pelaajia.<br>\n";
+    $html .= "<br><font id='font_on_bg'>Kopioi t&#228;h&#228;n pelaajien nimi&#228;, jotka haluat skipata. Esim. loukkaantuneita pelaajia.</font><br>\n";
     $html .= "<TEXTAREA NAME='remove_players' id='remove_players' COLS=40 ROWS=4>\n";
     $html .= "<\/TEXTAREA><br>\n";
     $html .= "<br>\n";
 
-    $html .= "Pelaajat valitaan n&#228;ist&#228; joukkueista. Poista joukkueen nimi, josta et halua pelaajia.<br>\n";
+    $html .= "<font id='font_on_bg'>Pelaajat valitaan n&#228;ist&#228; joukkueista. Poista joukkueen nimi, josta et halua pelaajia.</font><br>\n";
     $html .= "<TEXTAREA NAME='selected_teams' id='selected_teams' COLS=40 ROWS=4>\n";
     $html .= $param_selected_teams;    
     $html .= "<\/TEXTAREA><br>\n";
@@ -731,9 +730,9 @@ my ($elapsed, $current);
     }
     $html .= "<\/table>\n";
 
-    $html .= "<br>Pisteet: $optimi_pisteet, hinta: $optimi_hinta<br><br>\n";
+    $html .= "<br><font id='font_on_bg'>Pisteet: $optimi_pisteet, hinta: $optimi_hinta</font><br><br>\n";
 
-    $html .= "Alla laskennan parhaat joukkueet.<br>\n";
+    $html .= "<font id='font_on_bg'>Alla laskennan parhaat joukkueet.</font><br>\n";
     $html .= "<table border=\"1\">\n";
     $html .= "<tr>\n";
     @otsikko = ("Sija", "M", "P1", "P2", "H1", "H2", "H3", "Pisteet", "Hinta");
@@ -915,7 +914,7 @@ sub print_kokoonpanot_form {
     
     my $html;
 
-    $html .= "<b>$weekdays[0] $start</b><br>\n";
+    $html .= "<b><font id='font_on_bg'>$weekdays[0] $start</font></b><br>\n";
 
     # Tulosta joukkueet ja pelaako
     foreach my $joukkue (sort hashValueAscendingNum keys %kaikkipelit) {
@@ -927,7 +926,7 @@ sub print_kokoonpanot_form {
     }
 
     $html .= "<p><div id='kokoonpanot_div'>\n";
-    $html .= "<div style=\"width:400px; padding:5px; border:5px solid gray; margin:0px;\">
+    $html .= "<div style=\"width:400px; padding:5px; border:5px solid gray; margin:0px; color:white;\">
                            Miksi katsoisin kokoonpanot juuri t&auml;&auml;lt&auml;?
 			   T&auml;&auml;ll&auml; ketjukoostumukset on h&ouml;ystetty pelaajien tilastoilla,
 			   sek&auml; listalla pelaajista, jotka ovat j&auml;&auml;neet kokoonpanojen ulkopuolelle.<br><br>
@@ -1011,7 +1010,7 @@ sub print_kokoonpanot () {
     $html .= "<input type='hidden' name='start_day' id='start_day' value=\"$start\">\n";
 
     # Jakso
-    $html .= "Luet tilastot jaksosta: \n";
+    $html .= "<font id='font_on_bg'>Lue tilastot jaksosta:</font> \n";
     $html .= "<select name=\"read_players_from\" id=\"read_players_from\" onchange=\"$a_script\">\n";
     my @jakso = muuttujien_alustusta("jakso");
     foreach my $current_arvo (@jakso) {
@@ -1374,7 +1373,7 @@ sub select_days_start_form {
 
     my $html;
 
-    $html .= "Start <select name=\"start_day\" id=\"start_day\" onchange=\"$a_script\">\n";
+    $html .= "<font id='font_on_bg'>Start</font> <select name=\"start_day\" id=\"start_day\" onchange=\"$a_script\">\n";
     foreach (@all_day_list) {
 	if (/$start/) {
 	    $html .= "<option selected>$_</option>\n";
@@ -1397,7 +1396,7 @@ sub select_days_end_form {
     my $start_found = 0;
     my $html;
 
-    $html .= "End <select name=\"end_day\" id=\"end_day\" onchange=\"$a_script\">\n";
+    $html .= "<font id='font_on_bg'>End</font> <select name=\"end_day\" id=\"end_day\" onchange=\"$a_script\">\n";
     foreach (@all_day_list) {
 	if ($_ =~ /$start/) { $start_found = 1; }
 	if (!$start_found) { next; }
@@ -1416,11 +1415,11 @@ sub select_teams_form {
     my $html;
     
     my $count = shift;
-    $html .= "Vaihda pelaaja joukkueesta <select name=\"team_from\" id=\"team_from\" onchange=\"calculate_optimal_change_day_div( ['start_day','end_day','team_from','liiga'],['optimal_change_day_div','peli_count_div'] );\">\n";
+    $html .= "<font id='font_on_bg'>Vaihda pelaaja joukkueesta</font> <select name=\"team_from\" id=\"team_from\" onchange=\"calculate_optimal_change_day_div( ['start_day','end_day','team_from','liiga'],['optimal_change_day_div','peli_count_div'] );\">\n";
     foreach (sort keys %kaikkipelit) {
         $html .= "<option>$_</option>\n";
     }
-    $html .= "</select> jolla on pelej&#228; <span id='peli_count_div'>$count</span>\n";
+    $html .= "</select> <font id='font_on_bg'>jolla on pelej&#228;</font> <span id='peli_count_div'><font id='font_on_bg'>$count</font></span>\n";
     
     return $html;
 }
