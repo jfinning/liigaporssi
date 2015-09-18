@@ -18,6 +18,7 @@ my @all_day_list;
 my @selected_day_list;
 my @weekdays;
 my %pelipaivat;
+my %joukkue_lyhenne;
 my $max_pelatut_pelit = 0;
 my $max_teams = 10;
 my $timing = 0; #Tama on koodin nopeuden mittaukseen
@@ -94,6 +95,43 @@ sub alustus {
     @all_day_list = ();
     @selected_day_list = ();
     %vastus = (); %kotipelit = (); %vieraspelit = (); %kaikkipelit = ();
+    
+    if ($param_liiga eq "nhl") {
+        %joukkue_lyhenne = (
+            "Anaheim"      => "ANA",
+            "Arizona"      => "ARI",
+            "Boston"       => "BOS",
+            "Buffalo"      => "BUF",
+            "Calgary"      => "CGY",
+            "Carolina"     => "CAR",
+            "Chicago"      => "CHI",
+            "Colorado"     => "COL",
+            "Columbus"     => "CLB",
+            "Dallas"       => "DAL",
+            "Detroit"      => "DET",
+            "Edmonton"     => "EDM",
+            "Florida"      => "FLA",
+            "Los Angeles"  => "LOS",
+            "Minnesota"    => "MIN",
+            "Montreal"     => "MTL",
+            "Nashville"    => "NSH",
+            "New Jersey"   => "NJD",
+            "NY Islanders" => "NYI",
+            "NY Rangers"   => "NYR",
+            "Ottawa"       => "OTT",
+            "Philadelphia" => "PHI",
+            "Phoenix"      => "PHO",
+            "Pittsburgh"   => "PIT",
+            "San Jose"     => "SJS",
+            "St. Louis"    => "STL",
+            "Tampa Bay"    => "TBL",
+            "Toronto"      => "TOR",
+            "Vancouver"    => "VAN",
+            "Washington"   => "WSH",
+            "Winnipeg"     => "WPG"
+        );
+    }
+
 
     $o_maalivahti      = $cgi->param('o_maalivahti') if defined $cgi->param('o_maalivahti');
     $o_puolustaja1     = $cgi->param('o_puolustaja1') if defined $cgi->param('o_puolustaja1');
@@ -175,7 +213,7 @@ sub alustus {
         if (/(\d\d\.\d\d\.)/) {
             push (@selected_day_list, $1);
             push (@weekdays, $weekday);
-	    $pelipaiva = $1;
+            $pelipaiva = $1;
         }
 
         if (defined $end && /$end/) {
@@ -183,29 +221,29 @@ sub alustus {
         }
 
         if (/\s*(\D*?)\s*-\s*(.*?)\s*$/) {
-	    $kotipelit{$1}++;
+            $kotipelit{$1}++;
             $vieraspelit{$2}++;
             $kaikkipelit{$1}++;
             $kaikkipelit{$2}++;
 	
-	    $pelipaivat{$1}{$pelipaiva}{kotipeli} = $2;
-	    $pelipaivat{$2}{$pelipaiva}{vieraspeli} = $1;
+            $pelipaivat{$1}{$pelipaiva}{kotipeli} = $2;
+            $pelipaivat{$2}{$pelipaiva}{vieraspeli} = $1;
 
-	    if ($taulukko{$1}{sija} <= 5) {
-	        $vastus{$2}{top}++;
-	    } elsif ($taulukko{$1}{sija} <= 10) {
-	        $vastus{$2}{mid}++;
-	    } else { 
-	        $vastus{$2}{low}++;
-	    }
+            if ($taulukko{$1}{sija} <= 5) {
+                $vastus{$2}{top}++;
+            } elsif ($taulukko{$1}{sija} <= 10) {
+                $vastus{$2}{mid}++;
+            } else { 
+                $vastus{$2}{low}++;
+            }
 
-	    if ($taulukko{$2}{sija} <= 5) {
-	        $vastus{$1}{top}++;
-	    } elsif ($taulukko{$2}{sija} <= 10) {
-	        $vastus{$1}{mid}++;
-	    } else { 
-	        $vastus{$1}{low}++;
-	    }
+            if ($taulukko{$2}{sija} <= 5) {
+                $vastus{$1}{top}++;
+            } elsif ($taulukko{$2}{sija} <= 10) {
+                $vastus{$1}{mid}++;
+            } else { 
+                $vastus{$1}{low}++;
+            }
         }
     }
     close (PELIT);
@@ -257,27 +295,27 @@ sub muuttujien_alustusta ($) {
             [ "$o_hyokkaaja2", "Kaikki H2", \@hyokkaajat_kaikki, "H2", "o_hyokkaaja2", "$hyokkaaja2" ],
             [ "$o_hyokkaaja3", "Kaikki H3", \@hyokkaajat_kaikki, "H3", "o_hyokkaaja3", "$hyokkaaja3" ],
         );
-	return @paikka;
+        return @paikka;
     }
 
     if ($temp =~ /vuodet/) {
         my @vuodet;
-	if ($param_liiga =~ /sm_liiga/) {
-	    @vuodet = ("2014", "2015");
-	} else {
-	    @vuodet = ("2014");
-	}
-	return @vuodet;
+        if ($param_liiga =~ /sm_liiga/) {
+            @vuodet = ("2014", "2015");
+        } else {
+            @vuodet = ("2014");
+        }
+        return @vuodet;
     }
     
     if ($temp =~ /jakso/) {
         my @jakso;
         if ($param_liiga =~ /sm_liiga/) {
             @jakso = ("Jakso PO", "Jakso 5", "Jakso 4", "Jakso 3", "Jakso 2", "Jakso 1", "Jaksot 1-2", "Jaksot 1-3", "Jaksot 1-4", "Jaksot 1-5", "Jaksot 1-PO");
-	} else {
+        } else {
             @jakso = ("Jakso PO", "Jakso 5", "Jakso 4", "Jakso 3", "Jakso 2", "Jakso 1", "Jaksot 1-2", "Jaksot 1-3", "Jaksot 1-4", "Jaksot 1-5", "Jaksot 1-PO");
-	}
-	return @jakso;
+        }
+        return @jakso;
     }
 }
 
@@ -919,9 +957,9 @@ sub print_kokoonpanot_form {
     # Tulosta joukkueet ja pelaako
     foreach my $joukkue (sort hashValueAscendingNum keys %kaikkipelit) {
 	$_ = $start;
-	if (defined $pelipaivat{$joukkue}{$_}{'kotipeli'}) {
+	if (defined $pelipaivat{$joukkue}{$_}{kotipeli}) {
             my $a_script = "print_kokoonpanot_div( ['joukkue__$joukkue','liiga__$param_liiga','start_day__$start'],['kokoonpanot_div'] );";
-	    $html .= "<A HREF=\"#\" onclick=\"$a_script\"><font color=\"red\">$joukkue - $pelipaivat{$joukkue}{$_}{'kotipeli'}</font></A><br>\n";
+	    $html .= "<A HREF=\"#\" onclick=\"$a_script\"><font color=\"red\">$joukkue - $pelipaivat{$joukkue}{$_}{kotipeli}</font></A><br>\n";
 	}
     }
 
@@ -1150,7 +1188,7 @@ sub print_kokoonpanot () {
     
     $html .= "</table>\n";
 
-#$html .= "$param_joukkue - $pelipaivat{$param_joukkue}{$start}{'kotipeli'}";
+#$html .= "$param_joukkue - $pelipaivat{$param_joukkue}{$start}{kotipeli}";
 
     $html .= "<br>Kopioi t&#228;h&#228;n $koti - $vieras pelin kokoonpanot liigan sivuilta.<br>\n";
     $html .= "<TEXTAREA NAME='kokoonpanot' id='kokoonpanot' COLS=40 ROWS=4>\n";
@@ -1539,7 +1577,7 @@ sub print_game_days {
     $html .= "<th><center>Joukkue</center></th>\n";
     my $count = 0;
     foreach (@selected_day_list) {
-	$html .= "<th><center>$weekdays[$count]<br>\n$_</center></th>\n";
+        $html .= "<th><center>$weekdays[$count]<br>\n$_</center></th>\n";
         $count++;
     }
     
@@ -1548,29 +1586,37 @@ sub print_game_days {
     foreach my $joukkue (sort hashValueAscendingNum keys %kaikkipelit) {
         $td = change_table_td($td);
         $html .= "<tr>\n";
-	$html .= "<th>$joukkue<\/th>\n";
-	foreach (@selected_day_list) {
-	    if (! defined $pelipaivat{$joukkue}{$_}) {
-		if (defined $peliputki{$joukkue}{$_} && $peliputki{$joukkue}{$_} eq "lepo") {
-	            $html .= "<td class=\"$td\" title=\"3 tai useampi vapaata putkeen\"><center><b><font color=\"red\">x<\/font><\/b></center><\/td>\n";
-		} else {
-	            $html .= "<td class=\"$td\"><center>-</center><\/td>\n";
-		}
-	    } elsif (defined $pelipaivat{$joukkue}{$_}{kotipeli}) {
-		if (defined $peliputki{$joukkue}{$_} && $peliputki{$joukkue}{$_} eq "peli") {
-		    $html .= "<td class=\"$td\" title=\"3 tai useampi peli&#228; putkeen\"><center><b><font color=\"green\">$pelipaivat{$joukkue}{$_}{kotipeli}<\/font><\/b></center><\/td>\n";
-		} else {
-		    $html .= "<td class=\"$td\"><center><b>$pelipaivat{$joukkue}{$_}{kotipeli}</b></center><\/td>\n";
-		}
-	    } elsif (defined $pelipaivat{$joukkue}{$_}{vieraspeli}) {
-		if (defined $peliputki{$joukkue}{$_} && $peliputki{$joukkue}{$_} eq "peli") {
-		    $html .= "<td class=\"$td\" title=\"3 tai useampi peli&#228; putkeen\"><center><font color=\"green\">$pelipaivat{$joukkue}{$_}{vieraspeli}<\/font></center><\/td>\n";
-		} else {
-		    $html .= "<td class=\"$td\"><center>$pelipaivat{$joukkue}{$_}{vieraspeli}</center><\/td>\n";
-		}
-	    }
-	}
-	$html .= "<\/tr>\n";
+        $html .= "<th>$joukkue<\/th>\n";
+        foreach (@selected_day_list) {
+            if (! defined $pelipaivat{$joukkue}{$_}) {
+                if (defined $peliputki{$joukkue}{$_} && $peliputki{$joukkue}{$_} eq "lepo") {
+                    $html .= "<td class=\"$td\" title=\"3 tai useampi vapaata putkeen\"><center><b><font color=\"red\">x<\/font><\/b></center><\/td>\n";
+                } else {
+                    $html .= "<td class=\"$td\"><center>-</center><\/td>\n";
+                }
+            } elsif (defined $pelipaivat{$joukkue}{$_}{kotipeli}) {
+                my $kotipeli = $pelipaivat{$joukkue}{$_}{kotipeli};
+                if (defined $joukkue_lyhenne{$pelipaivat{$joukkue}{$_}{kotipeli}}) {
+                    $kotipeli =  $joukkue_lyhenne{$pelipaivat{$joukkue}{$_}{kotipeli}};
+                }
+                if (defined $peliputki{$joukkue}{$_} && $peliputki{$joukkue}{$_} eq "peli") {
+                    $html .= "<td class=\"$td\" title=\"3 tai useampi peli&#228; putkeen\"><center><b><font color=\"green\">$kotipeli<\/font><\/b></center><\/td>\n";
+                } else {
+                    $html .= "<td class=\"$td\"><center><b>$kotipeli</b></center><\/td>\n";
+                }
+            } elsif (defined $pelipaivat{$joukkue}{$_}{vieraspeli}) {
+                my $vieraspeli = $pelipaivat{$joukkue}{$_}{vieraspeli};
+                if (defined $joukkue_lyhenne{$pelipaivat{$joukkue}{$_}{vieraspeli}}) {
+                    $vieraspeli =  $joukkue_lyhenne{$pelipaivat{$joukkue}{$_}{vieraspeli}};
+                }
+                if (defined $peliputki{$joukkue}{$_} && $peliputki{$joukkue}{$_} eq "peli") {
+                    $html .= "<td class=\"$td\" title=\"3 tai useampi peli&#228; putkeen\"><center><font color=\"green\">$vieraspeli<\/font></center><\/td>\n";
+                } else {
+                    $html .= "<td class=\"$td\"><center>$vieraspeli</center><\/td>\n";
+                }
+            }
+        }
+        $html .= "<\/tr>\n";
     }
 
     $html .= "<\/tr>\n";
@@ -1791,9 +1837,9 @@ sub calculate_game_result_form {
     # Tulosta joukkueet ja pelaako
     foreach my $joukkue (sort hashValueAscendingNum keys %kaikkipelit) {
 	$_ = $start;
-	if (defined $pelipaivat{$joukkue}{$_}{'kotipeli'}) {
+	if (defined $pelipaivat{$joukkue}{$_}{kotipeli}) {
             my $a_script = "calculate_game_result_div( ['joukkue__$joukkue','liiga__$param_liiga','start_day__$start'],['game_result_div'] );";
-	    $html .= "<A HREF=\"#\" onclick=\"$a_script\"><font color=\"red\">$joukkue - $pelipaivat{$joukkue}{$_}{'kotipeli'}</font></A><br>\n";
+	    $html .= "<A HREF=\"#\" onclick=\"$a_script\"><font color=\"red\">$joukkue - $pelipaivat{$joukkue}{$_}{kotipeli}</font></A><br>\n";
 	}
     }
     $html .= "<p><div id='game_result_div'>\n";
@@ -1813,7 +1859,7 @@ sub calculate_game_result {
     read_player_lists();
     
     my $koti = $param_joukkue;
-    my $vieras = $pelipaivat{$param_joukkue}{$start}{'kotipeli'};
+    my $vieras = $pelipaivat{$param_joukkue}{$start}{kotipeli};
     my %joukkueet;
     my %tilastot;
     my $html;

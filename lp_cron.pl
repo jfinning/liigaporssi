@@ -8,8 +8,8 @@ require LWP::UserAgent;
 my $sub;
 my @sm_joukkue = ("Blues", "HIFK", "HPK", "Ilves", "JYP", "KalPa", "KooKoo", "Karpat", "Lukko", "Pelicans", "SaiPa", "Sport", "Tappara", "TPS", "Assat");
 #my @sm_joukkue = ("JYP", "Karpat", "Lukko", "Tappara");
-#my @nhl_joukkue = ("Anaheim", "Arizona", "Boston", "Buffalo", "Calgary", "Carolina", "Chicago", "Colorado", "Columbus", "Dallas", "Detroit", "Edmonton", "Florida", "Los Angeles", "Minnesota", "Montreal", "Nashville", "New Jersey", "NY Islanders", "NY Rangers", "Ottawa", "Philadelphia", "Pittsburgh", "San Jose", "St. Louis", "Tampa Bay", "Toronto", "Vancouver", "Washington", "Winnipeg");
-my @nhl_joukkue = ("Anaheim", "Calgary", "Chicago", "Detroit", "Minnesota", "Montreal", "Nashville", "NY Islanders", "NY Rangers", "Ottawa", "Pittsburgh", "St. Louis", "Tampa Bay", "Vancouver", "Washington", "Winnipeg");
+my @nhl_joukkue = ("Anaheim", "Arizona", "Boston", "Buffalo", "Calgary", "Carolina", "Chicago", "Colorado", "Columbus", "Dallas", "Detroit", "Edmonton", "Florida", "Los Angeles", "Minnesota", "Montreal", "Nashville", "New Jersey", "NY Islanders", "NY Rangers", "Ottawa", "Philadelphia", "Pittsburgh", "San Jose", "St. Louis", "Tampa Bay", "Toronto", "Vancouver", "Washington", "Winnipeg");
+#my @nhl_joukkue = ("Anaheim", "Calgary", "Chicago", "Detroit", "Minnesota", "Montreal", "Nashville", "NY Islanders", "NY Rangers", "Ottawa", "Pittsburgh", "St. Louis", "Tampa Bay", "Vancouver", "Washington", "Winnipeg");
 
 GetOptions (
     "sub=s"  => \$sub,
