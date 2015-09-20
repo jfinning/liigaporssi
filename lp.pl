@@ -75,7 +75,7 @@ if (!defined $param_vuosi) {
     if ($param_liiga eq "sm_liiga") {
         $param_vuosi = 2015;
     } else {
-        $param_vuosi = 2014;
+        $param_vuosi = 2015;
     }
 }
 if (!defined $param_sub)               { $param_sub = ""; }
@@ -86,7 +86,7 @@ if (!defined $param_read_players_from) {
     if ($param_liiga eq "sm_liiga") {
         $param_read_players_from = "Jakso 1";
     } else {
-        $param_read_players_from = "Jakso PO";
+        $param_read_players_from = "Jakso 1";
     }
 }
 
@@ -303,7 +303,7 @@ sub muuttujien_alustusta ($) {
         if ($param_liiga =~ /sm_liiga/) {
             @vuodet = ("2014", "2015");
         } else {
-            @vuodet = ("2014");
+            @vuodet = ("2014", "2015");
         }
         return @vuodet;
     }

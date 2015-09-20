@@ -1,37 +1,45 @@
-La 20.09.
-12:45 	QPR 	- 	Stoke 				
-15:00 	Newcastle 	- 	Hull City 				
-15:00 	A Villa 	- 	Arsenal 				
-15:00 	Swansea 	- 	Southampton 				
-15:00 	Burnley 	- 	Sunderland 				
-15:00 	Tottenham 	- 	WBA 				
-17:30 	West Ham 	- 	Liverpool 				
-Su 21.09.
-13:30 	Leicester City 	- 	Man U 				
-16:00 	Man C 	- 	Chelsea 				
-16:00 	Everton 	- 	Crystal Palace 				
-La 27.09.
-12:45 	Liverpool 	- 	Everton 				
-15:00 	Man U 	- 	West Ham 				
-15:00 	Hull City 	- 	Man C 				
-15:00 	Crystal Palace 	- 	Leicester City 				
-15:00 	Sunderland 	- 	Swansea 				
-15:00 	Southampton 	- 	QPR 				
-15:00 	Chelsea 	- 	A Villa 				
-17:30 	Arsenal 	- 	Tottenham 				
-Su 28.09.
-16:00 	WBA 	- 	Burnley 				
-Ma 29.09.
-20:00 	Stoke 	- 	Newcastle 				
-La 04.10.
-15:00 	Tottenham 	- 	Southampton 				
-15:00 	Sunderland 	- 	Stoke 				
-15:00 	Liverpool 	- 	WBA 				
-15:00 	Swansea 	- 	Newcastle 				
-15:00 	Hull City 	- 	Crystal Palace 				
-15:00 	Leicester City 	- 	Burnley 				
-17:30 	A Villa 	- 	Man C 				
-Su 05.10.
-12:00 	Man U 	- 	Everton 				
-14:05 	Chelsea 	- 	Arsenal 				
-16:15 	West Ham 	- 	QPR 
+La 26.09.
+14:45	
+Tottenham - Man C
+17:00	
+Leicester City - Arsenal
+17:00	
+Liverpool - A Villa
+17:00	
+West Ham - Norwich
+17:00	
+Stoke - Bournemouth
+17:00	
+Man U - Sunderland
+17:00	
+Southampton - Swansea
+19:30	
+Newcastle - Chelsea
+Su 27.09.
+18:00	
+Watford - Crystal Palace
+Ma 28.09.
+22:00	
+WBA - Everton
+La 03.10.
+14:45	
+Crystal Palace - WBA
+17:00	
+Man C - Newcastle
+17:00	
+Sunderland - West Ham
+17:00	
+Norwich - Leicester City
+17:00	
+Bournemouth - Watford
+17:00	
+A Villa - Stoke
+19:30	
+Chelsea - Southampton
+Su 04.10.
+15:30	
+Everton - Liverpool
+18:00	
+Arsenal - Man U
+18:00	
+Swansea - Tottenham

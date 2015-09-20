@@ -190,11 +190,9 @@ sub sm_kokoonpanot {
 
     foreach my $joukkue (@sm_joukkue) {
         $final_player_list .= "$joukkue\n";
-        #my $data = fetch_page("http://www.liigaporssi.fi/team/search-players?player_position=all&player_team=all&player_value=all&type=player_search");
         my $data = fetch_page("http://www.liigaporssi.fi/team/search-players?player_position=all&player_team=${joukkue}&player_value=all&type=player_search");
-        #my $data = fetch_page("http://www.liigaporssi.fi/team/search-players?player_position=all\&player_team=${joukkue}\&player_value=all\&type=player_search");
 
-	    $data = modify_char($data);
+	      $data = modify_char($data);
 
         $data =~ s/player_value\">(.*?)\&euro;</player_value\"> $1 </g;
         $data =~ s/\">(.*?)</\"> $1 </g;
@@ -208,20 +206,20 @@ sub sm_kokoonpanot {
         foreach (@text) {
             s/\s*$//;
             s/^\s*//;
-    	    if (/^\s*$/) { next; }
+            if (/^\s*$/) { next; }
             s/-(\s+)/0$1/g;
             $_ = replace_position($_);
 
-	        if (/^\s*\D+\s+\D+\s*$/ || (length($_) < 7 && $_ !~ /Arvo/) || /Maalivahti|Puolustaja|Hy.*kk.*/) {
-	            $final_player_list .= "$_ ";
-	        } else {
-	            $final_player_list .= "$_\n";
-	        }
+            if (/^\s*\D+\s+\D+\s*$/ || (length($_) < 7 && $_ !~ /Arvo/) || /Maalivahti|Puolustaja|Hy.*kk.*/) {
+                $final_player_list .= "$_ ";
+            } else {
+                $final_player_list .= "$_\n";
+            }
 
             #Tsekataan, etta joka joukkueelta saadaan pelaajalista. Ollut joskus ongelmia
             if (/Ei hakutuloksia/) {
                 print "Ei hakutuloksia: $joukkue\n";
-	        return 0;
+                return 0;
             }
         }
     }
@@ -246,13 +244,18 @@ sub sm_kokoonpanot {
 
 sub nhl_kokoonpanot {
     my $final_player_list = "";
+    my $address = "";
 
     foreach my $joukkue (@nhl_joukkue) {
         $final_player_list .= "$joukkue\n";
-        #my $data = fetch_page("http://www.hockeygm.fi/team/search-players?player_position=all&player_team=all&player_value=all&type=player_search");
-        my $data = fetch_page("http://www.hockeygm.fi/team/search-players?player_position=all&player_team=${joukkue}&player_value=all&type=player_search");
 
-	    $data = modify_char($data);
+        $address = "https://www.hockeygm.fi/team/search-players?player_position=all&player_team=${joukkue}&player_value=all&type=player_search";
+        $address =~ s/\s+/%20/g;
+        
+        my $data = fetch_page($address);
+
+
+	      $data = modify_char($data);
 
         $data =~ s/player_value\">(.*?)\&euro;</player_value\"> $1 </g;
         $data =~ s/\">(.*?)</\"> $1 </g;
@@ -266,22 +269,22 @@ sub nhl_kokoonpanot {
         foreach (@text) {
             s/\s*$//;
             s/^\s*//;
-    	    if (/^\s*$/) { next; }
-    	    if (length($_) <= 4) { next; }
+            if (/^\s*$/) { next; }
+            #if (length($_) <= 4) { next; }
             s/-(\s+)/0$1/g;
-            if (/HGMP\/O/) { next; }
             $_ = replace_position($_);
 
-	        if (/^\s*\D+\s+\D+\s*$/ || (length($_) < 7 && $_ !~ /Arvo/) || /Maalivahti|Puolustaja|Hy.*kk.*/) {
-	            $final_player_list .= "$_ ";
-	        } else {
-	            $final_player_list .= "$_\n";
-	        }
+            if (/^\s*\D+\s+\D+\s*$/ || (length($_) < 7 && $_ !~ /Arvo/) || /Maalivahti|Puolustaja|Hy.*kk.*/) {
+                $final_player_list .= "$_ ";
+            } else {
+                $final_player_list .= "$_\n";
+            }
 
             #Tsekataan, etta joka joukkueelta saadaan pelaajalista. Ollut joskus ongelmia
             if (/Ei hakutuloksia/) {
+                print "$address\n";
                 print "Ei hakutuloksia: $joukkue\n";
-	            return 0;
+                return 0;
             }
         }
     }
@@ -290,7 +293,7 @@ sub nhl_kokoonpanot {
     
     my @player_list = split(/\n/, $final_player_list);
     foreach (@player_list) {
-	print FILE "$_\n";
+        print FILE "$_\n";
     }
 
     close (FILE);
