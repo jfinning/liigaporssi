@@ -1,7 +1,7 @@
 if ($param_liiga =~ /sm_liiga/) {
     @vuodet = ("2014", "2015");
 } else {
-    @vuodet = ("2014");
+    @vuodet = ("2014", "2015");
 }
 
 @jakso = ("Jakso PO", "Jakso 5", "Jakso 4", "Jakso 3", "Jakso 2", "Jakso 1", "Jaksot 1-2", "Jaksot 1-3", "Jaksot 1-4", "Jaksot 1-5", "Jaksot 1-PO");
@@ -12,9 +12,9 @@ if (!defined $param_remove_players)    { $param_remove_players = ""; }
 if (!defined $param_kokoonpanot)       { $param_kokoonpanot = ""; }
 if (!defined $param_vuosi) {
     if ($param_liiga eq "sm_liiga") {
-        $param_vuosi = 2014;
+        $param_vuosi = 2015;
     } else {
-        $param_vuosi = 2014;
+        $param_vuosi = 2015;
     }
 }
 if (!defined $param_sub)               { $param_sub = ""; }
@@ -32,22 +32,16 @@ if (!defined $param_read_players_from) {
 # Pitaa muokata viela
 my $player_list = "$param_vuosi/player_list_period3.txt";
 
-
-
 if ($param_liiga =~ /sm_liiga/) {
     if ($param_vuosi == 2014) {
-    	$playoff_joukkueet	   = "Blues, HIFK, HPK, Ilves, JYP, KalPa, Karpat, Lukko, Pelicans, SaiPa, Sport, Tappara, TPS, Assat";
         $jaljella_olevat_joukkueet = "Blues, HIFK, HPK, Ilves, JYP, KalPa, Karpat, Lukko, Pelicans, SaiPa, Sport, Tappara, TPS, Assat";
     } else {
-    	$playoff_joukkueet	   = "Blues, HIFK, HPK, Ilves, Jokerit, JYP, KalPa, Karpat, Lukko, Pelicans, SaiPa, Tappara, TPS, Assat";
         $jaljella_olevat_joukkueet = "Blues, HIFK, HPK, Ilves, Jokerit, JYP, KalPa, Karpat, Lukko, Pelicans, SaiPa, Tappara, TPS, Assat";
     }
 } else {
     if ($param_vuosi == 2014) {
-        $playoff_joukkueet	   = "Anaheim, Arizona, Boston, Buffalo, Calgary, Carolina, Chicago, Colorado, Columbus, Dallas, Detroit, Edmonton, Florida, Los Angeles, Minnesota, Montreal, Nashville, New Jersey, NY Islanders, NY Rangers, Ottawa, Philadelphia, Pittsburgh, San Jose, St. Louis, Tampa Bay, Toronto, Vancouver, Washington, Winnipeg";
         $jaljella_olevat_joukkueet = "Anaheim, Arizona, Boston, Buffalo, Calgary, Carolina, Chicago, Colorado, Columbus, Dallas, Detroit, Edmonton, Florida, Los Angeles, Minnesota, Montreal, Nashville, New Jersey, NY Islanders, NY Rangers, Ottawa, Philadelphia, Pittsburgh, San Jose, St. Louis, Tampa Bay, Toronto, Vancouver, Washington, Winnipeg";
     } else {
-        $playoff_joukkueet	   = "Anaheim, Boston, Buffalo, Calgary, Carolina, Chicago, Colorado, Columbus, Dallas, Detroit, Edmonton, Florida, Los Angeles, Minnesota, Montreal, Nashville, New Jersey, NY Islanders, NY Rangers, Ottawa, Philadelphia, Phoenix, Pittsburgh, San Jose, St. Louis, Tampa Bay, Toronto, Vancouver, Washington, Winnipeg";
         $jaljella_olevat_joukkueet = "Anaheim, Boston, Buffalo, Calgary, Carolina, Chicago, Colorado, Columbus, Dallas, Detroit, Edmonton, Florida, Los Angeles, Minnesota, Montreal, Nashville, New Jersey, NY Islanders, NY Rangers, Ottawa, Philadelphia, Phoenix, Pittsburgh, San Jose, St. Louis, Tampa Bay, Toronto, Vancouver, Washington, Winnipeg";
     }
 }

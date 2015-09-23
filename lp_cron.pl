@@ -13,7 +13,7 @@ my @nhl_joukkue = ("Anaheim", "Arizona", "Boston", "Buffalo", "Calgary", "Caroli
 
 GetOptions (
     "sub=s"  => \$sub,
-    );
+);
 
 if (!defined $sub) { die "Anna -sub [sub]\n"; }
 
@@ -25,7 +25,6 @@ sub fetch_page($) {
     $ua->env_proxy;
 
     my $data = $ua->get($link);
-    #my $data = `curl $link`;
 
     if ($data->is_success) {
         return $data->decoded_content
@@ -48,26 +47,26 @@ sub sm_sarjataulukko {
 
     open FILE, ">table_sm_liiga.txt" or die "Cannot open table_sm_liiga.txt";
     foreach (@text) {
-	if (/^\s*$/) { next; }
-	$_ = modify_char($_);
-	if (/^\s*(\d+)\.\s*$/) {
-	    $sijoitus = $1;
-	}
-	if (defined $sijoitus) { $column++; }
-	if (/^\s*(\w+)\s*$/ && $column == 2) {
-	    $joukkue = $1;
-	}
-	if (/(\d+)/ && $column == 3) {
-	    $ottelut = $1;
-	}
-	if (/(\d+)/ && $column == 10) {
-	    $pisteet = $1;
+        if (/^\s*$/) { next; }
+        $_ = modify_char($_);
+        if (/^\s*(\d+)\.\s*$/) {
+            $sijoitus = $1;
+        }
+        if (defined $sijoitus) { $column++; }
+        if (/^\s*(\w+)\s*$/ && $column == 2) {
+            $joukkue = $1;
+        }
+        if (/(\d+)/ && $column == 3) {
+            $ottelut = $1;
+        }
+        if (/(\d+)/ && $column == 10) {
+            $pisteet = $1;
 	    
-	    print FILE "$sijoitus. $joukkue $ottelut $pisteet\n";
-	    if ($sijoitus == 15) { last; }
-	    $column = 0;
-	    $sijoitus = undef;
-	}
+            print FILE "$sijoitus. $joukkue $ottelut $pisteet\n";
+            if ($sijoitus == 15) { last; }
+            $column = 0;
+            $sijoitus = undef;
+        }
     }
     close FILE;
 }
@@ -121,7 +120,6 @@ sub sm_kokoonpanot_kaikki {
     my $final_player_list = "";
 
     my $data = fetch_page("http://www.liigaporssi.fi/team/search-players?player_position=all&player_team=all&player_value=all&type=player_search");
-    #my $data = fetch_page("https://www.liigaporssi.fi/team/search-players?player_position=all\&player_team=all\&player_value=all\&type=player_search");
     
     $data =~ s/player_value\">(.*?)\&euro;</player_value\"> $1 </g;
     $data =~ s/\">(.*?)</\"> $1 </g;
@@ -254,8 +252,7 @@ sub nhl_kokoonpanot {
         
         my $data = fetch_page($address);
 
-
-	      $data = modify_char($data);
+	    $data = modify_char($data);
 
         $data =~ s/player_value\">(.*?)\&euro;</player_value\"> $1 </g;
         $data =~ s/\">(.*?)</\"> $1 </g;
@@ -270,7 +267,6 @@ sub nhl_kokoonpanot {
             s/\s*$//;
             s/^\s*//;
             if (/^\s*$/) { next; }
-            #if (length($_) <= 4) { next; }
             s/-(\s+)/0$1/g;
             $_ = replace_position($_);
 
@@ -319,17 +315,17 @@ sub ottelulista ($) {
         s/\s*$//;
 
         if (/(\d\d)\.(\d\d)\./) {
-	    my $day_nro = $1;
-	    my $month_nro = $2;
-	    my $year_nro = 2015;
-	    $game_date = "$year_nro-$month_nro-$day_nro";
+            my $day_nro = $1;
+            my $month_nro = $2;
+            my $year_nro = 2015;
+            $game_date = "$year_nro-$month_nro-$day_nro";
 	    
-	    if ($current_date lt $game_date) { $day_found = 1; }
-	}
+            if ($current_date lt $game_date) { $day_found = 1; }
+        }
 	
-	if (!$day_found) { next; }
+        if (!$day_found) { next; }
 	
-	$new_game_list .= "$_\n";
+        $new_game_list .= "$_\n";
     }
     
     open FILE, ">$file" or die "Cant open $file\n"; 
@@ -343,16 +339,16 @@ sub modify_char ($) {
     my @char = split(//, $text);
     foreach (@char) {
         my $c = ord($_);
-	if ($c == 228) { $_ = "a"; }
-	elsif ($c == 196) { $_ = "A"; }
-	elsif ($c == 246) { $_ = "o"; }
-	elsif ($c == 214) { $_ = "O"; }
-	elsif ($c == 229) { $_ = "a"; }
-	elsif ($c == 197) { $_ = "A"; }
-	elsif ($c == 252) { $_ = "u"; }
-	elsif ($c == 220) { $_ = "U"; }
+        if ($c == 228) { $_ = "a"; }
+        elsif ($c == 196) { $_ = "A"; }
+        elsif ($c == 246) { $_ = "o"; }
+        elsif ($c == 214) { $_ = "O"; }
+        elsif ($c == 229) { $_ = "a"; }
+        elsif ($c == 197) { $_ = "A"; }
+        elsif ($c == 252) { $_ = "u"; }
+        elsif ($c == 220) { $_ = "U"; }
 	
-	$return = "$return$_";
+        $return = "$return$_";
     }
     return $return;
 }
@@ -361,40 +357,48 @@ sub sm_ottelu_id {
     my $year_nro = 2015;
     my $new_game_list;
     my $day_count = 0;
-    my %game_id;
-    my @games = `cat games.txt`;
+    my $gameday;
+    my $file = "games_sm_liiga.txt";
+
+    my $data = fetch_page("http://www.liiga.fi/ottelut/2015-2016/runkosarja/");
+    $data = modify_char($data);
+    my @data = split(/\n/, $data);
+
+    my @games = `cat $file`;
     foreach my $game (@games) {
         $game =~ s/\s*$//;
 
-	if ($game =~ /(\d\d)\.(\d\d)\./) {
-	    $day_count++;
-	}
+        if ($game =~ /(\d\d)\.(\d\d)\./) {
+            $gameday = "${year_nro}${2}$1";
+            $day_count++;
+        }
 	
-	if ($game =~ /(\d\d)\.(\d\d)\./ && $day_count == 1) {
-	    my $day_nro = $1;
-	    my $month_nro = $2;
-            print "www.sm-liiga.fi/sm-liiga.html?pvm=$year_nro-$month_nro-$day_nro\n";
-	    my $data = fetch_page("http://www.sm-liiga.fi/sm-liiga.html?pvm=$year_nro-$month_nro-$day_nro");
-	    $data = modify_char($data);
-	    my @data = split(/\n/, $data);
-	    foreach (@data) {
-	        if (/away(\d+)\">(.*?)</) { #"
-		    $game_id{$2} = $1;
-		}
-	    }
-	}
         if ($day_count == 1) {
-	    if ($game =~ /\w+\s*-\s*([a-zA-Z]+)\s*$/) {
-		my $away = $1;
-		$game =~ s/$away/$away, $game_id{$away}/;
-	    }
-	    $game = "$game";
-	}
+            if ($game =~ /^\s*(.*?)\s*-\s*(.*?)\s*$/) {
+                my $home = $1;
+                my $away = $2;
+                my $day_found = 0;
+                foreach (@data) {
+                    if (/data-time\s*=\s*\"$gameday/) {
+                        $day_found = 1;
+                    }
+                    
+                    if ($day_found) {
+                        if (/\/(\d+)\/\">$home\s*-\s*$away/) {
+                            my $id = $1;
+                            $game =~ s/$away/$away, $id/;
+                            last;
+                        }
+                    }
+                }
+            }
+            $game = "$game";
+        }
 	
-	$new_game_list .= "$game\n";
+        $new_game_list .= "$game\n";
     }
     
-    open FILE, ">games.txt" or die "Cant open games.txt\n"; 
+    open FILE, ">$file" or die "Cant open $file\n"; 
     print FILE "$new_game_list";
     close (FILE);
 }
