@@ -1,47 +1,147 @@
-if ($param_liiga =~ /sm_liiga/) {
-    @vuodet = ("2014", "2015");
-} else {
-    @vuodet = ("2014", "2015");
+use strict;
+
+sub get_vuodet ($) {
+    my @vuodet;
+    my $liiga = shift;
+    
+    if ($liiga =~ /sm_liiga/) {
+        @vuodet = ("2014", "2015");
+    } else {
+        @vuodet = ("2014", "2015");
+    }
+    
+    return @vuodet;
 }
 
-@jakso = ("Jakso PO", "Jakso 5", "Jakso 4", "Jakso 3", "Jakso 2", "Jakso 1", "Jaksot 1-2", "Jaksot 1-3", "Jaksot 1-4", "Jaksot 1-5", "Jaksot 1-PO");
-
-if (!defined $param_joukkueen_hinta)   { $param_joukkueen_hinta = "2000.0"; }
-if (!defined $param_ottelut)           { $param_ottelut = 0; }
-if (!defined $param_remove_players)    { $param_remove_players = ""; }
-if (!defined $param_kokoonpanot)       { $param_kokoonpanot = ""; }
-if (!defined $param_vuosi) {
-    if ($param_liiga eq "sm_liiga") {
-        $param_vuosi = 2015;
-    } else {
-        $param_vuosi = 2015;
-    }
-}
-if (!defined $param_sub)               { $param_sub = ""; }
-if (!defined $param_graafi)            { $param_graafi = "LPP ennuste"; }
-if (!defined $param_liiga)             { $param_liiga = "sm_liiga"; }
-if (!defined $param_joukkue)           { $param_joukkue = "Joukkue"; }
-if (!defined $param_read_players_from) {
-    if ($param_liiga =~ /nhl/) {
-        $param_read_players_from = "Jakso 2";
-    } else {
-        $param_read_players_from = "Jakso 3";
-    }
+sub get_jakso {
+    return ("Jakso PO", "Jakso 5", "Jakso 4", "Jakso 3", "Jakso 2", "Jakso 1", "Jaksot 1-2", "Jaksot 1-3", "Jaksot 1-4", "Jaksot 1-5", "Jaksot 1-PO");
 }
 
-# Pitaa muokata viela
-my $player_list = "$param_vuosi/player_list_period3.txt";
+sub get_default_joukkueen_hinta { return "2000.0" };
+sub get_default_ottelut { return 0 };
+sub get_default_remove_players { return "" };
+sub get_default_kokoonpanot { return "" };
+sub get_default_liiga { return "sm_liiga" };
+sub get_default_vuosi ($) {
+    my $vuosi;
+    my $liiga = shift;
 
-if ($param_liiga =~ /sm_liiga/) {
-    if ($param_vuosi == 2014) {
-        $jaljella_olevat_joukkueet = "Blues, HIFK, HPK, Ilves, JYP, KalPa, Karpat, Lukko, Pelicans, SaiPa, Sport, Tappara, TPS, Assat";
+    if ($liiga eq "sm_liiga") {
+        $vuosi = 2015;
     } else {
-        $jaljella_olevat_joukkueet = "Blues, HIFK, HPK, Ilves, Jokerit, JYP, KalPa, Karpat, Lukko, Pelicans, SaiPa, Tappara, TPS, Assat";
+        $vuosi = 2015;
     }
-} else {
-    if ($param_vuosi == 2014) {
-        $jaljella_olevat_joukkueet = "Anaheim, Arizona, Boston, Buffalo, Calgary, Carolina, Chicago, Colorado, Columbus, Dallas, Detroit, Edmonton, Florida, Los Angeles, Minnesota, Montreal, Nashville, New Jersey, NY Islanders, NY Rangers, Ottawa, Philadelphia, Pittsburgh, San Jose, St. Louis, Tampa Bay, Toronto, Vancouver, Washington, Winnipeg";
-    } else {
-        $jaljella_olevat_joukkueet = "Anaheim, Boston, Buffalo, Calgary, Carolina, Chicago, Colorado, Columbus, Dallas, Detroit, Edmonton, Florida, Los Angeles, Minnesota, Montreal, Nashville, New Jersey, NY Islanders, NY Rangers, Ottawa, Philadelphia, Phoenix, Pittsburgh, San Jose, St. Louis, Tampa Bay, Toronto, Vancouver, Washington, Winnipeg";
-    }
+
+    return $vuosi;
 }
+sub get_default_sub { return "" };
+sub get_default_graafi { return "LPP ennuste" };
+sub get_default_joukkue { return "Joukkue" };
+sub get_default_jakso ($) {
+    my $jakso;
+    my $liiga = shift;
+    
+    if ($liiga =~ /sm_liiga/) {
+        $jakso = "Jakso 1";
+    } else {
+        $jakso = "Jakso 1";
+    }
+    
+    return $jakso;
+}
+
+sub get_joukkue_list ($) {
+    my $liiga = shift;
+    my @joukkueet;
+
+    if ($liiga =~ /sm_liiga/) {
+        @joukkueet = ("Blues", "HIFK", "HPK", "Ilves", "JYP", "KalPa", "KooKoo", "Karpat", "Lukko", "Pelicans", "SaiPa", "Sport", "Tappara", "TPS", "Assat");
+        #@joukkueet = ("Blues", "HIFK", "HPK", "Ilves", "JYP", "KalPa", "KooKoo", "Karpat", "Lukko", "Pelicans", "SaiPa", "Sport", "Tappara", "TPS", "Assat");
+    } else {
+        @joukkueet = ("Anaheim", "Arizona", "Boston", "Buffalo", "Calgary", "Carolina", "Chicago", "Colorado", "Columbus", "Dallas", "Detroit", "Edmonton", "Florida", "Los Angeles", "Minnesota", "Montreal", "Nashville", "New Jersey", "NY Islanders", "NY Rangers", "Ottawa", "Philadelphia", "Pittsburgh", "San Jose", "St. Louis", "Tampa Bay", "Toronto", "Vancouver", "Washington", "Winnipeg");
+        #@joukkueet = ("Anaheim", "Arizona", "Boston", "Buffalo", "Calgary", "Carolina", "Chicago", "Colorado", "Columbus", "Dallas", "Detroit", "Edmonton", "Florida", "Los Angeles", "Minnesota", "Montreal", "Nashville", "New Jersey", "NY Islanders", "NY Rangers", "Ottawa", "Philadelphia", "Pittsburgh", "San Jose", "St. Louis", "Tampa Bay", "Toronto", "Vancouver", "Washington", "Winnipeg");
+    }
+    
+    return @joukkueet;    
+}
+
+sub get_joukkueiden_lyhenteet ($) {
+    my $liiga = shift;
+    my %joukkue_lyhenne = {};
+    
+    if ($liiga eq "nhl") {
+        %joukkue_lyhenne = (
+            "Anaheim"      => "ANA",
+            "Arizona"      => "ARI",
+            "Boston"       => "BOS",
+            "Buffalo"      => "BUF",
+            "Calgary"      => "CGY",
+            "Carolina"     => "CAR",
+            "Chicago"      => "CHI",
+            "Colorado"     => "COL",
+            "Columbus"     => "CLB",
+            "Dallas"       => "DAL",
+            "Detroit"      => "DET",
+            "Edmonton"     => "EDM",
+            "Florida"      => "FLA",
+            "Los Angeles"  => "LOS",
+            "Minnesota"    => "MIN",
+            "Montreal"     => "MTL",
+            "Nashville"    => "NSH",
+            "New Jersey"   => "NJD",
+            "NY Islanders" => "NYI",
+            "NY Rangers"   => "NYR",
+            "Ottawa"       => "OTT",
+            "Philadelphia" => "PHI",
+            "Phoenix"      => "PHO",
+            "Pittsburgh"   => "PIT",
+            "San Jose"     => "SJS",
+            "St. Louis"    => "STL",
+            "Tampa Bay"    => "TBL",
+            "Toronto"      => "TOR",
+            "Vancouver"    => "VAN",
+            "Washington"   => "WSH",
+            "Winnipeg"     => "WPG"
+        );
+    }
+
+    return %joukkue_lyhenne;
+}
+
+sub get_ottelulista_filename ($) {
+    my $liiga = shift;
+    
+    return "games_$liiga.txt";
+}
+
+sub get_sarjataulukko_filename ($) {
+    my $liiga = shift;
+    
+    return "table_$liiga.txt";
+}
+
+sub get_max_teams { return 10 };
+
+sub modify_char ($) {
+    my $text = shift;
+    my $return = "";
+    my @char = split(//, $text);
+    foreach (@char) {
+        my $c = ord($_);
+        if ($c == 228) { $_ = "a"; }
+        elsif ($c == 196) { $_ = "A"; }
+        elsif ($c == 246) { $_ = "o"; }
+        elsif ($c == 214) { $_ = "O"; }
+        elsif ($c == 229) { $_ = "a"; }
+        elsif ($c == 197) { $_ = "A"; }
+        elsif ($c == 252) { $_ = "u"; }
+        elsif ($c == 220) { $_ = "U"; }
+        elsif ($c == 225) { $_ = "a"; }
+        elsif ($c == 241) { $_ = "n"; }
+        elsif ($c == 253) { $_ = "y"; }
+
+        $return = "$return$_";
+    }
+    return $return;
+}
+1;

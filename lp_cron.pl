@@ -4,12 +4,9 @@ use strict;
 use Getopt::Long;
 use HTML::Parser;
 require LWP::UserAgent;
+require "lp_settings.pm";
 
 my $sub;
-my @sm_joukkue = ("Blues", "HIFK", "HPK", "Ilves", "JYP", "KalPa", "KooKoo", "Karpat", "Lukko", "Pelicans", "SaiPa", "Sport", "Tappara", "TPS", "Assat");
-#my @sm_joukkue = ("JYP", "Karpat", "Lukko", "Tappara");
-my @nhl_joukkue = ("Anaheim", "Arizona", "Boston", "Buffalo", "Calgary", "Carolina", "Chicago", "Colorado", "Columbus", "Dallas", "Detroit", "Edmonton", "Florida", "Los Angeles", "Minnesota", "Montreal", "Nashville", "New Jersey", "NY Islanders", "NY Rangers", "Ottawa", "Philadelphia", "Pittsburgh", "San Jose", "St. Louis", "Tampa Bay", "Toronto", "Vancouver", "Washington", "Winnipeg");
-#my @nhl_joukkue = ("Anaheim", "Calgary", "Chicago", "Detroit", "Minnesota", "Montreal", "Nashville", "NY Islanders", "NY Rangers", "Ottawa", "Pittsburgh", "St. Louis", "Tampa Bay", "Vancouver", "Washington", "Winnipeg");
 
 GetOptions (
     "sub=s"  => \$sub,
@@ -105,6 +102,7 @@ sub nhl_sarjataulukko {
 sub sm_kokoonpanot_kaikki {
     my $team_count = 0;
     my $previous_name = "Z";
+    my @sm_joukkue = get_joukkue_list("sm_liiga");
 
     # Listaa tahan nimet, jos aakkosjarjestys ei matsaa. Ts. seuraavan joukkueen ensimmainen pelaaja on aakkosissa toisen joukkueen viimeisen jalkeen
     my @pelaajat = ();
@@ -186,6 +184,7 @@ sub sm_kokoonpanot_kaikki {
 sub sm_kokoonpanot {
     my $final_player_list = "";
 
+    my @sm_joukkue = get_joukkue_list("sm_liiga");
     foreach my $joukkue (@sm_joukkue) {
         $final_player_list .= "$joukkue\n";
         my $data = fetch_page("http://www.liigaporssi.fi/team/search-players?player_position=all&player_team=${joukkue}&player_value=all&type=player_search");
@@ -244,6 +243,7 @@ sub nhl_kokoonpanot {
     my $final_player_list = "";
     my $address = "";
 
+    my @nhl_joukkue = get_joukkue_list("sm_liiga");
     foreach my $joukkue (@nhl_joukkue) {
         $final_player_list .= "$joukkue\n";
 
@@ -331,26 +331,6 @@ sub ottelulista ($) {
     open FILE, ">$file" or die "Cant open $file\n"; 
     print FILE "$new_game_list";
     close (FILE);
-}
-
-sub modify_char ($) {
-    my $text = shift;
-    my $return = "";
-    my @char = split(//, $text);
-    foreach (@char) {
-        my $c = ord($_);
-        if ($c == 228) { $_ = "a"; }
-        elsif ($c == 196) { $_ = "A"; }
-        elsif ($c == 246) { $_ = "o"; }
-        elsif ($c == 214) { $_ = "O"; }
-        elsif ($c == 229) { $_ = "a"; }
-        elsif ($c == 197) { $_ = "A"; }
-        elsif ($c == 252) { $_ = "u"; }
-        elsif ($c == 220) { $_ = "U"; }
-	
-        $return = "$return$_";
-    }
-    return $return;
 }
 
 sub sm_ottelu_id {

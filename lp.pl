@@ -5,6 +5,7 @@ use CGI::Carp qw(fatalsToBrowser);
 use CGI qw(:standard);
 use CGI::Ajax;
 use Time::HiRes qw(usleep gettimeofday tv_interval);
+require "lp_settings.pm";
 
 my $cgi = new CGI;
 my $script_name = $cgi->script_name;
@@ -20,7 +21,7 @@ my @weekdays;
 my %pelipaivat;
 my %joukkue_lyhenne;
 my $max_pelatut_pelit = 0;
-my $max_teams = 10;
+my $max_teams = get_max_teams();
 my $timing = 0; #Tama on koodin nopeuden mittaukseen
 
 my $pelaaja = {};
@@ -67,28 +68,16 @@ my $param_liiga             = $cgi->param('liiga');
 my $param_a_script          = $cgi->param('a_script');
 my $param_a_script_end      = $cgi->param('a_script_end');
 my $param_a_script_start    = $cgi->param('a_script_start');
-if (!defined $param_joukkueen_hinta)   { $param_joukkueen_hinta = "2000.0"; }
-if (!defined $param_ottelut)           { $param_ottelut = 0; }
-if (!defined $param_remove_players)    { $param_remove_players = ""; }
-if (!defined $param_kokoonpanot)       { $param_kokoonpanot = ""; }
-if (!defined $param_vuosi) {
-    if ($param_liiga eq "sm_liiga") {
-        $param_vuosi = 2015;
-    } else {
-        $param_vuosi = 2015;
-    }
-}
-if (!defined $param_sub)               { $param_sub = ""; }
-if (!defined $param_graafi)            { $param_graafi = "LPP ennuste"; }
-if (!defined $param_liiga)             { $param_liiga = "sm_liiga"; }
-if (!defined $param_joukkue)           { $param_joukkue = "Joukkue"; }
-if (!defined $param_read_players_from) {
-    if ($param_liiga eq "sm_liiga") {
-        $param_read_players_from = "Jakso 1";
-    } else {
-        $param_read_players_from = "Jakso 1";
-    }
-}
+if (!defined $param_joukkueen_hinta)   { $param_joukkueen_hinta = get_default_joukkueen_hinta(); }
+if (!defined $param_ottelut)           { $param_ottelut = get_default_ottelut(); }
+if (!defined $param_remove_players)    { $param_remove_players = get_default_remove_players(); }
+if (!defined $param_kokoonpanot)       { $param_kokoonpanot = get_default_kokoonpanot(); }
+if (!defined $param_liiga)             { $param_liiga = get_default_liiga(); }
+if (!defined $param_vuosi)             { $param_vuosi = get_default_vuosi($param_liiga); }
+if (!defined $param_sub)               { $param_sub = get_default_sub(); }
+if (!defined $param_graafi)            { $param_graafi = get_default_graafi(); }
+if (!defined $param_joukkue)           { $param_joukkue = get_default_joukkue(); }
+if (!defined $param_read_players_from) { $param_read_players_from = get_default_jakso($param_liiga); }
 
 my ($pelit, $sarjataulukko);
 sub alustus {
@@ -96,41 +85,7 @@ sub alustus {
     @selected_day_list = ();
     %vastus = (); %kotipelit = (); %vieraspelit = (); %kaikkipelit = ();
     
-    if ($param_liiga eq "nhl") {
-        %joukkue_lyhenne = (
-            "Anaheim"      => "ANA",
-            "Arizona"      => "ARI",
-            "Boston"       => "BOS",
-            "Buffalo"      => "BUF",
-            "Calgary"      => "CGY",
-            "Carolina"     => "CAR",
-            "Chicago"      => "CHI",
-            "Colorado"     => "COL",
-            "Columbus"     => "CLB",
-            "Dallas"       => "DAL",
-            "Detroit"      => "DET",
-            "Edmonton"     => "EDM",
-            "Florida"      => "FLA",
-            "Los Angeles"  => "LOS",
-            "Minnesota"    => "MIN",
-            "Montreal"     => "MTL",
-            "Nashville"    => "NSH",
-            "New Jersey"   => "NJD",
-            "NY Islanders" => "NYI",
-            "NY Rangers"   => "NYR",
-            "Ottawa"       => "OTT",
-            "Philadelphia" => "PHI",
-            "Phoenix"      => "PHO",
-            "Pittsburgh"   => "PIT",
-            "San Jose"     => "SJS",
-            "St. Louis"    => "STL",
-            "Tampa Bay"    => "TBL",
-            "Toronto"      => "TOR",
-            "Vancouver"    => "VAN",
-            "Washington"   => "WSH",
-            "Winnipeg"     => "WPG"
-        );
-    }
+    %joukkue_lyhenne = get_joukkueiden_lyhenteet($param_liiga);
 
     $o_maalivahti      = $cgi->param('o_maalivahti') if defined $cgi->param('o_maalivahti');
     $o_puolustaja1     = $cgi->param('o_puolustaja1') if defined $cgi->param('o_puolustaja1');
@@ -146,8 +101,8 @@ sub alustus {
     if ($o_hyokkaaja2 =~ /^(.*?)\s*,/) { $o_hyokkaaja2 = $1; }
     if ($o_hyokkaaja3 =~ /^(.*?)\s*,/) { $o_hyokkaaja3 = $1; }
 
-    $pelit = "games_$param_liiga.txt";
-    $sarjataulukko = "table_$param_liiga.txt";
+    $pelit = get_ottelulista_filename($param_liiga);
+    $sarjataulukko = get_sarjataulukko_filename($param_liiga);
     
     # Nama tehdaan loopissa olevien ehtojen takia
     if ($o_puolustaja2 =~ /Kaikki/ && $o_puolustaja1 !~ /Kaikki/) {
@@ -268,18 +223,18 @@ if (!defined $param_selected_teams || $param_selected_teams =~ /^\s*$/) {
     $param_selected_teams =~ s/,\s*$//;
 }
 
-my $pjx = new CGI::Ajax( 'print_game_days_div'              => \&print_game_days,
-                         'print_team_compare_table_div'     => \&print_team_compare_table,
-			 'calculate_optimal_change_day_div' => \&calculate_optimal_change_day,
-			 'print_player_list_div'            => \&print_player_list,
-			 'print_optimi_joukkue_div'         => \&print_optimi_joukkue,
-			 'print_kokoonpanot_div'            => \&print_kokoonpanot,
-			 'print_start_day_div'              => \&select_days_start_form,
-			 'print_end_day_div'                => \&select_days_end_form,
-			 'print_optimi_ja_max_pelatut_pelit_div'      => \&run_optimi_joukkue_ja_select_max_pelatut_pelit,
-			 'calculate_game_result_div'        => \&calculate_game_result,
-			 'tallenna_kokoonpanot_div'         => \&tallenna_kokoonpanot,
-                         'alustus'                          => \&alustus);
+my $pjx = new CGI::Ajax( 'print_game_days_div'                   => \&print_game_days,
+                         'print_team_compare_table_div'          => \&print_team_compare_table,
+                         'calculate_optimal_change_day_div'      => \&calculate_optimal_change_day,
+                         'print_player_list_div'                 => \&print_player_list,
+                         'print_optimi_joukkue_div'              => \&print_optimi_joukkue,
+                         'print_kokoonpanot_div'                 => \&print_kokoonpanot,
+                         'print_start_day_div'                   => \&select_days_start_form,
+                         'print_end_day_div'                     => \&select_days_end_form,
+                         'print_optimi_ja_max_pelatut_pelit_div' => \&run_optimi_joukkue_ja_select_max_pelatut_pelit,
+                         'calculate_game_result_div'             => \&calculate_game_result,
+                         'tallenna_kokoonpanot_div'              => \&tallenna_kokoonpanot,
+                         'alustus'                               => \&alustus);
 print $pjx->build_html( $cgi, \&update_menus);
 
 sub muuttujien_alustusta ($) {
@@ -295,26 +250,6 @@ sub muuttujien_alustusta ($) {
             [ "$o_hyokkaaja3", "Kaikki H3", \@hyokkaajat_kaikki, "H3", "o_hyokkaaja3", "$hyokkaaja3" ],
         );
         return @paikka;
-    }
-
-    if ($temp =~ /vuodet/) {
-        my @vuodet;
-        if ($param_liiga =~ /sm_liiga/) {
-            @vuodet = ("2014", "2015");
-        } else {
-            @vuodet = ("2014", "2015");
-        }
-        return @vuodet;
-    }
-    
-    if ($temp =~ /jakso/) {
-        my @jakso;
-        if ($param_liiga =~ /sm_liiga/) {
-            @jakso = ("Jakso PO", "Jakso 5", "Jakso 4", "Jakso 3", "Jakso 2", "Jakso 1", "Jaksot 1-2", "Jaksot 1-3", "Jaksot 1-4", "Jaksot 1-5", "Jaksot 1-PO");
-        } else {
-            @jakso = ("Jakso PO", "Jakso 5", "Jakso 4", "Jakso 3", "Jakso 2", "Jakso 1", "Jaksot 1-2", "Jaksot 1-3", "Jaksot 1-4", "Jaksot 1-5", "Jaksot 1-PO");
-        }
-        return @jakso;
     }
 }
 
@@ -561,7 +496,7 @@ sub print_optimi_joukkue_form {
 
     # Jakso
     $html .= "<select name=\"read_players_from\" id=\"read_players_from\" onchange=\"$a_script_jakso\">\n";
-    my @jakso = muuttujien_alustusta("jakso");
+    my @jakso = get_jakso();
     foreach my $current_arvo (@jakso) {
         if ($current_arvo eq $param_read_players_from) {
             $html .= "<option selected>$current_arvo<\/option>\n";
@@ -1049,7 +984,7 @@ sub print_kokoonpanot () {
     # Jakso
     $html .= "<font id='font_on_bg'>Lue tilastot jaksosta:</font> \n";
     $html .= "<select name=\"read_players_from\" id=\"read_players_from\" onchange=\"$a_script\">\n";
-    my @jakso = muuttujien_alustusta("jakso");
+    my @jakso = get_jakso();
     foreach my $current_arvo (@jakso) {
         if ($current_arvo eq $param_read_players_from) {
             $html .= "<option selected>$current_arvo<\/option>\n";
@@ -1222,7 +1157,7 @@ sub print_player_list_form {
     
     # Vuosi
     $html .= "<select name=\"vuosi\" id=\"vuosi\" onchange=\"this.form.submit()\">\n";
-    my @vuodet = muuttujien_alustusta("vuodet");
+    my @vuodet = get_vuodet($param_liiga);
     foreach (@vuodet) {
         if ($_ == $param_vuosi) {
             $html .= "<option selected>$_<\/option>\n";
@@ -1235,7 +1170,7 @@ sub print_player_list_form {
 
     #Jakso
     $html .= "<select name=\"read_players_from\" id=\"read_players_from\" onchange=\"this.form.submit()\">\n";
-    my @jakso = muuttujien_alustusta("jakso");
+    my @jakso = get_jakso();
     foreach my $current_arvo (@jakso) {
         if ($current_arvo eq $param_read_players_from) {
             $html .= "<option selected>$current_arvo<\/option>\n";
@@ -2235,27 +2170,4 @@ sub jaahyn_syy {
     }
     
     return $jaahyn_syy[0];
-}
-
-sub modify_char ($) {
-    my $text = shift;
-    my $return = "";
-    my @char = split(//, $text);
-    foreach (@char) {
-        my $c = ord($_);
-        if ($c == 228) { $_ = "a"; }
-        elsif ($c == 196) { $_ = "A"; }
-        elsif ($c == 246) { $_ = "o"; }
-        elsif ($c == 214) { $_ = "O"; }
-        elsif ($c == 229) { $_ = "a"; }
-        elsif ($c == 197) { $_ = "A"; }
-        elsif ($c == 252) { $_ = "u"; }
-        elsif ($c == 220) { $_ = "U"; }
-        elsif ($c == 225) { $_ = "a"; }
-        elsif ($c == 241) { $_ = "n"; }
-        elsif ($c == 253) { $_ = "y"; }
-
-        $return = "$return$_";
-    }
-    return $return;
 }
