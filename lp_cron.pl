@@ -383,6 +383,10 @@ sub sm_ottelu_id {
     close (FILE);
 }
 
+sub fetch_kokoonpanot() {
+
+}
+
 sub replace_position($) {
     my $position = shift;
     
@@ -399,6 +403,7 @@ sub replace_position($) {
 
 if ($sub =~ /sm_ottelulista/) { ottelulista("games_sm_liiga.txt"); }
 elsif ($sub =~ /nhl_ottelulista/) { ottelulista("games_nhl.txt"); }
+elsif ($sub =~ /fetch_kokoonpanot/) { fetch_kokoonpanot(); }
 elsif ($sub =~ /sm_sarjataulukko/) { sm_sarjataulukko(); }
 elsif ($sub =~ /sm_ottelu_id/) { sm_ottelu_id(); }
 elsif ($sub =~ /nhl_sarjataulukko/) { nhl_sarjataulukko(); }

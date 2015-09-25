@@ -1566,10 +1566,10 @@ sub print_game_days {
 sub print_games_of_day {
     # Tulosta joukkueet ja pelaako
     foreach my $joukkue (sort hashValueAscendingNum keys %kaikkipelit) {
-	$_ = $start;
-	if (defined $pelipaivat{$joukkue}{$_}{'kotipeli'}) {
-	    print "<A HREF=\"$script_name?sub=kokoonpano&game_nro=$pelipaivat{$joukkue}{$_}{'kokoonpano'}&start_day=$_\"><font color=\"black\">$joukkue - $pelipaivat{$joukkue}{$_}{'kotipeli'}</font></A>&nbsp;";
-	}
+        $_ = $start;
+        if (defined $pelipaivat{$joukkue}{$_}{'kotipeli'}) {
+            print "<A HREF=\"$script_name?sub=kokoonpano&game_nro=$pelipaivat{$joukkue}{$_}{'kokoonpano'}&start_day=$_\"><font color=\"black\">$joukkue - $pelipaivat{$joukkue}{$_}{'kotipeli'}</font></A>&nbsp;";
+        }
     }
     print "<p>\n";
 }
@@ -1585,7 +1585,7 @@ sub calculate_optimal_change_day {
     
         my $to_count = 0;
         my $games_after_change_count = 0;
-	my $continue_count = 0;
+        my $continue_count = 0;
         $from_count = 0;
 
         if ($team_from eq $team_to) { next ;}
@@ -1598,9 +1598,9 @@ sub calculate_optimal_change_day {
                 $games_after_change_count++;
             }
             if ($from_count - $to_count == $max_difference) {
-		$continue_count++;
+                $continue_count++;
                 if ($continue_count == 1) {
-		    push (@day_to_change, $_);
+                push (@day_to_change, $_);
 		} elsif ($continue_count == 2) {
 		    push (@day_to_change, "-$_");
 		} elsif ($continue_count > 2) {

@@ -5,6 +5,8 @@ use CGI::Carp qw(fatalsToBrowser);
 use CGI qw(:standard);
 use CGI::Ajax;
 use Time::HiRes qw(usleep gettimeofday tv_interval);
+use HTML::Parser;
+require LWP::UserAgent;
 require "lp_settings.pm";
 
 my $cgi = new CGI;
@@ -144,24 +146,21 @@ sub alustus {
         s/\s*$//;
 
         if (/(\d\d\.\d\d\.)/) {
-	    push (@all_day_list, $1);
+            push (@all_day_list, $1);
             if (! defined $start) { $start = $1; }
         }
 
         if (/\s*(\w+)\s+\d\d\.\d\d\./) {
-	    $weekday = $1;
+            $weekday = $1;
         }
     
         if (/$start/) { $start_found = 1; }
         if (! $start_found) { next; }
-
-        if ($end_found) { 
-	    next;
-        }
+        if ($end_found) { next; }
 
         if ($last_day_found && /\d\d\.\d\d\./) {
             $end_found = 1;
-	    next;
+            next;
         }
 
         if (/(\d\d\.\d\d\.)/) {
@@ -179,15 +178,20 @@ sub alustus {
             $vieraspelit{$2}++;
             $kaikkipelit{$1}++;
             $kaikkipelit{$2}++;
-	
+
             $pelipaivat{$1}{$pelipaiva}{kotipeli} = $2;
             $pelipaivat{$2}{$pelipaiva}{vieraspeli} = $1;
+
+            if (defined $3) {
+                $pelipaivat{$1}{$pelipaiva}{kokoonpano} = $3;
+                $pelipaivat{$2}{$pelipaiva}{kokoonpano} = $3;
+            }
 
             if ($taulukko{$1}{sija} <= 5) {
                 $vastus{$2}{top}++;
             } elsif ($taulukko{$1}{sija} <= 10) {
                 $vastus{$2}{mid}++;
-            } else { 
+            } else {
                 $vastus{$2}{low}++;
             }
 
@@ -233,7 +237,6 @@ my $pjx = new CGI::Ajax( 'print_game_days_div'                   => \&print_game
                          'print_end_day_div'                     => \&select_days_end_form,
                          'print_optimi_ja_max_pelatut_pelit_div' => \&run_optimi_joukkue_ja_select_max_pelatut_pelit,
                          'calculate_game_result_div'             => \&calculate_game_result,
-                         'tallenna_kokoonpanot_div'              => \&tallenna_kokoonpanot,
                          'alustus'                               => \&alustus);
 print $pjx->build_html( $cgi, \&update_menus);
 
@@ -903,17 +906,7 @@ sub print_kokoonpanot_form {
 			   T&auml;&auml;ll&auml; ketjukoostumukset on h&ouml;ystetty pelaajien tilastoilla,
 			   sek&auml; listalla pelaajista, jotka ovat j&auml;&auml;neet kokoonpanojen ulkopuolelle.<br><br>
 			   
-			   Klikkaa ottelua yl&auml;puolelta. Jos n&auml;kyy vain pelaajalistat, mutta ei joukkueiden kokoonpanoja,
-			   toimi n&auml;in:<br><br>
-
-                           1. Etsi joukkueiden kokoonpanot liiga.fi:n sivuilta.<br>
-                           2. Kopioi koko sivun sis&auml;lt&ouml; (CTRL-A ja CTRL-C).<br>
-                           3. Liit&auml; data (CTRL-V) sivulla olevaan teksti-ikkunaan ja 'Tallenna'.<br>
-                           4. Kokoonpanot tallentuvat ja n&auml;kyv&auml;t kaikille k&auml;ytt&auml;jille.<br><br>
-
-                           T&auml;m&auml;n pystyisi my&ouml;s automatisoimaan, mutta vaatisi maksullisen tilin
-                           freehostiaan. En ole kuitenkaan valmis maksamaan siit&auml;, ett&auml; tarjoan ilmaisen
-                           palvelun k&auml;ytt&auml;jille.
+			   Kokoonpanot haetaan automaattisesti liiga.fi:n sivuilta.
 			   </div>\n";
     $html .= "</div>\n";
 
@@ -928,8 +921,6 @@ sub print_kokoonpanot () {
 
     my $html;
 
-    my $tallenna_kokoonpanot = "";
-
     my %kokoonpanot;
     my $kentta = 0;
     my $pelaaja_nro = 0;
@@ -938,21 +929,20 @@ sub print_kokoonpanot () {
     my $vieras = $pelipaivat{$param_joukkue}{$start}{kotipeli};
     my $pelaavat_pelaajat = "";
 
-    my @data = split(/\n/, $param_kokoonpanot);
-    my $filename = "$param_vuosi/kokoonpanot/${start}_${koti}_${vieras}.txt";
-    
-    if (-e $filename && $param_kokoonpanot eq "") {
-        @data = split(/\n/, `cat $filename`);
-    }
-    
-    foreach (@data) {
+    my $data = fetch_page("http://liiga.fi/ottelut/2015-2016/runkosarja/7651/kokoonpanot/");
+    my $text;
+    my $p = HTML::Parser->new(text_h => [ sub {$text .= shift}, 
+				  'dtext']);
+    $p->parse($data);
+    my @text = split(/\n/, $text);
+
+    foreach (@text) {
         if (/^\s*$/) { next; }
 	
         $_ = modify_char($_);
-        $tallenna_kokoonpanot .= $_ . "\n";
         if (/Tuomarit/) { last; }
 
-        if (/(\d+). kentta/) {
+        if (/(\d+)\.\s*kentta/) {
             $kentta = $1;
             $pelaaja_nro = 0;
         }
@@ -966,7 +956,7 @@ sub print_kokoonpanot () {
         if (/$vieras/) {
             $koti_vieras = 2;
         }
-        if (/\d+\s+(.*?),\s+(.*?)\s*$/ && $koti_vieras) {
+        if (/^\s*(.*?),\s+(.*?)\s*$/ && $koti_vieras) {
             my $nimi = "$1 $2";
             $pelaaja_nro++;
 	    
@@ -975,8 +965,6 @@ sub print_kokoonpanot () {
             $pelaavat_pelaajat .= " $nimi ";
         }
     }
-
-    tallenna_kokoonpanot($tallenna_kokoonpanot, $koti, $vieras) if ($param_kokoonpanot ne "");
 
     $html .= "<input type='hidden' name='joukkue' id='joukkue' value=\"$param_joukkue\">\n";
     $html .= "<input type='hidden' name='start_day' id='start_day' value=\"$start\">\n";
@@ -1122,25 +1110,7 @@ sub print_kokoonpanot () {
     
     $html .= "</table>\n";
 
-#$html .= "$param_joukkue - $pelipaivat{$param_joukkue}{$start}{kotipeli}";
-
-    $html .= "<br>Kopioi t&#228;h&#228;n $koti - $vieras pelin kokoonpanot liigan sivuilta.<br>\n";
-    $html .= "<TEXTAREA NAME='kokoonpanot' id='kokoonpanot' COLS=40 ROWS=4>\n";
-    $html .= "<\/TEXTAREA><br>\n";
-    $html .= "<br>\n";
-    $html .= "<input type='submit' value='Tallenna' onclick=\"$a_script\">\n";
-        
     return $html;
-}
-
-sub tallenna_kokoonpanot {
-    my ($tallenna_kokoonpanot, $koti, $vieras) = @_;
-    
-    my $filename = "$param_vuosi/kokoonpanot/${start}_${koti}_${vieras}.txt";
-    
-    open FILE, ">$filename" or die "Cant open $filename\n"; 
-    print FILE $tallenna_kokoonpanot;
-    close (FILE);
 }
 
 sub print_player_list_form {
@@ -1757,6 +1727,21 @@ sub calculate_interval ($) {
     return $elapsed_time, $current_time;
 }
 
+sub fetch_page($) {
+    my $link = shift;
+    
+    my $ua = LWP::UserAgent->new;
+    $ua->timeout(10);
+    $ua->env_proxy;
+
+    my $data = $ua->get($link);
+
+    if ($data->is_success) {
+        return $data->decoded_content
+    } else {
+        die $data->status_line;
+    }
+}
 #
 ######################################################
 # Kaikki taman alla on vain tulosten arvontaa varten #
