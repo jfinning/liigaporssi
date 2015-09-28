@@ -9,10 +9,10 @@ require "lp_settings.pm";
 my $sub;
 
 GetOptions (
-    "sub=s"  => \$sub,
+    "sub=s"  => \$sub
 );
 
-if (!defined $sub) { die "Anna -sub [sub]\n"; }
+if (!defined $sub) { $sub = ""; }
 
 sub fetch_page($) {
     my $link = shift;
@@ -35,6 +35,7 @@ sub sm_sarjataulukko {
     my $sijoitus = undef;
     my $column = 0;
     my ($joukkue, $ottelut, $pisteet);
+    my $file = get_sarjataulukko_filename("sm_liiga");
 
     my $text;
     my $p = HTML::Parser->new(text_h => [ sub {$text .= shift}, 
@@ -42,7 +43,7 @@ sub sm_sarjataulukko {
     $p->parse($data);
     my @text = split(/\n/, $text);
 
-    open FILE, ">table_sm_liiga.txt" or die "Cannot open table_sm_liiga.txt";
+    open FILE, ">$file" or die "Cannot open $file";
     foreach (@text) {
         if (/^\s*$/) { next; }
         $_ = modify_char($_);
@@ -71,6 +72,7 @@ sub sm_sarjataulukko {
 sub nhl_sarjataulukko {
     my $data = fetch_page("http://www.hockeygm.fi/nhl/sarjataulukko");
     my ($sijoitus, $joukkue, $ottelut, $pisteet);
+    my $file = get_sarjataulukko_filename("nhl");
 
     my $text;
     my $p = HTML::Parser->new(text_h => [ sub {$text .= shift}, 
@@ -89,7 +91,7 @@ sub nhl_sarjataulukko {
 	    }
     }
     
-    open FILE, ">table_nhl.txt" or die "Cannot open table_nhl.txt";
+    open FILE, ">$file" or die "Cannot open $file";
     @text = split(/\n/, $temp);
     foreach (@text) {
         if (!/^\d+\./) { next; }
@@ -102,6 +104,7 @@ sub nhl_sarjataulukko {
 sub sm_kokoonpanot_kaikki {
     my $team_count = 0;
     my $previous_name = "Z";
+    my $year = get_default_vuosi("sm_liiga");
     my @sm_joukkue = get_joukkue_list("sm_liiga");
 
     # Listaa tahan nimet, jos aakkosjarjestys ei matsaa. Ts. seuraavan joukkueen ensimmainen pelaaja on aakkosissa toisen joukkueen viimeisen jalkeen
@@ -165,7 +168,7 @@ sub sm_kokoonpanot_kaikki {
     #Tsekataan, etta joka joukkueelta saadaan pelaajalista. Ollut joskus ongelmia
     if ($final_player_list =~ /Ei hakutuloksia/) { exit; }
 
-    open FILE, ">2015/player_list_period1.txt" or die "Cant open 2015/player_list_period1.txt\n"; 
+    open FILE, ">$year/player_list_period1.txt" or die "Cant open $year/player_list_period1.txt\n"; 
     
     my @player_list = split(/\n/, $final_player_list);
     my $mikko_lehtonen = 0;
@@ -183,13 +186,14 @@ sub sm_kokoonpanot_kaikki {
 
 sub sm_kokoonpanot {
     my $final_player_list = "";
-
+    my $year = get_default_vuosi("sm_liiga");
     my @sm_joukkue = get_joukkue_list("sm_liiga");
+
     foreach my $joukkue (@sm_joukkue) {
         $final_player_list .= "$joukkue\n";
         my $data = fetch_page("http://www.liigaporssi.fi/team/search-players?player_position=all&player_team=${joukkue}&player_value=all&type=player_search");
 
-	      $data = modify_char($data);
+	    $data = modify_char($data);
 
         $data =~ s/player_value\">(.*?)\&euro;</player_value\"> $1 </g;
         $data =~ s/\">(.*?)</\"> $1 </g;
@@ -221,7 +225,7 @@ sub sm_kokoonpanot {
         }
     }
     
-    open FILE, ">2015/player_list_period1.txt" or die "Cant open 2015/player_list_period1.txt\n"; 
+    open FILE, ">$year/player_list_period1.txt" or die "Cant open $year/player_list_period1.txt\n"; 
     
     my @player_list = split(/\n/, $final_player_list);
     my $mikko_lehtonen = 0;
@@ -242,8 +246,9 @@ sub sm_kokoonpanot {
 sub nhl_kokoonpanot {
     my $final_player_list = "";
     my $address = "";
+    my $year = get_default_vuosi("nhl");
+    my @nhl_joukkue = get_joukkue_list("nhl");
 
-    my @nhl_joukkue = get_joukkue_list("sm_liiga");
     foreach my $joukkue (@nhl_joukkue) {
         $final_player_list .= "$joukkue\n";
 
@@ -285,7 +290,7 @@ sub nhl_kokoonpanot {
         }
     }
     
-    open FILE, ">2015/player_list_period1_nhl.txt" or die "Cant open 2015/player_list_period1_nhl.txt\n"; 
+    open FILE, ">$year/player_list_period1_nhl.txt" or die "Cant open $year/player_list_period1_nhl.txt\n"; 
     
     my @player_list = split(/\n/, $final_player_list);
     foreach (@player_list) {
@@ -300,11 +305,7 @@ sub nhl_kokoonpanot {
 # Ajetaan vasta pelipaivan lopuksi, silla tulostetaan vain paivat taman paivan jalkeen
 sub ottelulista ($) {
     my $file = shift;
-    my ($second, $minute, $hour, $dayOfMonth, $month, $yearOffset, $dayOfWeek, $dayOfYear, $daylightSavings) = localtime();
-    $yearOffset += 1900;
-    $month++;
-    if ($month < 10) { $month = "0$month"; }
-    if ($dayOfMonth < 10) { $dayOfMonth = "0$dayOfMonth"; }
+    my ($yearOffset, $month, $dayOfMonth) = get_date();
     my $current_date = "$yearOffset-$month-$dayOfMonth";
     my $game_date;
     my $day_found = 0;
@@ -317,8 +318,9 @@ sub ottelulista ($) {
         if (/(\d\d)\.(\d\d)\./) {
             my $day_nro = $1;
             my $month_nro = $2;
-            my $year_nro = 2015;
-            $game_date = "$year_nro-$month_nro-$day_nro";
+            my $year = $yearOffset;
+
+            $game_date = "$year-$month_nro-$day_nro";
 	    
             if ($current_date lt $game_date) { $day_found = 1; }
         }
@@ -334,11 +336,11 @@ sub ottelulista ($) {
 }
 
 sub sm_ottelu_id {
-    my $year_nro = 2015;
+    my ($yearOffset, $month, $dayOfMonth) = get_date();
     my $new_game_list;
     my $day_count = 0;
     my $gameday;
-    my $file = "games_sm_liiga.txt";
+    my $file = get_ottelulista_filename("sm_liiga");
 
     my $data = fetch_page("http://www.liiga.fi/ottelut/2015-2016/runkosarja/");
     $data = modify_char($data);
@@ -349,7 +351,7 @@ sub sm_ottelu_id {
         $game =~ s/\s*$//;
 
         if ($game =~ /(\d\d)\.(\d\d)\./) {
-            $gameday = "${year_nro}${2}$1";
+            $gameday = "${yearOffset}${2}$1";
             $day_count++;
         }
 	
@@ -387,6 +389,16 @@ sub fetch_kokoonpanot() {
 
 }
 
+sub get_date {
+    my ($second, $minute, $hour, $dayOfMonth, $month, $yearOffset, $dayOfWeek, $dayOfYear, $daylightSavings) = localtime();
+    $yearOffset += 1900;
+    $month++;
+    if ($month < 10) { $month = "0$month"; }
+    if ($dayOfMonth < 10) { $dayOfMonth = "0$dayOfMonth"; }
+
+    return ($yearOffset, $month, $dayOfMonth);
+}
+
 sub replace_position($) {
     my $position = shift;
     
@@ -413,3 +425,5 @@ elsif ($sub =~ /sm_kokoonpanot/) {
     my $success = sm_kokoonpanot();
     if (!$success) { sm_kokoonpanot_kaikki(); }
 }
+
+return 1;

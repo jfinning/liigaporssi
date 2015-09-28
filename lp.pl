@@ -5,7 +5,10 @@ use CGI::Carp qw(fatalsToBrowser);
 use CGI qw(:standard);
 use CGI::Ajax;
 use Time::HiRes qw(usleep gettimeofday tv_interval);
+use HTML::Parser;
+require LWP::UserAgent;
 require "lp_settings.pm";
+require "lp_cron.pl";
 
 my $cgi = new CGI;
 my $script_name = $cgi->script_name;
@@ -68,6 +71,7 @@ my $param_liiga             = $cgi->param('liiga');
 my $param_a_script          = $cgi->param('a_script');
 my $param_a_script_end      = $cgi->param('a_script_end');
 my $param_a_script_start    = $cgi->param('a_script_start');
+my $param_game_nro          = $cgi->param('game_nro');
 if (!defined $param_joukkueen_hinta)   { $param_joukkueen_hinta = get_default_joukkueen_hinta(); }
 if (!defined $param_ottelut)           { $param_ottelut = get_default_ottelut(); }
 if (!defined $param_remove_players)    { $param_remove_players = get_default_remove_players(); }
@@ -139,29 +143,27 @@ sub alustus {
     my $last_day_found = 0;
     my $pelipaiva;
     my $weekday;
+    my $game_id_found = 0;
     open PELIT, "$pelit" or die "Cant open $pelit\n"; 
     while (<PELIT>) {
         s/\s*$//;
 
         if (/(\d\d\.\d\d\.)/) {
-	    push (@all_day_list, $1);
+            push (@all_day_list, $1);
             if (! defined $start) { $start = $1; }
         }
 
         if (/\s*(\w+)\s+\d\d\.\d\d\./) {
-	    $weekday = $1;
+            $weekday = $1;
         }
     
         if (/$start/) { $start_found = 1; }
         if (! $start_found) { next; }
-
-        if ($end_found) { 
-	    next;
-        }
+        if ($end_found) { next; }
 
         if ($last_day_found && /\d\d\.\d\d\./) {
             $end_found = 1;
-	    next;
+            next;
         }
 
         if (/(\d\d\.\d\d\.)/) {
@@ -174,20 +176,26 @@ sub alustus {
             $last_day_found = 1;
         }
 
-        if (/\s*(\D*?)\s*-\s*(.*?)\s*$/ || /\s*(\D*?)\s*-\s*(.*?),\s*(\d+)\s*$/) {
+        if (/\s*(\D*?)\s*-\s*(.*?),\s*(\d+)\s*$/ || /\s*(\D*?)\s*-\s*(.*?)\s*$/) {
             $kotipelit{$1}++;
             $vieraspelit{$2}++;
             $kaikkipelit{$1}++;
             $kaikkipelit{$2}++;
-	
+
             $pelipaivat{$1}{$pelipaiva}{kotipeli} = $2;
             $pelipaivat{$2}{$pelipaiva}{vieraspeli} = $1;
+
+            if (defined $3) {
+                $pelipaivat{$1}{$pelipaiva}{kokoonpano} = $3;
+                $pelipaivat{$2}{$pelipaiva}{kokoonpano} = $3;
+                $game_id_found = 1;
+            }
 
             if ($taulukko{$1}{sija} <= 5) {
                 $vastus{$2}{top}++;
             } elsif ($taulukko{$1}{sija} <= 10) {
                 $vastus{$2}{mid}++;
-            } else { 
+            } else {
                 $vastus{$2}{low}++;
             }
 
@@ -202,6 +210,10 @@ sub alustus {
     }
     close (PELIT);
 
+    if ($param_liiga =~ /sm_liiga/ && !$game_id_found) {
+        sm_ottelu_id();
+    }
+    
     if (! defined $end) {
         $end = $all_day_list[-1];
     }
@@ -233,7 +245,6 @@ my $pjx = new CGI::Ajax( 'print_game_days_div'                   => \&print_game
                          'print_end_day_div'                     => \&select_days_end_form,
                          'print_optimi_ja_max_pelatut_pelit_div' => \&run_optimi_joukkue_ja_select_max_pelatut_pelit,
                          'calculate_game_result_div'             => \&calculate_game_result,
-                         'tallenna_kokoonpanot_div'              => \&tallenna_kokoonpanot,
                          'alustus'                               => \&alustus);
 print $pjx->build_html( $cgi, \&update_menus);
 
@@ -242,7 +253,7 @@ sub muuttujien_alustusta ($) {
     
     if ($temp =~ /paikka/) {
         my @paikka = (
-	    [ "$o_maalivahti", "Kaikki M", \@maalivahdit_kaikki, "M", "o_maalivahti", "$maalivahti" ],
+            [ "$o_maalivahti", "Kaikki M", \@maalivahdit_kaikki, "M", "o_maalivahti", "$maalivahti" ],
             [ "$o_puolustaja1", "Kaikki P1", \@puolustajat_kaikki, "P1", "o_puolustaja1", "$puolustaja1" ],
             [ "$o_puolustaja2", "Kaikki P2", \@puolustajat_kaikki, "P2", "o_puolustaja2", "$puolustaja2" ],
             [ "$o_hyokkaaja1", "Kaikki H1", \@hyokkaajat_kaikki, "H1", "o_hyokkaaja1", "$hyokkaaja1" ],
@@ -883,7 +894,6 @@ sub create_loops {
 
 sub print_kokoonpanot_form {
     alustus();
-    
     my $html;
 
     $html .= "<b><font id='font_on_bg'>$weekdays[0] $start</font></b><br>\n";
@@ -892,7 +902,11 @@ sub print_kokoonpanot_form {
     foreach my $joukkue (sort hashValueAscendingNum keys %kaikkipelit) {
         $_ = $start;
         if (defined $pelipaivat{$joukkue}{$_}{kotipeli}) {
-            my $a_script = "print_kokoonpanot_div( ['joukkue__$joukkue','liiga__$param_liiga','start_day__$start'],['kokoonpanot_div'] );";
+            my $a_script = "print_kokoonpanot_div( ['joukkue__$joukkue','liiga__$param_liiga','start_day__$start'";
+            if (defined $pelipaivat{$joukkue}{$_}{kokoonpano}) {
+                $a_script .= ",'game_nro__$pelipaivat{$joukkue}{$_}{kokoonpano}'";
+            }
+            $a_script .= "],['kokoonpanot_div'] );";
             $html .= "<A HREF=\"#\" onclick=\"$a_script\"><font color=\"red\">$joukkue - $pelipaivat{$joukkue}{$_}{kotipeli}</font></A><br>\n";
         }
     }
@@ -903,17 +917,7 @@ sub print_kokoonpanot_form {
 			   T&auml;&auml;ll&auml; ketjukoostumukset on h&ouml;ystetty pelaajien tilastoilla,
 			   sek&auml; listalla pelaajista, jotka ovat j&auml;&auml;neet kokoonpanojen ulkopuolelle.<br><br>
 			   
-			   Klikkaa ottelua yl&auml;puolelta. Jos n&auml;kyy vain pelaajalistat, mutta ei joukkueiden kokoonpanoja,
-			   toimi n&auml;in:<br><br>
-
-                           1. Etsi joukkueiden kokoonpanot liiga.fi:n sivuilta.<br>
-                           2. Kopioi koko sivun sis&auml;lt&ouml; (CTRL-A ja CTRL-C).<br>
-                           3. Liit&auml; data (CTRL-V) sivulla olevaan teksti-ikkunaan ja 'Tallenna'.<br>
-                           4. Kokoonpanot tallentuvat ja n&auml;kyv&auml;t kaikille k&auml;ytt&auml;jille.<br><br>
-
-                           T&auml;m&auml;n pystyisi my&ouml;s automatisoimaan, mutta vaatisi maksullisen tilin
-                           freehostiaan. En ole kuitenkaan valmis maksamaan siit&auml;, ett&auml; tarjoan ilmaisen
-                           palvelun k&auml;ytt&auml;jille.
+			   Kokoonpanot haetaan automaattisesti liiga.fi:n sivuilta.
 			   </div>\n";
     $html .= "</div>\n";
 
@@ -928,8 +932,6 @@ sub print_kokoonpanot () {
 
     my $html;
 
-    my $tallenna_kokoonpanot = "";
-
     my %kokoonpanot;
     my $kentta = 0;
     my $pelaaja_nro = 0;
@@ -938,21 +940,20 @@ sub print_kokoonpanot () {
     my $vieras = $pelipaivat{$param_joukkue}{$start}{kotipeli};
     my $pelaavat_pelaajat = "";
 
-    my @data = split(/\n/, $param_kokoonpanot);
-    my $filename = "$param_vuosi/kokoonpanot/${start}_${koti}_${vieras}.txt";
-    
-    if (-e $filename && $param_kokoonpanot eq "") {
-        @data = split(/\n/, `cat $filename`);
-    }
-    
-    foreach (@data) {
+    my $data = fetch_page("http://liiga.fi/ottelut/2015-2016/runkosarja/$param_game_nro/kokoonpanot/");
+    my $text;
+    my $p = HTML::Parser->new(text_h => [ sub {$text .= shift}, 
+				  'dtext']);
+    $p->parse($data);
+    my @text = split(/\n/, $text);
+
+    foreach (@text) {
         if (/^\s*$/) { next; }
 	
         $_ = modify_char($_);
-        $tallenna_kokoonpanot .= $_ . "\n";
         if (/Tuomarit/) { last; }
 
-        if (/(\d+). kentta/) {
+        if (/(\d+)\.\s*kentta/) {
             $kentta = $1;
             $pelaaja_nro = 0;
         }
@@ -966,7 +967,7 @@ sub print_kokoonpanot () {
         if (/$vieras/) {
             $koti_vieras = 2;
         }
-        if (/\d+\s+(.*?),\s+(.*?)\s*$/ && $koti_vieras) {
+        if (/^\s*(.*?),\s+(.*?)\s*$/ && $koti_vieras) {
             my $nimi = "$1 $2";
             $pelaaja_nro++;
 	    
@@ -976,10 +977,9 @@ sub print_kokoonpanot () {
         }
     }
 
-    tallenna_kokoonpanot($tallenna_kokoonpanot, $koti, $vieras) if ($param_kokoonpanot ne "");
-
     $html .= "<input type='hidden' name='joukkue' id='joukkue' value=\"$param_joukkue\">\n";
     $html .= "<input type='hidden' name='start_day' id='start_day' value=\"$start\">\n";
+    $html .= "<input type='hidden' name='game_nro' id='game_nro' value=\"$param_game_nro\">\n";
 
     # Jakso
     $html .= "<font id='font_on_bg'>Lue tilastot jaksosta:</font> \n";
@@ -1122,25 +1122,7 @@ sub print_kokoonpanot () {
     
     $html .= "</table>\n";
 
-#$html .= "$param_joukkue - $pelipaivat{$param_joukkue}{$start}{kotipeli}";
-
-    $html .= "<br>Kopioi t&#228;h&#228;n $koti - $vieras pelin kokoonpanot liigan sivuilta.<br>\n";
-    $html .= "<TEXTAREA NAME='kokoonpanot' id='kokoonpanot' COLS=40 ROWS=4>\n";
-    $html .= "<\/TEXTAREA><br>\n";
-    $html .= "<br>\n";
-    $html .= "<input type='submit' value='Tallenna' onclick=\"$a_script\">\n";
-        
     return $html;
-}
-
-sub tallenna_kokoonpanot {
-    my ($tallenna_kokoonpanot, $koti, $vieras) = @_;
-    
-    my $filename = "$param_vuosi/kokoonpanot/${start}_${koti}_${vieras}.txt";
-    
-    open FILE, ">$filename" or die "Cant open $filename\n"; 
-    print FILE $tallenna_kokoonpanot;
-    close (FILE);
 }
 
 sub print_player_list_form {
@@ -1533,6 +1515,9 @@ sub print_game_days {
                 if (defined $joukkue_lyhenne{$pelipaivat{$joukkue}{$_}{kotipeli}}) {
                     $kotipeli =  $joukkue_lyhenne{$pelipaivat{$joukkue}{$_}{kotipeli}};
                 }
+                #if (defined $pelipaivat{$joukkue}{$_}{'kokoonpano'}) {
+                #    $kotipeli = "<A HREF=\"$script_name?sub=kokoonpanot&liiga=$param_liiga&game_nro=$pelipaivat{$joukkue}{$_}{'kokoonpano'}&start_day=$_\">$kotipeli</A>";
+                #}
                 if (defined $peliputki{$joukkue}{$_} && $peliputki{$joukkue}{$_} eq "peli") {
                     $html .= "<td class=\"$td\" title=\"3 tai useampi peli&#228; putkeen\"><center><b><font color=\"green\">$kotipeli<\/font><\/b></center><\/td>\n";
                 } else {
@@ -1543,6 +1528,9 @@ sub print_game_days {
                 if (defined $joukkue_lyhenne{$pelipaivat{$joukkue}{$_}{vieraspeli}}) {
                     $vieraspeli =  $joukkue_lyhenne{$pelipaivat{$joukkue}{$_}{vieraspeli}};
                 }
+                #if (defined $pelipaivat{$joukkue}{$_}{'kokoonpano'}) {
+                #    $vieraspeli = "<A HREF=\"$script_name?sub=kokoonpanot&liiga=$param_liiga&game_nro=$pelipaivat{$joukkue}{$_}{'kokoonpano'}&start_day=$_\">$vieraspeli</A>";
+                #}
                 if (defined $peliputki{$joukkue}{$_} && $peliputki{$joukkue}{$_} eq "peli") {
                     $html .= "<td class=\"$td\" title=\"3 tai useampi peli&#228; putkeen\"><center><font color=\"green\">$vieraspeli<\/font></center><\/td>\n";
                 } else {

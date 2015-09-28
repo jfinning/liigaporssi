@@ -148,7 +148,6 @@ Ward Cam 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               315 000
 Puolustaja O M S P AVM AVS VM JA L T B ALV +/- JM ★★★ ★★ ★ HGMP/O HGMP Arvo
 Faulk Justin 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               350 000
 Hainsey Ron 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               245 000
-Hanifin Noah 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               3 333 333
 Jordan Michal 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               250 000
 Liles John-Michael 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               235 000
 Murphy Ryan 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               255 000
@@ -260,16 +259,13 @@ Demers Jason 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0            
 Goligoski Alex 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               320 000
 Jokipakka Jyrki 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               205 000
 Klingberg John 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               350 000
-Nemeth Patrik 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               3 333 333
 Oduya Johnny 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               240 000
-Oleksiak Jamie 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               3 333 333
 Hyokkaaja O M S P AVM AVS VM JA L T B ALV +/- JM ★★★ ★★ ★ HGMP/O HGMP Arvo
 Benn Jamie 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           445 000
 Eakin Cody 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           265 000
 Eaves Patrick 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           250 000
 Fiddler Vernon 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           235 000
 Hemsky Ales 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           260 000
-McKenzie Curtis 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           3 333 333
 Moen Travis 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           190 000
 Nichushkin Valeri 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           275 000
 Roussel Antoine 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           270 000

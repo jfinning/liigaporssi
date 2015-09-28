@@ -154,7 +154,7 @@ while (<PELIT>) {
     s/\s*$//;
 
     if (/(\d\d\.\d\d\.)/) {
-	push (@all_day_list, $1);
+        push (@all_day_list, $1);
         if (! defined $start) { $start = $1; }
     }
 
@@ -164,20 +164,17 @@ while (<PELIT>) {
     
     if (/$start/) { $start_found = 1; }
     if (! $start_found) { next; }
-
-    if ($end_found) { 
-	next;
-    }
+    if ($end_found) { next; }
 
     if ($last_day_found && /\d\d\.\d\d\./) {
         $end_found = 1;
-	next;
+        next;
     }
 
     if (/(\d\d\.\d\d\.)/) {
         push (@selected_day_list, $1);
         push (@weekdays, $weekday);
-	$pelipaiva = $1;
+        $pelipaiva = $1;
     }
 
     if (/$end/) {
@@ -190,28 +187,28 @@ while (<PELIT>) {
         $kaikkipelit{$1}++;
         $kaikkipelit{$2}++;
 	
-	$pelipaivat{$1}{$pelipaiva}{'kotipeli'} = $2;
-	$pelipaivat{$2}{$pelipaiva}{'vieraspeli'} = $1;
-	if (defined $3) {
-	    $pelipaivat{$1}{$pelipaiva}{'kokoonpano'} = $3;
-	    $pelipaivat{$2}{$pelipaiva}{'kokoonpano'} = $3;
-	}
+        $pelipaivat{$1}{$pelipaiva}{'kotipeli'} = $2;
+        $pelipaivat{$2}{$pelipaiva}{'vieraspeli'} = $1;
+        if (defined $3) {
+            $pelipaivat{$1}{$pelipaiva}{'kokoonpano'} = $3;
+            $pelipaivat{$2}{$pelipaiva}{'kokoonpano'} = $3;
+        }
 
-	if ($taulukko{$1}{'sija'} <= 5) {
-	    $vastus{$2}{'top'}++;
-	} elsif ($taulukko{$1}{'sija'} <= 10) {
-	    $vastus{$2}{'mid'}++;
-	} else { 
-	    $vastus{$2}{'low'}++;
-	}
+        if ($taulukko{$1}{'sija'} <= 5) {
+            $vastus{$2}{'top'}++;
+        } elsif ($taulukko{$1}{'sija'} <= 10) {
+            $vastus{$2}{'mid'}++;
+        } else { 
+            $vastus{$2}{'low'}++;
+        }
 
-	if ($taulukko{$2}{'sija'} <= 5) {
-	    $vastus{$1}{'top'}++;
-	} elsif ($taulukko{$2}{'sija'} <= 10) {
-	    $vastus{$1}{'mid'}++;
-	} else { 
-	    $vastus{$1}{'low'}++;
-	}
+        if ($taulukko{$2}{'sija'} <= 5) {
+            $vastus{$1}{'top'}++;
+        } elsif ($taulukko{$2}{'sija'} <= 10) {
+            $vastus{$1}{'mid'}++;
+        } else { 
+            $vastus{$1}{'low'}++;
+        }
     }
 }
 close (PELIT);
@@ -1511,7 +1508,7 @@ sub print_game_days {
     print "<th><center>Joukkue</center></th>\n";
     my $count = 0;
     foreach (@selected_day_list) {
-	print "<th><center>$weekdays[$count]<br>\n$_</center></th>\n";
+        print "<th><center>$weekdays[$count]<br>\n$_</center></th>\n";
         $count++;
     }
     
@@ -1520,43 +1517,43 @@ sub print_game_days {
     foreach my $joukkue (sort hashValueAscendingNum keys %kaikkipelit) {
         $td = change_table_td($td);
         print "<tr>\n";
-	print "<td class=\"$td\">$joukkue<\/td>\n";
-	foreach (@selected_day_list) {
-	    if (! defined $pelipaivat{$joukkue}{$_}) {
-		if (defined $peliputki{$joukkue}{$_} && $peliputki{$joukkue}{$_} eq "lepo") {
-	            print "<td class=\"$td\" title=\"3 tai useampi vapaata putkeen\"><center><b><font color=\"red\">x<\/font><\/b></center><\/td>\n";
-		} else {
-	            print "<td class=\"$td\"><center>-</center><\/td>\n";
-		}
-	    } elsif (defined $pelipaivat{$joukkue}{$_}{'kotipeli'}) {
-		my $opponent = "$pelipaivat{$joukkue}{$_}{'kotipeli'}";
-		if (defined $peliputki{$joukkue}{$_} && $peliputki{$joukkue}{$_} eq "peli") {
-		    if (defined $pelipaivat{$joukkue}{$_}{'kokoonpano'}) {
-		        $opponent = "<A HREF=\"$script_name?sub=kokoonpano&game_nro=$pelipaivat{$joukkue}{$_}{'kokoonpano'}&start_day=$_\"><font color=\"green\">$opponent</font></A>";
-		    }
-		    print "<td class=\"$td\" title=\"3 tai useampi peli&#228; putkeen\"><center><b><font color=\"green\">$opponent<\/font><\/b></center><\/td>\n";
-		} else {
-		    if (defined $pelipaivat{$joukkue}{$_}{'kokoonpano'}) {
-		        $opponent = "<A HREF=\"$script_name?sub=kokoonpano&game_nro=$pelipaivat{$joukkue}{$_}{'kokoonpano'}&start_day=$_\"><font color=\"black\">$opponent</font></A>";
-		    }
-		    print "<td class=\"$td\"><center><b>$opponent</b></center><\/td>\n";
-		}
-	    } elsif (defined $pelipaivat{$joukkue}{$_}{'vieraspeli'}) {
-		my $opponent = "$pelipaivat{$joukkue}{$_}{'vieraspeli'}";
-		if (defined $peliputki{$joukkue}{$_} && $peliputki{$joukkue}{$_} eq "peli") {
-		    if (defined $pelipaivat{$joukkue}{$_}{'kokoonpano'}) {
-		        $opponent = "<A HREF=\"$script_name?sub=kokoonpano&game_nro=$pelipaivat{$joukkue}{$_}{'kokoonpano'}&start_day=$_\"><font color=\"green\">$opponent</font></A>";
-		    }
-		    print "<td class=\"$td\" title=\"3 tai useampi peli&#228; putkeen\"><center><font color=\"green\">$opponent<\/font></center><\/td>\n";
-		} else {
-		    if (defined $pelipaivat{$joukkue}{$_}{'kokoonpano'}) {
-		        $opponent = "<A HREF=\"$script_name?sub=kokoonpano&game_nro=$pelipaivat{$joukkue}{$_}{'kokoonpano'}&start_day=$_\"><font color=\"black\">$opponent</font></A>";
-		    }
-		    print "<td class=\"$td\"><center>$opponent</center><\/td>\n";
-		}
-	    }
-	}
-	print "<\/tr>\n";
+        print "<td class=\"$td\">$joukkue<\/td>\n";
+        foreach (@selected_day_list) {
+            if (! defined $pelipaivat{$joukkue}{$_}) {
+                if (defined $peliputki{$joukkue}{$_} && $peliputki{$joukkue}{$_} eq "lepo") {
+                    print "<td class=\"$td\" title=\"3 tai useampi vapaata putkeen\"><center><b><font color=\"red\">x<\/font><\/b></center><\/td>\n";
+                } else {
+                    print "<td class=\"$td\"><center>-</center><\/td>\n";
+                }
+            } elsif (defined $pelipaivat{$joukkue}{$_}{'kotipeli'}) {
+                my $opponent = "$pelipaivat{$joukkue}{$_}{'kotipeli'}";
+                if (defined $peliputki{$joukkue}{$_} && $peliputki{$joukkue}{$_} eq "peli") {
+                    if (defined $pelipaivat{$joukkue}{$_}{'kokoonpano'}) {
+                        $opponent = "<A HREF=\"$script_name?sub=kokoonpano&game_nro=$pelipaivat{$joukkue}{$_}{'kokoonpano'}&start_day=$_\"><font color=\"green\">$opponent</font></A>";
+                    }
+                    print "<td class=\"$td\" title=\"3 tai useampi peli&#228; putkeen\"><center><b><font color=\"green\">$opponent<\/font><\/b></center><\/td>\n";
+                } else {
+                    if (defined $pelipaivat{$joukkue}{$_}{'kokoonpano'}) {
+                        $opponent = "<A HREF=\"$script_name?sub=kokoonpano&game_nro=$pelipaivat{$joukkue}{$_}{'kokoonpano'}&start_day=$_\"><font color=\"black\">$opponent</font></A>";
+                    }
+                    print "<td class=\"$td\"><center><b>$opponent</b></center><\/td>\n";
+                }
+            } elsif (defined $pelipaivat{$joukkue}{$_}{'vieraspeli'}) {
+                my $opponent = "$pelipaivat{$joukkue}{$_}{'vieraspeli'}";
+                if (defined $peliputki{$joukkue}{$_} && $peliputki{$joukkue}{$_} eq "peli") {
+                    if (defined $pelipaivat{$joukkue}{$_}{'kokoonpano'}) {
+                        $opponent = "<A HREF=\"$script_name?sub=kokoonpano&game_nro=$pelipaivat{$joukkue}{$_}{'kokoonpano'}&start_day=$_\"><font color=\"green\">$opponent</font></A>";
+                    }
+                    print "<td class=\"$td\" title=\"3 tai useampi peli&#228; putkeen\"><center><font color=\"green\">$opponent<\/font></center><\/td>\n";
+                } else {
+                    if (defined $pelipaivat{$joukkue}{$_}{'kokoonpano'}) {
+                        $opponent = "<A HREF=\"$script_name?sub=kokoonpano&game_nro=$pelipaivat{$joukkue}{$_}{'kokoonpano'}&start_day=$_\"><font color=\"black\">$opponent</font></A>";
+                    }
+                    print "<td class=\"$td\"><center>$opponent</center><\/td>\n";
+                }
+            }
+        }
+        print "<\/tr>\n";
     }
 
     print "<\/tr>\n";

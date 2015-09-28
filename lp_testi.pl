@@ -8,6 +8,7 @@ use Time::HiRes qw(usleep gettimeofday tv_interval);
 use HTML::Parser;
 require LWP::UserAgent;
 require "lp_settings.pm";
+require "lp_cron.pl";
 
 my $cgi = new CGI;
 my $script_name = $cgi->script_name;
@@ -70,6 +71,7 @@ my $param_liiga             = $cgi->param('liiga');
 my $param_a_script          = $cgi->param('a_script');
 my $param_a_script_end      = $cgi->param('a_script_end');
 my $param_a_script_start    = $cgi->param('a_script_start');
+my $param_game_nro          = $cgi->param('game_nro');
 if (!defined $param_joukkueen_hinta)   { $param_joukkueen_hinta = get_default_joukkueen_hinta(); }
 if (!defined $param_ottelut)           { $param_ottelut = get_default_ottelut(); }
 if (!defined $param_remove_players)    { $param_remove_players = get_default_remove_players(); }
@@ -141,6 +143,7 @@ sub alustus {
     my $last_day_found = 0;
     my $pelipaiva;
     my $weekday;
+    my $game_id_found = 0;
     open PELIT, "$pelit" or die "Cant open $pelit\n"; 
     while (<PELIT>) {
         s/\s*$//;
@@ -173,7 +176,7 @@ sub alustus {
             $last_day_found = 1;
         }
 
-        if (/\s*(\D*?)\s*-\s*(.*?)\s*$/ || /\s*(\D*?)\s*-\s*(.*?),\s*(\d+)\s*$/) {
+        if (/\s*(\D*?)\s*-\s*(.*?),\s*(\d+)\s*$/ || /\s*(\D*?)\s*-\s*(.*?)\s*$/) {
             $kotipelit{$1}++;
             $vieraspelit{$2}++;
             $kaikkipelit{$1}++;
@@ -185,6 +188,7 @@ sub alustus {
             if (defined $3) {
                 $pelipaivat{$1}{$pelipaiva}{kokoonpano} = $3;
                 $pelipaivat{$2}{$pelipaiva}{kokoonpano} = $3;
+                $game_id_found = 1;
             }
 
             if ($taulukko{$1}{sija} <= 5) {
@@ -206,6 +210,10 @@ sub alustus {
     }
     close (PELIT);
 
+    if ($param_liiga =~ /sm_liiga/ && !$game_id_found) {
+        sm_ottelu_id();
+    }
+    
     if (! defined $end) {
         $end = $all_day_list[-1];
     }
@@ -245,7 +253,7 @@ sub muuttujien_alustusta ($) {
     
     if ($temp =~ /paikka/) {
         my @paikka = (
-	    [ "$o_maalivahti", "Kaikki M", \@maalivahdit_kaikki, "M", "o_maalivahti", "$maalivahti" ],
+            [ "$o_maalivahti", "Kaikki M", \@maalivahdit_kaikki, "M", "o_maalivahti", "$maalivahti" ],
             [ "$o_puolustaja1", "Kaikki P1", \@puolustajat_kaikki, "P1", "o_puolustaja1", "$puolustaja1" ],
             [ "$o_puolustaja2", "Kaikki P2", \@puolustajat_kaikki, "P2", "o_puolustaja2", "$puolustaja2" ],
             [ "$o_hyokkaaja1", "Kaikki H1", \@hyokkaajat_kaikki, "H1", "o_hyokkaaja1", "$hyokkaaja1" ],
@@ -886,7 +894,6 @@ sub create_loops {
 
 sub print_kokoonpanot_form {
     alustus();
-    
     my $html;
 
     $html .= "<b><font id='font_on_bg'>$weekdays[0] $start</font></b><br>\n";
@@ -895,7 +902,11 @@ sub print_kokoonpanot_form {
     foreach my $joukkue (sort hashValueAscendingNum keys %kaikkipelit) {
         $_ = $start;
         if (defined $pelipaivat{$joukkue}{$_}{kotipeli}) {
-            my $a_script = "print_kokoonpanot_div( ['joukkue__$joukkue','liiga__$param_liiga','start_day__$start'],['kokoonpanot_div'] );";
+            my $a_script = "print_kokoonpanot_div( ['joukkue__$joukkue','liiga__$param_liiga','start_day__$start'";
+            if (defined $pelipaivat{$joukkue}{$_}{kokoonpano}) {
+                $a_script .= ",'game_nro__$pelipaivat{$joukkue}{$_}{kokoonpano}'";
+            }
+            $a_script .= "],['kokoonpanot_div'] );";
             $html .= "<A HREF=\"#\" onclick=\"$a_script\"><font color=\"red\">$joukkue - $pelipaivat{$joukkue}{$_}{kotipeli}</font></A><br>\n";
         }
     }
@@ -929,7 +940,7 @@ sub print_kokoonpanot () {
     my $vieras = $pelipaivat{$param_joukkue}{$start}{kotipeli};
     my $pelaavat_pelaajat = "";
 
-    my $data = fetch_page("http://liiga.fi/ottelut/2015-2016/runkosarja/7651/kokoonpanot/");
+    my $data = fetch_page("http://liiga.fi/ottelut/2015-2016/runkosarja/$param_game_nro/kokoonpanot/");
     my $text;
     my $p = HTML::Parser->new(text_h => [ sub {$text .= shift}, 
 				  'dtext']);
@@ -968,6 +979,7 @@ sub print_kokoonpanot () {
 
     $html .= "<input type='hidden' name='joukkue' id='joukkue' value=\"$param_joukkue\">\n";
     $html .= "<input type='hidden' name='start_day' id='start_day' value=\"$start\">\n";
+    $html .= "<input type='hidden' name='game_nro' id='game_nro' value=\"$param_game_nro\">\n";
 
     # Jakso
     $html .= "<font id='font_on_bg'>Lue tilastot jaksosta:</font> \n";
@@ -1503,6 +1515,9 @@ sub print_game_days {
                 if (defined $joukkue_lyhenne{$pelipaivat{$joukkue}{$_}{kotipeli}}) {
                     $kotipeli =  $joukkue_lyhenne{$pelipaivat{$joukkue}{$_}{kotipeli}};
                 }
+                #if (defined $pelipaivat{$joukkue}{$_}{'kokoonpano'}) {
+                #    $kotipeli = "<A HREF=\"$script_name?sub=kokoonpanot&liiga=$param_liiga&game_nro=$pelipaivat{$joukkue}{$_}{'kokoonpano'}&start_day=$_\">$kotipeli</A>";
+                #}
                 if (defined $peliputki{$joukkue}{$_} && $peliputki{$joukkue}{$_} eq "peli") {
                     $html .= "<td class=\"$td\" title=\"3 tai useampi peli&#228; putkeen\"><center><b><font color=\"green\">$kotipeli<\/font><\/b></center><\/td>\n";
                 } else {
@@ -1513,6 +1528,9 @@ sub print_game_days {
                 if (defined $joukkue_lyhenne{$pelipaivat{$joukkue}{$_}{vieraspeli}}) {
                     $vieraspeli =  $joukkue_lyhenne{$pelipaivat{$joukkue}{$_}{vieraspeli}};
                 }
+                #if (defined $pelipaivat{$joukkue}{$_}{'kokoonpano'}) {
+                #    $vieraspeli = "<A HREF=\"$script_name?sub=kokoonpanot&liiga=$param_liiga&game_nro=$pelipaivat{$joukkue}{$_}{'kokoonpano'}&start_day=$_\">$vieraspeli</A>";
+                #}
                 if (defined $peliputki{$joukkue}{$_} && $peliputki{$joukkue}{$_} eq "peli") {
                     $html .= "<td class=\"$td\" title=\"3 tai useampi peli&#228; putkeen\"><center><font color=\"green\">$vieraspeli<\/font></center><\/td>\n";
                 } else {
@@ -1727,21 +1745,6 @@ sub calculate_interval ($) {
     return $elapsed_time, $current_time;
 }
 
-sub fetch_page($) {
-    my $link = shift;
-    
-    my $ua = LWP::UserAgent->new;
-    $ua->timeout(10);
-    $ua->env_proxy;
-
-    my $data = $ua->get($link);
-
-    if ($data->is_success) {
-        return $data->decoded_content
-    } else {
-        die $data->status_line;
-    }
-}
 #
 ######################################################
 # Kaikki taman alla on vain tulosten arvontaa varten #

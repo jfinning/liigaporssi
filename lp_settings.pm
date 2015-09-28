@@ -111,13 +111,13 @@ sub get_joukkueiden_lyhenteet ($) {
 sub get_ottelulista_filename ($) {
     my $liiga = shift;
     
-    return "games_$liiga.txt";
+    return "team_stats/games_$liiga.txt";
 }
 
 sub get_sarjataulukko_filename ($) {
     my $liiga = shift;
     
-    return "table_$liiga.txt";
+    return "team_stats/table_$liiga.txt";
 }
 
 sub get_max_teams { return 10 };
