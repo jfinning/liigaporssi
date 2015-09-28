@@ -912,13 +912,18 @@ sub print_kokoonpanot_form {
     }
 
     $html .= "<p><div id='kokoonpanot_div'>\n";
-    $html .= "<div style=\"width:400px; padding:5px; border:5px solid gray; margin:0px; color:white;\">
+    if (defined $param_game_nro) {
+        $html .= print_kokoonpanot();
+    } else {
+        $html .= "<div style=\"width:400px; padding:5px; border:5px solid gray; margin:0px; color:white;\">
                            Miksi katsoisin kokoonpanot juuri t&auml;&auml;lt&auml;?
 			   T&auml;&auml;ll&auml; ketjukoostumukset on h&ouml;ystetty pelaajien tilastoilla,
 			   sek&auml; listalla pelaajista, jotka ovat j&auml;&auml;neet kokoonpanojen ulkopuolelle.<br><br>
 			   
 			   Kokoonpanot haetaan automaattisesti liiga.fi:n sivuilta.
 			   </div>\n";
+    }
+
     $html .= "</div>\n";
 
     return $html;
@@ -1440,7 +1445,7 @@ sub print_team_compare_table {
 
 sub print_game_days {
     alustus();
-    
+
     my $html;
     # lasketaan onko 3 (tai enemman) pelia tai lepoa putkeen
     my %peliputki;
@@ -1515,9 +1520,9 @@ sub print_game_days {
                 if (defined $joukkue_lyhenne{$pelipaivat{$joukkue}{$_}{kotipeli}}) {
                     $kotipeli =  $joukkue_lyhenne{$pelipaivat{$joukkue}{$_}{kotipeli}};
                 }
-                #if (defined $pelipaivat{$joukkue}{$_}{'kokoonpano'}) {
-                #    $kotipeli = "<A HREF=\"$script_name?sub=kokoonpanot&liiga=$param_liiga&game_nro=$pelipaivat{$joukkue}{$_}{'kokoonpano'}&start_day=$_\">$kotipeli</A>";
-                #}
+                if (defined $pelipaivat{$joukkue}{$_}{'kokoonpano'}) {
+                    $kotipeli = "<A HREF=\"$script_name?sub=kokoonpanot&liiga=$param_liiga&joukkue=$joukkue&game_nro=$pelipaivat{$joukkue}{$_}{'kokoonpano'}&start_day=$_\" id='black'>$kotipeli</A>";
+                }
                 if (defined $peliputki{$joukkue}{$_} && $peliputki{$joukkue}{$_} eq "peli") {
                     $html .= "<td class=\"$td\" title=\"3 tai useampi peli&#228; putkeen\"><center><b><font color=\"green\">$kotipeli<\/font><\/b></center><\/td>\n";
                 } else {
@@ -1528,9 +1533,9 @@ sub print_game_days {
                 if (defined $joukkue_lyhenne{$pelipaivat{$joukkue}{$_}{vieraspeli}}) {
                     $vieraspeli =  $joukkue_lyhenne{$pelipaivat{$joukkue}{$_}{vieraspeli}};
                 }
-                #if (defined $pelipaivat{$joukkue}{$_}{'kokoonpano'}) {
-                #    $vieraspeli = "<A HREF=\"$script_name?sub=kokoonpanot&liiga=$param_liiga&game_nro=$pelipaivat{$joukkue}{$_}{'kokoonpano'}&start_day=$_\">$vieraspeli</A>";
-                #}
+                if (defined $pelipaivat{$joukkue}{$_}{'kokoonpano'}) {
+                    $vieraspeli = "<A HREF=\"$script_name?sub=kokoonpanot&liiga=$param_liiga&joukkue=$vieraspeli&game_nro=$pelipaivat{$joukkue}{$_}{'kokoonpano'}&start_day=$_\" id='black'>$vieraspeli</A>";
+                }
                 if (defined $peliputki{$joukkue}{$_} && $peliputki{$joukkue}{$_} eq "peli") {
                     $html .= "<td class=\"$td\" title=\"3 tai useampi peli&#228; putkeen\"><center><font color=\"green\">$vieraspeli<\/font></center><\/td>\n";
                 } else {
