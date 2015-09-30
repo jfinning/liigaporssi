@@ -4,6 +4,7 @@ use strict;
 use Getopt::Long;
 use HTML::Parser;
 require LWP::UserAgent;
+use Fcntl ':flock';
 require "lp_settings.pm";
 
 my $sub;
@@ -380,7 +381,8 @@ sub sm_ottelu_id {
         $new_game_list .= "$game\n";
     }
     
-    open FILE, ">$file" or die "Cant open $file\n"; 
+    open FILE, ">$file" or die "Cant open $file\n";
+    flock(FILE, LOCK_EX) or die "Could not lock '$file' - $!";
     print FILE "$new_game_list";
     close (FILE);
 }

@@ -210,10 +210,6 @@ sub alustus {
     }
     close (PELIT);
 
-    if ($param_liiga =~ /sm_liiga/ && !$game_id_found) {
-        sm_ottelu_id();
-    }
-    
     if (! defined $end) {
         $end = $all_day_list[-1];
     }
