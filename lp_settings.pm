@@ -42,7 +42,7 @@ sub get_default_jakso ($) {
     my $liiga = shift;
     
     if ($liiga =~ /sm_liiga/) {
-        $jakso = "Jakso 1";
+        $jakso = "Jakso 2";
     } else {
         $jakso = "Jakso 1";
     }

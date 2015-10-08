@@ -19,7 +19,7 @@ sub fetch_page($) {
     my $link = shift;
     
     my $ua = LWP::UserAgent->new;
-    $ua->timeout(10);
+    $ua->timeout(20);
     $ua->env_proxy;
 
     my $data = $ua->get($link);
@@ -169,7 +169,7 @@ sub sm_kokoonpanot_kaikki {
     #Tsekataan, etta joka joukkueelta saadaan pelaajalista. Ollut joskus ongelmia
     if ($final_player_list =~ /Ei hakutuloksia/) { exit; }
 
-    open FILE, ">$year/player_list_period1.txt" or die "Cant open $year/player_list_period1.txt\n"; 
+    open FILE, ">$year/player_list_period2.txt" or die "Cant open $year/player_list_period2.txt\n"; 
     
     my @player_list = split(/\n/, $final_player_list);
     my $mikko_lehtonen = 0;
@@ -226,7 +226,7 @@ sub sm_kokoonpanot {
         }
     }
     
-    open FILE, ">$year/player_list_period1.txt" or die "Cant open $year/player_list_period1.txt\n"; 
+    open FILE, ">$year/player_list_period2.txt" or die "Cant open $year/player_list_period2.txt\n"; 
     
     my @player_list = split(/\n/, $final_player_list);
     my $mikko_lehtonen = 0;
