@@ -67,7 +67,7 @@ sub get_joukkue_list ($) {
 
 sub get_joukkueiden_lyhenteet ($) {
     my $liiga = shift;
-    my %joukkue_lyhenne = {};
+    my %joukkue_lyhenne = ();
     
     if ($liiga eq "nhl") {
         %joukkue_lyhenne = (

@@ -80,10 +80,6 @@ if (!defined $param_read_players_from) { $param_read_players_from = get_default_
 
 my ($pelit, $sarjataulukko);
 sub alustus {
-    @all_day_list = ();
-    @selected_day_list = ();
-    %vastus = (); %kotipelit = (); %vieraspelit = (); %kaikkipelit = ();
-    
     %joukkue_lyhenne = get_joukkueiden_lyhenteet($param_liiga);
 
     $o_maalivahti      = $cgi->param('o_maalivahti') if defined $cgi->param('o_maalivahti');
@@ -171,11 +167,20 @@ sub alustus {
             $last_day_found = 1;
         }
 
-        if (/\s*(\D*?)\s*-\s*(.*?),\s*(\d+)\s*$/ || /\s*(\D*?)\s*-\s*(.*?)\s*$/) {
+        if (/\s*(\D*?)\s*-\s*(.*?)\s*,\s*(\d+)\s*$/ || /\s*(\D*?)\s*-\s*(.*?)\s*$/) {
             $kotipelit{$1}++;
             $vieraspelit{$2}++;
             $kaikkipelit{$1}++;
             $kaikkipelit{$2}++;
+			
+			foreach ($1, $2) {
+			    if (! defined $kaikkipelit{$_}) { $kaikkipelit{$_} = 0; }
+			    if (! defined $kotipelit{$_})   { $kotipelit{$_} = 0; }
+			    if (! defined $vieraspelit{$_}) { $vieraspelit{$_} = 0; }
+			    if (! defined $vastus{$_}{top}) { $vastus{$_}{top} = 0; }
+			    if (! defined $vastus{$_}{mid}) { $vastus{$_}{mid} = 0; }
+			    if (! defined $vastus{$_}{low}) { $vastus{$_}{low} = 0; }
+			}
 
             $pelipaivat{$1}{$pelipaiva}{kotipeli} = $2;
             $pelipaivat{$2}{$pelipaiva}{vieraspeli} = $1;
@@ -212,7 +217,7 @@ sub alustus {
     if (! defined $team_from) {
         foreach (sort keys %kaikkipelit) {
             $team_from = $_;
-	    last;
+	        last;
         }
     }
 }
@@ -1540,7 +1545,7 @@ sub calculate_optimal_change_day {
 
     foreach my $team_to (sort hashValueAscendingNum keys %kaikkipelit) {
         my @day_to_change;
-        my $max_difference;
+        my $max_difference = 0;
     
         my $to_count = 0;
         my $games_after_change_count = 0;
@@ -1566,7 +1571,7 @@ sub calculate_optimal_change_day {
                     $day_to_change[$#day_to_change] = "-$_";
                 }
             } else { $continue_count = 0; }
-            if (! defined $max_difference || $from_count - $to_count > $max_difference) {
+            if ($from_count - $to_count > $max_difference) {
                 $max_difference = $from_count - $to_count;
                 @day_to_change = "$_";
                 $games_after_change_count = $from_count;
