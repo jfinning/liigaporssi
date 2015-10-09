@@ -409,7 +409,7 @@ sub update_menus {
         if ($param_liiga eq "sm_liiga") {
             $html .= "<li><A HREF=\"$script_name?sub=kokoonpanot&liiga=$param_liiga\">Kokoonpanot</A></li>\n";
         }
-        $html .= "<li><A HREF=\"$script_name?sub=arvo_tulos&liiga=$param_liiga\">Arvo tulos</A></li>\n";
+        #$html .= "<li><A HREF=\"$script_name?sub=arvo_tulos&liiga=$param_liiga\">Arvo tulos</A></li>\n";
     }
     $html .= "<li><a href=\"mailto:jepponen\@gmail.com\">eMail</a></li>\n";
     $html .= "<li><A HREF=\"#\" id=\"status\">Status<\/a></li>\n";    
@@ -423,7 +423,7 @@ sub update_menus {
     if ($param_sub =~ /start_page|^\s*$/) { $html .= print_start_page() };
     if ($param_sub =~ /player_list/)      { $html .= print_player_list_form() };
     if ($param_sub =~ /optimi_joukkue/)   { $html .= print_optimi_joukkue_form() };
-    if ($param_sub =~ /arvo_tulos/)       { $html .= calculate_game_result_form() };
+    #if ($param_sub =~ /arvo_tulos/)       { $html .= calculate_game_result_form() };
     if ($param_sub =~ /kokoonpanot/)      { $html .= print_kokoonpanot_form() };
 
     $html .= "</center>\n";
@@ -461,7 +461,6 @@ sub run_optimi_joukkue_ja_select_max_pelatut_pelit {
 }
 
 sub print_optimi_joukkue_form {
-    alustus();
     read_player_lists();
 
     # $a_script_jakso siksi, etta pitaa paivittaa $max_pelatut_pelit, kun valitaan eri jakso
@@ -543,7 +542,6 @@ sub print_optimi_joukkue {
         $a_script = $param_a_script;
     } else { $a_script = shift; }
     
-    alustus();
     read_player_lists();
 
     my $html;
@@ -889,7 +887,6 @@ sub create_loops {
 }
 
 sub print_kokoonpanot_form {
-    alustus();
     my $html;
 
     $html .= "<b><font id='font_on_bg'>$weekdays[0] $start</font></b><br>\n";
@@ -926,7 +923,6 @@ sub print_kokoonpanot_form {
 }
 
 sub print_kokoonpanot () {
-    alustus();
     read_player_lists();
 
     my $a_script = "print_kokoonpanot_div( ['read_players_from','liiga','kokoonpanot','joukkue','start_day'],['kokoonpanot_div'] );";
@@ -1128,7 +1124,6 @@ sub print_kokoonpanot () {
 
 sub print_player_list_form {
     my $html;
-    alustus();
     read_player_lists();
 
     # Valikot taulukon karsimiseen
@@ -1200,7 +1195,6 @@ sub print_player_list_form {
 }
 
 sub print_player_list {
-    alustus();
     read_player_lists();
     my $nimi;
     my $html;
@@ -1380,8 +1374,6 @@ sub select_teams_form {
 }
 
 sub print_team_compare_table {
-    alustus();
-
     my $html;
     my $td = change_table_td();
     $html .= "<table border=\"1\">\n";
@@ -1440,8 +1432,6 @@ sub print_team_compare_table {
 }
 
 sub print_game_days {
-    alustus();
-
     my $html;
     # lasketaan onko 3 (tai enemman) pelia tai lepoa putkeen
     my %peliputki;
@@ -1549,8 +1539,6 @@ sub print_game_days {
 }
 
 sub calculate_optimal_change_day {
-    alustus();
-    
     my $html;
     
     my $topic_print = 1;
@@ -1753,8 +1741,6 @@ sub calculate_interval ($) {
 #
 
 sub calculate_game_result_form {
-    alustus();
-    
     my $html;
 
     # Tulosta joukkueet ja pelaako
@@ -1775,8 +1761,6 @@ sub calculate_game_result_form {
 }
 
 sub calculate_game_result {
-    alustus();
-    
     # Luetaan pelaajat kaikista jaksoista (Tama siksi, ettei jakson alussa vaikuta aina yksi peli liikaa)
     $param_read_players_from =~ s/^(\w+)\s+(.*?)$/$1 1-$2/;
     read_player_lists();
