@@ -1677,15 +1677,15 @@ sub read_player_list ($$) {
         $LPP = $player{LPP} if defined $player{LPP};
         $LPP = $player{HGMP} if defined $player{HGMP};
 	
-        $pelaaja{$nimi}{ottelut} += $player{O};
-        $pelaaja{$nimi}{maalit} += $player{M};
-        $pelaaja{$nimi}{syotot} += $player{S};
+        if (!defined $pelaaja{$nimi}{ottelut}) { $pelaaja{$nimi}{ottelut} = $player{O} } else { $pelaaja{$nimi}{ottelut} += $player{O}; }
+        if (!defined $pelaaja{$nimi}{maalit}) { $pelaaja{$nimi}{maalit} = $player{M} } else { $pelaaja{$nimi}{maalit} += $player{M}; }
+        if (!defined $pelaaja{$nimi}{syotot}) { $pelaaja{$nimi}{syotot} = $player{S} } else { $pelaaja{$nimi}{syotot} += $player{S}; }
         $pelaaja{$nimi}{pisteet} = $pelaaja{$nimi}{maalit} + $pelaaja{$nimi}{syotot};
         if ($pelipaikka ne "Maalivahti") {
             $pelaaja{$nimi}{laukaukset} += $player{L};
         } else {
             $pelaaja{$nimi}{laukaukset} = 0;
-            $pelaaja{$nimi}{paastetyt} += $player{TO};
+			if (!defined $pelaaja{$nimi}{paastetyt}) { $pelaaja{$nimi}{paastetyt} = $player{TO} } else { $pelaaja{$nimi}{paastetyt} += $player{TO}; }
         }
         if ($max_pelatut_pelit < $pelaaja{$nimi}{ottelut}) { $max_pelatut_pelit = $pelaaja{$nimi}{ottelut}; }
             $pelaaja{$nimi}{pelipaikka} = $pelipaikka;
