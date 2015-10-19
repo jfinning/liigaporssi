@@ -140,8 +140,12 @@ sub modify_char ($) {
         elsif ($c == 241) { $_ = "n"; }
         elsif ($c == 253) { $_ = "y"; }
 
+		# Replace stars
+		s/[^[:ascii:]]+/X/g;
+
         $return = "$return$_";
     }
+
     return $return;
 }
 1;

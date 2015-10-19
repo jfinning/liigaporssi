@@ -194,8 +194,6 @@ sub sm_kokoonpanot {
         $final_player_list .= "$joukkue\n";
         my $data = fetch_page("http://www.liigaporssi.fi/team/search-players?player_position=all&player_team=${joukkue}&player_value=all&type=player_search");
 
-	    $data = modify_char($data);
-
         $data =~ s/player_value\">(.*?)\&euro;</player_value\"> $1 </g;
         $data =~ s/\">(.*?)</\"> $1 </g;
     
@@ -210,6 +208,7 @@ sub sm_kokoonpanot {
             s/^\s*//;
             if (/^\s*$/) { next; }
             s/-(\s+)/0$1/g;
+			$_ = modify_char($_);
             $_ = replace_position($_);
 
             if (/^\s*\D+\s+\D+\s*$/ || (length($_) < 7 && $_ !~ /Arvo/) || /Maalivahti|Puolustaja|Hy.*kk.*/) {
@@ -258,8 +257,6 @@ sub nhl_kokoonpanot {
         
         my $data = fetch_page($address);
 
-	    $data = modify_char($data);
-
         $data =~ s/player_value\">(.*?)\&euro;</player_value\"> $1 </g;
         $data =~ s/\">(.*?)</\"> $1 </g;
     
@@ -274,6 +271,7 @@ sub nhl_kokoonpanot {
             s/^\s*//;
             if (/^\s*$/) { next; }
             s/-(\s+)/0$1/g;
+			$_ = modify_char($_);
             $_ = replace_position($_);
 
             if (/^\s*\D+\s+\D+\s*$/ || (length($_) < 7 && $_ !~ /Arvo/) || /Maalivahti|Puolustaja|Hy.*kk.*/) {
@@ -428,4 +426,4 @@ elsif ($sub =~ /sm_kokoonpanot/) {
     if (!$success) { sm_kokoonpanot_kaikki(); }
 }
 
-return 1;
+1;
