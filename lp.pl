@@ -1366,7 +1366,7 @@ sub select_teams_form {
     foreach (sort keys %kaikkipelit) {
         $html .= "<option>$_</option>\n";
     }
-    $html .= "</select> <font id='font_on_bg'>jolla on pelej&#228;</font> <span id='peli_count_div'><font id='font_on_bg'>$count</font></span>\n";
+    $html .= "</select> <font id='font_on_bg'>jolla on pelej&#228;</font> <font id='font_on_bg'><span id='peli_count_div'>$count</span></font>\n";
     
     return $html;
 }
