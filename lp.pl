@@ -1299,7 +1299,7 @@ sub print_start_page {
     $html .= "<input type='hidden' name='a_script_start' id='a_script_start' value=\"$a_script_start\">\n";
     $html .= "<input type='hidden' name='a_script_end' id='a_script_end' value=\"$a_script_end\">\n";
     $html .= "<center>\n";
-    $html .= "<div id='game_days_div'>" . print_game_days() . "</div>\n";
+    $html .= "<div id='game_days_div' style='overflow:auto; width: 100%'>" . print_game_days() . "</div><br>\n";
     $html .= "<span id='start_day_div'>" . select_days_start_form($a_script_start) . "</span>\n";
     $html .= "<span id='end_day_div'>" . select_days_end_form($a_script_end) . "</span><p>\n";
     $html .= "<input type='hidden' name='liiga' id='liiga' value=\"$param_liiga\">\n";
@@ -1531,7 +1531,7 @@ sub print_game_days {
     }
 
     $html .= "<\/tr>\n";
-    $html .= "<\/table><br>\n";
+    $html .= "<\/table>\n";
     
     return $html;
 }
