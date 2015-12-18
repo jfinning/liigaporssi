@@ -111,8 +111,8 @@ sub sm_kokoonpanot_kaikki {
 
     # Listaa tahan nimet, jos aakkosjarjestys ei matsaa. Ts. seuraavan joukkueen ensimmainen pelaaja on aakkosissa toisen joukkueen viimeisen jalkeen
     my @pelaajat = ();
-    #my @sm_molket = ("Niemi Timo");
-    my @sm_molket = ();
+    my @sm_molket = ("Markkanen Jussi");
+    #my @sm_molket = ();
     push (@pelaajat, @sm_molket);
 
     my %katkaisu_pelaajat;

@@ -44,7 +44,7 @@ sub get_default_jakso ($) {
     if ($liiga =~ /sm_liiga/) {
         $jakso = "Jakso 3";
     } else {
-        $jakso = "Jakso 2";
+        $jakso = "Jakso 3";
     }
     
     return $jakso;
