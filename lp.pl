@@ -264,6 +264,7 @@ sub update_menus {
     my $html;
     $html .= "<html>\n";
     $html .= "<head>\n";
+	$html .= "<meta name='robots' content='noindex'>\n";
     $html .= "<title>Liigaporssi pilalle tilastojen avulla - Sepeti</title>\n";
     
     my $css = `cat css/css.html`;

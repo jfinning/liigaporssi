@@ -106,12 +106,17 @@ sub sm_kokoonpanot_kaikki {
     my $team_count = 0;
     my $previous_name = "Z";
     my $year = get_default_vuosi("sm_liiga");
-	my $period = get_default_jakso("sm_liiga") =~ s/^.*?(\d+).*$/$1/r;
-    my @sm_joukkue = get_joukkue_list("sm_liiga");
+	my $period = get_default_jakso("sm_liiga");
+    if ($period =~ /\d+/) {
+		$period =~ s/^.*?(\d+).*$/period$1/;
+	} else {
+		$period = "playoff"
+	}
+	my @sm_joukkue = get_joukkue_list("sm_liiga");
 
     # Listaa tahan nimet, jos aakkosjarjestys ei matsaa. Ts. seuraavan joukkueen ensimmainen pelaaja on aakkosissa toisen joukkueen viimeisen jalkeen
     my @pelaajat = ();
-    my @sm_molket = ("Markkanen Jussi", "Laurikainen Eetu");
+    my @sm_molket = ("Markkanen Jussi", "Laurikainen Eetu", "Myllyniemi Jere", "Ruusu Markus");
     #my @sm_molket = ();
     push (@pelaajat, @sm_molket);
 
@@ -170,7 +175,7 @@ sub sm_kokoonpanot_kaikki {
     #Tsekataan, etta joka joukkueelta saadaan pelaajalista. Ollut joskus ongelmia
     if ($final_player_list =~ /Ei hakutuloksia/) { exit; }
 
-    open FILE, ">$year/player_list_period${period}.txt" or die "Cant open $year/player_list_period${period}.txt\n"; 
+    open FILE, ">$year/player_list_${period}.txt" or die "Cant open $year/player_list_${period}.txt\n"; 
     
     my @player_list = split(/\n/, $final_player_list);
     my $mikko_lehtonen = 0;
@@ -189,7 +194,12 @@ sub sm_kokoonpanot_kaikki {
 sub sm_kokoonpanot {
     my $final_player_list = "";
     my $year = get_default_vuosi("sm_liiga");
-	my $period = get_default_jakso("sm_liiga") =~ s/^.*?(\d+).*$/$1/r;
+	my $period = get_default_jakso("sm_liiga");
+    if ($period =~ /\d+/) {
+		$period =~ s/^.*?(\d+).*$/period$1/;
+	} else {
+		$period = "playoff"
+	}
     my @sm_joukkue = get_joukkue_list("sm_liiga");
 
     foreach my $joukkue (@sm_joukkue) {
@@ -227,7 +237,7 @@ sub sm_kokoonpanot {
         }
     }
     
-    open FILE, ">$year/player_list_period${period}.txt" or die "Cant open $year/player_list_period${period}.txt\n"; 
+    open FILE, ">$year/player_list_${period}.txt" or die "Cant open $year/player_list_${period}.txt\n"; 
     
     my @player_list = split(/\n/, $final_player_list);
     my $mikko_lehtonen = 0;
@@ -249,7 +259,12 @@ sub nhl_kokoonpanot {
     my $final_player_list = "";
     my $address = "";
     my $year = get_default_vuosi("nhl");
-	my $period = get_default_jakso("nhl") =~ s/^.*?(\d+).*$/$1/r;
+	my $period = get_default_jakso("nhl");
+    if ($period =~ /\d+/) {
+		$period =~ s/^.*?(\d+).*$/period$1/;
+	} else {
+		$period = "playoff"
+	}
     my @nhl_joukkue = get_joukkue_list("nhl");
 
     foreach my $joukkue (@nhl_joukkue) {
@@ -292,7 +307,7 @@ sub nhl_kokoonpanot {
         }
     }
     
-    open FILE, ">$year/player_list_period${period}_nhl.txt" or die "Cant open $year/player_list_period${period}_nhl.txt\n"; 
+    open FILE, ">$year/player_list_${period}_nhl.txt" or die "Cant open $year/player_list_${period}_nhl.txt\n"; 
     
     my @player_list = split(/\n/, $final_player_list);
     foreach (@player_list) {
