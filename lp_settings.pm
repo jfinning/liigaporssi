@@ -21,7 +21,7 @@ sub get_default_joukkueen_hinta { return "2000.0" };
 sub get_default_ottelut { return 0 };
 sub get_default_remove_players { return "" };
 sub get_default_kokoonpanot { return "" };
-sub get_default_liiga { return "sm_liiga" };
+sub get_default_liiga { return "valio" };
 sub get_default_vuosi ($) {
     my $vuosi;
     my $liiga = shift;
@@ -59,7 +59,7 @@ sub get_joukkue_list ($) {
         @joukkueet = ("HIFK", "Tappara");
     } else {
         #@joukkueet = ("Anaheim", "Arizona", "Boston", "Buffalo", "Calgary", "Carolina", "Chicago", "Colorado", "Columbus", "Dallas", "Detroit", "Edmonton", "Florida", "Los Angeles", "Minnesota", "Montreal", "Nashville", "New Jersey", "NY Islanders", "NY Rangers", "Ottawa", "Philadelphia", "Pittsburgh", "San Jose", "St. Louis", "Tampa Bay", "Toronto", "Vancouver", "Washington", "Winnipeg");
-        @joukkueet = ("Anaheim", "Chicago", "Dallas", "Detroit", "Florida", "Los Angeles", "Minnesota", "Nashville", "NY Islanders", "NY Rangers", "Philadelphia", "Pittsburgh", "San Jose", "St. Louis", "Tampa Bay", "Washington");
+        @joukkueet = ("Pittsburgh", "San Jose");
     }
     
     return @joukkueet;    
