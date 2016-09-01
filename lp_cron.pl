@@ -3,36 +3,31 @@
 use strict;
 use Getopt::Long;
 use HTML::Parser;
-require LWP::UserAgent;
 use Fcntl ':flock';
 require "lp_settings.pm";
+require "lp_common_functions.pl";
 
-my $sub;
+my $sub = "";
+my $test = 0;
+my %return;
 
 GetOptions (
-    "sub=s"  => \$sub
+    "sub=s"  => \$sub,
+	"test"   => \$test
 );
 
-if (!defined $sub) { $sub = ""; }
+sub initialize_return_value() {
+	my %return_value = (
+		'fail' => 0,
+		'message' => "OK"
+	);
 
-sub fetch_page($) {
-    my $link = shift;
-    
-    my $ua = LWP::UserAgent->new;
-    $ua->timeout(20);
-    $ua->env_proxy;
-
-    my $data = $ua->get($link);
-
-    if ($data->is_success) {
-        return $data->decoded_content
-    } else {
-        die $data->status_line;
-    }
+	return %return_value;
 }
 
 sub sm_sarjataulukko {
-    my $data = fetch_page("http://liiga.fi/tilastot/2015-2016/runkosarja/joukkueet/");
+    my %return_value = initialize_return_value();
+	my $data = fetch_page("http://liiga.fi/tilastot/2015-2016/runkosarja/joukkueet/");
     my $sijoitus = undef;
     my $column = 0;
     my ($joukkue, $ottelut, $pisteet);
@@ -44,33 +39,38 @@ sub sm_sarjataulukko {
     $p->parse($data);
     my @text = split(/\n/, $text);
 
-    open FILE, ">$file" or die "Cannot open $file";
-    foreach (@text) {
-        if (/^\s*$/) { next; }
-        $_ = modify_char($_);
-        if (/^\s*(\d+)\.\s*$/) {
-            $sijoitus = $1;
-        }
-        if (defined $sijoitus) { $column++; }
-        if (/^\s*(\w+)\s*$/ && $column == 2) {
-            $joukkue = $1;
-        }
-        if (/(\d+)/ && $column == 3) {
-            $ottelut = $1;
-        }
-        if (/(\d+)/ && $column == 10) {
-            $pisteet = $1;
-	    
-            print FILE "$sijoitus. $joukkue $ottelut $pisteet\n";
-            if ($sijoitus == 15) { last; }
-            $column = 0;
-            $sijoitus = undef;
-        }
-    }
-    close FILE;
+    if (!$test) {
+		open FILE, ">$file" or die "Cannot open $file";
+		foreach (@text) {
+			if (/^\s*$/) { next; }
+			$_ = modify_char($_);
+			if (/^\s*(\d+)\.\s*$/) {
+				$sijoitus = $1;
+			}
+			if (defined $sijoitus) { $column++; }
+			if (/^\s*(\w+)\s*$/ && $column == 2) {
+				$joukkue = $1;
+			}
+			if (/(\d+)/ && $column == 3) {
+				$ottelut = $1;
+			}
+			if (/(\d+)/ && $column == 10) {
+				$pisteet = $1;
+			
+				print FILE "$sijoitus. $joukkue $ottelut $pisteet\n";
+				if ($sijoitus == 15) { last; }
+				$column = 0;
+				$sijoitus = undef;
+			}
+		}
+		close FILE;
+	}
+
+	return %return_value;
 }
 
 sub nhl_sarjataulukko {
+    my %return_value = initialize_return_value();
     my $data = fetch_page("http://www.hockeygm.fi/nhl/sarjataulukko");
     my ($sijoitus, $joukkue, $ottelut, $pisteet);
     my $file = get_sarjataulukko_filename("nhl");
@@ -92,17 +92,23 @@ sub nhl_sarjataulukko {
 	    }
     }
     
-    open FILE, ">$file" or die "Cannot open $file";
-    @text = split(/\n/, $temp);
-    foreach (@text) {
-        if (!/^\d+\./) { next; }
-	    s/(\d\.\d\d).*?$/$1/;
-	    print FILE "$_\n";
-    }
-    close FILE;
+    if (!$test) {
+		open FILE, ">$file" or die "Cannot open $file";
+		@text = split(/\n/, $temp);
+		foreach (@text) {
+			if (!/^\d+\./) { next; }
+			s/(\d\.\d\d).*?$/$1/;
+			print FILE "$_\n";
+		}
+		close FILE;
+	}
+	
+	return %return_value;
 }
 
 sub sm_kokoonpanot_kaikki {
+    my %return_value = initialize_return_value();
+	my $pelipaikka = "Maalivahdit";
     my $team_count = 0;
     my $previous_name = "Z";
     my $year = get_default_vuosi("sm_liiga");
@@ -115,11 +121,8 @@ sub sm_kokoonpanot_kaikki {
 	my @sm_joukkue = get_joukkue_list("sm_liiga");
 
     # Listaa tahan nimet, jos aakkosjarjestys ei matsaa. Ts. seuraavan joukkueen ensimmainen pelaaja on aakkosissa toisen joukkueen viimeisen jalkeen
-    my @pelaajat = ();
-    my @sm_molket = ("Markkanen Jussi", "Laurikainen Eetu", "Myllyniemi Jere", "Ruusu Markus");
-    #my @sm_molket = ();
-    push (@pelaajat, @sm_molket);
-
+	# Joukkue vaihtuu ENNEN lisattya pelaajaa
+    my @pelaajat = ("Larmi Emil");
     my %katkaisu_pelaajat;
     foreach (@pelaajat) {
         $katkaisu_pelaajat{$_} = 1;
@@ -155,7 +158,16 @@ sub sm_kokoonpanot_kaikki {
 
         # Ala katkase taman kohdalla, edella olevan pelaajan nimi pienella kirjaimella meinaa katkasta
         if ($name =~ /Voracek Jakub/) {
-        } elsif (($name lt $previous_name || defined $katkaisu_pelaajat{$name}) && $name ne $previous_name) {
+        } elsif ($line =~ /Maalivahdit|Puolustajat|Hy.*kk.*t/) {
+			if ($team_count != 0) {
+				$return_value{fail} = 1;
+				$return_value{'message'} = "Pelaajien aakkosjarjestys pielessa ($pelipaikka). Muokkaa lp_cron.pl filea!";
+			}
+			$pelipaikka = $line;
+			$team_count = 0;
+			$final_player_list = "${final_player_list}$sm_joukkue[$team_count]\n";
+            $team_count++;
+		} elsif (($name lt $previous_name || defined $katkaisu_pelaajat{$name}) && $name ne $previous_name && $final_player_list !~ /Arvo.*?$/) {
             $final_player_list = "${final_player_list}$sm_joukkue[$team_count]\n";
             $team_count++;
 	        if ($team_count > $#sm_joukkue) { $team_count = 0; }
@@ -171,27 +183,34 @@ sub sm_kokoonpanot_kaikki {
     	}
 	    $previous_name = $name;
     }
-    
+
     #Tsekataan, etta joka joukkueelta saadaan pelaajalista. Ollut joskus ongelmia
-    if ($final_player_list =~ /Ei hakutuloksia/) { exit; }
+    if ($final_player_list =~ /Ei hakutuloksia/) {
+		$return_value{'fail'} = 1;
+		$return_value{'message'} = "Ei hakutuloksia";
+		return %return_value;
+	}
 
-    open FILE, ">$year/player_list_${period}.txt" or die "Cant open $year/player_list_${period}.txt\n"; 
-    
-    my @player_list = split(/\n/, $final_player_list);
-    my $mikko_lehtonen = 0;
-    foreach (@player_list) {
-	    # Tulostetaan vain eka mikko lehtonen
-	    if (/Lehtonen Mikko/) {
-	        $mikko_lehtonen++;
-	        if ($mikko_lehtonen > 1) { next; }
-	    }
-	    print FILE "$_\n";
-    }
+    if (!$test) {
+		open FILE, ">$year/player_list_${period}.txt" or die "Cant open $year/player_list_${period}.txt\n"; 
+		my @player_list = split(/\n/, $final_player_list);
+		my $mikko_lehtonen = 0;
+		foreach (@player_list) {
+			# Tulostetaan vain eka mikko lehtonen
+			if (/Lehtonen Mikko/) {
+				$mikko_lehtonen++;
+				if ($mikko_lehtonen > 1) { next; }
+			}
+			print FILE "$_\n";
+		}
+		close (FILE);
+	}
 
-    close (FILE);
+	return %return_value;
 }
 
 sub sm_kokoonpanot {
+    my %return_value = initialize_return_value();
     my $final_player_list = "";
     my $year = get_default_vuosi("sm_liiga");
 	my $period = get_default_jakso("sm_liiga");
@@ -231,31 +250,33 @@ sub sm_kokoonpanot {
 
             #Tsekataan, etta joka joukkueelta saadaan pelaajalista. Ollut joskus ongelmia
             if (/Ei hakutuloksia/) {
-                print "Ei hakutuloksia: $joukkue\n";
-                return 0;
+				$return_value{'fail'} = 1;
+				$return_value{'message'} = "Ei hakutuloksia: $joukkue";
+                return %return_value;
             }
         }
     }
     
-    open FILE, ">$year/player_list_${period}.txt" or die "Cant open $year/player_list_${period}.txt\n"; 
+    if (!$test) {
+		open FILE, ">$year/player_list_${period}.txt" or die "Cant open $year/player_list_${period}.txt\n"; 
+		my @player_list = split(/\n/, $final_player_list);
+		my $mikko_lehtonen = 0;
+		foreach (@player_list) {
+			# Tulostetaan vain eka mikko lehtonen
+			if (/Lehtonen Mikko/) {
+				$mikko_lehtonen++;
+				if ($mikko_lehtonen > 1) { next; }
+			}
+			print FILE "$_\n";
+		}
+		close (FILE);
+	}
     
-    my @player_list = split(/\n/, $final_player_list);
-    my $mikko_lehtonen = 0;
-    foreach (@player_list) {
-	    # Tulostetaan vain eka mikko lehtonen
-	    if (/Lehtonen Mikko/) {
-	        $mikko_lehtonen++;
-	        if ($mikko_lehtonen > 1) { next; }
-	    }
-	    print FILE "$_\n";
-    }
-
-    close (FILE);
-    
-    return 1;
+    return %return_value;
 }
 
 sub nhl_kokoonpanot {
+    my %return_value = initialize_return_value();
     my $final_player_list = "";
     my $address = "";
     my $year = get_default_vuosi("nhl");
@@ -300,27 +321,28 @@ sub nhl_kokoonpanot {
 
             #Tsekataan, etta joka joukkueelta saadaan pelaajalista. Ollut joskus ongelmia
             if (/Ei hakutuloksia/) {
-                print "$address\n";
-                print "Ei hakutuloksia: $joukkue\n";
-                return 0;
+				$return_value{'fail'} = 1;
+				$return_value{'message'} = "Ei hakutuloksia: $joukkue";
+                return %return_value;
             }
         }
     }
     
-    open FILE, ">$year/player_list_${period}_nhl.txt" or die "Cant open $year/player_list_${period}_nhl.txt\n"; 
-    
-    my @player_list = split(/\n/, $final_player_list);
-    foreach (@player_list) {
-        print FILE "$_\n";
-    }
+    if (!$test) {
+		open FILE, ">$year/player_list_${period}_nhl.txt" or die "Cant open $year/player_list_${period}_nhl.txt\n"; 
+		my @player_list = split(/\n/, $final_player_list);
+		foreach (@player_list) {
+			print FILE "$_\n";
+		}
+		close (FILE);
+	}
 
-    close (FILE);
-    
-    return 1;
+    return %return_value;
 }
 
 # Ajetaan vasta pelipaivan lopuksi, silla tulostetaan vain paivat taman paivan jalkeen
 sub ottelulista ($) {
+    my %return_value = initialize_return_value();
     my $file = shift;
     my ($yearOffset, $month, $dayOfMonth) = get_date();
     my $current_date = "$yearOffset-$month-$dayOfMonth";
@@ -328,7 +350,10 @@ sub ottelulista ($) {
     my $day_found = 0;
     my $new_game_list;
 
-    my @games = `cat $file`;
+    open my $handle, '<', $file;
+    chomp(my @games = <$handle>);
+    close $handle;
+
     foreach (@games) {
         s/\s*$//;
 
@@ -347,23 +372,30 @@ sub ottelulista ($) {
         $new_game_list .= "$_\n";
     }
     
-    open FILE, ">$file" or die "Cant open $file\n"; 
-    print FILE "$new_game_list";
-    close (FILE);
+    if (!$test) {
+		open FILE, ">$file" or die "Cant open $file\n"; 
+		print FILE "$new_game_list";
+		close (FILE);
+	}
+
+	return %return_value;
 }
 
 sub sm_ottelu_id {
+    my %return_value = initialize_return_value();
     my ($yearOffset, $month, $dayOfMonth) = get_date();
-    my $new_game_list;
+    my $new_game_list = "";
     my $day_count = 0;
     my $gameday;
     my $file = get_ottelulista_filename("sm_liiga");
 
-    my $data = fetch_page("http://www.liiga.fi/ottelut/2015-2016/runkosarja/");
+    my $data = fetch_page("http://www.liiga.fi/ottelut/2016-2017/runkosarja/");
     $data = modify_char($data);
     my @data = split(/\n/, $data);
 
-    my @games = `cat $file`;
+	open my $handle, '<', $file;
+    chomp(my @games = <$handle>);
+    close $handle;
     foreach my $game (@games) {
         $game =~ s/\s*$//;
 
@@ -374,37 +406,51 @@ sub sm_ottelu_id {
 	
         if ($day_count == 1) {
             if ($game =~ /^\s*(.*?)\s*-\s*(.*?)\s*$/) {
-                my $home = $1;
+				my $home = $1;
                 my $away = $2;
                 my $day_found = 0;
+				my $home_found = 0;
+				my $away_fuond = 0;
                 foreach (@data) {
                     if (/data-time\s*=\s*\"$gameday/) {
                         $day_found = 1;
                     }
                     
                     if ($day_found) {
-                        if (/\/(\d+)\/\">$home\s*-\s*$away/) {
-                            my $id = $1;
+                        if (/$home/) { $home_found = 1; }
+                        if (/$away/) { $away_fuond = 1; }
+						#if (/\/(\d+)\/\">$home\s*-\s*$away/) {
+						if ($home_found && $away_fuond && /\/(\d+)\/kokoonpanot/) {
+							my $id = $1;
                             $game =~ s/$away/$away, $id/;
                             last;
                         }
                     }
                 }
+				if (!$day_found) {
+					$return_value{'fail'} = 1;
+					$return_value{'message'} = "Ei loytynyt muokattavaa paivaa $gameday liigan sivulta";
+				}
             }
             $game = "$game";
         }
 	
         $new_game_list .= "$game\n";
     }
-    
-    open FILE, ">$file" or die "Cant open $file\n";
-    flock(FILE, LOCK_EX) or die "Could not lock '$file' - $!";
-    print FILE "$new_game_list";
-    close (FILE);
-}
 
-sub fetch_kokoonpanot() {
+	if ($new_game_list =~ /^\s*$/) {
+		$return_value{'fail'} = 1;
+		$return_value{'message'} = "Uusi ottelulista on tyhja. Ei muokattu!";
+	}
 
+    if (!$test && !$return_value{'fail'} && $new_game_list !~ /^\s*$/) {
+		open FILE, ">$file" or die "Cant open $file\n";
+		flock(FILE, LOCK_EX) or die "Could not lock '$file' - $!";
+		print FILE "$new_game_list";
+		close (FILE);
+	}
+
+	return %return_value;
 }
 
 sub get_date {
@@ -428,20 +474,29 @@ sub replace_position($) {
         $position = "Hyokkaaja";
     }
 
-    return $position
+    return $position;
 }
 
-if ($sub =~ /sm_ottelulista/) { ottelulista("games_sm_liiga.txt"); }
-elsif ($sub =~ /nhl_ottelulista/) { ottelulista("games_nhl.txt"); }
-elsif ($sub =~ /fetch_kokoonpanot/) { fetch_kokoonpanot(); }
-elsif ($sub =~ /sm_sarjataulukko/) { sm_sarjataulukko(); }
-elsif ($sub =~ /sm_ottelu_id/) { sm_ottelu_id(); }
-elsif ($sub =~ /nhl_sarjataulukko/) { nhl_sarjataulukko(); }
-elsif ($sub =~ /nhl_kokoonpanot/) { nhl_kokoonpanot(); }
-elsif ($sub =~ /sm_kokoonpanot_kaikki/) { sm_kokoonpanot_kaikki(); }
-elsif ($sub =~ /sm_kokoonpanot/) {
-    my $success = sm_kokoonpanot();
-    if (!$success) { sm_kokoonpanot_kaikki(); }
+if ($sub !~ /^\s*$/) {
+	if ($sub =~ /sm_ottelulista/) {
+		%return = ottelulista("games_sm_liiga.txt"); 
+	} elsif ($sub =~ /nhl_ottelulista/) {
+		%return = ottelulista("games_nhl.txt");
+	} elsif ($sub =~ /sm_kokoonpanot/) {
+		%return = sm_kokoonpanot();
+		if ($return{'fail'}) {
+			%return = sm_kokoonpanot_kaikki();
+		}
+	} else {
+		%return = eval "$sub()";
+	}
+
+	if ($return{'fail'}) {
+		print "$sub FAILED:\n";
+		print "    $return{'message'}\n";
+	} else {
+		print "$sub OK\n";
+	}
 }
 
 1;

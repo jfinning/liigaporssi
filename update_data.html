@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Testing ajax</title> 
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <script>
+
+            $(document).ready(function() {
+
+				get_variables();
+
+                $("button").click(function(){
+                    var sub = $(this).attr('id');
+                    $('div.update_result').html("Waiting results from " + sub + "...");
+					$.ajax({
+                            type: 'POST',
+                            url: 'lp_update_data.pl',
+                            data: { 'sub': sub},
+                            success: function(res) {
+								$('div.update_result').html(res);
+							},
+                            error: function() {$('div.update_result').html("Some problem occurred!");}
+                    });
+                });
+			});
+			
+			function get_variables() {
+				var sub = "get_variables";
+				$.ajax({
+						type: 'POST',
+						url: 'lp_update_data.pl',
+						data: { 'sub': sub},
+						success: function(res) {
+							$('div.variables').html(res);
+						},
+						error: function() {$('div.variables').html("Problems when reading variables");}
+				});
+			}
+			
+        </script>
+    </head>
+    <body>
+       <button id="update_all_data" >Update all data</button>
+       <button id="update_liiga_data" >Update Liiga data</button>
+       <button id="update_nhl_data" >Update NHL data</button>
+       <button id="update_valio_data" >Update Valioliiga data</button>
+    </body>
+	
+	<div class="variables">
+	Variables goes here
+	</div>
+	<p>
+	<div class="update_result">
+	</div>
+</html>

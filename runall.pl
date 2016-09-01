@@ -3,22 +3,18 @@
 use strict;
 require "lp_cron.pl";
 
-print "Update sm_sarjataulukko\n";
-sm_sarjataulukko();
+my @subs = ("nhl_sarjataulukko", "nhl_kokoonpanot", "sm_sarjataulukko", "sm_ottelu_id", "sm_kokoonpanot", "sm_kokoonpanot_kaikki");
 
-print "Trying to update sm_kokoonpanot...";
-my $success = sm_kokoonpanot();
-if (!$success) {
-	print "Failed\n";
-	print "Update sm_kokoonpanot_kaikki\n";
-	sm_kokoonpanot_kaikki();
-} else { print "OK\n"; }
-
-print "Update sm_ottelu_id\n";
-sm_ottelu_id();
-
-print "Update nhl_sarjataulukko\n";
-nhl_sarjataulukko();
-
-print "Update nhl_kokoonpanot\n";
-nhl_kokoonpanot();
+foreach my $sub (@subs) {
+	print "Trying to run sub $sub ... ";
+	my %return = eval "$sub()";
+	if ($return{'fail'}) {
+		print "FAIL\n";
+		print "    $return{'message'}\n";
+		if ($sub eq "sm_kokoonpanot") {
+			push @subs, "sm_kokoonpanot_kaikki";
+		}
+	} else {
+		print "OK\n";
+	}
+}

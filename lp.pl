@@ -1,4 +1,5 @@
-#!/usr/bin/perl -w
+#!E:\Ohjelmat\perl64\bin\perl.exe -w
+#/usr/bin/perl -w
 
 use strict;
 use CGI::Carp qw(fatalsToBrowser);
@@ -6,9 +7,8 @@ use CGI qw(:standard);
 use CGI::Ajax;
 use Time::HiRes qw(usleep gettimeofday tv_interval);
 use HTML::Parser;
-require LWP::UserAgent;
 require "lp_settings.pm";
-require "lp_cron.pl";
+require "lp_common_functions.pl";
 
 my $cgi = new CGI;
 my $script_name = $cgi->script_name;
@@ -266,10 +266,7 @@ sub update_menus {
     $html .= "<head>\n";
 	$html .= "<meta name='robots' content='noindex'>\n";
     $html .= "<title>Liigaporssi pilalle tilastojen avulla - Sepeti</title>\n";
-    
-    my $css = `cat css/css.html`;
-    
-    $html .= "$css\n";
+	$html .= "<link rel='stylesheet' type='text/css' href='css/lp.css'>\n";
     
     $html .= "<script type=\"text/javascript\">\n";
 
@@ -289,9 +286,9 @@ sub update_menus {
     if ($param_sub =~ /player_list/) {
 	$html .= '
 	<!-- DataTables -->
-	<script type="text/javascript" charset="utf8" src="http://cdn.datatables.net/1.10.4/js/jquery.dataTables.js"></script>
+	<script type="text/javascript" charset="utf8" src="http://cdn.datatables.net/1.10.12/js/jquery.dataTables.js"></script>
 
-	<script type="text/javascript" charset="utf8" src="http://jquery-datatables-column-filter.googlecode.com/svn/trunk/media/js/jquery.dataTables.columnFilter.js"></script>
+	<script type="text/javascript" charset="utf8" src="plugins/jquery.dataTables.columnFilter.js"></script>
 
 	<script>
 
@@ -415,7 +412,14 @@ sub update_menus {
     $html .= "<li><A HREF=\"#\" id=\"status\">Status<\/a></li>\n";    
     $html .= "</ul>\n";
     $html .= "</div>\n";
-    my $status = `cat status.htm`;
+	my $status = "";
+    open(my $fh, '<', "status.htm") or die "cannot open file status.htm";
+	{
+        local $/;
+        $status = <$fh>;
+    }
+    close($fh);
+
     $html .= "<br><div id=\"status_down\" style=\"display:none; width:600px; height:250px; padding:5px; border:5px solid gray; margin:0px; overflow-y:scroll;\">$status</div>";
     
     $html .= "<br><br>\n";
