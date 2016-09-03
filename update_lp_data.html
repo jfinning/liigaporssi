@@ -9,13 +9,36 @@
                 liiga_create_elements();
 				nhl_create_elements();
 				valio_create_elements();
+				get_settings();
 
 				$("button").click(set_checkboxes);
 				$("button#update").click(update_files);
 			});
 
+			function get_settings() {
+				var sub = "get_settings";
+				$.ajax({
+						type: 'POST',
+						url: 'lp_update_data.pl',
+						data: { 'sub': sub},
+						dataType: 'json',
+						success: function(res) {
+							//$('div.settings').html(res);
+							$('div.settings').html(
+							'<table class="w3-table w3-striped w3-bordered">' +
+							'<tr><th>Sarja</th> <th>Jakso</th> <th>Vuosi</th></tr>' +
+							'<tr><td>' + res.nhl.liiga + '</td> <td>' + res.nhl.jakso + '</td> <td>' + res.nhl.vuosi + '</td></tr>' +
+							'<tr><td>' + res.sm_liiga.liiga + '</td> <td>' + res.sm_liiga.jakso + '</td> <td>' + res.sm_liiga.vuosi + '</td></tr>' +
+							'</table>'
+							);
+						},
+						error: function() {$('div.settings').html("Problems when reading variables");}
+				});
+			}
+
 			function update_files() {
-				$("div.result1").html('');
+				$("div.failures").html('');
+				$("label.status").html('');
 				var checkboxes = $('input.perl_function');
 				jQuery.each(checkboxes, function(i, checkbox) {
 					if ($(checkbox).is(":checked")) {
@@ -26,14 +49,26 @@
 
 			function run_update(type) {
 				var sub = 'update_given_data';
+				var result_element = '#' + type + '_status'
+				$(result_element).html("Running...");
 				$.ajax({
 					type: 'POST',
 					url: 'lp_update_data.pl',
 					data: { 'sub':sub, 'update_type':type},
+					dataType: 'json',
 					success: function(res) {
-						$('div.result1').append(res);
+						$('div.failures').append(res);
+						if (res.fail) {
+							$(result_element).html("FAIL");
+							$('div.failures').append(res.message);
+						} else {
+							$(result_element).html("OK");
+						}
 					},
-					error: function() {$('div.result1').append("Some problem occurred trying to run " + sub + "<br>");}
+					error: function() {
+						$(result_element).html("FAIL");
+						$('div.failures').append("Some problem occurred trying to run " + sub + "<br>");
+					}
 				});
 			}
 
@@ -76,11 +111,16 @@
 			}
 
 			function create_elements(elements, liiga){
-				var targetElement = 'div.' + liiga + '_form';
+				var checkboxesElement = 'div.' + liiga + '_checkboxes';
+				var resultsElement = 'div.' + liiga + '_results';
 				jQuery.each(elements, function(i, element) {
-					$(targetElement).append(
+					$(checkboxesElement).append(
 						'<input id="' + element.functionName + '" class="w3-check ' + liiga + ' perl_function" type="checkbox">' + 
 						'<label class="w3-validate">' + element.displayName + '</label><br>'
+					);
+					$(resultsElement).append(
+						'<input style="visibility: hidden" class="w3-check" type="checkbox">' + 
+						'<label id="' + element.functionName + '_status" class="w3-validate status"></label><br>'
 					);
 				});
 			}
@@ -92,52 +132,80 @@
 <p>
 <div class="w3-row-padding">
 	<div class="w3-third">
-		<header class="w3-container w3-blue">
-		<h1>Liiga</h1>
+		<header class="w3-container w3-light-grey">
+			<h3>Liiga</h3>
 		</header>
-		<div style="height:100px" class="Liiga_form w3-card-2 w3-container">
+		<div style="height:110px" class="w3-card-2 w3-container w3-padding-0">
+			<div class="w3-left w3-padding Liiga_checkboxes"></div>
+			<div class="w3-right w3-padding Liiga_results"></div>
 		</div>
 		<footer class="w3-container w3-grey">
-		<p>
-		<button id="Liiga" class="w3-btn w3-white w3-border w3-round" style="width:49%">All</button>
-		<button id="Liiga" class="w3-btn w3-white w3-border w3-round" style="width:49%">None</button>
-		<p>
+			<p>
+			<button id="Liiga" class="w3-btn w3-white w3-border w3-round" style="width:49%">All</button>
+			<button id="Liiga" class="w3-btn w3-white w3-border w3-round" style="width:49%">None</button>
+			<p>
 		</footer>
 	</div>
 
 	<div class="w3-third">
-		<header class="w3-container w3-blue">
-		<h1>NHL</h1>
+		<header class="w3-container w3-light-grey">
+			<h3>NHL</h3>
 		</header>
-		<div style="height:100px" class="NHL_form w3-card-2 w3-container">
+		<div style="height:110px" class="w3-card-2 w3-container w3-padding-0">
+			<div class="w3-left w3-padding NHL_checkboxes"></div>
+			<div class="w3-right w3-padding NHL_results"></div>
 		</div>
 		<footer class="w3-container w3-grey">
-		<p>
-		<button id="NHL" class="w3-btn w3-white w3-border w3-round" style="width:49%">All</button>
-		<button id="NHL" class="w3-btn w3-white w3-border w3-round" style="width:49%">None</button>
-		<p>
+			<p>
+			<button id="NHL" class="w3-btn w3-white w3-border w3-round" style="width:49%">All</button>
+			<button id="NHL" class="w3-btn w3-white w3-border w3-round" style="width:49%">None</button>
+			<p>
 		</footer>
 	</div>
 
 	<div class="w3-third">
-		<header class="w3-container w3-blue">
-		<h1>Valioliiga</h1>
+		<header class="w3-container w3-light-grey">
+			<h3>Valioliiga</h3>
 		</header>
-		<div style="height:100px" class="Valioliiga_form w3-card-2 w3-container">
+		<div style="height:110px" class="w3-card-2 w3-container w3-padding-0">
+			<div class="w3-left w3-padding Valioliiga_checkboxes"></div>
+			<div class="w3-right w3-padding Valioliiga_results"></div>
 		</div>
 		<footer class="w3-container w3-grey">
-		<p>
-		<button id="Valioliiga" class="w3-btn w3-white w3-border w3-round" style="width:49%">All</button>
-		<button id="Valioliiga" class="w3-btn w3-white w3-border w3-round" style="width:49%">None</button>
-		<p>
+			<p>
+			<button id="Valioliiga" class="w3-btn w3-white w3-border w3-round" style="width:49%">All</button>
+			<button id="Valioliiga" class="w3-btn w3-white w3-border w3-round" style="width:49%">None</button>
+			<p>
 		</footer>
 	</div>
 </div>
 
 <p>
-<button id="update">Update selected data</button>
 
-<div class="result1">
+<div class="w3-row-padding">
+	<div class="w3-third">
+		<header class="w3-container w3-blue-grey">
+			<h3>Used settings on update</h3>
+		</header>
+
+		<div class="w3-card-2 w3-container settings">
+		</div>
+
+		<footer class="w3-container w3-grey">
+			<p>
+			<button id="update" class="w3-btn w3-white w3-border w3-round" style="width:100%">Update selected data</button>
+			<p>
+		</footer>
+	</div>
+
+	<div class="w3-third">
+		<header class="w3-container w3-light-grey">
+			<h3>Fail reports</h3>
+		</header>
+
+		<div class="w3-card-2 w3-container w3-text-red failures">
+		</div>
+	</div>
 </div>
 
 </body>

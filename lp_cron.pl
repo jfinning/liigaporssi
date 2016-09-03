@@ -19,7 +19,7 @@ GetOptions (
 sub initialize_return_value() {
 	my %return_value = (
 		'fail' => 0,
-		'message' => "OK"
+		'message' => ""
 	);
 
 	return %return_value;
