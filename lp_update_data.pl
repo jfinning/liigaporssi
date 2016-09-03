@@ -1,4 +1,4 @@
-#!E:\Ohjelmat\perl64\bin\perl.exe -w
+﻿#!E:\Ohjelmat\perl64\bin\perl.exe -w
 
 use strict;
 use CGI::Carp qw(fatalsToBrowser);
@@ -14,6 +14,7 @@ my @liigat = get_liigat();
 
 my $cgi = new CGI;
 my $sub = $cgi->param('sub');
+my $update_type = $cgi->param('update_type');
 
 sub get_variables() {
 	foreach my $liiga (@liigat) {
@@ -30,19 +31,8 @@ sub get_variables() {
 	}
 }
 
-sub update_all_data() {
-	my @subs = ("nhl_sarjataulukko", "nhl_kokoonpanot", "sm_sarjataulukko", "sm_ottelu_id", "sm_kokoonpanot", "sm_kokoonpanot_kaikki");
-	update_data(@subs);
-}
-
-sub update_liiga_data() {
-	my @subs = ("sm_sarjataulukko", "sm_ottelu_id", "sm_kokoonpanot", "sm_kokoonpanot_kaikki");
-	update_data(@subs);
-}
-
-sub update_nhl_data() {
-	my @subs = ("nhl_sarjataulukko", "nhl_kokoonpanot");
-	update_data(@subs);
+sub update_given_data () {
+	update_data($update_type);
 }
 
 sub update_data(@) {
@@ -59,6 +49,9 @@ sub update_data(@) {
 			}
 		} else {
 			print "OK<br>\n";
+			if ($sub eq "sm_ottelulista") {
+				push @subs, "sm_ottelu_id";
+			}
 		}
 	}
 }

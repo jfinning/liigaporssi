@@ -1,0 +1,144 @@
+﻿<!DOCTYPE html>
+<html>
+    <head>
+        <title>Update LP data</title> 
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <script>
+
+            $(document).ready(function() {
+                liiga_create_elements();
+				nhl_create_elements();
+				valio_create_elements();
+
+				$("button").click(set_checkboxes);
+				$("button#update").click(update_files);
+			});
+
+			function update_files() {
+				$("div.result1").html('');
+				var checkboxes = $('input.perl_function');
+				jQuery.each(checkboxes, function(i, checkbox) {
+					if ($(checkbox).is(":checked")) {
+						run_update($(checkbox).attr('id'));
+					}
+				});
+			}
+
+			function run_update(type) {
+				var sub = 'update_given_data';
+				$.ajax({
+					type: 'POST',
+					url: 'lp_update_data.pl',
+					data: { 'sub':sub, 'update_type':type},
+					success: function(res) {
+						$('div.result1').append(res);
+					},
+					error: function() {$('div.result1').append("Some problem occurred trying to run " + sub + "<br>");}
+				});
+			}
+
+			function set_checkboxes() {
+				var text = $(this).text();
+				var liiga = $(this).attr('id');
+				if (text == 'All') {
+					$('input.' + liiga).prop("checked", true);
+				} else if (text == 'None') {
+					$('input.' + liiga).prop("checked", false);
+				}
+			}
+
+			function nhl_create_elements() {
+				var liiga = 'NHL';
+				var elements = [
+					{displayName:"Sarjataulukko", functionName:'nhl_sarjataulukko'},
+					{displayName:"Ottelulista", functionName:'nhl_ottelulista'},
+					{displayName:"Pelaajalista", functionName:'nhl_kokoonpanot'},
+				];
+				create_elements(elements, liiga)
+			}
+
+			function liiga_create_elements() {
+				var liiga = 'Liiga';
+				var elements = [
+					{displayName:"Sarjataulukko", functionName:'sm_sarjataulukko'},
+					{displayName:"Ottelulista", functionName:'sm_ottelulista'},
+					{displayName:"Pelaajalista", functionName:'sm_kokoonpanot'},
+				];
+				create_elements(elements, liiga)
+			}
+
+			function valio_create_elements() {
+				var liiga = 'Valioliiga';
+				var elements = [
+					{displayName:"Ottelulista", functionName:'valio_ottelulista'},
+				];
+				create_elements(elements, liiga)
+			}
+
+			function create_elements(elements, liiga){
+				var targetElement = 'div.' + liiga + '_form';
+				jQuery.each(elements, function(i, element) {
+					$(targetElement).append(
+						'<input id="' + element.functionName + '" class="w3-check ' + liiga + ' perl_function" type="checkbox">' + 
+						'<label class="w3-validate">' + element.displayName + '</label><br>'
+					);
+				});
+			}
+			
+        </script>
+    </head>
+<link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
+<body>
+<p>
+<div class="w3-row-padding">
+	<div class="w3-third">
+		<header class="w3-container w3-blue">
+		<h1>Liiga</h1>
+		</header>
+		<div style="height:100px" class="Liiga_form w3-card-2 w3-container">
+		</div>
+		<footer class="w3-container w3-grey">
+		<p>
+		<button id="Liiga" class="w3-btn w3-white w3-border w3-round" style="width:49%">All</button>
+		<button id="Liiga" class="w3-btn w3-white w3-border w3-round" style="width:49%">None</button>
+		<p>
+		</footer>
+	</div>
+
+	<div class="w3-third">
+		<header class="w3-container w3-blue">
+		<h1>NHL</h1>
+		</header>
+		<div style="height:100px" class="NHL_form w3-card-2 w3-container">
+		</div>
+		<footer class="w3-container w3-grey">
+		<p>
+		<button id="NHL" class="w3-btn w3-white w3-border w3-round" style="width:49%">All</button>
+		<button id="NHL" class="w3-btn w3-white w3-border w3-round" style="width:49%">None</button>
+		<p>
+		</footer>
+	</div>
+
+	<div class="w3-third">
+		<header class="w3-container w3-blue">
+		<h1>Valioliiga</h1>
+		</header>
+		<div style="height:100px" class="Valioliiga_form w3-card-2 w3-container">
+		</div>
+		<footer class="w3-container w3-grey">
+		<p>
+		<button id="Valioliiga" class="w3-btn w3-white w3-border w3-round" style="width:49%">All</button>
+		<button id="Valioliiga" class="w3-btn w3-white w3-border w3-round" style="width:49%">None</button>
+		<p>
+		</footer>
+	</div>
+</div>
+
+<p>
+<button id="update">Update selected data</button>
+
+<div class="result1">
+</div>
+
+</body>
+</html>

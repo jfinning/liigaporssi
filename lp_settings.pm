@@ -1,4 +1,4 @@
-use strict;
+﻿use strict;
 
 sub get_vuodet ($) {
     my @vuodet;
@@ -126,6 +126,19 @@ sub get_sarjataulukko_filename ($) {
 }
 
 sub get_max_teams { return 10 };
+
+sub get_ottelulista_link($) {
+	my $liiga = shift;
+
+	my $link = "https://www.liigaporssi.fi/sm-liiga/ottelupaiva";
+	if ($liiga eq "nhl") {
+		$link = "https://www.hockeygm.fi/nhl/ottelupaiva";
+	} elsif ($liiga eq "valio") {
+		$link = "https://www.valioliigaporssi.fi/valioliiga/ottelupaiva";
+	}
+
+	return $link;
+}
 
 sub modify_char ($) {
     my $text = shift;

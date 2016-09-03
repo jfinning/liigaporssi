@@ -1,4 +1,4 @@
-#!/usr/bin/perl -w
+﻿#!/usr/bin/perl -w
 
 use strict;
 use Getopt::Long;
@@ -122,7 +122,7 @@ sub sm_kokoonpanot_kaikki {
 
     # Listaa tahan nimet, jos aakkosjarjestys ei matsaa. Ts. seuraavan joukkueen ensimmainen pelaaja on aakkosissa toisen joukkueen viimeisen jalkeen
 	# Joukkue vaihtuu ENNEN lisattya pelaajaa
-    my @pelaajat = ("Larmi Emil");
+    my @pelaajat = ("Larmi Emil", "Ruusu Markus");
     my %katkaisu_pelaajat;
     foreach (@pelaajat) {
         $katkaisu_pelaajat{$_} = 1;
@@ -271,7 +271,7 @@ sub sm_kokoonpanot {
 		}
 		close (FILE);
 	}
-    
+
     return %return_value;
 }
 
@@ -340,47 +340,6 @@ sub nhl_kokoonpanot {
     return %return_value;
 }
 
-# Ajetaan vasta pelipaivan lopuksi, silla tulostetaan vain paivat taman paivan jalkeen
-sub ottelulista ($) {
-    my %return_value = initialize_return_value();
-    my $file = shift;
-    my ($yearOffset, $month, $dayOfMonth) = get_date();
-    my $current_date = "$yearOffset-$month-$dayOfMonth";
-    my $game_date;
-    my $day_found = 0;
-    my $new_game_list;
-
-    open my $handle, '<', $file;
-    chomp(my @games = <$handle>);
-    close $handle;
-
-    foreach (@games) {
-        s/\s*$//;
-
-        if (/(\d\d)\.(\d\d)\./) {
-            my $day_nro = $1;
-            my $month_nro = $2;
-            my $year = $yearOffset;
-
-            $game_date = "$year-$month_nro-$day_nro";
-	    
-            if ($current_date lt $game_date) { $day_found = 1; }
-        }
-	
-        if (!$day_found) { next; }
-	
-        $new_game_list .= "$_\n";
-    }
-    
-    if (!$test) {
-		open FILE, ">$file" or die "Cant open $file\n"; 
-		print FILE "$new_game_list";
-		close (FILE);
-	}
-
-	return %return_value;
-}
-
 sub sm_ottelu_id {
     my %return_value = initialize_return_value();
     my ($yearOffset, $month, $dayOfMonth) = get_date();
@@ -415,7 +374,6 @@ sub sm_ottelu_id {
                     if (/data-time\s*=\s*\"$gameday/) {
                         $day_found = 1;
                     }
-                    
                     if ($day_found) {
                         if (/$home/) { $home_found = 1; }
                         if (/$away/) { $away_fuond = 1; }
@@ -434,7 +392,6 @@ sub sm_ottelu_id {
             }
             $game = "$game";
         }
-	
         $new_game_list .= "$game\n";
     }
 
@@ -449,6 +406,37 @@ sub sm_ottelu_id {
 		print FILE "$new_game_list";
 		close (FILE);
 	}
+
+	return %return_value;
+}
+
+sub ottelulista($) {
+	my $liiga = shift;
+    my %return_value = initialize_return_value();
+    my $file = get_ottelulista_filename($liiga);
+	my $link = get_ottelulista_link($liiga);
+	my $data = fetch_page($link);
+    $data = modify_char($data);
+	$data =~ s/^.*?(<table.*?table>).*?$/$1/s;
+	my $text;
+    my $p = HTML::Parser->new(text_h => [ sub {$text .= shift}, 
+				  'dtext']);
+    $p->parse($data);
+	if ($text =~ /\d+-\d+/) {
+		$text =~ s/^.+\)//s;
+	}
+	$text =~ s/(\w+)\s*-\s*(\w+)/$1 - $2/g;
+    my @text = split(/\n/, $text);
+	
+    open FILE, ">$file" or die "Cant open $file\n";
+	foreach (@text) {
+		if (!/^\s*$/) {
+			s/\s*$//;
+			s/^\s*//;
+			print FILE "$_\n";
+		}
+	}
+	close (FILE);
 
 	return %return_value;
 }
@@ -477,19 +465,20 @@ sub replace_position($) {
     return $position;
 }
 
+sub sm_ottelulista {
+	ottelulista("sm_liiga"); 
+}
+
+sub nhl_ottelulista {
+	ottelulista("nhl"); 
+}
+
+sub valio_ottelulista {
+	ottelulista("valio"); 
+}
+
 if ($sub !~ /^\s*$/) {
-	if ($sub =~ /sm_ottelulista/) {
-		%return = ottelulista("games_sm_liiga.txt"); 
-	} elsif ($sub =~ /nhl_ottelulista/) {
-		%return = ottelulista("games_nhl.txt");
-	} elsif ($sub =~ /sm_kokoonpanot/) {
-		%return = sm_kokoonpanot();
-		if ($return{'fail'}) {
-			%return = sm_kokoonpanot_kaikki();
-		}
-	} else {
-		%return = eval "$sub()";
-	}
+	%return = eval "$sub()";
 
 	if ($return{'fail'}) {
 		print "$sub FAILED:\n";

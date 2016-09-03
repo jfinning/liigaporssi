@@ -262,11 +262,20 @@ sub muuttujien_alustusta ($) {
 
 sub update_menus {
     my $html;
-    $html .= "<html>\n";
+	$html .= "<html>\n";
     $html .= "<head>\n";
 	$html .= "<meta name='robots' content='noindex'>\n";
     $html .= "<title>Liigaporssi pilalle tilastojen avulla - Sepeti</title>\n";
-	$html .= "<link rel='stylesheet' type='text/css' href='css/lp.css'>\n";
+	# Seuraava on blokattu, joten tehty kuten alempana
+	#$html .= "<link rel='stylesheet' type='text/css' href='css/lp.css'>\n";
+	my $css = "";
+    open(my $fh, '<', "css/lp.css") or die "cannot open file css/lp.css";
+	{
+        local $/;
+        $css = <$fh>;
+    }
+    close($fh);
+	$html .= "<style>$css</style>\n";
     
     $html .= "<script type=\"text/javascript\">\n";
 

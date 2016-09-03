@@ -1,9 +1,9 @@
-#!/usr/bin/perl -w
+﻿#!/usr/bin/perl -w
 
 use strict;
 require "lp_cron.pl";
 
-my @subs = ("nhl_sarjataulukko", "nhl_kokoonpanot", "sm_sarjataulukko", "sm_ottelu_id", "sm_kokoonpanot", "sm_kokoonpanot_kaikki");
+my @subs = ("nhl_sarjataulukko", "nhl_kokoonpanot", "nhl_ottelulista", "sm_sarjataulukko", "sm_ottelulista", "sm_kokoonpanot", "valio_ottelulista");
 
 foreach my $sub (@subs) {
 	print "Trying to run sub $sub ... ";
@@ -14,7 +14,10 @@ foreach my $sub (@subs) {
 		if ($sub eq "sm_kokoonpanot") {
 			push @subs, "sm_kokoonpanot_kaikki";
 		}
-	} else {
-		print "OK\n";
-	}
+		} else {
+			print "OK\n";
+			if ($sub eq "sm_ottelulista") {
+				push @subs, "sm_ottelu_id";
+			}
+		}
 }
