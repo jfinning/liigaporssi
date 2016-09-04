@@ -31,7 +31,7 @@ sub get_default_vuosi ($) {
     } elsif ($liiga eq "nhl"){
         $vuosi = 2015;
     } else {
-	    $vuosi = 2016;
+	    $vuosi = "undef";
 	}
 
     return $vuosi;
@@ -49,7 +49,7 @@ sub get_default_jakso ($) {
     } elsif ($liiga eq "nhl"){
         $jakso = "Jakso PO";
 	} else {
-        $jakso = "Jakso 1";
+        $jakso = "undef";
     }
     
     return $jakso;
