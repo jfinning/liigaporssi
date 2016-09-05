@@ -4,8 +4,8 @@ use strict;
 use Getopt::Long;
 use HTML::Parser;
 use Fcntl ':flock';
-require "lp_settings.pm";
-require "lp_common_functions.pl";
+require "modules/lp_settings.pm";
+require "modules/lp_common_functions.pl";
 
 my $sub = "";
 my $test = 0;

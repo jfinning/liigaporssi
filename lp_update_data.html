@@ -1,182 +1,95 @@
 ﻿<!DOCTYPE html>
 <html>
-    <head>
-        <title>Update LP data</title> 
-        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-        <script>
-
-            $(document).ready(function() {
-                liiga_create_elements();
-				nhl_create_elements();
-				valio_create_elements();
-				get_settings();
-
-				$("button").click(set_checkboxes);
-				$("button#update").click(update_files);
-			});
-
-			function get_settings() {
-				var sub = "get_settings";
-				$.ajax({
-						type: 'POST',
-						url: 'lp_update_data.pl',
-						data: { 'sub': sub},
-						dataType: 'json',
-						success: function(res) {
-							//$('div.settings').html(res);
-							$('div.settings').html(
-							'<table class="w3-table w3-striped w3-bordered">' +
-							'<tr><th>Sarja</th> <th>Jakso</th> <th>Vuosi</th></tr>' +
-							'<tr><td>' + res.nhl.liiga + '</td> <td>' + res.nhl.jakso + '</td> <td>' + res.nhl.vuosi + '</td></tr>' +
-							'<tr><td>' + res.sm_liiga.liiga + '</td> <td>' + res.sm_liiga.jakso + '</td> <td>' + res.sm_liiga.vuosi + '</td></tr>' +
-							'<tr><td>' + res.valio.liiga + '</td> <td>' + res.valio.jakso + '</td> <td>' + res.valio.vuosi + '</td></tr>' +
-							'</table>'
-							);
-						},
-						error: function() {$('div.settings').html("Problems when reading variables");}
-				});
-			}
-
-			function update_files() {
-				$("div.failures").html('');
-				$("label.status").html('');
-				var checkboxes = $('input.perl_function');
-				jQuery.each(checkboxes, function(i, checkbox) {
-					if ($(checkbox).is(":checked")) {
-						run_update($(checkbox).attr('id'));
-					}
-				});
-			}
-
-			function run_update(type) {
-				var sub = 'update_given_data';
-				var result_element = '#' + type + '_status'
-				$(result_element).html("Running...");
-				$.ajax({
-					type: 'POST',
-					url: 'lp_update_data.pl',
-					data: { 'sub':sub, 'update_type':type},
-					dataType: 'json',
-					success: function(res) {
-						$('div.failures').append(res);
-						if (res.fail) {
-							$(result_element).html("FAIL");
-							$('div.failures').append(res.message);
-						} else {
-							$(result_element).html("OK");
-						}
-					},
-					error: function() {
-						$(result_element).html("FAIL");
-						$('div.failures').append("Some problem occurred trying to run " + sub + "<br>");
-					}
-				});
-			}
-
-			function set_checkboxes() {
-				var text = $(this).text();
-				var liiga = $(this).attr('id');
-				if (text == 'All') {
-					$('input.' + liiga).prop("checked", true);
-				} else if (text == 'None') {
-					$('input.' + liiga).prop("checked", false);
-				}
-			}
-
-			function nhl_create_elements() {
-				var liiga = 'NHL';
-				var elements = [
-					{displayName:"Sarjataulukko", functionName:'nhl_sarjataulukko'},
-					{displayName:"Ottelulista", functionName:'nhl_ottelulista'},
-					{displayName:"Pelaajalista", functionName:'nhl_kokoonpanot'},
-				];
-				create_elements(elements, liiga)
-			}
-
-			function liiga_create_elements() {
-				var liiga = 'Liiga';
-				var elements = [
-					{displayName:"Sarjataulukko", functionName:'sm_sarjataulukko'},
-					{displayName:"Ottelulista", functionName:'sm_ottelulista'},
-					{displayName:"Pelaajalista", functionName:'sm_kokoonpanot'},
-				];
-				create_elements(elements, liiga)
-			}
-
-			function valio_create_elements() {
-				var liiga = 'Valioliiga';
-				var elements = [
-					{displayName:"Ottelulista", functionName:'valio_ottelulista'},
-				];
-				create_elements(elements, liiga)
-			}
-
-			function create_elements(elements, liiga){
-				var checkboxesElement = 'div.' + liiga + '_checkboxes';
-				var resultsElement = 'div.' + liiga + '_results';
-				jQuery.each(elements, function(i, element) {
-					$(checkboxesElement).append(
-						'<input id="' + element.functionName + '" class="w3-check ' + liiga + ' perl_function" type="checkbox">' + 
-						'<label class="w3-validate">' + element.displayName + '</label><br>'
-					);
-					$(resultsElement).append(
-						'<input style="visibility: hidden" class="w3-check" type="checkbox">' + 
-						'<label id="' + element.functionName + '_status" class="w3-validate status"></label><br>'
-					);
-				});
-			}
-			
-        </script>
-    </head>
+<head>
+	<title>Update LP data</title> 
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	<script src="js/lp_update_data.js"></script>
+</head>
 <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
-<body class="w3-khaki">
+<body class="w3-black">
 <p>
 <div class="w3-row-padding">
 	<div class="w3-third">
-		<header class="w3-container w3-light-grey">
+		<header class="w3-container w3-dark-grey">
 			<h3>Liiga</h3>
 		</header>
-		<div style="height:110px" class="w3-card-2 w3-container w3-padding-0 w3-white">
-			<div class="w3-left w3-padding Liiga_checkboxes"></div>
-			<div class="w3-right w3-padding Liiga_results"></div>
+		<div style="height:110px" class="w3-card-2 w3-container w3-padding-0 w3-light-grey">
+			<div class="w3-left w3-padding Liiga_checkboxes">
+				<input id="sm_sarjataulukko" class="w3-check Liiga perl_function" type="checkbox">
+				<label class="w3-validate">Sarjataulukko</label>
+				<br>
+				<input id="sm_ottelulista" class="w3-check Liiga perl_function" type="checkbox">
+				<label class="w3-validate">Ottelulista</label>
+				<br>
+				<input id="sm_kokoonpanot" class="w3-check Liiga perl_function" type="checkbox">
+				<label class="w3-validate">Pelaajalista</label>
+			</div>
+			<div class="w3-right w3-padding Liiga_results">
+				<input style="visibility: hidden" class="w3-check" type="checkbox">
+				<label id="sm_sarjataulukko_status" class="w3-validate status"></label>
+				<br>
+				<input style="visibility: hidden" class="w3-check" type="checkbox">
+				<label id="sm_ottelulista_status" class="w3-validate status"></label>
+				<br>
+				<input style="visibility: hidden" class="w3-check" type="checkbox">
+				<label id="sm_kokoonpanot_status" class="w3-validate status"></label>
+			</div>
 		</div>
-		<footer class="w3-container w3-grey">
-			<p>
-			<button id="Liiga" class="w3-btn w3-white w3-border w3-round" style="width:49%">All</button>
-			<button id="Liiga" class="w3-btn w3-white w3-border w3-round" style="width:49%">None</button>
-			<p>
+		<footer class="w3-container w3-padding-12 w3-grey">
+			<button onclick='set_checkboxes("Liiga", "check_all")' class="w3-btn w3-black w3-border w3-round" style="width:49%">All</button>
+			<button onclick='set_checkboxes("Liiga", "uncheck_all")' class="w3-btn w3-black w3-border w3-round" style="width:49%">None</button>
 		</footer>
 	</div>
 
 	<div class="w3-third">
-		<header class="w3-container w3-light-grey">
+		<header class="w3-container w3-dark-grey">
 			<h3>NHL</h3>
 		</header>
-		<div style="height:110px" class="w3-card-2 w3-container w3-padding-0 w3-white">
-			<div class="w3-left w3-padding NHL_checkboxes"></div>
-			<div class="w3-right w3-padding NHL_results"></div>
+		<div style="height:110px" class="w3-card-2 w3-container w3-padding-0 w3-light-grey">
+			<div class="w3-left w3-padding NHL_checkboxes">
+				<input id="nhl_sarjataulukko" class="w3-check NHL perl_function" type="checkbox">
+				<label class="w3-validate">Sarjataulukko</label>
+				<br>
+				<input id="nhl_ottelulista" class="w3-check NHL perl_function" type="checkbox">
+				<label class="w3-validate">Ottelulista</label>
+				<br>
+				<input id="nhl_kokoonpanot" class="w3-check NHL perl_function" type="checkbox">
+				<label class="w3-validate">Pelaajalista</label>
+			</div>
+			<div class="w3-right w3-padding NHL_results">
+				<input style="visibility: hidden" class="w3-check" type="checkbox">
+				<label id="nhl_sarjataulukko_status" class="w3-validate status"></label>
+				<br>
+				<input style="visibility: hidden" class="w3-check" type="checkbox">
+				<label id="nhl_ottelulista_status" class="w3-validate status"></label>
+				<br>
+				<input style="visibility: hidden" class="w3-check" type="checkbox">
+				<label id="nhl_kokoonpanot_status" class="w3-validate status"></label>
+			</div>
 		</div>
-		<footer class="w3-container w3-grey">
-			<p>
-			<button id="NHL" class="w3-btn w3-white w3-border w3-round" style="width:49%">All</button>
-			<button id="NHL" class="w3-btn w3-white w3-border w3-round" style="width:49%">None</button>
-			<p>
+		<footer class="w3-container w3-padding-12 w3-grey">
+			<button onclick='set_checkboxes("NHL", "check_all")' class="w3-btn w3-black w3-border w3-round" style="width:49%">All</button>
+			<button onclick='set_checkboxes("NHL", "uncheck_all")' class="w3-btn w3-black w3-border w3-round" style="width:49%">None</button>
 		</footer>
 	</div>
 
 	<div class="w3-third">
-		<header class="w3-container w3-light-grey">
+		<header class="w3-container w3-dark-grey">
 			<h3>Valioliiga</h3>
 		</header>
-		<div style="height:110px" class="w3-card-2 w3-container w3-padding-0 w3-white">
-			<div class="w3-left w3-padding Valioliiga_checkboxes"></div>
-			<div class="w3-right w3-padding Valioliiga_results"></div>
+		<div style="height:110px" class="w3-card-2 w3-container w3-padding-0 w3-light-grey">
+			<div class="w3-left w3-padding Valioliiga_checkboxes">
+				<input id="valio_ottelulista" class="w3-check Valioliiga perl_function" type="checkbox">
+				<label class="w3-validate">Ottelulista</label>
+			</div>
+			<div class="w3-right w3-padding Valioliiga_results">
+				<input style="visibility: hidden" class="w3-check" type="checkbox">
+				<label id="valio_ottelulista_status" class="w3-validate status"></label>
+			</div>
 		</div>
-		<footer class="w3-container w3-grey">
-			<p>
-			<button id="Valioliiga" class="w3-btn w3-white w3-border w3-round" style="width:49%">All</button>
-			<button id="Valioliiga" class="w3-btn w3-white w3-border w3-round" style="width:49%">None</button>
-			<p>
+		<footer class="w3-container w3-padding-12 w3-grey">
+			<button onclick='set_checkboxes("Valioliiga", "check_all")' class="w3-btn w3-black w3-border w3-round" style="width:49%">All</button>
+			<button onclick='set_checkboxes("Valioliiga", "uncheck_all")' class="w3-btn w3-black w3-border w3-round" style="width:49%">None</button>
 		</footer>
 	</div>
 </div>
@@ -189,23 +102,44 @@
 			<h3>Used settings on update</h3>
 		</header>
 
-		<div class="w3-card-2 w3-container w3-white settings">
+		<div class="w3-card-2 w3-container w3-light-grey settings">
 		</div>
 
-		<footer class="w3-container w3-grey">
-			<p>
-			<button id="update" class="w3-btn w3-white w3-border w3-round" style="width:100%">Update selected data</button>
-			<p>
+		<footer class="w3-container w3-padding-12 w3-grey">
+			<button onclick="update_files()" class="w3-btn w3-black w3-border w3-round" style="width:100%">Update selected data</button>
 		</footer>
 	</div>
 
 	<div class="w3-third">
-		<header class="w3-container w3-light-grey">
+		<header class="w3-container w3-dark-grey">
 			<h3>Fail reports</h3>
 		</header>
 
-		<div class="w3-card-2 w3-container w3-white w3-text-red failures">
+		<div class="w3-card-2 w3-container w3-light-grey w3-text-red failures">
 		</div>
+	</div>
+</div>
+
+<div id="login" class="w3-modal">
+	<div class="w3-modal-content w3-card-8 w3-animate-zoom" style="max-width:400px">
+		<header class="w3-container w3-dark-grey">
+			<h3>Login to update files</h3>
+		</header>
+		<form class="w3-container w3-light-grey">
+		<div class="w3-section login_success">
+			<label class="w3-text-black"><b>Username</b></label>
+			<input class="w3-input w3-border w3-margin-bottom w3-round" type="text" placeholder="Enter Username" name="username" required>
+			<label class="w3-text-black"><b>Password</b></label>
+			<input class="w3-input w3-border w3-round" type="password" placeholder="Enter Password" name="password" required>
+		</div>
+		<div class="w3-light-grey w3-text-red login_fail">
+		</div>
+		</form>
+
+		<footer class="w3-container w3-padding-12 w3-grey login">
+			<button style="width:49%" class="w3-btn w3-black w3-border w3-round" onclick="check_user_rights()">Login</button>
+			<button style="width:49%" class="w3-btn w3-black w3-border w3-round" onclick="cancel_login()">Cancel</button>
+		</footer>
 	</div>
 </div>
 

@@ -7,8 +7,8 @@ use CGI qw(:standard);
 use CGI::Ajax;
 use Time::HiRes qw(usleep gettimeofday tv_interval);
 use HTML::Parser;
-require "lp_settings.pm";
-require "lp_common_functions.pl";
+require "modules/lp_settings.pm";
+require "modules/lp_common_functions.pl";
 
 my $cgi = new CGI;
 my $script_name = $cgi->script_name;
@@ -297,7 +297,7 @@ sub update_menus {
 	<!-- DataTables -->
 	<script type="text/javascript" charset="utf8" src="http://cdn.datatables.net/1.10.12/js/jquery.dataTables.js"></script>
 
-	<script type="text/javascript" charset="utf8" src="plugins/jquery.dataTables.columnFilter.js"></script>
+	<script type="text/javascript" charset="utf8" src="js/jquery.dataTables.columnFilter.js"></script>
 
 	<script>
 
