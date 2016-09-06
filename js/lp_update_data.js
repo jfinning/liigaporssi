@@ -12,7 +12,7 @@ function get_settings() {
 	$.ajax({
 			type: 'POST',
 			url: 'lp_update_data.pl',
-			data: { 'sub': sub},
+			data: {'sub':sub},
 			dataType: 'json',
 			success: function(res) {
 				//$('div.settings').html(res);
@@ -47,7 +47,7 @@ function run_update(type) {
 	$.ajax({
 		type: 'POST',
 		url: 'lp_update_data.pl',
-		data: { 'sub':sub, 'update_type':type},
+		data: {'sub':sub,'update_type':type},
 		dataType: 'json',
 		success: function(res) {
 			//$('div.failures').append(res);
@@ -89,7 +89,7 @@ function check_user_rights () {
 	$.ajax({
 		type: 'POST',
 		url: 'lp_update_data.pl',
-		data: { 'sub':sub, 'username':username, 'password':passwd},
+		data: {'sub':sub,'username':username,'password':passwd},
 		dataType: 'json',
 		success: function(res) {
 			//$('footer.login').append(res);
