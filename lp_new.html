@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
+<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script type="text/javascript" charset="utf8" src="http://cdn.datatables.net/1.10.12/js/jquery.dataTables.js"></script>
+<script type="text/javascript" charset="utf8" src="js/jquery.dataTables.columnFilter.js"></script>
+
+<body class="w3-container">
+
+<div id="navigation">
+</div>
+
+<div id="liiga" class="league">
+	<ul class="w3-navbar w3-small w3-grey w3-left-align">
+		<li class="w3-hide-medium w3-hide-large w3-black w3-opennav w3-right">
+			<a href="javascript:void(0);" onclick="openSmallNavi('liigaSmallNavi')"><i class="fa fa-bars"></i></a>
+		</li>
+		<li>
+		<a onclick="leagueDropDown('liiga_drop')" href="#">Liiga <i class="fa fa-caret-down"></i></a>
+		<div id="liiga_drop" class="w3-dropdown-content w3-white w3-card-4">
+			<a href="#" onclick="changeLeague('nhl')">NHL</a>
+			<a href="#" onclick="changeLeague('valio')">Valioliiga</a>
+		</div>
+		</li>
+		<li class="w3-hide-small tablink" onclick="openLink(event, 'Ottelulista');"><a href="#">Ottelulista</a></li>
+		<li class="w3-hide-small tablink" onclick="openLink(event, 'Pelaajalista');"><a href="#">Pelaajalista</a></li>
+		<li class="w3-hide-small tablink" onclick="openLink(event, 'Optimijoukkue');"><a href="#">Optimijoukkue</a></li>
+		<li class="w3-hide-small tablink" onclick="openLink(event, 'Kokoonpanot');"><a href="#">Kokoonpanot</a></li>
+	</ul>
+
+	<div id="liigaSmallNavi" class="w3-hide w3-hide-large w3-hide-medium">
+		<ul class="w3-navbar w3-left-align w3-small w3-grey">
+		<li onclick="$('div#liiga').find('.tablink')[0].click();"><a href="#">Ottelulista</a></li>
+		<li onclick="$('div#liiga').find('.tablink')[1].click();"><a href="#">Pelaajalista</a></li>
+		<li onclick="$('div#liiga').find('.tablink')[2].click();"><a href="#">Optimijoukkue</a></li>
+		<li onclick="$('div#liiga').find('.tablink')[3].click();"><a href="#">Kokoonpanot</a></li>
+		</ul>
+	</div>
+</div>
+
+<div id="nhl" class="league">
+	<ul class="w3-navbar w3-small w3-grey w3-left-align">
+		<li class="w3-hide-medium w3-hide-large w3-black w3-opennav w3-right">
+			<a href="javascript:void(0);" onclick="openSmallNavi('nhlSmallNavi')"><i class="fa fa-bars"></i></a>
+		</li>
+	  <li>
+		<a onclick="leagueDropDown('nhl_drop')" href="#">NHL <i class="fa fa-caret-down"></i></a>
+		<div id="nhl_drop" class="w3-dropdown-content w3-white w3-card-4">
+		  <a href="#" onclick="changeLeague('liiga')">Liiga</a>
+		  <a href="#" onclick="changeLeague('valio')">Valioliiga</a>
+		</div>
+	  </li>
+	  <li class="w3-hide-small tablink" onclick="openLink(event, 'Ottelulista');"><a href="#">Ottelulista</a></li>
+	  <li class="w3-hide-small tablink" onclick="openLink(event, 'Pelaajalista');"><a href="#">Pelaajalista</a></li>
+	  <li class="w3-hide-small tablink" onclick="openLink(event, 'Optimijoukkue');"><a href="#">Optimijoukkue</a></li>
+	</ul>
+
+	<div id="nhlSmallNavi" class="w3-hide w3-hide-large w3-hide-medium">
+		<ul class="w3-navbar w3-left-align w3-small w3-grey">
+		<li onclick="$('div#nhl').find('.tablink')[0].click();"><a href="#">Ottelulista</a></li>
+		<li onclick="$('div#nhl').find('.tablink')[1].click();"><a href="#">Pelaajalista</a></li>
+		<li onclick="$('div#nhl').find('.tablink')[2].click();"><a href="#">Optimijoukkue</a></li>
+		</ul>
+	</div>
+</div>
+
+<div id="valio" class="league">
+	<ul class="w3-navbar w3-small w3-grey w3-left-align">
+		<li class="w3-hide-medium w3-hide-large w3-black w3-opennav w3-right">
+			<a href="javascript:void(0);" onclick="openSmallNavi('valioSmallNavi')"><i class="fa fa-bars"></i></a>
+		</li>
+	  <li>
+		<a onclick="leagueDropDown('valio_drop')" href="#">Valioliiga <i class="fa fa-caret-down"></i></a>
+		<div id="valio_drop" class="w3-dropdown-content w3-white w3-card-4">
+		  <a href="#" onclick="changeLeague('liiga')">Liiga</a>
+		  <a href="#" onclick="changeLeague('nhl')">NHL</a>
+		</div>
+	  </li>
+	  <li class="w3-hide-small tablink" onclick="openLink(event, 'Ottelulista');"><a href="#">Ottelulista</a></li>
+	</ul>
+
+	<div id="valioSmallNavi" class="w3-hide w3-hide-large w3-hide-medium">
+		<ul class="w3-navbar w3-left-align w3-small w3-grey">
+		<li onclick="$('div#valio').find('.tablink')[0].click();"><a href="#">Ottelulista</a></li>
+		</ul>
+	</div>
+</div>
+
+<script>
+$(document).ready(function() {
+	changeLeague("liiga")
+});
+
+function leagueDropDown(id) {
+    var x = document.getElementById(id);
+    if (x.className.indexOf("w3-show") == -1) {
+        x.className += " w3-show";
+    } else {
+        x.className = x.className.replace(" w3-show", "");
+    }
+}
+
+function closeAllLeagueDropDowns() {
+	var dropDowns = $('div.w3-dropdown-content');
+	jQuery.each(dropDowns, function(i, dropDown) {
+		dropDown.className = dropDown.className.replace(" w3-show", "");
+	});
+}
+
+function changeLeague(league) {
+    var i;
+    var x = document.getElementsByClassName("league");
+    for (i = 0; i < x.length; i++) {
+       x[i].style.display = "none";
+    }
+    document.getElementById(league).style.display = "block";
+	selectDefaultTab(league);
+	closeAllLeagueDropDowns();
+}
+
+function openSmallNavi(id) {
+    var x = document.getElementById(id);
+    if (x.className.indexOf("w3-show") == -1) {
+        x.className += " w3-show";
+    } else {
+        x.className = x.className.replace(" w3-show", "");
+    }
+}
+
+function openLink(evt, linkName) {
+	$('.page').html(linkName);
+	var i, x, tablinks;
+	x = document.getElementsByClassName('tablink');
+	tablinks = document.getElementsByClassName('tablink');
+	for (i = 0; i < x.length; i++) {
+		tablinks[i].className = tablinks[i].className.replace(" w3-black", "");
+	}
+	evt.currentTarget.className += " w3-black";
+}
+
+function selectDefaultTab(league) {
+	var mybtn = $('div#' + league).find('.tablink')[0];
+	mybtn.click();
+}
+</script>
+
+<div class="page w3-container w3-border">
+</div>
+</body>
+</html>
+
