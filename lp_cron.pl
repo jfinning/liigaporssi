@@ -27,7 +27,7 @@ sub initialize_return_value() {
 
 sub sm_sarjataulukko {
     my %return_value = initialize_return_value();
-	my $data = fetch_page("http://liiga.fi/tilastot/2015-2016/runkosarja/joukkueet/");
+	my $data = fetch_page("http://liiga.fi/tilastot/2016-2017/runkosarja/joukkueet/");
     my $sijoitus = undef;
     my $column = 0;
     my ($joukkue, $ottelut, $pisteet);

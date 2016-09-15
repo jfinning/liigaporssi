@@ -21,7 +21,7 @@ sub get_default_joukkueen_hinta { return "2000.0" };
 sub get_default_ottelut { return 0 };
 sub get_default_remove_players { return "" };
 sub get_default_kokoonpanot { return "" };
-sub get_default_liiga { return "valio" };
+sub get_default_liiga { return "sm_liiga" };
 sub get_default_vuosi ($) {
     my $vuosi;
     my $liiga = shift;

@@ -43,7 +43,7 @@ function update_files() {
 function run_update(type) {
 	var sub = 'update_given_data';
 	var result_element = '#' + type + '_status';
-	$(result_element).html("Running...");
+	$(result_element).html('<i class="fa fa-cog fa-spin" style="font-size:30px"></i>');
 	$.ajax({
 		type: 'POST',
 		url: 'lp_update_data.pl',
@@ -104,7 +104,6 @@ function check_user_rights () {
 			$('.login_fail').html("Some problem occurred trying to run " + sub);
 		}
 	});
-	
 }
 
 function close_modal() {

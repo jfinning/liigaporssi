@@ -1,5 +1,5 @@
-#!/usr/bin/perl -w
-#E:\Ohjelmat\perl64\bin\perl.exe -w
+#!E:\Ohjelmat\perl64\bin\perl.exe -w
+#/usr/bin/perl -w
 
 use strict;
 use CGI::Carp qw(fatalsToBrowser);
@@ -949,7 +949,7 @@ sub print_kokoonpanot () {
     my $vieras = $pelipaivat{$param_joukkue}{$start}{kotipeli};
     my $pelaavat_pelaajat = "";
 
-    my $data = fetch_page("http://liiga.fi/ottelut/2015-2016/runkosarja/$param_game_nro/kokoonpanot/");
+    my $data = fetch_page("http://liiga.fi/ottelut/2016-2017/runkosarja/$param_game_nro/kokoonpanot/");
     my $text;
     my $p = HTML::Parser->new(text_h => [ sub {$text .= shift}, 
 				  'dtext']);
