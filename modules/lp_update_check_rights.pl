@@ -8,6 +8,8 @@ my %return_value = (
 
 sub check_rights($$) {
 	my ($username, $password) = @_;
+	$username =~ s/^\s+|\s+$//g;
+	$password =~ s/^\s+|\s+$//g;
 
 	if ($username eq "Taalasmaa" && $password eq "Laitela") {
 		$return_value{'fail'} = 0;
