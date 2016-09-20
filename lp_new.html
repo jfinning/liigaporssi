@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+<meta http-equiv="content-type" content="text/html;charset=utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
 <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
@@ -11,18 +12,17 @@
 </head>
 <body class="w3-dark-grey w3-small">
 
-<div id="navigation">
-</div>
+<div id="navigation"></div>
 
 <div id="sm_liiga" class="league">
-	<ul class="w3-navbar w3-small w3-grey w3-left-align">
-		<li class="w3-hide-medium w3-hide-large w3-black w3-opennav w3-right">
+	<ul class="w3-navbar w3-small w3-black w3-left-align">
+		<li class="w3-hide-large w3-black w3-opennav w3-right">
 			<a href="javascript:void(0);" onclick="openSmallNavi('liigaSmallNavi')"><i class="fa fa-bars"></i></a>
 		</li>
 		<li>
 		<a onclick="leagueDropDown('liiga_drop')" href="#">Liiga <i class="fa fa-caret-down"></i></a>
 		<div id="liiga_drop" class="w3-dropdown-content w3-blue-grey w3-card-4">
-			<a href="#" onclick="changeLeague('nhl')">NHL</a>
+			<a class="w3-border-bottom" href="#" onclick="changeLeague('nhl')">NHL</a>
 			<a href="#" onclick="changeLeague('valio')">Valioliiga</a>
 		</div>
 		</li>
@@ -30,66 +30,77 @@
 		<li class="w3-hide-small tablink" onclick="openLink('Pelaajalista', event);"><a href="#">Pelaajalista</a></li>
 		<li class="w3-hide-small tablink" onclick="openLink('Optimijoukkue', event);"><a href="#">Optimijoukkue</a></li>
 		<li class="w3-hide-small tablink" onclick="openLink('Kokoonpanot', event);"><a href="#">Kokoonpanot</a></li>
+		<li class="w3-hide-small w3-hide-medium w3-right"><a href="#">Email</a></li>
+		<li class="w3-hide-small w3-hide-medium w3-right tablink" onclick="openLink('Status', event);"><a href="#">Status</a></li>
 	</ul>
 
-	<div id="liigaSmallNavi" class="w3-hide w3-hide-large w3-hide-medium">
-		<ul class="w3-navbar w3-left-align w3-small w3-grey">
-		<li onclick="$('div#liiga').find('.tablink')[0].click();"><a href="#">Ottelulista</a></li>
-		<li onclick="$('div#liiga').find('.tablink')[1].click();"><a href="#">Pelaajalista</a></li>
-		<li onclick="$('div#liiga').find('.tablink')[2].click();"><a href="#">Optimijoukkue</a></li>
-		<li onclick="$('div#liiga').find('.tablink')[3].click();"><a href="#">Kokoonpanot</a></li>
+	<div id="liigaSmallNavi" class="w3-hide w3-hide-large">
+		<ul class="w3-navbar w3-left-align w3-small w3-blue-grey">
+		<li class="w3-hide-medium w3-border-bottom" onclick="$('div#sm_liiga').find('.tablink')[0].click();"><a href="#">Ottelulista</a></li>
+		<li class="w3-hide-medium w3-border-bottom" onclick="$('div#sm_liiga').find('.tablink')[1].click();"><a href="#">Pelaajalista</a></li>
+		<li class="w3-hide-medium w3-border-bottom" onclick="$('div#sm_liiga').find('.tablink')[2].click();"><a href="#">Optimijoukkue</a></li>
+		<li class="w3-hide-medium w3-border-bottom" onclick="$('div#sm_liiga').find('.tablink')[3].click();"><a href="#">Kokoonpanot</a></li>
+		<li class="w3-border-bottom" style="width:100%"><a style="width:100%" href="#">Email</a></li>
+		<li style="width:100%" onclick="$('div#sm_liiga').find('.tablink')[4].click();"><a style="width:100%" href="#">Status</a></li>
 		</ul>
 	</div>
 </div>
 
 <div id="nhl" class="league">
-	<ul class="w3-navbar w3-small w3-grey w3-left-align">
-		<li class="w3-hide-medium w3-hide-large w3-black w3-opennav w3-right">
+	<ul class="w3-navbar w3-small w3-black w3-left-align">
+		<li class="w3-hide-large w3-black w3-opennav w3-right">
 			<a href="javascript:void(0);" onclick="openSmallNavi('nhlSmallNavi')"><i class="fa fa-bars"></i></a>
 		</li>
-	  <li>
+		<li>
 		<a onclick="leagueDropDown('nhl_drop')" href="#">NHL <i class="fa fa-caret-down"></i></a>
 		<div id="nhl_drop" class="w3-dropdown-content w3-blue-grey w3-card-4">
-		  <a href="#" onclick="changeLeague('sm_liiga')">Liiga</a>
-		  <a href="#" onclick="changeLeague('valio')">Valioliiga</a>
+			<a class="w3-border-bottom" href="#" onclick="changeLeague('sm_liiga')">Liiga</a>
+			<a href="#" onclick="changeLeague('valio')">Valioliiga</a>
 		</div>
-	  </li>
-	  <li class="w3-hide-small tablink" onclick="openLink('Ottelulista', event);"><a href="#">Ottelulista</a></li>
-	  <li class="w3-hide-small tablink" onclick="openLink('Pelaajalista', event);"><a href="#">Pelaajalista</a></li>
-	  <li class="w3-hide-small tablink" onclick="openLink('Optimijoukkue', event);"><a href="#">Optimijoukkue</a></li>
+		</li>
+		<li class="w3-hide-small tablink" onclick="openLink('Ottelulista', event);"><a href="#">Ottelulista</a></li>
+		<li class="w3-hide-small tablink" onclick="openLink('Pelaajalista', event);"><a href="#">Pelaajalista</a></li>
+		<li class="w3-hide-small tablink" onclick="openLink('Optimijoukkue', event);"><a href="#">Optimijoukkue</a></li>
+		<li class="w3-hide-small w3-hide-medium w3-right"><a href="#">Email</a></li>
+		<li class="w3-hide-small w3-hide-medium w3-right tablink" onclick="openLink('Status', event);"><a href="#">Status</a></li>
 	</ul>
 
-	<div id="nhlSmallNavi" class="w3-hide w3-hide-large w3-hide-medium">
-		<ul class="w3-navbar w3-left-align w3-small w3-grey">
-		<li onclick="$('div#nhl').find('.tablink')[0].click();"><a href="#">Ottelulista</a></li>
-		<li onclick="$('div#nhl').find('.tablink')[1].click();"><a href="#">Pelaajalista</a></li>
-		<li onclick="$('div#nhl').find('.tablink')[2].click();"><a href="#">Optimijoukkue</a></li>
+	<div id="nhlSmallNavi" class="w3-hide w3-hide-large">
+		<ul class="w3-navbar w3-left-align w3-small w3-blue-grey">
+		<li class="w3-hide-medium w3-border-bottom" onclick="$('div#nhl').find('.tablink')[0].click();"><a href="#">Ottelulista</a></li>
+		<li class="w3-hide-medium w3-border-bottom" onclick="$('div#nhl').find('.tablink')[1].click();"><a href="#">Pelaajalista</a></li>
+		<li class="w3-hide-medium w3-border-bottom" onclick="$('div#nhl').find('.tablink')[2].click();"><a href="#">Optimijoukkue</a></li>
+		<li class="w3-border-bottom" style="width:100%"><a style="width:100%" href="#">Email</a></li>
+		<li style="width:100%" onclick="$('div#sm_liiga').find('.tablink')[3].click();"><a style="width:100%" href="#">Status</a></li>
 		</ul>
 	</div>
 </div>
 
 <div id="valio" class="league">
-	<ul class="w3-navbar w3-small w3-grey w3-left-align">
-		<li class="w3-hide-medium w3-hide-large w3-black w3-opennav w3-right">
+	<ul class="w3-navbar w3-small w3-black w3-left-align">
+		<li class="w3-hide-large w3-black w3-opennav w3-right">
 			<a href="javascript:void(0);" onclick="openSmallNavi('valioSmallNavi')"><i class="fa fa-bars"></i></a>
 		</li>
-	  <li>
+		<li>
 		<a onclick="leagueDropDown('valio_drop')" href="#">Valioliiga <i class="fa fa-caret-down"></i></a>
 		<div id="valio_drop" class="w3-dropdown-content w3-blue-grey w3-card-4">
-		  <a href="#" onclick="changeLeague('sm_liiga')">Liiga</a>
-		  <a href="#" onclick="changeLeague('nhl')">NHL</a>
+			<a class="w3-border-bottom" href="#" onclick="changeLeague('sm_liiga')">Liiga</a>
+			<a href="#" onclick="changeLeague('nhl')">NHL</a>
 		</div>
-	  </li>
-	  <li class="w3-hide-small tablink" onclick="openLink('Ottelulista', event);"><a href="#">Ottelulista</a></li>
+		</li>
+		<li class="w3-hide-small tablink" onclick="openLink('Ottelulista', event);"><a href="#">Ottelulista</a></li>
+		<li class="w3-hide-small w3-hide-medium w3-right"><a href="#">Email</a></li>
+		<li class="w3-hide-small w3-hide-medium w3-right tablink" onclick="openLink('Status', event);"><a href="#">Status</a></li>
 	</ul>
 
-	<div id="valioSmallNavi" class="w3-hide w3-hide-large w3-hide-medium">
-		<ul class="w3-navbar w3-left-align w3-small w3-grey">
-		<li onclick="$('div#valio').find('.tablink')[0].click();"><a href="#">Ottelulista</a></li>
+	<div id="valioSmallNavi" class="w3-hide w3-hide-large">
+		<ul class="w3-navbar w3-left-align w3-small w3-blue-grey">
+		<li class="w3-hide-medium w3-border-bottom" onclick="$('div#valio').find('.tablink')[0].click();"><a href="#">Ottelulista</a></li>
+		<li class="w3-border-bottom" style="width:100%"><a style="width:100%" href="#">Email</a></li>
+		<li style="width:100%" onclick="$('div#sm_liiga').find('.tablink')[1].click();"><a style="width:100%" href="#">Status</a></li>
 		</ul>
 	</div>
 </div>
-
 
 <script>
 $(document).ready(function() {
@@ -216,18 +227,17 @@ function openSmallNavi(id) {
 }
 
 function openLink(linkName, evt) {
-	//$('.page').html(linkName);
 	changeLinkDiv(linkName);
 	callFunction(linkName);
 	var i, x, tablinks;
-	//Mark clicked element with black color
+	//Mark clicked element with red color
 	x = document.getElementsByClassName('tablink');
 	tablinks = document.getElementsByClassName('tablink');
 	for (i = 0; i < x.length; i++) {
-		tablinks[i].className = tablinks[i].className.replace(" w3-black", "");
+		tablinks[i].className = tablinks[i].className.replace(" w3-red", "");
 	}
 	if (typeof evt !== 'undefined') {
-		evt.currentTarget.className += " w3-black";
+		evt.currentTarget.className += " w3-red";
 	}
 }
 
@@ -247,81 +257,6 @@ function callFunction (linkName) {
 
 	// is object a function?
 	if (typeof fn === "function") fn();
-}
-
-function Ottelulista(subList) {
-	if (subList === undefined) {
-		subList = 'gameDays,teamCompareTable,optimalChangeDay,startDayOption,endDayOption';
-	}
-	var league = getSelectedLeague();
-	var startDay = $('#Ottelulista').find('#startDayOption option:selected').html();
-	var endDay = $('#Ottelulista').find('#endDayOption option:selected').html();
-	var teamFrom = $('#teamFrom option:selected').html();
-	$.ajax({
-		type: 'POST',
-		url: 'lp_new.pl',
-		data: {'sub':subList,'liiga':league,'start_day':startDay,'end_day':endDay,'team_from':teamFrom},
-		dataType: 'json',
-		success: function(res) {
-			$.each(res, function (name, value) {
-				$('#Ottelulista').find('#' + name).html(value);
-			});
-		},
-		error: function() {
-			$('#gameDays').html("Some problem occurred trying to run Ottelulista");
-			$('#teamCompareTable').html("Some problem occurred trying to run Ottelulista");
-			$('#optimalChangeDay').html("Some problem occurred trying to run Ottelulista");
-		}
-	});
-}
-
-function Pelaajalista(subList) {
-	if (subList === undefined) {
-		subList = 'playerListForm,playerList';
-	}
-	var league = getSelectedLeague();
-	var vuosi = $('#vuosi option:selected').html();
-	var period = $('#read_players_from option:selected').html();
-	var graafi = $('#graafi option:selected').html();
-	$.ajax({
-		type: 'POST',
-		url: 'lp_new.pl',
-		data: {'sub':subList,'liiga':league,'vuosi':vuosi,'read_players_from':period,'graafi':graafi},
-		dataType: 'json',
-		success: function(res) {
-			$.each(res, function (name, value) {
-				$('#Pelaajalista').find('#' + name).html(value);
-			});
-			initPlayerListTable();
-		},
-		error: function() {
-			$('#playerList').html("Some problem occurred trying to run Pelaajalista");
-		}
-	});
-}
-
-function Optimijoukkue(subList) {
-	if (subList === undefined) {
-		subList = 'optimiJoukkue,maxPelatutPelit,readPlayersFrom,startDayOption,endDayOption,selectedTeams';
-	}
-	var league = getSelectedLeague();
-	var period = $('#readPlayersFrom option:selected').html();
-	var startDay = $('#Optimijoukkue').find('#startDayOption option:selected').html();
-	var endDay = $('#Optimijoukkue').find('#endDayOption option:selected').html();
-	$.ajax({
-		type: 'POST',
-		url: 'lp_new.pl',
-		data: {'sub':subList,'liiga':league,'read_players_from':period,'start_day':startDay,'end_day':endDay},
-		dataType: 'json',
-		success: function(res) {
-			$.each(res, function (name, value) {
-				$('#Optimijoukkue').find('#' + name).html(value);
-			});
-		},
-		error: function() {
-			$('#playerList').html("Some problem occurred trying to run Pelaajalista");
-		}
-	});
 }
 
 function getSelectedLeague() {
@@ -355,19 +290,102 @@ function showSlide(n) {
 	dots[n-1].className += " w3-red";
 }
 
+function Ottelulista(subList) {
+	if (subList === undefined) {
+		subList = 'gameDays,teamCompareTable,optimalChangeDay,startDayOption,endDayOption';
+	}
+	var league = getSelectedLeague();
+	var startDay = $('#Ottelulista').find('#startDayOption option:selected').html();
+	var endDay = $('#Ottelulista').find('#endDayOption option:selected').html();
+	var teamFrom = $('#teamFrom option:selected').html();
+	$.ajax({
+		type: 'POST',
+		url: 'lp_new.pl',
+		data: {'sub':subList,'liiga':league,'start_day':startDay,'end_day':endDay,'team_from':teamFrom},
+		dataType: 'json',
+		success: function(res) {
+			$.each(res, function (name, value) {
+				$('#Ottelulista').find('#' + name).html(value);
+			});
+		},
+		error: function() {
+			$('#gameDays').html("Some problem occurred trying to run Ottelulista");
+			$('#teamCompareTable').html("Some problem occurred trying to run Ottelulista");
+			$('#optimalChangeDay').html("Some problem occurred trying to run Ottelulista");
+		}
+	});
+}
+
+function Pelaajalista(subList) {
+	if (subList === undefined) {
+		subList = 'playerList,periodOptionMenu,yearOptionMenu';
+	}
+	var league = getSelectedLeague();
+	var vuosi = $('#vuosi option:selected').html();
+	var period = $('#periodOptionMenu option:selected').html();
+	$.ajax({
+		type: 'POST',
+		url: 'lp_new.pl',
+		data: {'sub':subList,'liiga':league,'vuosi':vuosi,'read_players_from':period},
+		dataType: 'json',
+		success: function(res) {
+			$.each(res, function (name, value) {
+				$('#Pelaajalista').find('#' + name).html(value);
+			});
+			initPlayerListTable();
+		},
+		error: function() {
+			$('#playerList').html("Some problem occurred trying to run Pelaajalista");
+		}
+	});
+}
+
+function Optimijoukkue(subList) {
+	if (subList === undefined) {
+		subList = 'selectedTeams,optimiJoukkue,maxPelatutPelit,periodOptionMenu,startDayOption,endDayOption';
+	}
+	var league = getSelectedLeague();
+	var period = $('#periodOptionMenu option:selected').html();
+	var startDay = $('#Optimijoukkue').find('#startDayOption option:selected').html();
+	var endDay = $('#Optimijoukkue').find('#endDayOption option:selected').html();
+	$.ajax({
+		type: 'POST',
+		url: 'lp_new.pl',
+		data: {'sub':subList,'liiga':league,'read_players_from':period,'start_day':startDay,'end_day':endDay},
+		dataType: 'json',
+		success: function(res) {
+			$.each(res, function (name, value) {
+				$('#Optimijoukkue').find('#' + name).html(value);
+			});
+		},
+		error: function() {
+			$('#playerList').html("Some problem occurred trying to run Pelaajalista");
+		}
+	});
+}
+
+function Status() {
+	//$("#Status").load("status.htm");
+	$("#Status").load("status.htm", function(responseTxt, statusTxt, xhr){
+		if(statusTxt == "success")
+			$("#Status").html(responseTxt);
+		if(statusTxt == "error")
+			$("#Status").html("Error: " + xhr.status + ": " + xhr.statusText);
+	});
+}
 </script>
 
 <div class="page w3-container w3-padding-top w3-padding-bottom">
 
 <div id="Ottelulista" class="link">
-	<div class="w3-center">
+	<div class="w3-center w3-responsive">
 		<button class="w3-btn slideButton" onclick="showSlide(1)">Ottelulista</button>
 		<button class="w3-btn slideButton" onclick="showSlide(2)">Vastustajat</button>
 		<button class="w3-btn slideButton" onclick="showSlide(3)">Vaihdon ajoitus</button>
 	</div>
 	<center>
-	<font id='font_on_bg'>Start:</font> <select id='startDayOption' onchange='Ottelulista()'></select>
-	<font id='font_on_bg'>End:</font> <select id='endDayOption' onchange='Ottelulista()'></select>
+	Start: <select id='startDayOption' onchange='Ottelulista()'></select>
+	End: <select id='endDayOption' onchange='Ottelulista()'></select>
 	<div id="gameDays" class="slideDiv"></div>
 	<div id="teamCompareTable" class="slideDiv"></div>
 	<div id="optimalChangeDay" class="slideDiv"></div>
@@ -376,20 +394,35 @@ function showSlide(n) {
 
 <div id="Pelaajalista" class="link">
 	<center>
-	<div id="playerListForm"></div>
+	<select id='yearOptionMenu' onchange="Pelaajalista('playerList')"></select>
+	<select id='periodOptionMenu' onchange="Pelaajalista('playerList')"></select>
+	<p id="nimi" style="display:inline"></p>
+	<p id="pelipaikka" style="display:inline"></p>
+	<p id="joukkue" style="display:inline"></p>
+	<p id="pelit" style="display:inline"></p>
+	<p id="maalit" style="display:inline"></p>
+	<p id="syotot" style="display:inline"></p>
+	<p id="pisteet" style="display:inline"></p>
+	<p id="laukaukset" style="display:inline"></p>
+	<p id="arvo" style="display:inline"></p>
+	<p id="lpp" style="display:inline"></p>
+	<p id="lpp_per_peli" style="display:inline"></p>
+	<p id="hinta_per_laatu" style="display:inline"></p>
+	<p id="ennuste_graafi" style="display:inline"></p>
+
 	<div id="playerList"></div>
 	</center>
 </div>
 
 <div id="Optimijoukkue" class="link">
 	<center>
-	<font id='font_on_bg'>T&#228;ll&#228; sivulla voit koota laskennallisia optimikokoonpanoja antamillasi ehdoilla.</font><br>
-    <font id='font_on_bg'>Joukkueen arvo tE</font>
+	Täällä voit koota laskennallisia optimikokoonpanoja antamillasi ehdoilla.<br>
+    Joukkueen arvo tE
     <input type='text' id='joukkueen_hinta' size='6' maxlength='6' value=2000>
 
-	<font id='font_on_bg'>Pelatut pelit v&#228;h.:</font> <select id="maxPelatutPelit" onchange="Optimijoukkue('optimiJoukkue')"></select>
+	Pelatut pelit väh.: <select id="maxPelatutPelit" onchange="Optimijoukkue('optimiJoukkue')"></select>
 
-    <font id='font_on_bg'>Pelaajan arvo alle:</font>
+    Pelaajan arvo alle:
     <select id="arvo" onchange="Optimijoukkue('optimiJoukkue')">
     <option>999</option>
     <option>500</option>
@@ -400,31 +433,33 @@ function showSlide(n) {
     <option>250</option>
     </select>
 
-    <select id="readPlayersFrom" onchange="Optimijoukkue('maxPelatutPelit,optimiJoukkue')"></select><br>
+    <select id="periodOptionMenu" onchange="Optimijoukkue('maxPelatutPelit,optimiJoukkue')"></select><br>
 
-    <font id='font_on_bg'>Valitse aikav&#228;li, jolle haluat optimikokoonpanon laskettavan:</font>
+    Valitse aikaväli, jolle haluat optimikokoonpanon laskettavan:
 
-    <font id='font_on_bg'>Start:</font> <select id='startDayOption' onchange="Optimijoukkue('endDayOption,optimiJoukkue')"></select>
-	<font id='font_on_bg'>End:</font> <select id='endDayOption' onchange="Optimijoukkue('startDayOption,optimiJoukkue')"></select>
+    Start: <select id='startDayOption' onchange="Optimijoukkue('endDayOption,optimiJoukkue')"></select>
+	End: <select id='endDayOption' onchange="Optimijoukkue('startDayOption,optimiJoukkue')"></select>
 
-    <br><font id='font_on_bg'>Kopioi t&#228;h&#228;n pelaajien nimi&#228;, jotka haluat skipata. Esim. loukkaantuneita pelaajia.</font><br>
+    <br>Kopioi tähän pelaajien nimiä, jotka haluat skipata. Esim. loukkaantuneita pelaajia.<br>
     <TEXTAREA NAME='remove_players' id='remove_players' cols=40 rows=4>
     </TEXTAREA><br>
     <br>
 
-    <font id='font_on_bg'>Pelaajat valitaan n&#228;ist&#228; joukkueista. Poista joukkueen nimi, josta et halua pelaajia.</font><br>
+    Pelaajat valitaan näistä joukkueista. Poista joukkueen nimi, josta et halua pelaajia.<br>
     <TEXTAREA id='selectedTeams' cols=40 rows=4>
     </TEXTAREA><br>
     <br>
 
-	<div id="optimiJoukkue"></div>
+	<div class="w3-responsive" id="optimiJoukkue"></div>
 	</center>
 </div>
 
 <div id="Kokoonpanot" class="link">
 </div>
 
+<div id="Status" class="link">
+</div>
+
 </div>
 </body>
 </html>
-
