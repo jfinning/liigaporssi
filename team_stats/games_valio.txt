@@ -1,76 +1,47 @@
-La 30.04.
-14:45	
-Swansea - Liverpool
-17:00	
-Everton - Bournemouth
-17:00	
-Newcastle - Crystal Palace
-17:00	
-Watford - A Villa
-17:00	
-WBA - West Ham
-17:00	
-Stoke - Sunderland
-19:30	
-Arsenal - Norwich
-Su 01.05.
-15:30	
+35000
+La 24.09.
+14:30
 Man U - Leicester City
-18:00	
-Southampton - Man C
-Ma 02.05.
-22:00	
-Chelsea - Tottenham
-La 07.05.
-14:45	
-Norwich - Man U
-17:00	
-A Villa - Newcastle
-17:00	
-Liverpool - Watford
-17:00	
-Sunderland - Chelsea
-17:00	
-West Ham - Swansea
-17:00	
-Crystal Palace - Stoke
-17:00	
-Bournemouth - WBA
-19:30	
-Leicester City - Everton
-Su 08.05.
-15:30	
-Tottenham - Southampton
-18:00	
-Man C - Arsenal
-Ti 10.05.
-21:45	
-West Ham - Man U
-Ke 11.05.
-21:45	
-Sunderland - Everton
-21:45	
-Norwich - Watford
-22:00	
-Liverpool - Chelsea
-Su 15.05.
-17:00	
-Arsenal - A Villa
-17:00	
-Chelsea - Leicester City
-17:00	
-Everton - Norwich
-17:00	
-Man U - Bournemouth
-17:00	
-Newcastle - Tottenham
-17:00	
-Southampton - Crystal Palace
-17:00	
-Watford - Sunderland
-17:00	
-WBA - Liverpool
-17:00	
-Stoke - West Ham
-17:00	
+17:00
+Liverpool - Hull City
+17:00
+Sunderland - Crystal Palace
+17:00
+Stoke - WBA
+17:00
 Swansea - Man C
+17:00
+Bournemouth - Everton
+17:00
+Middlesbrough - Tottenham
+19:30
+Arsenal - Chelsea
+Su 25.09.
+18:00
+West Ham - Southampton
+Ma 26.09.
+22:00
+Burnley - Watford
+Pe 30.09.
+22:00
+Everton - Crystal Palace
+La 01.10.
+14:30
+Swansea - Liverpool
+17:00
+Sunderland - WBA
+17:00
+West Ham - Middlesbrough
+17:00
+Watford - Bournemouth
+17:00
+Hull City - Chelsea
+Su 02.10.
+14:00
+Man U - Stoke
+16:15
+Leicester City - Southampton
+16:15
+Tottenham - Man C
+18:30
+Burnley - Arsenal

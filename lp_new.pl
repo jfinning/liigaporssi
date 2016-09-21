@@ -1,11 +1,11 @@
-#!/usr/bin/perl -w
-#E:\Ohjelmat\perl64\bin\perl.exe -w
+#!E:\Ohjelmat\perl64\bin\perl.exe -w
+#/usr/bin/perl -w
 
 use strict;
 use CGI::Carp qw(fatalsToBrowser);
 use CGI qw(:standard);
 use HTML::Parser;
-use JSON::XS;
+use JSON;
 require "modules/lp_settings.pm";
 require "modules/lp_common_functions.pl";
 
@@ -551,7 +551,7 @@ sub playerList {
         $html .= "<th><A HREF='#'>LPP</A></th>\n";
         $html .= "<th><A HREF='#'>LPP/Peli</A></th>\n";
         $html .= "<th><A HREF='#'>Hinta/Laatu</A></th>\n";
-        $html .= "<th cospan='2'><A HREF='#'>Ennuste</A></th>\n";
+        $html .= "<th colspan='2'><A HREF='#'>Ennuste</A></th>\n";
         $html .= "<\/tr>\n";
         $html .= "<\/$_>\n";
     }
@@ -842,7 +842,7 @@ sub optimiJoukkue {
     foreach (@otsikko) {
         $html .= "<th><center>$_</center></th>\n";
     }
-	$html .= "<th colspan='2'><center>LPP ennuste</center></th>\n";
+	$html .= "<th colspan='2'>LPP ennuste</th>\n";
     $html .= "<\/tr>\n";
 
     my $count = 0;
@@ -985,24 +985,24 @@ sub create_loops {
     ($elapsed, $current) = calculate_interval($current) if ($timing);
     $html .= "loop12 $elapsed<br>\n" if ($timing);
 
-	for (my $h1_count = 0; $h1_count <= $#$hyokkaajat_karsitut; $h1_count++) {
-	    $hyokkaaja1 = $hyokkaajat_karsitut->[$h1_count];';
+	for (my $h1_count = 0; $h1_count <= $#hyokkaajat_karsitut; $h1_count++) {
+	    $hyokkaaja1 = $hyokkaajat_karsitut[$h1_count];';
     }
 
     if ($o_hyokkaaja2 =~ /Kaikki/) {
         push (@loop_count2, "hyokkaaja2");
         $loops2 = "$loops2" . '
 	
-	for (my $h2_count = $h1_count + 1; $h2_count <= $#$hyokkaajat_karsitut; $h2_count++) {
-	    $hyokkaaja2 = $hyokkaajat_karsitut->[$h2_count];';
+	for (my $h2_count = $h1_count + 1; $h2_count <= $#hyokkaajat_karsitut; $h2_count++) {
+	    $hyokkaaja2 = $hyokkaajat_karsitut[$h2_count];';
     }
 
     if ($o_hyokkaaja3 =~ /Kaikki/) {
         push (@loop_count2, "hyokkaaja3");
         $loops2 = "$loops2" . '
 	
-	for (my $h3_count = $h2_count + 1; $h3_count <= $#$hyokkaajat_karsitut; $h3_count++) {
-	    $hyokkaaja3 = $hyokkaajat_karsitut->[$h3_count];';
+	for (my $h3_count = $h2_count + 1; $h3_count <= $#hyokkaajat_karsitut; $h3_count++) {
+	    $hyokkaaja3 = $hyokkaajat_karsitut[$h3_count];';
     }
     
     $loops2 = "$loops2" . '

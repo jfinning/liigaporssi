@@ -1,6 +1,120 @@
-Ti 26.04.
+5978
+Ti 20.09.
 18:30
-Tappara - HIFK
-Pe 29.04.
+KalPa - JYP, 4161
 18:30
+Karpat - HIFK, 4162
+18:30
+Pelicans - TPS, 4163
+18:30
+SaiPa - Tappara, 4164
+18:30
+Sport - Ilves, 4165
+18:30
+Assat - HPK, 4166
+To 22.09.
+18:30
+Jukurit - Lukko
+Pe 23.09.
+18:30
+HPK - JYP
+18:30
+KalPa - Assat
+18:30
+SaiPa - Lukko
+18:30
+TPS - KooKoo
+La 24.09.
+17:00
+Ilves - KalPa
+17:00
+JYP - Tappara
+17:00
+KooKoo - HIFK
+17:00
+Karpat - Assat
+17:00
+Pelicans - SaiPa
+17:00
+Sport - TPS
+Ti 27.09.
+18:30
+HIFK - KalPa
+18:30
+HPK - Lukko
+18:30
+Tappara - Karpat
+18:30
+TPS - JYP
+18:30
+Assat - Jukurit
+Ke 28.09.
+18:30
+Ilves - KooKoo
+18:30
+Lukko - Pelicans
+To 29.09.
+18:30
+HIFK - Jukurit
+18:30
+KooKoo - Sport
+18:30
+Karpat - HPK
+18:30
+Assat - Pelicans
+Pe 30.09.
+18:30
+SaiPa - Ilves
+18:30
+Tappara - TPS
+La 01.10.
+17:00
 HIFK - Tappara
+17:00
+Jukurit - Ilves
+17:00
+JYP - SaiPa
+17:00
+KalPa - HPK
+17:00
+Pelicans - KooKoo
+17:00
+Sport - Karpat
+18:30
+TPS - Lukko
+Ke 05.10.
+18:30
+HPK - Jukurit
+18:30
+Assat - Sport
+To 06.10.
+18:30
+Ilves - HPK
+18:30
+Karpat - KalPa
+18:30
+Lukko - KooKoo
+18:30
+SaiPa - TPS
+Pe 07.10.
+18:30
+JYP - HIFK
+18:30
+Pelicans - Jukurit
+18:30
+Sport - Tappara
+La 08.10.
+17:00
+HPK - TPS
+17:00
+KalPa - KooKoo
+17:00
+Karpat - HIFK
+17:00
+SaiPa - Pelicans
+17:00
+Tappara - Sport
+18:30
+Lukko - Assat
+19:00
+Jukurit - JYP
