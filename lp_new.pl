@@ -1,16 +1,16 @@
-#!E:\Ohjelmat\perl64\bin\perl.exe -w
-#/usr/bin/perl -w
+#!/usr/bin/perl -w
+#E:\Ohjelmat\perl64\bin\perl.exe -w
 
 use strict;
 use CGI::Carp qw(fatalsToBrowser);
 use CGI qw(:standard);
 use HTML::Parser;
-use JSON;
+use JSON::XS;
+#use JSON;
 require "modules/lp_settings.pm";
 require "modules/lp_common_functions.pl";
 
 my $cgi = new CGI;
-my $script_name = $cgi->script_name;
 
 my %result;
 my %kotipelit;
@@ -143,7 +143,7 @@ sub alustus {
             $weekday = $1;
         }
     
-        if (/$start/) { $start_found = 1; }
+        if (defined $start && /$start/) { $start_found = 1; }
         if (! $start_found) { next; }
         if ($end_found) { next; }
 
@@ -248,19 +248,6 @@ sub hashValueAscendingNum {
    $kaikkipelit{$b} <=> $kaikkipelit{$a} || $kotipelit{$b} <=> $kotipelit{$a} || $vastus{$b}{low} <=> $vastus{$a}{low} || $vastus{$b}{mid} <=> $vastus{$a}{mid} || $a cmp $b;
 }
 
-sub change_table_td {
-    my $current_td = shift;
-    my $new_td;
-
-    if (!defined $current_td || $current_td eq "td1") {
-        $new_td = "td2";
-    } elsif ($current_td eq "td2") {
-        $new_td = "td1";
-    }
-    
-    return $new_td;
-}
-
 sub gameDays {
     my $html;
     # lasketaan onko 3 (tai enemman) pelia tai lepoa putkeen
@@ -307,29 +294,27 @@ sub gameDays {
         }
     }
 
-    $html .= "<table border='1' class='w3-text-black'>\n";
-    $html .= "<tr>\n";
+    $html .= "<table border='1' class='w3-text-black w3-striped w3-white'>\n";
+    $html .= "<tr class='w3-black w3-center'>\n";
     
     # Tulosta pelipäivät
-    $html .= "<th><center>Joukkue</center></th>\n";
+    $html .= "<th>Joukkue</th>\n";
     my $count = 0;
     foreach (@selected_day_list) {
-        $html .= "<th><center>$weekdays[$count]<br>\n$_</center></th>\n";
+        $html .= "<th>$weekdays[$count]<br>\n$_</th>\n";
         $count++;
     }
-    
-    my $td = change_table_td();
+
     # Tulosta joukkueet ja pelaako
     foreach my $joukkue (sort hashValueAscendingNum keys %kaikkipelit) {
-        $td = change_table_td($td);
         $html .= "<tr>\n";
-        $html .= "<th>$joukkue<\/th>\n";
+        $html .= "<th class='w3-black'>$joukkue</th>\n";
         foreach (@selected_day_list) {
             if (! defined $pelipaivat{$joukkue}{$_}) {
                 if (defined $peliputki{$joukkue}{$_} && $peliputki{$joukkue}{$_} eq "lepo") {
-                    $html .= "<td class=\"$td\" title=\"3 tai useampi vapaata putkeen\"><center><b><font color=\"red\">x<\/font><\/b></center><\/td>\n";
+                    $html .= "<td class='w3-text-red w3-center' title='3 tai useampi vapaata putkeen'><b>x</b></td>\n";
                 } else {
-                    $html .= "<td class=\"$td\"><center>-</center><\/td>\n";
+                    $html .= "<td class='w3-center'>-</td>\n";
                 }
             } elsif (defined $pelipaivat{$joukkue}{$_}{kotipeli}) {
                 my $kotipeli = $pelipaivat{$joukkue}{$_}{kotipeli};
@@ -337,12 +322,12 @@ sub gameDays {
                     $kotipeli =  $joukkue_lyhenne{$pelipaivat{$joukkue}{$_}{kotipeli}};
                 }
                 if (defined $pelipaivat{$joukkue}{$_}{'kokoonpano'}) {
-                    $kotipeli = "<A HREF=\"$script_name?sub=kokoonpanot&liiga=$param_liiga&joukkue=$joukkue&game_nro=$pelipaivat{$joukkue}{$_}{'kokoonpano'}&start_day=$_\" id='black'>$kotipeli</A>";
+					$kotipeli = "<A HREF='#' onclick=\"Kokoonpanot('$joukkue', '$pelipaivat{$joukkue}{$_}{kokoonpano}');showLinkDiv('Kokoonpanot');markClickedTab('Kokoonpanot')\">$kotipeli</A>";
                 }
                 if (defined $peliputki{$joukkue}{$_} && $peliputki{$joukkue}{$_} eq "peli") {
-                    $html .= "<td class=\"$td\" title=\"3 tai useampi peli&#228; putkeen\"><center><b><font color=\"green\">$kotipeli<\/font><\/b></center><\/td>\n";
+                    $html .= "<td class='w3-text-teal w3-center' title='3 tai useampi peli&#228; putkeen'><b>$kotipeli</b></td>\n";
                 } else {
-                    $html .= "<td class=\"$td\"><center><b>$kotipeli</b></center><\/td>\n";
+                    $html .= "<td class='w3-center'><b>$kotipeli</b></td>\n";
                 }
             } elsif (defined $pelipaivat{$joukkue}{$_}{vieraspeli}) {
                 my $vieraspeli = $pelipaivat{$joukkue}{$_}{vieraspeli};
@@ -350,73 +335,71 @@ sub gameDays {
                     $vieraspeli =  $joukkue_lyhenne{$pelipaivat{$joukkue}{$_}{vieraspeli}};
                 }
                 if (defined $pelipaivat{$joukkue}{$_}{'kokoonpano'}) {
-                    $vieraspeli = "<A HREF=\"$script_name?sub=kokoonpanot&liiga=$param_liiga&joukkue=$vieraspeli&game_nro=$pelipaivat{$joukkue}{$_}{'kokoonpano'}&start_day=$_\" id='black'>$vieraspeli</A>";
+					$vieraspeli = "<A HREF='#' onclick=\"Kokoonpanot('$joukkue', '$pelipaivat{$joukkue}{$_}{kokoonpano}');showLinkDiv('Kokoonpanot');markClickedTab('Kokoonpanot')\">$vieraspeli</A>";
                 }
                 if (defined $peliputki{$joukkue}{$_} && $peliputki{$joukkue}{$_} eq "peli") {
-                    $html .= "<td class=\"$td\" title=\"3 tai useampi peli&#228; putkeen\"><center><font color=\"green\">$vieraspeli<\/font></center><\/td>\n";
+                    $html .= "<td class='w3-text-teal w3-center' title='3 tai useampi peli&#228; putkeen'>$vieraspeli</td>\n";
                 } else {
-                    $html .= "<td class=\"$td\"><center>$vieraspeli</center><\/td>\n";
+                    $html .= "<td class='w3-center'>$vieraspeli</td>\n";
                 }
             }
         }
-        $html .= "<\/tr>\n";
+        $html .= "</tr>\n";
     }
 
-    $html .= "<\/tr>\n";
-    $html .= "<\/table>\n";
+    $html .= "</tr>\n";
+    $html .= "</table>\n";
 
     return $html;
 }
 
 sub teamCompareTable {
     my $html;
-    my $td = change_table_td();
-    $html .= "<table border='1' class='w3-text-black'>\n";
+    $html .= "<table border='1' class='w3-text-black w3-striped w3-white'>\n";
     foreach (sort hashValueAscendingNum keys %kaikkipelit) {
-        $td = change_table_td($td);
         $html .= "<tr>\n";
-        $html .= "<td title=\"$kaikkipelit{$_} peli&#228;\" class=\"$td\">$_<\/td>\n";
-        $html .= "<td class=\"$td\">\n";
+        $html .= "<td title=\"$kaikkipelit{$_} peli&#228;\">$_</td>\n";
+        $html .= "<td>\n";
         if (!defined $kotipelit{$_}) { $kotipelit{$_} = 0; }
         for (my $i = 0; $i < $kotipelit{$_}; $i++) {
-            $html .= "<p title=\"$kotipelit{$_} kotipeli&#228;\" style=\"background: green; width: 9px; height: 8px; float:left; margin:0;\">\n";
-            $html .= "<p title=\"$kotipelit{$_} kotipeli&#228;\" style=\"background: white; width: 2px; height: 8px; float:left; margin:0;\">\n";
+            $html .= "<p title=\"$kotipelit{$_} kotipeli&#228;\" style='background: green; width: 9px; height: 8px; float:left; margin:0;'>\n";
+            $html .= "<p title=\"$kotipelit{$_} kotipeli&#228;\" style='background: white; width: 2px; height: 8px; float:left; margin:0;'>\n";
         }
         if (!defined $vieraspelit{$_}) { $vieraspelit{$_} = 0; }
         for (my $i = 0; $i < $vieraspelit{$_}; $i++) {
-            $html .= "<p title=\"$vieraspelit{$_} vieraspeli&#228;\" style=\"background: white; width: 2px; height: 8px; float:left; margin:0;\">\n" if $i ne 0;
-            $html .= "<p title=\"$vieraspelit{$_} vieraspeli&#228;\" style=\"background: red; width: 9px; height: 8px; float:left; margin:0;\">\n";
+            $html .= "<p title=\"$vieraspelit{$_} vieraspeli&#228;\" style='background: white; width: 2px; height: 8px; float:left; margin:0;'>\n" if $i ne 0;
+            $html .= "<p title=\"$vieraspelit{$_} vieraspeli&#228;\" style='background: red; width: 9px; height: 8px; float:left; margin:0;'>\n";
         }
-        $html .= "<\/td>\n";
+        $html .= "</td>\n";
 
         # skipataan valioliigalla, koska tablessa joukkueet eri nimilla kuin ottelulistassa
         if ($param_liiga eq "valio") {
-            $html .= "<\/tr>\n";
+            $html .= "</tr>\n";
             next;
         }
 	
-        $html .= "<td class=\"$td\" style=\"width : 8px;\"><\/td>\n";
+        $html .= "<td style='width : 8px;'></td>\n";
 
-        $html .= "<td class=\"$td\">\n";
+        $html .= "<td>\n";
         if (!defined $vastus{$_}{low}) { $vastus{$_}{low} = 0; }
         for (my $i = 0; $i < $vastus{$_}{low}; $i++) {
-             $html .= "<p title=\"$vastus{$_}{low} vastustaja(a) sijoilta 11-15\" style=\"background: green; width: 9px; height: 8px; float:left; margin:0;\">\n";
-             $html .= "<p title=\"$vastus{$_}{low} vastustaja(a) sijoilta 11-15\" style=\"background: white; width: 2px; height: 8px; float:left; margin:0;\">\n";
+             $html .= "<p title=\"$vastus{$_}{low} vastustaja(a) sijoilta 11-15\" style='background: green; width: 9px; height: 8px; float:left; margin:0;'>\n";
+             $html .= "<p title=\"$vastus{$_}{low} vastustaja(a) sijoilta 11-15\" style='background: white; width: 2px; height: 8px; float:left; margin:0;'>\n";
         }
         if (!defined $vastus{$_}{mid}) { $vastus{$_}{mid} = 0; }
         for (my $i = 0; $i < $vastus{$_}{mid}; $i++) {
-            $html .= "<p title=\"$vastus{$_}{mid} vastustaja(a) sijoilta 6-10\" style=\"background: yellow; width: 9px; height: 8px; float:left; margin:0;\">\n";
-            $html .= "<p title=\"$vastus{$_}{mid} vastustaja(a) sijoilta 6-10\" style=\"background: white; width: 2px; height: 8px; float:left; margin:0;\">\n";
+            $html .= "<p title=\"$vastus{$_}{mid} vastustaja(a) sijoilta 6-10\" style='background: yellow; width: 9px; height: 8px; float:left; margin:0;'>\n";
+            $html .= "<p title=\"$vastus{$_}{mid} vastustaja(a) sijoilta 6-10\" style='background: white; width: 2px; height: 8px; float:left; margin:0;'>\n";
         }
         if (!defined $vastus{$_}{top}) { $vastus{$_}{top} = 0; }
         for (my $i = 0; $i < $vastus{$_}{top}; $i++) {
-            $html .= "<p title=\"$vastus{$_}{top} vastustaja(a) sijoilta 1-5\" style=\"background: red; width: 9px; height: 8px; float:left; margin:0;\">\n";
-            $html .= "<p title=\"$vastus{$_}{top} vastustaja(a) sijoilta 1-5\" style=\"background: white; width: 2px; height: 8px; float:left; margin:0;\">\n";
+            $html .= "<p title=\"$vastus{$_}{top} vastustaja(a) sijoilta 1-5\" style='background: red; width: 9px; height: 8px; float:left; margin:0;'>\n";
+            $html .= "<p title=\"$vastus{$_}{top} vastustaja(a) sijoilta 1-5\" style='background: white; width: 2px; height: 8px; float:left; margin:0;'>\n";
         }
-        $html .= "<\/td>\n";
-        $html .= "<\/tr>\n";
+        $html .= "</td>\n";
+        $html .= "</tr>\n";
     }
-    $html .= "<\/table>\n";
+    $html .= "</table>\n";
     
     return $html;
 }
@@ -425,7 +408,6 @@ sub optimalChangeDay {
     my $html;
     
     my $topic_print = 1;
-    my $td = change_table_td();
     my $from_count = 0;
 
     foreach my $team_to (sort hashValueAscendingNum keys %kaikkipelit) {
@@ -435,9 +417,9 @@ sub optimalChangeDay {
         my $to_count = 0;
         my $games_after_change_count = 0;
         my $continue_count = 0;
-        $from_count = 0;
 
         if ($team_from eq $team_to) { next ;}
+        $from_count = 0;
         foreach (@selected_day_list) {
             if (defined $pelipaivat{$team_from}{$_}) {
                 $from_count++;
@@ -467,36 +449,34 @@ sub optimalChangeDay {
         if ($topic_print) {
             $topic_print = 0;
 
-            $html .= "<table border='1' class='w3-text-black'>\n";
-            $html .= "<tr>\n";
+            $html .= "<table border='1' class='w3-text-black w3-striped w3-white'>\n";
+            $html .= "<tr class='w3-black'>\n";
     
             # Tulosta otsikot
-            $html .= "<th><center>Joukkue</center></th>\n";
-            $html .= "<th><center>Pelit</center></th>\n";
-            $html .= "<th><center>Yht.</center></th>\n";
-            $html .= "<th><center>Ohje</center></th>\n";
-            $html .= "<th><center>P&#228;iv&#228;t</center></th>\n";
+            $html .= "<th>Joukkue</th>\n";
+            $html .= "<th>Pelit</th>\n";
+            $html .= "<th>Yht.</th>\n";
+            $html .= "<th>Ohje</th>\n";
+            $html .= "<th>P&#228;iv&#228;t</th>\n";
         }
     
-        $td = change_table_td($td);
         $html .= "<tr>\n";
-        $html .= "<td class=\"$td\">$team_to<\/td>\n";
-        $html .= "<td class=\"$td\">$to_count<\/td>\n";
+        $html .= "<td>$team_to</td>\n";
+        $html .= "<td class='w3-center'>$to_count</td>\n";
 
         if ($to_count > $games_after_change_count) {
-            $html .= "<td class=\"$td\">$to_count<\/td>\n";
-            $html .= "<td class=\"$td\">Vaihto ennen seuraavan p&#228;iv&#228;n peli&#228;<\/td>\n";
-            $html .= "<td class=\"$td\">$day_to_change[0]<\/td>\n";
+            $html .= "<td class='w3-center'>$to_count</td>\n";
+            $html .= "<td>Vaihto ennen seuraavan p&#228;iv&#228;n peli&#228;</td>\n";
+            $html .= "<td>$day_to_change[0]</td>\n";
         } else {
-            $html .= "<td class=\"$td\">$games_after_change_count<\/td>\n";
-            $html .= "<td class=\"$td\">Vaihto jonain seuraavista p&#228;ivist&#228; (pelien j&#228;lkeen)<\/td>\n";
-            $html .= "<td class=\"$td\">@day_to_change<\/td>\n";
+            $html .= "<td>$games_after_change_count</td>\n";
+            $html .= "<td>Vaihto jonain seuraavista p&#228;ivist&#228; (pelien j&#228;lkeen)</td>\n";
+            $html .= "<td>@day_to_change</td>\n";
         }
-        $html .= "<\/tr>\n";
+        $html .= "</tr>\n";
     }
-    $html .= "<\/tr>\n";
-    $html .= "<\/table>\n";
-
+    $html .= "</tr>\n";
+    $html .= "</table>\n";
     $html .= selectTeamsForm($from_count);
 
 	return $html;
@@ -507,9 +487,9 @@ sub yearOptionMenu {
 	my @vuodet = get_vuodet($param_liiga);
 	foreach (@vuodet) {
 		if ($_ == $param_vuosi) {
-			$html .= "<option selected>$_<\/option>\n";
+			$html .= "<option selected>$_</option>\n";
 		} else {
-			$html .= "<option>$_<\/option>\n";
+			$html .= "<option>$_</option>\n";
 		}
 	}
 
@@ -521,9 +501,9 @@ sub periodOptionMenu {
 	my @jakso = get_jakso();
     foreach (@jakso) {
         if ($_ eq $param_read_players_from) {
-            $html .= "<option selected>$_<\/option>\n";
+            $html .= "<option selected>$_</option>\n";
         } else {
-            $html .= "<option>$_<\/option>\n";
+            $html .= "<option>$_</option>\n";
         }
     }
 
@@ -532,51 +512,39 @@ sub periodOptionMenu {
 
 sub playerList {
 	read_player_lists();
-	my $html;
-       
-    $html .= "<table border='1' id='playertable' class='w3-text-black'>\n";
-
+    my @otsikko = ("Nimi", "Pelipaikka", "Joukkue", "Pe", "Ma", "Sy", "Pi", "La", "Arvo", "LPP", "LPP/Peli", "Hinta/Laatu", "Ennuste", "Ennuste");
+	my $html = "<table border='1' id='playertable' class='w3-text-black w3-striped w3-white'>\n";
     foreach ("thead", "tfoot") {
         $html .= "<$_>\n";
-        $html .= "<tr>\n";
-        $html .= "<th><A HREF='#'>Nimi</A></th>\n";
-        $html .= "<th><A HREF='#'>Pelipaikka</A></th>\n";
-        $html .= "<th><A HREF='#'>Joukkue</A></th>\n";
-        $html .= "<th><A HREF='#'>Pe</A></th>\n";
-        $html .= "<th><A HREF='#'>Ma</A></th>\n";
-        $html .= "<th><A HREF='#'>Sy</A></th>\n";
-        $html .= "<th><A HREF='#'>Pi</A></th>\n";
-        $html .= "<th><A HREF='#'>La</A></th>\n";
-        $html .= "<th><A HREF='#'>Arvo</A></th>\n";
-        $html .= "<th><A HREF='#'>LPP</A></th>\n";
-        $html .= "<th><A HREF='#'>LPP/Peli</A></th>\n";
-        $html .= "<th><A HREF='#'>Hinta/Laatu</A></th>\n";
-        $html .= "<th colspan='2'><A HREF='#'>Ennuste</A></th>\n";
-        $html .= "<\/tr>\n";
-        $html .= "<\/$_>\n";
+        $html .= "<tr class='w3-black'>\n";
+		foreach (@otsikko) {
+			$html .= "<th>$_</th>\n";
+		}
+        $html .= "</tr>\n";
+        $html .= "</$_>\n";
     }
 
     foreach my $nimi (keys %{$pelaaja}) {
         $html .= "<tr>\n";
-        $html .= "<td>$nimi<\/td>\n";
-        $html .= "<td>$pelaaja->{$nimi}->{pelipaikka}<\/td>\n";
-        $html .= "<td>$pelaaja->{$nimi}->{joukkue}<\/td>\n";
-        $html .= "<td>$pelaaja->{$nimi}->{ottelut}<\/td>\n";
-        $html .= "<td>$pelaaja->{$nimi}->{maalit}<\/td>\n";
-        $html .= "<td>$pelaaja->{$nimi}->{syotot}<\/td>\n";
-        $html .= "<td>$pelaaja->{$nimi}->{pisteet}<\/td>\n";
-        $html .= "<td>$pelaaja->{$nimi}->{laukaukset}<\/td>\n";
-        $html .= "<td>$pelaaja->{$nimi}->{arvo}<\/td>\n";
-        $html .= "<td><center>$pelaaja->{$nimi}->{lpp}</center><\/td>\n";
-        $html .= "<td><center>";
+        $html .= "<td>$nimi</td>\n";
+        $html .= "<td>$pelaaja->{$nimi}->{pelipaikka}</td>\n";
+        $html .= "<td>$pelaaja->{$nimi}->{joukkue}</td>\n";
+        $html .= "<td>$pelaaja->{$nimi}->{ottelut}</td>\n";
+        $html .= "<td>$pelaaja->{$nimi}->{maalit}</td>\n";
+        $html .= "<td>$pelaaja->{$nimi}->{syotot}</td>\n";
+        $html .= "<td>$pelaaja->{$nimi}->{pisteet}</td>\n";
+        $html .= "<td>$pelaaja->{$nimi}->{laukaukset}</td>\n";
+        $html .= "<td>$pelaaja->{$nimi}->{arvo}</td>\n";
+        $html .= "<td class='w3-center'>$pelaaja->{$nimi}->{lpp}</td>\n";
+        $html .= "<td class='w3-center'>";
         $html .= sprintf("%.2f", $pelaaja->{$nimi}->{pisteet_per_peli});
-        $html .= "</center><\/td>\n";
-        $html .= "<td><center>";
+        $html .= "</td>\n";
+        $html .= "<td class='w3-center'>";
         $html .= sprintf("%.2f", $pelaaja->{$nimi}->{pisteet_per_euro});
-        $html .= "</center><\/td>\n";
+        $html .= "</td>\n";
         $html .= "<td>";
         $html .= "$pelaaja->{$nimi}->{ennuste_pisteet}";
-        $html .= "<\/td>\n";
+        $html .= "</td>\n";
         $html .= "<td>\n";
         my $width = $pelaaja->{$nimi}->{ennuste_pisteet} / 2;
         if ($width < 0) {
@@ -585,10 +553,10 @@ sub playerList {
         } else {
             $html .= "<p style=\"background: green; width: ${width}px; height: 8px; margin:0;\">\n";
         }
-        $html .= "<\/td>\n";
-        $html .= "<\/tr>\n";
+        $html .= "</td>\n";
+        $html .= "</tr>\n";
     }
-    $html .= "<\/table>\n";
+    $html .= "</table>\n";
     
     return $html;
 }
@@ -716,7 +684,7 @@ sub maxPelatutPelit {
     my $html;
     my @ottelut_taulukko = (0 .. $max_pelatut_pelit);
     foreach (@ottelut_taulukko) {
-        $html .= "<option>$_<\/option>\n";
+        $html .= "<option>$_</option>\n";
     }
 
     return $html;
@@ -728,7 +696,6 @@ sub optimiJoukkue {
 	}
 
     my $html;
-    
     my $optimi_pisteet = 0;
     my $optimi_hinta = 0;
     my $hinta;
@@ -835,46 +802,45 @@ sub optimiJoukkue {
     @puolustajat_kaikki = sort (@puolustajat_kaikki);
     @hyokkaajat_kaikki = sort (@hyokkaajat_kaikki);
 
-    $html .= "<table border='1' class='w3-text-black'>\n";
-    $html .= "<tr>\n";
+    $html .= "<div style='overflow:auto;'>\n";
+	$html .= "<table border='1' class='w3-text-black w3-striped w3-white'>\n";
+    $html .= "<tr class='w3-black'>\n";
     
     my @otsikko = ("P", "Kiinnitetty pelaaja", "Nimi", "Joukkue", "Pelatut", "Tulevat", "Arvo");
     foreach (@otsikko) {
-        $html .= "<th><center>$_</center></th>\n";
+        $html .= "<th class='w3-center'>$_</th>\n";
     }
 	$html .= "<th colspan='2'>LPP ennuste</th>\n";
-    $html .= "<\/tr>\n";
+    $html .= "</tr>\n";
 
     my $count = 0;
     @paikka = muuttujien_alustusta("paikka");
-    my $td = change_table_td();
     foreach my $paikka (@paikka) {
-        $td = change_table_td($td);
         $html .= "<tr>\n";
-        $html .= "<td class=\"$td\">$paikka->[3]: <\/td>\n";
-        $html .= "<td class=\"$td\">";
-        $html .= "<select name=\"$paikka->[4]\" id=\"$paikka->[4]\" onchange=\"Optimijoukkue('optimiJoukkue')\">\n";
-        $html .= "<option>$paikka->[1]<\/option>\n";
+        $html .= "<td>$paikka->[3]: </td>\n";
+        $html .= "<td>";
+        $html .= "<select style='width:100%' id='$paikka->[4]' onchange=\"Optimijoukkue('optimiJoukkue')\">\n";
+        $html .= "<option>$paikka->[1]</option>\n";
         foreach (@{$paikka->[2]}) {
             if (/$paikka->[5]/) {
-                $html .= "<option selected>$_<\/option>\n";
+                $html .= "<option selected>$_</option>\n";
             } else {
-                $html .= "<option>$_<\/option>\n";
+                $html .= "<option>$_</option>\n";
             }
         }
-        $html .= "<\/select>\n";
-        $html .= "<\/td>\n";
-        $html .= "<td class=\"$td\">$paikka->[0]<\/td>\n";
-        $html .= "<td class=\"$td\">$pelaaja->{$paikka->[0]}->{joukkue}<\/td>\n";
-        $html .= "<td class=\"$td\"><center>$pelaaja->{$paikka->[0]}->{ottelut}</center><\/td>\n";
-        $html .= "<td class=\"$td\"><center>$kaikkipelit{$pelaaja->{$paikka->[0]}->{joukkue}}</center><\/td>\n";
-        $html .= "<td class=\"$td\">$pelaaja->{$paikka->[0]}->{arvo}<\/td>\n";
-        $html .= "<td class=\"$td\"><center>$pelaaja->{$paikka->[0]}->{ennuste_pisteet}</center><\/td>\n";
+        $html .= "</select>\n";
+        $html .= "</td>\n";
+        $html .= "<td>$paikka->[0]</td>\n";
+        $html .= "<td>$pelaaja->{$paikka->[0]}->{joukkue}</td>\n";
+        $html .= "<td class='w3-center'>$pelaaja->{$paikka->[0]}->{ottelut}</td>\n";
+        $html .= "<td class='w3-center'>$kaikkipelit{$pelaaja->{$paikka->[0]}->{joukkue}}</td>\n";
+        $html .= "<td>$pelaaja->{$paikka->[0]}->{arvo}</td>\n";
+        $html .= "<td class='w3-center'>$pelaaja->{$paikka->[0]}->{ennuste_pisteet}</td>\n";
 	
         $optimi_hinta += $pelaaja->{$paikka->[0]}->{arvo};
         $optimi_pisteet += $pelaaja->{$paikka->[0]}->{ennuste_pisteet};
 	
-        $html .= "<td class=\"$td\">\n";
+        $html .= "<td>\n";
         my $width = $pelaaja->{$paikka->[0]}->{ennuste_pisteet} / 2;
         if ($width < 0) {
             $width = abs($width);
@@ -882,47 +848,250 @@ sub optimiJoukkue {
         } else {
             $html .= "<p style=\"background: green; width: ${width}px; height: 8px; margin:0;\">\n";
         }
-        $html .= "<\/td>\n";
+        $html .= "</td>\n";
 
-        $html .= "<\/tr>\n";
+        $html .= "</tr>\n";
         $count++;
     }
-    $html .= "<\/table>\n";
+    $html .= "</table>\n";
+	$html .= "</div>\n";
 
     $html .= "<br>Pisteet: $optimi_pisteet, hinta: $optimi_hinta<br><br>\n";
 
     $html .= "Alla laskennan parhaat joukkueet.<br>\n";
-    $html .= "<table border='1' class='w3-text-black'>\n";
-    $html .= "<tr>\n";
+    $html .= "<div style='overflow:auto;'>\n";
+    $html .= "<table border='1' class='w3-text-black w3-striped w3-white'>\n";
+    $html .= "<tr class='w3-black'>\n";
     @otsikko = ("Sija", "M", "P1", "P2", "H1", "H2", "H3", "Pisteet", "Hinta");
     foreach (@otsikko) {
-        $html .= "<th><center>$_</center></th>\n";
+        $html .= "<th>$_</th>\n";
     }
-    $html .= "<\/tr>\n";
+    $html .= "</tr>\n";
 
     my $team_count = 0;
-    $td = change_table_td();
     foreach my $pelaajat (sort {$top_teams{3}{$b}{pisteet} <=> $top_teams{3}{$a}{pisteet}} keys %{$top_teams{3}}) {
         $html .= "<tr>\n";
         $team_count++;
-        $td = change_table_td($td);
         my @players = split(/,/, $pelaajat);
-        $html .= "<td class=\"$td\">$team_count<\/td>\n";
-        $html .= "<td class=\"$td\">$players[0]<\/td>\n";
-        $html .= "<td class=\"$td\">$players[1]<\/td>\n";
-        $html .= "<td class=\"$td\">$players[2]<\/td>\n";
-        $html .= "<td class=\"$td\">$players[3]<\/td>\n";
-        $html .= "<td class=\"$td\">$players[4]<\/td>\n";
-        $html .= "<td class=\"$td\">$players[5]<\/td>\n";
-        $html .= "<td class=\"$td\">$top_teams{3}{$pelaajat}{pisteet}<\/td>\n";
-        $html .= "<td class=\"$td\">$top_teams{3}{$pelaajat}{hinta}<\/td>\n";
-        $html .= "<\/tr>\n";
+        $html .= "<td>$team_count</td>\n";
+        $html .= "<td>$players[0]</td>\n";
+        $html .= "<td>$players[1]</td>\n";
+        $html .= "<td>$players[2]</td>\n";
+        $html .= "<td>$players[3]</td>\n";
+        $html .= "<td>$players[4]</td>\n";
+        $html .= "<td>$players[5]</td>\n";
+        $html .= "<td class='w3-center'>$top_teams{3}{$pelaajat}{pisteet}</td>\n";
+        $html .= "<td>$top_teams{3}{$pelaajat}{hinta}</td>\n";
+        $html .= "</tr>\n";
         if ($team_count == $max_teams) { last; }
     }
-    $html .= "<\/table>\n";
-    $html .= "<\/center>\n";
+    $html .= "</table>\n";
+	$html .= "</div>\n";
+    $html .= "</center>\n";
 
     return $html;
+}
+
+sub kokoonpanotGames () {
+    my $html = "<b>$weekdays[0] $start</b><br>\n";
+
+    # Tulosta joukkueet ja pelaako
+    foreach my $joukkue (sort hashValueAscendingNum keys %kaikkipelit) {
+        $_ = $start;
+        if (defined $pelipaivat{$joukkue}{$_}{kotipeli}) {
+			if (defined $pelipaivat{$joukkue}{$_}{kokoonpano}) {
+				$html .= "<A class='w3-text-red' HREF='#' onclick=\"Kokoonpanot('$joukkue', '$pelipaivat{$joukkue}{$_}{kokoonpano}')\">$joukkue - $pelipaivat{$joukkue}{$_}{kotipeli}</A><br>\n";
+			} else {
+				$html .= "$joukkue - $pelipaivat{$joukkue}{$_}{kotipeli}<br>\n";
+			}
+        }
+    }
+
+    return $html;
+}
+
+sub kokoonpanot () {
+	read_player_lists();
+
+	my $html;
+	my %kokoonpanot;
+	my $kentta = 0;
+	my $pelaaja_nro = 0;
+	my $koti_vieras = 0;
+	my $koti = $param_joukkue;
+	my $vieras = $pelipaivat{$param_joukkue}{$start}{kotipeli};
+	my $pelaavat_pelaajat = "";
+
+	my $data = fetch_page("http://liiga.fi/ottelut/2016-2017/runkosarja/$param_game_nro/kokoonpanot/");
+	my $text;
+	my $p = HTML::Parser->new(text_h => [ sub {$text .= shift}, 
+				  'dtext']);
+	$p->parse($data);
+	my @text = split(/\n/, $text);
+	foreach (@text) {
+		if (/^\s*$/) { next; }
+
+		$_ = modify_char($_);
+		if (/Tuomarit/) { last; }
+
+		if (/(\d+)\.\s*kentta/) {
+			$kentta = $1;
+			$pelaaja_nro = 0;
+		}
+		if (/Maalivahdit/) {
+			$kentta = 5;
+			$pelaaja_nro = 0;
+		}
+		if (/$koti/) {
+			$koti_vieras = 1;
+		}
+		if (/$vieras/) {
+			$koti_vieras = 2;
+		}
+		if (/^\s*(.*?),\s+(.*?)\s*$/ && $koti_vieras) {
+			my $nimi = "$1 $2";
+			$pelaaja_nro++;
+		
+			$kokoonpanot{$koti_vieras}{$kentta}{$pelaaja_nro} = $nimi;
+		
+			$pelaavat_pelaajat .= " $nimi ";
+		}
+	}
+
+    # Jakso
+    $html .= "Lue tilastot jaksosta:\n";
+    $html .= "<select id='read_players_from' onchange='Kokoonpanot()'>\n";
+    my @jakso = get_jakso();
+    foreach my $current_arvo (@jakso) {
+        if ($current_arvo eq $param_read_players_from) {
+            $html .= "<option selected>$current_arvo</option>\n";
+        } else {
+            $html .= "<option>$current_arvo</option>\n";
+        }
+    }
+    $html .= "</select><p>\n";
+    $html .= "<table border='1' class='w3-text-black'>\n";
+    $html .= "<tr class='w3-black'><th class='w3-center' colspan='10'>$koti<\/th><th class='w3-center' colspan='10'>$vieras</th></tr>\n";
+    $html .= "<tr class='w3-black'>\n";
+    for (my $i = 0; $i <= 1; $i++) {
+        $html .= "<th><center>Nimi</center></th>\n";
+        $html .= "<th><center>Pe</center></th>\n";
+        $html .= "<th><center>Ma</center></th>\n";
+        $html .= "<th><center>Sy</center></th>\n";
+        $html .= "<th><center>Pi</center></th>\n";
+        $html .= "<th><center>La</center></th>\n";
+        $html .= "<th><center>Arvo</center></th>\n";
+        $html .= "<th><center>LPP</center></th>\n";
+        $html .= "<th colspan='2'><center>LPP ennuste</center></th>\n";
+    }
+    $html .= "</tr>\n";
+
+    my $td = change_table_td();
+    for ($kentta = 1; $kentta <= 5; $kentta++) {
+        $td = change_table_td($td);
+        for ($pelaaja_nro = 1; $pelaaja_nro <= 5; $pelaaja_nro++) {
+            $html .= "<tr class='$td'>\n";
+            for ($koti_vieras = 1; $koti_vieras <= 2; $koti_vieras++) {
+                if (defined $kokoonpanot{$koti_vieras}{$kentta}{$pelaaja_nro}) {
+                    my $nimi = $kokoonpanot{$koti_vieras}{$kentta}{$pelaaja_nro};
+                    $html .= "<td>$nimi</td>\n";
+                    $html .= "<td>$pelaaja->{$nimi}->{ottelut}</td>\n";
+                    $html .= "<td>$pelaaja->{$nimi}->{maalit}</td>\n";
+                    $html .= "<td>$pelaaja->{$nimi}->{syotot}</td>\n";
+                    $html .= "<td>$pelaaja->{$nimi}->{pisteet}</td>\n";
+                    $html .= "<td>$pelaaja->{$nimi}->{laukaukset}</td>\n";
+                    $html .= "<td>$pelaaja->{$nimi}->{arvo}</td>\n";
+                    $html .= "<td>$pelaaja->{$nimi}->{lpp}</td>\n";
+                    $html .= "<td>$pelaaja->{$nimi}->{ennuste_pisteet}</td>\n";
+                    $html .= "<td>\n";
+                    my $width = $pelaaja->{$nimi}->{ennuste_pisteet} / 2;
+                    if ($width < 0) {
+                        $width = abs($width);
+                        $html .= "<p style=\"background: red; width: ${width}px; height: 8px; margin:0;\">\n";
+                    } else {
+                        $html .= "<p style=\"background: green; width: ${width}px; height: 8px; margin:0;\">\n";
+                    }
+                    $html .= "</td>\n";
+                } else {
+                    for (my $i = 1; $i <= 10; $i++) { $html .= "<td>&#32;</td>\n"; }
+                }
+            }
+            $html .= "</tr>\n";
+        }
+    }
+    $html .= "<tr class='w3-black'><th class='w3-center' colspan='20'>Ei kokoonpanossa</th></tr>\n";
+
+    my %ei_pelaavat;
+    my ($k_h, $k_p, $k_m, $v_h, $v_p, $v_m);
+    
+    foreach my $nimi (sort {$pelaaja->{$b}->{ennuste_pisteet} <=> $pelaaja->{$a}->{ennuste_pisteet} || $pelaaja->{$a}->{arvo} <=> $pelaaja->{$b}->{arvo}} keys %{$pelaaja}) {
+        if ($pelaavat_pelaajat !~ /$nimi/) {
+            if ($pelaaja->{$nimi}->{joukkue} eq $koti) {
+                if ($pelaaja->{$nimi}->{pelipaikka} =~ /Hyokkaaja/) { $k_h++; $ei_pelaavat{1}{1}{$k_h} = $nimi; }
+                if ($pelaaja->{$nimi}->{pelipaikka} =~ /Puolustaja/) { $k_p++; $ei_pelaavat{1}{2}{$k_p} = $nimi; }
+                if ($pelaaja->{$nimi}->{pelipaikka} =~ /Maalivahti/) { $k_m++; $ei_pelaavat{1}{3}{$k_m} = $nimi; }
+            }
+            if ($pelaaja->{$nimi}->{joukkue} eq $vieras) {
+                if ($pelaaja->{$nimi}->{pelipaikka} =~ /Hyokkaaja/) { $v_h++; $ei_pelaavat{2}{1}{$v_h} = $nimi; }
+                if ($pelaaja->{$nimi}->{pelipaikka} =~ /Puolustaja/) { $v_p++; $ei_pelaavat{2}{2}{$v_p} = $nimi; }
+                if ($pelaaja->{$nimi}->{pelipaikka} =~ /Maalivahti/) { $v_m++; $ei_pelaavat{2}{3}{$v_m} = $nimi; }
+            }
+        }
+    }
+    
+    if ($k_h < $v_h) { $k_h = $v_h; }
+    if ($k_p < $v_p) { $k_p = $v_p; }
+    if ($k_m < $v_m) { $k_m = $v_m; }
+
+    for (my $pelipaikka = 1; $pelipaikka <= 3; $pelipaikka++) {
+        $td = change_table_td($td);
+        my $max_nro;
+        if ($pelipaikka == 1) { $max_nro = $k_h; }
+        if ($pelipaikka == 2) { $max_nro = $k_p; }
+        if ($pelipaikka == 3) { $max_nro = $k_m; }
+        for (my $pelaaja_nro = 1; $pelaaja_nro <= $max_nro; $pelaaja_nro++) {
+            $html .= "<tr class='$td'>\n";
+            for ($koti_vieras = 1; $koti_vieras <= 2; $koti_vieras++) {
+                if (defined $ei_pelaavat{$koti_vieras}{$pelipaikka}{$pelaaja_nro}) {
+                    my $nimi = $ei_pelaavat{$koti_vieras}{$pelipaikka}{$pelaaja_nro};
+                    $html .= "<td>$nimi</td>\n";
+                    $html .= "<td>$pelaaja->{$nimi}->{ottelut}</td>\n";
+                    $html .= "<td>$pelaaja->{$nimi}->{maalit}</td>\n";
+                    $html .= "<td>$pelaaja->{$nimi}->{syotot}</td>\n";
+                    $html .= "<td>$pelaaja->{$nimi}->{pisteet}</td>\n";
+                    $html .= "<td>$pelaaja->{$nimi}->{laukaukset}</td>\n";
+                    $html .= "<td>$pelaaja->{$nimi}->{arvo}</td>\n";
+                    $html .= "<td>$pelaaja->{$nimi}->{lpp}</td>\n";
+                    $html .= "<td>$pelaaja->{$nimi}->{ennuste_pisteet}</td>\n";
+                    $html .= "<td>\n";
+                    my $width = $pelaaja->{$nimi}->{ennuste_pisteet} / 2;
+                    if ($width < 0) {
+                        $width = abs($width);
+                        $html .= "<p style=\"background: red; width: ${width}px; height: 8px; margin:0;\">\n";
+                    } else {
+                        $html .= "<p style=\"background: green; width: ${width}px; height: 8px; margin:0;\">\n";
+                    }
+                    $html .= "</td>\n";
+                } else {
+                    for (my $i = 1; $i <= 10; $i++) { $html .= "<td>&#032;</td>\n"; }
+                }
+            }
+            $html .= "</tr>\n";
+        }
+    }
+    $html .= "</table>\n";
+
+    return $html;
+}
+
+sub change_table_td {
+    my $current_td = shift;
+
+    if (!defined $current_td || $current_td eq "w3-white") {
+        return "w3-light-grey";
+    } elsif ($current_td eq "w3-light-grey") {
+        return "w3-white";
+    }
 }
 
 sub create_loops {

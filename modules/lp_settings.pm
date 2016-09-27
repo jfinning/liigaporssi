@@ -7,7 +7,7 @@ sub get_vuodet ($) {
     if ($liiga =~ /sm_liiga/) {
         @vuodet = ("2014", "2015", "2016");
     } else {
-        @vuodet = ("2014", "2015");
+        @vuodet = ("2014", "2015", "2016");
     }
     
     return @vuodet;
@@ -29,7 +29,7 @@ sub get_default_vuosi ($) {
     if ($liiga eq "sm_liiga") {
         $vuosi = 2016;
     } elsif ($liiga eq "nhl"){
-        $vuosi = 2015;
+        $vuosi = 2016;
     } else {
 	    $vuosi = "undef";
 	}
@@ -47,7 +47,7 @@ sub get_default_jakso ($) {
     if ($liiga eq "sm_liiga") {
         $jakso = "Jakso 1";
     } elsif ($liiga eq "nhl"){
-        $jakso = "Jakso PO";
+        $jakso = "Jakso 1";
 	} else {
         $jakso = "undef";
     }
