@@ -956,9 +956,7 @@ sub kokoonpanot () {
 		if (/^\s*(.*?),\s+(.*?)\s*$/ && $koti_vieras) {
 			my $nimi = "$1 $2";
 			$pelaaja_nro++;
-		
 			$kokoonpanot{$koti_vieras}{$kentta}{$pelaaja_nro} = $nimi;
-		
 			$pelaavat_pelaajat .= " $nimi ";
 		}
 	}
@@ -979,15 +977,15 @@ sub kokoonpanot () {
     $html .= "<tr class='w3-black'><th class='w3-center' colspan='10'>$koti<\/th><th class='w3-center' colspan='10'>$vieras</th></tr>\n";
     $html .= "<tr class='w3-black'>\n";
     for (my $i = 0; $i <= 1; $i++) {
-        $html .= "<th><center>Nimi</center></th>\n";
-        $html .= "<th><center>Pe</center></th>\n";
-        $html .= "<th><center>Ma</center></th>\n";
-        $html .= "<th><center>Sy</center></th>\n";
-        $html .= "<th><center>Pi</center></th>\n";
-        $html .= "<th><center>La</center></th>\n";
-        $html .= "<th><center>Arvo</center></th>\n";
-        $html .= "<th><center>LPP</center></th>\n";
-        $html .= "<th colspan='2'><center>LPP ennuste</center></th>\n";
+        $html .= "<th>Nimi</th>\n";
+        $html .= "<th>Pe</th>\n";
+        $html .= "<th>Ma</th>\n";
+        $html .= "<th>Sy</th>\n";
+        $html .= "<th>Pi</th>\n";
+        $html .= "<th>La</th>\n";
+        $html .= "<th>Arvo</th>\n";
+        $html .= "<th>LPP</th>\n";
+        $html .= "<th colspan='2'>LPP ennuste</th>\n";
     }
     $html .= "</tr>\n";
 
