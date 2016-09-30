@@ -324,7 +324,7 @@ function Pelaajalista(subList) {
 		subList = 'playerList,periodOptionMenu,yearOptionMenu';
 	}
 	var league = getSelectedLeague();
-	var vuosi = $('#vuosi option:selected').html();
+	var vuosi = $('#yearOptionMenu option:selected').html();
 	var period = $('#periodOptionMenu option:selected').html();
 	$.ajax({
 		type: 'POST',
@@ -358,12 +358,12 @@ function Optimijoukkue(subList) {
 	var selectedTeams = $('#selectedTeams').val();
 	var teams = $('#selectedTeams').text();
 
-	var g = $('#Optimijoukkue').find('#o_maalivahti option:selected').html();
-	var d1 = $('#Optimijoukkue').find('#o_puolustaja1 option:selected').html();
-	var d2 = $('#Optimijoukkue').find('#o_puolustaja2 option:selected').html();
-	var f1 = $('#Optimijoukkue').find('#o_hyokkaaja1 option:selected').html();
-	var f2 = $('#Optimijoukkue').find('#o_hyokkaaja2 option:selected').html();
-	var f3 = $('#Optimijoukkue').find('#o_hyokkaaja3 option:selected').html();
+	var g = $('#Optimijoukkue').find('#o_maalivahti option:selected').val();
+	var d1 = $('#Optimijoukkue').find('#o_puolustaja1 option:selected').val();
+	var d2 = $('#Optimijoukkue').find('#o_puolustaja2 option:selected').val();
+	var f1 = $('#Optimijoukkue').find('#o_hyokkaaja1 option:selected').val();
+	var f2 = $('#Optimijoukkue').find('#o_hyokkaaja2 option:selected').val();
+	var f3 = $('#Optimijoukkue').find('#o_hyokkaaja3 option:selected').val();
 
 	$.ajax({
 		type: 'POST',
@@ -423,9 +423,9 @@ function Status() {
 		<button class="w3-btn slideButton" onclick="showSlide(2)">Vastustajat</button>
 		<button class="w3-btn slideButton" onclick="showSlide(3)">Vaihdon ajoitus</button>
 	</div>
-	<center>
+	<center><p>
 	Alku: <select id='startDayOption' onchange='Ottelulista()'></select>
-	Loppu: <select id='endDayOption' onchange='Ottelulista()'></select>
+	Loppu: <select id='endDayOption' onchange='Ottelulista()'></select><p>
 	<div style='overflow:auto;' id="gameDays" class="slideDiv"></div>
 	<div style='overflow:auto;' id="teamCompareTable" class="slideDiv"></div>
 	<div style='overflow:auto;' id="optimalChangeDay" class="slideDiv"></div>
@@ -518,7 +518,7 @@ function Status() {
 	<div style='overflow:auto;' id="kokoonpanot">
 		<div class="w3-card-4" style="width:50%;">
 		<header class="w3-container w3-black">
-		<b>Älykkäät kokoonpanot</b>
+		<b><p>Älykkäät kokoonpanot<p></b>
 		</header>
 
 		<div class="w3-container w3-white">

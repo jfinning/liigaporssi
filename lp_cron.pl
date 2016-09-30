@@ -118,7 +118,9 @@ sub sm_kokoonpanot_kaikki {
 	} else {
 		$period = "playoff"
 	}
+	my $file = "player_stats/$year/player_list_${period}.txt";
 	my @sm_joukkue = get_joukkue_list("sm_liiga");
+	my %name_count;
 
     # Listaa tahan nimet, jos aakkosjarjestys ei matsaa. Ts. seuraavan joukkueen ensimmainen pelaaja on aakkosissa toisen joukkueen viimeisen jalkeen
 	# Joukkue vaihtuu ENNEN lisattya pelaajaa
@@ -131,7 +133,8 @@ sub sm_kokoonpanot_kaikki {
     my $final_player_list = "";
 
     my $data = fetch_page("http://www.liigaporssi.fi/team/search-players?player_position=all&player_team=all&player_value=all&type=player_search");
-    
+	my %player_id = set_player_ids($data);
+
     $data =~ s/player_value\">(.*?)\&euro;</player_value\"> $1 </g;
     $data =~ s/\">(.*?)</\"> $1 </g;
 
@@ -173,10 +176,18 @@ sub sm_kokoonpanot_kaikki {
 	        if ($team_count > $#sm_joukkue) { $team_count = 0; }
         }
 
-	    $line = modify_char($line);
-        $line = replace_position($line);
+		if ($line !~ /\d+/) {
+			if ($line =~ /\w+\s+\w+/) {
+				if (defined $player_id{$line}) {
+					$name_count{$line}++;
+					$line = "${$player_id{$line}}[$name_count{$line} - 1] $line";
+				}
+			}
+			$line = modify_char($line);
+			$line = replace_position($line);
+		}
 
-	    if ($line =~ /^\s*\D+\s+\D+\s*$/ || (length($line) < 7 && $line !~ /Arvo/) || $line =~ /Maalivahti|Puolustaja|Hy.*kk.*/) {
+	    if ($line =~ /^\s*\d+\s*\D+\s+\D+\s*$/ || (length($line) < 7 && $line !~ /Arvo/) || $line =~ /Maalivahti|Puolustaja|Hy.*kk.*/) {
     	    $final_player_list .= "$line ";
     	} else {
     	    $final_player_list .= "$line\n";
@@ -192,15 +203,9 @@ sub sm_kokoonpanot_kaikki {
 	}
 
     if (!$test) {
-		open FILE, ">$year/player_list_${period}.txt" or die "Cant open $year/player_list_${period}.txt\n"; 
+		open FILE, ">$file" or die "Cant open $file\n"; 
 		my @player_list = split(/\n/, $final_player_list);
-		my $mikko_lehtonen = 0;
 		foreach (@player_list) {
-			# Tulostetaan vain eka mikko lehtonen
-			if (/Lehtonen Mikko/) {
-				$mikko_lehtonen++;
-				if ($mikko_lehtonen > 1) { next; }
-			}
 			print FILE "$_\n";
 		}
 		close (FILE);
@@ -219,11 +224,14 @@ sub sm_kokoonpanot {
 	} else {
 		$period = "playoff"
 	}
+	my $file = "player_stats/$year/player_list_${period}.txt";
     my @sm_joukkue = get_joukkue_list("sm_liiga");
+	my %name_count;
 
     foreach my $joukkue (@sm_joukkue) {
         $final_player_list .= "$joukkue\n";
         my $data = fetch_page("http://www.liigaporssi.fi/team/search-players?player_position=all&player_team=${joukkue}&player_value=all&type=player_search");
+		my %player_id = set_player_ids($data);
 
         $data =~ s/player_value\">(.*?)\&euro;</player_value\"> $1 </g;
         $data =~ s/\">(.*?)</\"> $1 </g;
@@ -239,10 +247,19 @@ sub sm_kokoonpanot {
             s/^\s*//;
             if (/^\s*$/) { next; }
             s/-(\s+)/0$1/g;
-			$_ = modify_char($_);
-            $_ = replace_position($_);
 
-            if (/^\s*\D+\s+\D+\s*$/ || (length($_) < 7 && $_ !~ /Arvo/) || /Maalivahti|Puolustaja|Hy.*kk.*/) {
+			if (!/\d+/) {
+				if (/\w+\s+\w+/) {
+					if (defined $player_id{$_}) {
+						$name_count{$_}++;
+						$_ = "${$player_id{$_}}[$name_count{$_} - 1] $_";
+					}
+				}
+				$_ = modify_char($_);
+				$_ = replace_position($_);
+			}
+
+            if (/^\s*\d+\s*\D+\s+\D+\s*$/ || (length($_) < 7 && $_ !~ /Arvo/) || /Maalivahti|Puolustaja|Hy.*kk.*/) {
                 $final_player_list .= "$_ ";
             } else {
                 $final_player_list .= "$_\n";
@@ -258,15 +275,9 @@ sub sm_kokoonpanot {
     }
     
     if (!$test) {
-		open FILE, ">$year/player_list_${period}.txt" or die "Cant open $year/player_list_${period}.txt\n"; 
+		open FILE, ">$file" or die "Cant open $file\n"; 
 		my @player_list = split(/\n/, $final_player_list);
-		my $mikko_lehtonen = 0;
 		foreach (@player_list) {
-			# Tulostetaan vain eka mikko lehtonen
-			if (/Lehtonen Mikko/) {
-				$mikko_lehtonen++;
-				if ($mikko_lehtonen > 1) { next; }
-			}
 			print FILE "$_\n";
 		}
 		close (FILE);
@@ -286,7 +297,9 @@ sub nhl_kokoonpanot {
 	} else {
 		$period = "playoff"
 	}
+	my $file = "player_stats/$year/player_list_${period}_nhl.txt";
     my @nhl_joukkue = get_joukkue_list("nhl");
+	my %name_count;
 
     foreach my $joukkue (@nhl_joukkue) {
         $final_player_list .= "$joukkue\n";
@@ -295,6 +308,7 @@ sub nhl_kokoonpanot {
         $address =~ s/\s+/%20/g;
         
         my $data = fetch_page($address);
+		my %player_id = set_player_ids($data);
 
         $data =~ s/player_value\">(.*?)\&euro;</player_value\"> $1 </g;
         $data =~ s/\">(.*?)</\"> $1 </g;
@@ -306,14 +320,23 @@ sub nhl_kokoonpanot {
         my @text = split(/\n/, $text);
     
         foreach (@text) {
+            if (/^\s*$/) { next; }
             s/\s*$//;
             s/^\s*//;
-            if (/^\s*$/) { next; }
             s/-(\s+)/0$1/g;
-			$_ = modify_char($_);
-            $_ = replace_position($_);
 
-            if (/^\s*\D+\s+\D+\s*$/ || (length($_) < 7 && $_ !~ /Arvo/) || /Maalivahti|Puolustaja|Hy.*kk.*/) {
+			if (!/\d+/) {
+				if (/\w+\s+\w+/) {
+					if (defined $player_id{$_}) {
+						$name_count{$_}++;
+						$_ = "${$player_id{$_}}[$name_count{$_} - 1] $_";
+					}
+				}
+				$_ = modify_char($_);
+				$_ = replace_position($_);
+			}
+
+            if (/^\s*\d+\s*\D+\s+\D+\s*$/ || (length($_) < 7 && $_ !~ /Arvo/) || /Maalivahti|Puolustaja|Hy.*kk.*/) {
                 $final_player_list .= "$_ ";
             } else {
                 $final_player_list .= "$_\n";
@@ -329,7 +352,7 @@ sub nhl_kokoonpanot {
     }
     
     if (!$test) {
-		open FILE, ">$year/player_list_${period}_nhl.txt" or die "Cant open $year/player_list_${period}_nhl.txt\n"; 
+		open FILE, ">$file" or die "Cant open $file\n"; 
 		my @player_list = split(/\n/, $final_player_list);
 		foreach (@player_list) {
 			print FILE "$_\n";
@@ -451,15 +474,29 @@ sub get_date {
     return ($yearOffset, $month, $dayOfMonth);
 }
 
+sub set_player_ids($) {
+	my $data = shift;
+	my %player_id;
+
+	foreach my $line (split(/\n/, $data)) {
+		if ($line =~ /player_card.*?(\d+).*?>(.*?)</) {
+			#$player_id{$2} = $1;
+			push(@{$player_id{$2}}, $1);
+		}
+	}
+
+	return %player_id;
+}
+
 sub replace_position($) {
     my $position = shift;
     
     if ($position =~ /Maalivahdit/) {
-        $position = "Maalivahti";
+        $position = "ID Maalivahti";
     } elsif ($position =~ /Puolustajat/) {
-        $position = "Puolustaja";
+        $position = "ID Puolustaja";
     } elsif ($position =~ /Hyokkaajat/) {
-        $position = "Hyokkaaja";
+        $position = "ID Hyokkaaja";
     }
 
     return $position;
