@@ -351,6 +351,11 @@ function Optimijoukkue(subList) {
 	var period = $('#periodOptionMenu option:selected').html();
 	var startDay = $('#Optimijoukkue').find('#startDayOption option:selected').html();
 	var endDay = $('#Optimijoukkue').find('#endDayOption option:selected').html();
+	var playerValue = $('#Optimijoukkue').find('#arvo option:selected').html();
+	var minGames = $('#Optimijoukkue').find('#maxPelatutPelit option:selected').html();
+	var teamValue = $('#joukkueenHinta').val();
+	var removedPlayers = $('#removedPlayers').val();
+	var selectedTeams = $('#selectedTeams').val();
 	var teams = $('#selectedTeams').text();
 
 	var g = $('#Optimijoukkue').find('#o_maalivahti option:selected').html();
@@ -363,7 +368,7 @@ function Optimijoukkue(subList) {
 	$.ajax({
 		type: 'POST',
 		url: 'lp_new.pl',
-		data: {'sub':subList,'liiga':league,'read_players_from':period,'start_day':startDay,'end_day':endDay,'selected_teams':teams,'o_maalivahti':g,'o_puolustaja1':d1,'o_puolustaja2':d2,'o_hyokkaaja1':f1,'o_hyokkaaja2':f2,'o_hyokkaaja3':f3},
+		data: {'sub':subList,'liiga':league,'read_players_from':period,'start_day':startDay,'end_day':endDay,'selected_teams':teams,'arvo':playerValue,'ottelut':minGames,'joukkueen_hinta':teamValue,'remove_players':removedPlayers,'selected_teams':selectedTeams,'o_maalivahti':g,'o_puolustaja1':d1,'o_puolustaja2':d2,'o_hyokkaaja1':f1,'o_hyokkaaja2':f2,'o_hyokkaaja3':f3},
 		dataType: 'json',
 		success: function(res) {
 			$.each(res, function (name, value) {
@@ -401,8 +406,7 @@ function Kokoonpanot(homeTeam, gameNumber) {
 }
 
 function Status() {
-	//$("#Status").load("status.htm");
-	$("#Status").load("status.htm", function(responseTxt, statusTxt, xhr){
+	$("#Status").load("status_new.html", function(responseTxt, statusTxt, xhr){
 		if(statusTxt == "success")
 			$("#Status").html(responseTxt);
 		if(statusTxt == "error")
@@ -420,8 +424,8 @@ function Status() {
 		<button class="w3-btn slideButton" onclick="showSlide(3)">Vaihdon ajoitus</button>
 	</div>
 	<center>
-	Start: <select id='startDayOption' onchange='Ottelulista()'></select>
-	End: <select id='endDayOption' onchange='Ottelulista()'></select>
+	Alku: <select id='startDayOption' onchange='Ottelulista()'></select>
+	Loppu: <select id='endDayOption' onchange='Ottelulista()'></select>
 	<div style='overflow:auto;' id="gameDays" class="slideDiv"></div>
 	<div style='overflow:auto;' id="teamCompareTable" class="slideDiv"></div>
 	<div style='overflow:auto;' id="optimalChangeDay" class="slideDiv"></div>
@@ -453,40 +457,58 @@ function Status() {
 <div id="Optimijoukkue" class="link">
 	<center>
 	Täällä voit koota laskennallisia optimikokoonpanoja antamillasi ehdoilla.<br>
-    Joukkueen arvo tE
-    <input type='text' id='joukkueen_hinta' size='6' maxlength='6' value=2000>
 
-	Pelatut pelit väh.: <select id="maxPelatutPelit" onchange="Optimijoukkue('optimiJoukkue')"></select>
+	<div style='max-width: 800px;'>
+	<div style='overflow:auto;'>
+	<table border='1' class='w3-text-black w3-striped w3-white' style='white-space: nowrap; width: 100%'>
+		<tr class='w3-black'>
+			<th>Joukkueen arvo tE</th>
+			<th colspan='2'>Laskennan aikaväli</th>
+			<th>Jakso</th>
+			<th>Pelatut pelit väh.</th>
+			<th>Pelaajan arvo alle</th>
+		</tr>
+		<tr>
+			<td class='w3-center'> <input style='width: 100%' type='text' id='joukkueen_hinta' maxlength='6' value=2000.0> </td>
+			<td class='w3-center'> <select style='width: 100%' id='startDayOption' onchange="Optimijoukkue('endDayOption,optimiJoukkue')"></select> </td>
+			<td class='w3-center'> <select style='width: 100%' id='endDayOption' onchange="Optimijoukkue('startDayOption,optimiJoukkue')"></select> </td>
+			<td class='w3-center'> <select style='width: 100%' id="periodOptionMenu" onchange="Optimijoukkue('maxPelatutPelit,optimiJoukkue')"></select> </td>
+			<td class='w3-center'> <select style='width: 100%' id="maxPelatutPelit" onchange="Optimijoukkue('optimiJoukkue')"></select>	</td>
 
-    Pelaajan arvo alle:
-    <select id="arvo" onchange="Optimijoukkue('optimiJoukkue')">
-    <option>999</option>
-    <option>500</option>
-    <option>450</option>
-    <option>400</option>
-    <option>350</option>
-    <option>300</option>
-    <option>250</option>
-    </select>
+			<td class='w3-center'>    
+			<select style='width: 100%' id="arvo" onchange="Optimijoukkue('optimiJoukkue')">
+			<option>999</option>
+			<option>600</option>
+			<option>550</option>
+			<option>500</option>
+			<option>450</option>
+			<option>400</option>
+			<option>350</option>
+			<option>300</option>
+			<option>250</option>
+			</select>
+			</td>
 
-    <select id="periodOptionMenu" onchange="Optimijoukkue('maxPelatutPelit,optimiJoukkue')"></select><br>
 
-    Valitse aikaväli, jolle haluat optimikokoonpanon laskettavan:
-
-    Start: <select id='startDayOption' onchange="Optimijoukkue('endDayOption,optimiJoukkue')"></select>
-	End: <select id='endDayOption' onchange="Optimijoukkue('startDayOption,optimiJoukkue')"></select>
-
-    <br>Kopioi tähän pelaajien nimiä, jotka haluat skipata. Esim. loukkaantuneita pelaajia.<br>
-    <TEXTAREA NAME='remove_players' id='remove_players' cols=40 rows=4>
-    </TEXTAREA><br>
-    <br>
-
-    Pelaajat valitaan näistä joukkueista. Poista joukkueen nimi, josta et halua pelaajia.<br>
-    <TEXTAREA id='selectedTeams' cols=40 rows=4>
-    </TEXTAREA><br>
-    <br>
-
+		</tr>
+	</table>
+	</div>
+	<br>
+	<div style='overflow:auto;'>
+	<table border='1' class='w3-text-black w3-striped w3-white' style='width: 100%'>
+		<tr class='w3-black'>
+			<th style='width: 50%'>Kopioi tähän pelaajien nimiä, jotka haluat skipata.<br>Esim. loukkaantuneita pelaajia.</th>
+			<th>Pelaajat valitaan näistä joukkueista.<br>Poista joukkue, josta et halua pelaajia.</th>
+		</tr>
+		<tr>
+			<td class='w3-center'><textarea id='remove_players' rows=3 style='width: 100%'></textarea></td>
+			<td class='w3-center'><textarea id='selectedTeams' rows=3 style='width: 100%'></textarea><br></td>
+		</tr>
+	</table>
+	</div>
+	<br>
 	<div class="w3-responsive" id="optimiJoukkue"></div>
+	</div>
 	</center>
 </div>
 

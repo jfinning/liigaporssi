@@ -77,12 +77,12 @@ my ($pelit, $sarjataulukko);
 sub alustus {
     %joukkue_lyhenne = get_joukkueiden_lyhenteet($param_liiga);
 
-    $o_maalivahti      = $cgi->param('o_maalivahti') if defined $cgi->param('o_maalivahti');
-    $o_puolustaja1     = $cgi->param('o_puolustaja1') if defined $cgi->param('o_puolustaja1');
-    $o_puolustaja2     = $cgi->param('o_puolustaja2') if defined $cgi->param('o_puolustaja2');
-    $o_hyokkaaja1      = $cgi->param('o_hyokkaaja1') if defined $cgi->param('o_hyokkaaja1');
-    $o_hyokkaaja2      = $cgi->param('o_hyokkaaja2') if defined $cgi->param('o_hyokkaaja2');
-    $o_hyokkaaja3      = $cgi->param('o_hyokkaaja3') if defined $cgi->param('o_hyokkaaja3');
+    $o_maalivahti  = $cgi->param('o_maalivahti') if defined $cgi->param('o_maalivahti');
+    $o_puolustaja1 = $cgi->param('o_puolustaja1') if defined $cgi->param('o_puolustaja1');
+    $o_puolustaja2 = $cgi->param('o_puolustaja2') if defined $cgi->param('o_puolustaja2');
+    $o_hyokkaaja1  = $cgi->param('o_hyokkaaja1') if defined $cgi->param('o_hyokkaaja1');
+    $o_hyokkaaja2  = $cgi->param('o_hyokkaaja2') if defined $cgi->param('o_hyokkaaja2');
+    $o_hyokkaaja3  = $cgi->param('o_hyokkaaja3') if defined $cgi->param('o_hyokkaaja3');
 
     if ($o_maalivahti =~ /^(.*?)\s*,/) { $o_maalivahti = $1; }
     if ($o_puolustaja1 =~ /^(.*?)\s*,/) { $o_puolustaja1 = $1; }
@@ -209,7 +209,7 @@ sub alustus {
         $end = $all_day_list[-1];
     }
 
-    if (! defined $team_from) {
+    if (! defined $team_from || ! defined $kaikkipelit{$team_from}) {
         foreach (sort keys %kaikkipelit) {
             $team_from = $_;
 	        last;
@@ -335,7 +335,7 @@ sub gameDays {
                     $vieraspeli =  $joukkue_lyhenne{$pelipaivat{$joukkue}{$_}{vieraspeli}};
                 }
                 if (defined $pelipaivat{$joukkue}{$_}{'kokoonpano'}) {
-					$vieraspeli = "<A HREF='#' onclick=\"Kokoonpanot('$joukkue', '$pelipaivat{$joukkue}{$_}{kokoonpano}');showLinkDiv('Kokoonpanot');markClickedTab('Kokoonpanot')\">$vieraspeli</A>";
+					$vieraspeli = "<A HREF='#' onclick=\"Kokoonpanot('$vieraspeli', '$pelipaivat{$joukkue}{$_}{kokoonpano}');showLinkDiv('Kokoonpanot');markClickedTab('Kokoonpanot')\">$vieraspeli</A>";
                 }
                 if (defined $peliputki{$joukkue}{$_} && $peliputki{$joukkue}{$_} eq "peli") {
                     $html .= "<td class='w3-text-teal w3-center' title='3 tai useampi peli&#228; putkeen'>$vieraspeli</td>\n";
@@ -659,20 +659,17 @@ sub read_player_list ($$) {
 			if (!defined $pelaaja{$nimi}{paastetyt}) { $pelaaja{$nimi}{paastetyt} = $player{TO} } else { $pelaaja{$nimi}{paastetyt} += $player{TO}; }
         }
         if ($max_pelatut_pelit < $pelaaja{$nimi}{ottelut}) { $max_pelatut_pelit = $pelaaja{$nimi}{ottelut}; }
-            $pelaaja{$nimi}{pelipaikka} = $pelipaikka;
-            $pelaaja{$nimi}{jaahyt} += $player{JM};
-            $pelaaja{$nimi}{lpp} += $LPP;
-            $pelaaja{$nimi}{arvo} = $player{Arvo};
-            $pelaaja{$nimi}{joukkue} = $joukkue;
-    
+		$pelaaja{$nimi}{pelipaikka} = $pelipaikka;
+		$pelaaja{$nimi}{jaahyt} += $player{JM};
+		$pelaaja{$nimi}{lpp} += $LPP;
+		$pelaaja{$nimi}{arvo} = $player{Arvo};
+		$pelaaja{$nimi}{joukkue} = $joukkue;
         if ($pelaaja{$nimi}{ottelut} ne "0") {
             $pelaaja{$nimi}{pisteet_per_peli} = $pelaaja{$nimi}{lpp} / $pelaaja{$nimi}{ottelut}
         } else {
             $pelaaja{$nimi}{pisteet_per_peli} = 0;
         }
-
         $pelaaja{$nimi}{pisteet_per_euro} = $pelaaja{$nimi}{pisteet_per_peli} / ($pelaaja{$nimi}{arvo} / 100);
-    
         $pelaaja{$nimi}{ennuste_pisteet} = int($pelaaja{$nimi}{pisteet_per_peli} * $kaikkipelit{$joukkue});
     }
     close (FILE);
@@ -803,10 +800,10 @@ sub optimiJoukkue {
     @hyokkaajat_kaikki = sort (@hyokkaajat_kaikki);
 
     $html .= "<div style='overflow:auto;'>\n";
-	$html .= "<table border='1' class='w3-text-black w3-striped w3-white'>\n";
+	$html .= "<table border='1' class='w3-text-black w3-striped w3-white' style='width: 100%'>\n";
     $html .= "<tr class='w3-black'>\n";
     
-    my @otsikko = ("P", "Kiinnitetty pelaaja", "Nimi", "Joukkue", "Pelatut", "Tulevat", "Arvo");
+    my @otsikko = ("P", "Kiinnitetty pelaaja", "Nimi", "Joukkue", "Pelit", "Tulevat", "Arvo");
     foreach (@otsikko) {
         $html .= "<th class='w3-center'>$_</th>\n";
     }
@@ -860,7 +857,7 @@ sub optimiJoukkue {
 
     $html .= "Alla laskennan parhaat joukkueet.<br>\n";
     $html .= "<div style='overflow:auto;'>\n";
-    $html .= "<table border='1' class='w3-text-black w3-striped w3-white'>\n";
+    $html .= "<table border='1' class='w3-text-black w3-striped w3-white' style='width: 100%'>\n";
     $html .= "<tr class='w3-black'>\n";
     @otsikko = ("Sija", "M", "P1", "P2", "H1", "H2", "H3", "Pisteet", "Hinta");
     foreach (@otsikko) {
