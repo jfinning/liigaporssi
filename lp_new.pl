@@ -926,6 +926,8 @@ sub kokoonpanot () {
 	my $koti = $param_joukkue;
 	my $vieras = $pelipaivat{$param_joukkue}{$start}{kotipeli};
 	my $pelaavat_pelaajat = "";
+	my ($nimi, $player_id);
+	my @joukkue = ($koti, $vieras);
 
 	my $data = fetch_page("http://liiga.fi/ottelut/2016-2017/runkosarja/$param_game_nro/kokoonpanot/");
 	my $text;
@@ -954,10 +956,26 @@ sub kokoonpanot () {
 			$koti_vieras = 2;
 		}
 		if (/^\s*(.*?),\s+(.*?)\s*$/ && $koti_vieras) {
-			my $nimi = "$1 $2";
+			$nimi = "$1 $2";
 			$pelaaja_nro++;
 			$kokoonpanot{$koti_vieras}{$kentta}{$pelaaja_nro} = $nimi;
-			$pelaavat_pelaajat .= " $nimi ";
+		}
+	}
+
+	# Muuta pelaavien pelaajien nimet ID:eiksi
+    foreach $player_id (keys %{$pelaaja}) {
+		for ($kentta = 1; $kentta <= 5; $kentta++) {
+			for ($pelaaja_nro = 1; $pelaaja_nro <= 5; $pelaaja_nro++) {
+				for ($koti_vieras = 1; $koti_vieras <= 2; $koti_vieras++) {
+					if (defined $kokoonpanot{$koti_vieras}{$kentta}{$pelaaja_nro}) {
+						$nimi = $kokoonpanot{$koti_vieras}{$kentta}{$pelaaja_nro};
+						if ($pelaaja->{$player_id}->{nimi} eq $nimi && $pelaaja->{$player_id}->{joukkue} eq $joukkue[$koti_vieras - 1]) {
+							$kokoonpanot{$koti_vieras}{$kentta}{$pelaaja_nro} = $player_id;
+							$pelaavat_pelaajat .= " $player_id ";
+						}
+					}
+				}
+			}
 		}
 	}
 
@@ -996,8 +1014,12 @@ sub kokoonpanot () {
             $html .= "<tr class='$td'>\n";
             for ($koti_vieras = 1; $koti_vieras <= 2; $koti_vieras++) {
                 if (defined $kokoonpanot{$koti_vieras}{$kentta}{$pelaaja_nro}) {
-                    my $player_id = $kokoonpanot{$koti_vieras}{$kentta}{$pelaaja_nro};
-                    $html .= "<td>$pelaaja->{$player_id}->{nimi}</td>\n";
+                    $player_id = $kokoonpanot{$koti_vieras}{$kentta}{$pelaaja_nro};
+                    if (! defined $pelaaja->{$player_id}->{nimi}) {
+						$html .= "<td>$player_id</td>\n";
+					} else {
+						$html .= "<td>$pelaaja->{$player_id}->{nimi}</td>\n";
+					}
                     $html .= "<td>$pelaaja->{$player_id}->{ottelut}</td>\n";
                     $html .= "<td>$pelaaja->{$player_id}->{maalit}</td>\n";
                     $html .= "<td>$pelaaja->{$player_id}->{syotot}</td>\n";
