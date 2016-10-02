@@ -513,14 +513,15 @@ sub periodOptionMenu {
 
 sub playerList {
 	read_player_lists();
-    my @otsikko = ("Nimi", "Pelipaikka", "Joukkue", "Pe", "Ma", "Sy", "Pi", "La", "Arvo", "LPP", "LPP/Peli", "Hinta/Laatu", "Ennuste", "Ennuste");
+    my @otsikko = ("Nimi", "Pelipaikka", "Joukkue", "Pe", "Ma", "Sy", "Pi", "La", "Arvo", "LPP", "LPP/Peli", "Hinta/Laatu", "Ennuste");
 	my $html = "<table border='1' id='playertable' class='w3-text-black w3-striped w3-white'>\n";
     foreach ("thead", "tfoot") {
         $html .= "<$_>\n";
         $html .= "<tr class='w3-black'>\n";
 		foreach (@otsikko) {
-			$html .= "<th>$_</th>\n";
+			$html .= "<th><a href='#'>$_</a></th>\n";
 		}
+		$html .= "<th>Ennuste</th>\n";
         $html .= "</tr>\n";
         $html .= "</$_>\n";
     }
@@ -905,7 +906,7 @@ sub kokoonpanotGames () {
         $_ = $start;
         if (defined $pelipaivat{$joukkue}{$_}{kotipeli}) {
 			if (defined $pelipaivat{$joukkue}{$_}{kokoonpano}) {
-				$html .= "<A class='w3-text-red' HREF='#' onclick=\"Kokoonpanot('$joukkue', '$pelipaivat{$joukkue}{$_}{kokoonpano}')\">$joukkue - $pelipaivat{$joukkue}{$_}{kotipeli}</A><br>\n";
+				$html .= "<A HREF='#' onclick=\"Kokoonpanot('$joukkue', '$pelipaivat{$joukkue}{$_}{kokoonpano}')\">$joukkue - $pelipaivat{$joukkue}{$_}{kotipeli}</A><br>\n";
 			} else {
 				$html .= "$joukkue - $pelipaivat{$joukkue}{$_}{kotipeli}<br>\n";
 			}
@@ -991,7 +992,8 @@ sub kokoonpanot () {
         }
     }
     $html .= "</select><p>\n";
-    $html .= "<table border='1' class='w3-text-black'>\n";
+    $html .= "<div style='overflow:auto;'>\n";
+	$html .= "<table border='1' class='w3-text-black'>\n";
     $html .= "<tr class='w3-black'><th class='w3-center' colspan='10'>$koti<\/th><th class='w3-center' colspan='10'>$vieras</th></tr>\n";
     $html .= "<tr class='w3-black'>\n";
     for (my $i = 0; $i <= 1; $i++) {
@@ -1105,6 +1107,7 @@ sub kokoonpanot () {
         }
     }
     $html .= "</table>\n";
+	$html .= "</div>\n";
 
     return $html;
 }
