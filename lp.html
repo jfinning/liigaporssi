@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
 <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
-<link rel="stylesheet" type="text/css" href="css/lp_new.css">
+<link rel="stylesheet" type="text/css" href="css/lp.css">
 <script type="text/javascript" charset="utf8" src="http://code.jquery.com/jquery-1.12.4.min.js"></script>
 <script type="text/javascript" charset="utf8" src="http://cdn.datatables.net/1.10.12/js/jquery.dataTables.js"></script>
 <script type="text/javascript" charset="utf8" src="js/jquery.dataTables.columnFilter.js"></script>
@@ -303,7 +303,7 @@ function Ottelulista(subList) {
 	var teamFrom = $('#teamFrom option:selected').html();
 	$.ajax({
 		type: 'POST',
-		url: 'lp_new.pl',
+		url: 'lp.pl',
 		data: {'sub':subList,'liiga':league,'start_day':startDay,'end_day':endDay,'team_from':teamFrom},
 		dataType: 'json',
 		success: function(res) {
@@ -328,7 +328,7 @@ function Pelaajalista(subList) {
 	var period = $('#periodOptionMenu option:selected').html();
 	$.ajax({
 		type: 'POST',
-		url: 'lp_new.pl',
+		url: 'lp.pl',
 		data: {'sub':subList,'liiga':league,'vuosi':vuosi,'read_players_from':period},
 		dataType: 'json',
 		success: function(res) {
@@ -367,7 +367,7 @@ function Optimijoukkue(subList) {
 
 	$.ajax({
 		type: 'POST',
-		url: 'lp_new.pl',
+		url: 'lp.pl',
 		data: {'sub':subList,'liiga':league,'read_players_from':period,'start_day':startDay,'end_day':endDay,'selected_teams':teams,'arvo':playerValue,'ottelut':minGames,'joukkueen_hinta':teamValue,'remove_players':removedPlayers,'selected_teams':selectedTeams,'o_maalivahti':g,'o_puolustaja1':d1,'o_puolustaja2':d2,'o_hyokkaaja1':f1,'o_hyokkaaja2':f2,'o_hyokkaaja3':f3},
 		dataType: 'json',
 		success: function(res) {
@@ -391,7 +391,7 @@ function Kokoonpanot(homeTeam, gameNumber) {
 	var period = $('#read_players_from option:selected').html();
 	$.ajax({
 		type: 'POST',
-		url: 'lp_new.pl',
+		url: 'lp.pl',
 		data: {'sub':subList,'liiga':league,'joukkue':homeTeam,'game_nro':gameNumber,'read_players_from':period},
 		dataType: 'json',
 		success: function(res) {
@@ -406,7 +406,7 @@ function Kokoonpanot(homeTeam, gameNumber) {
 }
 
 function Status() {
-	$("#Status").load("status_new.html", function(responseTxt, statusTxt, xhr){
+	$("#Status").load("status.html", function(responseTxt, statusTxt, xhr){
 		if(statusTxt == "success")
 			$("#Status").html(responseTxt);
 		if(statusTxt == "error")
