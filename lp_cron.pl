@@ -226,12 +226,12 @@ sub sm_kokoonpanot {
 	}
 	my $file = "player_stats/$year/player_list_${period}.txt";
     my @sm_joukkue = get_joukkue_list("sm_liiga");
-	my %name_count;
 
     foreach my $joukkue (@sm_joukkue) {
         $final_player_list .= "$joukkue\n";
         my $data = fetch_page("http://www.liigaporssi.fi/team/search-players?player_position=all&player_team=${joukkue}&player_value=all&type=player_search");
 		my %player_id = set_player_ids($data);
+		my %name_count;
 
         $data =~ s/player_value\">(.*?)\&euro;</player_value\"> $1 </g;
         $data =~ s/\">(.*?)</\"> $1 </g;
@@ -480,7 +480,6 @@ sub set_player_ids($) {
 
 	foreach my $line (split(/\n/, $data)) {
 		if ($line =~ /player_card.*?(\d+).*?>(.*?)</) {
-			#$player_id{$2} = $1;
 			push(@{$player_id{$2}}, $1);
 		}
 	}
