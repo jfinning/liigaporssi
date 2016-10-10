@@ -449,21 +449,33 @@ function Status() {
 
 <div id="Pelaajalista" class="link">
 	<center>
-	<select id='yearOptionMenu' onchange="Pelaajalista('playerList')"></select>
-	<select id='periodOptionMenu' onchange="Pelaajalista('playerList')"></select>
-	<p id="nimi" style="display:inline"></p>
-	<p id="pelipaikka" style="display:inline"></p>
-	<p id="joukkue" style="display:inline"></p>
-	<p id="pelit" style="display:inline"></p>
-	<p id="maalit" style="display:inline"></p>
-	<p id="syotot" style="display:inline"></p>
-	<p id="pisteet" style="display:inline"></p>
-	<p id="laukaukset" style="display:inline"></p>
-	<p id="arvo" style="display:inline"></p>
-	<p id="lpp" style="display:inline"></p>
-	<p id="lpp_per_peli" style="display:inline"></p>
-	<p id="hinta_per_laatu" style="display:inline"></p>
-	<p id="ennuste_graafi" style="display:inline"></p>
+	<div style='overflow:auto;'>
+	<table border='1'><tr>
+		<td>
+			<select id='yearOptionMenu' onchange="Pelaajalista('playerList')"></select>
+		</td>
+		<td>
+			<select id='periodOptionMenu' onchange="Pelaajalista('playerList')"></select>
+		</td>
+		<p id="nimi" style="display:inline"></p>
+		<td>
+			<p id="pelipaikka" style="display:inline"></p>
+		</td>
+		<td>
+			<p id="joukkue" style="display:inline"></p>
+		</td>
+		<p id="pelit" style="display:inline"></p>
+		<p id="maalit" style="display:inline"></p>
+		<p id="syotot" style="display:inline"></p>
+		<p id="pisteet" style="display:inline"></p>
+		<p id="laukaukset" style="display:inline"></p>
+		<p id="arvo" style="display:inline"></p>
+		<p id="lpp" style="display:inline"></p>
+		<p id="lpp_per_peli" style="display:inline"></p>
+		<p id="hinta_per_laatu" style="display:inline"></p>
+		<p id="ennuste_graafi" style="display:inline"></p>
+	</tr></table>
+	</div>
 
 	<div style='overflow:auto;' id="playerList"></div>
 	</center>
