@@ -982,7 +982,7 @@ sub kokoonpanot () {
 
     # Jakso
     $html .= "Lue tilastot jaksosta:\n";
-    $html .= "<select id='read_players_from' onchange='Kokoonpanot()'>\n";
+    $html .= "<select id='read_players_from' onchange=\"Kokoonpanot('$koti', '$param_game_nro')\">\n";
     my @jakso = get_jakso();
     foreach my $current_arvo (@jakso) {
         if ($current_arvo eq $param_read_players_from) {
