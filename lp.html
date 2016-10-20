@@ -210,8 +210,15 @@ function changeLeague(league) {
 }
 
 function init() {
-	$('#startDayOption').html('');
-	$('#endDayOption').html('');
+	var elements, i, j;
+	var classes = ["startDayOption", "endDayOption", "selectedTeams", "periodOptionMenu", "maxPelatutPelit"];
+	for (j = 0; j < classes.length; j++) {
+		elements = document.getElementsByClassName(classes[j]);
+		for (i = 0; i < elements.length; i++) {
+			elements[i].innerHTML = '';
+		}
+	}
+	$('.removedPlayers').val('');
 	showSlide(1);
 }
 
@@ -295,9 +302,9 @@ function Ottelulista(subList) {
 		subList = 'gameDays,teamCompareTable,optimalChangeDay,startDayOption,endDayOption';
 	}
 	var league = getSelectedLeague();
-	var startDay = $('#Ottelulista').find('#startDayOption option:selected').html();
-	var endDay = $('#Ottelulista').find('#endDayOption option:selected').html();
-	var teamFrom = $('#teamFrom option:selected').html();
+	var startDay = $('#Ottelulista').find('.startDayOption option:selected').html();
+	var endDay = $('#Ottelulista').find('.endDayOption option:selected').html();
+	var teamFrom = $('.teamFrom option:selected').html();
 
 	ga('set', 'page', '/virtual/' + league + '/Ottelulista.html');
 	ga('send', 'pageview');
@@ -309,13 +316,13 @@ function Ottelulista(subList) {
 		dataType: 'json',
 		success: function(res) {
 			$.each(res, function (name, value) {
-				$('#Ottelulista').find('#' + name).html(value);
+				$('#Ottelulista').find('.' + name).html(value);
 			});
 		},
 		error: function() {
-			$('#gameDays').html("Some problem occurred trying to run Ottelulista");
-			$('#teamCompareTable').html("Some problem occurred trying to run Ottelulista");
-			$('#optimalChangeDay').html("Some problem occurred trying to run Ottelulista");
+			$('.gameDays').html("Some problem occurred trying to run Ottelulista");
+			$('.teamCompareTable').html("Some problem occurred trying to run Ottelulista");
+			$('.optimalChangeDay').html("Some problem occurred trying to run Ottelulista");
 		}
 	});
 }
@@ -325,8 +332,8 @@ function Pelaajalista(subList) {
 		subList = 'playerList,periodOptionMenu,yearOptionMenu';
 	}
 	var league = getSelectedLeague();
-	var vuosi = $('#yearOptionMenu option:selected').html();
-	var period = $('#periodOptionMenu option:selected').html();
+	var vuosi = $('#Pelaajalista').find('.yearOptionMenu option:selected').html();
+	var period = $('#Pelaajalista').find('.periodOptionMenu option:selected').html();
 
 	ga('set', 'page', '/virtual/' + league + '/Pelaajalista.html');
 	ga('send', 'pageview');
@@ -338,12 +345,12 @@ function Pelaajalista(subList) {
 		dataType: 'json',
 		success: function(res) {
 			$.each(res, function (name, value) {
-				$('#Pelaajalista').find('#' + name).html(value);
+				$('#Pelaajalista').find('.' + name).html(value);
 			});
 			initPlayerListTable();
 		},
 		error: function() {
-			$('#playerList').html("Some problem occurred trying to run Pelaajalista");
+			$('.playerList').html("Some problem occurred trying to run Pelaajalista");
 		}
 	});
 }
@@ -353,15 +360,15 @@ function Optimijoukkue(subList) {
 		subList = 'selectedTeams,optimiJoukkue,maxPelatutPelit,periodOptionMenu,startDayOption,endDayOption';
 	}
 	var league = getSelectedLeague();
-	var period = $('#periodOptionMenu option:selected').html();
-	var startDay = $('#Optimijoukkue').find('#startDayOption option:selected').html();
-	var endDay = $('#Optimijoukkue').find('#endDayOption option:selected').html();
-	var playerValue = $('#Optimijoukkue').find('#arvo option:selected').html();
-	var minGames = $('#Optimijoukkue').find('#maxPelatutPelit option:selected').html();
-	var teamValue = $('#joukkueenHinta').val();
-	var removedPlayers = $('#removedPlayers').val();
-	var selectedTeams = $('#selectedTeams').val();
-	var teams = $('#selectedTeams').text();
+	var period = $('#Optimijoukkue').find('.periodOptionMenu option:selected').html();
+	var startDay = $('#Optimijoukkue').find('.startDayOption option:selected').html();
+	var endDay = $('#Optimijoukkue').find('.endDayOption option:selected').html();
+	var playerValue = $('#Optimijoukkue').find('.arvo option:selected').html();
+	var minGames = $('#Optimijoukkue').find('.maxPelatutPelit option:selected').html();
+	var teamValue = $('.joukkueenHinta').val();
+	var removedPlayers = $('.removedPlayers').val();
+	var selectedTeams = $('.selectedTeams').val();
+	var teams = $('.selectedTeams').text();
 
 	var g = $('#Optimijoukkue').find('#o_maalivahti option:selected').val();
 	var d1 = $('#Optimijoukkue').find('#o_puolustaja1 option:selected').val();
@@ -380,11 +387,11 @@ function Optimijoukkue(subList) {
 		dataType: 'json',
 		success: function(res) {
 			$.each(res, function (name, value) {
-				$('#Optimijoukkue').find('#' + name).html(value);
+				$('#Optimijoukkue').find('.' + name).html(value);
 			});
 		},
 		error: function() {
-			$('#playerList').html("Some problem occurred trying to run Pelaajalista");
+			$('.optimiJoukkue').html("Some problem occurred trying to run Pelaajalista");
 		}
 	});
 }
@@ -396,7 +403,7 @@ function Kokoonpanot(homeTeam, gameNumber) {
 		subList = 'kokoonpanotGames,kokoonpanot';
 	}
 	var league = getSelectedLeague();
-	var period = $('#read_players_from option:selected').html();
+	var period = $('#Kokoonpanot').find('.read_players_from option:selected').html();
 
 	ga('set', 'page', '/virtual/' + league + '/Kokoonpanot.html');
 	ga('send', 'pageview');
@@ -408,7 +415,7 @@ function Kokoonpanot(homeTeam, gameNumber) {
 		dataType: 'json',
 		success: function(res) {
 			$.each(res, function (name, value) {
-				$('#Kokoonpanot').find('#' + name).html(value);
+				$('#Kokoonpanot').find('.' + name).html(value);
 			});
 		},
 		error: function() {
@@ -439,11 +446,11 @@ function Status() {
 		<button class="w3-btn slideButton" onclick="showSlide(3)">Vaihdon ajoitus</button>
 	</div>
 	<center><p>
-	Alku: <select id='startDayOption' onchange='Ottelulista()'></select>
-	Loppu: <select id='endDayOption' onchange='Ottelulista()'></select><p>
-	<div style='overflow:auto;' id="gameDays" class="slideDiv"></div>
-	<div style='overflow:auto;' id="teamCompareTable" class="slideDiv"></div>
-	<div style='overflow:auto;' id="optimalChangeDay" class="slideDiv"></div>
+	Alku: <select class='startDayOption' onchange='Ottelulista()'></select>
+	Loppu: <select class='endDayOption' onchange='Ottelulista()'></select><p>
+	<div style='overflow:auto;' class="slideDiv gameDays"></div>
+	<div style='overflow:auto;' class="slideDiv teamCompareTable"></div>
+	<div style='overflow:auto;' class="slideDiv optimalChangeDay"></div>
 	</center>
 </div>
 
@@ -452,10 +459,10 @@ function Status() {
 	<div style='overflow:auto;'>
 	<table border='1'><tr>
 		<td>
-			<select id='yearOptionMenu' onchange="Pelaajalista('playerList')"></select>
+			<select class='yearOptionMenu' onchange="Pelaajalista('playerList')"></select>
 		</td>
 		<td>
-			<select id='periodOptionMenu' onchange="Pelaajalista('playerList')"></select>
+			<select class='periodOptionMenu' onchange="Pelaajalista('playerList')"></select>
 		</td>
 		<p id="nimi" style="display:inline"></p>
 		<td>
@@ -477,7 +484,7 @@ function Status() {
 	</tr></table>
 	</div>
 
-	<div style='overflow:auto;' id="playerList"></div>
+	<div style='overflow:auto;' class="playerList"></div>
 	</center>
 </div>
 
@@ -496,14 +503,14 @@ function Status() {
 			<th>Pelaajan arvo alle</th>
 		</tr>
 		<tr>
-			<td class='w3-center'> <input style='width: 100%' type='text' id='joukkueen_hinta' maxlength='6' value=2000.0> </td>
-			<td class='w3-center'> <select style='width: 100%' id='startDayOption' onchange="Optimijoukkue('endDayOption,optimiJoukkue')"></select> </td>
-			<td class='w3-center'> <select style='width: 100%' id='endDayOption' onchange="Optimijoukkue('startDayOption,optimiJoukkue')"></select> </td>
-			<td class='w3-center'> <select style='width: 100%' id="periodOptionMenu" onchange="Optimijoukkue('maxPelatutPelit,optimiJoukkue')"></select> </td>
-			<td class='w3-center'> <select style='width: 100%' id="maxPelatutPelit" onchange="Optimijoukkue('optimiJoukkue')"></select>	</td>
+			<td class='w3-center'> <input style='width: 100%' type='text' class='joukkueen_hinta' maxlength='6' value=2000.0> </td>
+			<td class='w3-center'> <select style='width: 100%' class='startDayOption' onchange="Optimijoukkue('endDayOption,optimiJoukkue')"></select> </td>
+			<td class='w3-center'> <select style='width: 100%' class='endDayOption' onchange="Optimijoukkue('startDayOption,optimiJoukkue')"></select> </td>
+			<td class='w3-center'> <select style='width: 100%' class="periodOptionMenu" onchange="Optimijoukkue('maxPelatutPelit,optimiJoukkue')"></select> </td>
+			<td class='w3-center'> <select style='width: 100%' class="maxPelatutPelit" onchange="Optimijoukkue('optimiJoukkue')"></select>	</td>
 
 			<td class='w3-center'>    
-			<select style='width: 100%' id="arvo" onchange="Optimijoukkue('optimiJoukkue')">
+			<select style='width: 100%' class="arvo" onchange="Optimijoukkue('optimiJoukkue')">
 			<option>999</option>
 			<option>600</option>
 			<option>550</option>
@@ -528,21 +535,21 @@ function Status() {
 			<th>Pelaajat valitaan näistä joukkueista.<br>Poista joukkue, josta et halua pelaajia.</th>
 		</tr>
 		<tr>
-			<td class='w3-center'><textarea id='remove_players' rows=3 style='width: 100%'></textarea></td>
-			<td class='w3-center'><textarea id='selectedTeams' rows=3 style='width: 100%'></textarea><br></td>
+			<td class='w3-center'><textarea class='removedPlayers' rows=3 style='width: 100%'></textarea></td>
+			<td class='w3-center'><textarea class='selectedTeams' rows=3 style='width: 100%'></textarea><br></td>
 		</tr>
 	</table>
 	</div>
 	<br>
-	<div class="w3-responsive" id="optimiJoukkue"></div>
+	<div class="w3-responsive optimiJoukkue"></div>
 	</div>
 	</center>
 </div>
 
 <div id="Kokoonpanot" class="link">
 	<center>
-	<div id="kokoonpanotGames"></div><br>
-	<div id="kokoonpanot">
+	<div class="kokoonpanotGames"></div><br>
+	<div class="kokoonpanot">
 		<div class="w3-card-4" style="width:50%;">
 		<header class="w3-container w3-black">
 		<b><p>Älykkäät kokoonpanot<p></b>

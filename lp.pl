@@ -982,7 +982,7 @@ sub kokoonpanot () {
 
     # Jakso
     $html .= "Lue tilastot jaksosta:\n";
-    $html .= "<select id='read_players_from' onchange=\"Kokoonpanot('$koti', '$param_game_nro')\">\n";
+    $html .= "<select class='read_players_from' onchange=\"Kokoonpanot('$koti', '$param_game_nro')\">\n";
     my @jakso = get_jakso();
     foreach my $current_arvo (@jakso) {
         if ($current_arvo eq $param_read_players_from) {
@@ -1269,7 +1269,7 @@ sub selectTeamsForm {
     my $html;
     
     my $count = shift;
-    $html .= "Vaihda pelaaja joukkueesta <select id='teamFrom' onchange=\"Ottelulista('optimalChangeDay');\">\n";
+    $html .= "Vaihda pelaaja joukkueesta <select class='teamFrom' onchange=\"Ottelulista('optimalChangeDay');\">\n";
     foreach (sort keys %kaikkipelit) {
         if (/$team_from/) {
             $html .= "<option selected>$_</option>\n";
