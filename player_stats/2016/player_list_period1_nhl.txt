@@ -1,845 +1,850 @@
 Anaheim
 ID Maalivahti O M S P V H JAH TO PM NP JM XXX XX X HGMP/O HGMP Arvo
-3993 Bernier Jonathan 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               305 000
-5407 Gibson John 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               325 000
-4596 Tokarski Dustin 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               260 000
+3993 Bernier Jonathan 6  0  0  0  2  1  0  113  8  0  2  1  0  0  5.50  33               305 000
+5407 Gibson John 13  0  0  0  5  5  3  295  32  1  0  1  1  0  5.77  75               320 000
 ID Puolustaja O M S P AVM AVS VM JA L T B ALV ALH +/- JM XXX XX X HGMP/O HGMP Arvo
-3843 Bieksa Kevin 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               265 000
-4710 Despres Simon 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               220 000
-4972 Fowler Cam 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               280 000
-3283 Guenin Nate 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               190 000
-4925 Holzer Korbinian 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               205 000
-5525 Manson Josh 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               235 000
-3809 Stoner Clayton 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               215 000
-5346 Vatanen Sami 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               355 000
+3843 Bieksa Kevin 16  1  0  1  0  0  0  0  29  35  13  0  0  -2  19  0  0  0  4.75  76               270 000
+4710 Despres Simon 1  0  0  0  0  0  0  0  1  1  1  0  0  0  0  0  0  0  3.00  3               225 000
+4972 Fowler Cam 16  4  6  10  0  0  0  0  33  9  19  0  0  -1  2  2  0  0  7.69  123               345 000
+4925 Holzer Korbinian 5  0  1  1  0  0  0  0  4  7  6  0  0  0  4  0  0  0  4.60  23               210 000
+5686 Lindholm Hampus 3  0  0  0  0  0  0  0  5  2  2  0  0  1  0  0  0  0  3.67  11               295 000
+5525 Manson Josh 16  0  4  4  0  0  0  0  18  33  17  0  0  1  25  0  0  0  5.88  94               280 000
+3809 Stoner Clayton 13  1  2  3  0  0  0  0  13  33  14  0  0  0  26  0  0  1  5.46  71               245 000
+5346 Vatanen Sami 16  1  6  7  0  0  0  0  23  22  33  0  0  2  2  0  0  0  6.88  110               340 000
 ID Hyokkaaja O M S P AVM AVS VM JA L T B ALV ALH +/- JM XXX XX X HGMP/O HGMP Arvo
-4152 Boll Jared 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           200 000
-3802 Cogliano Andrew 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           270 000
-5605 Garbutt Ryan 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           225 000
-3357 Getzlaf Ryan 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           460 000
-3331 Kesler Ryan 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           395 000
-3365 Perry Corey 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           455 000
-4130 Raymond Mason 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           225 000
-6376 Ritchie Nick 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           220 000
-5343 Silfverberg Jakob 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           290 000
+4152 Boll Jared 14  0  1  1  0  0  0  0  6  12  2  0  1  -5  26  0  0  0  1.93  27           210 000
+3802 Cogliano Andrew 16  5  3  8  2  0  0  0  34  15  7  1  5  4  6  1  1  0  6.56  105           320 000
+5432 Cramarossa Joseph 11  1  1  2  0  0  0  0  6  25  8  1  0  0  20  0  0  0  3.18  35           240 000
+5605 Garbutt Ryan 16  1  1  2  0  1  1  0  17  30  9  5  3  -3  12  0  0  1  4.25  68           265 000
+3357 Getzlaf Ryan 13  1  12  13  0  0  0  0  31  12  9  99  84  -3  8  2  0  1  8.15  106           400 000
+3331 Kesler Ryan 16  6  6  12  0  0  1  0  34  26  14  207  134  6  22  0  2  0  10.19  163           410 000
+3365 Perry Corey 16  4  9  13  0  0  0  0  49  14  4  0  4  -4  14  2  0  0  7.25  116           390 000
+5391 Rakell Rickard 7  4  3  7  0  0  2  0  22  16  4  9  7  1  0  0  1  1  11.14  78           370 000
+6376 Ritchie Nick 14  3  1  4  0  0  1  0  32  52  4  2  1  1  8  0  1  0  6.79  95           285 000
+5343 Silfverberg Jakob 16  5  4  9  1  0  2  0  38  7  9  1  2  5  2  0  0  2  7.06  113           330 000
 3698 Thompson Nate 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           215 000
-2780 Vermette Antoine 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           295 000
-5095 Wagner Chris 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           220 000
+2780 Vermette Antoine 16  2  5  7  0  0  0  0  20  15  12  159  84  1  12  0  0  1  7.00  112           310 000
 Arizona
 ID Maalivahti O M S P V H JAH TO PM NP JM XXX XX X HGMP/O HGMP Arvo
-5111 Domingue Louis 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               295 000
-5873 Langhamer Marek 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               265 000
-3811 Peters Justin 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               275 000
-3231 Smith Mike 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               310 000
+5111 Domingue Louis 12  0  0  0  4  8  0  301  34  0  0  0  0  2  4.83  58               305 000
+3231 Smith Mike 2  0  0  0  1  0  0  54  6  0  0  0  0  0  6.50  13               320 000
 ID Puolustaja O M S P AVM AVS VM JA L T B ALV ALH +/- JM XXX XX X HGMP/O HGMP Arvo
-4892 Connauton Kevin 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               240 000
-5445 Dahlbeck Klas 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               205 000
-4686 Ekman-Larsson Oliver 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               405 000
-4287 Goligoski Alex 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               305 000
-4615 McBain Jamie 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               215 000
-3217 Michalek Zbynek 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               225 000
-5381 Murphy Connor 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               240 000
-4475 Schenn Luke 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               250 000
-4568 Stone Michael 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               300 000
-4982 Tinordi Jarred 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               190 000
+7124 Chychrun Jakob 13  1  2  3  0  0  0  0  17  19  14  0  0  -2  23  0  0  0  4.46  58               230 000
+4892 Connauton Kevin 5  0  1  1  0  0  0  0  4  11  2  0  0  0  6  0  0  0  5.00  25               220 000
+6385 DeAngelo Anthony 3  1  1  2  0  0  0  0  4  0  3  0  0  1  0  1  0  0  8.00  24               245 000
+4686 Ekman-Larsson Oliver 14  5  3  8  0  0  0  1  37  24  13  0  0  0  6  1  0  1  9.29  130               395 000
+4287 Goligoski Alex 14  0  6  6  0  0  0  0  20  13  22  0  0  -7  4  0  0  0  4.57  64               280 000
+5381 Murphy Connor 14  0  4  4  0  0  0  0  18  32  29  0  0  -3  10  0  0  0  5.86  82               270 000
+4475 Schenn Luke 13  0  1  1  0  0  0  0  15  40  21  0  0  -1  5  0  0  0  4.46  58               240 000
+4568 Stone Michael 5  0  3  3  0  0  0  0  6  9  8  0  0  -2  0  0  0  0  6.40  32               310 000
 ID Hyokkaaja O M S P AVM AVS VM JA L T B ALV ALH +/- JM XXX XX X HGMP/O HGMP Arvo
-5070 Cunningham Craig 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           200 000
-1354 Doan Shane 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           310 000
-5991 Domi Max 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           305 000
-6060 Duclair Anthony 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           270 000
-3794 Hanzal Martin 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           355 000
-5747 Martinook Jordan 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           220 000
-3704 Richardson Brad 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           255 000
-5480 Rieder Tobias 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           250 000
-2598 Vrbata Radim 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           270 000
-4323 White Ryan 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           215 000
+3812 Bolland Dave 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           230 000
+6753 Crouse Lawson 11  1  0  1  0  0  0  0  13  21  4  0  0  -4  4  1  0  0  2.82  31           230 000
+6019 Dauphin Laurent 10  1  1  2  1  0  0  0  12  14  5  13  15  -1  4  0  0  0  3.70  37           235 000
+1354 Doan Shane 14  1  3  4  0  0  0  0  27  22  7  20  22  -5  2  1  0  0  3.93  55           255 000
+5991 Domi Max 14  1  10  11  0  0  1  0  29  10  7  3  2  1  11  0  1  0  7.07  99           310 000
+6060 Duclair Anthony 14  1  2  3  0  0  1  0  18  3  2  0  0  0  2  1  0  0  2.93  41           240 000
+3794 Hanzal Martin 9  2  2  4  0  0  0  0  26  18  8  112  66  -2  2  1  1  0  7.78  70           350 000
+5747 Martinook Jordan 14  5  3  8  0  1  0  0  22  12  11  62  84  1  8  1  0  1  6.00  84           280 000
+4160 McGinn Jamie 9  3  3  6  0  0  1  0  17  15  5  0  0  -1  6  0  0  0  6.89  62           295 000
+3704 Richardson Brad 14  4  4  8  2  1  0  0  23  18  7  107  104  -1  13  0  1  1  7.21  101           285 000
+5480 Rieder Tobias 13  3  3  6  0  1  0  0  22  4  10  0  2  1  0  0  0  0  4.69  61           275 000
+6745 Strome Dylan 6  0  1  1  0  0  0  0  4  3  2  26  38  -5  0  0  0  0  0.33  2           220 000
+2598 Vrbata Radim 14  6  5  11  0  0  0  0  39  10  3  3  0  1  4  0  4  0  8.00  112           355 000
+4323 White Ryan 13  1  2  3  0  0  1  0  13  45  6  6  16  -4  20  0  0  0  4.69  61           260 000
 Boston
 ID Maalivahti O M S P V H JAH TO PM NP JM XXX XX X HGMP/O HGMP Arvo
-4292 Khudobin Anton 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               295 000
-3798 Rask Tuukka 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               330 000
+4292 Khudobin Anton 2  0  0  0  0  2  0  45  8  0  2  0  0  0  -0.50  -1               290 000
+5139 McIntyre Zane 3  0  0  0  0  2  0  61  10  0  0  0  0  0  1.00  3               270 000
+3798 Rask Tuukka 11  0  2  2  10  1  0  291  17  3  0  2  0  5  15.82  174               360 000
 ID Puolustaja O M S P AVM AVS VM JA L T B ALV ALH +/- JM XXX XX X HGMP/O HGMP Arvo
-1700 Chara Zdeno 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               350 000
-5632 Krug Torey 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               340 000
-3417 Liles John-Michael 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               235 000
-3816 McQuaid Adam 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               225 000
-5841 Miller Colin 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               215 000
+6779 Carlo Brandon 16  2  2  4  0  0  0  0  20  16  33  0  0  11  15  0  1  0  7.94  127               295 000
+1700 Chara Zdeno 16  1  3  4  0  0  0  0  25  25  35  0  0  12  17  0  0  0  8.56  137               360 000
+5632 Krug Torey 16  1  3  4  0  0  0  0  51  16  15  0  0  -4  6  0  0  0  5.31  85               325 000
+3417 Liles John-Michael 16  0  4  4  0  0  0  0  13  10  25  1  0  -4  2  0  0  0  3.38  54               235 000
+3816 McQuaid Adam 11  0  0  0  0  0  0  0  15  21  19  0  0  1  11  0  0  0  5.00  55               245 000
+5841 Miller Colin 15  1  1  2  0  0  0  0  24  16  8  0  0  -6  4  0  0  0  2.60  39               215 000
 5615 Miller Kevan 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               240 000
-5384 Morrow Joe 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               200 000
+5384 Morrow Joe 3  0  0  0  0  0  0  0  4  5  1  0  0  -1  4  0  0  0  3.33  10               220 000
 ID Hyokkaaja O M S P AVM AVS VM JA L T B ALV ALH +/- JM XXX XX X HGMP/O HGMP Arvo
-3861 Backes David 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           365 000
-4426 Beleskey Matt 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           295 000
-3383 Bergeron Patrice 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           435 000
-4959 Hayes Jimmy 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           230 000
-3898 Krejci David 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           400 000
-4351 Marchand Brad 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           375 000
-2786 Moore Dominic 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           220 000
-4260 Nash Riley 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           240 000
-6391 Pastrnak David 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           245 000
-5315 Randell Tyler 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           200 000
-5018 Spooner Ryan 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           280 000
+6739 Acciari Noel 12  0  2  2  0  0  0  0  8  26  2  7  12  1  4  0  0  0  2.83  34           230 000
+3861 Backes David 11  3  4  7  0  0  0  0  26  39  7  34  39  9  15  0  1  0  10.36  114           390 000
+4426 Beleskey Matt 15  1  2  3  0  0  0  0  24  34  8  19  24  -4  15  2  0  0  4.40  66           270 000
+3383 Bergeron Patrice 13  2  2  4  0  0  1  0  48  11  10  181  127  0  4  1  1  1  7.31  95           395 000
+6721 Czarnik Austin 12  2  2  4  0  0  1  0  19  3  8  5  14  -1  4  0  1  0  3.92  47           240 000
+4959 Hayes Jimmy 14  0  0  0  0  0  1  0  22  17  1  1  2  -9  7  0  0  0  1.64  23           220 000
+3898 Krejci David 16  2  8  10  0  0  1  0  32  12  14  114  112  -2  6  0  2  1  6.81  109           340 000
+5498 Kuraly Sean 2  0  0  0  0  0  0  0  3  1  0  0  2  -1  0  0  0  0  0.50  1           190 000
+4351 Marchand Brad 16  5  11  16  0  0  2  0  39  10  7  9  6  8  16  0  2  1  9.81  157           410 000
+2786 Moore Dominic 16  4  2  6  1  0  1  0  19  4  11  73  60  2  12  1  0  0  5.81  93           255 000
+4260 Nash Riley 16  1  2  3  0  0  0  0  23  7  7  87  72  1  4  0  0  0  3.56  57           250 000
+6391 Pastrnak David 14  10  4  14  0  0  2  0  48  10  4  0  1  11  2  3  0  0  10.57  148           380 000
+5931 Schaller Tim 13  2  2  4  0  0  1  0  17  13  7  8  3  0  13  1  0  0  5.00  65           250 000
+5018 Spooner Ryan 15  3  4  7  0  0  0  0  34  6  3  2  5  -2  6  0  0  0  4.67  70           270 000
 6707 Vatrano Frank 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           240 000
 Buffalo
 ID Maalivahti O M S P V H JAH TO PM NP JM XXX XX X HGMP/O HGMP Arvo
-4762 Lehner Robin 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               305 000
-5341 Nilsson Anders 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               285 000
-5853 Ullmark Linus 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               275 000
+4762 Lehner Robin 11  0  0  0  4  5  2  311  26  0  0  0  2  0  7.36  81               315 000
+5341 Nilsson Anders 4  0  0  0  1  1  2  130  8  1  0  0  0  2  14.25  57               290 000
 ID Puolustaja O M S P AVM AVS VM JA L T B ALV ALH +/- JM XXX XX X HGMP/O HGMP Arvo
-4473 Bogosian Zach 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               270 000
-4585 Falk Justin 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               205 000
-3952 Franson Cody 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               255 000
-3492 Gorges Josh 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               230 000
-4694 Kulikov Dmitry 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               265 000
-5733 McCabe Jake 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               220 000
-5987 Ristolainen Rasmus 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               320 000
+4473 Bogosian Zach 9  0  0  0  0  0  0  0  13  6  15  0  0  -2  6  0  0  0  3.22  29               230 000
+4585 Falk Justin 2  0  0  0  0  0  0  0  2  3  0  0  0  -1  0  0  0  0  1.00  2               200 000
+3952 Franson Cody 15  0  4  4  0  0  0  0  24  9  10  0  0  3  4  0  0  0  4.80  72               260 000
+3492 Gorges Josh 15  0  0  0  0  0  0  0  4  37  30  0  0  -2  14  0  0  0  4.00  60               250 000
+4694 Kulikov Dmitry 12  0  0  0  0  0  0  0  6  12  13  0  0  -4  10  0  0  0  2.33  28               225 000
+5733 McCabe Jake 15  0  3  3  0  0  0  0  9  12  15  0  0  2  10  0  0  0  4.47  67               255 000
+5987 Ristolainen Rasmus 15  0  8  8  0  0  0  0  28  34  25  0  0  -3  12  0  0  0  7.53  113               340 000
 ID Hyokkaaja O M S P AVM AVS VM JA L T B ALV ALH +/- JM XXX XX X HGMP/O HGMP Arvo
-5443 Catenacci Daniel 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           195 000
-5345 Deslauriers Nicolas 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           210 000
+6049 Baptiste Nicholas 10  2  0  2  0  0  0  0  10  5  1  1  2  2  6  0  0  0  3.50  35           245 000
+6037 Carrier William 5  0  0  0  0  0  0  0  10  19  2  0  0  2  0  0  0  0  4.40  22           215 000
+5345 Deslauriers Nicolas 7  0  0  0  0  0  0  0  6  16  1  0  0  -3  4  0  0  0  2.14  15           215 000
 6744 Eichel Jack 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           345 000
-4502 Ennis Tyler 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           280 000
-4779 Foligno Marcus 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           245 000
-2144 Gionta Brian 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           250 000
-5694 Girgensons Zemgus 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           245 000
-5260 Grant Derek 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           220 000
-4684 Kane Evander 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           350 000
-5029 Larsson Johan 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           235 000
-4040 Moulson Matt 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           235 000
-4098 O'Reilly Cal 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           205 000
-4786 O'Reilly Ryan 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           385 000
-3988 Okposo Kyle 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           360 000
-6368 Reinhart Sam 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           265 000
+4502 Ennis Tyler 12  1  1  2  0  0  0  0  29  5  3  0  3  -6  0  0  0  0  2.33  28           255 000
+4779 Foligno Marcus 15  3  2  5  0  0  0  0  25  52  12  0  1  2  8  1  0  0  6.27  94           275 000
+2144 Gionta Brian 15  3  4  7  0  0  1  0  35  11  7  7  7  0  4  0  1  0  5.40  81           290 000
+5694 Girgensons Zemgus 15  1  3  4  0  0  0  0  31  17  7  68  67  -5  4  0  0  0  4.00  60           260 000
+5260 Grant Derek 15  0  2  2  0  0  0  0  12  14  9  83  67  -1  13  0  0  0  3.47  52           225 000
+4684 Kane Evander 4  0  0  0  0  0  0  0  8  9  2  7  6  -3  10  0  0  0  5.00  20           280 000
+5029 Larsson Johan 15  2  4  6  0  0  2  0  14  16  12  110  112  -4  6  1  0  0  4.47  67           255 000
+4040 Moulson Matt 15  6  1  7  0  0  0  0  42  10  8  0  0  -1  2  1  0  0  5.47  82           295 000
+4786 O'Reilly Ryan 13  4  5  9  0  0  1  0  43  1  5  187  122  0  4  1  1  2  8.62  112           370 000
+3988 Okposo Kyle 14  5  4  9  0  0  0  0  32  13  6  14  12  4  4  1  0  1  6.93  97           330 000
+6368 Reinhart Sam 15  2  4  6  0  0  1  0  34  4  5  29  39  0  2  1  1  1  4.60  69           260 000
 Calgary
 ID Maalivahti O M S P V H JAH TO PM NP JM XXX XX X HGMP/O HGMP Arvo
-4136 Elliott Brian 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               315 000
-4726 Johnson Chad 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               290 000
+4136 Elliott Brian 11  0  0  0  3  8  0  277  37  0  0  1  2  1  3.36  37               300 000
+4726 Johnson Chad 5  0  0  0  2  2  1  125  15  0  0  0  1  0  5.00  25               270 000
 ID Puolustaja O M S P AVM AVS VM JA L T B ALV ALH +/- JM XXX XX X HGMP/O HGMP Arvo
-4732 Brodie T.J. 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               340 000
-3487 Engelland Deryk 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               220 000
-3614 Giordano Mark 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               380 000
-5370 Hamilton Dougie 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               330 000
-5560 Jokipakka Jyrki 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               210 000
+4732 Brodie T.J. 16  0  3  3  0  0  0  0  22  10  18  0  0  -11  4  0  0  0  2.56  41               280 000
+3487 Engelland Deryk 16  1  3  4  0  0  1  0  19  27  35  0  0  8  14  0  1  0  7.50  120               295 000
+3614 Giordano Mark 16  1  4  5  0  1  0  0  38  12  43  0  0  -3  18  1  0  0  6.81  109               370 000
+5370 Hamilton Dougie 16  2  4  6  0  0  1  0  42  28  15  0  0  -9  18  0  0  1  6.50  104               315 000
+5560 Jokipakka Jyrki 12  1  3  4  0  0  0  0  5  5  11  0  0  -3  4  0  0  0  3.58  43               225 000
+5795 Kulak Brett 8  0  3  3  0  0  0  0  7  3  7  0  0  3  8  1  0  0  6.75  54               275 000
 3645 Smid Ladislav 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               210 000
-3508 Wideman Dennis 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               280 000
-5424 Wotherspoon Tyler 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               190 000
+3508 Wideman Dennis 9  2  3  5  0  0  0  0  21  8  10  0  0  3  2  1  0  0  8.22  74               305 000
 ID Hyokkaaja O M S P AVM AVS VM JA L T B ALV ALH +/- JM XXX XX X HGMP/O HGMP Arvo
-6370 Bennett Sam 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           255 000
-4866 Bollig Brandon 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           185 000
-5207 Bouma Lance 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           205 000
-3947 Brouwer Troy 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           280 000
-5648 Chiasson Alex 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           220 000
-5106 Ferland Michael 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           225 000
-3992 Frolik Michael 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           275 000
-3292 Stajan Matt 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           235 000
-5334 Vey Linden 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           225 000
+4263 Backlund Mikael 16  1  6  7  0  2  0  0  32  10  15  141  126  -2  6  1  1  1  5.81  93           300 000
+6370 Bennett Sam 16  3  4  7  0  0  0  0  19  33  2  82  91  -3  26  0  0  1  6.13  98           290 000
+5207 Bouma Lance 13  0  1  1  0  0  0  0  8  33  12  0  1  -2  4  0  0  0  3.15  41           220 000
+3947 Brouwer Troy 16  4  3  7  1  0  0  0  25  41  11  9  19  -6  10  0  0  0  5.81  93           285 000
+5648 Chiasson Alex 16  2  2  4  0  0  0  0  24  19  2  0  9  1  14  1  0  0  3.94  63           235 000
+5106 Ferland Michael 16  3  4  7  0  0  0  0  25  37  2  0  0  -1  5  0  0  0  5.13  82           265 000
+3992 Frolik Michael 16  5  5  10  2  0  0  0  37  10  12  6  5  0  4  1  1  0  7.00  112           330 000
+5470 Gaudreau Johnny 16  4  6  10  0  0  0  0  42  3  4  0  0  -10  0  0  1  0  4.75  76           350 000
+5102 Hamilton Freddie 6  0  0  0  0  0  0  0  8  16  0  14  10  0  0  0  0  0  3.17  19           225 000
+5985 Monahan Sean 16  4  2  6  0  0  0  1  32  7  6  146  151  -10  6  0  0  1  4.44  71           330 000
+6003 Shinkaruk Hunter 3  0  0  0  0  0  0  0  2  1  1  0  0  -4  0  0  0  0  0.00  0           195 000
+3292 Stajan Matt 16  0  4  4  0  0  0  0  15  14  13  82  61  2  6  0  0  0  4.25  68           255 000
+7114 Tkachuk Matthew 12  3  3  6  0  0  1  0  22  13  3  1  1  3  17  0  1  1  7.08  85           250 000
+3938 Versteeg Kris 12  2  2  4  0  0  0  0  14  1  5  9  5  4  2  1  1  0  4.42  53           270 000
+5334 Vey Linden 2  0  0  0  0  0  0  0  1  0  0  3  9  -1  0  0  0  0  -1.50  -3           200 000
 Carolina
 ID Maalivahti O M S P V H JAH TO PM NP JM XXX XX X HGMP/O HGMP Arvo
-4870 Lack Eddie 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               290 000
-3164 Ward Cam 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               310 000
+4870 Lack Eddie 5  0  0  0  1  2  1  89  15  0  0  0  0  0  1.20  6               290 000
+3164 Ward Cam 10  0  0  0  3  4  3  256  28  0  2  1  1  0  5.60  56               310 000
 ID Puolustaja O M S P AVM AVS VM JA L T B ALV ALH +/- JM XXX XX X HGMP/O HGMP Arvo
-5010 Faulk Justin 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               365 000
-2571 Hainsey Ron 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               255 000
-6747 Hanifin Noah 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               245 000
-5373 Murphy Ryan 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               240 000
-6046 Pesce Brett 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               220 000
-5810 Slavin Jaccob 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               235 000
-5647 Tennyson Matt 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               200 000
+5445 Dahlbeck Klas 9  1  2  3  0  0  0  0  5  13  6  0  0  0  12  0  0  0  5.89  53               260 000
+5010 Faulk Justin 11  3  3  6  0  0  0  0  26  16  11  0  0  -5  8  1  0  0  7.45  82               340 000
+2571 Hainsey Ron 14  1  2  3  1  0  0  0  16  19  12  0  0  -2  6  0  0  0  4.43  62               255 000
+6747 Hanifin Noah 14  0  7  7  0  0  0  0  28  8  9  0  0  -8  6  0  0  0  4.64  65               265 000
+5373 Murphy Ryan 4  0  0  0  0  0  0  0  1  0  5  0  0  -6  0  0  0  0  -1.75  -7               225 000
+6046 Pesce Brett 14  0  3  3  0  0  0  0  16  10  27  0  0  1  4  0  0  0  4.79  67               250 000
+5810 Slavin Jaccob 14  1  4  5  0  0  1  0  21  6  27  0  0  0  2  1  1  0  5.93  83               290 000
+5647 Tennyson Matt 1  0  0  0  0  0  0  0  0  0  0  0  0  2  0  0  0  0  6.00  6               210 000
 ID Hyokkaaja O M S P AVM AVS VM JA L T B ALV ALH +/- JM XXX XX X HGMP/O HGMP Arvo
-6777 Aho Sebastian 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           250 000
-3814 Bickell Bryan 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           245 000
-5727 Di Giuseppe Phillip 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           250 000
-5984 Lindholm Elias 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           285 000
-2939 McClement Jay 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           210 000
-5347 Nestrasil Andrej 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           240 000
-5063 Nordstrom Joakim 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           235 000
-5410 Rask Victor 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           325 000
-4967 Skinner Jeff 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           310 000
-3980 Staal Jordan 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           355 000
-4645 Stalberg Viktor 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           220 000
-3709 Stempniak Lee 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           285 000
-5698 Teravainen Teuvo 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           260 000
+6777 Aho Sebastian 14  2  7  9  0  0  0  0  28  6  2  0  1  0  2  0  0  1  5.21  73           270 000
+3814 Bickell Bryan 7  1  0  1  0  0  1  0  6  10  1  0  2  -1  4  0  0  0  3.14  22           225 000
+5984 Lindholm Elias 14  0  3  3  0  1  0  0  29  19  12  92  80  -8  2  0  0  0  3.50  49           245 000
+2939 McClement Jay 14  0  0  0  0  0  0  0  8  12  3  54  52  -8  0  0  0  0  1.07  15           185 000
+5736 McGinn Brock 1  0  0  0  0  0  0  0  0  1  1  0  0  0  0  0  0  0  2.00  2           215 000
+5347 Nestrasil Andrej 8  1  1  2  0  0  0  0  18  9  2  2  2  -4  0  1  0  0  3.13  25           235 000
+5063 Nordstrom Joakim 14  0  2  2  0  0  0  0  20  15  11  1  1  -5  2  0  0  0  2.79  39           230 000
+5410 Rask Victor 14  6  6  12  0  0  0  0  33  5  3  100  118  3  2  1  0  0  6.79  95           325 000
+6741 Ryan Derek 1  0  0  0  0  0  0  0  1  1  0  9  6  0  0  0  0  0  3.00  3           235 000
+4967 Skinner Jeff 13  6  7  13  0  0  0  0  49  9  5  3  8  0  8  1  1  1  9.15  119           365 000
+3980 Staal Jordan 14  5  4  9  0  0  0  0  34  27  4  152  99  -1  6  0  1  0  8.14  114           360 000
+4645 Stalberg Viktor 13  2  0  2  0  0  1  0  17  21  2  0  1  -4  13  0  0  0  3.77  49           240 000
+3709 Stempniak Lee 14  4  4  8  0  0  0  0  22  26  4  1  2  4  10  1  1  0  7.00  98           310 000
+5698 Teravainen Teuvo 14  4  4  8  0  0  1  0  19  6  2  9  18  -5  0  1  1  1  4.43  62           265 000
 Chicago
 ID Maalivahti O M S P V H JAH TO PM NP JM XXX XX X HGMP/O HGMP Arvo
-3390 Crawford Corey 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               340 000
-6211 Darling Scott 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               290 000
+3390 Crawford Corey 13  0  0  0  8  3  2  366  26  2  0  0  2  3  11.31  147               350 000
+6211 Darling Scott 4  0  0  0  3  0  0  96  10  0  0  1  0  0  7.25  29               305 000
 ID Puolustaja O M S P AVM AVS VM JA L T B ALV ALH +/- JM XXX XX X HGMP/O HGMP Arvo
-1923 Campbell Brian 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               270 000
-5783 Gustafsson Erik 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               235 000
-4206 Hjalmarsson Niklas 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               255 000
-3266 Keith Duncan 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               375 000
-7103 Kempny Michal 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               225 000
-1930 Rozsival Michal 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               215 000
-3352 Seabrook Brent 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               370 000
-6309 Svedberg Viktor 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               200 000
-6340 Van Riemsdyk Trevor 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               235 000
+1923 Campbell Brian 16  2  5  7  0  0  0  0  19  12  14  0  0  6  6  0  0  0  6.94  111               300 000
+6494 Forsling Gustav 14  1  3  4  0  0  0  0  19  9  5  0  0  3  2  0  0  0  4.64  65               230 000
+4206 Hjalmarsson Niklas 15  2  2  4  0  0  0  0  11  6  34  0  0  8  2  0  0  0  6.20  93               255 000
+3266 Keith Duncan 16  0  12  12  0  0  0  0  38  5  17  0  0  7  6  1  0  0  8.75  140               390 000
+7103 Kempny Michal 14  0  0  0  0  0  0  0  13  27  18  0  0  4  8  0  0  0  4.21  59               235 000
+1930 Rozsival Michal 4  0  1  1  0  0  0  0  3  14  7  0  0  0  0  0  0  0  5.25  21               220 000
+3352 Seabrook Brent 16  1  9  10  0  0  0  0  27  24  25  0  0  10  2  0  0  0  9.00  144               385 000
+6340 Van Riemsdyk Trevor 2  0  0  0  0  0  0  0  0  2  3  0  0  -1  4  0  0  0  3.00  6               225 000
 ID Hyokkaaja O M S P AVM AVS VM JA L T B ALV ALH +/- JM XXX XX X HGMP/O HGMP Arvo
-4289 Anisimov Artem 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           320 000
-4912 Desjardins Andrew 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           210 000
-6009 Hartman Ryan 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           220 000
-1640 Hossa Marian 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           340 000
-4240 Kane Patrick 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           485 000
-4958 Kruger Marcus 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           230 000
-4602 Mashinter Brandon 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           190 000
-6100 Motte Tyler 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           235 000
-6728 Panarin Artemi 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           410 000
-4766 Panik Richard 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           200 000
-6363 Rasmussen Dennis 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           215 000
-3981 Toews Jonathan 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           470 000
-3133 Tootoo Jordin 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           205 000
+4289 Anisimov Artem 15  8  9  17  0  0  2  1  26  8  3  94  125  13  12  1  2  1  10.27  154           390 000
+4912 Desjardins Andrew 3  0  0  0  0  0  0  0  4  4  2  1  0  1  2  0  0  0  4.33  13           250 000
+6009 Hartman Ryan 12  2  1  3  0  0  0  0  22  18  6  1  3  0  2  2  0  0  4.33  52           240 000
+5859 Hinostroza Vincent 8  0  0  0  0  0  0  0  6  5  6  4  4  -2  0  0  0  0  1.38  11           195 000
+1640 Hossa Marian 15  9  6  15  0  0  0  1  39  5  10  3  1  7  4  1  3  2  10.13  152           375 000
+4240 Kane Patrick 16  6  12  18  0  0  2  0  51  6  2  3  13  8  12  0  0  3  10.00  160           450 000
+4958 Kruger Marcus 16  1  3  4  0  0  0  0  16  9  7  103  104  5  12  0  0  0  4.19  67           245 000
+6100 Motte Tyler 13  3  3  6  0  0  0  0  22  10  12  2  2  5  10  0  0  0  6.38  83           285 000
+6728 Panarin Artemi 16  6  10  16  0  0  1  1  43  7  0  1  0  12  13  2  0  1  9.69  155           410 000
+4766 Panik Richard 16  7  4  11  0  0  1  0  22  41  7  0  2  5  4  0  0  1  7.88  126           310 000
+6363 Rasmussen Dennis 14  1  0  1  0  0  0  0  15  14  13  20  32  0  2  0  0  0  2.57  36           220 000
+6386 Schmaltz Nick 16  1  3  4  0  0  1  0  8  7  7  31  61  -1  2  0  0  0  1.94  31           195 000
+3981 Toews Jonathan 16  3  9  12  0  0  2  0  42  10  4  235  151  5  13  0  3  0  9.25  148           385 000
+3133 Tootoo Jordin 15  0  0  0  0  0  0  0  19  15  2  1  0  0  9  0  0  0  2.27  34           215 000
 Colorado
 ID Maalivahti O M S P V H JAH TO PM NP JM XXX XX X HGMP/O HGMP Arvo
-5022 Pickard Calvin 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               290 000
-4003 Varlamov Semyon 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               320 000
+5022 Pickard Calvin 5  0  0  0  3  1  0  108  9  1  0  1  0  1  9.00  45               295 000
+4003 Varlamov Semyon 10  0  0  0  3  7  0  268  31  1  0  0  1  1  5.80  58               315 000
 ID Puolustaja O M S P AVM AVS VM JA L T B ALV ALH +/- JM XXX XX X HGMP/O HGMP Arvo
-5281 Barrie Tyson 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               345 000
-3203 Beauchemin Francois 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               310 000
-6012 Bigras Chris 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               205 000
-4917 Gelinas Eric 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               240 000
-3979 Johnson Erik 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               290 000
-2891 Tyutin Fedor 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               215 000
-4862 Wiercioch Patrick 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               225 000
-5995 Zadorov Nikita 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               255 000
+5281 Barrie Tyson 14  1  5  6  0  0  1  0  35  11  13  0  0  -10  2  1  0  0  4.71  66               330 000
+3203 Beauchemin Francois 14  0  3  3  0  0  0  0  21  15  23  0  0  0  4  0  0  0  4.64  65               270 000
+4917 Gelinas Eric 6  0  1  1  0  0  0  0  6  3  3  0  0  -1  6  0  0  0  3.17  19               220 000
+3979 Johnson Erik 14  0  6  6  0  0  0  0  31  34  38  0  0  -5  2  0  0  0  6.57  92               320 000
+2891 Tyutin Fedor 10  0  3  3  0  0  0  0  5  19  10  0  0  -3  8  0  0  0  4.50  45               240 000
+4862 Wiercioch Patrick 12  1  4  5  0  0  0  0  17  14  15  0  0  -1  11  0  0  0  6.17  74               255 000
+5995 Zadorov Nikita 14  0  2  2  0  0  0  0  11  32  17  0  0  -5  14  0  0  0  4.14  58               230 000
 ID Hyokkaaja O M S P AVM AVS VM JA L T B ALV ALH +/- JM XXX XX X HGMP/O HGMP Arvo
-4492 Colborne Joe 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           250 000
-3835 Comeau Blake 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           265 000
-4683 Duchene Matt 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           375 000
-5692 Grigorenko Mikhail 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           235 000
-1453 Iginla Jarome 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           315 000
-5363 Landeskog Gabriel 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           365 000
-5980 MacKinnon Nathan 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           360 000
-6732 Martinsen Andreas 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           225 000
-4071 McLeod Cody 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           210 000
-3692 Mitchell John 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           230 000
-6752 Rantanen Mikko 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           235 000
-4886 Smith Ben 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           190 000
-3928 Soderberg Carl 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           310 000
+3632 Bourque Rene 12  4  1  5  0  0  0  1  24  24  8  0  3  -5  13  0  0  1  6.33  76           280 000
+4492 Colborne Joe 14  3  1  4  0  0  0  0  16  10  5  18  32  -5  4  0  0  1  3.00  42           235 000
+3835 Comeau Blake 10  1  1  2  0  0  0  0  13  16  4  25  23  -2  14  0  0  0  4.80  48           275 000
+4683 Duchene Matt 13  6  5  11  0  0  2  0  30  4  10  84  58  0  2  0  0  2  8.54  111           370 000
+5692 Grigorenko Mikhail 14  0  5  5  0  0  0  0  20  7  4  26  30  -3  8  0  0  0  3.43  48           250 000
+1453 Iginla Jarome 14  2  0  2  0  0  0  0  22  20  2  4  4  -5  27  0  0  0  3.43  48           250 000
+5363 Landeskog Gabriel 14  3  4  7  0  0  1  1  30  31  5  8  12  -2  9  0  1  1  6.57  92           340 000
+5980 MacKinnon Nathan 14  2  6  8  0  0  0  0  42  10  1  123  107  -5  0  1  1  0  5.43  76           345 000
+6732 Martinsen Andreas 14  1  0  1  0  0  0  0  16  42  8  1  0  0  11  0  0  0  4.36  61           255 000
+4071 McLeod Cody 7  0  0  0  0  0  0  0  2  10  0  0  0  0  19  0  0  0  2.57  18           215 000
+3692 Mitchell John 9  0  0  0  0  0  0  0  5  7  5  35  27  0  4  0  0  0  2.44  22           220 000
+6752 Rantanen Mikko 9  1  1  2  0  0  0  0  18  1  6  6  1  -7  2  1  0  0  2.67  24           245 000
+3928 Soderberg Carl 14  2  1  3  0  0  0  0  24  4  11  77  84  -3  8  0  0  0  3.36  47           260 000
 Columbus
 ID Maalivahti O M S P V H JAH TO PM NP JM XXX XX X HGMP/O HGMP Arvo
-4901 Bobrovsky Sergei 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               335 000
-5753 Korpisalo Joonas 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               280 000
-3747 McElhinney Curtis 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               290 000
+4901 Bobrovsky Sergei 12  0  0  0  7  4  1  352  26  3  2  1  0  4  12.92  155               345 000
+3747 McElhinney Curtis 2  0  0  0  0  0  1  50  3  0  0  1  0  0  7.50  15               285 000
 ID Puolustaja O M S P AVM AVS VM JA L T B ALV ALH +/- JM XXX XX X HGMP/O HGMP Arvo
-4895 Goloubef Cody 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               200 000
-3777 Johnson Jack 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               300 000
-5983 Jones Seth 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               280 000
-5682 Murray Ryan 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               260 000
-5127 Prout Dalton 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               210 000
-4953 Savard David 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               290 000
+3777 Johnson Jack 13  0  2  2  0  0  0  0  17  22  25  0  0  5  8  1  0  0  6.08  79               305 000
+5983 Jones Seth 10  3  3  6  0  0  0  1  15  14  21  0  0  1  0  1  0  0  8.80  88               330 000
+5682 Murray Ryan 8  0  1  1  0  0  0  0  5  3  13  0  0  2  4  0  0  0  4.13  33               255 000
+6931 Nutivaara Markus 13  1  1  2  0  0  0  0  12  6  5  0  0  2  2  0  0  0  3.38  44               220 000
+5127 Prout Dalton 8  0  0  0  0  0  0  0  3  18  10  0  0  2  8  0  0  0  4.88  39               235 000
+4953 Savard David 13  1  3  4  0  0  0  0  13  23  21  0  0  1  8  0  0  0  6.23  81               285 000
+6750 Werenski Zachary 13  4  8  12  0  0  0  1  32  11  14  0  0  3  4  0  1  1  11.15  145               365 000
 ID Hyokkaaja O M S P AVM AVS VM JA L T B ALV ALH +/- JM XXX XX X HGMP/O HGMP Arvo
-5785 Anderson Josh 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           215 000
-5282 Atkinson Cam 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           295 000
-6068 Bjorkstrand Oliver 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           220 000
-4794 Calvert Matt 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           225 000
-3274 Campbell Gregory 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           210 000
-3880 Dubinsky Brandon 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           360 000
-4008 Foligno Nick 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           340 000
-4245 Gagner Sam 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           240 000
-2418 Hartnell Scott 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           320 000
-5405 Jenner Boone 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           335 000
-5421 Karlsson William 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           245 000
-5411 Saad Brandon 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           310 000
-5993 Wennberg Alexander 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           275 000
+5785 Anderson Josh 13  5  1  6  0  0  1  0  18  18  10  1  2  7  17  0  2  0  7.77  101           310 000
+5282 Atkinson Cam 13  4  8  12  0  0  1  0  38  7  6  2  0  -5  4  1  1  0  7.54  98           325 000
+4794 Calvert Matt 13  1  1  2  0  0  0  0  17  18  7  2  10  -3  12  0  0  0  4.08  53           245 000
+3741 Clarkson David 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           205 000
+3880 Dubinsky Brandon 11  1  2  3  0  0  1  0  15  34  7  102  102  -4  15  0  0  0  5.82  64           325 000
+4008 Foligno Nick 13  6  10  16  0  0  0  0  18  18  8  10  12  6  16  4  0  1  10.31  134           385 000
+4245 Gagner Sam 12  6  2  8  0  0  1  0  28  2  2  27  35  3  0  0  2  1  6.58  79           295 000
+2418 Hartnell Scott 13  4  6  10  0  0  0  0  15  14  5  0  0  7  2  0  0  0  7.00  91           330 000
+5405 Jenner Boone 13  1  4  5  0  0  0  0  28  28  12  24  18  -5  6  0  1  0  5.92  77           305 000
+5421 Karlsson William 13  2  3  5  0  0  1  0  19  5  3  80  100  2  2  0  0  0  3.77  49           250 000
+5411 Saad Brandon 13  4  8  12  0  0  0  0  31  3  4  1  1  5  2  0  0  1  7.85  102           340 000
+5523 Sedlak Lukas 11  0  4  4  0  0  0  0  9  9  7  31  36  4  2  0  0  0  4.18  46           220 000
+5993 Wennberg Alexander 13  2  13  15  0  0  0  0  15  16  10  89  110  7  2  1  0  0  8.15  106           355 000
 Dallas
 ID Maalivahti O M S P V H JAH TO PM NP JM XXX XX X HGMP/O HGMP Arvo
-3080 Lehtonen Kari 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               315 000
-4432 Niemi Antti 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               310 000
+3080 Lehtonen Kari 10  0  0  0  3  4  3  238  29  0  0  0  0  1  4.70  47               305 000
+4432 Niemi Antti 8  0  0  0  3  2  1  206  25  0  0  0  0  2  5.75  46               300 000
 ID Puolustaja O M S P AVM AVS VM JA L T B ALV ALH +/- JM XXX XX X HGMP/O HGMP Arvo
-5606 Benn Jordie 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               230 000
-2848 Hamhuis Dan 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               250 000
-5033 Johns Stephen 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               215 000
-5104 Klingberg John 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               400 000
-5765 Lindell Esa 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               205 000
-5014 Nemeth Patrik 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               215 000
-4025 Oduya Johnny 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               270 000
-5375 Oleksiak Jamie 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               200 000
+5606 Benn Jordie 14  1  3  4  0  0  0  0  17  9  23  0  0  3  10  0  0  0  5.79  81               295 000
+2848 Hamhuis Dan 15  0  5  5  0  1  0  0  19  23  21  0  0  -2  8  0  0  0  5.33  80               280 000
+5033 Johns Stephen 13  2  2  4  0  0  1  0  15  38  22  0  0  -2  6  0  1  0  6.69  87               320 000
+5104 Klingberg John 16  2  7  9  0  0  0  0  25  11  24  0  0  -6  8  0  0  0  6.38  102               370 000
+5765 Lindell Esa 10  0  1  1  0  0  0  0  12  15  14  0  1  -6  0  0  0  0  2.10  21               215 000
+5014 Nemeth Patrik 9  0  0  0  0  0  0  0  11  13  9  0  0  -1  2  0  0  0  2.56  23               210 000
+4025 Oduya Johnny 16  0  4  4  0  0  0  0  14  6  36  0  0  3  6  0  0  0  4.94  79               255 000
+5375 Oleksiak Jamie 5  0  0  0  0  0  0  0  1  4  2  0  0  0  7  0  0  0  2.00  10               205 000
 ID Hyokkaaja O M S P AVM AVS VM JA L T B ALV ALH +/- JM XXX XX X HGMP/O HGMP Arvo
-4519 Benn Jamie 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           485 000
-3889 Cracknell Adam 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           215 000
+4519 Benn Jamie 16  4  10  14  0  0  1  0  36  29  6  86  68  -5  23  0  0  1  8.94  143           455 000
+3889 Cracknell Adam 16  2  1  3  0  0  0  0  20  21  9  24  23  3  0  1  1  0  3.81  61           200 000
 4817 Eakin Cody 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           310 000
-3366 Eaves Patrick 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           225 000
-5693 Faksa Radek 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           235 000
-2849 Hemsky Ales 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           260 000
-3174 Hudler Jiri 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           275 000
-6059 Janmark Mattias 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           240 000
-5949 McKenzie Curtis 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           195 000
-5412 Ritchie Brett 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           210 000
-5591 Roussel Antoine 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           260 000
-4962 Seguin Tyler 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           470 000
-3041 Sharp Patrick 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           330 000
-2900 Spezza Jason 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           375 000
+3366 Eaves Patrick 15  6  6  12  0  0  0  0  36  20  11  0  1  -3  4  0  1  0  7.33  110           300 000
+5693 Faksa Radek 16  1  4  5  0  0  0  0  24  19  14  129  141  2  15  0  0  0  4.75  76           255 000
+2849 Hemsky Ales 1  0  0  0  0  0  0  0  1  0  0  0  0  0  0  0  0  0  1.00  1           250 000
+3174 Hudler Jiri 4  0  0  0  0  0  0  0  0  0  1  1  1  -3  0  0  0  0  -0.25  -1           270 000
+6059 Janmark Mattias 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           225 000
+3656 Korpikoski Lauri 16  4  2  6  0  0  0  0  26  10  10  0  3  1  4  0  0  0  4.63  74           245 000
+5949 McKenzie Curtis 13  1  2  3  0  0  0  0  17  28  8  1  1  1  24  0  1  0  4.62  60           230 000
+5412 Ritchie Brett 16  3  1  4  0  0  0  0  31  29  4  0  0  0  13  0  0  0  4.75  76           255 000
+5591 Roussel Antoine 16  4  7  11  0  0  2  0  25  17  10  1  1  3  54  0  0  0  8.19  131           305 000
+4962 Seguin Tyler 16  7  13  20  0  0  1  0  62  14  3  113  105  -5  4  1  2  1  10.00  160           445 000
+3041 Sharp Patrick 4  0  1  1  0  0  0  0  10  3  3  0  3  -2  8  0  0  0  4.50  18           330 000
+5750 Shore Devin 16  1  6  7  0  0  0  0  22  7  12  81  90  -4  4  1  0  0  3.81  61           215 000
+5794 Smith Gemel 11  2  1  3  1  0  0  0  14  3  4  21  29  1  21  1  0  0  3.45  38           250 000
+2900 Spezza Jason 9  4  1  5  0  0  1  0  20  2  3  43  44  -7  2  0  2  0  4.78  43           345 000
 Detroit
 ID Maalivahti O M S P V H JAH TO PM NP JM XXX XX X HGMP/O HGMP Arvo
-3771 Howard Jimmy 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               315 000
-5114 Mrazek Petr 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               325 000
+3771 Howard Jimmy 8  0  0  0  4  3  0  215  13  1  0  1  1  2  10.88  87               320 000
+5114 Mrazek Petr 10  0  0  0  4  4  1  265  27  0  0  2  1  1  6.50  65               315 000
 ID Puolustaja O M S P AVM AVS VM JA L T B ALV ALH +/- JM XXX XX X HGMP/O HGMP Arvo
-5927 DeKeyser Danny 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               265 000
-3912 Ericsson Jonathan 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               240 000
-3667 Green Mike 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               345 000
-2517 Kronwall Niklas 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               315 000
-5570 Marchenko Alexey 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               225 000
-4266 Smith Brendan 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               235 000
+5927 DeKeyser Danny 16  1  2  3  0  0  0  0  8  19  32  0  0  1  10  0  0  0  4.81  77               280 000
+3912 Ericsson Jonathan 16  0  4  4  0  0  0  0  13  23  15  0  0  3  35  0  0  0  5.19  83               265 000
+3667 Green Mike 16  3  7  10  0  0  0  0  28  15  21  0  0  2  14  0  0  1  8.94  143               360 000
+2517 Kronwall Niklas 5  0  1  1  0  0  0  0  9  7  6  0  0  -5  0  0  0  0  2.20  11               300 000
+5570 Marchenko Alexey 16  0  4  4  0  1  0  0  18  2  24  0  0  2  10  0  0  0  4.94  79               255 000
+5416 Ouellet Xavier 6  0  1  1  0  0  0  0  8  3  4  0  0  2  0  0  0  0  4.00  24               215 000
+4266 Smith Brendan 16  2  2  4  0  0  1  0  25  22  16  0  0  -6  13  0  0  0  4.56  73               230 000
+5422 Sproul Ryan 5  0  2  2  0  0  0  0  11  3  3  0  0  1  0  1  0  0  5.80  29               210 000
 ID Hyokkaaja O M S P AVM AVS VM JA L T B ALV ALH +/- JM XXX XX X HGMP/O HGMP Arvo
-4396 Abdelkader Justin 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           340 000
+4396 Abdelkader Justin 14  3  1  4  0  0  0  0  18  36  5  0  3  -2  9  0  0  0  4.64  65           295 000
+5800 Athanasiou Andreas 13  4  1  5  0  0  1  0  20  5  4  1  3  1  0  0  2  1  4.62  60           250 000
 3722 Franzen Johan 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           300 000
-5976 Glendening Luke 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           230 000
-4065 Helm Darren 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           240 000
+5976 Glendening Luke 16  1  4  5  0  0  0  0  21  42  18  76  70  1  8  1  0  0  5.69  91           280 000
+4065 Helm Darren 16  4  3  7  0  1  1  0  26  20  6  100  82  6  8  1  0  0  6.88  110           285 000
 5403 Jurco Tomas 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           210 000
-6381 Larkin Dylan 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           345 000
-5999 Mantha Anthony 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           240 000
-3883 Miller Drew 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           200 000
-3918 Nielsen Frans 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           350 000
-5279 Nyquist Gustav 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           295 000
-2588 Ott Steve 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           225 000
-5084 Pulkkinen Teemu 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           235 000
-4981 Sheahan Riley 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           245 000
-4792 Tatar Tomas 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           305 000
-3344 Vanek Thomas 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           285 000
-2503 Zetterberg Henrik 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           365 000
+6381 Larkin Dylan 16  5  1  6  0  0  1  0  51  9  6  32  43  -7  17  0  1  1  5.69  91           330 000
+5999 Mantha Anthony 1  0  0  0  0  0  0  0  2  2  2  0  0  -1  0  0  0  0  2.00  2           240 000
+3883 Miller Drew 13  2  0  2  0  0  1  0  10  17  9  1  0  -3  2  0  1  0  3.46  45           245 000
+3918 Nielsen Frans 16  2  5  7  1  0  0  0  29  13  11  118  124  -7  0  0  1  0  4.19  67           260 000
+5279 Nyquist Gustav 16  3  7  10  0  0  2  0  34  8  2  1  0  2  4  0  0  1  6.00  96           305 000
+2588 Ott Steve 13  1  1  2  0  0  0  0  12  30  5  30  20  2  19  0  1  0  5.31  69           265 000
+4981 Sheahan Riley 16  0  3  3  0  0  0  0  22  8  9  11  8  -8  8  0  0  0  2.94  47           230 000
+4792 Tatar Tomas 16  2  4  6  0  0  0  0  41  14  9  3  2  -2  6  0  0  1  4.94  79           280 000
+3344 Vanek Thomas 7  4  4  8  0  0  0  0  13  3  1  0  1  5  4  1  1  0  9.71  68           350 000
+2503 Zetterberg Henrik 16  2  8  10  0  0  1  0  31  10  6  116  114  2  0  1  1  0  5.63  90           340 000
 Edmonton
 ID Maalivahti O M S P V H JAH TO PM NP JM XXX XX X HGMP/O HGMP Arvo
-4718 Gustavsson Jonas 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               280 000
-4854 Talbot Cam 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               310 000
+4718 Gustavsson Jonas 2  0  0  0  1  0  0  23  1  0  0  0  0  0  4.50  9               280 000
+4854 Talbot Cam 15  0  0  0  8  6  1  424  38  2  2  0  3  3  9.47  142               330 000
 ID Puolustaja O M S P AVM AVS VM JA L T B ALV ALH +/- JM XXX XX X HGMP/O HGMP Arvo
-5136 Davidson Brandon 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               240 000
-5190 Fayne Mark 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               220 000
+5864 Benning Matthew 7  0  2  2  0  0  0  0  8  4  7  0  0  2  2  0  0  0  5.00  35               230 000
+5136 Davidson Brandon 1  0  0  0  0  0  0  0  0  1  1  0  0  -1  0  0  0  0  0.00  0               215 000
+5190 Fayne Mark 1  0  1  1  0  0  0  0  1  0  0  0  0  1  0  0  0  0  10.00  10               220 000
 1929 Ference Andrew 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               205 000
-5380 Klefbom Oscar 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               260 000
-5365 Larsson Adam 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               275 000
-5986 Nurse Darnell 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               225 000
-3986 Sekera Andrej 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               295 000
+4860 Gryba Eric 12  0  0  0  0  0  0  0  14  43  12  0  0  -1  14  0  0  0  4.67  56               245 000
+5380 Klefbom Oscar 16  0  3  3  0  0  0  0  33  11  30  0  0  -1  0  0  0  0  4.50  72               265 000
+5365 Larsson Adam 16  1  2  3  0  0  0  0  17  45  28  0  0  -2  8  0  0  0  5.50  88               295 000
+5986 Nurse Darnell 16  2  2  4  0  0  0  0  26  41  13  0  0  -3  15  0  0  0  5.56  89               300 000
+3951 Russell Kris 11  0  3  3  0  0  0  0  15  8  31  0  0  6  0  0  1  0  6.73  74               310 000
+3986 Sekera Andrej 16  1  4  5  0  0  0  0  18  12  27  0  0  4  4  0  0  0  5.63  90               280 000
 ID Hyokkaaja O M S P AVM AVS VM JA L T B ALV ALH +/- JM XXX XX X HGMP/O HGMP Arvo
-6369 Draisaitl Leon 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           345 000
-4498 Eberle Jordan 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           340 000
+7100 Caggiula Drake 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           215 000
+6369 Draisaitl Leon 16  3  5  8  0  0  0  0  28  6  6  105  106  -6  2  1  0  0  4.06  65           285 000
+4498 Eberle Jordan 16  5  7  12  0  0  0  0  49  3  7  0  1  -6  2  2  0  0  6.00  96           335 000
 4286 Hendricks Matt 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           220 000
-4693 Kassian Zack 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           225 000
-5323 Lander Anton 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           200 000
-4138 Letestu Mark 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           250 000
-4306 Lucic Milan 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           350 000
-4352 Maroon Patrick 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           245 000
-6743 McDavid Connor 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           415 000
-5362 Nugent-Hopkins Ryan 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           335 000
+4693 Kassian Zack 13  2  2  4  0  0  0  0  22  37  2  1  0  0  14  0  1  0  5.62  73           255 000
+5323 Lander Anton 15  1  2  3  0  0  0  0  7  19  7  71  50  4  6  0  0  0  3.80  57           230 000
+4138 Letestu Mark 16  2  4  6  2  0  3  0  11  15  9  94  89  -1  0  1  0  0  4.63  74           250 000
+4306 Lucic Milan 16  5  4  9  0  0  1  0  34  43  5  1  1  -2  9  0  1  0  7.13  114           340 000
+4352 Maroon Patrick 16  6  3  9  0  0  0  0  38  38  2  1  4  3  12  0  0  1  7.25  116           335 000
+6743 McDavid Connor 16  5  14  19  0  0  2  0  42  3  8  106  119  5  6  2  0  2  9.56  153           415 000
+5362 Nugent-Hopkins Ryan 16  2  5  7  0  0  1  0  46  8  3  104  118  -3  4  1  0  1  4.69  75           280 000
 5549 Pakarinen Iiro 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           200 000
-3781 Pouliot Benoit 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           280 000
-7112 Puljujarvi Jesse 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           260 000
-5681 Yakupov Nail 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           250 000
+5004 Pitlick Tyler 16  5  1  6  0  0  1  0  28  41  5  2  1  0  4  0  2  0  6.00  96           260 000
+3781 Pouliot Benoit 16  3  1  4  0  0  1  0  19  8  13  3  5  -2  18  0  0  1  4.75  76           285 000
+7112 Puljujarvi Jesse 13  1  2  3  0  0  0  0  29  5  3  0  0  1  0  0  0  0  3.23  42           240 000
+6067 Slepyshev Anton 6  1  0  1  0  0  0  0  11  6  2  0  0  1  2  0  0  1  4.50  27           225 000
 Florida
 ID Maalivahti O M S P V H JAH TO PM NP JM XXX XX X HGMP/O HGMP Arvo
-5954 Berra Reto 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               275 000
-1793 Luongo Roberto 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               320 000
-4369 Reimer James 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               310 000
+1793 Luongo Roberto 10  0  1  1  5  5  0  250  23  0  0  0  1  1  7.30  73               320 000
+4369 Reimer James 6  0  0  0  2  2  1  135  14  0  2  0  0  0  4.83  29               295 000
 ID Puolustaja O M S P AVM AVS VM JA L T B ALV ALH +/- JM XXX XX X HGMP/O HGMP Arvo
-4578 Demers Jason 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               280 000
-6367 Ekblad Aaron 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               335 000
-4858 Kampfer Steven 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               215 000
-3796 Kindl Jakub 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               215 000
-5703 Matheson Michael 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               225 000
-5009 Petrovic Alex 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               235 000
-4983 Pysyk Mark 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               220 000
-3885 Yandle Keith 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               345 000
+4578 Demers Jason 15  2  5  7  0  1  0  0  17  11  14  0  0  -2  6  1  1  0  6.07  91               270 000
+6367 Ekblad Aaron 15  2  0  2  0  0  0  0  40  30  14  0  0  -7  18  0  1  0  5.27  79               320 000
+5703 Matheson Michael 14  2  4  6  0  0  0  0  33  9  17  1  0  -1  4  0  0  0  6.71  94               295 000
+4970 McIlrath Dylan 1  0  0  0  0  0  0  0  0  2  0  0  0  0  4  0  0  0  5.00  5               220 000
+5009 Petrovic Alex 15  0  4  4  0  0  0  0  11  29  15  0  0  6  6  0  0  0  6.00  90               260 000
+4983 Pysyk Mark 15  1  2  3  0  0  0  0  14  9  13  0  1  4  2  0  0  0  4.47  67               235 000
+3885 Yandle Keith 15  0  8  8  0  0  0  0  42  5  15  0  0  3  14  0  0  0  7.40  111               335 000
 ID Hyokkaaja O M S P AVM AVS VM JA L T B ALV ALH +/- JM XXX XX X HGMP/O HGMP Arvo
-5981 Barkov Aleksander 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           385 000
+5981 Barkov Aleksander 15  2  6  8  0  0  0  1  29  6  6  103  107  1  0  0  0  1  4.87  73           350 000
 4979 Bjugstad Nick 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           315 000
+5821 Griffith Seth 3  0  0  0  0  0  0  0  3  3  0  0  0  0  0  0  0  0  1.33  4           200 000
 5364 Huberdeau Jonathan 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           335 000
-35 Jagr Jaromir 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           330 000
-3021 Jokinen Jussi 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           325 000
-2795 MacKenzie Derek 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           230 000
-5712 Marchessault Jonathan 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           220 000
-6390 McCann Jared 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           235 000
-4599 Sceviour Colton 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           240 000
-5442 Shaw Logan 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           205 000
-5639 Smith Reilly 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           320 000
-2724 Thornton Shawn 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           190 000
-5431 Trocheck Vincent 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           365 000
+35 Jagr Jaromir 15  1  5  6  0  0  0  0  36  3  2  0  0  0  8  0  0  1  4.53  68           295 000
+3021 Jokinen Jussi 6  0  2  2  0  0  0  0  8  2  3  6  5  -3  6  0  0  0  3.83  23           305 000
+2795 MacKenzie Derek 15  1  3  4  0  1  0  0  15  33  7  83  80  5  9  0  0  0  5.13  77           265 000
+6844 Malgin Denis 15  3  3  6  0  0  0  1  21  11  4  30  49  2  4  1  0  1  4.20  63           245 000
+5712 Marchessault Jonathan 15  8  6  14  0  0  2  0  47  19  2  40  33  5  4  1  3  0  9.60  144           360 000
+6390 McCann Jared 15  1  1  2  0  0  0  0  19  11  4  18  23  0  2  0  0  0  2.33  35           215 000
+5035 McKegg Greg 15  0  2  2  0  0  0  0  12  13  2  8  10  -2  6  1  0  0  2.33  35           215 000
+5457 Rau Kyle 9  1  1  2  0  0  0  0  9  10  2  2  1  0  4  1  0  0  4.00  36           235 000
+4599 Sceviour Colton 15  5  3  8  2  0  1  0  27  15  15  5  5  -1  8  0  0  2  7.33  110           260 000
+5639 Smith Reilly 15  3  3  6  0  0  1  0  34  13  5  1  0  -1  2  0  1  0  5.13  77           285 000
+2724 Thornton Shawn 1  0  0  0  0  0  0  0  0  0  0  0  0  -1  0  0  0  0  -1.00  -1           185 000
+5431 Trocheck Vincent 15  6  3  9  0  0  0  1  40  34  10  153  158  -3  4  1  1  1  7.53  113           345 000
 Los Angeles
 ID Maalivahti O M S P V H JAH TO PM NP JM XXX XX X HGMP/O HGMP Arvo
-4147 Quick Jonathan 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               335 000
-4407 Zatkoff Jeff 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               285 000
+2988 Budaj Peter 14  0  0  0  7  5  1  276  26  2  0  3  1  0  6.43  90               320 000
+4971 Campbell Jack 1  0  0  0  0  0  0  5  0  0  0  0  0  0  1.00  1               265 000
+4147 Quick Jonathan 1  0  0  0  0  0  0  14  1  0  2  0  0  0  1.00  1               340 000
+4407 Zatkoff Jeff 4  0  0  0  0  3  0  70  10  0  0  0  0  0  0.25  1               280 000
 ID Puolustaja O M S P AVM AVS VM JA L T B ALV ALH +/- JM XXX XX X HGMP/O HGMP Arvo
-4472 Doughty Drew 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               400 000
-4975 Forbort Derek 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               205 000
-3268 Gilbert Tom 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               210 000
-3271 Greene Matt 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               220 000
-4424 Martinez Alec 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               325 000
-5227 McNabb Brayden 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               235 000
-4819 Muzzin Jake 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               345 000
-2837 Scuderi Rob 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               215 000
-5184 Trotman Zach 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               215 000
+4472 Doughty Drew 16  2  4  6  0  0  0  0  41  31  29  1  0  2  14  2  0  0  8.31  133               380 000
+4975 Forbort Derek 16  0  3  3  0  0  0  0  13  34  34  0  0  0  28  0  0  0  5.13  82               240 000
+3268 Gilbert Tom 10  1  3  4  0  0  0  0  7  5  14  0  0  -1  2  0  0  0  4.80  48               220 000
+5121 Gravel Kevin 6  0  1  1  0  0  0  0  8  13  9  0  0  4  0  0  0  0  6.17  37               225 000
+3271 Greene Matt 8  1  1  2  0  0  0  0  5  33  8  0  0  1  6  0  0  0  7.00  56               265 000
+4424 Martinez Alec 16  2  7  9  0  0  0  2  38  33  28  0  0  -1  4  1  1  2  9.19  147               360 000
+5227 McNabb Brayden 8  2  0  2  0  0  0  0  6  13  8  0  0  3  11  0  0  0  6.88  55               255 000
+4819 Muzzin Jake 16  1  1  2  0  0  0  0  40  38  29  0  0  -2  14  0  0  0  6.13  98               310 000
 ID Hyokkaaja O M S P AVM AVS VM JA L T B ALV ALH +/- JM XXX XX X HGMP/O HGMP Arvo
-5446 Andreoff Andy 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           210 000
-3351 Brown Dustin 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           260 000
-3349 Carter Jeff 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           395 000
-4765 Clifford Kyle 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           220 000
+5446 Andreoff Andy 9  0  0  0  0  0  0  0  4  17  3  8  6  -1  8  0  0  0  2.89  26           215 000
+3351 Brown Dustin 16  2  6  8  1  0  1  0  31  42  3  0  1  -3  10  0  1  1  6.63  106           295 000
+3349 Carter Jeff 16  5  6  11  0  0  1  1  45  16  6  133  120  1  6  0  0  1  7.88  126           365 000
+4765 Clifford Kyle 15  2  1  3  0  0  0  0  27  35  1  0  1  2  31  0  0  0  4.93  74           255 000
+6350 Dowd Nic 14  2  5  7  0  0  0  1  15  34  10  79  89  1  2  1  0  1  6.00  84           290 000
 2416 Gaborik Marian 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           280 000
-4559 King Dwight 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           225 000
-3788 Kopitar Anze 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           450 000
-4882 Latta Michael 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           195 000
-3990 Lewis Trevor 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           245 000
-5221 Nolan Jordan 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           190 000
-5710 Pearson Tanner 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           290 000
-4162 Purcell Teddy 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           255 000
-5448 Shore Nick 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           220 000
-5020 Toffoli Tyler 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           345 000
+4559 King Dwight 16  2  3  5  0  0  0  0  23  24  4  2  4  4  4  0  0  0  4.38  70           250 000
+3788 Kopitar Anze 15  2  6  8  0  1  0  0  37  19  11  194  178  1  2  1  1  0  6.27  94           380 000
+3990 Lewis Trevor 16  2  2  4  0  0  0  0  26  33  4  11  14  -5  2  0  0  0  3.94  63           250 000
+5221 Nolan Jordan 6  0  1  1  0  0  0  0  3  6  0  0  0  -2  11  0  0  0  3.00  18           220 000
+5710 Pearson Tanner 14  6  3  9  0  0  1  0  31  19  2  0  4  4  0  0  0  1  6.71  94           305 000
+4162 Purcell Teddy 8  0  2  2  0  0  0  0  9  7  1  2  0  0  0  0  0  0  3.00  24           240 000
+3785 Setoguchi Devin 16  2  2  4  0  0  0  0  25  20  3  2  1  2  4  0  0  1  4.50  72           270 000
+5448 Shore Nick 15  0  2  2  0  0  0  0  19  12  8  67  79  -2  8  0  0  0  3.00  45           225 000
+5020 Toffoli Tyler 16  4  5  9  0  0  0  0  53  20  1  0  2  6  0  1  1  0  6.63  106           345 000
 Minnesota
 ID Maalivahti O M S P V H JAH TO PM NP JM XXX XX X HGMP/O HGMP Arvo
-3650 Dubnyk Devan 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               330 000
-5336 Kuemper Darcy 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               300 000
-4642 Stalock Alex 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               295 000
+3650 Dubnyk Devan 11  0  0  0  6  4  1  322  18  3  6  2  1  2  12.91  142               345 000
+5336 Kuemper Darcy 3  0  0  0  2  1  0  89  9  0  0  0  0  0  7.67  23               305 000
 ID Puolustaja O M S P AVM AVS VM JA L T B ALV ALH +/- JM XXX XX X HGMP/O HGMP Arvo
-5371 Brodin Jonas 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               230 000
-5687 Dumba Matt 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               300 000
-6348 Folin Christian 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               205 000
-4832 Prosser Nate 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               200 000
-5464 Reilly Mike 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               210 000
-4633 Scandella Marco 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               265 000
-5232 Spurgeon Jared 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               285 000
-3345 Suter Ryan 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               370 000
+5371 Brodin Jonas 14  1  3  4  0  0  1  0  17  4  17  0  0  6  6  0  0  0  5.71  80               255 000
+5687 Dumba Matt 14  2  3  5  0  0  0  1  28  24  15  0  0  4  6  0  0  1  7.50  105               310 000
+6348 Folin Christian 13  0  1  1  0  0  0  0  15  21  17  0  0  7  10  0  0  0  5.69  74               240 000
+4832 Prosser Nate 7  0  1  1  0  0  0  0  5  5  11  0  0  0  0  0  0  0  3.29  23               215 000
+5464 Reilly Mike 5  0  0  0  0  0  0  0  6  0  1  0  0  -1  0  0  0  0  0.60  3               200 000
+4633 Scandella Marco 7  0  1  1  0  0  0  0  8  4  6  0  0  -6  0  0  0  0  1.14  8               235 000
+5232 Spurgeon Jared 10  1  3  4  0  1  0  0  16  6  16  0  0  5  0  1  0  0  6.90  69               290 000
+3345 Suter Ryan 14  4  8  12  1  0  0  0  33  15  11  0  0  9  6  0  1  1  12.00  168               430 000
 ID Hyokkaaja O M S P AVM AVS VM JA L T B ALV ALH +/- JM XXX XX X HGMP/O HGMP Arvo
-4988 Coyle Charlie 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           305 000
-4834 Dalpe Zac 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           200 000
-4969 Granlund Mikael 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           315 000
-5556 Graovac Tyler 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           220 000
-5946 Haula Erik 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           280 000
-2842 Koivu Mikko 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           370 000
-4965 Niederreiter Nino 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           295 000
-3355 Parise Zach 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           390 000
-2994 Pominville Jason 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           315 000
-4702 Schroeder Jordan 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           215 000
-3342 Staal Eric 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           330 000
-3998 Stewart Chris 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           260 000
-5032 Zucker Jason 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           255 000
+4988 Coyle Charlie 14  4  6  10  0  0  1  0  32  17  13  10  8  4  18  0  0  0  7.79  109           345 000
+4834 Dalpe Zac 9  1  2  3  0  0  0  0  8  5  5  27  32  0  9  0  1  0  3.89  35           215 000
+6762 Eriksson Ek Joel 9  2  3  5  0  0  1  0  7  14  5  21  35  2  2  1  0  0  5.56  50           235 000
+4969 Granlund Mikael 14  3  5  8  1  0  1  0  26  12  9  3  4  3  2  0  2  0  6.50  91           310 000
+5556 Graovac Tyler 6  1  0  1  0  0  0  0  6  9  0  24  22  0  0  1  0  0  3.00  18           205 000
+5946 Haula Erik 7  1  2  3  0  0  0  0  16  1  3  38  45  3  4  0  0  1  5.43  38           260 000
+2842 Koivu Mikko 14  2  4  6  0  1  1  0  20  5  17  174  156  1  6  0  0  0  5.64  79           340 000
+6327 Mitchell Zack 2  0  0  0  0  0  0  0  3  6  2  0  1  0  0  0  0  0  3.50  7           205 000
+4965 Niederreiter Nino 14  4  4  8  0  0  0  0  23  22  1  0  1  8  4  0  1  0  6.57  92           315 000
+3355 Parise Zach 8  2  4  6  0  0  0  0  28  8  13  0  1  -2  8  1  0  0  8.38  67           375 000
+2994 Pominville Jason 14  3  3  6  0  0  0  0  26  10  10  3  4  1  0  0  1  0  5.00  70           285 000
+3342 Staal Eric 14  5  8  13  0  1  2  0  42  10  4  135  115  6  4  0  1  2  9.71  136           360 000
+3998 Stewart Chris 14  2  3  5  0  0  0  0  7  21  2  0  1  0  19  0  0  1  3.64  51           240 000
+5032 Zucker Jason 14  2  5  7  0  0  0  0  19  16  4  1  0  8  6  1  0  0  5.93  83           290 000
 Montreal
 ID Maalivahti O M S P V H JAH TO PM NP JM XXX XX X HGMP/O HGMP Arvo
-5959 Condon Mike 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               280 000
-3642 Montoya Al 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               275 000
-3782 Price Carey 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               355 000
+3642 Montoya Al 6  0  2  2  3  2  1  189  19  1  2  1  0  1  13.67  82               300 000
+3782 Price Carey 10  0  0  0  10  0  0  309  14  2  0  2  1  4  16.30  163               370 000
 ID Puolustaja O M S P AVM AVS VM JA L T B ALV ALH +/- JM XXX XX X HGMP/O HGMP Arvo
-4929 Barberio Mark 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               215 000
-5378 Beaulieu Nathan 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               235 000
-5349 Emelin Alexei 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               245 000
-2145 Markov Andrei 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               315 000
-5636 Pateryn Greg 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               210 000
-4849 Petry Jeff 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               255 000
+5378 Beaulieu Nathan 16  1  4  5  0  0  1  0  15  18  28  0  0  10  9  0  0  0  7.44  119               320 000
+5349 Emelin Alexei 16  1  3  4  0  0  0  0  10  52  32  0  0  7  20  0  0  0  7.81  125               315 000
+6955 Hanley Joel 3  0  0  0  0  0  0  0  3  6  3  0  0  0  4  0  0  0  4.33  13               220 000
+2145 Markov Andrei 16  2  9  11  0  1  0  0  23  8  15  0  0  0  4  1  1  0  7.63  122               340 000
+5636 Pateryn Greg 11  1  2  3  0  0  0  0  12  14  24  0  0  3  0  0  0  0  6.00  66               255 000
+4849 Petry Jeff 15  2  5  7  0  0  0  0  23  30  36  0  0  4  8  1  1  0  8.87  133               355 000
 5295 Redmond Zach 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               205 000
-3387 Weber Shea 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               390 000
+3387 Weber Shea 16  7  6  13  0  1  3  0  38  40  34  0  0  16  8  1  2  2  15.13  242               465 000
 ID Hyokkaaja O M S P AVM AVS VM JA L T B ALV ALH +/- JM XXX XX X HGMP/O HGMP Arvo
-6010 Andrighetto Sven 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           235 000
-4677 Byron Paul 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           215 000
-6355 Carr Daniel 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           210 000
-5387 Danault Phillip 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           230 000
-4554 Desharnais David 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           280 000
-5642 Flynn Brian 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           215 000
-5683 Galchenyuk Alex 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           380 000
-5120 Gallagher Brendan 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           365 000
-5709 Matteau Stefan 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           195 000
-4132 Mitchell Torrey 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           240 000
-4261 Pacioretty Max 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           390 000
-3005 Plekanec Tomas 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           370 000
-3652 Radulov Alexander 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           375 000
-5504 Shaw Andrew 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           285 000
+6010 Andrighetto Sven 3  0  0  0  0  0  0  0  5  4  2  0  0  0  0  0  0  0  2.67  8           220 000
+4677 Byron Paul 16  5  5  10  1  0  2  0  18  21  5  2  0  7  4  0  1  0  7.19  115           285 000
+6355 Carr Daniel 6  1  1  2  0  0  1  0  8  8  3  0  0  2  4  0  0  0  5.50  33           215 000
+5387 Danault Phillip 16  5  4  9  0  0  1  0  24  14  17  44  44  4  2  0  2  2  6.94  111           265 000
+4554 Desharnais David 15  2  2  4  0  0  0  0  13  0  2  34  46  1  2  1  0  0  2.20  33           240 000
+5642 Flynn Brian 12  0  2  2  0  0  0  0  11  8  8  9  14  1  2  0  0  0  2.67  32           205 000
+5683 Galchenyuk Alex 16  6  11  17  0  0  0  0  31  7  8  73  113  12  10  0  1  0  8.44  135           345 000
+5120 Gallagher Brendan 16  4  5  9  0  0  1  0  40  18  4  19  23  6  18  0  1  2  7.94  127           365 000
+6035 Lehkonen Artturi 12  2  1  3  0  0  0  0  27  12  4  0  0  0  6  0  0  0  4.42  53           230 000
+4132 Mitchell Torrey 16  5  2  7  0  0  1  0  9  2  12  95  77  6  8  0  2  0  5.69  91           260 000
+4261 Pacioretty Max 16  3  9  12  0  1  2  0  43  19  7  0  0  7  10  0  2  0  8.44  135           375 000
+3005 Plekanec Tomas 16  1  4  5  1  0  1  0  32  13  15  144  152  0  2  0  0  0  4.31  69           310 000
+3652 Radulov Alexander 16  3  11  14  0  0  0  0  27  21  9  2  0  7  18  1  0  1  8.88  142           380 000
+5504 Shaw Andrew 16  2  4  6  0  0  0  0  31  38  7  66  49  8  20  0  0  1  6.75  108           295 000
 Nashville
 ID Maalivahti O M S P V H JAH TO PM NP JM XXX XX X HGMP/O HGMP Arvo
-5868 Mazanec Marek 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               285 000
-3764 Rinne Pekka 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               335 000
-6078 Saros Juuse 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               280 000
+5868 Mazanec Marek 2  0  0  0  0  1  0  29  7  0  0  0  0  0  -2.00  -4               285 000
+3764 Rinne Pekka 12  0  0  0  5  4  3  333  25  1  0  1  1  2  9.42  113               340 000
 ID Puolustaja O M S P AVM AVS VM JA L T B ALV ALH +/- JM XXX XX X HGMP/O HGMP Arvo
-5142 Bitetto Anthony 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               215 000
-3385 Carle Matthew 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               225 000
-5329 Ekholm Mattias 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               260 000
-4691 Ellis Ryan 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               270 000
-5089 Granberg Petter 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               205 000
-4881 Irwin Matt 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               240 000
-4930 Josi Roman 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               390 000
-4558 Subban P.K. 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               405 000
-4537 Weber Yannick 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               205 000
+5142 Bitetto Anthony 1  0  0  0  0  0  0  0  0  1  0  0  0  -1  5  0  0  0  1.00  1               200 000
+3385 Carle Matthew 6  0  1  1  0  0  0  0  2  3  5  0  0  -1  0  0  0  0  2.33  14               210 000
+5329 Ekholm Mattias 14  0  3  3  0  1  0  0  21  9  27  0  0  1  6  0  0  0  5.07  71               250 000
+4691 Ellis Ryan 14  2  3  5  0  0  1  0  20  21  26  0  0  0  4  0  0  0  6.50  91               315 000
+4881 Irwin Matt 8  3  2  5  0  0  1  0  9  15  12  0  0  6  0  0  0  1  10.75  86               280 000
+4930 Josi Roman 14  2  6  8  0  0  0  0  42  8  24  0  0  -5  4  1  1  0  7.21  101               380 000
+4558 Subban P.K. 14  3  5  8  0  0  1  0  31  14  32  0  0  -4  16  1  0  1  8.71  122               390 000
+4537 Weber Yannick 13  0  3  3  0  0  0  0  9  15  11  0  0  6  15  0  0  0  5.92  77               260 000
 ID Hyokkaaja O M S P AVM AVS VM JA L T B ALV ALH +/- JM XXX XX X HGMP/O HGMP Arvo
-6480 Arvidsson Viktor 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           225 000
-1934 Fisher Mike 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           330 000
-5691 Forsberg Filip 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           385 000
-5024 Jarnkrok Calle 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           245 000
-4964 Johansen Ryan 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           380 000
-3818 Neal James 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           355 000
-1933 Ribeiro Mike 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           290 000
-5420 Salomaki Miikka 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           210 000
-5739 Sissons Colton 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           215 000
-5396 Smith Craig 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           300 000
-4978 Watson Austin 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           200 000
-4480 Wilson Colin 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           240 000
+5726 Aberg Pontus 2  0  1  1  0  0  0  0  0  1  0  0  0  1  0  1  0  0  4.00  8           215 000
+6480 Arvidsson Viktor 14  4  5  9  1  1  0  0  39  6  7  2  1  -2  2  1  2  0  6.71  94           260 000
+3942 Bass Cody 7  0  0  0  0  0  0  0  1  12  3  0  2  0  19  0  0  0  2.71  19           200 000
+1934 Fisher Mike 10  3  4  7  0  0  1  0  19  29  9  102  80  -4  4  0  0  0  7.90  79           345 000
+5691 Forsberg Filip 14  1  10  11  0  0  0  0  29  22  5  5  6  -1  4  0  0  0  6.50  91           335 000
+5024 Jarnkrok Calle 14  3  1  4  0  0  0  0  18  6  3  53  72  1  2  0  0  1  3.14  44           235 000
+4964 Johansen Ryan 14  1  6  7  0  0  0  0  28  16  5  119  108  3  8  0  1  1  6.43  90           350 000
+3818 Neal James 14  6  4  10  0  0  1  0  53  12  8  1  0  0  11  1  2  0  8.57  120           360 000
+1933 Ribeiro Mike 14  1  6  7  0  0  0  0  14  10  2  60  67  1  10  0  0  0  4.57  64           270 000
+5420 Salomaki Miikka 2  0  0  0  0  0  0  0  2  6  5  0  0  -1  0  0  0  0  3.00  6           235 000
+5739 Sissons Colton 13  1  1  2  1  0  0  0  7  23  6  62  67  0  0  0  0  0  3.00  39           220 000
+5396 Smith Craig 13  5  0  5  0  0  0  0  30  16  4  15  14  -1  12  0  0  1  6.23  81           310 000
+4978 Watson Austin 10  0  0  0  0  0  0  0  6  19  2  0  2  2  12  0  0  0  2.80  28           210 000
+4480 Wilson Colin 14  2  3  5  0  0  0  0  24  9  5  0  1  -1  6  0  1  0  4.43  62           255 000
 New Jersey
 ID Maalivahti O M S P V H JAH TO PM NP JM XXX XX X HGMP/O HGMP Arvo
-5316 Kinkaid Keith 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               285 000
-3663 Schneider Cory 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               320 000
-5057 Wedgewood Scott 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               260 000
+5316 Kinkaid Keith 3  0  0  0  2  0  1  84  5  0  0  0  2  0  11.33  34               280 000
+3663 Schneider Cory 11  0  0  0  6  3  2  318  25  0  0  3  1  0  8.64  95               325 000
 ID Puolustaja O M S P AVM AVS VM JA L T B ALV ALH +/- JM XXX XX X HGMP/O HGMP Arvo
-4973 Gormley Brandon 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               200 000
-3871 Greene Andy 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               270 000
-4517 Lovejoy Ben 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               245 000
+7106 Auvitu Yohann 14  1  2  3  0  0  0  0  34  11  4  0  0  3  0  1  0  0  4.71  66               235 000
+3871 Greene Andy 14  2  2  4  1  0  0  1  16  18  28  0  0  1  0  1  0  0  5.93  83               280 000
+4517 Lovejoy Ben 14  0  2  2  0  0  0  0  19  21  23  0  0  0  4  0  0  0  4.50  63               240 000
 5011 Merrill Jon 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               215 000
-4701 Moore John 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               235 000
-6022 Santini Steven 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               200 000
-5749 Severson Damon 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               250 000
+4701 Moore John 14  2  3  5  0  0  0  0  22  9  13  0  0  4  10  1  0  0  6.57  92               275 000
+3710 Quincey Kyle 14  1  1  2  0  0  0  0  14  23  18  0  0  6  10  0  0  0  5.79  81               265 000
+5749 Severson Damon 14  2  9  11  0  0  1  0  24  16  11  0  0  -1  10  1  0  1  9.14  128               345 000
 ID Hyokkaaja O M S P AVM AVS VM JA L T B ALV ALH +/- JM XXX XX X HGMP/O HGMP Arvo
-4980 Bennett Beau 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           255 000
-5852 Blandisi Joseph 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           235 000
-5465 Boucher Reid 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           230 000
-2991 Cammalleri Michael 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           360 000
-3047 Fiddler Vernon 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           245 000
-4630 Gazdic Luke 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           195 000
-4961 Hall Taylor 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           395 000
-5238 Henrique Adam 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           350 000
-4700 Josefson Jacob 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           220 000
-6737 Kalinin Sergey 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           225 000
-4706 Palmieri Kyle 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           345 000
-5015 Smith-Pelly Devante 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           255 000
-6748 Zacha Pavel 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           240 000
-3657 Zajac Travis 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           335 000
+4980 Bennett Beau 13  0  3  3  0  0  0  0  22  7  2  0  2  3  2  0  0  0  3.38  44           245 000
+5465 Boucher Reid 4  0  1  1  0  0  0  0  3  2  2  0  0  0  2  0  0  0  3.25  13           215 000
+2991 Cammalleri Michael 12  3  3  6  0  0  1  0  28  8  3  3  3  2  10  0  1  1  6.83  82           325 000
+3047 Fiddler Vernon 14  0  1  1  0  0  0  0  12  10  5  96  83  -2  13  0  0  0  2.79  39           230 000
+4961 Hall Taylor 14  5  7  12  0  0  1  1  60  14  7  1  2  3  4  1  1  2  9.43  132           390 000
+5238 Henrique Adam 14  2  4  6  0  0  0  0  23  18  13  103  103  6  8  0  2  0  6.43  90           315 000
+4700 Josefson Jacob 7  0  2  2  0  0  0  0  9  8  2  26  12  0  4  0  0  0  4.86  34           250 000
+6737 Kalinin Sergey 9  0  1  1  0  0  0  0  5  12  6  1  2  -2  7  0  0  0  2.67  24           210 000
+7074 Lappin Nick 8  2  2  4  0  0  0  0  14  5  0  1  3  3  2  0  0  0  5.00  40           255 000
+4706 Palmieri Kyle 14  3  3  6  0  0  1  0  33  32  7  2  5  5  8  0  0  1  7.21  101           335 000
+3262 Parenteau P.A. 14  5  1  6  0  0  1  0  30  14  0  0  4  0  6  0  1  1  5.79  81           300 000
+5015 Smith-Pelly Devante 12  1  2  3  0  0  0  0  23  17  4  4  5  -4  2  0  0  0  3.50  42           245 000
+6748 Zacha Pavel 14  1  3  4  0  0  0  0  16  18  10  45  62  -2  6  0  0  0  3.79  53           240 000
+3657 Zajac Travis 14  4  6  10  0  0  1  0  30  18  6  155  138  3  6  0  0  1  7.50  105           345 000
 NY Islanders
 ID Maalivahti O M S P V H JAH TO PM NP JM XXX XX X HGMP/O HGMP Arvo
-5223 Berube Jean-Francois 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               265 000
-3936 Greiss Thomas 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               300 000
-3734 Halak Jaroslav 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               310 000
+5223 Berube Jean-Francois 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               260 000
+3936 Greiss Thomas 6  0  0  0  2  3  0  130  13  0  0  1  0  0  4.50  27               295 000
+3734 Halak Jaroslav 11  0  0  0  3  4  3  301  31  0  0  0  0  0  6.09  67               315 000
 ID Puolustaja O M S P AVM AVS VM JA L T B ALV ALH +/- JM XXX XX X HGMP/O HGMP Arvo
-3162 Boychuk Johnny 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               330 000
-4692 de Haan Calvin 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               245 000
-4771 Hamonic Travis 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               280 000
-4243 Hickey Thomas 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               235 000
-4696 Leddy Nick 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               310 000
-5756 Pelech Adam 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               200 000
-5994 Pulock Ryan 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               220 000
+3162 Boychuk Johnny 15  2  4  6  1  0  1  0  41  35  42  0  0  -1  2  0  0  1  8.40  126               350 000
+4692 de Haan Calvin 15  1  5  6  0  0  0  0  25  24  39  0  0  6  20  0  0  0  8.47  127               335 000
+4771 Hamonic Travis 12  2  3  5  0  0  0  0  15  17  24  0  0  -7  23  0  0  0  5.67  68               265 000
+4243 Hickey Thomas 15  1  3  4  0  0  0  0  21  15  37  0  0  3  2  0  0  0  5.93  89               260 000
+4696 Leddy Nick 14  3  4  7  0  0  0  0  29  16  19  0  0  -7  4  0  0  0  6.29  88               295 000
+5756 Pelech Adam 3  0  1  1  0  0  0  0  2  3  4  0  0  0  0  0  0  0  4.67  14               220 000
+5994 Pulock Ryan 1  0  0  0  0  0  0  0  0  1  1  0  0  1  0  0  0  0  5.00  5               225 000
+3123 Seidenberg Dennis 15  4  4  8  0  0  0  0  18  18  38  0  0  10  12  1  1  0  10.47  157               350 000
 ID Hyokkaaja O M S P AVM AVS VM JA L T B ALV ALH +/- JM XXX XX X HGMP/O HGMP Arvo
-4482 Bailey Josh 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           245 000
-1907 Boulton Eric 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           195 000
-2530 Chimera Jason 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           240 000
-4773 Cizikas Casey 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           250 000
-4194 Clutterbuck Cal 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           225 000
+4482 Bailey Josh 15  2  6  8  0  0  0  1  26  5  15  3  3  4  0  0  1  0  5.53  83           295 000
+6770 Beauvillier Anthony 11  1  4  5  0  0  0  0  9  16  2  5  4  3  2  0  1  0  5.09  56           255 000
+2530 Chimera Jason 15  1  4  5  0  0  0  0  23  27  6  4  5  -4  12  1  0  0  4.40  66           250 000
+4773 Cizikas Casey 15  2  4  6  0  0  1  0  18  40  18  115  134  1  12  1  0  0  6.33  95           285 000
+4194 Clutterbuck Cal 15  2  5  7  0  0  1  0  26  56  9  1  2  0  8  0  0  1  6.93  104           300 000
 3965 Grabovski Mikhail 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           255 000
-4188 Kulemin Nikolai 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           230 000
-3640 Ladd Andrew 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           345 000
-5928 Lee Anders 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           270 000
-4990 Nelson Brock 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           300 000
-3262 Parenteau P.A. 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           260 000
-5428 Prince Shane 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           205 000
-5451 Quine Alan 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           210 000
-5366 Strome Ryan 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           245 000
-4681 Tavares John 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           460 000
+4188 Kulemin Nikolai 13  1  3  4  0  0  0  0  14  11  10  5  2  3  6  0  0  0  4.77  62           255 000
+3640 Ladd Andrew 15  2  1  3  0  0  0  0  29  14  5  0  1  -2  8  0  1  0  3.87  58           310 000
+5928 Lee Anders 15  1  1  2  0  0  0  0  21  44  6  1  1  2  8  0  0  0  4.67  70           265 000
+4990 Nelson Brock 15  4  7  11  0  1  0  0  29  13  16  80  111  5  4  0  1  0  6.53  98           320 000
+5428 Prince Shane 10  3  3  6  0  0  0  0  16  12  0  1  1  -2  4  1  0  1  5.80  58           270 000
+5451 Quine Alan 9  1  1  2  0  0  1  0  6  18  4  10  9  2  2  0  0  0  4.33  39           225 000
+5366 Strome Ryan 15  2  3  5  0  0  0  0  23  12  6  38  42  -3  10  0  2  0  4.53  68           270 000
+4681 Tavares John 15  5  7  12  0  0  0  0  48  8  6  161  148  0  18  1  1  2  9.07  136           420 000
 NY Rangers
 ID Maalivahti O M S P V H JAH TO PM NP JM XXX XX X HGMP/O HGMP Arvo
-2645 Lundqvist Henrik 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               345 000
-5967 Raanta Antti 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               290 000
+2645 Lundqvist Henrik 12  0  1  1  8  4  0  273  25  1  0  0  0  2  9.00  108               340 000
+5967 Raanta Antti 5  0  1  1  4  0  0  151  10  0  0  0  2  1  14.40  72               315 000
 ID Puolustaja O M S P AVM AVS VM JA L T B ALV ALH +/- JM XXX XX X HGMP/O HGMP Arvo
-5404 Clendening Adam 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               210 000
-3953 Girardi Dan 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               300 000
-4386 Holden Nick 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               245 000
-3375 Klein Kevin 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               265 000
-4251 McDonagh Ryan 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               365 000
-4970 McIlrath Dylan 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               220 000
-5708 Skjei Brady 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               225 000
-3789 Staal Marc 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               250 000
+5404 Clendening Adam 6  0  2  2  0  0  0  0  4  1  4  0  0  4  2  0  0  0  5.33  32               240 000
+3953 Girardi Dan 12  3  3  6  0  1  3  0  14  23  28  0  0  7  4  0  0  1  10.33  124               350 000
+4386 Holden Nick 16  1  6  7  0  0  0  0  8  27  21  0  0  13  6  0  0  0  8.19  131               300 000
+3375 Klein Kevin 13  0  4  4  0  1  0  0  14  20  33  0  0  3  0  0  0  0  6.38  83               265 000
+4251 McDonagh Ryan 16  0  10  10  0  0  0  0  26  16  26  0  0  9  4  1  0  0  8.75  140               380 000
+5708 Skjei Brady 16  0  9  9  0  0  0  0  15  30  13  0  0  5  2  1  0  0  7.13  114               285 000
+3789 Staal Marc 16  1  2  3  0  1  0  0  16  16  19  0  0  9  2  0  0  0  5.75  92               280 000
 ID Hyokkaaja O M S P AVM AVS VM JA L T B ALV ALH +/- JM XXX XX X HGMP/O HGMP Arvo
-5130 Fast Jesper 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           235 000
-4436 Gerbe Nathan 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           205 000
-4310 Glass Tanner 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           200 000
-3995 Grabner Michael 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           230 000
-4984 Hayes Kevin 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           260 000
-6191 Jooris Josh 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           225 000
-4699 Kreider Chris 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           305 000
-5030 Lindberg Oscar 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           265 000
-5376 Miller J.T. 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           255 000
-3153 Nash Rick 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           355 000
-5193 Pirri Brandon 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           240 000
-4992 Stepan Derek 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           370 000
-5757 Vesey Jimmy 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           235 000
-5367 Zibanejad Mika 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           345 000
-4921 Zuccarello Mats 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           325 000
+6055 Buchnevich Pavel 10  4  4  8  0  0  0  0  18  3  3  0  1  4  4  1  0  0  7.10  71           295 000
+5130 Fast Jesper 16  2  6  8  0  0  0  0  10  24  6  6  4  7  10  0  0  0  5.75  92           250 000
+3995 Grabner Michael 16  10  3  13  0  1  1  0  36  9  12  2  1  15  0  0  2  2  9.81  157           330 000
+4984 Hayes Kevin 16  6  8  14  1  0  1  0  21  10  12  91  102  13  4  0  0  2  8.94  143           350 000
+6191 Jooris Josh 5  1  0  1  0  0  0  0  3  10  2  13  8  1  0  0  0  0  3.80  19           230 000
+4699 Kreider Chris 11  3  8  11  0  0  0  0  35  25  5  1  1  -1  6  2  0  2  9.55  105           365 000
+5030 Lindberg Oscar 5  0  0  0  0  0  0  0  5  4  3  19  13  0  2  0  0  0  3.20  16           235 000
+5376 Miller J.T. 16  5  10  15  0  0  1  0  35  25  15  23  29  14  8  3  0  0  10.13  162           375 000
+3153 Nash Rick 16  7  4  11  0  0  1  0  48  6  14  0  0  0  8  1  1  0  7.50  120           340 000
+5193 Pirri Brandon 16  4  5  9  0  0  2  0  24  8  6  39  28  7  2  0  2  1  6.63  106           290 000
+4992 Stepan Derek 16  2  9  11  1  0  1  0  31  3  12  126  158  4  6  0  1  0  5.94  95           325 000
+5757 Vesey Jimmy 16  7  4  11  0  0  2  0  28  10  7  0  0  6  2  0  1  1  7.19  115           325 000
+5367 Zibanejad Mika 16  3  8  11  0  0  0  0  40  6  7  152  131  0  6  2  0  0  6.75  108           320 000
+4921 Zuccarello Mats 16  6  4  10  0  0  0  0  38  18  5  1  1  3  8  0  0  0  6.88  110           330 000
 Ottawa
 ID Maalivahti O M S P V H JAH TO PM NP JM XXX XX X HGMP/O HGMP Arvo
-2911 Anderson Craig 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               320 000
-5920 Hammond Andrew 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               300 000
+2911 Anderson Craig 11  0  0  0  7  3  1  337  24  2  0  2  1  1  12.18  134               340 000
+5959 Condon Mike 3  0  0  0  2  0  0  65  1  1  0  0  0  2  14.67  44               290 000
+5920 Hammond Andrew 2  0  0  0  0  1  0  23  6  0  0  0  0  0  -2.00  -4               285 000
 ID Puolustaja O M S P AVM AVS VM JA L T B ALV ALH +/- JM XXX XX X HGMP/O HGMP Arvo
-5261 Borowiecki Mark 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               215 000
-5695 Ceci Cody 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               255 000
-5491 Claesson Fredrik 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               200 000
-4491 Karlsson Erik 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               420 000
-4379 Kostka Michael 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               205 000
-3526 Methot Marc 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               250 000
-3347 Phaneuf Dion 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               350 000
-5638 Wideman Chris 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               220 000
+5261 Borowiecki Mark 15  0  0  0  0  0  0  0  5  44  20  0  0  4  21  0  0  0  4.60  69               250 000
+5695 Ceci Cody 15  0  2  2  0  1  0  0  27  30  33  0  0  -5  6  0  0  0  4.53  68               265 000
+5491 Claesson Fredrik 6  0  0  0  0  0  0  0  2  6  3  0  0  -1  0  0  0  0  1.00  6               200 000
+4491 Karlsson Erik 15  3  10  13  0  1  1  0  38  10  37  0  0  4  8  0  0  2  11.87  178               455 000
+3526 Methot Marc 15  0  2  2  0  0  0  0  22  30  18  0  0  4  4  0  0  0  5.20  78               280 000
+3347 Phaneuf Dion 15  1  3  4  0  0  0  0  38  32  37  0  0  -6  21  0  1  0  6.93  104               325 000
+5638 Wideman Chris 10  0  3  3  0  0  0  0  14  4  8  0  0  0  8  0  0  0  5.00  50               225 000
 ID Hyokkaaja O M S P AVM AVS VM JA L T B ALV ALH +/- JM XXX XX X HGMP/O HGMP Arvo
-3899 Blunden Mike 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           210 000
-3987 Brassard Derick 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           370 000
-5569 Dzingel Ryan 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           205 000
-4805 Hoffman Mike 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           335 000
-2800 Kelly Chris 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           215 000
-5996 Lazar Curtis 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           225 000
+3987 Brassard Derick 15  1  5  6  0  0  0  0  35  18  2  137  135  1  4  1  0  0  4.93  74           335 000
+5569 Dzingel Ryan 15  5  4  9  1  0  1  0  26  9  9  1  2  4  0  2  0  1  6.53  98           280 000
+4805 Hoffman Mike 15  3  4  7  0  0  2  0  50  5  8  1  2  -6  6  2  2  0  5.67  85           310 000
+2800 Kelly Chris 15  1  2  3  0  0  0  0  19  11  12  62  75  0  4  0  0  0  3.40  51           215 000
 3701 MacArthur Clarke 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           300 000
-2112 Neil Chris 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           220 000
-5462 Pageau Jean-Gabriel 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           285 000
-6080 Paul Nick 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           210 000
-5385 Puempel Matt 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           195 000
-5923 Robinson Buddy 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           220 000
-3776 Ryan Bobby 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           340 000
-4536 Smith Zack 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           265 000
-5152 Stone Mark 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           360 000
-4242 Turris Kyle 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           355 000
+2112 Neil Chris 14  1  1  2  0  0  0  0  18  29  9  0  0  -2  18  0  1  0  4.21  59           250 000
+5462 Pageau Jean-Gabriel 15  1  3  4  0  0  0  0  26  27  14  81  64  3  2  0  1  0  5.33  80           290 000
+5385 Puempel Matt 10  0  0  0  0  0  0  0  10  6  4  0  1  -1  5  0  0  0  1.60  16           200 000
+4121 Pyatt Tom 15  2  3  5  0  1  0  0  22  9  18  6  9  2  2  0  0  1  5.00  75           235 000
+3776 Ryan Bobby 15  3  3  6  0  0  1  0  33  14  11  1  1  -1  4  0  0  0  5.33  80           335 000
+4536 Smith Zack 15  3  1  4  1  0  0  0  32  29  4  64  53  1  21  1  0  0  6.47  97           325 000
+5152 Stone Mark 14  2  4  6  0  0  2  0  24  15  8  3  3  -2  4  0  0  0  5.14  72           330 000
+4242 Turris Kyle 15  7  2  9  0  0  0  2  32  4  11  101  122  0  4  0  2  1  6.33  95           340 000
 Philadelphia
 ID Maalivahti O M S P V H JAH TO PM NP JM XXX XX X HGMP/O HGMP Arvo
-4163 Mason Steve 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               320 000
-4213 Neuvirth Michal 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               315 000
+4163 Mason Steve 11  0  1  1  3  5  2  227  31  0  0  1  1  0  3.82  42               310 000
+4213 Neuvirth Michal 9  0  0  0  4  2  0  152  25  0  0  0  0  0  2.22  20               305 000
 ID Puolustaja O M S P AVM AVS VM JA L T B ALV ALH +/- JM XXX XX X HGMP/O HGMP Arvo
-4652 Brennan T.J. 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               215 000
-4496 Del Zotto Michael 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               280 000
-5769 Gostisbehere Shayne 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               365 000
-5039 Gudas Radko 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               290 000
-4094 MacDonald Andrew 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               230 000
-5613 Manning Brandon 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               210 000
-6749 Provorov Ivan 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               220 000
-2529 Schultz Nick 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               225 000
-3833 Streit Mark 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               275 000
+4496 Del Zotto Michael 4  1  2  3  0  0  0  0  8  20  7  0  0  -1  4  0  0  0  10.75  43               335 000
+5769 Gostisbehere Shayne 16  3  7  10  0  0  1  0  48  7  20  0  0  -6  8  0  0  0  7.63  122               360 000
+5039 Gudas Radko 10  1  4  5  0  0  0  0  17  39  29  0  0  -1  2  0  0  0  8.90  89               325 000
+4094 MacDonald Andrew 10  1  2  3  0  0  0  0  8  8  18  0  0  -2  4  0  0  0  4.60  46               235 000
+5613 Manning Brandon 15  3  5  8  1  0  1  0  25  38  19  0  0  2  13  0  0  0  9.13  137               275 000
+6749 Provorov Ivan 16  0  6  6  0  0  0  0  24  21  25  0  0  -8  8  0  1  0  5.06  81               255 000
+2529 Schultz Nick 9  0  3  3  0  0  0  0  9  15  20  0  0  0  2  0  0  0  5.89  53               245 000
+3833 Streit Mark 16  3  7  10  0  0  0  0  32  9  18  0  0  -5  10  0  1  0  7.19  115               320 000
 ID Hyokkaaja O M S P AVM AVS VM JA L T B ALV ALH +/- JM XXX XX X HGMP/O HGMP Arvo
-6365 Bellemare Pierre-Edouard 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           235 000
-5435 Cousins Nick 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           225 000
-5369 Couturier Sean 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           295 000
-4002 Giroux Claude 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           470 000
-3170 Gordon Boyd 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           230 000
-5700 Laughton Scott 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           220 000
-5807 Leier Taylor 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           190 000
-3389 McDonald Colin 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           245 000
-5966 Raffl Michael 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           235 000
-5278 Read Matt 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           250 000
-4685 Schenn Brayden 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           325 000
-4328 Simmonds Wayne 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           365 000
-4874 VandeVelde Chris 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           200 000
-4246 Voracek Jakub 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           360 000
-5043 Weal Jordan 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           185 000
-4544 Weise Dale 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           240 000
+6365 Bellemare Pierre-Edouard 16  0  3  3  0  1  0  0  17  13  14  89  98  2  2  0  0  0  3.06  49           230 000
+5435 Cousins Nick 12  1  3  4  0  0  0  0  16  14  6  4  19  0  2  0  0  0  3.58  43           240 000
+5369 Couturier Sean 16  4  3  7  0  1  1  0  26  13  12  137  141  -3  12  0  0  1  5.81  93           300 000
+4002 Giroux Claude 16  4  12  16  0  0  2  0  40  12  3  181  166  -9  4  2  0  2  7.50  120           420 000
+3170 Gordon Boyd 8  1  0  1  0  0  0  0  6  3  3  33  30  -1  2  0  0  0  2.50  20           220 000
+6766 Konecny Travis 16  4  6  10  0  0  0  0  38  27  6  0  0  -3  8  0  1  1  6.69  107           275 000
+7318 Lyubimov Roman 12  1  0  1  0  0  0  0  16  11  4  0  2  -2  0  1  0  0  2.25  27           200 000
+5966 Raffl Michael 7  1  1  2  0  0  0  0  7  11  2  1  0  2  0  0  0  1  4.86  34           250 000
+5278 Read Matt 16  6  1  7  0  0  0  0  28  32  11  0  4  -2  0  0  1  0  5.44  87           270 000
+4685 Schenn Brayden 13  3  7  10  0  0  1  0  30  37  10  16  16  -7  11  1  1  0  7.85  102           335 000
+4328 Simmonds Wayne 16  8  7  15  1  0  0  0  46  36  15  1  1  -6  17  0  1  0  9.56  153           390 000
+4874 VandeVelde Chris 16  2  1  3  0  0  0  0  14  22  12  4  6  -4  2  0  0  0  3.00  48           235 000
+4246 Voracek Jakub 16  6  10  16  0  0  0  1  60  3  3  0  4  -5  30  1  1  2  7.44  119           340 000
+4544 Weise Dale 12  0  1  1  0  0  0  0  10  22  3  0  0  -2  4  0  0  0  2.58  31           225 000
 Pittsburgh
 ID Maalivahti O M S P V H JAH TO PM NP JM XXX XX X HGMP/O HGMP Arvo
-3341 Fleury Marc-Andre 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               330 000
-5774 Murray Matt 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               320 000
+3341 Fleury Marc-Andre 11  0  0  0  6  3  2  335  33  0  4  1  0  2  8.36  92               335 000
+5774 Murray Matt 4  0  0  0  4  0  0  124  5  1  0  0  0  1  16.50  66               325 000
 ID Puolustaja O M S P AVM AVS VM JA L T B ALV ALH +/- JM XXX XX X HGMP/O HGMP Arvo
-4257 Cole Ian 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               230 000
-3184 Daley Trevor 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               270 000
-5659 Dumoulin Brian 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               240 000
-4064 Letang Kris 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               425 000
-5702 Maatta Olli 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               310 000
-5688 Pouliot Derrick 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               210 000
-5714 Schultz Justin 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               235 000
-4960 Warsofsky David 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               200 000
+4257 Cole Ian 15  1  2  3  0  0  0  0  14  36  35  0  0  1  17  0  1  0  6.60  99               240 000
+3184 Daley Trevor 15  1  4  5  0  1  0  0  20  4  27  0  0  2  10  0  0  0  6.13  92               285 000
+5659 Dumoulin Brian 15  0  2  2  0  0  0  0  22  29  18  0  0  0  4  0  0  0  4.60  69               255 000
+4064 Letang Kris 10  1  8  9  0  0  0  0  34  19  15  0  0  0  6  0  0  1  11.40  114               440 000
+5702 Maatta Olli 15  0  1  1  0  0  0  0  16  14  28  0  0  4  6  0  0  0  4.73  71               270 000
+5688 Pouliot Derrick 1  0  0  0  0  0  0  0  1  1  1  0  0  0  0  0  0  0  3.00  3               225 000
+5714 Schultz Justin 15  0  3  3  0  0  0  0  22  13  13  0  0  4  4  0  0  0  4.53  68               255 000
 ID Hyokkaaja O M S P AVM AVS VM JA L T B ALV ALH +/- JM XXX XX X HGMP/O HGMP Arvo
-4838 Bonino Nick 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           300 000
-3737 Crosby Sidney 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           500 000
-1657 Cullen Matt 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           235 000
-3356 Fehr Eric 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           230 000
-5598 Hagelin Carl 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           275 000
-4207 Hornqvist Patric 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           375 000
-3983 Kessel Phil 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           360 000
-5083 Kuhnhackl Tom 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           215 000
-3340 Kunitz Chris 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           345 000
-3638 Malkin Evgeni 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           465 000
-4413 Porter Kevin 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           190 000
-5053 Rust Bryan 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           210 000
-6585 Sheary Conor 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           240 000
-5358 Wilson Garrett 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           200 000
-5574 Wilson Scott 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           200 000
+4838 Bonino Nick 15  1  3  4  1  0  0  0  22  15  19  131  139  -3  4  0  0  0  3.93  59           255 000
+3737 Crosby Sidney 9  10  3  13  0  0  1  0  35  12  2  99  113  6  0  2  4  1  14.00  126           500 000
+1657 Cullen Matt 15  3  6  9  0  0  1  0  17  9  3  116  91  3  4  1  0  0  5.93  89           265 000
+3356 Fehr Eric 15  2  1  3  0  0  1  0  14  17  14  22  20  -2  2  0  1  0  3.67  55           225 000
+5598 Hagelin Carl 15  2  4  6  0  1  0  0  26  14  8  0  1  0  2  2  0  0  5.00  75           280 000
+4207 Hornqvist Patric 15  5  8  13  0  0  1  0  60  39  18  1  4  5  2  0  0  1  9.93  149           400 000
+3983 Kessel Phil 15  3  10  13  0  0  2  0  34  3  4  0  3  -2  6  2  0  0  6.60  99           345 000
+5083 Kuhnhackl Tom 10  0  2  2  0  0  0  0  6  16  5  0  1  1  4  0  0  0  3.40  34           215 000
+3340 Kunitz Chris 15  2  6  8  0  0  2  0  27  47  5  2  3  4  16  1  0  0  7.93  119           355 000
+3638 Malkin Evgeni 15  8  7  15  0  0  1  0  40  8  8  100  142  0  22  0  3  1  9.47  142           430 000
+5053 Rust Bryan 12  2  2  4  0  0  0  0  28  24  7  0  0  -3  2  0  0  1  5.33  64           250 000
+4142 Sestito Tom 7  0  1  1  0  0  0  0  2  15  1  0  0  0  14  0  0  0  3.43  24           210 000
+6585 Sheary Conor 8  3  5  8  0  0  1  0  13  5  5  0  0  9  0  0  0  2  10.13  81           335 000
+5574 Wilson Scott 14  2  2  4  0  0  0  0  25  32  6  0  0  -3  2  0  0  0  4.21  59           240 000
 San Jose
 ID Maalivahti O M S P V H JAH TO PM NP JM XXX XX X HGMP/O HGMP Arvo
-7091 Armalis Mantas 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               270 000
-6596 Dell Aaron 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               275 000
-4581 Jones Martin 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               330 000
+6596 Dell Aaron 2  0  0  0  1  0  0  37  4  0  0  0  0  0  5.50  11               275 000
+4581 Jones Martin 14  0  0  0  8  6  0  306  29  1  0  2  0  4  6.86  96               330 000
 ID Puolustaja O M S P AVM AVS VM JA L T B ALV ALH +/- JM XXX XX X HGMP/O HGMP Arvo
-4888 Braun Justin 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               250 000
-3358 Burns Brent 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               425 000
+4888 Braun Justin 15  0  1  1  0  0  0  0  16  20  33  0  0  -5  2  0  0  0  3.00  45               225 000
+3358 Burns Brent 15  6  7  13  0  0  1  0  73  18  31  0  0  0  4  1  1  1  12.53  188               460 000
 5544 DeMelo Dylan 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               200 000
-5251 Dillon Brenden 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               235 000
-2992 Martin Paul 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               265 000
-5997 Mueller Mirco 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               200 000
-4301 Schlemko David 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               215 000
-3829 Vlasic Marc-Edouard 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               320 000
+5251 Dillon Brenden 15  0  1  1  0  0  0  0  19  31  13  0  0  1  10  0  0  0  4.20  63               255 000
+2992 Martin Paul 15  0  4  4  0  0  0  0  8  7  26  0  0  -2  6  0  0  0  4.00  60               250 000
+4301 Schlemko David 15  0  3  3  0  0  0  0  30  9  19  0  0  1  2  0  0  0  4.27  64               255 000
+3829 Vlasic Marc-Edouard 15  3  3  6  0  0  1  1  23  7  23  0  0  0  20  1  1  1  6.60  99               315 000
 ID Hyokkaaja O M S P AVM AVS VM JA L T B ALV ALH +/- JM XXX XX X HGMP/O HGMP Arvo
-4481 Boedker Mikkel 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           275 000
-4248 Couture Logan 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           390 000
-5072 Donskoi Joonas 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           255 000
-6393 Goldobin Nikolay 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           200 000
-6290 Goodrow Barclay 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           215 000
-5697 Hertl Tomas 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           315 000
-6361 Karlsson Melker 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           225 000
-1644 Marleau Patrick 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           300 000
-5415 Nieto Matthew 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           210 000
-3985 Pavelski Joe 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           465 000
-1600 Thornton Joe 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           365 000
-5744 Tierney Chris 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           215 000
-4079 Ward Joel 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           280 000
-4944 Wingels Tommy 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           240 000
+4481 Boedker Mikkel 15  2  0  2  0  0  0  0  16  11  3  2  7  -5  2  0  0  0  1.60  24           245 000
+4248 Couture Logan 15  3  5  8  0  0  0  0  49  2  11  60  111  -3  2  0  0  1  4.27  64           350 000
+5072 Donskoi Joonas 15  2  4  6  0  0  0  0  25  8  5  0  0  -2  6  0  0  0  4.07  61           250 000
+4567 Haley Micheal 7  0  2  2  0  0  0  0  2  22  4  0  0  -1  27  0  0  0  4.29  30           215 000
+5697 Hertl Tomas 15  4  5  9  0  0  1  0  35  26  4  79  56  0  10  0  1  0  7.53  113           340 000
+6361 Karlsson Melker 15  2  2  4  0  0  0  0  12  10  11  0  2  3  4  0  0  0  3.73  56           230 000
+6539 Labanc Kevin 3  0  0  0  0  0  0  0  4  0  1  0  0  2  2  0  0  0  3.33  10           210 000
+1644 Marleau Patrick 15  4  1  5  0  0  1  0  35  17  5  6  9  -2  4  0  1  0  4.93  74           280 000
+5415 Nieto Matthew 6  0  0  0  0  0  0  0  8  8  3  0  2  -3  0  0  0  0  1.33  8           210 000
+3985 Pavelski Joe 15  5  9  14  0  0  2  0  41  28  18  85  77  3  12  1  2  0  10.20  153           435 000
+1600 Thornton Joe 15  2  8  10  0  0  0  0  11  11  6  96  63  2  4  1  0  0  6.27  94           345 000
+5744 Tierney Chris 15  0  4  4  0  0  0  0  14  11  11  55  60  -2  0  0  0  0  2.87  43           220 000
+4079 Ward Joel 15  1  2  3  0  0  0  0  17  12  11  36  44  -4  4  0  1  0  3.00  45           250 000
+4944 Wingels Tommy 14  3  1  4  0  0  2  0  17  18  6  25  32  -1  0  0  0  1  4.14  58           260 000
 St. Louis
 ID Maalivahti O M S P V H JAH TO PM NP JM XXX XX X HGMP/O HGMP Arvo
-4589 Allen Jake 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               335 000
-4850 Hutton Carter 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               285 000
+4589 Allen Jake 12  0  0  0  5  3  3  251  29  1  2  2  1  2  6.08  73               320 000
+4850 Hutton Carter 6  0  0  0  2  3  0  126  14  0  2  0  1  1  4.33  26               295 000
 ID Puolustaja O M S P AVM AVS VM JA L T B ALV ALH +/- JM XXX XX X HGMP/O HGMP Arvo
-4758 Bortuzzo Robert 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               210 000
-3103 Bouwmeester Jay 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               255 000
-4410 Butler Chris 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               240 000
-5414 Edmundson Joel 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               215 000
-4675 Gunnarsson Carl 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               220 000
-5865 Lindbohm Petteri 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               200 000
-5777 Parayko Colton 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               315 000
-4474 Pietrangelo Alex 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               365 000
-4253 Shattenkirk Kevin 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               380 000
-4309 Weber Mike 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               210 000
+4758 Bortuzzo Robert 4  0  0  0  0  0  0  0  4  13  6  0  0  1  2  0  0  0  5.00  20               235 000
+3103 Bouwmeester Jay 16  1  1  2  0  0  0  0  20  17  24  0  0  -8  8  0  0  1  3.38  54               245 000
+5414 Edmundson Joel 13  0  1  1  0  0  0  0  12  23  15  0  0  -3  17  0  0  0  3.69  48               225 000
+4675 Gunnarsson Carl 12  0  1  1  0  0  0  0  8  8  14  0  0  -1  4  0  0  0  2.83  34               210 000
+5865 Lindbohm Petteri 3  0  0  0  0  0  0  0  5  4  3  0  0  -3  4  0  0  0  2.00  6               200 000
+5777 Parayko Colton 16  0  5  5  0  0  0  0  43  8  28  0  0  -6  8  1  0  0  4.94  79               275 000
+4474 Pietrangelo Alex 16  3  4  7  0  0  1  0  37  11  27  0  0  -11  10  1  0  0  5.75  92               345 000
+4253 Shattenkirk Kevin 16  4  8  12  0  0  0  0  32  15  13  0  0  0  21  1  0  0  9.44  151               390 000
 ID Hyokkaaja O M S P AVM AVS VM JA L T B ALV ALH +/- JM XXX XX X HGMP/O HGMP Arvo
-4005 Berglund Patrik 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           255 000
-3601 Brodziak Kyle 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           210 000
-4705 Caron Jordan 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           200 000
-6387 Fabbri Robby 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           275 000
-5240 Ferraro Landon 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           200 000
-5409 Jaskin Dmitrij 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           220 000
-4939 Lehtera Jori 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           295 000
-3120 Nystrom Eric 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           220 000
-4690 Paajarvi Magnus 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           195 000
-4265 Perron David 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           315 000
-4313 Porter Chris 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           190 000
-5400 Rattie Ty 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           205 000
-4186 Reaves Ryan 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           200 000
-4974 Schwartz Jaden 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           340 000
-4023 Stastny Paul 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           365 000
-3136 Steen Alexander 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           380 000
-4976 Tarasenko Vladimir 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           410 000
-3132 Upshall Scottie 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           215 000
+4005 Berglund Patrik 16  1  3  4  0  0  0  0  25  31  8  111  95  -4  8  0  1  0  4.69  75           275 000
+3601 Brodziak Kyle 15  0  1  1  0  0  0  0  12  14  6  28  53  -5  15  0  0  0  1.73  26           195 000
+6387 Fabbri Robby 15  3  3  6  0  0  0  0  24  20  7  2  2  -4  8  0  1  0  4.73  71           275 000
+5409 Jaskin Dmitrij 14  0  3  3  0  0  0  0  12  19  5  3  4  1  4  0  0  0  3.29  46           230 000
+4939 Lehtera Jori 12  1  2  3  0  0  1  0  17  7  7  80  64  0  8  0  0  0  4.92  59           300 000
+4265 Perron David 16  4  4  8  0  0  1  0  31  15  6  12  17  -8  6  0  0  1  4.81  77           265 000
+5400 Rattie Ty 1  0  0  0  0  0  0  0  1  0  0  0  0  0  0  0  0  0  1.00  1           200 000
+4186 Reaves Ryan 14  0  1  1  0  0  0  0  9  32  0  0  0  -2  7  0  0  0  2.64  37           215 000
+4974 Schwartz Jaden 12  3  2  5  0  0  1  0  27  11  10  27  25  -2  4  0  1  0  5.83  70           320 000
+4023 Stastny Paul 16  4  5  9  0  0  1  0  28  9  8  178  161  -4  14  1  2  0  6.31  101           335 000
+3136 Steen Alexander 16  2  8  10  0  0  0  0  29  8  11  20  40  -8  25  0  0  0  4.38  70           345 000
+4976 Tarasenko Vladimir 16  6  11  17  0  0  0  1  65  3  6  0  1  0  0  0  1  1  8.69  139           405 000
+3132 Upshall Scottie 13  2  2  4  0  0  0  0  16  15  0  1  3  -5  9  0  0  0  3.08  40           225 000
+5681 Yakupov Nail 13  2  2  4  0  0  0  0  15  11  1  0  0  -3  8  0  0  1  3.92  51           245 000
 Tampa Bay
 ID Maalivahti O M S P V H JAH TO PM NP JM XXX XX X HGMP/O HGMP Arvo
-4365 Bishop Ben 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               340 000
-5699 Vasilevskiy Andrei 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               280 000
+4365 Bishop Ben 10  0  0  0  5  5  0  271  29  0  0  1  0  0  5.80  58               325 000
+5699 Vasilevskiy Andrei 5  0  0  0  3  1  1  138  10  0  0  0  1  0  9.00  45               295 000
 ID Puolustaja O M S P AVM AVS VM JA L T B ALV ALH +/- JM XXX XX X HGMP/O HGMP Arvo
-3346 Coburn Braydon 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               245 000
-4575 Garrison Jason 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               265 000
-4682 Hedman Victor 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               385 000
-5690 Koekkoek Slater 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               200 000
-5513 Nesterov Nikita 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               235 000
-4174 Stralman Anton 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               325 000
-5922 Sustr Andrej 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               210 000
-5929 Witkowski Luke 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               180 000
+3346 Coburn Braydon 15  0  2  2  0  0  0  0  19  19  5  0  0  -3  8  0  0  0  3.27  49               230 000
+4575 Garrison Jason 15  0  2  2  0  0  0  0  24  19  23  0  0  -8  4  0  0  0  2.87  43               240 000
+4682 Hedman Victor 15  3  8  11  0  0  2  0  24  17  24  0  0  4  8  1  1  0  9.93  149               410 000
+5690 Koekkoek Slater 6  0  3  3  0  0  0  0  4  9  6  0  0  2  2  0  0  0  6.67  40               215 000
+5513 Nesterov Nikita 10  0  0  0  0  0  0  0  16  18  9  0  0  0  10  0  0  0  4.10  41               255 000
+4174 Stralman Anton 15  1  6  7  0  0  0  0  22  16  13  0  0  2  0  0  0  0  6.53  98               315 000
+5922 Sustr Andrej 15  0  2  2  0  0  0  0  17  8  20  0  0  -5  7  0  0  0  3.07  46               225 000
+5929 Witkowski Luke 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               200 000
 ID Hyokkaaja O M S P AVM AVS VM JA L T B ALV ALH +/- JM XXX XX X HGMP/O HGMP Arvo
-3363 Boyle Brian 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           250 000
-5641 Brown J.T. 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           240 000
-3886 Callahan Ryan 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           300 000
-5601 Conacher Cory 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           210 000
-4711 Condra Erik 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           200 000
-5982 Drouin Jonathan 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           290 000
-3759 Filppula Valtteri 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           280 000
-5256 Johnson Tyler 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           375 000
-5626 Killorn Alex 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           305 000
-5425 Kucherov Nikita 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           370 000
-5388 Namestnikov Vladislav 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           245 000
-5573 Palat Ondrej 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           325 000
-5791 Paquette Cedric 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           230 000
-4471 Stamkos Steven 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           480 000
+3363 Boyle Brian 15  4  1  5  0  0  0  0  24  21  12  52  50  1  12  0  0  0  4.93  74           260 000
+5641 Brown J.T. 14  1  1  2  1  0  0  0  15  16  3  0  1  -4  12  0  0  0  3.36  47           215 000
+3886 Callahan Ryan 7  0  1  1  0  0  0  0  9  20  3  2  1  0  17  0  0  0  3.86  27           280 000
+5982 Drouin Jonathan 10  2  3  5  0  0  0  0  30  7  7  20  21  -4  4  1  1  0  5.50  55           295 000
+3759 Filppula Valtteri 14  4  5  9  0  0  1  0  16  5  6  111  155  2  4  2  0  1  5.07  71           270 000
+5256 Johnson Tyler 15  5  3  8  0  0  0  0  22  16  8  130  107  -7  4  1  0  2  5.93  89           345 000
+5626 Killorn Alex 15  6  2  8  0  0  1  0  33  27  6  0  4  0  12  1  1  0  7.13  107           320 000
+5425 Kucherov Nikita 14  5  11  16  0  0  2  0  38  2  6  0  0  4  2  1  1  1  9.29  130           385 000
+5388 Namestnikov Vladislav 15  2  3  5  0  0  0  0  27  7  7  23  29  -1  6  1  0  1  4.47  67           235 000
+5573 Palat Ondrej 15  2  4  6  0  0  0  0  26  34  6  1  2  -8  11  0  0  0  4.67  70           275 000
+5791 Paquette Cedric 14  1  3  4  0  0  0  0  15  29  7  19  26  0  12  0  0  0  3.71  52           225 000
+6448 Point Brayden 15  1  4  5  0  0  1  0  34  7  6  3  3  0  0  0  0  1  4.40  66           250 000
+4471 Stamkos Steven 15  8  9  17  0  0  1  0  54  21  3  104  88  -1  14  0  2  3  11.53  173           480 000
 Toronto
 ID Maalivahti O M S P V H JAH TO PM NP JM XXX XX X HGMP/O HGMP Arvo
-5161 Andersen Frederik 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               320 000
-4461 Enroth Jhonas 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               295 000
-5555 Sparks Garret 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               270 000
+5161 Andersen Frederik 13  0  0  0  6  4  3  390  43  0  12  0  1  2  6.77  88               315 000
+4461 Enroth Jhonas 4  0  0  0  0  2  0  71  11  0  0  0  0  0  0.25  1               280 000
 ID Puolustaja O M S P AVM AVS VM JA L T B ALV ALH +/- JM XXX XX X HGMP/O HGMP Arvo
-5827 Carrick Connor 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               205 000
-5515 Corrado Frank 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               200 000
-4493 Gardiner Jake 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               260 000
-4270 Hunwick Matt 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               230 000
-5019 Marincin Martin 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               220 000
-3926 Polak Roman 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               235 000
-5685 Rielly Morgan 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               290 000
+5827 Carrick Connor 14  1  1  2  0  0  0  0  27  17  16  0  0  0  18  0  0  0  4.36  61               245 000
+5515 Corrado Frank 1  0  0  0  0  0  0  0  0  2  1  0  0  0  2  0  0  0  4.00  4               205 000
+4493 Gardiner Jake 15  2  5  7  0  0  0  0  21  13  14  0  0  -1  2  0  0  0  5.80  87               280 000
+4270 Hunwick Matt 7  0  2  2  0  0  0  0  9  18  8  0  0  -3  0  0  0  0  4.00  28               225 000
+5019 Marincin Martin 12  1  2  3  0  0  0  0  13  15  15  0  0  -5  0  0  0  0  4.00  48               235 000
+3926 Polak Roman 11  1  1  2  0  0  0  0  10  42  21  0  0  -2  10  0  0  0  6.27  69               270 000
+5685 Rielly Morgan 15  1  9  10  0  0  0  0  27  4  33  0  0  -4  7  0  0  1  7.27  109               335 000
+7098 Zaitsev Nikita 15  0  7  7  0  0  0  0  13  36  25  0  0  -8  4  0  0  0  5.33  80               255 000
 ID Hyokkaaja O M S P AVM AVS VM JA L T B ALV ALH +/- JM XXX XX X HGMP/O HGMP Arvo
-4629 Bozak Tyler 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           315 000
-5344 Froese Byron 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           200 000
-4891 Greening Colin 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           245 000
-4695 Holland Peter 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           225 000
-5096 Hyman Zach 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           220 000
-4687 Kadri Nazem 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           370 000
-5672 Komarov Leo 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           310 000
-3287 Laich Brooks 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           210 000
-4754 Martin Matt 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           235 000
-7109 Matthews Auston 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           295 000
-3329 Michalek Milan 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           250 000
-6374 Nylander William 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           240 000
-6713 Soshnikov Nikita 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           250 000
-4241 van Riemsdyk James 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           335 000
+4629 Bozak Tyler 15  5  5  10  0  0  1  0  31  12  5  143  94  -5  2  1  1  1  7.27  109           335 000
+5846 Brown Connor 15  1  1  2  0  0  0  0  18  16  13  0  0  -2  4  1  0  0  3.40  51           230 000
+4695 Holland Peter 7  0  1  1  0  0  0  0  12  3  1  26  30  -2  4  0  0  0  2.71  19           215 000
+5096 Hyman Zach 15  2  1  3  0  0  1  0  34  26  10  7  12  -3  6  0  0  0  4.40  66           250 000
+4687 Kadri Nazem 15  7  4  11  0  0  0  1  34  22  7  101  121  -2  41  1  0  1  7.40  111           330 000
+5672 Komarov Leo 15  1  3  4  1  0  0  0  18  52  12  18  19  0  7  0  0  0  5.60  84           295 000
+5452 Leivo Josh 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           225 000
+3110 Lupul Joffrey 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           280 000
+6746 Marner Mitchell 15  5  7  12  0  0  3  0  41  6  9  5  4  -7  12  0  3  1  8.20  123           320 000
+4754 Martin Matt 15  0  1  1  0  0  0  0  17  71  2  0  5  -2  37  0  0  0  4.20  63           265 000
+7109 Matthews Auston 15  6  6  12  0  0  0  0  58  3  8  68  70  -4  0  0  0  1  7.00  105           315 000
+6374 Nylander William 15  4  8  12  0  0  0  0  39  4  7  31  38  -2  6  1  0  0  6.47  97           295 000
+4886 Smith Ben 13  1  1  2  0  0  0  0  10  8  9  87  78  -4  0  0  0  0  2.62  34           225 000
+6713 Soshnikov Nikita 6  1  1  2  0  0  0  0  9  18  0  0  1  0  4  0  0  0  5.33  32           235 000
+4241 van Riemsdyk James 15  4  7  11  0  0  0  0  43  17  8  1  3  -5  8  1  0  0  7.07  106           315 000
 Vancouver
 ID Maalivahti O M S P V H JAH TO PM NP JM XXX XX X HGMP/O HGMP Arvo
-4808 Bachman Richard 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               240 000
-4947 Markstrom Jacob 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               300 000
-2637 Miller Ryan 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               325 000
+4947 Markstrom Jacob 8  0  0  0  4  2  1  172  16  0  0  2  0  1  6.00  48               305 000
+2637 Miller Ryan 9  0  0  0  2  7  0  232  26  0  22  0  1  1  3.11  28               305 000
 ID Puolustaja O M S P AVM AVS VM JA L T B ALV ALH +/- JM XXX XX X HGMP/O HGMP Arvo
-4920 Biega Alex 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               210 000
-4020 Edler Alexander 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               355 000
-4963 Gudbranson Erik 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               235 000
-5837 Hutton Ben 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               230 000
-4495 Sbisa Luca 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               250 000
-4935 Tanev Christopher 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               240 000
-6435 Tryamkin Nikita 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               215 000
+4920 Biega Alex 1  0  0  0  0  0  0  0  0  0  1  0  0  0  0  0  0  0  1.00  1               200 000
+4020 Edler Alexander 15  1  0  1  0  0  0  0  32  29  40  2  1  -5  4  0  0  0  4.73  71               325 000
+4963 Gudbranson Erik 16  0  3  3  0  0  0  0  22  33  20  0  0  -7  7  0  0  0  3.69  59               240 000
+5837 Hutton Ben 16  1  1  2  0  0  0  0  30  16  21  0  0  -7  12  1  0  0  3.88  62               250 000
+4654 Larsen Philip 13  0  4  4  0  0  0  0  22  4  12  0  0  -8  4  0  0  0  3.23  42               220 000
+4495 Sbisa Luca 16  0  1  1  0  0  0  0  6  25  24  0  0  0  6  0  0  0  3.38  54               230 000
+7093 Stecher Troy 7  1  2  3  0  0  0  0  20  4  6  0  0  -3  9  2  0  1  6.71  47               235 000
+4935 Tanev Christopher 7  0  1  1  0  0  0  0  4  3  19  0  0  0  6  0  0  0  4.57  32               245 000
+6435 Tryamkin Nikita 6  0  0  0  0  0  0  0  5  23  7  0  0  0  11  0  0  0  5.17  31               230 000
 ID Hyokkaaja O M S P AVM AVS VM JA L T B ALV ALH +/- JM XXX XX X HGMP/O HGMP Arvo
-5374 Baertschi Sven 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           220 000
-3838 Burrows Alexandre 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           260 000
-4153 Dorsett Derek 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           215 000
-3371 Eriksson Loui 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           345 000
-4989 Etem Emerson 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           220 000
-5706 Gaunce Brendan 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           205 000
-5413 Granlund Markus 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           230 000
-4021 Hansen Jannik 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           275 000
-5988 Horvat Bo 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           280 000
-2845 Ruutu Tuomo 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           200 000
-2102 Sedin Daniel 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           380 000
-2103 Sedin Henrik 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           370 000
-4250 Sutter Brandon 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           295 000
-6372 Virtanen Jake 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           235 000
+5374 Baertschi Sven 16  1  4  5  0  0  1  0  22  9  8  1  0  -4  0  0  0  0  3.50  56           240 000
+3838 Burrows Alexandre 12  2  2  4  0  0  0  0  22  9  2  0  2  -1  23  0  0  1  4.17  50           240 000
+5062 Chaput Michael 4  0  1  1  0  0  0  0  1  7  0  10  8  0  0  0  0  0  2.75  11           205 000
+4153 Dorsett Derek 12  1  2  3  0  0  0  0  24  33  6  0  0  -5  23  0  0  0  5.17  62           295 000
+3371 Eriksson Loui 16  2  4  6  0  1  0  0  26  1  7  0  0  -4  0  1  0  0  3.38  54           310 000
+5706 Gaunce Brendan 16  0  2  2  0  0  0  0  14  21  3  46  44  -3  20  0  0  0  2.25  36           215 000
+5413 Granlund Markus 16  4  2  6  0  0  0  1  26  8  3  14  25  -4  6  1  1  0  4.06  65           245 000
+4021 Hansen Jannik 12  2  4  6  0  0  0  0  21  13  2  0  0  -1  21  0  1  0  5.17  62           285 000
+5988 Horvat Bo 16  5  4  9  1  0  0  0  22  21  3  125  131  -6  10  0  0  1  5.63  90           270 000
+5902 Megna Jayson 2  0  0  0  0  0  0  0  0  5  0  0  0  -1  0  0  0  0  1.00  2           225 000
+4951 Rodin Anton 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           200 000
+2102 Sedin Daniel 16  5  4  9  0  0  1  0  46  6  5  0  1  -3  2  1  0  0  5.38  86           350 000
+2103 Sedin Henrik 16  5  5  10  0  0  0  1  22  5  2  142  132  -3  4  0  1  0  5.25  84           340 000
+3784 Skille Jack 10  0  1  1  0  0  0  0  12  20  4  0  0  -6  4  0  0  0  2.80  28           205 000
+4250 Sutter Brandon 16  2  6  8  0  0  1  1  39  11  9  159  141  -7  0  0  1  1  5.38  86           265 000
 Washington
 ID Maalivahti O M S P V H JAH TO PM NP JM XXX XX X HGMP/O HGMP Arvo
-5085 Grubauer Philipp 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               280 000
-4588 Holtby Braden 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               345 000
+5085 Grubauer Philipp 3  0  0  0  2  1  0  74  6  1  0  0  0  1  11.33  34               285 000
+4588 Holtby Braden 11  0  0  0  7  3  1  284  24  0  0  1  1  1  8.18  90               335 000
 ID Puolustaja O M S P AVM AVS VM JA L T B ALV ALH +/- JM XXX XX X HGMP/O HGMP Arvo
-4244 Alzner Karl 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               230 000
-4503 Carlson John 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               370 000
-4512 Chorney Taylor 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               205 000
-3805 Niskanen Matt 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               340 000
-5254 Orlov Dmitry 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               250 000
-2491 Orpik Brooks 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               280 000
-5932 Schmidt Nate 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               210 000
+4244 Alzner Karl 14  2  2  4  0  0  0  0  16  15  22  0  0  4  6  0  0  0  6.29  88               260 000
+4503 Carlson John 14  0  6  6  0  0  0  0  39  11  17  0  0  3  0  0  0  0  6.43  90               350 000
+4512 Chorney Taylor 1  0  0  0  0  0  0  0  2  1  0  0  0  0  0  0  0  0  2.00  2               200 000
+3805 Niskanen Matt 14  0  7  7  0  1  0  0  24  18  19  0  0  1  6  0  0  0  7.14  100               315 000
+5254 Orlov Dmitry 14  0  4  4  0  0  0  0  22  23  20  0  0  6  8  0  0  0  7.00  98               300 000
+2491 Orpik Brooks 14  0  3  3  0  0  0  0  13  27  26  0  0  5  2  1  0  0  5.93  83               265 000
+5932 Schmidt Nate 13  0  4  4  0  0  0  0  14  11  5  0  0  -2  2  0  0  0  3.69  48               225 000
 ID Hyokkaaja O M S P AVM AVS VM JA L T B ALV ALH +/- JM XXX XX X HGMP/O HGMP Arvo
-3982 Backstrom Nicklas 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           430 000
-4380 Beagle Jay 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           250 000
-6002 Burakovsky Andre 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           260 000
-4966 Connolly Brett 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           220 000
-4252 Eller Lars 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           280 000
-5059 Galiev Stanislav 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           200 000
-4704 Johansson Marcus 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           295 000
-4986 Kuznetsov Evgeny 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           425 000
-5312 Malone Brad 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           190 000
-3801 Oshie T.J. 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           380 000
-3637 Ovechkin Alex 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           495 000
-2468 Williams Justin 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           300 000
-5696 Wilson Tom 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           245 000
-3867 Winnik Daniel 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           215 000
+3982 Backstrom Nicklas 14  1  8  9  0  0  0  0  26  10  3  116  94  -2  6  0  1  0  5.71  80           375 000
+4380 Beagle Jay 14  3  3  6  1  0  1  0  21  7  5  89  65  5  2  1  1  0  6.00  84           275 000
+6002 Burakovsky Andre 14  2  4  6  0  0  0  0  31  6  3  0  0  -3  0  1  0  0  4.29  60           265 000
+4966 Connolly Brett 7  1  0  1  0  0  0  0  10  16  1  0  0  1  2  0  0  0  4.00  28           230 000
+4252 Eller Lars 14  2  0  2  0  0  0  0  21  9  2  80  90  -1  14  1  0  0  3.50  49           245 000
+4704 Johansson Marcus 14  7  5  12  0  0  2  1  27  6  0  2  3  2  2  0  0  2  7.71  108           340 000
+4986 Kuznetsov Evgeny 14  2  5  7  0  0  0  0  20  6  3  88  119  4  6  0  0  0  4.43  62           340 000
+3801 Oshie T.J. 14  6  2  8  0  1  1  0  31  14  10  22  20  5  10  0  2  1  8.64  121           370 000
+3637 Ovechkin Alex 14  7  4  11  0  0  2  1  59  37  4  0  1  -1  10  1  3  1  10.50  147           475 000
+6041 Sanford Zachary 12  0  1  1  0  0  0  0  9  7  3  5  1  0  2  0  0  0  2.25  27           200 000
+2468 Williams Justin 14  1  1  2  0  0  0  0  25  3  8  22  7  -3  6  1  0  0  3.36  47           270 000
+5696 Wilson Tom 14  1  0  1  0  0  0  0  17  31  5  0  2  2  14  0  0  0  4.00  56           240 000
+3867 Winnik Daniel 9  2  1  3  0  0  1  0  6  2  4  1  2  3  2  0  0  1  4.11  37           230 000
 Winnipeg
 ID Maalivahti O M S P V H JAH TO PM NP JM XXX XX X HGMP/O HGMP Arvo
-4857 Hutchinson Michael 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               295 000
-4052 Pavelec Ondrej 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               310 000
+5820 Hellebuyck Connor 11  0  0  0  6  4  0  268  27  0  0  1  0  0  5.64  62               315 000
+4857 Hutchinson Michael 8  0  0  0  2  3  2  189  22  1  0  0  0  1  6.38  51               295 000
 ID Puolustaja O M S P AVM AVS VM JA L T B ALV ALH +/- JM XXX XX X HGMP/O HGMP Arvo
-3705 Byfuglien Dustin 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               415 000
-5263 Chiarot Ben 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               210 000
-4235 Enstrom Tobias 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               250 000
-4485 Myers Tyler 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               310 000
-4641 Postma Paul 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               190 000
-4713 Strait Brian 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               215 000
-3359 Stuart Mark 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               220 000
-5689 Trouba Jacob 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               265 000
+3705 Byfuglien Dustin 17  0  8  8  0  0  0  0  44  46  30  0  0  0  19  0  0  0  8.59  146               400 000
+5263 Chiarot Ben 16  0  3  3  0  0  0  0  11  21  21  0  0  -5  8  0  0  0  3.56  57               225 000
+4235 Enstrom Tobias 17  1  5  6  1  0  0  0  18  3  23  0  0  2  10  1  0  0  5.76  98               260 000
+5992 Morrissey Josh 17  0  2  2  0  0  0  0  21  23  25  0  0  0  6  0  0  0  4.35  74               245 000
+4485 Myers Tyler 11  2  3  5  0  1  0  0  16  12  21  0  0  5  13  0  1  0  8.91  98               320 000
+4641 Postma Paul 13  0  2  2  0  0  0  0  15  7  9  0  0  0  0  0  0  0  3.08  40               220 000
+3359 Stuart Mark 5  0  0  0  0  0  0  0  3  4  11  0  0  1  0  0  0  0  3.00  15               215 000
+5689 Trouba Jacob 2  0  0  0  0  0  0  0  5  1  7  0  0  -1  0  0  0  0  3.00  6               265 000
 ID Hyokkaaja O M S P AVM AVS VM JA L T B ALV ALH +/- JM XXX XX X HGMP/O HGMP Arvo
-5377 Armia Joel 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           225 000
-4968 Burmistrov Alex 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           230 000
-6083 Copp Andrew 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           200 000
-6006 Dano Marko 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           235 000
-6375 Ehlers Nikolaj 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           260 000
-4985 Howden Quinton 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           210 000
-7110 Laine Patrik 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           265 000
-3994 Little Bryan 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           360 000
-5434 Lowry Adam 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           220 000
-4118 Matthias Shawn 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           220 000
-4606 Peluso Anthony 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           210 000
-4383 Perreault Mathieu 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           280 000
-6023 Petan Nic 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           190 000
-5368 Scheifele Mark 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           380 000
-3649 Stafford Drew 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           245 000
-3411 Thorburn Chris 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           215 000
-3641 Wheeler Blake 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           370 000
+5377 Armia Joel 10  1  3  4  0  0  0  0  18  8  2  2  3  0  2  2  1  0  4.70  47           235 000
+4968 Burmistrov Alex 15  0  2  2  0  1  0  0  11  14  2  37  59  -4  2  0  0  0  1.33  20           195 000
+6759 Connor Kyle 16  1  3  4  0  0  1  0  20  1  7  1  1  -8  4  0  0  0  2.44  39           225 000
+6083 Copp Andrew 7  2  2  4  1  0  0  0  6  11  5  13  30  0  0  0  0  1  5.29  37           240 000
+6006 Dano Marko 7  3  1  4  0  0  0  0  10  12  3  1  1  0  2  0  0  0  6.00  42           230 000
+6375 Ehlers Nikolaj 17  4  10  14  0  0  1  0  42  9  6  0  1  4  8  1  0  0  7.24  123           315 000
+4985 Howden Quinton 1  0  0  0  0  0  0  0  2  2  0  0  2  0  0  0  0  0  1.00  1           210 000
+7110 Laine Patrik 17  11  5  16  0  0  1  1  48  19  8  0  2  2  6  1  0  3  9.65  164           350 000
+3994 Little Bryan 1  0  1  1  0  0  0  0  1  0  0  2  1  1  0  0  0  0  8.00  8           355 000
+5434 Lowry Adam 17  4  2  6  0  0  0  0  26  39  11  123  142  -1  17  1  0  1  5.47  93           235 000
+4118 Matthias Shawn 10  2  1  3  0  0  1  0  12  7  5  1  4  2  4  0  1  0  4.40  44           235 000
+4383 Perreault Mathieu 11  1  2  3  0  0  0  0  27  16  3  80  76  -5  6  0  0  0  4.18  46           260 000
+6023 Petan Nic 6  0  4  4  0  0  0  0  12  1  2  28  20  -2  0  1  0  0  5.17  31           225 000
+5368 Scheifele Mark 17  10  10  20  0  0  1  1  43  17  9  153  198  8  16  2  2  0  10.47  178           405 000
+3649 Stafford Drew 6  0  1  1  0  0  0  0  6  2  0  0  3  1  2  0  0  0  2.33  14           240 000
+7083 Tanev Brandon 17  2  1  3  0  0  1  0  26  34  13  0  0  -1  19  0  0  1  4.12  70           230 000
+3411 Thorburn Chris 12  0  0  0  0  0  0  0  7  19  7  7  6  -4  28  0  0  0  3.17  38           215 000
+3641 Wheeler Blake 17  5  8  13  1  0  0  0  51  25  7  13  15  -2  12  1  1  1  7.94  135           360 000
