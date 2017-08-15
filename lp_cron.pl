@@ -27,7 +27,7 @@ sub initialize_return_value() {
 
 sub sm_sarjataulukko {
     my %return_value = initialize_return_value();
-	my $data = fetch_page("http://liiga.fi/tilastot/2016-2017/runkosarja/joukkueet/");
+	my $data = fetch_page("http://liiga.fi/tilastot/2017-2018/runkosarja/joukkueet/");
     my $sijoitus = undef;
     my $column = 0;
     my ($joukkue, $ottelut, $pisteet);
@@ -372,7 +372,8 @@ sub sm_ottelu_id {
     my $gameday;
     my $file = get_ottelulista_filename("sm_liiga");
 
-    my $data = fetch_page("http://www.liiga.fi/ottelut/2016-2017/runkosarja/");
+    my $data = fetch_page("http://www.liiga.fi/ottelut/2017-2018runkosarja/");
+    #my $data = fetch_page("http://www.liiga.fi/ottelut/2017-2018/playoffs/");
     $data = modify_char($data);
     my @data = split(/\n/, $data);
 
@@ -508,10 +509,6 @@ sub sm_ottelulista {
 
 sub nhl_ottelulista {
 	ottelulista("nhl"); 
-}
-
-sub valio_ottelulista {
-	ottelulista("valio"); 
 }
 
 if ($sub !~ /^\s*$/) {

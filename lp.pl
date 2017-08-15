@@ -1,6 +1,7 @@
 #!/usr/bin/perl -w
 #E:\Ohjelmat\perl64\bin\perl.exe -w
 
+
 use strict;
 use CGI::Carp qw(fatalsToBrowser);
 use CGI qw(:standard);
@@ -372,12 +373,6 @@ sub teamCompareTable {
         }
         $html .= "</td>\n";
 
-        # skipataan valioliigalla, koska tablessa joukkueet eri nimilla kuin ottelulistassa
-        if ($param_liiga eq "valio") {
-            $html .= "</tr>\n";
-            next;
-        }
-	
         $html .= "<td style='width : 8px;'></td>\n";
 
         $html .= "<td>\n";
@@ -930,7 +925,8 @@ sub kokoonpanot () {
 	my ($nimi, $player_id);
 	my @joukkue = ($koti, $vieras);
 
-	my $data = fetch_page("http://liiga.fi/ottelut/2016-2017/runkosarja/$param_game_nro/kokoonpanot/");
+	my $data = fetch_page("http://liiga.fi/ottelut/2017-2018/runkosarja/$param_game_nro/kokoonpanot/");
+	#my $data = fetch_page("http://liiga.fi/ottelut/2017-2018/playoffs/$param_game_nro/kokoonpanot/");
 	my $text;
 	my $p = HTML::Parser->new(text_h => [ sub {$text .= shift}, 
 				  'dtext']);

@@ -5,7 +5,7 @@ sub get_vuodet ($) {
     my $liiga = shift;
     
     if ($liiga =~ /sm_liiga/) {
-        @vuodet = ("2014", "2015", "2016");
+        @vuodet = ("2014", "2015", "2016", "2017");
     } else {
         @vuodet = ("2014", "2015", "2016");
     }
@@ -27,16 +27,14 @@ sub get_default_vuosi ($) {
     my $liiga = shift;
 
     if ($liiga eq "sm_liiga") {
-        $vuosi = 2016;
+        $vuosi = 2017;
     } elsif ($liiga eq "nhl"){
         $vuosi = 2016;
-    } else {
-	    $vuosi = "undef";
 	}
 
     return $vuosi;
 }
-sub get_liigat { return ("sm_liiga", "nhl", "valio"); }
+sub get_liigat { return ("sm_liiga", "nhl"); }
 sub get_default_sub { return "" };
 sub get_default_graafi { return "LPP ennuste" };
 sub get_default_joukkue { return "Joukkue" };
@@ -48,8 +46,6 @@ sub get_default_jakso ($) {
         $jakso = "Jakso PO";
     } elsif ($liiga eq "nhl"){
         $jakso = "Jakso PO";
-	} else {
-        $jakso = "undef";
     }
     
     return $jakso;
@@ -60,11 +56,11 @@ sub get_joukkue_list ($) {
     my @joukkueet;
 
     if ($liiga =~ /sm_liiga/) {
-        #@joukkueet = ("HIFK", "HPK", "Ilves", "Jukurit", "JYP", "KalPa", "KooKoo", "Karpat", "Lukko", "Pelicans", "SaiPa", "Sport", "Tappara", "TPS", "Assat");
-        @joukkueet = ("HIFK", "JYP", "KalPa", "Tappara");
+        @joukkueet = ("HIFK", "HPK", "Ilves", "Jukurit", "JYP", "KalPa", "KooKoo", "Karpat", "Lukko", "Pelicans", "SaiPa", "Sport", "Tappara", "TPS", "Assat");
+        #@joukkueet = ("HIFK", "JYP", "KalPa", "Tappara");
     } else {
         #@joukkueet = ("Anaheim", "Arizona", "Boston", "Buffalo", "Calgary", "Carolina", "Chicago", "Colorado", "Columbus", "Dallas", "Detroit", "Edmonton", "Florida", "Los Angeles", "Minnesota", "Montreal", "Nashville", "New Jersey", "NY Islanders", "NY Rangers", "Ottawa", "Philadelphia", "Pittsburgh", "San Jose", "St. Louis", "Tampa Bay", "Toronto", "Vancouver", "Washington", "Winnipeg");
-        @joukkueet = ("Anaheim", "Boston", "Calgary", "Chicago", "Columbus", "Edmonton", "Minnesota", "Montreal", "Nashville", "NY Rangers", "Ottawa", "Pittsburgh", "San Jose", "St. Louis", "Toronto", "Washington");
+        @joukkueet = ("Anaheim", "Nashville", "Ottawa", "Pittsburgh");
     }
     
     return @joukkueet;    
@@ -133,8 +129,6 @@ sub get_ottelulista_link($) {
 	my $link = "https://www.liigaporssi.fi/sm-liiga/ottelupaiva";
 	if ($liiga eq "nhl") {
 		$link = "https://www.hockeygm.fi/nhl/ottelupaiva";
-	} elsif ($liiga eq "valio") {
-		$link = "https://www.valioliigaporssi.fi/valioliiga/ottelupaiva";
 	}
 
 	return $link;

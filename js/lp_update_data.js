@@ -21,7 +21,6 @@ function get_settings() {
 				'<tr><th>Sarja</th> <th>Jakso</th> <th>Vuosi</th></tr>' +
 				'<tr><td>' + res.nhl.liiga + '</td> <td>' + res.nhl.jakso + '</td> <td>' + res.nhl.vuosi + '</td></tr>' +
 				'<tr><td>' + res.sm_liiga.liiga + '</td> <td>' + res.sm_liiga.jakso + '</td> <td>' + res.sm_liiga.vuosi + '</td></tr>' +
-				'<tr><td>' + res.valio.liiga + '</td> <td>' + res.valio.jakso + '</td> <td>' + res.valio.vuosi + '</td></tr>' +
 				'</table>'
 				);
 			},

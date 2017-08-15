@@ -3,7 +3,7 @@
 use strict;
 require "lp_cron.pl";
 
-my @subs = ("nhl_sarjataulukko", "nhl_kokoonpanot", "nhl_ottelulista", "sm_sarjataulukko", "sm_ottelulista", "sm_kokoonpanot", "valio_ottelulista");
+my @subs = ("nhl_sarjataulukko", "nhl_kokoonpanot", "nhl_ottelulista", "sm_sarjataulukko", "sm_ottelulista", "sm_kokoonpanot");
 
 foreach my $sub (@subs) {
 	print "Trying to run sub $sub ... ";
