@@ -372,7 +372,7 @@ sub sm_ottelu_id {
     my $gameday;
     my $file = get_ottelulista_filename("sm_liiga");
 
-    my $data = fetch_page("http://www.liiga.fi/ottelut/2017-2018runkosarja/");
+	my $data = fetch_page("http://liiga.fi/ottelut/2017-2018/runkosarja/");
     #my $data = fetch_page("http://www.liiga.fi/ottelut/2017-2018/playoffs/");
     $data = modify_char($data);
     my @data = split(/\n/, $data);
