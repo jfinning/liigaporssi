@@ -300,9 +300,9 @@ sub nhl_kokoonpanot {
 	}
 	my $file = "player_stats/$year/player_list_${period}_nhl.txt";
     my @nhl_joukkue = get_joukkue_list("nhl");
-	my %name_count;
 
     foreach my $joukkue (@nhl_joukkue) {
+        my %name_count;
         $final_player_list .= "$joukkue\n";
 
         $address = "https://www.hockeygm.fi/team/search-players?player_position=all&player_team=${joukkue}&player_value=all&type=player_search";
