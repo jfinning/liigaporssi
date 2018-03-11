@@ -56,8 +56,8 @@ sub get_joukkue_list ($) {
     my @joukkueet;
 
     if ($liiga =~ /sm_liiga/) {
-        @joukkueet = ("HIFK", "HPK", "Ilves", "Jukurit", "JYP", "KalPa", "KooKoo", "Karpat", "Lukko", "Pelicans", "SaiPa", "Sport", "Tappara", "TPS", "Assat");
-        #@joukkueet = ("HIFK", "JYP", "KalPa", "Tappara");
+        #@joukkueet = ("HIFK", "HPK", "Ilves", "Jukurit", "JYP", "KalPa", "KooKoo", "Karpat", "Lukko", "Pelicans", "SaiPa", "Sport", "Tappara", "TPS", "Assat");
+        @joukkueet = ("HIFK", "JYP", "KalPa", "Karpat", "Lukko", "Pelicans", "SaiPa", "Tappara", "TPS", "Assat");
     } else {
         @joukkueet = ("Anaheim", "Arizona", "Boston", "Buffalo", "Calgary", "Carolina", "Chicago", "Colorado", "Columbus", "Dallas", "Detroit", "Edmonton", "Florida", "Los Angeles", "Minnesota", "Montreal", "Nashville", "New Jersey", "NY Islanders", "NY Rangers", "Ottawa", "Philadelphia", "Pittsburgh", "San Jose", "St. Louis", "Tampa Bay", "Toronto", "Vancouver", "Vegas", "Washington", "Winnipeg");
         #@joukkueet = ("Anaheim", "Nashville", "Ottawa", "Pittsburgh");
