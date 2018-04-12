@@ -45,7 +45,7 @@ sub get_default_jakso ($) {
     if ($liiga eq "sm_liiga") {
         $jakso = "Jakso PO";
     } elsif ($liiga eq "nhl"){
-        $jakso = "Jakso 5";
+        $jakso = "Jakso PO";
     }
     
     return $jakso;
@@ -57,10 +57,10 @@ sub get_joukkue_list ($) {
 
     if ($liiga =~ /sm_liiga/) {
         #@joukkueet = ("HIFK", "HPK", "Ilves", "Jukurit", "JYP", "KalPa", "KooKoo", "Karpat", "Lukko", "Pelicans", "SaiPa", "Sport", "Tappara", "TPS", "Assat");
-        @joukkueet = ("HIFK", "JYP", "KalPa", "Karpat", "SaiPa", "Tappara", "TPS", "Assat");
+        @joukkueet = ("HIFK", "Karpat", "Tappara", "TPS");
     } else {
-        @joukkueet = ("Anaheim", "Arizona", "Boston", "Buffalo", "Calgary", "Carolina", "Chicago", "Colorado", "Columbus", "Dallas", "Detroit", "Edmonton", "Florida", "Los Angeles", "Minnesota", "Montreal", "Nashville", "New Jersey", "NY Islanders", "NY Rangers", "Ottawa", "Philadelphia", "Pittsburgh", "San Jose", "St. Louis", "Tampa Bay", "Toronto", "Vancouver", "Vegas", "Washington", "Winnipeg");
-        #@joukkueet = ("Anaheim", "Nashville", "Ottawa", "Pittsburgh");
+        #@joukkueet = ("Anaheim", "Arizona", "Boston", "Buffalo", "Calgary", "Carolina", "Chicago", "Colorado", "Columbus", "Dallas", "Detroit", "Edmonton", "Florida", "Los Angeles", "Minnesota", "Montreal", "Nashville", "New Jersey", "NY Islanders", "NY Rangers", "Ottawa", "Philadelphia", "Pittsburgh", "San Jose", "St. Louis", "Tampa Bay", "Toronto", "Vancouver", "Vegas", "Washington", "Winnipeg");
+        @joukkueet = ("Anaheim", "Boston", "Colorado", "Columbus", "Los Angeles", "Minnesota", "Nashville", "New Jersey", "Philadelphia", "Pittsburgh", "San Jose", "Tampa Bay", "Toronto", "Vegas", "Washington", "Winnipeg");
     }
     
     return @joukkueet;    
