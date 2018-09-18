@@ -124,8 +124,8 @@ sub sm_kokoonpanot_kaikki {
 
     # Listaa tahan nimet, jos aakkosjarjestys ei matsaa. Ts. seuraavan joukkueen ensimmainen pelaaja on aakkosissa toisen joukkueen viimeisen jalkeen
 	# Joukkue vaihtuu ENNEN lisattya pelaajaa
-    #my @pelaajat = ("Ruusu Markus");
-	my @pelaajat = ();
+    my @pelaajat = ("Jarvenpaa Juha");
+	#my @pelaajat = ();
     my %katkaisu_pelaajat;
     foreach (@pelaajat) {
         $katkaisu_pelaajat{$_} = 1;
@@ -156,7 +156,7 @@ sub sm_kokoonpanot_kaikki {
 
 	    if ($line =~ /^\s*(\D+)\s*$/ && $line !~ /Maalivahdit|Puolustajat|Hy.*kk.*t/) {
             if (length($1) > 6) {
-                $name = $1;
+                $name = modify_char($1);
             }
         }
 
