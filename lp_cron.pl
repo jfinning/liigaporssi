@@ -128,7 +128,7 @@ sub sm_kokoonpanot_kaikki {
 	#my @pelaajat = ();
     my %katkaisu_pelaajat;
     foreach (@pelaajat) {
-        $katkaisu_pelaajat{$_} = 1;
+        $katkaisu_pelaajat{modify_char($_)} = 1;
     }
 
     my $final_player_list = "";
@@ -156,7 +156,7 @@ sub sm_kokoonpanot_kaikki {
 
 	    if ($line =~ /^\s*(\D+)\s*$/ && $line !~ /Maalivahdit|Puolustajat|Hy.*kk.*t/) {
             if (length($1) > 6) {
-                $name = modify_char($1);
+                $name = $1;
             }
         }
 
@@ -171,7 +171,7 @@ sub sm_kokoonpanot_kaikki {
 			$team_count = 0;
 			$final_player_list = "${final_player_list}$sm_joukkue[$team_count]\n";
             $team_count++;
-		} elsif (($name lt $previous_name || defined $katkaisu_pelaajat{$name}) && $name ne $previous_name && $final_player_list !~ /Arvo.*?$/) {
+		} elsif (($name lt $previous_name || defined $katkaisu_pelaajat{modify_char($name)}) && $name ne $previous_name && $final_player_list !~ /Arvo.*?$/) {
             $final_player_list = "${final_player_list}$sm_joukkue[$team_count]\n";
             $team_count++;
 	        if ($team_count > $#sm_joukkue) { $team_count = 0; }
