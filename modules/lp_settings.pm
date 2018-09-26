@@ -7,7 +7,7 @@ sub get_vuodet ($) {
     if ($liiga =~ /sm_liiga/) {
         @vuodet = ("2014", "2015", "2016", "2017", "2018");
     } else {
-        @vuodet = ("2014", "2015", "2016", "2017");
+        @vuodet = ("2014", "2015", "2016", "2017", "2018");
     }
     
     return @vuodet;
@@ -29,7 +29,7 @@ sub get_default_vuosi ($) {
     if ($liiga eq "sm_liiga") {
         $vuosi = 2018;
     } elsif ($liiga eq "nhl"){
-        $vuosi = 2017;
+        $vuosi = 2018;
 	}
 
     return $vuosi;
@@ -45,7 +45,7 @@ sub get_default_jakso ($) {
     if ($liiga eq "sm_liiga") {
         $jakso = "Jakso 1";
     } elsif ($liiga eq "nhl"){
-        $jakso = "Jakso PO";
+        $jakso = "Jakso 1";
     }
     
     return $jakso;
@@ -59,8 +59,8 @@ sub get_joukkue_list ($) {
         @joukkueet = ("HIFK", "HPK", "Ilves", "Jukurit", "JYP", "KalPa", "KooKoo", "Karpat", "Lukko", "Pelicans", "SaiPa", "Sport", "Tappara", "TPS", "Assat");
         #@joukkueet = ("HIFK", "Karpat", "Tappara", "TPS");
     } else {
-        #@joukkueet = ("Anaheim", "Arizona", "Boston", "Buffalo", "Calgary", "Carolina", "Chicago", "Colorado", "Columbus", "Dallas", "Detroit", "Edmonton", "Florida", "Los Angeles", "Minnesota", "Montreal", "Nashville", "New Jersey", "NY Islanders", "NY Rangers", "Ottawa", "Philadelphia", "Pittsburgh", "San Jose", "St. Louis", "Tampa Bay", "Toronto", "Vancouver", "Vegas", "Washington", "Winnipeg");
-        @joukkueet = ("Tampa Bay", "Vegas", "Washington", "Winnipeg");
+        @joukkueet = ("Anaheim", "Arizona", "Boston", "Buffalo", "Calgary", "Carolina", "Chicago", "Colorado", "Columbus", "Dallas", "Detroit", "Edmonton", "Florida", "Los Angeles", "Minnesota", "Montreal", "Nashville", "New Jersey", "NY Islanders", "NY Rangers", "Ottawa", "Philadelphia", "Pittsburgh", "San Jose", "St. Louis", "Tampa Bay", "Toronto", "Vancouver", "Vegas", "Washington", "Winnipeg");
+        #@joukkueet = ("Tampa Bay", "Vegas", "Washington", "Winnipeg");
     }
     
     return @joukkueet;    
