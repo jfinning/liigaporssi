@@ -27,7 +27,7 @@ sub initialize_return_value() {
 
 sub sm_sarjataulukko {
     my %return_value = initialize_return_value();
-	my $data = fetch_page("http://liiga.fi/tilastot/2018-2019/runkosarja/joukkueet/");
+	my $data = fetch_page("http://liiga.fi/tilastot/2019-2020/runkosarja/joukkueet/");
     my $sijoitus = undef;
     my $column = 0;
     my ($joukkue, $ottelut, $pisteet);
@@ -124,8 +124,8 @@ sub sm_kokoonpanot_kaikki {
 
     # Listaa tahan nimet, jos aakkosjarjestys ei matsaa. Ts. seuraavan joukkueen ensimmainen pelaaja on aakkosissa toisen joukkueen viimeisen jalkeen
 	# Joukkue vaihtuu ENNEN lisattya pelaajaa
-    my @pelaajat = ("Jarvenpaa Juha");
-	#my @pelaajat = ();
+    #my @pelaajat = ("Jarvenpaa Juha");
+	my @pelaajat = ();
     my %katkaisu_pelaajat;
     foreach (@pelaajat) {
         $katkaisu_pelaajat{modify_char($_)} = 1;
@@ -372,8 +372,8 @@ sub sm_ottelu_id {
     my $gameday;
     my $file = get_ottelulista_filename("sm_liiga");
 
-	my $data = fetch_page("http://liiga.fi/ottelut/2018-2019/runkosarja/");
-    #my $data = fetch_page("http://www.liiga.fi/ottelut/2018-2019/playoffs/");
+	my $data = fetch_page("http://liiga.fi/ottelut/2019-2020/runkosarja/");
+    #my $data = fetch_page("http://www.liiga.fi/ottelut/2019-2020/playoffs/");
     $data = modify_char($data);
     my @data = split(/\n/, $data);
 
