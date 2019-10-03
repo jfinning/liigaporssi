@@ -59,9 +59,9 @@ sub get_joukkue_list ($) {
         @joukkueet = ("HIFK", "HPK", "Ilves", "Jukurit", "JYP", "KalPa", "KooKoo", "Karpat", "Lukko", "Pelicans", "SaiPa", "Sport", "Tappara", "TPS", "Assat");
         #@joukkueet = ("HPK", "Karpat");
     } else {
-        #@joukkueet = ("Anaheim", "Arizona", "Boston", "Buffalo", "Calgary", "Carolina", "Chicago", "Colorado", "Columbus", "Dallas", "Detroit", "Edmonton", "Florida", "Los Angeles", "Minnesota", "Montreal", "Nashville", "New Jersey", "NY Islanders", "NY Rangers", "Ottawa", "Philadelphia", "Pittsburgh", "San Jose", "St. Louis", "Tampa Bay", "Toronto", "Vancouver", "Vegas", "Washington", "Winnipeg");
+        @joukkueet = ("Anaheim", "Arizona", "Boston", "Buffalo", "Calgary", "Carolina", "Chicago", "Colorado", "Columbus", "Dallas", "Detroit", "Edmonton", "Florida", "Los Angeles", "Minnesota", "Montreal", "Nashville", "New Jersey", "NY Islanders", "NY Rangers", "Ottawa", "Philadelphia", "Pittsburgh", "San Jose", "St. Louis", "Tampa Bay", "Toronto", "Vancouver", "Vegas", "Washington", "Winnipeg");
         #@joukkueet = ("Boston", "Calgary", "Carolina", "Colorado", "Columbus", "Dallas", "Nashville", "NY Islanders", "Pittsburgh", "San Jose", "St. Louis", "Tampa Bay", "Toronto", "Vegas", "Washington", "Winnipeg");
-        @joukkueet = ("Boston", "St. Louis");
+        #@joukkueet = ("Boston", "St. Louis");
     }
     
     return @joukkueet;    
