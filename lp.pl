@@ -925,8 +925,9 @@ sub kokoonpanot () {
 	my ($nimi, $player_id);
 	my @joukkue = ($koti, $vieras);
 
-	my $data = fetch_page("http://liiga.fi/ottelut/2018-2019/runkosarja/$param_game_nro/kokoonpanot/");
-	#my $data = fetch_page("http://liiga.fi/ottelut/2018-2019/playoffs/$param_game_nro/kokoonpanot/");
+	my $param_vuosi_seuraava = $param_vuosi + 1;
+	my $data = fetch_page("http://liiga.fi/ottelut/${param_vuosi}-${param_vuosi_seuraava}/runkosarja/$param_game_nro/kokoonpanot/");
+	#my $data = fetch_page("http://liiga.fi/ottelut/${param_vuosi}-${param_vuosi_seuraava}/playoffs/$param_game_nro/kokoonpanot/");
 	my $text;
 	my $p = HTML::Parser->new(text_h => [ sub {$text .= shift}, 
 				  'dtext']);
