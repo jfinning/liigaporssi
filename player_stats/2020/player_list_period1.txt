@@ -1,0 +1,465 @@
+HIFK
+ID Maalivahti O M S P V H TP TO PM NP JM OR X XX XXX LPP/O LPP Arvo
+28890904 Halonen Niilo 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               305 000
+33039983 Lampinen Jani 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               230 000
+23486067 Tuohimaa Frans 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               350 000
+ID Puolustaja O M S P AVM AVS VM TM JA L B ALV ALH + - JM OR X XX XXX KL ELP NL LPP/O LPP Arvo
+24260583 Ahonen Rony 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               265 000
+21926286 Karjalainen Miro 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               240 000
+22148966 Kousa Mikko 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               400 000
+22240990 Laakso Aleksi 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               235 000
+22474067 Lyytinen Joonas 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               345 000
+100025878 Motin Johan 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               260 000
+28822079 Teravainen Eero 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               200 000
+25357521 Varakas Ville 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               300 000
+30482177 Winberg Tobias 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               210 000
+ID Hyokkaaja O M S P AVM AVS VM TM JA L B ALV ALH + - JM OR X XX XXX KL ELP NL LPP/O LPP Arvo
+28019536 And Terry 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           215 000
+60472481 Bemstrom Emil 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           430 000
+60455677 Broadhurst Alexander 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           360 000
+60347997 Dyk Sebastian 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           400 000
+34231735 Hede Elis 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           200 000
+29735822 Heljanko Rasmus 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           210 000
+30345845 Jaaska Juha 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           260 000
+24555418 Keranen Juho 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           225 000
+22393300 Leskinen Ville 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           415 000
+31261902 Lundell Anton 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           355 000
+31425081 Myllyla Wiljami 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           190 000
+29615777 Nordgren Niklas 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           235 000
+25012824 Petrell Lennart 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           225 000
+25630280 Saarinen Jesse 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           350 000
+23165391 Sallinen Jere 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           335 000
+23394612 Tallberg Teemu 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           230 000
+30707373 Vaananen Miro 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           220 000
+23793763 Asten Micke-Max 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           220 000
+HPK
+ID Maalivahti O M S P V H TP TO PM NP JM OR X XX XXX LPP/O LPP Arvo
+30798997 Aalto Tuomas 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               240 000
+31006060 Lebedeff Daniel 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               300 000
+23684063 Voutilainen Joona 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               330 000
+ID Puolustaja O M S P AVM AVS VM TM JA L B ALV ALH + - JM OR X XX XXX KL ELP NL LPP/O LPP Arvo
+23806498 Eronen Elmeri 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               375 000
+24459695 Ikonen Ossi 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               250 000
+40020340 Jeskanen Valtteri 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               200 000
+24612937 Koistinen Ville 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               300 000
+30644067 Latvala Otto 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               230 000
+32003004 Lehtinen Atso 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               205 000
+22452814 Lukka Santeri 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               320 000
+30492028 Rasanen Eemeli 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               215 000
+ID Hyokkaaja O M S P AVM AVS VM TM JA L B ALV ALH + - JM OR X XX XXX KL ELP NL LPP/O LPP Arvo
+21742871 Ikonen Juuso 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           370 000
+29690417 Innala Jere 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           375 000
+30013562 Jokinen Jere 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           200 000
+21870028 Kainulainen Harri 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           230 000
+27775017 Kanninen Henri 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           255 000
+33388168 Kombe Kristjan 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           210 000
+24540847 Kontiola Petri 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           400 000
+24769356 Lahtela Mikko 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           215 000
+22504856 Mankinen Jesse 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           320 000
+24876676 Monto Joona 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           235 000
+22671530 Nenonen Markus 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           390 000
+29859533 Puustinen Valtteri 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           355 000
+23097498 Ruokonen Miro 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           220 000
+30013384 Seppala Erkka 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           205 000
+28506900 Tikka Tommi 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           260 000
+Ilves
+ID Maalivahti O M S P V H TP TO PM NP JM OR X XX XXX LPP/O LPP Arvo
+100030776 Dostal Lukas 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               360 000
+24546168 Kolppanen Ville 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               300 000
+30117507 Makiniemi Eetu 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               280 000
+ID Puolustaja O M S P AVM AVS VM TM JA L B ALV ALH + - JM OR X XX XXX KL ELP NL LPP/O LPP Arvo
+40005288 Aho Karri 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               190 000
+40005621 Airola Santeri 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               205 000
+21403877 Elorinne Aleksi 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               255 000
+31228178 Hatakka Santeri 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               230 000
+22487436 Maalahti Kalle 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               325 000
+29641327 Matinpalo Nikolas 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               215 000
+28905831 Parikka Jarkko 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               320 000
+22843711 Peltola Niko 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               375 000
+23168071 Salmela Tuomas 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               240 000
+32522158 Thomson Lassi 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               340 000
+ID Hyokkaaja O M S P AVM AVS VM TM JA L B ALV ALH + - JM OR X XX XXX KL ELP NL LPP/O LPP Arvo
+29446865 Antonen Joose 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           280 000
+29554508 Ikonen Joni 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           250 000
+29028513 Ikonen Joona 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           350 000
+32464892 Jarventie Roby 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           230 000
+28730556 Lepaus Teemu 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           250 000
+30735248 Maccelli Matias 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           375 000
+26590031 Meskanen Ville 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           380 000
+24880895 Mieho Panu 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           245 000
+31905381 Nalli Miro 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           200 000
+31803661 Pakkila Eetu 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           235 000
+60460725 Roman Ondrej 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           340 000
+25153974 Ruotsalainen Arttu 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           420 000
+30687613 Saarela Antti 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           240 000
+23351053 Suomi Eemeli 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           405 000
+30039025 Vainionpaa Samuli 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           205 000
+25443752 Vartiainen Taavi 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           210 000
+Jukurit
+ID Maalivahti O M S P V H TP TO PM NP JM OR X XX XXX LPP/O LPP Arvo
+22993098 Rajaniemi Sami 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               320 000
+31267715 Randelin Eetu 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               280 000
+ID Puolustaja O M S P AVM AVS VM TM JA L B ALV ALH + - JM OR X XX XXX KL ELP NL LPP/O LPP Arvo
+60346724 Galvas Jakub 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               255 000
+30548804 Haarti Jaakko 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               230 000
+21700651 Hyvarinen Ville 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               220 000
+60346723 Iakovenko Aleksandr 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               315 000
+28547299 Kemppainen Samuel 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               215 000
+31128854 Kokkonen Mikko 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               250 000
+24229184 Makinen Atte 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               260 000
+30439447 Rindell Axel 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               295 000
+30870187 Salmela Santeri 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               200 000
+ID Hyokkaaja O M S P AVM AVS VM TM JA L B ALV ALH + - JM OR X XX XXX KL ELP NL LPP/O LPP Arvo
+21600081 Henritius Teemu 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           235 000
+30851669 Huttunen Heikki 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           200 000
+24174051 Leskinen Ville 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           245 000
+22483058 Lofman Anssi 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           265 000
+30667484 Matikainen Kalle 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           185 000
+24064653 Makinen Otto 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           240 000
+30712591 Nikkanen Henri 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           215 000
+22895620 Piitulainen Jesper 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           270 000
+22936754 Pulkkinen Teemu 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           300 000
+60466216 Rohdin Joachim 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           310 000
+23155013 Saha Mikael 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           230 000
+60466255 Stransky Simon 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           320 000
+23702275 Vahatalo Julius 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           225 000
+JYP
+ID Maalivahti O M S P V H TP TO PM NP JM OR X XX XXX LPP/O LPP Arvo
+27692297 Parkkinen Niko 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               240 000
+29857823 Ruusu Markus 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               310 000
+29924154 Vehvilainen Veini 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               350 000
+ID Puolustaja O M S P AVM AVS VM TM JA L B ALV ALH + - JM OR X XX XXX KL ELP NL LPP/O LPP Arvo
+24182470 AllXn Roni 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               240 000
+28705727 Honka Anttoni 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               340 000
+33150613 Jurmo Joni 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               180 000
+31250968 Kakkonen Valtteri 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               215 000
+21892307 Kalteva Mikko 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               370 000
+31332145 Kuusela Kimi 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               195 000
+24783853 Lintuniemi Alex 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               245 000
+29915053 Niku Tomi 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               190 000
+24190598 Salonen Aleksi 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               290 000
+ID Hyokkaaja O M S P AVM AVS VM TM JA L B ALV ALH + - JM OR X XX XXX KL ELP NL LPP/O LPP Arvo
+34428467 Helenius Samuel 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           190 000
+24466950 Immonen Jarkko 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           385 000
+30575699 Kalajanniska Oskari 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           215 000
+24641005 Kalapudas Antti 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           245 000
+27772764 Lahtinen Severi 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           240 000
+34367447 Lambert Brad 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           275 000
+24811398 Louhivaara Ossi 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           230 000
+40102012 Puistola Patrik 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           280 000
+33373610 Rooba Robert 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           305 000
+23181087 Salmio Mikko 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           260 000
+29937251 Siikanen Patrik 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           210 000
+27355408 Siikonen Miska 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           310 000
+23505155 Tuppurainen Jani 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           365 000
+27647886 Turkulainen Jerry 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           320 000
+31927592 Valkeejarvi Samuel 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           180 000
+KalPa
+ID Maalivahti O M S P V H TP TO PM NP JM OR X XX XXX LPP/O LPP Arvo
+34264401 Jatkola Juha 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               255 000
+24555926 Kilpelainen Eero 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               330 000
+22861900 Perhonen Samu 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               300 000
+ID Puolustaja O M S P AVM AVS VM TM JA L B ALV ALH + - JM OR X XX XXX KL ELP NL LPP/O LPP Arvo
+60408300 Graham Jesse 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               350 000
+21685718 Huttunen Otto 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               230 000
+24725109 Lappalainen Lasse 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               320 000
+24174048 Leskinen Otto 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               330 000
+28696276 Mattila Jesper 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               235 000
+31046431 Nousiainen Kim 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               325 000
+30951530 Riekkinen Joona 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               240 000
+23242492 Seppala Mikael 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               250 000
+ID Hyokkaaja O M S P AVM AVS VM TM JA L B ALV ALH + - JM OR X XX XXX KL ELP NL LPP/O LPP Arvo
+40291921 Aaltonen Leevi 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           220 000
+21673131 Humaloja Miska 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           230 000
+32306811 Immonen Severi 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           185 000
+21804861 Jokinen Tommi 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           240 000
+28576383 Kantola Kai 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           350 000
+27471447 Klemetti Aleksi 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           275 000
+28570745 Knuutinen Henri 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           200 000
+31110600 Korhonen Benjamin 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           190 000
+24226640 Kononen Juuso 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           235 000
+22464239 Luostarinen Eetu 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           385 000
+25057054 Pitkanen Miikka 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           280 000
+25663901 Ruuttu Alexander 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           325 000
+29969041 Rasanen Aapeli 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           300 000
+30729937 Suhonen Pekka 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           180 000
+25345944 Vartiainen Tuomas 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           225 000
+KooKoo
+ID Maalivahti O M S P V H TP TO PM NP JM OR X XX XXX LPP/O LPP Arvo
+31635062 Salminen Oskari 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               300 000
+ID Puolustaja O M S P AVM AVS VM TM JA L B ALV ALH + - JM OR X XX XXX KL ELP NL LPP/O LPP Arvo
+29587960 Berger Martin 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               240 000
+22510552 Manninen Oskari 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               285 000
+30932931 Palojarvi Antti 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               200 000
+25042564 Pelli Arttu 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               220 000
+28273262 Rautanen Juho 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               210 000
+32033595 Seppala Peetro 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               280 000
+ID Hyokkaaja O M S P AVM AVS VM TM JA L B ALV ALH + - JM OR X XX XXX KL ELP NL LPP/O LPP Arvo
+21292664 Ainali Aleksi 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           295 000
+29783858 Bjorkqvist Kasper 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           280 000
+29695519 Engberg Teemu 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           230 000
+21440937 Friberg Jere 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           220 000
+60342516 Gallo Vilmos 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           340 000
+22051338 Koivisto Kimi 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           225 000
+40172010 Oden Joonas 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           285 000
+24962616 Ojantakanen Kasperi 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           230 000
+23770029 Oksanen Ahti 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           385 000
+28967947 Ratinen Samuli 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           235 000
+24153195 Suuronen Toni 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           215 000
+Karpat
+ID Maalivahti O M S P V H TP TO PM NP JM OR X XX XXX LPP/O LPP Arvo
+32498965 Annunen Justus 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               350 000
+31589972 Blomqvist Joel 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               250 000
+60343378 Rybar Patrik 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               360 000
+ID Puolustaja O M S P AVM AVS VM TM JA L B ALV ALH + - JM OR X XX XXX KL ELP NL LPP/O LPP Arvo
+60342557 Bystrom Ludwig 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               345 000
+40428666 Heshka Shaun 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               410 000
+24353539 Huttula Joona 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               230 000
+40312846 Kukkonen Lasse 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               200 000
+30730803 Loponen Kalle 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               190 000
+22679723 Niemela Mikko 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               285 000
+31555838 Niemela Topi 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               225 000
+29528916 Niskala Jaakko 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               205 000
+31519609 Puutio Kasper 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               180 000
+29679441 Ronkainen Taneli 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               240 000
+60411600 Sulak Libor 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               440 000
+23424825 Teppo Miihkali 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               245 000
+ID Hyokkaaja O M S P AVM AVS VM TM JA L B ALV ALH + - JM OR X XX XXX KL ELP NL LPP/O LPP Arvo
+24406130 Hermonen Julius 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           215 000
+24474272 Jokinen Jussi 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           340 000
+31329598 Jarvitalo Tommi 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           180 000
+21940848 Karvinen Otto 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           235 000
+40245614 Koblizek Radek 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           345 000
+28727446 Koskenkorva Jesse 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           210 000
+40106629 Kristof Michal 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           315 000
+100027950 Kunyk Cody 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           425 000
+28548308 Kuokkanen Janne 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           330 000
+28489001 Metsavainio Tino 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           240 000
+22598901 Mustonen Aleksi 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           280 000
+27833056 Puljujarvi Jesse 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           480 000
+25013577 Pyorala Mika 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           390 000
+31899057 Raty Aatu 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           245 000
+31762087 Raty Aku 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           270 000
+25589140 Sailio Jari 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           230 000
+32558931 Tieksola Tuukka 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           200 000
+34133817 Tuomaala Samu 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           170 000
+Lukko
+ID Maalivahti O M S P V H TP TO PM NP JM OR X XX XXX LPP/O LPP Arvo
+27682964 Lehtinen Lassi 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               340 000
+23249408 Setanen Oskari 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               345 000
+ID Puolustaja O M S P AVM AVS VM TM JA L B ALV ALH + - JM OR X XX XXX KL ELP NL LPP/O LPP Arvo
+32058428 Heinola Ville 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               405 000
+60348405 Klok Lukas 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               325 000
+32764000 Korkka Onni 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               190 000
+31585390 Kukkonen Miska 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               210 000
+29650046 Laitinen Vili 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               235 000
+31363266 Nyman Luka 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               180 000
+32212769 Pietila Noel 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               245 000
+60348444 Press Robin 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               385 000
+23139495 Saarijarvi Vili 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               350 000
+24177003 Sevanen Roni 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               230 000
+ID Hyokkaaja O M S P AVM AVS VM TM JA L B ALV ALH + - JM OR X XX XXX KL ELP NL LPP/O LPP Arvo
+34399525 Arrak Robert 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           200 000
+60453964 Audette Daniel 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           395 000
+21499603 Hakulinen Anrei 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           390 000
+24546935 Koivisto Toni 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           290 000
+23889127 Koivistoinen Eetu 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           275 000
+22396653 Liedes Heikki 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           225 000
+28696292 Mattila Julius 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           235 000
+30682391 Nyman Linus 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           260 000
+31903545 Petman Mikko 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           210 000
+60348452 Pospisil Kristian 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           365 000
+25139587 Repo Sebastian 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           400 000
+24178578 Ruotsi Jesse 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           200 000
+27023853 Saarela Aleksi 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           425 000
+60453523 Skalicky Pavol 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           325 000
+25461491 Tammela Jonne 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           285 000
+32294910 Ylitalo Niklas 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           205 000
+Pelicans
+ID Maalivahti O M S P V H TP TO PM NP JM OR X XX XXX LPP/O LPP Arvo
+60462059 Bartosak Patrik 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               335 000
+29933802 Patrikainen Jasper 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               260 000
+23468166 Tolvanen Atte 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               290 000
+ID Puolustaja O M S P AVM AVS VM TM JA L B ALV ALH + - JM OR X XX XXX KL ELP NL LPP/O LPP Arvo
+60462327 Bergman Julius 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               330 000
+24485410 Jalvanti Joonas 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               300 000
+24509817 Jurgens Casimir 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               335 000
+24715452 Lindroos Alex 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               240 000
+32108624 Rajaniemi Matias 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               230 000
+32707368 VilXn Topias 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               220 000
+ID Hyokkaaja O M S P AVM AVS VM TM JA L B ALV ALH + - JM OR X XX XXX KL ELP NL LPP/O LPP Arvo
+24290689 Bjorninen Hannes 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           385 000
+60462332 Cerveny Rudolf 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           335 000
+31275998 Forslund Alexander 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           185 000
+25646106 Gymer Frank 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           235 000
+30636693 Haatanen Aleks 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           210 000
+31809869 Heikkila Juuso 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           190 000
+29658365 Hamalainen Sakke 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           225 000
+24650025 Kangasniemi Iikka 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           360 000
+29061253 Kerkkanen Joel 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           200 000
+29798827 Merela Waltteri 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           290 000
+24916798 Nieminen Otto 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           230 000
+23075106 Roine Miika 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           265 000
+25618516 Saarelainen Miro-Pekka 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           230 000
+25458802 Tanus Jonatan 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           260 000
+27847136 Toivola Artturi 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           225 000
+30010552 Tukiainen Leevi 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           220 000
+23521841 Tyrvainen Antti 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           265 000
+60434669 Vrhel Stanislav 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           200 000
+29937154 Ylonen Jesse 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           315 000
+SaiPa
+ID Maalivahti O M S P V H TP TO PM NP JM OR X XX XXX LPP/O LPP Arvo
+31584650 Auvinen Severi 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               245 000
+60456747 Tomek Matej 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               315 000
+27843800 Westerholm Niclas 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               300 000
+ID Puolustaja O M S P AVM AVS VM TM JA L B ALV ALH + - JM OR X XX XXX KL ELP NL LPP/O LPP Arvo
+60407804 Bernhardt David 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               285 000
+60348446 Grman Mario 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               270 000
+24229715 Jalonen Jimi 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               235 000
+22064150 Kojo Markus 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               225 000
+40013106 Koskimies Mikael 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               190 000
+60470901 Moverare Jacob 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               335 000
+23775707 Olkkonen Joel 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               210 000
+25091997 Riikola Simo-Pekka 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               220 000
+28842826 Vainio Veeti 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               345 000
+ID Hyokkaaja O M S P AVM AVS VM TM JA L B ALV ALH + - JM OR X XX XXX KL ELP NL LPP/O LPP Arvo
+27776919 Iso-Mustajarvi Tomi 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           225 000
+21878800 Kaksonen Elmeri 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           265 000
+24570406 Koskiranta Jarno 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           370 000
+40432227 Krivosik Filip 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           280 000
+24779032 Lantta Jaakko 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           235 000
+32569153 Loimaranta Veikko 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           235 000
+32780178 Mantykivi Matias 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           220 000
+22710462 Nikko Joni 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           260 000
+30728763 Ojantakanen Valtteri 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           200 000
+31779229 Petman Ville 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           220 000
+29859517 Piipponen Topi 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           230 000
+23137280 Saari Micke 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           230 000
+23555503 Vainikainen Ville 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           225 000
+30356928 Virtanen Santeri 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           265 000
+40315414 Zaborsky Tomas 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           345 000
+Sport
+ID Maalivahti O M S P V H TP TO PM NP JM OR X XX XXX LPP/O LPP Arvo
+24390673 Hovinen Niko 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               320 000
+23035023 Reijola Rasmus 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               305 000
+ID Puolustaja O M S P AVM AVS VM TM JA L B ALV ALH + - JM OR X XX XXX KL ELP NL LPP/O LPP Arvo
+24324348 Grondahl Ari 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               260 000
+60454981 Kolusz Marcin 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               295 000
+24825038 Makela Aleksi 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               230 000
+22675468 Nevalainen Niklas 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               235 000
+23470251 Tommila Juho 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               245 000
+31017907 Vanttaja Olli 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               220 000
+25334515 Viljanen Valtteri 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               345 000
+23620535 Westermarck Victor 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               225 000
+23805761 Ylitalo Eemeli 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               215 000
+ID Hyokkaaja O M S P AVM AVS VM TM JA L B ALV ALH + - JM OR X XX XXX KL ELP NL LPP/O LPP Arvo
+21345676 Asplund Turo 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           295 000
+29864256 Erholtz Eemil 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           250 000
+30936623 Haarala Santeri 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           245 000
+31411901 Heikkinen Lari 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           200 000
+60454984 Karlkvist Patrik 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           335 000
+29551488 Kuiri Niko 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           215 000
+22441087 Liuksiala Juho 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           255 000
+22450515 Lucenius Niclas 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           325 000
+24230814 Paukku Jesse 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           240 000
+23064609 Riska Erik 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           230 000
+25116157 Riska Filip 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           235 000
+60454974 Stalberg Sebastian 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           315 000
+25651492 Suoranta Simon 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           280 000
+25454518 Talaja Roope 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           300 000
+27854909 Vidgren Aaro 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           220 000
+23669075 Virtanen Jonne 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           260 000
+Tappara
+ID Maalivahti O M S P V H TP TO PM NP JM OR X XX XXX LPP/O LPP Arvo
+21589720 Heljanko Christian 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               335 000
+40035616 Hrachovina Dominik 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               355 000
+33502782 Piiroinen Kari 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               240 000
+ID Puolustaja O M S P AVM AVS VM TM JA L B ALV ALH + - JM OR X XX XXX KL ELP NL LPP/O LPP Arvo
+40371281 Blood Ben 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               235 000
+100034138 Hamara Tomas 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               175 000
+21974869 Kemilainen Valtteri 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               410 000
+29933776 Kinnunen Santtu 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               215 000
+60455235 Moravcik Michal 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               370 000
+60455238 Parlett Blake 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               315 000
+24127529 Rouhiainen Jere 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               205 000
+23334106 Suhonen Teemu 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               365 000
+30738423 Utunen Toni 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               200 000
+ID Hyokkaaja O M S P AVM AVS VM TM JA L B ALV ALH + - JM OR X XX XXX KL ELP NL LPP/O LPP Arvo
+34254136 Bertrand Charles 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           395 000
+24622477 Kuusela Kristian 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           450 000
+22357760 Lehtonen Matias 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           210 000
+27746619 Levtchi Anton 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           380 000
+32713394 Luoto Oskari 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           180 000
+22497989 Malinen Jarkko 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           315 000
+29846355 Moilanen Sami 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           230 000
+22842712 Peltola Jukka 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           410 000
+30821864 Puhakka Petteri 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           195 000
+25113804 Rauhala Otto 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           235 000
+31574013 Simontaival Kasper 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           205 000
+60455240 Smejkal Jiri 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           330 000
+60455241 Spacek Michael 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           400 000
+31854445 Tanus Kristian 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           245 000
+29942233 Vanhatalo Lassi 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           200 000
+23597163 Vauhkonen Olavi 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           300 000
+28262723 Virta Patrik 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           360 000
+TPS
+ID Maalivahti O M S P V H TP TO PM NP JM OR X XX XXX LPP/O LPP Arvo
+60455476 Kareev Andrey 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               340 000
+23451584 Tirronen Rasmus 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               315 000
+ID Puolustaja O M S P AVM AVS VM TM JA L B ALV ALH + - JM OR X XX XXX KL ELP NL LPP/O LPP Arvo
+29934157 Anttalainen Aleksi 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               230 000
+60455460 Bibic Alen 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               290 000
+60455462 Bohm Oliver 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               310 000
+60455474 Ivarsson Johan 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               300 000
+29935596 Laitamaki Elias 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               205 000
+60347522 Larsson Henrik 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               360 000
+40009767 Pulli Valtteri 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               200 000
+32219869 Rafkin Ruben 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               245 000
+30893766 Viro Eemil 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               225 000
+ID Hyokkaaja O M S P AVM AVS VM TM JA L B ALV ALH + - JM OR X XX XXX KL ELP NL LPP/O LPP Arvo
+29870486 Haapanen Topias 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           230 000
+60455469 Ibragimov Timur 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           245 000
+60455471 Iskhakov Ruslan 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           305 000
+27706219 Janatuinen Joel 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           225 000
+21785090 Jasu Juhani 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           250 000
+60455488 Kestner Josh 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           325 000
+24674991 Korpikoski Lauri 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           345 000
+23837263 Kuru Hannu 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           220 000
+40003574 Liukas Eetu 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           200 000
+29991637 Nurmi Markus 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           310 000
+60455497 Ortega Austin 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           330 000
+40005897 Pajuniemi Lauri 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           375 000
+32093700 Pyyhtia Mikael 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           190 000
+34601569 Parssinen Juuso 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           300 000
+32257481 Vaisanen Kalle 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           175 000
+60455498 Weinger Evan 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           315 000
+23677889 Wirtanen Petteri 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           260 000
+Assat
+ID Maalivahti O M S P V H TP TO PM NP JM OR X XX XXX LPP/O LPP Arvo
+21296411 Aittokallio Sami 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               320 000
+ID Puolustaja O M S P AVM AVS VM TM JA L B ALV ALH + - JM OR X XX XXX KL ELP NL LPP/O LPP Arvo
+29936715 Kotkansalo Kasper 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               260 000
+30984675 Matinmikko Aleksi 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               195 000
+33424682 Maatta Rami 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               180 000
+31209498 Niemelainen Markus 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               245 000
+29782985 Peltomaki Niklas 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               230 000
+60351426 Stenqvist Jakob 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               345 000
+25381270 Vainio Olli 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               280 000
+24177621 Varttinen Aleksi 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               215 000
+28504481 Vuorisalo Teemu 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               235 000
+29065479 Walli Juuso 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0               210 000
+ID Hyokkaaja O M S P AVM AVS VM TM JA L B ALV ALH + - JM OR X XX XXX KL ELP NL LPP/O LPP Arvo
+24271404 Appelgren Niklas 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           240 000
+32269686 Hirvonen Roni 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           280 000
+27852901 Juhola Jouka 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           235 000
+30561454 Killinen Lenni 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           250 000
+22024624 Kivela Niko 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           225 000
+31165561 Kivenmaki Otto 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           325 000
+31639314 Kulmala Lauri 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           200 000
+31421441 Lausniemi Arttu 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           190 000
+24808136 Lindsten Jasper 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           245 000
+30419043 Makinen Atte 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           230 000
+27666320 Makinen Miro 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           220 000
+22686282 Niemi Mika 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           380 000
+28731241 Pihlajamaki Valtteri 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           225 000
+23441604 Tiivola Peter 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0           310 000
