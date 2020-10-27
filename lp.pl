@@ -300,6 +300,7 @@ sub gameDays {
     
     # Tulosta pelipäivät
     $html .= "<th>Joukkue</th>\n";
+    $html .= "<th>Pelit</th>\n";
     my $count = 0;
     foreach (@selected_day_list) {
         $html .= "<th>$weekdays[$count]<br>\n$_</th>\n";
@@ -310,6 +311,7 @@ sub gameDays {
     foreach my $joukkue (sort hashValueAscendingNum keys %kaikkipelit) {
         $html .= "<tr>\n";
         $html .= "<th class='w3-black'>$joukkue</th>\n";
+        $html .= "<td class='w3-center'>$kaikkipelit{$joukkue}</td>\n";
         foreach (@selected_day_list) {
             if (! defined $pelipaivat{$joukkue}{$_}) {
                 if (defined $peliputki{$joukkue}{$_} && $peliputki{$joukkue}{$_} eq "lepo") {
