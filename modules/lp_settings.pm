@@ -29,7 +29,7 @@ sub get_default_vuosi ($) {
     if ($liiga eq "sm_liiga") {
         $vuosi = 2020;
     } elsif ($liiga eq "nhl"){
-        $vuosi = 2019;
+        $vuosi = 2020;
 	}
 
     return $vuosi;
@@ -45,7 +45,7 @@ sub get_default_jakso ($) {
     if ($liiga eq "sm_liiga") {
         $jakso = "Jakso 3";
     } elsif ($liiga eq "nhl"){
-        $jakso = "Jakso PO";
+        $jakso = "Jakso 1";
     }
     
     return $jakso;
@@ -59,8 +59,8 @@ sub get_joukkue_list ($) {
         @joukkueet = ("HIFK", "HPK", "Ilves", "Jukurit", "JYP", "KalPa", "KooKoo", "Karpat", "Lukko", "Pelicans", "SaiPa", "Sport", "Tappara", "TPS", "Assat");
         #@joukkueet = ("HPK", "Karpat");
     } else {
-        #@joukkueet = ("Anaheim", "Arizona", "Boston", "Buffalo", "Calgary", "Carolina", "Chicago", "Colorado", "Columbus", "Dallas", "Detroit", "Edmonton", "Florida", "Los Angeles", "Minnesota", "Montreal", "Nashville", "New Jersey", "NY Islanders", "NY Rangers", "Ottawa", "Philadelphia", "Pittsburgh", "San Jose", "St. Louis", "Tampa Bay", "Toronto", "Vancouver", "Vegas", "Washington", "Winnipeg");
-        @joukkueet = ("Dallas", "Tampa Bay");
+        @joukkueet = ("Anaheim", "Arizona", "Boston", "Buffalo", "Calgary", "Carolina", "Chicago", "Colorado", "Columbus", "Dallas", "Detroit", "Edmonton", "Florida", "Los Angeles", "Minnesota", "Montreal", "Nashville", "New Jersey", "NY Islanders", "NY Rangers", "Ottawa", "Philadelphia", "Pittsburgh", "San Jose", "St. Louis", "Tampa Bay", "Toronto", "Vancouver", "Vegas", "Washington", "Winnipeg");
+        #@joukkueet = ("Dallas", "Tampa Bay");
         #@joukkueet = ("Boston", "St. Louis");
     }
     
