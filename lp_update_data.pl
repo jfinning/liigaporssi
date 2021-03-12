@@ -1,10 +1,11 @@
-#!E:\Ohjelmat\perl64\bin\perl.exe -w
-#/usr/bin/perl -w
+#!/usr/bin/perl -w
+#E:\Ohjelmat\perl64\bin\perl.exe -w
 
 use strict;
 use CGI::Carp qw(fatalsToBrowser);
 use CGI qw(:standard);
-use JSON;
+use JSON::XS;
+#use JSON;
 require "modules/lp_settings.pm";
 require "modules/lp_common_functions.pl";
 require "modules/lp_update_check_rights.pl";

@@ -7,7 +7,7 @@ sub get_vuodet ($) {
     if ($liiga =~ /sm_liiga/) {
         @vuodet = ("2014", "2015", "2016", "2017", "2018", "2019", "2020");
     } else {
-        @vuodet = ("2014", "2015", "2016", "2017", "2018", "2019");
+        @vuodet = ("2014", "2015", "2016", "2017", "2018", "2019", "2020");
     }
     
     return @vuodet;
@@ -43,9 +43,9 @@ sub get_default_jakso ($) {
     my $liiga = shift;
     
     if ($liiga eq "sm_liiga") {
-        $jakso = "Jakso 3";
+        $jakso = "Jakso 4";
     } elsif ($liiga eq "nhl"){
-        $jakso = "Jakso 1";
+        $jakso = "Jakso 3";
     }
     
     return $jakso;
