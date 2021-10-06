@@ -5,7 +5,7 @@ sub get_vuodet ($) {
     my $liiga = shift;
     
     if ($liiga =~ /sm_liiga/) {
-        @vuodet = ("2014", "2015", "2016", "2017", "2018", "2019", "2020");
+        @vuodet = ("2014", "2015", "2016", "2017", "2018", "2019", "2020", "2021");
     } else {
         @vuodet = ("2014", "2015", "2016", "2017", "2018", "2019", "2020");
     }
@@ -27,7 +27,7 @@ sub get_default_vuosi ($) {
     my $liiga = shift;
 
     if ($liiga eq "sm_liiga") {
-        $vuosi = 2020;
+        $vuosi = 2021;
     } elsif ($liiga eq "nhl"){
         $vuosi = 2020;
 	}
@@ -43,9 +43,9 @@ sub get_default_jakso ($) {
     my $liiga = shift;
     
     if ($liiga eq "sm_liiga") {
-        $jakso = "Jakso 5";
+        $jakso = "Jakso 2";
     } elsif ($liiga eq "nhl"){
-        $jakso = "Jakso 3";
+        $jakso = "Jakso PO";
     }
     
     return $jakso;
@@ -57,11 +57,10 @@ sub get_joukkue_list ($) {
 
     if ($liiga =~ /sm_liiga/) {
         @joukkueet = ("HIFK", "HPK", "Ilves", "Jukurit", "JYP", "KalPa", "KooKoo", "Karpat", "Lukko", "Pelicans", "SaiPa", "Sport", "Tappara", "TPS", "Assat");
-        #@joukkueet = ("HPK", "Karpat");
+        #@joukkueet = ("HIFK", "Lukko", "Tappara", "TPS");
     } else {
-        @joukkueet = ("Anaheim", "Arizona", "Boston", "Buffalo", "Calgary", "Carolina", "Chicago", "Colorado", "Columbus", "Dallas", "Detroit", "Edmonton", "Florida", "Los Angeles", "Minnesota", "Montreal", "Nashville", "New Jersey", "NY Islanders", "NY Rangers", "Ottawa", "Philadelphia", "Pittsburgh", "San Jose", "St. Louis", "Tampa Bay", "Toronto", "Vancouver", "Vegas", "Washington", "Winnipeg");
-        #@joukkueet = ("Dallas", "Tampa Bay");
-        #@joukkueet = ("Boston", "St. Louis");
+        #@joukkueet = ("Anaheim", "Arizona", "Boston", "Buffalo", "Calgary", "Carolina", "Chicago", "Colorado", "Columbus", "Dallas", "Detroit", "Edmonton", "Florida", "Los Angeles", "Minnesota", "Montreal", "Nashville", "New Jersey", "NY Islanders", "NY Rangers", "Ottawa", "Philadelphia", "Pittsburgh", "San Jose", "St. Louis", "Tampa Bay", "Toronto", "Vancouver", "Vegas", "Washington", "Winnipeg");
+        @joukkueet = ("Boston", "Carolina", "Colorado", "Montreal", "NY Islanders", "Tampa Bay", "Vegas", "Winnipeg");
     }
     
     return @joukkueet;    
