@@ -4,8 +4,11 @@ use strict;
 use Getopt::Long;
 use HTML::Parser;
 use Fcntl ':flock';
-require "modules/lp_settings.pm";
-require "modules/lp_common_functions.pl";
+require "/home/u2-yh76vdkmkhmr/www/pallomeri.net/public_html/lp/modules/lp_settings.pm";
+require "/home/u2-yh76vdkmkhmr/www/pallomeri.net/public_html/lp/modules/lp_common_functions.pl";
+
+# require "modules/lp_settings.pm";
+# require "modules/lp_common_functions.pl";
 
 my $sub = "";
 my $test = 0;
@@ -27,7 +30,7 @@ sub initialize_return_value() {
 
 sub sm_sarjataulukko {
     my %return_value = initialize_return_value();
-	my $data = fetch_page("http://liiga.fi/tilastot/2019-2020/runkosarja/joukkueet/");
+	my $data = fetch_page("https://liigaporssi.fi/sm-liiga/sarjataulukko");
     my $sijoitus = undef;
     my $column = 0;
     my ($joukkue, $ottelut, $pisteet);
@@ -38,30 +41,25 @@ sub sm_sarjataulukko {
 				  'dtext']);
     $p->parse($data);
     my @text = split(/\n/, $text);
+    my $temp = "";
 
+    foreach (@text) {
+        s/\s*$//;
+        s/^\s*//;
+	    if (/\d\.$/) {
+	        $temp .= "\n$_ ";
+	    } else {
+	        $temp .= "$_ ";
+	    }
+    }
+    
     if (!$test) {
 		open FILE, ">$file" or die "Cannot open $file";
+		@text = split(/\n/, $temp);
 		foreach (@text) {
-			if (/^\s*$/) { next; }
-			$_ = modify_char($_);
-			if (/^\s*(\d+)\.\s*$/) {
-				$sijoitus = $1;
-			}
-			if (defined $sijoitus) { $column++; }
-			if (/^\s*(\w+)\s*$/ && $column == 2) {
-				$joukkue = $1;
-			}
-			if (/(\d+)/ && $column == 3) {
-				$ottelut = $1;
-			}
-			if (/(\d+)/ && $column == 10) {
-				$pisteet = $1;
-			
-				print FILE "$sijoitus. $joukkue $ottelut $pisteet\n";
-				if ($sijoitus == 15) { last; }
-				$column = 0;
-				$sijoitus = undef;
-			}
+			if (!/^\d+\./) { next; }
+			s/(\d\.\d\d).*?$/$1/;
+			print FILE "$_\n";
 		}
 		close FILE;
 	}
@@ -124,8 +122,8 @@ sub sm_kokoonpanot_kaikki {
 
     # Listaa tahan nimet, jos aakkosjarjestys ei matsaa. Ts. seuraavan joukkueen ensimmainen pelaaja on aakkosissa toisen joukkueen viimeisen jalkeen
 	# Joukkue vaihtuu ENNEN lisattya pelaajaa
-    #my @pelaajat = ("Jarvenpaa Juha");
-	my @pelaajat = ();
+    my @pelaajat = ("Malik Nick");
+    # my @pelaajat = ();
     my %katkaisu_pelaajat;
     foreach (@pelaajat) {
         $katkaisu_pelaajat{modify_char($_)} = 1;
@@ -521,5 +519,6 @@ if ($sub !~ /^\s*$/) {
 		print "$sub OK\n";
 	}
 }
+
 
 1;
