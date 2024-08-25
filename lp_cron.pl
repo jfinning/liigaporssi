@@ -4,11 +4,11 @@ use strict;
 use Getopt::Long;
 use HTML::Parser;
 use Fcntl ':flock';
-require "/home/u2-yh76vdkmkhmr/www/pallomeri.net/public_html/lp/modules/lp_settings.pm";
-require "/home/u2-yh76vdkmkhmr/www/pallomeri.net/public_html/lp/modules/lp_common_functions.pl";
+use FindBin;
+use lib $FindBin::Bin;
 
-# require "modules/lp_settings.pm";
-# require "modules/lp_common_functions.pl";
+require "modules/lp_settings.pm";
+require "modules/lp_common_functions.pl";
 
 my $sub = "";
 my $test = 0;

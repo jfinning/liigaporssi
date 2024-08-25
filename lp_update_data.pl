@@ -1,11 +1,28 @@
-#!/usr/bin/perl -w
-#E:\Ohjelmat\perl64\bin\perl.exe -w
+#!E:\Ohjelmat\perl64\bin\perl.exe -w
+#/usr/bin/perl -w
 
 use strict;
 use CGI::Carp qw(fatalsToBrowser);
 use CGI qw(:standard);
-use JSON::XS;
-#use JSON;
+use FindBin;
+use lib $FindBin::Bin;
+
+BEGIN {
+    # https://www.perlmonks.org/?node_id=1191946;displaytype=print;replies=1
+    # look for JSON::XS, and if not available, fall
+    # back to JSON::PP to avoid requiring non-core modules
+
+    my $json_ok = eval {
+        require JSON::XS;
+        JSON::XS->import;
+        1;
+    };
+    if (! $json_ok){
+        require JSON::PP;
+        JSON::PP->import;
+    }
+}
+
 require "modules/lp_settings.pm";
 require "modules/lp_common_functions.pl";
 require "modules/lp_update_check_rights.pl";

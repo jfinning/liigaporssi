@@ -3,13 +3,13 @@
 sub get_vuodet ($) {
     my @vuodet;
     my $liiga = shift;
-    
+
     if ($liiga =~ /sm_liiga/) {
-        @vuodet = ("2014", "2015", "2016", "2017", "2018", "2019", "2020", "2021", "2022", "2023");
+        @vuodet = ("2014", "2015", "2016", "2017", "2018", "2019", "2020", "2021", "2022", "2023", "2024");
     } else {
-        @vuodet = ("2014", "2015", "2016", "2017", "2018", "2019", "2020", "2021", "2022");
+        @vuodet = ("2014", "2015", "2016", "2017", "2018", "2019", "2020", "2021", "2022", "2023");
     }
-    
+
     return @vuodet;
 }
 
@@ -27,9 +27,9 @@ sub get_default_vuosi ($) {
     my $liiga = shift;
 
     if ($liiga eq "sm_liiga") {
-        $vuosi = 2023;
+        $vuosi = 2024;
     } elsif ($liiga eq "nhl"){
-        $vuosi = 2022;
+        $vuosi = 2023;
 	}
 
     return $vuosi;
@@ -41,13 +41,13 @@ sub get_default_joukkue { return "Joukkue" };
 sub get_default_jakso ($) {
     my $jakso;
     my $liiga = shift;
-    
+
     if ($liiga eq "sm_liiga") {
         $jakso = "Jakso 1";
     } elsif ($liiga eq "nhl"){
         $jakso = "Jakso PO";
     }
-    
+
     return $jakso;
 }
 
@@ -56,20 +56,20 @@ sub get_joukkue_list ($) {
     my @joukkueet;
 
     if ($liiga =~ /sm_liiga/) {
-        @joukkueet = ("HIFK", "HPK", "Ilves", "Jukurit", "JYP", "KalPa", "KooKoo", "Karpat", "Lukko", "Pelicans", "SaiPa", "Sport", "Tappara", "TPS", "Assat");
-        #@joukkueet = ("HIFK", "Ilves", "Pelicans", "Tappara");
+        @joukkueet = ("HIFK", "HPK", "Ilves", "Jukurit", "JYP", "K-Espoo", "KalPa", "KooKoo", "Karpat", "Lukko", "Pelicans", "SaiPa", "Sport", "Tappara", "TPS", "Assat");
+        # @joukkueet = ("KalPa", "Karpat", "Pelicans", "Tappara");
     } else {
-        #@joukkueet = ("Anaheim", "Arizona", "Boston", "Buffalo", "Calgary", "Carolina", "Chicago", "Colorado", "Columbus", "Dallas", "Detroit", "Edmonton", "Florida", "Los Angeles", "Minnesota", "Montreal", "Nashville", "New Jersey", "NY Islanders", "NY Rangers", "Ottawa", "Philadelphia", "Pittsburgh", "San Jose", "St. Louis", "Tampa Bay", "Toronto", "Vancouver", "Vegas", "Washington", "Winnipeg");
-        @joukkueet = ("Carolina", "Dallas", "Edmonton", "Florida", "New Jersey", "Seattle", "Toronto", "Vegas");
+        # @joukkueet = ("Anaheim", "Arizona", "Boston", "Buffalo", "Calgary", "Carolina", "Chicago", "Colorado", "Columbus", "Dallas", "Detroit", "Edmonton", "Florida", "Los Angeles", "Minnesota", "Montreal", "Nashville", "New Jersey", "NY Islanders", "NY Rangers", "Ottawa", "Philadelphia", "Pittsburgh", "San Jose", "St. Louis", "Tampa Bay", "Toronto", "Vancouver", "Vegas", "Washington", "Winnipeg");
+        @joukkueet = ("Edmonton", "Florida");
     }
-    
-    return @joukkueet;    
+
+    return @joukkueet;
 }
 
 sub get_joukkueiden_lyhenteet ($) {
     my $liiga = shift;
     my %joukkue_lyhenne = ();
-    
+
     if ($liiga eq "nhl") {
         %joukkue_lyhenne = (
             "Anaheim"      => "ANA",
@@ -112,13 +112,13 @@ sub get_joukkueiden_lyhenteet ($) {
 
 sub get_ottelulista_filename ($) {
     my $liiga = shift;
-    
+
     return "team_stats/games_$liiga.txt";
 }
 
 sub get_sarjataulukko_filename ($) {
     my $liiga = shift;
-    
+
     return "team_stats/table_$liiga.txt";
 }
 
