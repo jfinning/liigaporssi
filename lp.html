@@ -38,7 +38,9 @@
 		<li class="w3-hide-small tablink" onclick="openLink('Ottelulista');"><a href="#/">Ottelulista</a></li>
 		<li class="w3-hide-small tablink" onclick="openLink('Pelaajalista');"><a href="#/">Pelaajalista</a></li>
 		<li class="w3-hide-small tablink" onclick="openLink('Optimijoukkue');"><a href="#/">Optimijoukkue</a></li>
-		<li class="w3-hide-small tablink" onclick="openLink('Kokoonpanot');"><a href="#/">Kokoonpanot</a></li>
+		<!--
+        <li class="w3-hide-small tablink" onclick="openLink('Kokoonpanot');"><a href="#/">Kokoonpanot</a></li>
+        -->
 		<li class="w3-hide-small w3-hide-medium w3-right"><a href="mailto:jepponen@gmail.com">eMail</a></li>
 		<li class="w3-hide-small w3-hide-medium w3-right tablink" onclick="openLink('Status');"><a href="#/">Status</a></li>
 	</ul>
@@ -48,7 +50,9 @@
 		<li class="w3-hide-medium w3-border-bottom" onclick="openLink('Ottelulista');"><a href="#/">Ottelulista</a></li>
 		<li class="w3-hide-medium w3-border-bottom" onclick="openLink('Pelaajalista');"><a href="#/">Pelaajalista</a></li>
 		<li class="w3-hide-medium w3-border-bottom" onclick="openLink('Optimijoukkue');"><a href="#/">Optimijoukkue</a></li>
-		<li class="w3-hide-medium w3-border-bottom" onclick="openLink('Kokoonpanot');"><a href="#/">Kokoonpanot</a></li>
+		<!--
+        <li class="w3-hide-medium w3-border-bottom" onclick="openLink('Kokoonpanot');"><a href="#/">Kokoonpanot</a></li>
+        -->
 		<li class="w3-border-bottom" style="width:100%"><a style="width:100%" href="mailto:jepponen@gmail.com">eMail</a></li>
 		<li style="width:100%" onclick="openLink('Status');"><a style="width:100%" href="#/">Status</a></li>
 		</ul>
@@ -455,6 +459,7 @@ function Status() {
 		<p id="ennuste_graafi" style="display:inline"></p>
 	</tr></table>
 	</div>
+    <br>
 
 	<div style='overflow:auto;' class="playerList"></div>
 	</center>
@@ -462,7 +467,7 @@ function Status() {
 
 <div id="Optimijoukkue" class="link">
 	<center>
-	Täällä voit koota laskennallisia optimikokoonpanoja antamillasi ehdoilla.<br>
+	<h4>Täällä voit koota laskennallisia optimikokoonpanoja antamillasi ehdoilla.</h4>
 
 	<div style='max-width: 800px;'>
 	<div style='overflow:auto;'>
@@ -481,7 +486,7 @@ function Status() {
 			<td class='w3-center'> <select style='width: 100%' class="periodOptionMenu" onchange="Optimijoukkue('optimiJoukkue,maxPelatutPelit')"></select> </td>
 			<td class='w3-center'> <select style='width: 100%' class="maxPelatutPelit" onchange="Optimijoukkue('optimiJoukkue')"></select>	</td>
 
-			<td class='w3-center'>    
+			<td class='w3-center'>
 			<select style='width: 100%' class="arvo" onchange="Optimijoukkue('optimiJoukkue')">
 			<option>999</option>
 			<option>600</option>
@@ -499,7 +504,7 @@ function Status() {
 		</tr>
 	</table>
 	</div>
-	<br>
+	<br><br>
 	<div style='overflow:auto;'>
 	<table border='1' class='w3-text-black w3-striped w3-white' style='width: 100%'>
 		<tr class='w3-black'>
@@ -534,7 +539,7 @@ function Status() {
 		</div>
 		</div>
 	</div>
-	<center>
+    </center>
 </div>
 
 <div id="Status" class="link">

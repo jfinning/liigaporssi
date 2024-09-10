@@ -448,7 +448,7 @@ sub ottelulista($) {
 	if ($text =~ /\d+-\d+/) {
 		$text =~ s/^.+\)//s;
 	}
-	$text =~ s/(\w+)\s*-\s*(\w+)/$1 - $2/g;
+	$text =~ s/(\w+)\s+-\s+(\w+)/$1 - $2/g;
     my @text = split(/\n/, $text);
 	
     open FILE, ">$file" or die "Cant open $file\n";
